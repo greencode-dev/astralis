@@ -6,10 +6,10 @@
 
 ## Completate
 - [x] Fase 1: Database e Modelli (6 migrations, 5 models, seeder con dati reali)
+- [x] Fase 2.1: Admin layout e navigazione (sidebar, master layout, dashboard)
+- [x] Fase 2.2: CRUD Categorie
 
 ## In attesa
-- [x] Fase 2.1: Admin layout e navigazione (sidebar, master layout, dashboard)
-- [ ] Fase 2.2: CRUD Categorie
 - [ ] Fase 2.3: CRUD Corpi Celesti
 - [ ] Fase 2.4: CRUD Missioni
 - [ ] Fase 2.5: CRUD Curiosità

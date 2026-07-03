@@ -115,16 +115,22 @@ L'admin è raggiungibile su `/admin` dopo il login. Utilizza layout Blade con te
 ```
 resources/views/admin/
 ├── layouts/
-│   └── app.blade.php       ← Master layout con sidebar + topbar
-├── dashboard.blade.php     ← Dashboard stats
-├── categorie/              ← CRUD Categorie (da fare)
-├── corpi-celesti/          ← CRUD Corpi Celesti (da fare)
-├── missioni/               ← CRUD Missioni (da fare)
-├── curiosita/              ← CRUD Curiosità (da fare)
-└── galleria/               ← CRUD Galleria (da fare)
+│   └── app.blade.php           ← Master layout con sidebar + topbar
+├── dashboard.blade.php         ← Dashboard stats
+├── categorie/                  ← CRUD Categorie ✅
+│   ├── index.blade.php         ← Lista con tabella
+│   ├── create.blade.php        ← Form creazione
+│   ├── edit.blade.php          ← Form modifica
+│   └── show.blade.php          ← Dettaglio con corpi associati
+├── corpi-celesti/              ← CRUD Corpi Celesti (da fare)
+├── missioni/                   ← CRUD Missioni (da fare)
+├── curiosita/                  ← CRUD Curiosità (da fare)
+└── galleria/                   ← CRUD Galleria (da fare)
 ```
 
 **Controller admin:** `app/Http/Controllers/Admin/` — risorsa per ogni entità.
+
+**CRUD Categorie** — 7 route resource (`GET|POST /admin/categorie`, `GET|PUT /admin/categorie/{id}`, `DELETE /admin/categorie/{id}`). Protezione cancellazione: se la categoria ha corpi celesti associati, viene mostrato errore. Form con color picker + palette rapida 10 colori predefiniti.
 
 ## Guida all'installazione
 ```bash

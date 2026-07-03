@@ -27,6 +27,13 @@
 - Estensione tailwind.config.js con colori admin
 - Fix: aggiunto `resources/js/bootstrap.js` mancante per Vite build
 
+### 2.2 — 03/07/2026
+- CRUD completo Categorie (index, create, store, show, edit, update, destroy)
+- Protezione eliminazione: se ci sono corpi celesti associati, bloccata con messaggio errore
+- Color picker con palette rapida 10 colori nei form create/edit
+- Vista show con conteggio corpi associati
+- Fix: aggiunto `resources/js/bootstrap.js` mancante (bloccava build Vite)
+
 ## Commit
 - `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
 - `0a57208` — feat: database e modelli con seeders
