@@ -37,7 +37,7 @@
 ### 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice
 - CRUD completo Corpi Celesti (index, create, store, show, edit, update, destroy)
 
-### 2.4 — 03/07/2026 — [hash]
+### 2.4 — 03/07/2026 — `6d86177` — feat: CRUD missioni backoffice
 - CRUD completo Missioni (index, create, store, show, edit, update, destroy)
 - Upload logo con Intervention Image (resize 300px, max 1MB, supporto SVG)
 - Badge stato colorato: Completata (verde), In corso (ciano), Pianificata (giallo)
