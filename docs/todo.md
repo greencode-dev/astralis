@@ -5,12 +5,12 @@
 - [x] Fase 1: Database e Modelli (6 migrations, 5 models, seeder con dati reali)
 - [x] Fase 2.1: Admin layout e navigazione (sidebar, master layout, dashboard)
 - [x] Fase 2.2: CRUD Categorie
+- [x] Fase 2.3: CRUD Corpi Celesti
 
 ## In corso
 - [ ] Fase 2.4: CRUD Missioni
 
 ## Da fare
-- [ ] Fase 2.5: CRUD Curiosità
 - [ ] Fase 2.5: CRUD Curiosità
 - [ ] Fase 2.6: CRUD Galleria
 - [ ] Fase 3: API REST (10+ endpoint)
