@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'Dashboard') — {{ config('app.name', 'Astralis') }} Admin</title>
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+    @vite(['resources/css/app.css'])
+</head>
+<body class="font-sans antialiased" style="background-color: #0A0A1A; color: #F0F0FA;">
+    <div class="flex h-screen overflow-hidden">
+
+        <aside class="w-64 flex-shrink-0 overflow-y-auto" style="background-color: #111128; border-right: 1px solid rgba(34, 211, 238, 0.1);">
+
+            <div class="flex items-center gap-3 px-6 py-5" style="border-bottom: 1px solid rgba(34, 211, 238, 0.1);">
+                <span class="text-2xl">🚀</span>
+                <div>
+                    <h1 class="text-lg font-bold" style="color: #22D3EE;">Astralis</h1>
+                    <p class="text-xs" style="color: #A855F7;">Backoffice</p>
+                </div>
+            </div>
+
+            @php
+                $navItems = [
+                    ['route' => 'admin.dashboard', 'label' => 'Dashboard', 'icon' => 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'],
+                    ['route' => 'admin.corpi-celesti.index', 'label' => 'Corpi Celesti', 'icon' => 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'],
+                    ['route' => 'admin.categorie.index', 'label' => 'Categorie', 'icon' => 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'],
+                    ['route' => 'admin.missioni.index', 'label' => 'Missioni', 'icon' => 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
+                    ['route' => 'admin.curiosita.index', 'label' => 'Curiosità', 'icon' => 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
+                    ['route' => 'admin.galleria.index', 'label' => 'Galleria', 'icon' => 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'],
+                ];
+                $currentRoute = request()->route()?->getName();
+            @endphp
+
+            <nav class="mt-4 px-3 space-y-1">
+                @foreach ($navItems as $item)
+                    @php
+                        $isActive = $currentRoute && str_starts_with($currentRoute, explode('.', $item['route'])[0] . '.' . explode('.', $item['route'])[1]);
+                        if ($item['route'] === 'admin.dashboard') {
+                            $isActive = $currentRoute === 'admin.dashboard';
+                        }
+                    @endphp
+                    <a href="{{ route($item['route']) }}"
+                       class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                       @if ($isActive)
+                           style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE;"
+                       @else
+                           style="color: #9CA3AF;"
+                           onmouseover="this.style.backgroundColor='rgba(34,211,238,0.08)'; this.style.color='#22D3EE';"
+                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#9CA3AF';"
+                       @endif>
+                        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $item['icon'] }}"/>
+                        </svg>
+                        {{ $item['label'] }}
+                    </a>
+                @endforeach
+            </nav>
+
+            <div class="mt-auto px-3 py-4" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
+                <a href="{{ route('dashboard') }}"
+                   class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                   style="color: #9CA3AF;"
+                   onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.08)';"
+                   onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                    Torna al sito
+                </a>
+            </div>
+        </aside>
+
+        <div class="flex flex-1 flex-col overflow-hidden">
+            <header class="flex items-center justify-between px-6 py-4" style="background-color: #111128; border-bottom: 1px solid rgba(34, 211, 238, 0.1);">
+                <h2 class="text-lg font-semibold">@yield('page_title', 'Dashboard')</h2>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm" style="color: #9CA3AF;">{{ Auth::user()->name }}</span>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit"
+                                class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                                style="color: #F0F0FA; background-color: rgba(249, 115, 22, 0.15);"
+                                onmouseover="this.style.backgroundColor='rgba(249,115,22,0.3)';"
+                                onmouseout="this.style.backgroundColor='rgba(249,115,22,0.15)';">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                            Esci
+                        </button>
+                    </form>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto p-6">
+                @yield('content')
+            </main>
+        </div>
+    </div>
+    @stack('scripts')
+</body>
+</html>

@@ -8,8 +8,12 @@
 - [x] Fase 1: Database e Modelli (6 migrations, 5 models, seeder con dati reali)
 
 ## In attesa
-- [ ] Fase 2: Backoffice Blade CRUD (categorie, corpi, missioni, galleria, curiosità)
-- [ ] Fase 2: Backoffice Blade CRUD (categorie, corpi, missioni, galleria, curiosità)
+- [x] Fase 2.1: Admin layout e navigazione (sidebar, master layout, dashboard)
+- [ ] Fase 2.2: CRUD Categorie
+- [ ] Fase 2.3: CRUD Corpi Celesti
+- [ ] Fase 2.4: CRUD Missioni
+- [ ] Fase 2.5: CRUD Curiosità
+- [ ] Fase 2.6: CRUD Galleria
 - [ ] Fase 3: API REST (10+ endpoint)
 - [ ] Fase 4: React — Homepage + Sistema solare animato + Lista
 - [ ] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore

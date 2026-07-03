@@ -107,6 +107,25 @@ GET    /api/dashboard/stats            — Stats per homepage
 | Cometa | `#22C55E` (Verde) |
 | Pianeta Nano | `#6B7280` (Grigio) |
 
+### Backoffice Admin
+
+L'admin è raggiungibile su `/admin` dopo il login. Utilizza layout Blade con tema scuro e sidebar di navigazione.
+
+**Struttura viste:**
+```
+resources/views/admin/
+├── layouts/
+│   └── app.blade.php       ← Master layout con sidebar + topbar
+├── dashboard.blade.php     ← Dashboard stats
+├── categorie/              ← CRUD Categorie (da fare)
+├── corpi-celesti/          ← CRUD Corpi Celesti (da fare)
+├── missioni/               ← CRUD Missioni (da fare)
+├── curiosita/              ← CRUD Curiosità (da fare)
+└── galleria/               ← CRUD Galleria (da fare)
+```
+
+**Controller admin:** `app/Http/Controllers/Admin/` — risorsa per ogni entità.
+
 ## Guida all'installazione
 ```bash
 # Clona la repo

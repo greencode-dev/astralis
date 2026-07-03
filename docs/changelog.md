@@ -18,6 +18,15 @@
 - 7 seeders con dati reali (8 categorie, 18 corpi celesti, 10 missioni, 16 galleria, 18 curiosità, 17 relazioni pivot)
 - Utente admin: admin@astralis.it / password
 
+## Fase 2 — Backoffice Blade CRUD
+
+### 2.1 — 03/07/2026
+- Admin layout Blade con sidebar navigazione (tema scuro palette `#0A0A1A`, `#111128`, `#22D3EE`)
+- Dashboard admin con statistiche (conteggio entità) e tabella ultimi corpi celesti
+- Route `/admin` protette da auth Breeze
+- Estensione tailwind.config.js con colori admin
+- Fix: aggiunto `resources/js/bootstrap.js` mancante per Vite build
+
 ## Commit
 - `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
 - `0a57208` — feat: database e modelli con seeders
