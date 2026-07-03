@@ -50,3 +50,12 @@
 - Vista index con tabella titolo, corpo celeste (link), descrizione, fonte
 - Vista create con select corpo celeste, titolo, textarea descrizione, fonte opzionale
 
+### 2.6 — 03/07/2026 — `[non ancora commit]` — feat: CRUD galleria backoffice
+- CRUD completo Galleria (index, create, store, edit, update, destroy — senza show)
+- Upload immagini con Intervention Image (resize 1200px, storage `public/galleria/`)
+- Vista index a griglia con card thumbnail, didascalia, corpo celeste, crediti, ordine
+- Route resource con parametro `{galleriaCorpo}`
+- **Fase 2 completata** (tutti e 6 i CRUD)
+
+## Fase 3 — API REST (da fare)
+

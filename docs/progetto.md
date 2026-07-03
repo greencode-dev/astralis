@@ -136,7 +136,10 @@ resources/views/admin/
 │   ├── index.blade.php         ← Lista con tabella titolo, corpo, descrizione, fonte
 │   ├── create.blade.php        ← Form creazione (select corpo, titolo, descrizione, fonte)
 │   └── edit.blade.php          ← Form modifica
-└── galleria/                   ← CRUD Galleria (da fare)
+└── galleria/                   ← CRUD Galleria ✅
+    ├── index.blade.php         ← Griglia con card thumbnail
+    ├── create.blade.php        ← Form upload immagine + dati
+    └── edit.blade.php          ← Form modifica con preview
 ```
 
 **Controller admin:** `app/Http/Controllers/Admin/` — risorsa per ogni entità.
@@ -148,6 +151,8 @@ resources/views/admin/
 **CRUD Missioni** — 7 route resource (`/admin/missioni`). Upload logo con Intervention Image (resize 300px, supporto SVG). Stato con badge colorato (Completata/In corso/Pianificata). Vista show con tabella corpi celesti esplorati (dati pivot: tipo esplorazione, anno arrivo).
 
 **CRUD Curiosità** — 6 route resource (`/admin/curiosita`, senza show). Parametro route `{curiositum}` (singolare latino di "curiosita"). Form con select corpo celeste, titolo, textarea descrizione, fonte opzionale. Vista index con tabella titolo, corpo celeste (linkabile), descrizione troncata, fonte.
+
+**CRUD Galleria** — 6 route resource (`/admin/galleria`, senza show). Parametro route `{galleriaCorpo}`. Upload immagini con Intervention Image (resize 1200px, storage `public/galleria/`). Vista index a griglia con card thumbnail, didascalia, corpo celeste linkabile, crediti, ordine di visualizzazione.
 
 ## Guida all'installazione
 ```bash

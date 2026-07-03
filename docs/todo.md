@@ -8,13 +8,12 @@
 - [x] Fase 2.3: CRUD Corpi Celesti
 - [x] Fase 2.4: CRUD Missioni
 - [x] Fase 2.5: CRUD Curiosità
+- [x] Fase 2.6: CRUD Galleria
 
 ## In corso
-- [ ] Fase 2.6: CRUD Galleria
+- [ ] Fase 3: API REST (10+ endpoint)
 
 ## Da fare
-- [ ] Fase 3: API REST (10+ endpoint)
-- [ ] Fase 3: API REST (10+ endpoint)
 - [ ] Fase 4: React — Homepage + Sistema solare animato + Lista
 - [ ] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore
 - [ ] Fase 6: Documentazione finale, bug fix, live coding

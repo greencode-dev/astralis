@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\CorpoCelesteController;
 use App\Http\Controllers\Admin\CuriositaController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GalleriaController;
 use App\Http\Controllers\Admin\MissioneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -42,6 +43,9 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     ]);
     Route::resource('curiosita', CuriositaController::class)->except(['show'])->parameters([
         'curiosita' => 'curiositum',
+    ]);
+    Route::resource('galleria', GalleriaController::class)->except(['show'])->parameters([
+        'galleria' => 'galleriaCorpo',
     ]);
 });
 
