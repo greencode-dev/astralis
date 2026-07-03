@@ -36,6 +36,13 @@
 
 ### 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice
 - CRUD completo Corpi Celesti (index, create, store, show, edit, update, destroy)
+
+### 2.4 — 03/07/2026 — [hash]
+- CRUD completo Missioni (index, create, store, show, edit, update, destroy)
+- Upload logo con Intervention Image (resize 300px, max 1MB, supporto SVG)
+- Badge stato colorato: Completata (verde), In corso (ciano), Pianificata (giallo)
+- Vista show con dettagli missione + tabella corpi celesti esplorati
+- Storage dedicato `storage/app/public/missioni/`
 - Upload immagini con Intervention Image (resize 800px, max 2MB)
 - Form con 13 campi: nome, categoria (select), tipo, immagine (file), massa, distanza, diametro, gravità, temperatura, periodo orbitale, scopritore, anno, descrizione, in evidenza
 - Vista show dettagliata con 8 card dati scientifici + galleria + curiosità + missioni

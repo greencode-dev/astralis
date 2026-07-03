@@ -111,7 +111,7 @@ npm run dev
   - `/admin` — Dashboard con statistiche ✅
   - `/admin/categorie` — Gestione categorie (CRUD) ✅
   - `/admin/corpi-celesti` — Gestione corpi celesti (CRUD + upload immagini) ✅
-  - `/admin/missioni` — Gestione missioni spaziali
+  - `/admin/missioni` — Gestione missioni spaziali (CRUD + upload logo) ✅
   - `/admin/curiosita` — Gestione curiosità
   - `/admin/galleria` — Gestione galleria immagini
 - **Credenziali demo**: admin@astralis.it / password

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\CorpoCelesteController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MissioneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,9 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     ]);
     Route::resource('corpi-celesti', CorpoCelesteController::class)->parameters([
         'corpi-celesti' => 'corpoCeleste',
+    ]);
+    Route::resource('missioni', MissioneController::class)->parameters([
+        'missioni' => 'missione',
     ]);
 });
 
