@@ -108,9 +108,9 @@ npm run dev
 - **Frontend**: `http://localhost:8000`
 - **Backoffice**: `http://localhost:8000/admin`
 - **Struttura backoffice**:
-  - `/admin` — Dashboard con statistiche
-  - `/admin/categorie` — Gestione categorie (CRUD completo)
-  - `/admin/corpi-celesti` — Gestione corpi celesti
+  - `/admin` — Dashboard con statistiche ✅
+  - `/admin/categorie` — Gestione categorie (CRUD) ✅
+  - `/admin/corpi-celesti` — Gestione corpi celesti (CRUD + upload immagini) ✅
   - `/admin/missioni` — Gestione missioni spaziali
   - `/admin/curiosita` — Gestione curiosità
   - `/admin/galleria` — Gestione galleria immagini

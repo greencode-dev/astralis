@@ -7,10 +7,10 @@
 - [x] Fase 2.2: CRUD Categorie
 
 ## In corso
-- [ ] Fase 2.3: CRUD Corpi Celesti
+- [ ] Fase 2.4: CRUD Missioni
 
 ## Da fare
-- [ ] Fase 2.4: CRUD Missioni
+- [ ] Fase 2.5: CRUD Curiosità
 - [ ] Fase 2.5: CRUD Curiosità
 - [ ] Fase 2.6: CRUD Galleria
 - [ ] Fase 3: API REST (10+ endpoint)

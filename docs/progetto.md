@@ -122,7 +122,11 @@ resources/views/admin/
 │   ├── create.blade.php        ← Form creazione
 │   ├── edit.blade.php          ← Form modifica
 │   └── show.blade.php          ← Dettaglio con corpi associati
-├── corpi-celesti/              ← CRUD Corpi Celesti (da fare)
+├── corpi-celesti/              ← CRUD Corpi Celesti ✅
+│   ├── index.blade.php         ← Lista con tabella + badge categoria
+│   ├── create.blade.php        ← Form 13 campi + upload immagine
+│   ├── edit.blade.php          ← Form modifica con immagine preview
+│   └── show.blade.php          ← Dettaglio con dati scientifici + galleria + curiosità + missioni
 ├── missioni/                   ← CRUD Missioni (da fare)
 ├── curiosita/                  ← CRUD Curiosità (da fare)
 └── galleria/                   ← CRUD Galleria (da fare)
@@ -131,6 +135,8 @@ resources/views/admin/
 **Controller admin:** `app/Http/Controllers/Admin/` — risorsa per ogni entità.
 
 **CRUD Categorie** — 7 route resource (`GET|POST /admin/categorie`, `GET|PUT /admin/categorie/{id}`, `DELETE /admin/categorie/{id}`). Protezione cancellazione: se la categoria ha corpi celesti associati, viene mostrato errore. Form con color picker + palette rapida 10 colori predefiniti.
+
+**CRUD Corpi Celesti** — 7 route resource (`/admin/corpi-celesti`). Upload immagini con Intervention Image (resize 800px, storage `public/corpi-celesti/`). Form con 13 campi, select categoria, checkbox evidenza. Vista show completa con 8 card metriche scientifiche + sezioni galleria, curiosità, missioni.
 
 ## Guida all'installazione
 ```bash

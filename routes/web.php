@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoriaController;
+use App\Http\Controllers\Admin\CorpoCelesteController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -30,6 +31,9 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('categorie', CategoriaController::class)->parameters([
         'categorie' => 'categoria',
+    ]);
+    Route::resource('corpi-celesti', CorpoCelesteController::class)->parameters([
+        'corpi-celesti' => 'corpoCeleste',
     ]);
 });
 

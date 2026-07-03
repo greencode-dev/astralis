@@ -34,6 +34,14 @@
 - Vista show con conteggio corpi associati
 - Fix: aggiunto `resources/js/bootstrap.js` mancante (bloccava build Vite)
 
+### 2.3 — 03/07/2026
+- CRUD completo Corpi Celesti (index, create, store, show, edit, update, destroy)
+- Upload immagini con Intervention Image (resize 800px, max 2MB)
+- Form con 13 campi: nome, categoria (select), tipo, immagine (file), massa, distanza, diametro, gravità, temperatura, periodo orbitale, scopritore, anno, descrizione, in evidenza
+- Vista show dettagliata con 8 card dati scientifici + galleria + curiosità + missioni
+- Storage dedicato `storage/app/public/corpi-celesti/`
+- Route resource con parametro custom `corpoCeleste`
+
 ## Commit
 - `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
 - `0a57208` — feat: database e modelli con seeders
