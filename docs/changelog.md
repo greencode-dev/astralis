@@ -2,7 +2,7 @@
 
 ## Fase 0 — Setup
 
-### 0.1 — 02/07/2026 — `6df5099`
+### 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
 - Creazione progetto Laravel v13.18.0
 - Installazione Breeze con React stack
 - Configurazione .env (MySQL :3307, DB: astralis)
@@ -10,7 +10,7 @@
 
 ## Fase 1 — Database e Modelli
 
-### 1.0 — 03/07/2026 — `0a57208`
+### 1.0 — 03/07/2026 — `0a57208` — feat: database e modelli con seeders
 - Installati pacchetti: spatie/laravel-sluggable, intervention/image, barryvdh/laravel-dompdf
 - Creazione database MySQL `astralis`
 - 6 migrations: categorie, corpi_celesti, galleria_corpi, missioni, curiosita, corpo_celeste_missione
@@ -20,21 +20,21 @@
 
 ## Fase 2 — Backoffice Blade CRUD
 
-### 2.1 — 03/07/2026 — `070da55`
+### 2.1 — 03/07/2026 — `070da55` — feat: admin backoffice layout, sidebar navigation e dashboard
 - Admin layout Blade con sidebar navigazione (tema scuro palette `#0A0A1A`, `#111128`, `#22D3EE`)
 - Dashboard admin con statistiche (conteggio entità) e tabella ultimi corpi celesti
 - Route `/admin` protette da auth Breeze
 - Estensione tailwind.config.js con colori admin
 - Fix: aggiunto `resources/js/bootstrap.js` mancante per Vite build
 
-### 2.2 — 03/07/2026 — `758be4c`
+### 2.2 — 03/07/2026 — `758be4c` — feat: CRUD categorie backoffice
 - CRUD completo Categorie (index, create, store, show, edit, update, destroy)
 - Protezione eliminazione: se ci sono corpi celesti associati, bloccata con messaggio errore
 - Color picker con palette rapida 10 colori nei form create/edit
 - Vista show con conteggio corpi associati
 - Fix: aggiunto `resources/js/bootstrap.js` mancante (bloccava build Vite)
 
-### 2.3 — 03/07/2026 — `18a6b20`
+### 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice
 - CRUD completo Corpi Celesti (index, create, store, show, edit, update, destroy)
 - Upload immagini con Intervention Image (resize 800px, max 2MB)
 - Form con 13 campi: nome, categoria (select), tipo, immagine (file), massa, distanza, diametro, gravità, temperatura, periodo orbitale, scopritore, anno, descrizione, in evidenza
