@@ -8,6 +8,8 @@
 
 ## In corso
 - [ ] Fase 2.3: CRUD Corpi Celesti
+
+## Da fare
 - [ ] Fase 2.4: CRUD Missioni
 - [ ] Fase 2.5: CRUD Curiosità
 - [ ] Fase 2.6: CRUD Galleria
