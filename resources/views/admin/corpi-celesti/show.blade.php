@@ -114,7 +114,7 @@
                     @foreach ($corpoCeleste->galleria as $foto)
                         <div class="rounded-lg overflow-hidden" style="border: 1px solid rgba(34, 211, 238, 0.1);">
                             <div class="aspect-square" style="background-color: #0A0A1A;">
-                                <img src="{{ Storage::url($foto->percorso) }}" alt="{{ $foto->didascalia ?? '' }}" class="w-full h-full object-cover">
+                                <img src="{{ Storage::url('galleria/' . $foto->percorso) }}" alt="{{ $foto->didascalia ?? '' }}" class="w-full h-full object-cover">
                             </div>
                             @if ($foto->didascalia)
                                 <div class="p-2">

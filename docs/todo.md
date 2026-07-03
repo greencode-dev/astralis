@@ -10,8 +10,8 @@
 - [x] Fase 2.5: CRUD Curiosità
 - [x] Fase 2.6: CRUD Galleria
 
-## In corso
-- [ ] Fase 3: API REST (10+ endpoint)
+## Completate
+- [x] Fase 3: API REST (10 endpoint)
 
 ## Da fare
 - [ ] Fase 4: React — Homepage + Sistema solare animato + Lista

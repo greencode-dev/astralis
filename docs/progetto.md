@@ -64,12 +64,15 @@ CATEGORIA ──1:N── CORPO_CELESTE ──1:N── GALLERIA_CORPO
 
 ## API REST (Endpoint)
 ```
-GET    /api/corpi-celesti              — Lista (filtri: categoria, tipo, search, in_evidenza)
+GET    /api/corpi-celesti              — Lista (filtri: categoria, tipo, search, in_evidenza, per_page)
 GET    /api/corpi-celesti/{slug}       — Dettaglio con relazioni
 GET    /api/categorie                  — Lista categorie con conteggio
+GET    /api/categorie/{slug}           — Singola categoria con corpi celesti
 GET    /api/missioni                   — Lista missioni (filtri: agenzia, stato)
 GET    /api/missioni/{slug}            — Dettaglio missione
-GET    /api/corpi-celesti/{id}/simili  — Suggerimenti (stessa categoria)
+GET    /api/corpi-celesti/{id}/simili  — Suggerimenti (stessa categoria, max 4)
+GET    /api/curiosita                  — Lista curiosità
+GET    /api/galleria                   — Lista galleria (ordinata)
 GET    /api/dashboard/stats            — Stats per homepage
 ```
 
@@ -141,6 +144,19 @@ resources/views/admin/
     ├── create.blade.php        ← Form upload immagine + dati
     └── edit.blade.php          ← Form modifica con preview
 ```
+
+### API REST
+
+Le API sono pubbliche (nessuna autenticazione richiesta). Utilizzano Eloquent API Resources per la trasformazione dei dati e supportano eager loading delle relazioni.
+
+**Controller API:** `app/Http/Controllers/Api/` — 6 controller per 10 endpoint.
+
+**API Resources:** `app/Http/Resources/` — 5 classi: CorpoCelesteResource, CategoriaResource, MissioneResource, CuriositaResource, GalleriaCorpoResource.
+
+Filtri disponibili:
+- `GET /api/corpi-celesti?categoria=stella&tipo=...&search=...&in_evidenza=1&per_page=12`
+- `GET /api/missioni?agenzia=NASA&stato=completata`
+- `GET /api/corpi-celesti/{corpoCeleste}/simili` — 4 risultati random dalla stessa categoria
 
 **Controller admin:** `app/Http/Controllers/Admin/` — risorsa per ogni entità.
 

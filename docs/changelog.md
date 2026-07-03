@@ -57,5 +57,13 @@
 - Route resource con parametro `{galleriaCorpo}`
 - **Fase 2 completata** (tutti e 6 i CRUD)
 
-## Fase 3 — API REST (da fare)
+## Fase 3 — API REST
 
+### 3.0 — 03/07/2026 — feat: API REST (10 endpoint JSON)
+- 5 API Resource classes: CorpoCelesteResource, CategoriaResource, MissioneResource, CuriositaResource, GalleriaCorpoResource
+- 6 API Controllers: CorpoCeleste, Categoria, Missione, Curiosita, Galleria, Dashboard
+- 10 endpoint JSON in `routes/api.php`
+- Filtri su GET `/api/corpi-celesti`: categoria (slug), tipo, search, in_evidenza, per_page
+- Filtri su GET `/api/missioni`: agenzia, stato
+- Route model binding con slug su show endpoints
+- Bootstrap app.php configurato per caricare api.php

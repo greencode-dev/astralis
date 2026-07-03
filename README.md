@@ -115,6 +115,7 @@ npm run dev
   - `/admin/curiosita` — Gestione curiosità (CRUD) ✅
   - `/admin/galleria` — Gestione galleria immagini (CRUD) ✅
 - **Credenziali demo**: admin@astralis.it / password
+- **API**: `http://localhost:8000/api/corpi-celesti`, `/api/categorie`, `/api/missioni`, `/api/curiosita`, `/api/galleria`, `/api/dashboard/stats`
 
 ## 📚 Documentazione
 
