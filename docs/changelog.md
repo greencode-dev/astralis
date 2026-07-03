@@ -8,5 +8,16 @@
 - Configurazione .env (MySQL :3307, DB: astralis)
 - Generazione APP_KEY
 
-### 0.2 (prossimo)
-- Migrations + Models + Seeders
+## Fase 1 — Database e Modelli
+
+### 1.0 — 03/07/2026
+- Installati pacchetti: spatie/laravel-sluggable, intervention/image, barryvdh/laravel-dompdf
+- Creazione database MySQL `astralis`
+- 6 migrations: categorie, corpi_celesti, galleria_corpi, missioni, curiosita, corpo_celeste_missione
+- 5 Eloquent Models con relazioni e sluggable
+- 7 seeders con dati reali (8 categorie, 18 corpi celesti, 10 missioni, 16 galleria, 18 curiosità, 17 relazioni pivot)
+- Utente admin: admin@astralis.it / password
+
+## Commit
+- `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
+- (prossimo) — feat: database e modelli con seeders

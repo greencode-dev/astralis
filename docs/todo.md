@@ -1,11 +1,14 @@
 # Todo
 
 ## In corso
-- [ ] Fase 0.5: README.md personalizzato
-- [ ] Fase 0.6: Primo commit
+- [x] Fase 0.5: README.md personalizzato
+- [x] Fase 0.6: Primo commit
+
+## Completate
+- [x] Fase 1: Database e Modelli (6 migrations, 5 models, seeder con dati reali)
 
 ## In attesa
-- [ ] Fase 1: Database e Modelli (6 migrations, 5 models, seeder)
+- [ ] Fase 2: Backoffice Blade CRUD (categorie, corpi, missioni, galleria, curiosità)
 - [ ] Fase 2: Backoffice Blade CRUD (categorie, corpi, missioni, galleria, curiosità)
 - [ ] Fase 3: API REST (10+ endpoint)
 - [ ] Fase 4: React — Homepage + Sistema solare animato + Lista

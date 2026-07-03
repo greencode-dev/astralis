@@ -14,12 +14,14 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ## ✨ Funzionalità
 
 ### 👨‍💼 Backoffice (Laravel + Blade)
+
 - Autenticazione con Laravel Breeze
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
 - Upload di immagini con Intervention
 - Dashboard con statistiche
 
 ### 🌟 Frontend (React + Vite)
+
 - Sistema solare animato con orbite dei pianeti
 - Lista e dettaglio di ogni corpo celeste con dati scientifici
 - Galleria immagini con lightbox a schermo intero
@@ -29,6 +31,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 - Badge colorati per ogni categoria
 
 ### 🛰️ API REST
+
 - 10+ endpoint JSON per il frontend React
 - Filtri, paginazione, eager loading delle relazioni
 
@@ -54,21 +57,21 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 
 ## 🗄️ Entità e Relazioni
 
-| Entità | Descrizione | Relazioni |
-|---|---|---|
-| **Categoria** | Pianeta, Stella, Galassia... | 1-N con Corpo Celeste |
-| **Corpo Celeste** | Dati scientifici del corpo | N-1 Categoria, N-N Missioni, 1-N Galleria, 1-N Curiosità |
-| **Missione** | Missioni spaziali | N-N con Corpi Celesti |
-| **Galleria** | Immagini multiple | N-1 con Corpo Celeste |
-| **Curiosità** | Fatti e scoperte | N-1 con Corpo Celeste |
+| Entità            | Descrizione                  | Relazioni                                                |
+| ----------------- | ---------------------------- | -------------------------------------------------------- |
+| **Categoria**     | Pianeta, Stella, Galassia... | 1-N con Corpo Celeste                                    |
+| **Corpo Celeste** | Dati scientifici del corpo   | N-1 Categoria, N-N Missioni, 1-N Galleria, 1-N Curiosità |
+| **Missione**      | Missioni spaziali            | N-N con Corpi Celesti                                    |
+| **Galleria**      | Immagini multiple            | N-1 con Corpo Celeste                                    |
+| **Curiosità**     | Fatti e scoperte             | N-1 con Corpo Celeste                                    |
 
 ## 🎨 Palette Colori
 
-| Ruolo | Colore |
-|---|---|
-| Sfondo | `#0A0A1A` |
-| Card | `#111128` |
-| Testo | `#F0F0FA` |
+| Ruolo    | Colore    |
+| -------- | --------- |
+| Sfondo   | `#0A0A1A` |
+| Card     | `#111128` |
+| Testo    | `#F0F0FA` |
 | Primario | `#22D3EE` |
 
 ## 🛠️ Installazione

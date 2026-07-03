@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
+
+class CorpoCeleste extends Model
+{
+    use HasSlug;
+
+    protected $table = 'corpi_celesti';
+
+    protected $fillable = [
+        'nome',
+        'slug',
+        'categoria_id',
+        'immagine',
+        'descrizione',
+        'tipo',
+        'massa_kg',
+        'distanza_km',
+        'diametro_km',
+        'gravita',
+        'temperatura',
+        'periodo_orbitale',
+        'scopritore',
+        'anno_scoperta',
+        'in_evidenza',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'gravita' => 'decimal:4',
+            'temperatura' => 'decimal:2',
+            'periodo_orbitale' => 'decimal:4',
+            'anno_scoperta' => 'integer',
+            'in_evidenza' => 'boolean',
+        ];
+    }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('nome')
+            ->saveSlugsTo('slug');
+    }
+
+    public function categoria(): BelongsTo
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+
+    public function galleria(): HasMany
+    {
+        return $this->hasMany(GalleriaCorpo::class);
+    }
+
+    public function curiosita(): HasMany
+    {
+        return $this->hasMany(Curiosita::class);
+    }
+
+    public function missioni(): BelongsToMany
+    {
+        return $this->belongsToMany(Missione::class, 'corpo_celeste_missione')
+            ->withPivot('tipo_esplorazione', 'anno_arrivo')
+            ->withTimestamps();
+    }
+}
