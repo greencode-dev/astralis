@@ -20,4 +20,4 @@
 
 ## Commit
 - `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
-- (prossimo) — feat: database e modelli con seeders
+- `0a57208` — feat: database e modelli con seeders
