@@ -44,7 +44,7 @@
 - Vista show con dettagli missione + tabella corpi celesti esplorati
 - Storage dedicato `storage/app/public/missioni/`
 
-### 2.5 — 03/07/2026 — `[non ancora commit]` — feat: CRUD curiosità backoffice
+### 2.5 — 03/07/2026 — `2f8a67e` — feat: CRUD curiosità backoffice
 - CRUD completo Curiosità (index, create, store, edit, update, destroy — senza show)
 - Route resource con parametro `{curiositum}` (singolare latino di "curiosita")
 - Vista index con tabella titolo, corpo celeste (link), descrizione, fonte
