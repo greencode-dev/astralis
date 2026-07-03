@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\CorpoCelesteController;
+use App\Http\Controllers\Admin\CuriositaController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MissioneController;
 use App\Http\Controllers\ProfileController;
@@ -38,6 +39,9 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     ]);
     Route::resource('missioni', MissioneController::class)->parameters([
         'missioni' => 'missione',
+    ]);
+    Route::resource('curiosita', CuriositaController::class)->except(['show'])->parameters([
+        'curiosita' => 'curiositum',
     ]);
 });
 

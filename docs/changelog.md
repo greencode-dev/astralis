@@ -43,9 +43,10 @@
 - Badge stato colorato: Completata (verde), In corso (ciano), Pianificata (giallo)
 - Vista show con dettagli missione + tabella corpi celesti esplorati
 - Storage dedicato `storage/app/public/missioni/`
-- Upload immagini con Intervention Image (resize 800px, max 2MB)
-- Form con 13 campi: nome, categoria (select), tipo, immagine (file), massa, distanza, diametro, gravità, temperatura, periodo orbitale, scopritore, anno, descrizione, in evidenza
-- Vista show dettagliata con 8 card dati scientifici + galleria + curiosità + missioni
-- Storage dedicato `storage/app/public/corpi-celesti/`
-- Route resource con parametro custom `corpoCeleste`
+
+### 2.5 — 03/07/2026 — `[non ancora commit]` — feat: CRUD curiosità backoffice
+- CRUD completo Curiosità (index, create, store, edit, update, destroy — senza show)
+- Route resource con parametro `{curiositum}` (singolare latino di "curiosita")
+- Vista index con tabella titolo, corpo celeste (link), descrizione, fonte
+- Vista create con select corpo celeste, titolo, textarea descrizione, fonte opzionale
 
