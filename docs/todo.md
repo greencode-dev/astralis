@@ -9,7 +9,11 @@
 - [x] Fase 2.4: CRUD Missioni
 - [x] Fase 2.5: CRUD Curiosità
 - [x] Fase 2.6: CRUD Galleria
+
+## Completate
 - [x] Fase 3: API REST (10 endpoint)
+
+## Completate
 - [x] Fase 4: React — Homepage + Sistema solare animato + Lista
 - [x] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore
 

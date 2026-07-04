@@ -106,6 +106,10 @@ npm run dev
 ## 🚀 Accesso
 
 - **Frontend**: `http://localhost:8000`
+  - `/` — Homepage con sistema solare animato
+  - `/corpi-celesti` — Lista con filtri e paginazione
+  - `/corpi-celesti/{slug}` — Dettaglio con metriche, galleria lightbox, missioni, curiosità
+  - `/confronta` — Comparatore pianeti affiancato
 - **Backoffice**: `http://localhost:8000/admin`
 - **Struttura backoffice**:
   - `/admin` — Dashboard con statistiche ✅

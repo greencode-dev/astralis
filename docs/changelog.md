@@ -81,7 +81,7 @@
 
 ## Fase 5 — React Guest Dettaglio, Lightbox, Missioni, Comparatore
 
-### 5.0 — 04/07/2026 — feat: dettaglio corpo celeste, lightbox, timeline missioni, comparatore pianeti
+### 5.0 — 04/07/2026 — `0e18a60` — feat: dettaglio corpo celeste, lightbox, timeline missioni, comparatore pianeti
 - Installato yet-another-react-lightbox per lightbox galleria immagini
 - Creata pagina `CorpoDettaglio.jsx`: hero immagine, metriche scientifiche, scoperta, curiosità
 - Creato componente `LightboxGalleria.jsx`: lightbox con slideshow immagini
