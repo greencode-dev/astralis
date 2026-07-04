@@ -79,6 +79,7 @@ export default function SolarSystem() {
                             height: planet.size,
                             left: -planet.size / 2,
                             top: -planet.orbit - planet.size / 2,
+                            transformOrigin: `${planet.size / 2}px ${planet.orbit + planet.size / 2}px`,
                         }}
                         animate={{ rotate: 360 }}
                         transition={{
