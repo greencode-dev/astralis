@@ -61,7 +61,7 @@
             </nav>
 
             <div class="mt-auto px-3 py-4" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
-                <a href="{{ route('dashboard') }}"
+                <a href="{{ route('home') }}"
                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
                    style="color: #9CA3AF;"
                    onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.08)';"
