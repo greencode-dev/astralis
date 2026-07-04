@@ -17,8 +17,8 @@
 - [x] Fase 4: React — Homepage + Sistema solare animato + Lista
 - [x] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore
 
-## In corso
-- [ ] Fase 6: Documentazione finale, bug fix, live coding
+## Completate
+- [x] Fase 6: Documentazione finale, bug fix, live coding
 
 ## Future implementazioni (da valutare)
 - [ ] Sistema di rating per corpi celesti
