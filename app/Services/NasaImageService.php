@@ -57,25 +57,6 @@ class NasaImageService
         return ['success' => true, 'items' => $items];
     }
 
-    public function getBestImageUrl(array $item): ?string
-    {
-        $preferences = ['canonical', 'alternate', 'preview'];
-
-        foreach ($preferences as $rel) {
-            foreach ($item['links'] ?? [] as $link) {
-                if (($link['rel'] ?? '') === $rel && ($link['render'] ?? '') === 'image') {
-                    $url = $link['href'];
-                    if ($rel === 'canonical') {
-                        return $url;
-                    }
-                    return preg_replace('/~(thumb|small|medium)\./', '~orig.', $url, 1);
-                }
-            }
-        }
-
-        return null;
-    }
-
     public function extractMetadata(array $item): array
     {
         $data = $item['data'][0] ?? [];
@@ -152,9 +133,6 @@ class NasaImageService
                 foreach ($item['links'] ?? [] as $link) {
                     if (($link['rel'] ?? '') === $rel && ($link['render'] ?? '') === 'image') {
                         $imageUrl = $link['href'];
-                        if ($rel !== 'canonical') {
-                            $imageUrl = preg_replace('/~(thumb|small|medium)\./', '~orig.', $imageUrl, 1);
-                        }
                         break;
                     }
                 }

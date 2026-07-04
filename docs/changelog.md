@@ -174,4 +174,5 @@
 
 ### 8.1 — 04/07/2026 — fix: memory limit per immagini NASA grandi + fallback URL per item
 - `NasaImageService.php`: `downloadAndProcess()` ora imposta `memory_limit = 512M` durante il processing, ripristina il valore originale al termine
-- `importForBody()`: per ogni item tenta canonical → alternate → preview prima di passare all'item successivo (fallback URL automatico se ~orig.jpg esaurisce la memoria)
+- `importForBody()`: per ogni item tenta canonical (~orig) → alternate (~small senza conversione) → preview (~thumb senza conversione) prima di passare all'item successivo
+- Rimosso metodo `getBestImageUrl()` (dead code, convertiva ~small/~thumb in ~orig nei fallback)
