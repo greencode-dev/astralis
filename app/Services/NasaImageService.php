@@ -91,7 +91,10 @@ class NasaImageService
 
     public function downloadAndProcess(string $url, string $filename, string $storageDir, int $width, int $height): ?string
     {
+        $previous = ini_get('memory_limit');
         try {
+            ini_set('memory_limit', '512M');
+
             $response = Http::withoutVerifying()
                 ->timeout(30)
                 ->get($url);
@@ -110,6 +113,8 @@ class NasaImageService
             return $filename;
         } catch (\Exception $e) {
             return null;
+        } finally {
+            ini_set('memory_limit', $previous);
         }
     }
 
@@ -131,63 +136,80 @@ class NasaImageService
 
         foreach ($items as $index => $item) {
             $metadata = $this->extractMetadata($item);
-            $imageUrl = $this->getBestImageUrl($item);
-
-            if (!$imageUrl) {
-                continue;
-            }
-
             $nasaId = $metadata['nasa_id'] ?? uniqid();
             $ext = 'jpg';
 
-            if (!$mainImported) {
-                $filename = "{$nasaId}_{$corpo->id}_main.{$ext}";
+            $targetSize = !$mainImported ? 'main' : 'gallery';
+            $width = !$mainImported ? 800 : 1200;
+            $height = !$mainImported ? 800 : 1200;
+            $storageDir = !$mainImported ? 'corpi-celesti' : 'galleria';
 
-                if ($corpo->immagine) {
+            $urlTried = false;
+            $urlSuccess = false;
+
+            foreach (['canonical', 'alternate', 'preview'] as $rel) {
+                $imageUrl = null;
+                foreach ($item['links'] ?? [] as $link) {
+                    if (($link['rel'] ?? '') === $rel && ($link['render'] ?? '') === 'image') {
+                        $imageUrl = $link['href'];
+                        if ($rel !== 'canonical') {
+                            $imageUrl = preg_replace('/~(thumb|small|medium)\./', '~orig.', $imageUrl, 1);
+                        }
+                        break;
+                    }
+                }
+
+                if (!$imageUrl) {
+                    continue;
+                }
+
+                $urlTried = true;
+                $filename = "{$nasaId}_{$corpo->id}_{$targetSize}_{$rel}.{$ext}";
+
+                if ($targetSize === 'main' && $rel === 'canonical' && $corpo->immagine) {
                     Storage::disk('public')->delete('corpi-celesti/' . $corpo->immagine);
                 }
 
-                $result = $this->downloadAndProcess($imageUrl, $filename, 'corpi-celesti', 800, 800);
+                $result = $this->downloadAndProcess($imageUrl, $filename, $storageDir, $width, $height);
 
-                if (!$result) {
-                    $errors[] = "{$corpo->nome}: fallito download immagine principale";
-                    continue;
+                if ($result) {
+                    if ($targetSize === 'main') {
+                        $updateData = ['immagine' => $filename, 'nasa_id' => $nasaId];
+                        if ($updateDescription && $metadata['description']) {
+                            $updateData['descrizione'] = $metadata['description'];
+                        }
+                        $corpo->update($updateData);
+                        $mainImported = true;
+                    } else {
+                        $exists = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)
+                            ->where('percorso', $filename)
+                            ->exists();
+                        if (!$exists) {
+                            GalleriaCorpo::create([
+                                'corpo_celeste_id' => $corpo->id,
+                                'percorso' => $filename,
+                                'didascalia' => $metadata['title'],
+                                'crediti' => $metadata['photographer'],
+                                'ordine' => $galleryImported,
+                            ]);
+                        }
+                        $galleryImported++;
+                    }
+                    $urlSuccess = true;
+                    break;
                 }
+            }
 
-                $updateData = ['immagine' => $filename, 'nasa_id' => $nasaId];
+            if (!$urlTried) {
+                continue;
+            }
 
-                if ($updateDescription && $metadata['description']) {
-                    $updateData['descrizione'] = $metadata['description'];
-                }
+            if (!$urlSuccess) {
+                $label = $targetSize === 'main' ? 'immagine principale' : "immagine galleria #{$galleryImported}";
+                $errors[] = "{$corpo->nome}: fallito download {$label} (tentati canonical, alternate, preview)";
+            }
 
-                $corpo->update($updateData);
-                $mainImported = true;
-            } elseif ($galleryImported < $galleryCount) {
-                $filename = "{$nasaId}_{$corpo->id}_gallery_{$galleryImported}.{$ext}";
-
-                $result = $this->downloadAndProcess($imageUrl, $filename, 'galleria', 1200, 1200);
-
-                if (!$result) {
-                    $errors[] = "{$corpo->nome}: fallito download immagine galleria #{$galleryImported}";
-                    continue;
-                }
-
-                $galleriaCorpo = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)
-                    ->where('percorso', $filename)
-                    ->first();
-
-                if (!$galleriaCorpo) {
-                    GalleriaCorpo::create([
-                        'corpo_celeste_id' => $corpo->id,
-                        'percorso' => $filename,
-                        'didascalia' => $metadata['title'],
-                        'crediti' => $metadata['photographer'],
-                        'ordine' => $galleryImported,
-                    ]);
-                }
-
-                $galleryImported++;
-            } else {
+            if ($mainImported && $galleryImported >= $galleryCount) {
                 break;
             }
         }

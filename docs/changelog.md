@@ -171,3 +171,7 @@
 - `app/Http/Controllers/Admin/NasaImportController.php` — refactor: delega logica a `NasaImageService`, importSingle ora importa anche 3 immagini in galleria
 - `docs/progetto.md` → `docs/documentazione.md`: rinominato, aggiornata sezione NASA Import e guida installazione
 - `README.md`: aggiunto comando `astralis:fetch-nasa` nell'installazione
+
+### 8.1 — 04/07/2026 — fix: memory limit per immagini NASA grandi + fallback URL per item
+- `NasaImageService.php`: `downloadAndProcess()` ora imposta `memory_limit = 512M` durante il processing, ripristina il valore originale al termine
+- `importForBody()`: per ogni item tenta canonical → alternate → preview prima di passare all'item successivo (fallback URL automatico se ~orig.jpg esaurisce la memoria)
