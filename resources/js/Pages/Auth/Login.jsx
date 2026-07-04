@@ -95,6 +95,18 @@ export default function Login({ status, canResetPassword }) {
                     </PrimaryButton>
                 </div>
             </form>
+
+            <div className="mt-6 text-center">
+                <span className="text-sm text-[#B8B8D0]">
+                    Don't have an account?{' '}
+                </span>
+                <Link
+                    href={route('register')}
+                    className="rounded-md text-sm text-[#22D3EE] underline hover:text-[#1BB8D1] focus:outline-none focus:ring-2 focus:ring-[#22D3EE] focus:ring-offset-2 focus:ring-offset-[#111128]"
+                >
+                    Register
+                </Link>
+            </div>
         </GuestLayout>
     );
 }

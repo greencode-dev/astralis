@@ -28,8 +28,9 @@ _Nessuna attività in corso._
 ### Priorità Alta
 
 **UI/UX**
-- [ ] Adattare pagine login e register allo stile scuro dell'app (GuestLayout, auth pages)
-- [ ] Controllare e uniformare tutte le pagine dell'app allo stile del tema scuro
+- [x] Adattare pagine login e register allo stile scuro dell'app (GuestLayout, auth pages)
+- [x] Controllare e uniformare tutte le pagine dell'app allo stile del tema scuro
+- [ ] Aggiungere link "Register" su Login page per chi non ha account
 
 **Sistema Solare**
 - [ ] Ridurre la velocità di rotazione dei pianeti
