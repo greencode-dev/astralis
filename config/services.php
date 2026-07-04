@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'nasa' => [
+        'key' => env('NASA_API_KEY'),
+    ],
+
 ];

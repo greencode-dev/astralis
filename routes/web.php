@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CuriositaController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleriaController;
 use App\Http\Controllers\Admin\MissioneController;
+use App\Http\Controllers\Admin\NasaImportController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,8 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     Route::resource('galleria', GalleriaController::class)->except(['show'])->parameters([
         'galleria' => 'galleriaCorpo',
     ]);
+    Route::get('nasa-import', [NasaImportController::class, 'index'])->name('nasa-import.index');
+    Route::post('nasa-import/{corpoCeleste}', [NasaImportController::class, 'import'])->name('nasa-import.import');
 });
 
 require __DIR__.'/auth.php';
