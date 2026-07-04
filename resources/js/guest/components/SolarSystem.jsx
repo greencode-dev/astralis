@@ -71,14 +71,14 @@ export default function SolarSystem() {
                         }}
                     />
 
-                    {/* Pianeta in orbita */}
+                    {/* Pianeta in orbita (con etichetta solidale) */}
                     <motion.div
                         className="absolute"
                         style={{
                             width: planet.size,
-                            height: planet.size,
+                            height: planet.size + 20,
                             left: -planet.size / 2,
-                            top: -planet.orbit - planet.size / 2,
+                            top: -planet.orbit - planet.size / 2 - 20,
                             transformOrigin: `${planet.size / 2}px ${planet.orbit + planet.size / 2}px`,
                         }}
                         animate={{ rotate: 360 }}
@@ -88,6 +88,7 @@ export default function SolarSystem() {
                             ease: 'linear',
                         }}
                     >
+                        {/* Pallino pianeta */}
                         <motion.div
                             className="rounded-full"
                             style={{
@@ -98,21 +99,26 @@ export default function SolarSystem() {
                             }}
                             whileHover={{ scale: 1.5 }}
                         />
+                        {/* Etichetta (contro-rotante per restare leggibile) */}
+                        <motion.div
+                            className="absolute text-xs"
+                            style={{
+                                color: '#7A7A9A',
+                                left: -12,
+                                top: planet.size + 4,
+                                width: 24,
+                                textAlign: 'center',
+                            }}
+                            animate={{ rotate: -360 }}
+                            transition={{
+                                duration: planet.speed * 4,
+                                repeat: Infinity,
+                                ease: 'linear',
+                            }}
+                        >
+                            {planet.name}
+                        </motion.div>
                     </motion.div>
-
-                    {/* Etichetta pianeta (sotto la posizione iniziale) */}
-                    <div
-                        className="absolute text-xs"
-                        style={{
-                            color: '#7A7A9A',
-                            left: -20,
-                            top: planet.orbit - 8,
-                            width: 40,
-                            textAlign: 'center',
-                        }}
-                    >
-                        {planet.name}
-                    </div>
                 </div>
             ))}
         </div>
