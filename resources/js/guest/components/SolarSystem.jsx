@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useEffect } from 'react';
 
 const planets = [
     { name: 'Mercurio', size: 8, orbit: 50, color: '#94A3B8', speed: 4 },
@@ -10,6 +11,59 @@ const planets = [
     { name: 'Urano', size: 14, orbit: 200, color: '#67E8F9', speed: 1.5 },
     { name: 'Nettuno', size: 14, orbit: 230, color: '#3B82F6', speed: 1.2 },
 ];
+
+function Planet({ planet }) {
+    const angle = useMotionValue(0);
+
+    useEffect(() => {
+        const controls = animate(angle, 360, {
+            duration: planet.speed * 4,
+            repeat: Infinity,
+            ease: 'linear',
+        });
+        return controls.stop;
+    }, []);
+
+    const rad = useTransform(angle, a => (a * Math.PI) / 180);
+    const x = useTransform(rad, r => Math.sin(r) * planet.orbit);
+    const y = useTransform(rad, r => -Math.cos(r) * planet.orbit);
+
+    return (
+        <motion.div
+            className="absolute"
+            style={{
+                x,
+                y,
+                left: -planet.size / 2,
+                top: -planet.size / 2,
+            }}
+        >
+            <motion.div
+                className="rounded-full"
+                style={{
+                    width: planet.size,
+                    height: planet.size,
+                    backgroundColor: planet.color,
+                    boxShadow: `0 0 15px ${planet.color}40`,
+                }}
+                whileHover={{ scale: 1.5 }}
+            />
+            <div
+                className="absolute text-xs"
+                style={{
+                    color: '#7A7A9A',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    top: planet.size + 4,
+                    width: 50,
+                    textAlign: 'center',
+                }}
+            >
+                {planet.name}
+            </div>
+        </motion.div>
+    );
+}
 
 export default function SolarSystem() {
     return (
@@ -56,70 +110,24 @@ export default function SolarSystem() {
                 </div>
             </div>
 
-            {/* Orbite e pianeti */}
-            {planets.map((planet, index) => (
-                <div key={planet.name} className="absolute" style={{ zIndex: 5 }}>
-                    {/* Cerchio orbita */}
-                    <div
-                        className="absolute rounded-full"
-                        style={{
-                            width: planet.orbit * 2,
-                            height: planet.orbit * 2,
-                            border: '1px solid rgba(34, 211, 238, 0.08)',
-                            left: -planet.orbit,
-                            top: -planet.orbit,
-                        }}
-                    />
+            {/* Orbite */}
+            {planets.map(planet => (
+                <div
+                    key={planet.name}
+                    className="absolute rounded-full"
+                    style={{
+                        width: planet.orbit * 2,
+                        height: planet.orbit * 2,
+                        border: '1px solid rgba(34, 211, 238, 0.08)',
+                        left: -planet.orbit,
+                        top: -planet.orbit,
+                    }}
+                />
+            ))}
 
-                    {/* Pianeta in orbita (con etichetta solidale) */}
-                    <motion.div
-                        className="absolute"
-                        style={{
-                            width: planet.size,
-                            height: planet.size + 20,
-                            left: -planet.size / 2,
-                            top: -planet.orbit - planet.size / 2 - 20,
-                            transformOrigin: `${planet.size / 2}px ${planet.orbit + planet.size / 2}px`,
-                        }}
-                        animate={{ rotate: 360 }}
-                        transition={{
-                            duration: planet.speed * 4,
-                            repeat: Infinity,
-                            ease: 'linear',
-                        }}
-                    >
-                        {/* Pallino pianeta */}
-                        <motion.div
-                            className="rounded-full"
-                            style={{
-                                width: planet.size,
-                                height: planet.size,
-                                backgroundColor: planet.color,
-                                boxShadow: `0 0 15px ${planet.color}40`,
-                            }}
-                            whileHover={{ scale: 1.5 }}
-                        />
-                        {/* Etichetta (contro-rotante per restare leggibile) */}
-                        <motion.div
-                            className="absolute text-xs"
-                            style={{
-                                color: '#7A7A9A',
-                                left: -12,
-                                top: planet.size + 4,
-                                width: 24,
-                                textAlign: 'center',
-                            }}
-                            animate={{ rotate: -360 }}
-                            transition={{
-                                duration: planet.speed * 4,
-                                repeat: Infinity,
-                                ease: 'linear',
-                            }}
-                        >
-                            {planet.name}
-                        </motion.div>
-                    </motion.div>
-                </div>
+            {/* Pianeti */}
+            {planets.map(planet => (
+                <Planet key={planet.name} planet={planet} />
             ))}
         </div>
     );
