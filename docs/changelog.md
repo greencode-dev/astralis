@@ -78,3 +78,15 @@
 - Pagina lista corpi celesti con griglia, filtri (categoria, tipo, ricerca), paginazione
 - Dipendenze: framer-motion, react-router-dom, lucide-react, axios
 - Route `/` guest sostituisce Welcome Inertia
+
+## Fase 5 — React Guest Dettaglio, Lightbox, Missioni, Comparatore
+
+### 5.0 — 04/07/2026 — feat: dettaglio corpo celeste, lightbox, timeline missioni, comparatore pianeti
+- Installato yet-another-react-lightbox per lightbox galleria immagini
+- Creata pagina `CorpoDettaglio.jsx`: hero immagine, metriche scientifiche, scoperta, curiosità
+- Creato componente `LightboxGalleria.jsx`: lightbox con slideshow immagini
+- Creato componente `TimelineMissioni.jsx`: timeline orizzontale missioni con indicatori
+- Creata pagina `Comparatore.jsx`: selezione due pianeti, tabella confronto metriche
+- Route aggiunte: `/corpi-celesti/:slug` → dettaglio, `/confronta` → comparatore
+- Link a comparatore dalla sidebar dettaglio (solo per categoria Pianeta)
+- Corpi simili nella sezione finale del dettaglio

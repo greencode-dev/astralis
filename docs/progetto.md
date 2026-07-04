@@ -117,32 +117,40 @@ Il frontend guest è una React SPA standalone (senza Inertia) che comunica con i
 **Struttura app React:**
 ```
 resources/js/guest/
-├── main.jsx                ← Entry point Vite
-├── apiClient.js            ← Helper axios per chiamate API
-├── App.jsx                 ← Router + layout wrapper
+├── main.jsx                    ← Entry point Vite
+├── apiClient.js                ← Helper axios per chiamate API
+├── App.jsx                     ← Router + layout wrapper (4 route)
 ├── components/
-│   ├── Navbar.jsx          ← Navigazione guest (logo + links)
-│   ├── Footer.jsx          ← Footer tema spazio
-│   ├── SolarSystem.jsx     ← Sistema solare animato (framer-motion)
-│   ├── CorpoCard.jsx       ← Card corpo celeste
-│   ├── CategoriaBadge.jsx  ← Badge colorato per categoria
-│   └── SearchBar.jsx       ← Barra ricerca
+│   ├── Navbar.jsx              ← Navigazione guest (logo + links)
+│   ├── Footer.jsx              ← Footer tema spazio
+│   ├── SolarSystem.jsx         ← Sistema solare animato (framer-motion)
+│   ├── CorpoCard.jsx           ← Card con fallback gradiente+icona
+│   ├── CategoriaBadge.jsx      ← Badge colorato per categoria
+│   ├── SearchBar.jsx           ← Barra ricerca
+│   ├── LightboxGalleria.jsx    ← Lightbox immagini (yet-another-react-lightbox)
+│   └── TimelineMissioni.jsx    ← Timeline orizzontale missioni
 └── pages/
-    ├── HomePage.jsx        ← Hero + sistema solare + in evidenza
-    └── CorpiLista.jsx      ← Griglia + filtri + paginazione
+    ├── HomePage.jsx            ← Hero + sistema solare + in evidenza
+    ├── CorpiLista.jsx          ← Griglia + filtri + paginazione
+    ├── CorpoDettaglio.jsx      ← Dettaglio con metriche, galleria, curiosità, missioni, simili
+    └── Comparatore.jsx         ← Confronto pianeti affiancato
 ```
 
 **Route pubbliche:**
 ```
 /                  → HomePage
 /corpi-celesti     → CorpiLista (con filtri)
-/corpi-celesti/:slug → Dettaglio (Fase 5)
+/corpi-celesti/:slug → CorpoDettaglio (metriche, galleria lightbox, curiosità, missioni, simili)
+/confronta         → Comparatore (confronto pianeti, parametri ?primo=slug&secondo=slug)
 ```
 
 **API utilizzate:**
 - `GET /api/corpi-celesti?in_evidenza=1` — Corpi in evidenza (Homepage)
 - `GET /api/corpi-celesti?categoria=...&tipo=...&search=...&page=N` — Lista filtrata
 - `GET /api/categorie` — Lista categorie (filtri)
+- `GET /api/corpi-celesti/{slug}` — Dettaglio con relazioni (galleria, curiosità, missioni)
+- `GET /api/corpi-celesti/{id}/simili` — Corpi della stessa categoria
+- `GET /api/corpi-celesti?categoria=pianeta&per_page=100` — Lista pianeti per comparatore
 
 ### Backoffice Admin
 

@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import CorpiLista from './pages/CorpiLista';
+import CorpoDettaglio from './pages/CorpoDettaglio';
+import Comparatore from './pages/Comparatore';
 
 export default function App() {
     return (
@@ -13,6 +15,8 @@ export default function App() {
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/corpi-celesti" element={<CorpiLista />} />
+                        <Route path="/corpi-celesti/:slug" element={<CorpoDettaglio />} />
+                        <Route path="/confronta" element={<Comparatore />} />
                     </Routes>
                 </main>
                 <Footer />
