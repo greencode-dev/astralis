@@ -27,10 +27,6 @@ Homestead.yaml
 Thumbs.db
 nul
 
-# Astralis project files
-/.ai/
-/docs/session.log
-
 # Laravel bootstrap cache
 /bootstrap/cache/*.php
 
@@ -38,6 +34,7 @@ nul
 /bootstrapcache/
 
 # AI tooling config files (dev-local, not part of the project)
+/.ai/
 /.opencode/
 /graphify-out/
 /AGENTS.md
