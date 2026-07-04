@@ -42,6 +42,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
         'galleria' => 'galleriaCorpo',
     ]);
     Route::get('nasa-import', [NasaImportController::class, 'index'])->name('nasa-import.index');
+    Route::post('nasa-import/import-all', [NasaImportController::class, 'importAll'])->name('nasa-import.import-all');
     Route::post('nasa-import/{corpoCeleste}', [NasaImportController::class, 'import'])->name('nasa-import.import');
 });
 

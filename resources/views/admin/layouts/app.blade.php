@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css'])
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>[x-cloak] { display: none !important; }</style>
 </head>
 <body class="font-sans antialiased" style="background-color: #0A0A1A; color: #F0F0FA;">
     <div class="flex h-screen overflow-hidden">

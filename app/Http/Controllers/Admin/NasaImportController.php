@@ -5,14 +5,29 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\CorpoCeleste;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Intervention\Image\Laravel\Facades\Image;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class NasaImportController extends Controller
 {
+    private array $nameMap = [
+        'Cerere'   => 'Ceres',
+        'Terra'    => 'Earth',
+        'Marte'    => 'Mars',
+        'Giove'    => 'Jupiter',
+        'Saturno'  => 'Saturn',
+        'Urano'    => 'Uranus',
+        'Nettuno'  => 'Neptune',
+        'Venere'   => 'Venus',
+        'Mercurio' => 'Mercury',
+        'Luna'     => 'Moon',
+        'Sole'     => 'Sun',
+        'Via Lattea' => 'Milky Way',
+    ];
+
     public function index(): View
     {
         $corpi = CorpoCeleste::with('categoria')
@@ -24,22 +39,59 @@ class NasaImportController extends Controller
 
     public function import(CorpoCeleste $corpoCeleste): RedirectResponse
     {
-        $nome = $corpoCeleste->nome;
+        $result = $this->importSingle($corpoCeleste);
+        $key = $result['success'] ? 'success' : 'error';
+        return redirect()->route('admin.nasa-import.index')->with($key, $result['message']);
+    }
 
-        $response = Http::get('https://images-api.nasa.gov/search', [
-            'q' => $nome,
+    public function importAll(): RedirectResponse
+    {
+        $corpi = CorpoCeleste::all();
+        $successCount = 0;
+        $errors = [];
+
+        foreach ($corpi as $corpo) {
+            $result = $this->importSingle($corpo);
+            if ($result['success']) {
+                $successCount++;
+            } else {
+                $errors[] = $result['message'];
+            }
+        }
+
+        $total = $corpi->count();
+
+        if ($successCount === $total) {
+            return redirect()->route('admin.nasa-import.index')
+                ->with('success', "Tutte le {$total} immagini sono state importate con successo.");
+        }
+
+        if ($successCount === 0) {
+            return redirect()->route('admin.nasa-import.index')
+                ->with('error', 'Nessuna immagine importata. Errori: ' . implode(' | ', array_slice($errors, 0, 5)) . (count($errors) > 5 ? ' (e altri ' . (count($errors) - 5) . ')' : ''));
+        }
+
+        return redirect()->route('admin.nasa-import.index')
+            ->with('warning', "Importate {$successCount} su {$total} immagini. Errori: " . implode(' | ', array_slice($errors, 0, 5)) . (count($errors) > 5 ? ' (e altri ' . (count($errors) - 5) . ')' : ''));
+    }
+
+    private function importSingle(CorpoCeleste $corpoCeleste): array
+    {
+        $nome = $corpoCeleste->nome;
+        $searchName = $this->nameMap[$nome] ?? $nome;
+
+        $response = Http::withoutVerifying()->get('https://images-api.nasa.gov/search', [
+            'q' => $searchName,
             'media_type' => 'image',
         ]);
 
         if ($response->failed()) {
-            return redirect()->route('admin.nasa-import.index')
-                ->with('error', 'Errore di connessione a NASA API per "' . $nome . '".');
+            return ['success' => false, 'message' => 'Errore di connessione a NASA API per "' . $nome . '".'];
         }
 
         $items = $response->json('collection.items');
         if (empty($items)) {
-            return redirect()->route('admin.nasa-import.index')
-                ->with('error', 'Nessuna immagine trovata per "' . $nome . '".');
+            return ['success' => false, 'message' => 'Nessuna immagine trovata per "' . $nome . '".'];
         }
 
         $imageUrl = null;
@@ -55,14 +107,16 @@ class NasaImportController extends Controller
         }
 
         if (!$imageUrl) {
-            return redirect()->route('admin.nasa-import.index')
-                ->with('error', 'Nessun URL immagine valido trovato per "' . $nome . '".');
+            return ['success' => false, 'message' => 'Nessun URL immagine valido trovato per "' . $nome . '".'];
         }
 
-        $imageResponse = Http::timeout(30)->get($imageUrl);
+        $origUrl = preg_replace('/~(thumb|small)\./', '~orig.', $imageUrl, 1);
+        $imageResponse = Http::withoutVerifying()->timeout(30)->get($origUrl);
         if ($imageResponse->failed()) {
-            return redirect()->route('admin.nasa-import.index')
-                ->with('error', 'Impossibile scaricare l\'immagine per "' . $nome . '".');
+            $imageResponse = Http::withoutVerifying()->timeout(30)->get($imageUrl);
+            if ($imageResponse->failed()) {
+                return ['success' => false, 'message' => 'Impossibile scaricare l\'immagine per "' . $nome . '".'];
+            }
         }
 
         if ($corpoCeleste->immagine) {
@@ -72,17 +126,19 @@ class NasaImportController extends Controller
         $extension = 'jpg';
         $filename = time() . '_' . uniqid() . '.' . $extension;
 
-        $img = Image::read($imageResponse->body());
-        $img->resize(800, 800, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
+        try {
+            $manager = new ImageManager(new Driver());
+            $img = $manager->decodeBinary($imageResponse->body());
+            $img->scaleDown(width: 800, height: 800);
 
-        Storage::disk('public')->put('corpi-celesti/' . $filename, $img->encode());
+            Storage::disk('public')->put('corpi-celesti/' . $filename, $img->encode());
+        } catch (\Exception $e) {
+            Storage::disk('public')->delete('corpi-celesti/' . $filename);
+            return ['success' => false, 'message' => 'Errore durante l\'elaborazione dell\'immagine per "' . $nome . '": ' . $e->getMessage()];
+        }
 
         $corpoCeleste->update(['immagine' => $filename]);
 
-        return redirect()->route('admin.nasa-import.index')
-            ->with('success', 'Immagine importata con successo per "' . $nome . '".');
+        return ['success' => true, 'message' => 'Immagine importata con successo per "' . $nome . '".'];
     }
 }

@@ -9,7 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Intervention\Image\Laravel\Facades\Image;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class CorpoCelesteController extends Controller
 {
@@ -124,11 +125,8 @@ class CorpoCelesteController extends Controller
     {
         $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-        $img = Image::read($file->getRealPath());
-        $img->resize(800, 800, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
+        $img = (new ImageManager(new Driver()))->decodePath($file->getRealPath());
+        $img->scaleDown(width: 800, height: 800);
 
         Storage::disk('public')->put('corpi-celesti/' . $filename, $img->encode());
 

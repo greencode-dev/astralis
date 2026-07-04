@@ -17,8 +17,10 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 
 - Autenticazione con Laravel Breeze
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
-- Upload di immagini con Intervention
+- Upload di immagini con Intervention Image v4
+- NASA Import: importa immagini da NASA API (singolo o massivo con Force Import All)
 - Dashboard con statistiche
+- Dark theme (`#0A0A1A`, `#111128`, `#22D3EE`)
 
 ### 🌟 Frontend (React + Vite)
 
@@ -73,6 +75,8 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 | Card     | `#111128` |
 | Testo    | `#F0F0FA` |
 | Primario | `#22D3EE` |
+| Secondario | `#A855F7` |
+| Accento | `#F97316` |
 
 ## 🛠️ Installazione
 

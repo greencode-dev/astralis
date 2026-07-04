@@ -1,7 +1,11 @@
 # Bug Tracker
 
 ## Aperti
-_Nessun bug aperto al momento_
+
+### [08] x_cloak visibile durante caricamento Alpine.js — 04/07/2026
+- **Descrizione**: Se Alpine.js CDN tarda a caricare, il contenuto con `x-cloak` potrebbe essere visibile brevemente (FOUC)
+- **Causa**: Style `[x-cloak] { display: none !important; }` è inline nel `<head>` e dovrebbe risolvere, ma se il CDN fallisce completamente il contenuto rimane nascosto
+- **Soluzione**: Già applicata con style inline. Se il problema persiste, valutare fallback: rimuovere `x-cloak` e usare `x-init` per mostrare il modale solo dopo che Alpine è caricato.
 
 ## Risolti
 
@@ -55,3 +59,27 @@ _Nessun bug aperto al momento_
 - **Causa**: Il pacchetto v4 non supporta vendor:publish per il config
 - **Soluzione**: Copiato manualmente `config/sluggable.php` da vendor
 - **Fixato in**: Fase 3.0 (commit 24e24dc)
+
+### [07] Profile: Link Inertia intercetta navigazione Blade — 04/07/2026
+- **Descrizione**: Cliccando "Torna all'admin" dalla pagina profilo, Inertia intercepta il link `/admin` invece di lasciarlo gestire dal backend Blade
+- **Causa**: Componente React `<Link href="/admin">` di Inertia — Inertia gestisce solo le proprie route; `/admin` è una route Blade, non Inertia
+- **Soluzione**: Sostituito `<Link href="/admin">` con `<a href="/admin">` in `Profile/Edit.jsx`
+- **Fixato in**: Fase 7.0
+
+### [08] NASA Import: nomi italiani danno 0 risultati — 04/07/2026
+- **Descrizione**: Cercando "Cerere" su NASA API si ottengono 0 risultati; "Ceres" (inglese) funziona
+- **Causa**: NASA Image API accetta solo nomi in inglese; il DB salva i nomi in italiano
+- **Soluzione**: Aggiunto array `$nameMap` nel controller per mappare nomi italiano→inglese
+- **Fixato in**: Fase 7.1
+
+### [09] NASA Import: cURL error 60 su Windows — 04/07/2026
+- **Descrizione**: `Http::get()` verso NASA API fallisce su Windows con errore SSL "certificate verify failed"
+- **Causa**: Configurazione certificati CA incompleta su ambiente Windows locale
+- **Soluzione**: Aggiunto `->withoutVerifying()` a tutte le chiamate HTTP verso NASA API
+- **Fixato in**: Fase 7.2
+
+### [10] Intervention Image v3 facade deprecata in v4 — 04/07/2026
+- **Descrizione**: 4 controller usano `Intervention\Image\Laravel\Facades\Image` che non esiste più in v4
+- **Causa**: Il progetto usa `intervention/image: 4.1.5` che ha API completamente diversa da v3; `Image::read()` è stato rinominato in `decodeBinary()`/`decodePath()`, `resize(closure)` non esiste più, va usato `scaleDown()`
+- **Soluzione**: Sostituita facade con `ImageManager(new Driver())`, metodi `decodeBinary()`/`decodePath()` per leggere, `scaleDown(width: N, height: N)` per ridimensionamento
+- **Fixato in**: Fase 7.3

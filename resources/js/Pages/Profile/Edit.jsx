@@ -1,4 +1,4 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import DeleteUserForm from './Partials/DeleteUserForm';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm';
@@ -12,7 +12,7 @@ export default function Edit({ mustVerifyEmail, status }) {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-2xl font-bold" style={{ color: '#F0F0FA' }}>Profilo</h1>
-                    <Link
+                    <a
                         href="/admin"
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                         style={{ backgroundColor: 'rgba(34, 211, 238, 0.15)', color: '#22D3EE' }}
@@ -23,7 +23,7 @@ export default function Edit({ mustVerifyEmail, status }) {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
                         Torna all'admin
-                    </Link>
+                    </a>
                 </div>
 
                 <div className="space-y-6">

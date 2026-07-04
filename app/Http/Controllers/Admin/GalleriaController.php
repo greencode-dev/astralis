@@ -9,7 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Intervention\Image\Laravel\Facades\Image;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class GalleriaController extends Controller
 {
@@ -93,11 +94,8 @@ class GalleriaController extends Controller
     {
         $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-        $img = Image::read($file->getRealPath());
-        $img->resize(1200, 1200, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
+        $img = (new ImageManager(new Driver()))->decodePath($file->getRealPath());
+        $img->scaleDown(width: 1200, height: 1200);
 
         Storage::disk('public')->put('galleria/' . $filename, $img->encode());
 

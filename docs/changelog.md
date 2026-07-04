@@ -90,3 +90,68 @@
 - Route aggiunte: `/corpi-celesti/:slug` → dettaglio, `/confronta` → comparatore
 - Link a comparatore dalla sidebar dettaglio (solo per categoria Pianeta)
 - Corpi simili nella sezione finale del dettaglio
+
+## Fase 6 — Fix sistema solare, NASA Import, Profilo, Documentazione
+
+### 6.0 — 04/07/2026 — `45e01ad` — docs: Fase 6 completata
+- Documentazione finale aggiornata
+
+### 6.1 — 04/07/2026 — `fde7aaf` — fix: orbita pianeti - transformOrigin centrato sul Sole
+- Primo tentativo: centrare rotazione pianeti sul Sole via CSS transformOrigin
+- Risultato: orbite circolari ma etichette e dettagli ruotano con i pianeti
+
+### 6.2 — 04/07/2026 — `a6e612a` — fix: etichette pianeti solidali e contro-rotanti nell orbita
+- Secondo tentativo: contro-rotazione delle etichette per mantenerle dritte
+- Parziale: etichette leggibili ma posizionamento non preciso
+
+### 6.3 — 04/07/2026 — `4e354ea` — fix: orbita pianeti con useMotionValue/useTransform
+- Riscrittura completa: orbite matematiche con seno/coseno invece di rotate CSS
+- `useMotionValue` + `useTransform` per calcolare coordinate x/y in tempo reale
+- Testo delle etichette sempre dritto (nessuna contro-rotazione necessaria)
+
+### 6.4 — 04/07/2026 — `196dd15` — fix: orbite e pianeti allineati al Sole
+- Wrapper coordinate comune per allineare perfettamente orbite e pianeti al centro del Sole
+- Sistema solare completamente funzionante: 8 pianeti orbitano con etichette leggibili
+
+### 6.5 — 04/07/2026 — `aed8789` — feat: NASA Import da API nel backoffice
+- `NasaImportController.php` — index (tabella corpi con badge Presenza/Assente) + import (cerca su NASA API, scarica, salva)
+- Vista `resources/views/admin/nasa-import/index.blade.php` — tabella con bottoni "Importa da NASA" (ciano) e "Forza import" (arancione)
+- Route GET `admin/nasa-import` e POST `admin/nasa-import/{corpoCeleste}`
+- Voce sidebar "NASA Import" con icona refresh
+- `config/services.php` — array `nasa.key` da `.env`
+
+### 6.6 — 04/07/2026 — `c82001d` — fix: /dashboard reindirizza a /admin, Torna al sito alla home guest
+- Route `/dashboard` (Inertia) → redirect a `/admin`
+- Link "Torna al sito" nella sidebar admin → `route('home')` (guest SPA)
+
+### 6.7 — 04/07/2026 — `5ade134` — feat: link Profilo nella sidebar admin
+- Aggiunto link "Profilo" nella sidebar admin sotto "Torna al sito"
+- Icona User per il link profilo
+
+### 6.8 — 04/07/2026 — `aa1ff42` — feat: pagine profilo adattate al tema scuro
+- `Profile/Edit.jsx` — nuovo layout dark (sfondo `#0A0A1A`, card `#111128`), link "Torna all'admin"
+- 3 partials aggiornati: label italiane (Nome, Password Attuale, Elimina Account...)
+- Shared components restilizzati: TextInput (dark), InputLabel (`#B8B8D0`), PrimaryButton (cyan), SecondaryButton (dark), Modal (dark)
+
+## Fase 7 — Bugfix Intervention Image v4, NASA Import Force All, Documentazione
+
+### 7.0 — 04/07/2026 — fix: Profile navigation — Link Inertia → a tag per href esterno
+- `resources/js/Pages/Profile/Edit.jsx`: sostituito `<Link href="/admin">` con `<a href="/admin">` per evitare che Inertia intercetti la navigazione verso pagine Blade
+
+### 7.1 — 04/07/2026 — fix: NASA Import — mappatura nomi italiano→inglese
+- `NasaImportController.php`: aggiunto array `$nameMap` (Cerere→Ceres, Terra→Earth, ecc.) per cercare nomi inglesi su NASA API
+
+### 7.2 — 04/07/2026 — fix: SSL cURL error 60 su Windows
+- `NasaImportController.php`: aggiunto `->withoutVerifying()` a tutte e 3 le chiamate HTTP verso NASA API
+
+### 7.3 — 04/07/2026 — fix: Intervention Image v3→v4 API migration
+- `CorpoCelesteController.php`: `read($file->getRealPath())` → `decodePath($file->getRealPath())`, `resize(closure)` → `scaleDown(width: 800, height: 800)`
+- `MissioneController.php`: stesso fix, `scaleDown(width: 300, height: 300)`
+- `GalleriaController.php`: stesso fix, `scaleDown(width: 1200, height: 1200)`
+- `NasaImportController.php`: `Image::read()` → `ImageManager(new Driver())->decodeBinary()`
+
+### 7.4 — 04/07/2026 — feat: Force Import All con Alpine.js modal
+- `NasaImportController.php`: estratto metodo privato `importSingle()`, refactor `import()` per riutilizzo, aggiunto metodo `importAll()` che processa tutti i corpi celesti
+- `routes/web.php`: aggiunta route POST `nasa-import/import-all`
+- `resources/views/admin/nasa-import/index.blade.php`: bottone "Force Import All" (#F97316), modale conferma Alpine.js (`x-data`, `x-show`, `x-cloak`, `@click.away`), blocco `session('warning')` per risultati misti
+- `resources/views/admin/layouts/app.blade.php`: aggiunto Alpine.js CDN + style `[x-cloak]`

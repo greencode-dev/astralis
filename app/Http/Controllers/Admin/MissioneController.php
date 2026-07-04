@@ -8,7 +8,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Intervention\Image\Laravel\Facades\Image;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class MissioneController extends Controller
 {
@@ -106,11 +107,8 @@ class MissioneController extends Controller
     {
         $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-        $img = Image::read($file->getRealPath());
-        $img->resize(300, 300, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
+        $img = (new ImageManager(new Driver()))->decodePath($file->getRealPath());
+        $img->scaleDown(width: 300, height: 300);
 
         Storage::disk('public')->put('missioni/' . $filename, $img->encode());
 
