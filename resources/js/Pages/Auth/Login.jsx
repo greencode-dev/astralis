@@ -80,31 +80,36 @@ export default function Login({ status, canResetPassword }) {
                     </label>
                 </div>
 
-                <div className="mt-4 flex items-center justify-end">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="rounded-md text-sm text-[#22D3EE] underline hover:text-[#1BB8D1] focus:outline-none focus:ring-2 focus:ring-[#22D3EE] focus:ring-offset-2 focus:ring-offset-[#111128]"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <PrimaryButton className="ms-4" disabled={processing}>
+                <div className="mt-6 flex justify-center">
+                    <PrimaryButton className="w-full sm:w-auto" disabled={processing}>
                         Log in
                     </PrimaryButton>
                 </div>
             </form>
 
-            <div className="mt-6 text-center">
-                <span className="text-sm text-[#B8B8D0]">
-                    Don't have an account?{' '}
-                </span>
+            <div className="relative my-6">
+                <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-[#242450]"></div>
+                </div>
+            </div>
+
+            <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center sm:gap-1">
+                {canResetPassword && (
+                    <Link
+                        href={route('password.request')}
+                        className="text-sm text-[#B8B8D0] underline hover:text-[#22D3EE] focus:outline-none focus:ring-2 focus:ring-[#22D3EE] focus:ring-offset-2 focus:ring-offset-[#111128]"
+                    >
+                        Forgot password?
+                    </Link>
+                )}
+                {canResetPassword && (
+                    <span className="hidden text-[#242450] sm:inline">·</span>
+                )}
                 <Link
                     href={route('register')}
-                    className="rounded-md text-sm text-[#22D3EE] underline hover:text-[#1BB8D1] focus:outline-none focus:ring-2 focus:ring-[#22D3EE] focus:ring-offset-2 focus:ring-offset-[#111128]"
+                    className="text-sm text-[#B8B8D0] underline hover:text-[#22D3EE] focus:outline-none focus:ring-2 focus:ring-[#22D3EE] focus:ring-offset-2 focus:ring-offset-[#111128]"
                 >
-                    Register
+                    Don't have an account? Register
                 </Link>
             </div>
         </GuestLayout>
