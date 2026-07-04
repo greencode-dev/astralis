@@ -15,7 +15,7 @@ class CorpoCelesteResource extends JsonResource
             'nome' => $this->nome,
             'slug' => $this->slug,
             'categoria' => new CategoriaResource($this->whenLoaded('categoria')),
-            'immagine_url' => $this->immagine ? Storage::url('corpi-celesti/' . $this->immagine) : null,
+            'immagine_url' => $this->immagine && Storage::exists('corpi-celesti/' . $this->immagine) ? Storage::url('corpi-celesti/' . $this->immagine) : null,
             'descrizione' => $this->descrizione,
             'tipo' => $this->tipo,
             'massa_kg' => $this->massa_kg,

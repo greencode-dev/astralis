@@ -1,8 +1,33 @@
 import { Link } from 'react-router-dom';
+import { Globe, Sun, Moon, Star, Stars, Sparkles, Orbit, Asterisk } from 'lucide-react';
 import CategoriaBadge from './CategoriaBadge';
+
+const categoryIcons = {
+    'Pianeta': Globe,
+    'Stella': Sun,
+    'Luna': Moon,
+    'Galassia': Stars,
+    'Nebulosa': Sparkles,
+    'Asteroide': Asterisk,
+    'Cometa': Star,
+    'Pianeta Nano': Orbit,
+};
+
+const categoryGradients = {
+    'Pianeta': 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
+    'Stella': 'linear-gradient(135deg, #F97316, #FB923C)',
+    'Luna': 'linear-gradient(135deg, #64748B, #94A3B8)',
+    'Galassia': 'linear-gradient(135deg, #7C3AED, #A855F7)',
+    'Nebulosa': 'linear-gradient(135deg, #DB2777, #F472B6)',
+    'Asteroide': 'linear-gradient(135deg, #57534E, #78716C)',
+    'Cometa': 'linear-gradient(135deg, #16A34A, #22C55E)',
+    'Pianeta Nano': 'linear-gradient(135deg, #4B5563, #6B7280)',
+};
 
 export default function CorpoCard({ corpo }) {
     const hasImage = corpo.immagine_url;
+    const FallbackIcon = categoryIcons[corpo.categoria?.nome] || Orbit;
+    const gradient = categoryGradients[corpo.categoria?.nome] || 'linear-gradient(135deg, #4B5563, #6B7280)';
 
     return (
         <Link
@@ -20,7 +45,7 @@ export default function CorpoCard({ corpo }) {
                 e.currentTarget.style.boxShadow = 'none';
             }}
         >
-            {hasImage && (
+            {hasImage ? (
                 <div className="aspect-[16/9] overflow-hidden">
                     <img
                         src={corpo.immagine_url}
@@ -29,6 +54,15 @@ export default function CorpoCard({ corpo }) {
                         onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                     />
+                </div>
+            ) : (
+                <div
+                    className="aspect-[16/9] flex items-center justify-center transition-transform duration-300"
+                    style={{ background: gradient }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                >
+                    <FallbackIcon size={56} style={{ color: 'rgba(255,255,255,0.6)' }} />
                 </div>
             )}
 
