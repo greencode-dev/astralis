@@ -41,9 +41,9 @@ _Nessuna attività in corso._
 - [ ] Valutare fattibilità trasformazione orbita 2D → 3D (react-three-fiber / prospettiva CSS)
 
 ### Fase 10 — Bugs Critici
-- [ ] **CRITICO**: `edit.blade.php:224` — `route()` senza virgolette, errore PHP fatale
-- [ ] `nasa_id` mancante da `$fillable` in CorpoCeleste — import NASA non salva l'ID
-- [ ] `categoria_id` hardcoded (1-8) nel seeder — fragile all'ordine dei seed
+- [x] **CRITICO**: `edit.blade.php:224` — `route()` senza virgolette, errore PHP fatale
+- [x] `nasa_id` mancante da `$fillable` in CorpoCeleste — import NASA non salva l'ID
+- [x] `categoria_id` hardcoded (1-8) nel seeder — fragile all'ordine dei seed
 
 ### Fase 10 — Backend / API
 - [ ] Aggiungere FormRequest per validazione in store/update CorpoCeleste
