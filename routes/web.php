@@ -29,6 +29,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     Route::resource('categorie', CategoriaController::class)->parameters([
         'categorie' => 'categoria',
     ]);
+    Route::post('corpi-celesti/suggest-nome', [CorpoCelesteController::class, 'suggestNome'])->name('corpi-celesti.suggest-nome');
     Route::resource('corpi-celesti', CorpoCelesteController::class)->parameters([
         'corpi-celesti' => 'corpoCeleste',
     ]);

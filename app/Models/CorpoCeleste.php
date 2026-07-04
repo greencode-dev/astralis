@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -17,6 +18,7 @@ class CorpoCeleste extends Model
 
     protected $fillable = [
         'nome',
+        'nome_it',
         'slug',
         'categoria_id',
         'immagine',
@@ -71,5 +73,20 @@ class CorpoCeleste extends Model
         return $this->belongsToMany(Missione::class, 'corpo_celeste_missione')
             ->withPivot('tipo_esplorazione', 'anno_arrivo')
             ->withTimestamps();
+    }
+
+        public function getNomeDisplayAttribute(): string
+    {
+        return $this->nome_it ?? $this->nome;
+    }
+
+    public function getImmagineUrlAttribute(): ?string
+    {
+        if (!$this->immagine) {
+            return null;
+        }
+        return str_starts_with($this->immagine, 'http')
+            ? $this->immagine
+            : Storage::url('corpi-celesti/' . $this->immagine);
     }
 }

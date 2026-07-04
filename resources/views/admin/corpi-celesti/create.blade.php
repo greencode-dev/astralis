@@ -11,18 +11,38 @@
         </a>
 
         <div class="rounded-xl p-6" style="background-color: #111128; border: 1px solid rgba(34, 211, 238, 0.1);">
-            <form method="POST" action="{{ route('admin.corpi-celesti.store') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.corpi-celesti.store') }}">
                 @csrf
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label for="nome" class="block text-sm font-medium mb-2" style="color: #F0F0FA;">Nome <span style="color: #EF4444;">*</span></label>
+                        <label for="nome" class="block text-sm font-medium mb-2" style="color: #F0F0FA;">Nome (inglese) <span style="color: #EF4444;">*</span></label>
                         <input type="text" name="nome" id="nome" value="{{ old('nome') }}" required
                                class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
                                style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
                                onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
                                onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
                         @error('nome')<p class="mt-1 text-sm" style="color: #EF4444;">{{ $message }}</p>@enderror
+                    </div>
+
+                    <div>
+                        <label for="nome_it" class="block text-sm font-medium mb-2" style="color: #F0F0FA;">Nome (italiano)</label>
+                        <div class="flex gap-2">
+                            <input type="text" name="nome_it" id="nome_it" value="{{ old('nome_it') }}"
+                                   class="flex-1 px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
+                                   style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
+                                   onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
+                                   onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                            <button type="button" id="cercaNasaBtn"
+                                    class="px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap"
+                                    style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2);"
+                                    onmouseover="this.style.backgroundColor='rgba(34,211,238,0.25)'; this.style.borderColor='rgba(34,211,238,0.4)';"
+                                    onmouseout="this.style.backgroundColor='rgba(34,211,238,0.15)'; this.style.borderColor='rgba(34,211,238,0.2)';">
+                                Cerca su NASA
+                            </button>
+                        </div>
+                        <p id="suggestResult" class="mt-1 text-xs" style="color: #6B7280;"></p>
+                        @error('nome_it')<p class="mt-1 text-sm" style="color: #EF4444;">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
@@ -51,13 +71,13 @@
                     </div>
 
                     <div>
-                        <label for="immagine" class="block text-sm font-medium mb-2" style="color: #F0F0FA;">Immagine</label>
-                        <input type="file" name="immagine" id="immagine" accept="image/jpeg,image/png,image/webp"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:text-xs file:font-medium file:border-0"
+                        <label for="immagine" class="block text-sm font-medium mb-2" style="color: #F0F0FA;">URL Immagine</label>
+                        <input type="url" name="immagine" id="immagine" value="{{ old('immagine') }}" placeholder="https://images-assets.nasa.gov/..."
+                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
                                style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
                                onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
                                onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
-                        <p class="mt-1 text-xs" style="color: #6B7280;">Max 2MB. Formati: JPG, PNG, WebP.</p>
+                        <p class="mt-1 text-xs" style="color: #6B7280;">Lascia vuoto per importare automaticamente da NASA.</p>
                         @error('immagine')<p class="mt-1 text-sm" style="color: #EF4444;">{{ $message }}</p>@enderror
                     </div>
 
@@ -181,3 +201,44 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+<script>
+document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
+    var nomeIt = document.getElementById('nome_it').value.trim();
+    var resultEl = document.getElementById('suggestResult');
+    if (!nomeIt) {
+        resultEl.textContent = 'Inserisci un nome in italiano.';
+        resultEl.style.color = '#EF4444';
+        return;
+    }
+
+    resultEl.textContent = 'Cerco su NASA...';
+    resultEl.style.color = '#6B7280';
+
+    fetch('{{ route("admin.corpi-celesti.suggest-nome") }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        },
+        body: JSON.stringify({ nome_it: nomeIt })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            document.getElementById('nome').value = data.nome;
+            resultEl.textContent = 'Suggerito: ' + data.nome;
+            resultEl.style.color = '#22C55E';
+        } else {
+            resultEl.textContent = data.message;
+            resultEl.style.color = '#EF4444';
+        }
+    })
+    .catch(function() {
+        resultEl.textContent = 'Errore di connessione.';
+        resultEl.style.color = '#EF4444';
+    });
+});
+</script>
+@endpush

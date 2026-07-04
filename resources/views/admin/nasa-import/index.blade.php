@@ -55,7 +55,7 @@
                         <td class="py-3 px-4">
                             <div class="flex items-center gap-3">
                                 @if ($corpo->immagine)
-                                    <img src="{{ Storage::url('corpi-celesti/' . $corpo->immagine) }}"
+                                    <img loading="lazy" src="{{ $corpo->immagine_url }}"
                                          alt="{{ $corpo->nome }}"
                                          class="w-8 h-8 rounded-full object-cover"
                                          style="border: 1px solid rgba(34, 211, 238, 0.2);">

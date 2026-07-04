@@ -16,6 +16,7 @@
 - [x] Fase 6: Fix orbite sistema solare, NASA Import, redirect route, profilo, documentazione
 - [x] Fase 7: Bugfix Intervention Image v4, Force Import All con Alpine.js, documentazione
 - [x] Fase 8: NASA Import multi-immagine in galleria, Service Layer, CLI `astralis:fetch-nasa`, metadati NASA
+- [x] Fase 9: Remote URLs (nessun download), nome_it/nome_display, wordMap espansa, apostrophe fallback, auto-suggest admin, documentazione
 
 ## In corso
 

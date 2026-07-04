@@ -37,7 +37,7 @@
                 <div class="mb-5">
                     <label class="block text-sm font-medium mb-2" style="color: #F0F0FA;">Immagine attuale</label>
                     <div class="rounded-lg overflow-hidden mb-3" style="max-width: 300px; border: 1px solid rgba(34, 211, 238, 0.1);">
-                        <img src="{{ asset('storage/galleria/' . $galleriaCorpo->percorso) }}"
+                        <img loading="lazy" src="{{ $galleriaCorpo->percorso_url }}"
                              alt="{{ $galleriaCorpo->didascalia ?? 'Immagine' }}"
                              class="w-full h-auto">
                     </div>

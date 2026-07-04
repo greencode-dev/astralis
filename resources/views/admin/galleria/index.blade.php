@@ -35,7 +35,7 @@
                  onmouseover="this.style.borderColor='rgba(34,211,238,0.3)'; this.style.transform='translateY(-2px)';"
                  onmouseout="this.style.borderColor='rgba(34,211,238,0.1)'; this.style.transform='translateY(0)';">
                 <div class="aspect-video relative overflow-hidden" style="background-color: #0A0A1A;">
-                    <img src="{{ asset('storage/galleria/' . $item->percorso) }}"
+                    <img loading="lazy" src="{{ $item->percorso_url }}"
                          alt="{{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                          class="w-full h-full object-cover transition-transform duration-300"
                          onmouseover="this.style.transform='scale(1.05)';"

@@ -2,15 +2,7 @@
 
 ## Aperti
 
-### [11] NASA Import: memory limit per immagini ~orig troppo grandi — 04/07/2026 — FIXED
-- **Descrizione**: L'import di `~orig.jpg` da NASA per alcuni corpi (es. Cometa di Halley) supera il memory limit di PHP (128MB) causando errore `Allowed memory size exhausted`
-- **Causa**: Le immagini originali NASA possono essere molto grandi (>50MB) e GD tenta di decompressarle interamente in memoria
-- **Soluzione**: Aggiunto `ini_set('memory_limit', '512M')` in `downloadAndProcess()` nel Service. Fallback URL per-item: canonical (~orig) → alternate (~small, usato come‑è) → preview (~thumb, usato come‑è). Rimosso `preg_replace` verso ~orig nei fallback.
-
-### [08] x_cloak visibile durante caricamento Alpine.js — 04/07/2026
-- **Descrizione**: Se Alpine.js CDN tarda a caricare, il contenuto con `x-cloak` potrebbe essere visibile brevemente (FOUC)
-- **Causa**: Style `[x-cloak] { display: none !important; }` è inline nel `<head>` e dovrebbe risolvere, ma se il CDN fallisce completamente il contenuto rimane nascosto
-- **Soluzione**: Già applicata con style inline. Se il problema persiste, valutare fallback: rimuovere `x-cloak` e usare `x-init` per mostrare il modale solo dopo che Alpine è caricato.
+_(Nessun bug aperto.)_
 
 ## Risolti
 
@@ -88,3 +80,15 @@
 - **Causa**: Il progetto usa `intervention/image: 4.1.5` che ha API completamente diversa da v3; `Image::read()` è stato rinominato in `decodeBinary()`/`decodePath()`, `resize(closure)` non esiste più, va usato `scaleDown()`
 - **Soluzione**: Sostituita facade con `ImageManager(new Driver())`, metodi `decodeBinary()`/`decodePath()` per leggere, `scaleDown(width: N, height: N)` per ridimensionamento
 - **Fixato in**: Fase 7.3
+
+### [11] NASA Import: memory limit per immagini ~orig troppo grandi — 04/07/2026
+- **Descrizione**: L'import di `~orig.jpg` da NASA per alcuni corpi (es. Cometa di Halley) supera il memory limit di PHP (128MB) causando errore `Allowed memory size exhausted`
+- **Causa**: Le immagini originali NASA possono essere molto grandi (>50MB) e GD tenta di decompressarle interamente in memoria
+- **Soluzione**: Aggiunto `ini_set('memory_limit', '512M')` in `downloadAndProcess()` nel Service. Fallback URL per-item: canonical (~orig) → alternate (~small, usato come‑è) → preview (~thumb, usato come‑è). Rimosso `preg_replace` verso ~orig nei fallback.
+- **Fixato in**: Fase 8.1
+
+### [12] NASA API: apostrofo causa 0 risultati — 04/07/2026
+- **Descrizione**: La query `Halley's Comet` su NASA Image API restituisce 0 risultati
+- **Causa**: NASA API non gestisce apostrofi nelle query di ricerca. `Halley's` (con apostrofo) non matcha `Halleys` (senza) nei database NASA
+- **Soluzione**: `NasaImageService::searchNasa()` ora prova automaticamente query senza apostrofi (`str_replace(["'", "`", "’", "'s ", "'s"], "", $query)`) e aggiunge fallback extra "comet" per nomi contenenti "comet"/"halley". Le immagini vengono inoltre salvate come URL remoti invece di essere scaricate, eliminando il memory limit problem.
+- **Fixato in**: Fase 9.0

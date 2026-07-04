@@ -4,7 +4,6 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Storage;
 
 class CorpoCelesteResource extends JsonResource
 {
@@ -13,9 +12,10 @@ class CorpoCelesteResource extends JsonResource
         return [
             'id' => $this->id,
             'nome' => $this->nome,
+            'nome_display' => $this->nome_display,
             'slug' => $this->slug,
             'categoria' => new CategoriaResource($this->whenLoaded('categoria')),
-            'immagine_url' => $this->immagine && Storage::exists('corpi-celesti/' . $this->immagine) ? Storage::url('corpi-celesti/' . $this->immagine) : null,
+            'immagine_url' => $this->immagine_url,
             'descrizione' => $this->descrizione,
             'tipo' => $this->tipo,
             'massa_kg' => $this->massa_kg,

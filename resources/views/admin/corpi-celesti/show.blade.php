@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
-@section('title', $corpoCeleste->nome)
-@section('page_title', $corpoCeleste->nome)
+@section('title', $corpoCeleste->nome_display)
+@section('page_title', $corpoCeleste->nome_display)
 
 @section('content')
     <div class="max-w-5xl">
@@ -13,7 +13,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div class="rounded-xl p-6 flex flex-col items-center text-center" style="background-color: #111128; border: 1px solid rgba(34, 211, 238, 0.1);">
                 @if ($corpoCeleste->immagine)
-                    <img src="{{ Storage::url('corpi-celesti/' . $corpoCeleste->immagine) }}"
+                    <img loading="lazy" src="{{ $corpoCeleste->immagine_url }}"
                          alt="{{ $corpoCeleste->nome }}"
                          class="w-32 h-32 rounded-full object-cover mb-4"
                          style="border: 3px solid rgba(34, 211, 238, 0.2);">
@@ -21,8 +21,22 @@
                     <div class="w-32 h-32 rounded-full flex items-center justify-center text-4xl mb-4" style="background-color: rgba(34, 211, 238, 0.1); color: #22D3EE;">
                         ★
                     </div>
+                    <form method="POST" action="{{ route('admin.nasa-import.import', $corpoCeleste) }}" class="mt-3">
+                        @csrf
+                        <button type="submit"
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
+                                style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2);"
+                                onmouseover="this.style.backgroundColor='rgba(34,211,238,0.25)'; this.style.borderColor='rgba(34,211,238,0.4)';"
+                                onmouseout="this.style.backgroundColor='rgba(34,211,238,0.15)'; this.style.borderColor='rgba(34,211,238,0.2)';">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                            Cerca su NASA
+                        </button>
+                    </form>
                 @endif
-                <h2 class="text-xl font-bold mb-2" style="color: #F0F0FA;">{{ $corpoCeleste->nome }}</h2>
+                <h2 class="text-xl font-bold mb-2" style="color: #F0F0FA;">{{ $corpoCeleste->nome_display }}</h2>
+                @if ($corpoCeleste->nome_it && $corpoCeleste->nome !== $corpoCeleste->nome_it)
+                    <p class="text-xs" style="color: #6B7280;">(EN: {{ $corpoCeleste->nome }})</p>
+                @endif
                 @if ($corpoCeleste->categoria)
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium"
                           style="background-color: {{ $corpoCeleste->categoria->colore }}20; color: {{ $corpoCeleste->categoria->colore }};">
@@ -114,7 +128,7 @@
                     @foreach ($corpoCeleste->galleria as $foto)
                         <div class="rounded-lg overflow-hidden" style="border: 1px solid rgba(34, 211, 238, 0.1);">
                             <div class="aspect-square" style="background-color: #0A0A1A;">
-                                <img src="{{ Storage::url('galleria/' . $foto->percorso) }}" alt="{{ $foto->didascalia ?? '' }}" class="w-full h-full object-cover">
+                                <img loading="lazy" src="{{ $foto->percorso_url }}" alt="{{ $foto->didascalia ?? '' }}" class="w-full h-full object-cover">
                             </div>
                             @if ($foto->didascalia)
                                 <div class="p-2">

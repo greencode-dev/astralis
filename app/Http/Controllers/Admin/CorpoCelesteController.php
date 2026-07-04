@@ -5,20 +5,23 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\CorpoCeleste;
+use App\Services\NasaImageService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Intervention\Image\Drivers\Gd\Driver;
-use Intervention\Image\ImageManager;
 
 class CorpoCelesteController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-        $corpi = CorpoCeleste::with('categoria')
-            ->orderBy('nome')
-            ->get();
+        $query = CorpoCeleste::with('categoria');
+
+        if ($search = $request->get('search')) {
+            $query->where('nome', 'like', "%{$search}%")
+                ->orWhere('nome_it', 'like', "%{$search}%");
+        }
+
+        $corpi = $query->orderBy('nome')->get();
 
         return view('admin.corpi-celesti.index', compact('corpi'));
     }
@@ -34,8 +37,9 @@ class CorpoCelesteController extends Controller
     {
         $validated = $request->validate([
             'nome' => ['required', 'string', 'max:255', 'unique:corpi_celesti,nome'],
+            'nome_it' => ['nullable', 'string', 'max:255'],
             'categoria_id' => ['required', 'exists:categorie,id'],
-            'immagine' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
+            'immagine' => ['nullable', 'string', 'max:2048'],
             'descrizione' => ['nullable', 'string', 'max:5000'],
             'tipo' => ['nullable', 'string', 'max:50'],
             'massa_kg' => ['nullable', 'string', 'max:50'],
@@ -48,10 +52,6 @@ class CorpoCelesteController extends Controller
             'anno_scoperta' => ['nullable', 'integer', 'min:-5000', 'max:3000'],
             'in_evidenza' => ['nullable', 'boolean'],
         ]);
-
-        if ($request->hasFile('immagine')) {
-            $validated['immagine'] = $this->uploadImmagine($request->file('immagine'));
-        }
 
         $validated['in_evidenza'] = $request->boolean('in_evidenza');
 
@@ -79,8 +79,9 @@ class CorpoCelesteController extends Controller
     {
         $validated = $request->validate([
             'nome' => ['required', 'string', 'max:255', 'unique:corpi_celesti,nome,' . $corpoCeleste->id],
+            'nome_it' => ['nullable', 'string', 'max:255'],
             'categoria_id' => ['required', 'exists:categorie,id'],
-            'immagine' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
+            'immagine' => ['nullable', 'string', 'max:2048'],
             'descrizione' => ['nullable', 'string', 'max:5000'],
             'tipo' => ['nullable', 'string', 'max:50'],
             'massa_kg' => ['nullable', 'string', 'max:50'],
@@ -94,13 +95,6 @@ class CorpoCelesteController extends Controller
             'in_evidenza' => ['nullable', 'boolean'],
         ]);
 
-        if ($request->hasFile('immagine')) {
-            if ($corpoCeleste->immagine) {
-                Storage::disk('public')->delete('corpi-celesti/' . $corpoCeleste->immagine);
-            }
-            $validated['immagine'] = $this->uploadImmagine($request->file('immagine'));
-        }
-
         $validated['in_evidenza'] = $request->boolean('in_evidenza');
 
         $corpoCeleste->update($validated);
@@ -111,25 +105,130 @@ class CorpoCelesteController extends Controller
 
     public function destroy(CorpoCeleste $corpoCeleste): RedirectResponse
     {
-        if ($corpoCeleste->immagine) {
-            Storage::disk('public')->delete('corpi-celesti/' . $corpoCeleste->immagine);
-        }
-
         $corpoCeleste->delete();
 
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste eliminato con successo.');
     }
 
-    private function uploadImmagine($file): string
+    public function suggestNome(Request $request, NasaImageService $nasaService): \Illuminate\Http\JsonResponse
     {
-        $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $request->validate(['nome_it' => ['required', 'string', 'max:255']]);
 
-        $img = (new ImageManager(new Driver()))->decodePath($file->getRealPath());
-        $img->scaleDown(width: 800, height: 800);
+        $nomeIt = $request->input('nome_it');
 
-        Storage::disk('public')->put('corpi-celesti/' . $filename, $img->encode());
+        $result = $nasaService->searchNasa($nomeIt);
+        if ($result['success']) {
+            $suggested = $this->guessEnglishName($result['items'], $nomeIt);
+            if ($suggested) {
+                return response()->json(['success' => true, 'nome' => $suggested]);
+            }
+        }
 
-        return $filename;
+        $wordMap = [
+            'Nebulosa' => 'Nebula',
+            'Cometa' => 'Comet',
+            'Galassia' => 'Galaxy',
+            'Pianeta' => 'Planet',
+            'Stella' => 'Star',
+            'Asteroide' => 'Asteroid',
+            'Luna' => 'Moon',
+            'Sole' => 'Sun',
+            'Satellite' => 'Moon',
+            'Anello' => 'Ring',
+            'Buco Nero' => 'Black Hole',
+            'Ammasso' => 'Cluster',
+            'Nana' => 'Dwarf',
+            'Grande' => 'Great',
+            'Piccola' => 'Small',
+            'Nube' => 'Cloud',
+            'Nuvola' => 'Cloud',
+            'Via Lattea' => 'Milky Way',
+            'Martello' => 'Hammer',
+            'Boomerang' => 'Boomerang',
+            'Falce' => 'Sickle',
+            'Orsa' => 'Bear',
+            'Cane' => 'Dog',
+            'Granchio' => 'Crab',
+            'Anello' => 'Ring',
+            'Testa' => 'Head',
+            'Coda' => 'Tail',
+            'Giove' => 'Jupiter',
+            'Marte' => 'Mars',
+            'Venere' => 'Venus',
+            'Mercurio' => 'Mercury',
+            'Saturno' => 'Saturn',
+            'Urano' => 'Uranus',
+            'Nettuno' => 'Neptune',
+            'Plutone' => 'Pluto',
+            'Terra' => 'Earth',
+            'Cerere' => 'Ceres',
+            'Caronte' => 'Charon',
+            'Europa' => 'Europa',
+            'Titano' => 'Titan',
+            'Encelado' => 'Enceladus',
+            'Io' => 'Io',
+            'Callisto' => 'Callisto',
+            'Ganimede' => 'Ganymede',
+            'Tritone' => 'Triton',
+            'Fobos' => 'Phobos',
+            'Deimos' => 'Deimos',
+            'Titania' => 'Titania',
+            'Oberon' => 'Oberon',
+            'di' => '',
+            'del' => '',
+            'della' => '',
+            'dell' => '',
+            'degli' => '',
+            'delle' => '',
+            'con' => '',
+            'per' => '',
+            'tra' => '',
+            'fra' => '',
+            'sul' => '',
+            'sulla' => '',
+            'sulle' => '',
+            'nell' => '',
+            'nella' => '',
+            'nelle' => '',
+            'agli' => '',
+            'alle' => '',
+            'dal' => '',
+            'dalla' => '',
+            'dalle' => '',
+        ];
+
+        $translated = collect(explode(' ', $nomeIt))
+            ->map(fn($w) => $wordMap[ucfirst($w)] ?? $wordMap[$w] ?? $w)
+            ->filter()
+            ->implode(' ');
+
+        if ($translated !== $nomeIt) {
+            $result = $nasaService->searchNasa($translated);
+            if ($result['success']) {
+                $suggested = $this->guessEnglishName($result['items'], $translated);
+                if ($suggested) {
+                    return response()->json(['success' => true, 'nome' => $suggested]);
+                }
+            }
+        }
+
+        return response()->json(['success' => false, 'message' => 'Nome inglese non trovato. Prova a cercare manualmente su NASA.']);
+    }
+
+    private function guessEnglishName(array $items, string $query): ?string
+    {
+        $lower = strtolower($query);
+        foreach ($items as $item) {
+            $title = $item['data'][0]['title'] ?? '';
+            $keywords = $item['data'][0]['keywords'] ?? [];
+            $all = $title . ' ' . implode(' ', $keywords);
+
+            if (preg_match('/\b' . preg_quote($lower, '/') . '\b/i', $all)) {
+                return $title;
+            }
+        }
+
+        return $items[0]['data'][0]['title'] ?? null;
     }
 }

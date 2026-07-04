@@ -73,7 +73,7 @@
                         <label for="logo" class="block text-sm font-medium mb-2" style="color: #F0F0FA;">Logo</label>
                         @if ($missione->logo)
                             <div class="flex items-center gap-3 mb-2">
-                                <img src="{{ Storage::url('missioni/' . $missione->logo) }}" alt="{{ $missione->nome }}" class="w-10 h-10 rounded-lg object-cover" style="border: 1px solid rgba(34, 211, 238, 0.2);">
+                                <img loading="lazy" src="{{ Storage::url('missioni/' . $missione->logo) }}" alt="{{ $missione->nome }}" class="w-10 h-10 rounded-lg object-cover" style="border: 1px solid rgba(34, 211, 238, 0.2);">
                                 <span class="text-xs" style="color: #6B7280;">{{ $missione->logo }}</span>
                             </div>
                         @endif

@@ -16,7 +16,7 @@ Astralis è un catalogo web di corpi celesti (pianeti, stelle, galassie, nebulos
 | Animazioni | framer-motion              |
 | Icone      | Lucide React               |
 | Lightbox   | yet-another-react-lightbox |
-| Upload     | Intervention Image         |
+| Upload     | Intervention Image (solo Missioni/Galleria) |
 | Slug       | spatie/laravel-sluggable   |
 | PDF        | barryvdh/laravel-dompdf    |
 | Modal      | Alpine.js (CDN)            |
@@ -62,7 +62,7 @@ CATEGORIA ──1:N── CORPO_CELESTE ──1:N── GALLERIA_CORPO
 | Entità            | Campi principali                                                                                                                                                          | CRUD | Relazioni                                                |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------------------------------------------------------- |
 | **Categoria**     | nome, slug, icona, descrizione, colore                                                                                                                                    | ✅   | 1-N con CorpoCeleste                                     |
-| **CorpoCeleste**  | nome, slug, categoria_id, immagine, descrizione, tipo, massa_kg, distanza_km, diametro_km, gravita, temperatura, periodo_orbitale, scopritore, anno_scoperta, in_evidenza | ✅   | N-1 Categoria, 1-N Galleria, 1-N Curiosità, N-N Missioni |
+| **CorpoCeleste**  | nome, nome_it, slug, categoria_id, immagine, descrizione, tipo, massa_kg, distanza_km, diametro_km, gravita, temperatura, periodo_orbitale, scopritore, anno_scoperta, in_evidenza, nasa_id | ✅   | N-1 Categoria, 1-N Galleria, 1-N Curiosità, N-N Missioni |
 | **GalleriaCorpo** | corpo_celeste_id, percorso, didascalia, crediti, ordine                                                                                                                   | ✅   | N-1 CorpoCeleste                                         |
 | **Missione**      | nome, slug, logo, agenzia, data_lancio, durata_giorni, stato, descrizione, sito_web                                                                                       | ✅   | N-N CorpiCelesti                                         |
 | **Curiosità**     | corpo_celeste_id, titolo, descrizione, fonte                                                                                                                              | ✅   | N-1 CorpoCeleste                                         |
@@ -89,7 +89,7 @@ GET    /api/dashboard/stats            — Stats per homepage
 3. **Comparatore pianeti** — confronto affiancato di 2 corpi celesti (massa, diametro, temperatura, gravità)
 4. **Timeline missioni** — linea del tempo orizzontale delle missioni spaziali con badge stato
 5. **Badge categoria** — colori diversi per ogni tipo di corpo celeste
-6. **NASA Import** — import immagini da NASA API direttamente dal backoffice
+6. **NASA Import** — import immagini da NASA API direttamente dal backoffice con auto-suggest traduzione italiano→inglese
 
 ## Palette Colori
 
@@ -209,7 +209,7 @@ Le API sono pubbliche (nessuna autenticazione richiesta). Utilizzano Eloquent AP
 
 **Controller API:** `app/Http/Controllers/Api/` — 6 controller per 10 endpoint.
 
-**API Resources:** `app/Http/Resources/` — 5 classi: CorpoCelesteResource, CategoriaResource, MissioneResource, CuriositaResource, GalleriaCorpoResource.
+**API Resources:** `app/Http/Resources/` — 5 classi: CorpoCelesteResource, CategoriaResource, MissioneResource, CuriositaResource, GalleriaCorpoResource. Ogni risorsa espone `nome_display` (dal modello CorpoCeleste: `nome_it ?? nome`) per garantire nomi italiani nel frontend guest pur mantenendo nomi inglesi nel DB.
 
 Filtri disponibili:
 
@@ -221,7 +221,7 @@ Filtri disponibili:
 
 **CRUD Categorie** — 7 route resource (`GET|POST /admin/categorie`, `GET|PUT /admin/categorie/{id}`, `DELETE /admin/categorie/{id}`). Protezione cancellazione: se la categoria ha corpi celesti associati, viene mostrato errore. Form con color picker + palette rapida 10 colori predefiniti.
 
-**CRUD Corpi Celesti** — 7 route resource (`/admin/corpi-celesti`). Upload immagini con Intervention Image (resize 800px, storage `public/corpi-celesti/`). Form con 13 campi, select categoria, checkbox evidenza. Vista show completa con 8 card metriche scientifiche + sezioni galleria, curiosità, missioni.
+**CRUD Corpi Celesti** — 7 route resource (`/admin/corpi-celesti`). Immagine tramite URL remoto (nessun upload locale — campo testo per URL, validazione URL). Form con 14 campi (incluso `nome_it`), select categoria, checkbox evidenza. Pulsante "Cerca su NASA" nei form create/edit che via AJAX posta a `POST /admin/corpi-celesti/suggest-nome` per auto-suggest. Vista show completa con 8 card metriche scientifiche + sezioni galleria, curiosità, missioni.
 
 **CRUD Missioni** — 7 route resource (`/admin/missioni`). Upload logo con Intervention Image (resize 300px, supporto SVG). Stato con badge colorato (Completata/In corso/Pianificata). Vista show con tabella corpi celesti esplorati (dati pivot: tipo esplorazione, anno arrivo).
 
@@ -230,10 +230,13 @@ Filtri disponibili:
 **CRUD Galleria** — 6 route resource (`/admin/galleria`, senza show). Parametro route `{galleriaCorpo}`. Upload immagini con Intervention Image (resize 1200px, storage `public/galleria/`). Vista index a griglia con card thumbnail, didascalia, corpo celeste linkabile, crediti, ordine di visualizzazione.
 
 **NASA Import** — Due modalità:
-  - **Backoffice** (`/admin/nasa-import`): tabella di tutti i corpi celesti con badge "Presente"/"Assente". Bottone "Importa da NASA" (ciano) per singolo corpo. Bottone "Forza import" (arancione) per sovrascrivere. Bottone "Force Import All" (arancione) per import massivo con modale di conferma Alpine.js. Importa fino a 3 immagini in galleria per ogni corpo.
+  - **Backoffice** (`/admin/nasa-import`): tabella di tutti i corpi celesti con badge "Presente"/"Assente". Bottone "Importa da NASA" (ciano) per singolo corpo. Bottone "Forza import" (arancione) per sovrascrivere. Bottone "Force Import All" (arancione) per import massivo con modale di conferma Alpine.js. Importa fino a 5 immagini in galleria per ogni corpo. Pulsante "Cerca su NASA" nei form create/edit di Corpi Celesti.
   - **CLI** (`php artisan astralis:fetch-nasa`): comando Artisan per l'import automatico. Opzioni: `--force` (sovrascrivi), `--gallery=N` (numero immagini galleria, default 5), `--update-description` (aggiorna descrizione corpo con metadati NASA). Ideale per il setup iniziale dopo `migrate --seed`.
-  - **Architettura**: la logica è centralizzata in `app/Services/NasaImageService.php`. Il controller e il comando Artisan delegano entrambi al service. Utilizza `Http::withoutVerifying()` per Windows, `Intervention Image v4` per il processing, mappa nomi italiano→inglese. Cerca URL `canonical (~orig)` da NASA Image API, con fallback su `alternate` e `preview`.
+  - **Architettura**: la logica è centralizzata in `app/Services/NasaImageService.php`. Il controller e il comando Artisan delegano entrambi al service. Utilizza `Http::withoutVerifying()` per Windows. **Nessun download/processing locale**: le immagini NASA sono salvate come URL remoti (`~medium.jpg`). Priorità URL: `rel=alternate` (medium) → `preview` (thumb) → `canonical` (orig fallback).
+  - **WordMap**: il controller `CorpoCelesteController` contiene un array `$wordMap` (~50 termini) per tradurre nomi italiano→inglese parola per parola (es. "Buco Nero" → "Black Hole", "Ammasso" → "Cluster", "Nana" → "Dwarf"). Usato nel metodo `suggestNome()` per l'auto-suggest admin.
+  - **Apostrophe fallback**: `searchNasa()` prova automaticamente query senza apostrofi (`str_replace` su `'`, `` ` ``, `'`, `'s`) e aggiunge fallback extra per comete (es. "comet" per nomi contenenti "halley"/"comet").
   - **Metadati salvati**: `nasa_id` sulla tabella `corpi_celesti`, `didascalia` (title NASA) e `crediti` (photographer) su `galleria_corpi`.
+  - **Intervention Image**: usato solo per upload locali in Missioni (logo resize 300px) e Galleria (resize 1200px). Non usato per Corpi Celesti (URL remoti).
 
 **Profilo utente** — Pagina profilo Breeze (`/user/profile`) restilizzata con tema scuro (sfondo `#0A0A1A`, card `#111128`). 3 sezioni: informazioni nome/email, cambio password, elimina account. Shared components (TextInput, InputLabel, PrimaryButton, SecondaryButton, Modal) adattati al tema scuro.
 

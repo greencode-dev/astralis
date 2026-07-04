@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Storage;
 
 class GalleriaCorpo extends Model
 {
@@ -20,5 +21,15 @@ class GalleriaCorpo extends Model
     public function corpoCeleste(): BelongsTo
     {
         return $this->belongsTo(CorpoCeleste::class);
+    }
+
+    public function getPercorsoUrlAttribute(): ?string
+    {
+        if (!$this->percorso) {
+            return null;
+        }
+        return str_starts_with($this->percorso, 'http')
+            ? $this->percorso
+            : Storage::url('galleria/' . $this->percorso);
     }
 }

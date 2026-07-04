@@ -47,9 +47,9 @@ export default function CorpoCard({ corpo }) {
         >
             {hasImage ? (
                 <div className="aspect-[16/9] overflow-hidden">
-                    <img
+                    <img loading="lazy"
                         src={corpo.immagine_url}
-                        alt={corpo.nome}
+                        alt={corpo.nome_display || corpo.nome}
                         className="w-full h-full object-cover transition-transform duration-300"
                         onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
@@ -69,7 +69,7 @@ export default function CorpoCard({ corpo }) {
             <div className="p-4">
                 <div className="flex items-start justify-between gap-2 mb-2">
                     <h3 className="text-lg font-semibold" style={{ color: '#F0F0FA' }}>
-                        {corpo.nome}
+                        {corpo.nome_display || corpo.nome}
                     </h3>
                     {corpo.in_evidenza && (
                         <span className="text-xs font-bold px-2 py-0.5 rounded" style={{ backgroundColor: 'rgba(250, 204, 21, 0.15)', color: '#FACC15' }}>

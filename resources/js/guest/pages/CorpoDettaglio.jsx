@@ -114,7 +114,7 @@ export default function CorpoDettaglio() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
                 className="relative rounded-2xl overflow-hidden mb-8" style={{ minHeight: 300 }}>
                 {corpo.immagine_url ? (
-                    <img src={corpo.immagine_url} alt={corpo.nome} className="w-full h-64 lg:h-80 object-cover" />
+                    <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome_display || corpo.nome} className="w-full h-64 lg:h-80 object-cover" />
                 ) : (
                     <div className="w-full h-64 lg:h-80 flex items-center justify-center" style={{ background: gradient }}>
                         <FallbackIcon size={96} style={{ color: 'rgba(255,255,255,0.4)' }} />
@@ -130,7 +130,7 @@ export default function CorpoDettaglio() {
                             </span>
                         )}
                     </div>
-                    <h1 className="text-3xl lg:text-5xl font-extrabold" style={{ color: '#F0F0FA' }}>{corpo.nome}</h1>
+                    <h1 className="text-3xl lg:text-5xl font-extrabold" style={{ color: '#F0F0FA' }}>{corpo.nome_display || corpo.nome}</h1>
                     {corpo.tipo && <p className="text-lg mt-1" style={{ color: '#B8B8D0' }}>{corpo.tipo}</p>}
                 </div>
             </motion.div>

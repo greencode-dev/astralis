@@ -176,3 +176,20 @@
 - `NasaImageService.php`: `downloadAndProcess()` ora imposta `memory_limit = 512M` durante il processing, ripristina il valore originale al termine
 - `importForBody()`: per ogni item tenta canonical (~orig) → alternate (~small senza conversione) → preview (~thumb senza conversione) prima di passare all'item successivo
 - Rimosso metodo `getBestImageUrl()` (dead code, convertiva ~small/~thumb in ~orig nei fallback)
+
+## Fase 9 — Remote URLs, nome_it, WordMap, Apostrophe Fallback
+
+### 9.0 — 04/07/2026 — feat: remote NASA URLs, nome_it, wordMap espansa, apostrophe fallback, auto-suggest
+- **CorpoCeleste Model**: aggiunto campo `nome_it` (nome italiano) + accessor `getNomeDisplayAttribute()` che restituisce `nome_it ?? nome`
+- **CorpoCelesteResource**: aggiunto `nome_display` nell'output JSON API
+- **GalleriaCorpoResource**: aggiunto `nome_display` del corpo celeste associato
+- **NasaImageService**: riscritto `searchNasa()` con fallback automatico per apostrofi (es. `Halley's Comet` → `Halleys Comet` + extra fallback "comet"). Rimosso `downloadAndProcess()`. `importForBody()` ora salva URL remoti (~medium.jpg) invece di scaricare localmente. Priorità URL: `alternate` (medium) → `preview` (thumb) → `canonical` (orig fallback)
+- **CorpoCelesteController**: aggiunto metodo `suggestNome()` per auto-suggest admin (POST `/admin/corpi-celesti/suggest-nome`). Espansa `$wordMap` da 14 a ~50 termini (pianeti, lune, termini astronomici)
+- **Blade views corpi-celesti**: create/edit ora con input URL invece di file upload; index/show usano URL remoti; show ha pulsante "Cerca su NASA"
+- **Blade views galleria**: edit/index mostrano URL remoti
+- **Blade views missioni**: edit/index con URL remoti
+- **Guest components**: CorpoCard, LightboxGalleria, CorpoDettaglio usano `nome_display` con fallback a `nome`
+- **Migration**: aggiunta colonna `nome_it` a `corpi_celesti` (2026_07_04_164500)
+- **Test**: 25/25 PHPUnit passati (61 assertions)
+- **Vite build**: 3173 moduli, zero errori
+- **Documentazione**: changelog, todo, bug, documentazione, session.log, SKILL.md aggiornati

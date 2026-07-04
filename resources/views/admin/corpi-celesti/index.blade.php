@@ -28,6 +28,32 @@
         </div>
     @endif
 
+    <div class="mb-4">
+        <form method="GET" action="{{ route('admin.corpi-celesti.index') }}" class="flex gap-2">
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cerca per nome..."
+                   class="flex-1 px-4 py-2 rounded-lg text-sm transition-all duration-200"
+                   style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
+                   onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
+                   onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+            <button type="submit"
+                    class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                    style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2);"
+                    onmouseover="this.style.backgroundColor='rgba(34,211,238,0.25)';"
+                    onmouseout="this.style.backgroundColor='rgba(34,211,238,0.15)';">
+                Cerca
+            </button>
+            @if (request('search'))
+                <a href="{{ route('admin.corpi-celesti.index') }}"
+                   class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                   style="color: #9CA3AF; border: 1px solid rgba(156, 163, 175, 0.2);"
+                   onmouseover="this.style.color='#EF4444'; this.style.borderColor='rgba(239,68,68,0.3)';"
+                   onmouseout="this.style.color='#9CA3AF'; this.style.borderColor='rgba(156,163,175,0.2)';">
+                    Cancella filtro
+                </a>
+            @endif
+        </form>
+    </div>
+
     <div class="rounded-xl overflow-hidden" style="background-color: #111128; border: 1px solid rgba(34, 211, 238, 0.1);">
         <table class="w-full text-sm">
             <thead>
@@ -46,8 +72,8 @@
                         <td class="py-3 px-4">
                             <div class="flex items-center gap-3">
                                 @if ($corpo->immagine)
-                                    <img src="{{ Storage::url('corpi-celesti/' . $corpo->immagine) }}"
-                                         alt="{{ $corpo->nome }}"
+                                    <img loading="lazy" src="{{ $corpo->immagine_url }}"
+                                         alt="{{ $corpo->nome_display }}"
                                          class="w-8 h-8 rounded-full object-cover"
                                          style="border: 1px solid rgba(34, 211, 238, 0.2);">
                                 @else
@@ -56,7 +82,7 @@
                                     </div>
                                 @endif
                                 <a href="{{ route('admin.corpi-celesti.show', $corpo) }}" class="font-medium transition-colors duration-150" style="color: #F0F0FA;" onmouseover="this.style.color='#22D3EE';" onmouseout="this.style.color='#F0F0FA';">
-                                    {{ $corpo->nome }}
+                                    {{ $corpo->nome_display }}
                                 </a>
                             </div>
                         </td>
@@ -100,7 +126,7 @@
                                    title="Modifica">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                                 </a>
-                                <form method="POST" action="{{ route('admin.corpi-celesti.destroy', $corpo) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $corpo->nome }}?');">
+                                <form method="POST" action="{{ route('admin.corpi-celesti.destroy', $corpo) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $corpo->nome_display }}?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"

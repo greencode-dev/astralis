@@ -32,7 +32,7 @@ export default function LightboxGalleria({ immagini }) {
                         }}
                     >
                         <div className="aspect-[4/3] overflow-hidden">
-                            <img
+                            <img loading="lazy"
                                 src={slide.src}
                                 alt={slide.alt}
                                 className="w-full h-full object-cover transition-transform duration-300"

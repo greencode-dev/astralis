@@ -6,55 +6,42 @@ use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Drivers\Gd\Driver;
-use Intervention\Image\ImageManager;
 
 class NasaImageService
 {
-    private array $nameMap = [
-        'Cerere'   => 'Ceres',
-        'Terra'    => 'Earth',
-        'Marte'    => 'Mars',
-        'Giove'    => 'Jupiter',
-        'Saturno'  => 'Saturn',
-        'Urano'    => 'Uranus',
-        'Nettuno'  => 'Neptune',
-        'Venere'   => 'Venus',
-        'Mercurio' => 'Mercury',
-        'Luna'     => 'Moon',
-        'Sole'     => 'Sun',
-        'Via Lattea' => 'Milky Way',
-    ];
-
-    private ImageManager $manager;
-
-    public function __construct()
+    public function searchNasa(string $query, array $extraFallbacks = []): array
     {
-        $this->manager = new ImageManager(new Driver());
-    }
+        $fallbacks = $extraFallbacks;
 
-    public function searchNasa(string $query): array
-    {
-        $searchName = $this->nameMap[$query] ?? $query;
-
-        $response = Http::withoutVerifying()
-            ->timeout(15)
-            ->get('https://images-api.nasa.gov/search', [
-                'q' => $searchName,
-                'media_type' => 'image',
-            ]);
-
-        if ($response->failed()) {
-            return ['success' => false, 'message' => "Errore di connessione a NASA API per \"{$query}\"."];
+        $stripped = str_replace(["'", "`", "’", "'s ", "'s"], "", $query);
+        $stripped = trim(preg_replace('/\s+/', ' ', $stripped));
+        if ($stripped !== $query) {
+            $fallbacks[] = $stripped;
         }
 
-        $items = $response->json('collection.items');
+        $queries = array_merge([$query], $fallbacks);
 
-        if (empty($items)) {
-            return ['success' => false, 'message' => "Nessuna immagine trovata per \"{$query}\"."];
+        foreach ($queries as $q) {
+            $response = Http::withoutVerifying()
+                ->timeout(15)
+                ->get('https://images-api.nasa.gov/search', [
+                    'q' => $q,
+                    'media_type' => 'image',
+                ]);
+
+            if ($response->failed()) {
+                continue;
+            }
+
+            $items = $response->json('collection.items');
+
+            if (!empty($items)) {
+                return ['success' => true, 'items' => $items, 'used_query' => $q];
+            }
         }
 
-        return ['success' => true, 'items' => $items];
+        $last = $queries[count($queries) - 1];
+        return ['success' => false, 'message' => "Nessuna immagine trovata per \"{$query}\"."];
     }
 
     public function extractMetadata(array $item): array
@@ -70,33 +57,16 @@ class NasaImageService
         ];
     }
 
-    public function downloadAndProcess(string $url, string $filename, string $storageDir, int $width, int $height): ?string
+    private function pickImageUrl(array $item): ?string
     {
-        $previous = ini_get('memory_limit');
-        try {
-            ini_set('memory_limit', '512M');
-
-            $response = Http::withoutVerifying()
-                ->timeout(30)
-                ->get($url);
-
-            if ($response->failed()) {
-                return null;
+        foreach (['alternate', 'preview', 'canonical'] as $rel) {
+            foreach ($item['links'] ?? [] as $link) {
+                if (($link['rel'] ?? '') === $rel && ($link['render'] ?? '') === 'image') {
+                    return $link['href'];
+                }
             }
-
-            $imageData = $response->body();
-
-            $img = $this->manager->decodeBinary($imageData);
-            $img->scaleDown(width: $width, height: $height);
-
-            Storage::disk('public')->put("{$storageDir}/{$filename}", $img->encode());
-
-            return $filename;
-        } catch (\Exception $e) {
-            return null;
-        } finally {
-            ini_set('memory_limit', $previous);
         }
+        return null;
     }
 
     public function importForBody(CorpoCeleste $corpo, int $galleryCount = 5, bool $force = false, bool $updateDescription = false): array
@@ -105,7 +75,14 @@ class NasaImageService
             return ['success' => true, 'message' => "{$corpo->nome}: già presente, skip."];
         }
 
-        $searchResult = $this->searchNasa($corpo->nome);
+        $extraFallbacks = [];
+        $nome = $corpo->nome;
+
+        if (stripos($nome, "comet") !== false || stripos($nome, "halley") !== false) {
+            $extraFallbacks[] = "comet";
+        }
+
+        $searchResult = $this->searchNasa($nome, $extraFallbacks);
         if (!$searchResult['success']) {
             return ['success' => false, 'message' => $searchResult['message']];
         }
@@ -118,73 +95,36 @@ class NasaImageService
         foreach ($items as $index => $item) {
             $metadata = $this->extractMetadata($item);
             $nasaId = $metadata['nasa_id'] ?? uniqid();
-            $ext = 'jpg';
 
-            $targetSize = !$mainImported ? 'main' : 'gallery';
-            $width = !$mainImported ? 800 : 1200;
-            $height = !$mainImported ? 800 : 1200;
-            $storageDir = !$mainImported ? 'corpi-celesti' : 'galleria';
+            $isMain = !$mainImported;
 
-            $urlTried = false;
-            $urlSuccess = false;
-
-            foreach (['canonical', 'alternate', 'preview'] as $rel) {
-                $imageUrl = null;
-                foreach ($item['links'] ?? [] as $link) {
-                    if (($link['rel'] ?? '') === $rel && ($link['render'] ?? '') === 'image') {
-                        $imageUrl = $link['href'];
-                        break;
-                    }
-                }
-
-                if (!$imageUrl) {
-                    continue;
-                }
-
-                $urlTried = true;
-                $filename = "{$nasaId}_{$corpo->id}_{$targetSize}_{$rel}.{$ext}";
-
-                if ($targetSize === 'main' && $rel === 'canonical' && $corpo->immagine) {
-                    Storage::disk('public')->delete('corpi-celesti/' . $corpo->immagine);
-                }
-
-                $result = $this->downloadAndProcess($imageUrl, $filename, $storageDir, $width, $height);
-
-                if ($result) {
-                    if ($targetSize === 'main') {
-                        $updateData = ['immagine' => $filename, 'nasa_id' => $nasaId];
-                        if ($updateDescription && $metadata['description']) {
-                            $updateData['descrizione'] = $metadata['description'];
-                        }
-                        $corpo->update($updateData);
-                        $mainImported = true;
-                    } else {
-                        $exists = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)
-                            ->where('percorso', $filename)
-                            ->exists();
-                        if (!$exists) {
-                            GalleriaCorpo::create([
-                                'corpo_celeste_id' => $corpo->id,
-                                'percorso' => $filename,
-                                'didascalia' => $metadata['title'],
-                                'crediti' => $metadata['photographer'],
-                                'ordine' => $galleryImported,
-                            ]);
-                        }
-                        $galleryImported++;
-                    }
-                    $urlSuccess = true;
-                    break;
-                }
-            }
-
-            if (!$urlTried) {
+            $imageUrl = $this->pickImageUrl($item);
+            if (!$imageUrl) {
+                $label = $isMain ? 'immagine principale' : "immagine galleria #{$galleryImported}";
+                $errors[] = "{$corpo->nome}: nessun URL disponibile per {$label}";
                 continue;
             }
 
-            if (!$urlSuccess) {
-                $label = $targetSize === 'main' ? 'immagine principale' : "immagine galleria #{$galleryImported}";
-                $errors[] = "{$corpo->nome}: fallito download {$label} (tentati canonical, alternate, preview)";
+            if ($isMain) {
+                if ($corpo->immagine) {
+                    Storage::disk('public')->delete('corpi-celesti/' . $corpo->immagine);
+                }
+
+                $updateData = ['immagine' => $imageUrl, 'nasa_id' => $nasaId];
+                if ($updateDescription && $metadata['description']) {
+                    $updateData['descrizione'] = $metadata['description'];
+                }
+                $corpo->update($updateData);
+                $mainImported = true;
+            } else {
+                GalleriaCorpo::create([
+                    'corpo_celeste_id' => $corpo->id,
+                    'percorso' => $imageUrl,
+                    'didascalia' => $metadata['title'],
+                    'crediti' => $metadata['photographer'],
+                    'ordine' => $galleryImported,
+                ]);
+                $galleryImported++;
             }
 
             if ($mainImported && $galleryImported >= $galleryCount) {

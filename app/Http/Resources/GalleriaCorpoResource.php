@@ -4,7 +4,6 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Storage;
 
 class GalleriaCorpoResource extends JsonResource
 {
@@ -13,7 +12,7 @@ class GalleriaCorpoResource extends JsonResource
         return [
             'id' => $this->id,
             'corpo_celeste_id' => $this->corpo_celeste_id,
-            'immagine_url' => $this->percorso && Storage::exists('galleria/' . $this->percorso) ? Storage::url('galleria/' . $this->percorso) : null,
+            'immagine_url' => $this->percorso_url,
             'didascalia' => $this->didascalia,
             'crediti' => $this->crediti,
             'ordine' => $this->ordine,
