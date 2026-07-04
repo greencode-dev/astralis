@@ -5,11 +5,24 @@ _Nessun bug aperto al momento_
 
 ## Risolti
 
-### [01] bootstrap/cache non scrivibile — 02/07/2026
-- **Descrizione**: Dopo `composer create-project`, la cartella `bootstrap/cache` risultava non scrivibile
-- **Causa**: Creata da Git Bash con permessi Windows incompatibili con PHP
-- **Soluzione**: Eliminata con `rmdir /s /q bootstrap\cache` e ricreata con `mkdir bootstrap\cache` (cmd nativo Windows)
-- **Fixato in**: Fase 0.1
+### [01] bootstrap/cache non scrivibile — 02/07/2026 (ricorrente su Windows)
+- **Descrizione**: `php artisan serve` fallisce con `"The bootstrap/cache directory must be present and writable"`
+- **Causa**: Directory creata da **Git Bash**, che imposta permessi POSIX incompatibili con PHP su Windows
+- **Soluzione**:
+
+  **Metodo 1 — cmd nativo (da Git Bash)**:
+  ```bash
+  cmd //c 'rmdir /s /q bootstrap\cache'
+  cmd //c 'mkdir bootstrap\cache'
+  ```
+
+  **Metodo 2 — File Explorer**:
+  1. Cancella manualmente la cartella `bootstrap/cache`
+  2. Ricreala: tasto destro → Nuovo → Cartella
+
+- **Fixato in**: Fase 0.1 e Fase 4.0
+
+> **Nota**: Questo problema si ripresenta in **qualsiasi progetto Laravel su Windows** quando una directory viene creata da Git Bash. Il fix è sempre lo stesso: ricreare la cartella con cmd nativo o Explorer.
 
 ### [02] bootstrap.js mancante — 03/07/2026
 - **Descrizione**: `npm run build` falliva con `[UNRESOLVED_IMPORT] Module not found: ./bootstrap in resources/js/app.jsx`
