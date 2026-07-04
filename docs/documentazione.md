@@ -30,6 +30,7 @@ astralis/
 │   │   ├── Admin/       ← Controller CRUD per backoffice (Blade)
 │   │   └── Api/         ← Controller API REST (JSON)
 │   ├── Models/          ← Eloquent Models (5 entità)
+│   ├── Services/        ← Logica di business (NasaImageService)
 │   └── ...
 ├── database/
 │   └── migrations/      ← 6 file di migrazione
@@ -229,7 +230,11 @@ Filtri disponibili:
 
 **CRUD Galleria** — 6 route resource (`/admin/galleria`, senza show). Parametro route `{galleriaCorpo}`. Upload immagini con Intervention Image (resize 1200px, storage `public/galleria/`). Vista index a griglia con card thumbnail, didascalia, corpo celeste linkabile, crediti, ordine di visualizzazione.
 
-**NASA Import** — Pagina backoffice (`/admin/nasa-import`) con tabella di tutti i corpi celesti e badge "Presente"/"Assente" per indicare se hanno un'immagine. Bottone "Importa da NASA" (ciano) per cercare e scaricare l'immagine del corpo celeste da NASA Image API. Bottone "Forza import" (arancione) per sovrascrivere l'immagine esistente. Bottone "Force Import All" (arancione) per importare/sovrascrivere le immagini di tutti i corpi celesti in una volta, con modale di conferma Alpine.js. Utilizza `Illuminate\Support\Facades\Http` per la chiamata API (con `->withoutVerifying()` per Windows) e `Intervention Image` per il salvataggio. Mappa nomi italiano→inglese (Cerere→Ceres, Terra→Earth, ecc.) per la ricerca su NASA API.
+**NASA Import** — Due modalità:
+  - **Backoffice** (`/admin/nasa-import`): tabella di tutti i corpi celesti con badge "Presente"/"Assente". Bottone "Importa da NASA" (ciano) per singolo corpo. Bottone "Forza import" (arancione) per sovrascrivere. Bottone "Force Import All" (arancione) per import massivo con modale di conferma Alpine.js. Importa fino a 3 immagini in galleria per ogni corpo.
+  - **CLI** (`php artisan astralis:fetch-nasa`): comando Artisan per l'import automatico. Opzioni: `--force` (sovrascrivi), `--gallery=N` (numero immagini galleria, default 5), `--update-description` (aggiorna descrizione corpo con metadati NASA). Ideale per il setup iniziale dopo `migrate --seed`.
+  - **Architettura**: la logica è centralizzata in `app/Services/NasaImageService.php`. Il controller e il comando Artisan delegano entrambi al service. Utilizza `Http::withoutVerifying()` per Windows, `Intervention Image v4` per il processing, mappa nomi italiano→inglese. Cerca URL `canonical (~orig)` da NASA Image API, con fallback su `alternate` e `preview`.
+  - **Metadati salvati**: `nasa_id` sulla tabella `corpi_celesti`, `didascalia` (title NASA) e `crediti` (photographer) su `galleria_corpi`.
 
 **Profilo utente** — Pagina profilo Breeze (`/user/profile`) restilizzata con tema scuro (sfondo `#0A0A1A`, card `#111128`). 3 sezioni: informazioni nome/email, cambio password, elimina account. Shared components (TextInput, InputLabel, PrimaryButton, SecondaryButton, Modal) adattati al tema scuro.
 
@@ -256,6 +261,10 @@ php artisan key:generate
 
 # Migrazioni e seed
 php artisan migrate --seed
+
+# (Opzionale) Scarica immagini da NASA per tutti i corpi celesti
+# --force per sovrascrivere esistenti, --gallery=N per numero immagini galleria
+php artisan astralis:fetch-nasa --gallery=5
 
 # Link storage per upload
 php artisan storage:link

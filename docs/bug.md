@@ -2,6 +2,11 @@
 
 ## Aperti
 
+### [11] NASA Import: memory limit per immagini ~orig troppo grandi — 04/07/2026
+- **Descrizione**: L'import di `~orig.jpg` da NASA per alcuni corpi (es. Cometa di Halley) supera il memory limit di PHP (128MB) causando errore `Allowed memory size exhausted`
+- **Causa**: Le immagini originali NASA possono essere molto grandi (>50MB) e GD tenta di decomprimerle interamente in memoria
+- **Soluzione**: Aumentare `memory_limit` a 256M+ nel comando, con fallback automatico a `~small.jpg` se `~orig.jpg` fallisce. Già implementato in `NasaImageService`.
+
 ### [08] x_cloak visibile durante caricamento Alpine.js — 04/07/2026
 - **Descrizione**: Se Alpine.js CDN tarda a caricare, il contenuto con `x-cloak` potrebbe essere visibile brevemente (FOUC)
 - **Causa**: Style `[x-cloak] { display: none !important; }` è inline nel `<head>` e dovrebbe risolvere, ma se il CDN fallisce completamente il contenuto rimane nascosto

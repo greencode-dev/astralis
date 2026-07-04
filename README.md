@@ -18,7 +18,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 - Autenticazione con Laravel Breeze
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
 - Upload di immagini con Intervention Image v4
-- NASA Import: importa immagini da NASA API (singolo o massivo con Force Import All)
+- NASA Import: importa immagini da NASA API (singolo, massivo con Force Import All, o via CLI con `php artisan astralis:fetch-nasa`)
 - Dashboard con statistiche
 - Dark theme (`#0A0A1A`, `#111128`, `#22D3EE`)
 
@@ -98,6 +98,9 @@ php artisan key:generate
 
 # Database
 php artisan migrate --seed
+
+# (Opzionale) Scarica immagini NASA per tutti i corpi celesti
+php artisan astralis:fetch-nasa --gallery=5
 
 # Storage per upload
 php artisan storage:link

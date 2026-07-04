@@ -155,3 +155,19 @@
 - `routes/web.php`: aggiunta route POST `nasa-import/import-all`
 - `resources/views/admin/nasa-import/index.blade.php`: bottone "Force Import All" (#F97316), modale conferma Alpine.js (`x-data`, `x-show`, `x-cloak`, `@click.away`), blocco `session('warning')` per risultati misti
 - `resources/views/admin/layouts/app.blade.php`: aggiunto Alpine.js CDN + style `[x-cloak]`
+
+## Fase 8 — NASA Import multi-immagine, Service Layer, CLI Command
+
+### 8.0 — 04/07/2026 — feat: NASA Import multi-immagine in galleria + CLI fetch-nasa + metadati
+- `database/migrations/...add_nasa_id_to_corpi_celesti_table.php`: nuova colonna `nasa_id` su `corpi_celesti`
+- `app/Services/NasaImageService.php` — **NUOVO**: service centralizzato con metodi:
+  - `searchNasa(string $query): array` — ricerca su NASA Image API
+  - `getBestImageUrl(array $item): ?string` — URL preferito: canonical (~orig) > alternate > preview
+  - `extractMetadata(array $item): array` — estrae nasa_id, title, photographer, description
+  - `downloadAndProcess(string $url, string $filename, string $storageDir, int $width, int $height): ?string` — download, process, salva
+  - `importForBody(CorpoCeleste, int $galleryCount = 5, bool $force = false, bool $updateDescription = false): array` — import completo per un corpo (1 main + N galleria)
+  - `importAll(...): array` — import per tutti i corpi
+- `app/Console/Commands/FetchNasaCommand.php` — **NUOVO**: `php artisan astralis:fetch-nasa` con opzioni `--force`, `--gallery=N`, `--update-description`
+- `app/Http/Controllers/Admin/NasaImportController.php` — refactor: delega logica a `NasaImageService`, importSingle ora importa anche 3 immagini in galleria
+- `docs/progetto.md` → `docs/documentazione.md`: rinominato, aggiornata sezione NASA Import e guida installazione
+- `README.md`: aggiunto comando `astralis:fetch-nasa` nell'installazione

@@ -15,6 +15,7 @@
 - [x] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore
 - [x] Fase 6: Fix orbite sistema solare, NASA Import, redirect route, profilo, documentazione
 - [x] Fase 7: Bugfix Intervention Image v4, Force Import All con Alpine.js, documentazione
+- [x] Fase 8: NASA Import multi-immagine in galleria, Service Layer, CLI `astralis:fetch-nasa`, metadati NASA
 
 ## In corso
 
