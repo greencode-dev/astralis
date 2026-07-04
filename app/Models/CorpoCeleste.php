@@ -33,6 +33,7 @@ class CorpoCeleste extends Model
         'scopritore',
         'anno_scoperta',
         'in_evidenza',
+        'nasa_id',
     ];
 
     protected function casts(): array

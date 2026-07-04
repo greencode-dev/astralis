@@ -221,7 +221,7 @@ document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
     resultEl.textContent = 'Cerco su NASA...';
     resultEl.style.color = '#6B7280';
 
-    fetch('{{ route(admin.corpi-celesti.suggest-nome) }}', {
+    fetch('{{ route("admin.corpi-celesti.suggest-nome") }}', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

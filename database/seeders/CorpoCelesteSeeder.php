@@ -9,6 +9,19 @@ class CorpoCelesteSeeder extends Seeder
 {
     public function run(): void
     {
+        $categoriaNomi = [
+            1 => 'Pianeta',
+            2 => 'Stella',
+            3 => 'Luna',
+            4 => 'Galassia',
+            5 => 'Nebulosa',
+            6 => 'Asteroide',
+            7 => 'Cometa',
+            8 => 'Pianeta Nano',
+        ];
+
+        $catLookup = \App\Models\Categoria::pluck('id', 'nome');
+
         $corpi = [
             // Stelle (categoria_id = 2)
             [
@@ -308,8 +321,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
         ];
 
-        foreach ($corpi as $corpo) {
-            CorpoCeleste::create($corpo);
+        foreach ($corpi as $data) {
+            $data['categoria_id'] = $catLookup[$categoriaNomi[$data['categoria_id']]] ?? $data['categoria_id'];
+            CorpoCeleste::create($data);
         }
     }
 }
