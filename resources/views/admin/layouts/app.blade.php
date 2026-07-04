@@ -60,7 +60,15 @@
                 @endforeach
             </nav>
 
-            <div class="mt-auto px-3 py-4" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
+            <div class="mt-auto px-3 py-4 space-y-1" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
+                <a href="{{ route('profile.edit') }}"
+                   class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                   style="color: #9CA3AF;"
+                   onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.08)';"
+                   onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    Profilo
+                </a>
                 <a href="{{ route('home') }}"
                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
                    style="color: #9CA3AF;"
