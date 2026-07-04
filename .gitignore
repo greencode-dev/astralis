@@ -33,3 +33,6 @@ nul
 
 # Laravel bootstrap cache
 /bootstrap/cache/*.php
+
+# Evitare refusi da comandi cmd errati su Git Bash
+/bootstrapcache/

@@ -23,6 +23,8 @@ _Nessun bug aperto al momento_
 - **Fixato in**: Fase 0.1 e Fase 4.0
 
 > **Nota**: Questo problema si ripresenta in **qualsiasi progetto Laravel su Windows** quando una directory viene creata da Git Bash. Il fix è sempre lo stesso: ricreare la cartella con cmd nativo o Explorer.
+>
+> **Attenzione alla doppia barra**: Nei comandi cmd da Git Bash, usare sempre `cmd //c` (doppio slash) per passare opzioni a cmd. Usando `cmd /c` singolo, Git Bash interpreta `/c` come percorso Unix e il comando fallisce o crea file indesiderati (es. una cartella `bootstrapcache` invece di `bootstrap\cache`).
 
 ### [02] bootstrap.js mancante — 03/07/2026
 - **Descrizione**: `npm run build` falliva con `[UNRESOLVED_IMPORT] Module not found: ./bootstrap in resources/js/app.jsx`
