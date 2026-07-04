@@ -110,25 +110,28 @@ export default function SolarSystem() {
                 </div>
             </div>
 
-            {/* Orbite */}
-            {planets.map(planet => (
-                <div
-                    key={planet.name}
-                    className="absolute rounded-full"
-                    style={{
-                        width: planet.orbit * 2,
-                        height: planet.orbit * 2,
-                        border: '1px solid rgba(34, 211, 238, 0.08)',
-                        left: -planet.orbit,
-                        top: -planet.orbit,
-                    }}
-                />
-            ))}
+            {/* Wrapper orbite + pianeti (stesso origine del Sole) */}
+            <div className="absolute" style={{ zIndex: 5 }}>
+                {/* Orbite */}
+                {planets.map(planet => (
+                    <div
+                        key={planet.name}
+                        className="absolute rounded-full"
+                        style={{
+                            width: planet.orbit * 2,
+                            height: planet.orbit * 2,
+                            border: '1px solid rgba(34, 211, 238, 0.08)',
+                            left: -planet.orbit,
+                            top: -planet.orbit,
+                        }}
+                    />
+                ))}
 
-            {/* Pianeti */}
-            {planets.map(planet => (
-                <Planet key={planet.name} planet={planet} />
-            ))}
+                {/* Pianeti */}
+                {planets.map(planet => (
+                    <Planet key={planet.name} planet={planet} />
+                ))}
+            </div>
         </div>
     );
 }
