@@ -41,7 +41,6 @@ astralis/
 │   ├── web.php          ← Route admin (protette da Breeze)
 │   └── api.php          ← Route API pubbliche (JSON)
 ├── docs/                ← Documentazione di progetto
-├── .ai/                 ← Skill AI (snapshot contestuale per assistente)
 ```
 
 ## Entità e Relazioni
