@@ -27,18 +27,18 @@ export default function UpdateProfileInformation({
     return (
         <section className={className}>
             <header>
-                <h2 className="text-lg font-medium text-gray-900">
-                    Profile Information
+                <h2 className="text-lg font-semibold" style={{ color: '#F0F0FA' }}>
+                    Informazioni Profilo
                 </h2>
 
-                <p className="mt-1 text-sm text-gray-600">
-                    Update your account's profile information and email address.
+                <p className="mt-1 text-sm" style={{ color: '#9CA3AF' }}>
+                    Aggiorna le informazioni del tuo account e l'indirizzo email.
                 </p>
             </header>
 
             <form onSubmit={submit} className="mt-6 space-y-6">
                 <div>
-                    <InputLabel htmlFor="name" value="Name" />
+                    <InputLabel htmlFor="name" value="Nome" />
 
                     <TextInput
                         id="name"
@@ -71,29 +71,31 @@ export default function UpdateProfileInformation({
 
                 {mustVerifyEmail && user.email_verified_at === null && (
                     <div>
-                        <p className="mt-2 text-sm text-gray-800">
-                            Your email address is unverified.
+                        <p className="mt-2 text-sm" style={{ color: '#B8B8D0' }}>
+                            Il tuo indirizzo email non è verificato.
                             <Link
                                 href={route('verification.send')}
                                 method="post"
                                 as="button"
-                                className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                className="rounded-md text-sm underline transition-colors ml-1"
+                                style={{ color: '#22D3EE' }}
+                                onMouseEnter={e => e.target.style.color = '#A855F7'}
+                                onMouseLeave={e => e.target.style.color = '#22D3EE'}
                             >
-                                Click here to re-send the verification email.
+                                Clicca qui per ricevere un nuovo link di verifica.
                             </Link>
                         </p>
 
                         {status === 'verification-link-sent' && (
-                            <div className="mt-2 text-sm font-medium text-green-600">
-                                A new verification link has been sent to your
-                                email address.
+                            <div className="mt-2 text-sm font-medium" style={{ color: '#22C55E' }}>
+                                Un nuovo link di verifica è stato inviato al tuo indirizzo email.
                             </div>
                         )}
                     </div>
                 )}
 
                 <div className="flex items-center gap-4">
-                    <PrimaryButton disabled={processing}>Save</PrimaryButton>
+                    <PrimaryButton disabled={processing}>Salva</PrimaryButton>
 
                     <Transition
                         show={recentlySuccessful}
@@ -102,8 +104,8 @@ export default function UpdateProfileInformation({
                         leave="transition ease-in-out"
                         leaveTo="opacity-0"
                     >
-                        <p className="text-sm text-gray-600">
-                            Saved.
+                        <p className="text-sm" style={{ color: '#22C55E' }}>
+                            Salvato.
                         </p>
                     </Transition>
                 </div>

@@ -10,10 +10,17 @@ export default function SecondaryButton({
             {...props}
             type={type}
             className={
-                `inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 ${
+                `inline-flex items-center rounded-lg px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-all duration-200 ${
                     disabled && 'opacity-25'
                 } ` + className
             }
+            style={{
+                backgroundColor: '#111128',
+                border: '1px solid rgba(34, 211, 238, 0.2)',
+                color: '#B8B8D0',
+            }}
+            onMouseEnter={e => { if (!disabled) { e.target.style.borderColor = 'rgba(34, 211, 238, 0.4)'; e.target.style.color = '#22D3EE'; }}}
+            onMouseLeave={e => { if (!disabled) { e.target.style.borderColor = 'rgba(34, 211, 238, 0.2)'; e.target.style.color = '#B8B8D0'; }}}
             disabled={disabled}
         >
             {children}
