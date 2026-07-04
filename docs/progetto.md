@@ -110,6 +110,40 @@ GET    /api/dashboard/stats            — Stats per homepage
 | Cometa | `#22C55E` (Verde) |
 | Pianeta Nano | `#6B7280` (Grigio) |
 
+### Frontend Guest (React SPA)
+
+Il frontend guest è una React SPA standalone (senza Inertia) che comunica con il backend tramite API REST. Montata su `guest.blade.php`.
+
+**Struttura app React:**
+```
+resources/js/guest/
+├── main.jsx                ← Entry point Vite
+├── apiClient.js            ← Helper axios per chiamate API
+├── App.jsx                 ← Router + layout wrapper
+├── components/
+│   ├── Navbar.jsx          ← Navigazione guest (logo + links)
+│   ├── Footer.jsx          ← Footer tema spazio
+│   ├── SolarSystem.jsx     ← Sistema solare animato (framer-motion)
+│   ├── CorpoCard.jsx       ← Card corpo celeste
+│   ├── CategoriaBadge.jsx  ← Badge colorato per categoria
+│   └── SearchBar.jsx       ← Barra ricerca
+└── pages/
+    ├── HomePage.jsx        ← Hero + sistema solare + in evidenza
+    └── CorpiLista.jsx      ← Griglia + filtri + paginazione
+```
+
+**Route pubbliche:**
+```
+/                  → HomePage
+/corpi-celesti     → CorpiLista (con filtri)
+/corpi-celesti/:slug → Dettaglio (Fase 5)
+```
+
+**API utilizzate:**
+- `GET /api/corpi-celesti?in_evidenza=1` — Corpi in evidenza (Homepage)
+- `GET /api/corpi-celesti?categoria=...&tipo=...&search=...&page=N` — Lista filtrata
+- `GET /api/categorie` — Lista categorie (filtri)
+
 ### Backoffice Admin
 
 L'admin è raggiungibile su `/admin` dopo il login. Utilizza layout Blade con tema scuro e sidebar di navigazione.

@@ -30,3 +30,6 @@ nul
 # Astralis project files
 /.ai/
 /docs/session.log
+
+# Laravel bootstrap cache
+/bootstrap/cache/*.php

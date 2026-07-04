@@ -67,3 +67,14 @@
 - Filtri su GET `/api/missioni`: agenzia, stato
 - Route model binding con slug su show endpoints
 - Bootstrap app.php configurato per caricare api.php
+
+## Fase 4 — React Guest Frontend
+
+### 4.0 — 04/07/2026 — feat: React SPA guest (homepage + lista corpi celesti)
+- Architettura: React standalone (separato da Inertia), comunicazione via API REST
+- Entry point Vite separato `resources/js/guest/main.jsx`
+- Layout guest con navbar + footer tema spazio (palette `#0A0A1A`)
+- Homepage animata: hero + sistema solare (framer-motion) + corpi in evidenza
+- Pagina lista corpi celesti con griglia, filtri (categoria, tipo, ricerca), paginazione
+- Dipendenze: framer-motion, react-router-dom, lucide-react, axios
+- Route `/` guest sostituisce Welcome Inertia

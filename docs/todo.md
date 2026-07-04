@@ -13,8 +13,10 @@
 ## Completate
 - [x] Fase 3: API REST (10 endpoint)
 
-## Da fare
+## In corso
 - [ ] Fase 4: React — Homepage + Sistema solare animato + Lista
+
+## Da fare
 - [ ] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore
 - [ ] Fase 6: Documentazione finale, bug fix, live coding
 
