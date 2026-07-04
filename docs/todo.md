@@ -22,9 +22,22 @@
 
 _Nessuna attività in corso._
 
-- [ ] Sistema di rating per corpi celesti
+## Backlog
+
+### UI/UX
+- [ ] Adattare pagine login e register allo stile scuro dell'app (GuestLayout, auth pages)
+- [ ] Controllare e uniformare tutte le pagine dell'app allo stile del tema scuro
+- [ ] Spostare gli stili inline in file CSS/Tailwind classi per alleggerire e ottimizzare
 - [ ] Dark/light mode toggle
-- [ ] Multi-lingua (IT/EN)
 - [ ] Tema notte con stelle cadenti CSS
+
+### Sistema Solare
+- [ ] Ridurre la velocità di rotazione dei pianeti
+- [ ] Sistemare velocità orbitali: pianeti più lontani devono ruotare più lentamente di quelli vicini
+- [ ] Valutare fattibilità trasformazione orbita 2D → 3D (react-three-fiber / prospettiva CSS)
+
+### Funzionalità
+- [ ] Sistema di rating per corpi celesti
 - [ ] Dashboard admin con grafici (Chart.js/Recharts)
+- [ ] Multi-lingua (IT/EN)
 - [ ] Notifiche email per nuove missioni
