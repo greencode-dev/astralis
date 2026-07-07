@@ -221,3 +221,17 @@
 - Galleria: inline ordering (pulsanti su/giù), onerror placeholder, "Imposta come principale"
 - `uploadImmagine()` con try/catch, `destroy()` skip file locali per URL remoti
 - Galleria cleanup: sostituite 16 immagini seed mancanti con URL NASA
+
+## Fase 12 — Authorization (Policy + Gates)
+
+### 12.0 — 07/07/2026 — feat: authorization admin con Policy e Gates
+- Migration `2026_07_07_114500_add_is_admin_to_users_table`: colonna `is_admin` (boolean) su `users`
+- `app/Providers/AuthServiceProvider.php`: registrate 5 Policy + Gate `admin` (`fn($user) => $user->is_admin`)
+- Policy create: `CategoriaPolicy`, `CorpoCelestePolicy`, `MissionePolicy`, `CuriositaPolicy`, `GalleriaCorpoPolicy`
+- Pattern Policy: `viewAny`/`view` → true (tutti gli autenticati), `create`/`update`/`delete` → false, `before` hook lascia passare admin
+- `User.php`: `is_admin` in fillable + cast boolean
+- `UserFactory.php`: default `is_admin => false`
+- `DatabaseSeeder.php`: admin creato con `is_admin => true`
+- `$this->authorize()` aggiunto a tutti i metodi CRUD di: CategoriaController, CorpoCelesteController, MissioneController, CuriositaController, GalleriaController
+- `Gate::authorize('admin')` aggiunto a NasaImportController (index, import, importAll)
+- Fix: CategoriaController.php — riparata doppia dichiarazione di classe (residuo sessione precedente)

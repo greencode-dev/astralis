@@ -15,6 +15,8 @@ class CorpoCelesteController extends Controller
 {
     public function index(Request $request): View
     {
+        $this->authorize('viewAny', CorpoCeleste::class);
+
         $query = CorpoCeleste::with('categoria');
 
         if ($search = $request->get('search')) {
@@ -29,6 +31,8 @@ class CorpoCelesteController extends Controller
 
     public function create(): View
     {
+        $this->authorize('create', CorpoCeleste::class);
+
         $categorie = Categoria::orderBy('nome')->get();
 
         return view('admin.corpi-celesti.create', compact('categorie'));
@@ -36,6 +40,8 @@ class CorpoCelesteController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+        $this->authorize('create', CorpoCeleste::class);
+
         $validated = $request->validate([
             'nome' => ['required', 'string', 'max:255', 'unique:corpi_celesti,nome'],
             'nome_it' => ['nullable', 'string', 'max:255'],
@@ -64,6 +70,8 @@ class CorpoCelesteController extends Controller
 
     public function show(CorpoCeleste $corpoCeleste): View
     {
+        $this->authorize('view', $corpoCeleste);
+
         $corpoCeleste->load(['categoria', 'galleria', 'curiosita', 'missioni']);
 
         return view('admin.corpi-celesti.show', compact('corpoCeleste'));
@@ -71,6 +79,8 @@ class CorpoCelesteController extends Controller
 
     public function edit(CorpoCeleste $corpoCeleste): View
     {
+        $this->authorize('update', $corpoCeleste);
+
         $categorie = Categoria::orderBy('nome')->get();
 
         return view('admin.corpi-celesti.edit', compact('corpoCeleste', 'categorie'));
@@ -78,6 +88,8 @@ class CorpoCelesteController extends Controller
 
     public function update(Request $request, CorpoCeleste $corpoCeleste): RedirectResponse
     {
+        $this->authorize('update', $corpoCeleste);
+
         $validated = $request->validate([
             'nome' => ['required', 'string', 'max:255', 'unique:corpi_celesti,nome,' . $corpoCeleste->id],
             'nome_it' => ['nullable', 'string', 'max:255'],
@@ -110,6 +122,8 @@ class CorpoCelesteController extends Controller
 
     public function destroy(CorpoCeleste $corpoCeleste): RedirectResponse
     {
+        $this->authorize('delete', $corpoCeleste);
+
         $corpoCeleste->delete();
 
         return redirect()->route('admin.corpi-celesti.index')
@@ -118,6 +132,8 @@ class CorpoCelesteController extends Controller
 
     public function setImageFromGallery(CorpoCeleste $corpoCeleste, GalleriaCorpo $galleriaCorpo): RedirectResponse
     {
+        $this->authorize('update', $corpoCeleste);
+
         $corpoCeleste->update([
             'immagine' => $galleriaCorpo->percorso,
             'immagine_utente' => true,
@@ -129,6 +145,8 @@ class CorpoCelesteController extends Controller
 
     public function suggestNome(Request $request, NasaImageService $nasaService): \Illuminate\Http\JsonResponse
     {
+        $this->authorize('viewAny', CorpoCeleste::class);
+
         $request->validate(['nome_it' => ['required', 'string', 'max:255']]);
 
         $nomeIt = $request->input('nome_it');

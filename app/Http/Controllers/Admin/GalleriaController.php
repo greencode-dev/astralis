@@ -17,6 +17,8 @@ class GalleriaController extends Controller
 {
     public function index(): View
     {
+        $this->authorize('viewAny', GalleriaCorpo::class);
+
         $galleria = GalleriaCorpo::with('corpoCeleste')
             ->orderBy('ordine')
             ->orderBy('created_at', 'desc')
@@ -27,6 +29,8 @@ class GalleriaController extends Controller
 
     public function create(): View
     {
+        $this->authorize('create', GalleriaCorpo::class);
+
         $corpi = CorpoCeleste::orderBy('nome')->get();
 
         return view('admin.galleria.create', compact('corpi'));
@@ -34,6 +38,8 @@ class GalleriaController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+        $this->authorize('create', GalleriaCorpo::class);
+
         $validated = $request->validate([
             'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
             'percorso' => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
@@ -53,6 +59,8 @@ class GalleriaController extends Controller
 
     public function edit(GalleriaCorpo $galleriaCorpo): View
     {
+        $this->authorize('update', $galleriaCorpo);
+
         $corpi = CorpoCeleste::orderBy('nome')->get();
 
         return view('admin.galleria.edit', compact('galleriaCorpo', 'corpi'));
@@ -60,6 +68,8 @@ class GalleriaController extends Controller
 
     public function update(Request $request, GalleriaCorpo $galleriaCorpo): RedirectResponse
     {
+        $this->authorize('update', $galleriaCorpo);
+
         $validated = $request->validate([
             'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
             'percorso' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
@@ -83,6 +93,8 @@ class GalleriaController extends Controller
 
     public function destroy(GalleriaCorpo $galleriaCorpo): RedirectResponse
     {
+        $this->authorize('delete', $galleriaCorpo);
+
         if (!str_starts_with($galleriaCorpo->percorso, 'http')) {
             Storage::disk('public')->delete('galleria/' . $galleriaCorpo->percorso);
         }
@@ -95,6 +107,8 @@ class GalleriaController extends Controller
 
     public function aggiornaOrdine(Request $request, GalleriaCorpo $galleriaCorpo): RedirectResponse
     {
+        $this->authorize('update', $galleriaCorpo);
+
         $request->validate([
             'direzione' => ['required', 'in:su,giu'],
         ]);

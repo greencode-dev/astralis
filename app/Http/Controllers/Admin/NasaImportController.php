@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CorpoCeleste;
 use App\Services\NasaImageService;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 
 class NasaImportController extends Controller
@@ -16,6 +17,8 @@ class NasaImportController extends Controller
 
     public function index(): View
     {
+        Gate::authorize('admin');
+
         $corpi = CorpoCeleste::with('categoria')
             ->orderBy('nome')
             ->get();
@@ -25,6 +28,8 @@ class NasaImportController extends Controller
 
     public function import(CorpoCeleste $corpoCeleste): RedirectResponse
     {
+        Gate::authorize('admin');
+
         $result = $this->nasaService->importForBody($corpoCeleste, galleryCount: 3, force: true);
         $key = $result['success'] ? 'success' : 'error';
         return redirect()->route('admin.nasa-import.index')->with($key, $result['message']);
@@ -32,6 +37,8 @@ class NasaImportController extends Controller
 
     public function importAll(): RedirectResponse
     {
+        Gate::authorize('admin');
+
         $result = $this->nasaService->importAll(galleryCount: 5, force: true);
 
         $total = $result['total'];

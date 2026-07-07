@@ -30,6 +30,8 @@ astralis/
 │   │   ├── Admin/       ← Controller CRUD per backoffice (Blade)
 │   │   └── Api/         ← Controller API REST (JSON)
 │   ├── Models/          ← Eloquent Models (5 entità)
+│   ├── Policies/        ← Policy di autorizzazione (5 Policy)
+│   ├── Providers/       ← AuthServiceProvider (Gate + Policy registration)
 │   ├── Services/        ← Logica di business (NasaImageService)
 │   └── ...
 ├── database/
@@ -242,6 +244,18 @@ Filtri disponibili:
   - **Intervention Image**: usato solo per upload locali in Missioni (logo resize 300px) e Galleria (resize 1200px). Non usato per Corpi Celesti (URL remoti).
 
 **Profilo utente** — Pagina profilo Breeze (`/user/profile`) restilizzata con tema scuro (sfondo `#0A0A1A`, card `#111128`). 3 sezioni: informazioni nome/email, cambio password, elimina account. Shared components (TextInput, InputLabel, PrimaryButton, SecondaryButton, Modal) adattati al tema scuro.
+
+**Autorizzazione**: L'accesso al backoffice è protetto da un sistema di Policy e Gates:
+
+- **Colonna `is_admin`**: tabella `users`, boolean, default `false`. L'utente `admin@astralis.it` ha `is_admin = true`.
+- **AuthServiceProvider** (`app/Providers/AuthServiceProvider.php`): registra 5 Policy (una per entità) e definisce il Gate `admin` (`fn($user) => $user->is_admin`).
+- **Pattern Policy**: 
+  - `viewAny` / `view` — restituiscono `true` per qualsiasi utente autenticato (lettura consentita a tutti)
+  - `create` / `update` / `delete` — restituiscono `false` (negate di default)
+  - `before(User $user): ?bool` — se `$user->is_admin` è `true`, restituisce `true` e bypassa tutti i metodi
+  - Policy presenti: `CategoriaPolicy`, `CorpoCelestePolicy`, `MissionePolicy`, `CuriositaPolicy`, `GalleriaCorpoPolicy`
+- **Controller protetti**: ogni metodo CRUD nei controller admin (`CategoriaController`, `CorpoCelesteController`, `MissioneController`, `CuriositaController`, `GalleriaController`) chiama `$this->authorize()` con l'ability appropriata. `NasaImportController` usa `Gate::authorize('admin')` per proteggere index, import e importAll.
+- **API pubbliche**: le API REST (`routes/api.php`) rimangono pubbliche (nessuna autenticazione richiesta).
 
 **Transizione Inertia→Blade**: Poiché il login/register usano Inertia (React) ma l'admin usa Blade, i controller auth che fanno POST da pagine Inertia e reindirizzano a route Blade usano `Inertia::location()` invece di `redirect()->to()`. Questo forza un full page reload lato client, evitando che Inertia intercetti il redirect e tenti di caricare HTML come JSON. Controller interessati: AuthenticatedSessionController, ConfirmablePasswordController, EmailVerificationNotificationController, EmailVerificationPromptController, RegisteredUserController, VerifyEmailController.
 

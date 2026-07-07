@@ -13,6 +13,8 @@ class CuriositaController extends Controller
 {
     public function index(): View
     {
+        $this->authorize('viewAny', Curiosita::class);
+
         $curiosita = Curiosita::with('corpoCeleste.categoria')
             ->orderBy('created_at', 'desc')
             ->paginate(20);
@@ -22,6 +24,8 @@ class CuriositaController extends Controller
 
     public function create(): View
     {
+        $this->authorize('create', Curiosita::class);
+
         $corpi = CorpoCeleste::orderBy('nome')->get();
 
         return view('admin.curiosita.create', compact('corpi'));
@@ -29,6 +33,8 @@ class CuriositaController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+        $this->authorize('create', Curiosita::class);
+
         $validated = $request->validate([
             'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
             'titolo' => ['required', 'string', 'max:255'],
@@ -44,6 +50,8 @@ class CuriositaController extends Controller
 
     public function edit(Curiosita $curiositum): View
     {
+        $this->authorize('update', $curiositum);
+
         $corpi = CorpoCeleste::orderBy('nome')->get();
 
         return view('admin.curiosita.edit', compact('curiositum', 'corpi'));
@@ -51,6 +59,8 @@ class CuriositaController extends Controller
 
     public function update(Request $request, Curiosita $curiositum): RedirectResponse
     {
+        $this->authorize('update', $curiositum);
+
         $validated = $request->validate([
             'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
             'titolo' => ['required', 'string', 'max:255'],
@@ -66,6 +76,8 @@ class CuriositaController extends Controller
 
     public function destroy(Curiosita $curiositum): RedirectResponse
     {
+        $this->authorize('delete', $curiositum);
+
         $curiositum->delete();
 
         return redirect()->route('admin.curiosita.index')

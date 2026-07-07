@@ -5,18 +5,18 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CategoriaController.php": {
-    "mtime": 1783071174.9849813,
-    "ast_hash": "0e98659d019b057239cda4d1aa89ab4e",
+    "mtime": 1783431453.483679,
+    "ast_hash": "103d4a672f27536d2acf3741fe30cfd5",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CorpoCelesteController.php": {
-    "mtime": 1783417082.8286235,
-    "ast_hash": "a534453ae2b2f80ef5971e33d3af9f8e",
+    "mtime": 1783431460.8578095,
+    "ast_hash": "51c654b23514815189004e66f203cddf",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CuriositaController.php": {
-    "mtime": 1783407101.5985992,
-    "ast_hash": "c4e202d86caa4cbc1ddca0f597c9f471",
+    "mtime": 1783431483.1315696,
+    "ast_hash": "e92f877d40dbc42d8255f95ce151f553",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/DashboardController.php": {
@@ -25,18 +25,18 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/GalleriaController.php": {
-    "mtime": 1783417154.9279964,
-    "ast_hash": "19a046603493270c183d5736d62625dd",
+    "mtime": 1783431488.6506915,
+    "ast_hash": "7778a571884dd0a833ecc732eb2fabf9",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/MissioneController.php": {
-    "mtime": 1783407100.669403,
-    "ast_hash": "95f074a377b2f1a6ac82a5c59f5ee142",
+    "mtime": 1783431478.6093016,
+    "ast_hash": "f6184c46ee619083b25e4326e6621596",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/NasaImportController.php": {
-    "mtime": 1783403404.373537,
-    "ast_hash": "4a647001d9919985d8925adb098f6884",
+    "mtime": 1783431491.482129,
+    "ast_hash": "0800ebe8534cb7a66ab7c1d4753fa16a",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Api/CategoriaController.php": {
@@ -190,8 +190,8 @@
     "semantic_hash": ""
   },
   "app/Models/User.php": {
-    "mtime": 1779750712.0,
-    "ast_hash": "ca00ef9e587df52eeb3f687855f5c234",
+    "mtime": 1783431335.256045,
+    "ast_hash": "657482d2b73775f8611ab60fa2f682d6",
     "semantic_hash": ""
   },
   "app/Providers/AppServiceProvider.php": {
@@ -210,7 +210,7 @@
     "semantic_hash": ""
   },
   "bootstrap/app.php": {
-    "mtime": 1783078213.657503,
+    "mtime": 1783431357.5206838,
     "ast_hash": "a3c336d5055dbad4395010f81579e8eb",
     "semantic_hash": ""
   },
@@ -280,8 +280,8 @@
     "semantic_hash": ""
   },
   "database/factories/UserFactory.php": {
-    "mtime": 1779750712.0,
-    "ast_hash": "1c9f381f9c2bc3027971a3bfdbe99164",
+    "mtime": 1783431379.861335,
+    "ast_hash": "0a684fbe727392d16b1ea89f81724e2c",
     "semantic_hash": ""
   },
   "database/migrations/0001_01_01_000000_create_users_table.php": {
@@ -360,8 +360,8 @@
     "semantic_hash": ""
   },
   "database/seeders/DatabaseSeeder.php": {
-    "mtime": 1783408492.9463394,
-    "ast_hash": "580b865f6dd499502416a4a60d9c526d",
+    "mtime": 1783431380.6273499,
+    "ast_hash": "4c2043c0cbfbbd75897d39ec21ed6d88",
     "semantic_hash": ""
   },
   "database/seeders/GalleriaCorpoSeeder.php": {
@@ -860,8 +860,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783423928.6705763,
-    "ast_hash": "68c8229f0a70a20c8b96e1a086d51a3b",
+    "mtime": 1783432071.34782,
+    "ast_hash": "74672f45dd26cba058ef422d43b6d652",
     "semantic_hash": ""
   },
   "docs/Progetto Finale.md": {
@@ -875,18 +875,18 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1783423911.6466439,
-    "ast_hash": "79a5ab42eccfada88f5f3f3a163e2716",
+    "mtime": 1783432055.4930065,
+    "ast_hash": "ef6b9d5a35b40dafd2d374ae6f9b7715",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
-    "mtime": 1783424004.2434797,
-    "ast_hash": "2711d397f8f43b72d3525afd61b047e7",
+    "mtime": 1783432065.2684896,
+    "ast_hash": "ab7e95fce7663ee40c10cf4bb29790b1",
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1783423089.6032872,
-    "ast_hash": "27fd0f3940e168196f57f5dde53f9f62",
+    "mtime": 1783432058.2523158,
+    "ast_hash": "44b7521498f75a12c8c342f6712bd475",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -927,6 +927,41 @@
   "docs/index.md": {
     "mtime": 1783423930.0716734,
     "ast_hash": "20430f6031fe6efa3990776a7f090126",
+    "semantic_hash": ""
+  },
+  "app/Policies/CategoriaPolicy.php": {
+    "mtime": 1783431311.0588171,
+    "ast_hash": "183c781c237d27cbaef60978d2b1de0d",
+    "semantic_hash": ""
+  },
+  "app/Policies/CorpoCelestePolicy.php": {
+    "mtime": 1783431312.2132113,
+    "ast_hash": "56dfb72ddc12ff145d6ab41ae6de5f45",
+    "semantic_hash": ""
+  },
+  "app/Policies/CuriositaPolicy.php": {
+    "mtime": 1783431314.4636893,
+    "ast_hash": "ac92e37195a849a69a70f0671ecee2a5",
+    "semantic_hash": ""
+  },
+  "app/Policies/GalleriaCorpoPolicy.php": {
+    "mtime": 1783431315.651204,
+    "ast_hash": "de635e6b18b46e5823753ffd68d19637",
+    "semantic_hash": ""
+  },
+  "app/Policies/MissionePolicy.php": {
+    "mtime": 1783431313.2799573,
+    "ast_hash": "445161b301edb6f20387da666e505eba",
+    "semantic_hash": ""
+  },
+  "app/Providers/AuthServiceProvider.php": {
+    "mtime": 1783431309.8518732,
+    "ast_hash": "41dcf4fbd1ada4a15bf95d4ec917834e",
+    "semantic_hash": ""
+  },
+  "database/migrations/2026_07_07_114500_add_is_admin_to_users_table.php": {
+    "mtime": 1783431300.5808837,
+    "ast_hash": "beae8f25f70f36c434eb7a6a07ae7f06",
     "semantic_hash": ""
   }
 }

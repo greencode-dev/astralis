@@ -33,6 +33,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Guest pages**: Inertia React (`resources/js/guest/`). Entry: `main.jsx`. Routes: `/`, `/corpi-celesti`, `/corpi-celesti/:slug`, `/confronta`
 - **Admin pages**: Blade puro (`resources/views/admin/`). Master layout: `layouts/app.blade.php`
 - **API**: `routes/api.php` — 10 endpoint JSON pubblici
+- **Authorization**: Policy + Gates in `app/Policies/` e `app/Providers/AuthServiceProvider.php`
 - **Transizione Inertia→Blade**: i controller auth che fanno POST da pagine Inertia e reindirizzano a route Blade devono usare `Inertia::location()` invece di `redirect()->to()`. Questo forza un full page reload lato client, evitando che Inertia intercetti il redirect e tenti di caricare HTML come JSON. Controller interessati: AuthenticatedSessionController, ConfirmablePasswordController, EmailVerificationNotificationController, EmailVerificationPromptController, RegisteredUserController, VerifyEmailController.
 
 ## Entità chiave
@@ -52,6 +53,8 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `routes/auth.php` | Route Breeze (login, register, etc.) |
 | `app/Services/NasaImageService.php` | Import NASA con dedup, preserva immagine utente, timeout 30s, retry 2 |
 | `app/Console/Commands/CleanupGalleryDuplicates.php` | Comando `astralis:gallery` (--check/--clean/--sync/--fix/--dry-run) |
+| `app/Policies/` | Policy autorizzazione (5 Policy, una per entità) |
+| `app/Providers/AuthServiceProvider.php` | Registrazione Policy + Gate `admin` |
 | `app/Http/Controllers/Admin/` | Controller CRUD admin (Blade) |
 | `app/Http/Controllers/Api/` | Controller API (JSON) |
 | `app/Http/Controllers/Auth/` | Controller auth Breeze (Inertia) |

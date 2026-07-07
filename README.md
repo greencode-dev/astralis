@@ -16,6 +16,8 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ### 👨‍💼 Backoffice (Laravel + Blade)
 
 - Autenticazione con Laravel Breeze
+- Autenticazione con Laravel Breeze
+- Autorizzazione admin con Policy e Gates (soli admin possono creare/modificare/eliminare)
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
 - Upload di immagini con Intervention Image v4
 - NASA Import: importa immagini da NASA API (singolo, massivo con Force Import All, o via CLI con `php artisan astralis:fetch-nasa`)

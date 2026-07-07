@@ -4,6 +4,7 @@
 
 ## Fatto
 
+- [x] **Fase 12** — Authorization (Policy/Gates) ai controller admin
 - [x] **Fase 11** — Bugfix login Inertia→Blade, auth controller transizioni, NASA import dedup, galleria cleanup e ordinamento
 - [x] **Fase 10** — Bug critici: route() senza virgolette, nasa_id in fillable, categoria_id dinamico seeder
 - [x] **Fase 9** — Remote URLs, nome_it/nome_display, wordMap espansa, auto-suggest admin
@@ -23,7 +24,6 @@
 ### Alta
 
 - [ ] `[backend]` Rate limiting (`throttle`) su API pubbliche — `routes/api.php`
-- [ ] `[backend]` Authorization (Policy/Gates) ai controller admin — `app/Policies/`, `app/Providers/AuthServiceProvider.php`
 - [ ] `[backend]` Aggiungere FormRequest per validazione store/update CorpoCeleste — `app/Http/Requests/`
 
 ### Media

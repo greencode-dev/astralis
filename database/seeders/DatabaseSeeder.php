@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Admin Astralis',
                 'email' => 'admin@astralis.it',
                 'password' => bcrypt('password'),
+                'is_admin' => true,
             ]);
         }
 

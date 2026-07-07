@@ -15,6 +15,8 @@ class MissioneController extends Controller
 {
     public function index(): View
     {
+        $this->authorize('viewAny', Missione::class);
+
         $missioni = Missione::orderBy('data_lancio', 'desc')->paginate(20);
 
         return view('admin.missioni.index', compact('missioni'));
@@ -22,11 +24,15 @@ class MissioneController extends Controller
 
     public function create(): View
     {
+        $this->authorize('create', Missione::class);
+
         return view('admin.missioni.create');
     }
 
     public function store(Request $request): RedirectResponse
     {
+        $this->authorize('create', Missione::class);
+
         $validated = $request->validate([
             'nome' => ['required', 'string', 'max:255', 'unique:missioni,nome'],
             'logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,svg', 'max:1024'],
@@ -50,6 +56,8 @@ class MissioneController extends Controller
 
     public function show(Missione $missione): View
     {
+        $this->authorize('view', $missione);
+
         $missione->load('corpiCelesti');
 
         return view('admin.missioni.show', compact('missione'));
@@ -57,11 +65,15 @@ class MissioneController extends Controller
 
     public function edit(Missione $missione): View
     {
+        $this->authorize('update', $missione);
+
         return view('admin.missioni.edit', compact('missione'));
     }
 
     public function update(Request $request, Missione $missione): RedirectResponse
     {
+        $this->authorize('update', $missione);
+
         $validated = $request->validate([
             'nome' => ['required', 'string', 'max:255', 'unique:missioni,nome,' . $missione->id],
             'logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,svg', 'max:1024'],
@@ -88,6 +100,8 @@ class MissioneController extends Controller
 
     public function destroy(Missione $missione): RedirectResponse
     {
+        $this->authorize('delete', $missione);
+
         if ($missione->corpiCelesti()->count() > 0) {
             return redirect()->route('admin.missioni.index')
                 ->with('error', 'Impossibile eliminare: ci sono corpi celesti associati a questa missione.');
