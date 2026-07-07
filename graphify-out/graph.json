@@ -430,7 +430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller",
-      "community": 25,
+      "community": 15,
       "norm_label": "curiositacontroller.php"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller",
-      "community": 25,
+      "community": 15,
       "norm_label": "curiositacontroller"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_index",
-      "community": 25,
+      "community": 15,
       "norm_label": ".index()"
     },
     {
@@ -460,7 +460,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_php_view",
-      "community": 25,
+      "community": 15,
       "norm_label": "view"
     },
     {
@@ -470,7 +470,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_create",
-      "community": 25,
+      "community": 15,
       "norm_label": ".create()"
     },
     {
@@ -480,7 +480,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_store",
-      "community": 25,
+      "community": 15,
       "norm_label": ".store()"
     },
     {
@@ -490,7 +490,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_php_request",
-      "community": 25,
+      "community": 15,
       "norm_label": "request"
     },
     {
@@ -500,7 +500,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_php_redirectresponse",
-      "community": 25,
+      "community": 15,
       "norm_label": "redirectresponse"
     },
     {
@@ -510,7 +510,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_edit",
-      "community": 25,
+      "community": 15,
       "norm_label": ".edit()"
     },
     {
@@ -520,7 +520,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_update",
-      "community": 25,
+      "community": 15,
       "norm_label": ".update()"
     },
     {
@@ -530,7 +530,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_destroy",
-      "community": 25,
+      "community": 15,
       "norm_label": ".destroy()"
     },
     {
@@ -540,7 +540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 25,
+      "community": 4,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -550,7 +550,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 25,
+      "community": 4,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -560,7 +560,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 25,
+      "community": 4,
       "norm_label": ".index()"
     },
     {
@@ -570,7 +570,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 25,
+      "community": 4,
       "norm_label": "view"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller",
-      "community": 6,
+      "community": 15,
       "norm_label": "curiositacontroller.php"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller_curiositacontroller",
-      "community": 6,
+      "community": 15,
       "norm_label": "curiositacontroller"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller_curiositacontroller_index",
-      "community": 6,
+      "community": 15,
       "norm_label": ".index()"
     },
     {
@@ -2210,7 +2210,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "model",
-      "community": 25,
+      "community": 15,
       "norm_label": "model"
     },
     {
@@ -2410,7 +2410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_curiosita",
-      "community": 25,
+      "community": 15,
       "norm_label": "curiosita.php"
     },
     {
@@ -2420,7 +2420,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_models_curiosita_curiosita",
-      "community": 25,
+      "community": 15,
       "norm_label": "curiosita"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_models_curiosita_curiosita_corpoceleste",
-      "community": 25,
+      "community": 15,
       "norm_label": ".corpoceleste()"
     },
     {
@@ -2440,7 +2440,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_curiosita_php_belongsto",
-      "community": 25,
+      "community": 15,
       "norm_label": "belongsto"
     },
     {
@@ -5830,7 +5830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_api",
-      "community": 25,
+      "community": 4,
       "norm_label": "api.php"
     },
     {
@@ -5860,7 +5860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_web",
-      "community": 25,
+      "community": 4,
       "norm_label": "web.php"
     },
     {
@@ -6500,7 +6500,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "readme",
-      "community": 15,
+      "community": 13,
       "norm_label": "readme.md"
     },
     {
@@ -6510,7 +6510,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "readme_astralis_catalogo_di_corpi_celesti",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83e\ude90 astralis \u2014 catalogo di corpi celesti"
     },
     {
@@ -6520,7 +6520,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "readme_funzionalit\u00e0",
-      "community": 15,
+      "community": 13,
       "norm_label": "\u2728 funzionalita"
     },
     {
@@ -6530,107 +6530,107 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "readme_backoffice_laravel_blade",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\udc68\u200d\ud83d\udcbc backoffice (laravel + blade)"
     },
     {
       "label": "\ud83c\udf1f Frontend (React + Vite)",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "readme_frontend_react_vite",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83c\udf1f frontend (react + vite)"
     },
     {
       "label": "\ud83d\udef0\ufe0f API REST",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "readme_api_rest",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\udef0\ufe0f api rest"
     },
     {
       "label": "\ud83c\udfd7\ufe0f Architettura",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L40",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "readme_architettura",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83c\udfd7\ufe0f architettura"
     },
     {
       "label": "\ud83d\uddc4\ufe0f Entit\u00e0 e Relazioni",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "readme_entit\u00e0_e_relazioni",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\uddc4\ufe0f entita e relazioni"
     },
     {
       "label": "\ud83c\udfa8 Palette Colori",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L70",
+      "source_location": "L71",
       "_origin": "ast",
       "id": "readme_palette_colori",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83c\udfa8 palette colori"
     },
     {
       "label": "\ud83d\udee0\ufe0f Installazione",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L81",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "readme_installazione",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\udee0\ufe0f installazione"
     },
     {
       "label": "\ud83d\ude80 Accesso",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L113",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "readme_accesso",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\ude80 accesso"
     },
     {
       "label": "\ud83d\udcda Documentazione",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L131",
+      "source_location": "L135",
       "_origin": "ast",
       "id": "readme_documentazione",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\udcda documentazione"
     },
     {
       "label": "\ud83d\udd2e Sviluppi Futuri",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L135",
+      "source_location": "L139",
       "_origin": "ast",
       "id": "readme_sviluppi_futuri",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\udd2e sviluppi futuri"
     },
     {
       "label": "\ud83d\udcc4 Licenza",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L143",
+      "source_location": "L146",
       "_origin": "ast",
       "id": "readme_licenza",
-      "community": 15,
+      "community": 13,
       "norm_label": "\ud83d\udcc4 licenza"
     },
     {
@@ -6794,20 +6794,10 @@
       "norm_label": "bug tracker"
     },
     {
-      "label": "Aperti",
-      "file_type": "document",
-      "source_file": "docs/bug.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "docs_bug_aperti",
-      "community": 13,
-      "norm_label": "aperti"
-    },
-    {
       "label": "Risolti",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L7",
+      "source_location": "L3",
       "_origin": "ast",
       "id": "docs_bug_risolti",
       "community": 13,
@@ -6817,7 +6807,7 @@
       "label": "[01] bootstrap/cache non scrivibile \u2014 02/07/2026 (ricorrente su Windows)",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L9",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "docs_bug_01_bootstrap_cache_non_scrivibile_02_07_2026_ricorrente_su_windows",
       "community": 13,
@@ -6827,7 +6817,7 @@
       "label": "[02] bootstrap.js mancante \u2014 03/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L30",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "docs_bug_02_bootstrap_js_mancante_03_07_2026",
       "community": 13,
@@ -6837,7 +6827,7 @@
       "label": "[03] GalleriaCorpoSeeder percorso con prefisso \u2014 03/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L36",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "docs_bug_03_galleriacorposeeder_percorso_con_prefisso_03_07_2026",
       "community": 13,
@@ -6847,7 +6837,7 @@
       "label": "[04] Vite config missing CSS input \u2014 03/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L42",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "docs_bug_04_vite_config_missing_css_input_03_07_2026",
       "community": 13,
@@ -6857,7 +6847,7 @@
       "label": "[05] CorpoCeleste show view URL galleria sbagliato \u2014 03/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L48",
+      "source_location": "L44",
       "_origin": "ast",
       "id": "docs_bug_05_corpoceleste_show_view_url_galleria_sbagliato_03_07_2026",
       "community": 13,
@@ -6867,7 +6857,7 @@
       "label": "[06] Sluggable config mancante \u2014 03/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L54",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "docs_bug_06_sluggable_config_mancante_03_07_2026",
       "community": 13,
@@ -6877,7 +6867,7 @@
       "label": "[07] Profile: Link Inertia intercetta navigazione Blade \u2014 04/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L60",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "docs_bug_07_profile_link_inertia_intercetta_navigazione_blade_04_07_2026",
       "community": 13,
@@ -6887,7 +6877,7 @@
       "label": "[08] NASA Import: nomi italiani danno 0 risultati \u2014 04/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L66",
+      "source_location": "L62",
       "_origin": "ast",
       "id": "docs_bug_08_nasa_import_nomi_italiani_danno_0_risultati_04_07_2026",
       "community": 13,
@@ -6897,7 +6887,7 @@
       "label": "[09] NASA Import: cURL error 60 su Windows \u2014 04/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L72",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "docs_bug_09_nasa_import_curl_error_60_su_windows_04_07_2026",
       "community": 13,
@@ -6907,7 +6897,7 @@
       "label": "[10] Intervention Image v3 facade deprecata in v4 \u2014 04/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L78",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "docs_bug_10_intervention_image_v3_facade_deprecata_in_v4_04_07_2026",
       "community": 13,
@@ -6917,7 +6907,7 @@
       "label": "[11] NASA Import: memory limit per immagini ~orig troppo grandi \u2014 04/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L84",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "docs_bug_11_nasa_import_memory_limit_per_immagini_orig_troppo_grandi_04_07_2026",
       "community": 13,
@@ -6927,11 +6917,61 @@
       "label": "[12] NASA API: apostrofo causa 0 risultati \u2014 04/07/2026",
       "file_type": "document",
       "source_file": "docs/bug.md",
-      "source_location": "L90",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "docs_bug_12_nasa_api_apostrofo_causa_0_risultati_04_07_2026",
       "community": 13,
       "norm_label": "[12] nasa api: apostrofo causa 0 risultati \u2014 04/07/2026"
+    },
+    {
+      "label": "[13] Login: Inertia intercepta redirect verso pagine Blade \u2014 07/07/2026",
+      "file_type": "document",
+      "source_file": "docs/bug.md",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "docs_bug_13_login_inertia_intercepta_redirect_verso_pagine_blade_07_07_2026",
+      "community": 13,
+      "norm_label": "[13] login: inertia intercepta redirect verso pagine blade \u2014 07/07/2026"
+    },
+    {
+      "label": "[14] NASA Force Import: duplicati in galleria \u2014 07/07/2026",
+      "file_type": "document",
+      "source_file": "docs/bug.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "docs_bug_14_nasa_force_import_duplicati_in_galleria_07_07_2026",
+      "community": 13,
+      "norm_label": "[14] nasa force import: duplicati in galleria \u2014 07/07/2026"
+    },
+    {
+      "label": "[15] NASA Force Import: sovrascrive immagine principale personalizzata \u2014 07/07/2026",
+      "file_type": "document",
+      "source_file": "docs/bug.md",
+      "source_location": "L104",
+      "_origin": "ast",
+      "id": "docs_bug_15_nasa_force_import_sovrascrive_immagine_principale_personalizzata_07_07_2026",
+      "community": 13,
+      "norm_label": "[15] nasa force import: sovrascrive immagine principale personalizzata \u2014 07/07/2026"
+    },
+    {
+      "label": "[16] Galleria: immagini corrotte (file locali mancanti) \u2014 07/07/2026",
+      "file_type": "document",
+      "source_file": "docs/bug.md",
+      "source_location": "L110",
+      "_origin": "ast",
+      "id": "docs_bug_16_galleria_immagini_corrotte_file_locali_mancanti_07_07_2026",
+      "community": 13,
+      "norm_label": "[16] galleria: immagini corrotte (file locali mancanti) \u2014 07/07/2026"
+    },
+    {
+      "label": "[17] Logout reindirizza a homepage invece di login \u2014 07/07/2026",
+      "file_type": "document",
+      "source_file": "docs/bug.md",
+      "source_location": "L116",
+      "_origin": "ast",
+      "id": "docs_bug_17_logout_reindirizza_a_homepage_invece_di_login_07_07_2026",
+      "community": 13,
+      "norm_label": "[17] logout reindirizza a homepage invece di login \u2014 07/07/2026"
     },
     {
       "label": "changelog.md",
@@ -6940,7 +6980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_changelog",
-      "community": 5,
+      "community": 13,
       "norm_label": "changelog.md"
     },
     {
@@ -7334,13 +7374,73 @@
       "norm_label": "9.0 \u2014 04/07/2026 \u2014 feat: remote nasa urls, nome_it, wordmap espansa, apostrophe fallback, auto-suggest"
     },
     {
+      "label": "Fase 9.1 \u2014 Bug critici (route, fillable, seeder)",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L197",
+      "_origin": "ast",
+      "id": "docs_changelog_fase_9_1_bug_critici_route_fillable_seeder",
+      "community": 5,
+      "norm_label": "fase 9.1 \u2014 bug critici (route, fillable, seeder)"
+    },
+    {
+      "label": "9.1 \u2014 05/07/2026 \u2014 `3034aba` \u2014 fix: bug critici \u2014 route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L199",
+      "_origin": "ast",
+      "id": "docs_changelog_9_1_05_07_2026_3034aba_fix_bug_critici_route_senza_virgolette_nasa_id_in_fillable_categoria_id_dinamico_nel_seeder",
+      "community": 5,
+      "norm_label": "9.1 \u2014 05/07/2026 \u2014 `3034aba` \u2014 fix: bug critici \u2014 route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder"
+    },
+    {
+      "label": "Fase 10 \u2014 UI/UX tema scuro, sistema solare, paginazione",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L204",
+      "_origin": "ast",
+      "id": "docs_changelog_fase_10_ui_ux_tema_scuro_sistema_solare_paginazione",
+      "community": 5,
+      "norm_label": "fase 10 \u2014 ui/ux tema scuro, sistema solare, paginazione"
+    },
+    {
+      "label": "10.0 \u2014 06/07/2026 \u2014 `2d736af` `be1ee9b` `14ed82f` \u2014 feat: tema scuro auth pages, link Register, ridotta velocit\u00e0 orbite",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L206",
+      "_origin": "ast",
+      "id": "docs_changelog_10_0_06_07_2026_2d736af_be1ee9b_14ed82f_feat_tema_scuro_auth_pages_link_register_ridotta_velocit\u00e0_orbite",
+      "community": 5,
+      "norm_label": "10.0 \u2014 06/07/2026 \u2014 `2d736af` `be1ee9b` `14ed82f` \u2014 feat: tema scuro auth pages, link register, ridotta velocita orbite"
+    },
+    {
+      "label": "Fase 11 \u2014 Bugfix Inertia\u2192Blade, NASA dedup, galleria cleanup",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L212",
+      "_origin": "ast",
+      "id": "docs_changelog_fase_11_bugfix_inertia_blade_nasa_dedup_galleria_cleanup",
+      "community": 5,
+      "norm_label": "fase 11 \u2014 bugfix inertia\u2192blade, nasa dedup, galleria cleanup"
+    },
+    {
+      "label": "11.0 \u2014 07/07/2026 \u2014 `65ed6d4` \u2014 fix: Inertia\u2192Blade transizione, NASA import dedup, galleria cleanup e ordinamento",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L214",
+      "_origin": "ast",
+      "id": "docs_changelog_11_0_07_07_2026_65ed6d4_fix_inertia_blade_transizione_nasa_import_dedup_galleria_cleanup_e_ordinamento",
+      "community": 5,
+      "norm_label": "11.0 \u2014 07/07/2026 \u2014 `65ed6d4` \u2014 fix: inertia\u2192blade transizione, nasa import dedup, galleria cleanup e ordinamento"
+    },
+    {
       "label": "documentazione.md",
       "file_type": "document",
       "source_file": "docs/documentazione.md",
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_documentazione",
-      "community": 12,
+      "community": 13,
       "norm_label": "documentazione.md"
     },
     {
@@ -7487,7 +7587,7 @@
       "label": "Guida all'installazione",
       "file_type": "document",
       "source_file": "docs/documentazione.md",
-      "source_location": "L243",
+      "source_location": "L248",
       "_origin": "ast",
       "id": "docs_documentazione_guida_all_installazione",
       "community": 12,
@@ -7497,11 +7597,51 @@
       "label": "Credenziali Admin (demo)",
       "file_type": "document",
       "source_file": "docs/documentazione.md",
-      "source_location": "L281",
+      "source_location": "L286",
       "_origin": "ast",
       "id": "docs_documentazione_credenziali_admin_demo",
       "community": 12,
       "norm_label": "credenziali admin (demo)"
+    },
+    {
+      "label": "index.md",
+      "file_type": "document",
+      "source_file": "docs/index.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_index",
+      "community": 13,
+      "norm_label": "index.md"
+    },
+    {
+      "label": "Documentazione Astralis",
+      "file_type": "document",
+      "source_file": "docs/index.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_index_documentazione_astralis",
+      "community": 13,
+      "norm_label": "documentazione astralis"
+    },
+    {
+      "label": "Indice",
+      "file_type": "document",
+      "source_file": "docs/index.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_index_indice",
+      "community": 13,
+      "norm_label": "indice"
+    },
+    {
+      "label": "Collegamenti rapidi",
+      "file_type": "document",
+      "source_file": "docs/index.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "docs_index_collegamenti_rapidi",
+      "community": 13,
+      "norm_label": "collegamenti rapidi"
     },
     {
       "label": "todo.md",
@@ -7510,7 +7650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo",
-      "community": 20,
+      "community": 13,
       "norm_label": "todo.md"
     },
     {
@@ -7520,68 +7660,68 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo_todo",
-      "community": 20,
+      "community": 13,
       "norm_label": "todo"
     },
     {
-      "label": "Completate",
+      "label": "Fatto",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L3",
+      "source_location": "L5",
       "_origin": "ast",
-      "id": "docs_todo_completate",
-      "community": 20,
-      "norm_label": "completate"
+      "id": "docs_todo_fatto",
+      "community": 13,
+      "norm_label": "fatto"
     },
     {
-      "label": "In corso",
+      "label": "Da Fare",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L18",
+      "source_location": "L21",
       "_origin": "ast",
-      "id": "docs_todo_in_corso",
-      "community": 20,
-      "norm_label": "in corso"
+      "id": "docs_todo_da_fare",
+      "community": 13,
+      "norm_label": "da fare"
     },
     {
-      "label": "Future",
+      "label": "Alta",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
-      "id": "docs_todo_future",
-      "community": 20,
-      "norm_label": "future"
+      "id": "docs_todo_alta",
+      "community": 13,
+      "norm_label": "alta"
     },
     {
-      "label": "Priorit\u00e0 Alta",
+      "label": "Media",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L24",
+      "source_location": "L29",
       "_origin": "ast",
-      "id": "docs_todo_priorit\u00e0_alta",
-      "community": 20,
-      "norm_label": "priorita alta"
+      "id": "docs_todo_media",
+      "community": 13,
+      "norm_label": "media"
     },
     {
-      "label": "Priorit\u00e0 Media",
+      "label": "Bassa",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L40",
+      "source_location": "L47",
       "_origin": "ast",
-      "id": "docs_todo_priorit\u00e0_media",
-      "community": 20,
-      "norm_label": "priorita media"
+      "id": "docs_todo_bassa",
+      "community": 13,
+      "norm_label": "bassa"
     },
     {
-      "label": "Priorit\u00e0 Bassa",
+      "label": "Note",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L67",
+      "source_location": "L62",
       "_origin": "ast",
-      "id": "docs_todo_priorit\u00e0_bassa",
-      "community": 20,
-      "norm_label": "priorita bassa"
+      "id": "docs_todo_note",
+      "community": 13,
+      "norm_label": "note"
     }
   ],
   "links": [
@@ -8362,28 +8502,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller",
       "target": "app_models_categoria",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_corpocelestecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_corpocelestecontroller",
       "confidence_score": 1.0
     },
     {
@@ -9192,6 +9310,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
@@ -9340,6 +9480,28 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller",
       "target": "app_models_corpoceleste",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_galleriacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_galleriacontroller",
       "confidence_score": 1.0
     },
     {
@@ -10369,6 +10531,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_corpocelestecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_corpocelestecontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CorpoCelesteController.php",
@@ -10625,28 +10809,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/DashboardController.php",
@@ -10751,28 +10913,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_api_galleriacontroller",
       "target": "app_http_resources_galleriacorporesource",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_galleriacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_galleriacontroller",
       "confidence_score": 1.0
     },
     {
@@ -17912,6 +18052,16 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "docs_index",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
@@ -17925,7 +18075,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L113",
+      "source_location": "L117",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_accesso",
@@ -17935,7 +18085,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_architettura",
@@ -17945,7 +18095,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L131",
+      "source_location": "L135",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_documentazione",
@@ -17955,7 +18105,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_entit\u00e0_e_relazioni",
@@ -17975,7 +18125,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L81",
+      "source_location": "L82",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_installazione",
@@ -17985,7 +18135,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L143",
+      "source_location": "L146",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_licenza",
@@ -17995,7 +18145,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_palette_colori",
@@ -18005,7 +18155,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L135",
+      "source_location": "L139",
       "weight": 1.0,
       "source": "readme_astralis_catalogo_di_corpi_celesti",
       "target": "readme_sviluppi_futuri",
@@ -18015,7 +18165,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "readme_funzionalit\u00e0",
       "target": "readme_api_rest",
@@ -18035,7 +18185,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "readme_funzionalit\u00e0",
       "target": "readme_frontend_react_vite",
@@ -18182,20 +18332,20 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "references",
       "confidence": "EXTRACTED",
-      "source_file": "docs/bug.md",
-      "source_location": "L3",
+      "source_file": "docs/index.md",
+      "source_location": "L9",
       "weight": 1.0,
-      "source": "docs_bug_bug_tracker",
-      "target": "docs_bug_aperti",
+      "source": "docs_index",
+      "target": "docs_bug",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L7",
+      "source_location": "L3",
       "weight": 1.0,
       "source": "docs_bug_bug_tracker",
       "target": "docs_bug_risolti",
@@ -18205,7 +18355,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L9",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_01_bootstrap_cache_non_scrivibile_02_07_2026_ricorrente_su_windows",
@@ -18215,7 +18365,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L30",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_02_bootstrap_js_mancante_03_07_2026",
@@ -18225,7 +18375,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L36",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_03_galleriacorposeeder_percorso_con_prefisso_03_07_2026",
@@ -18235,7 +18385,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L42",
+      "source_location": "L38",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_04_vite_config_missing_css_input_03_07_2026",
@@ -18245,7 +18395,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L48",
+      "source_location": "L44",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_05_corpoceleste_show_view_url_galleria_sbagliato_03_07_2026",
@@ -18255,7 +18405,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L54",
+      "source_location": "L50",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_06_sluggable_config_mancante_03_07_2026",
@@ -18265,7 +18415,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L60",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_07_profile_link_inertia_intercetta_navigazione_blade_04_07_2026",
@@ -18275,7 +18425,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L66",
+      "source_location": "L62",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_08_nasa_import_nomi_italiani_danno_0_risultati_04_07_2026",
@@ -18285,7 +18435,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L72",
+      "source_location": "L68",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_09_nasa_import_curl_error_60_su_windows_04_07_2026",
@@ -18295,7 +18445,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L78",
+      "source_location": "L74",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_10_intervention_image_v3_facade_deprecata_in_v4_04_07_2026",
@@ -18305,7 +18455,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L84",
+      "source_location": "L80",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_11_nasa_import_memory_limit_per_immagini_orig_troppo_grandi_04_07_2026",
@@ -18315,10 +18465,60 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
-      "source_location": "L90",
+      "source_location": "L86",
       "weight": 1.0,
       "source": "docs_bug_risolti",
       "target": "docs_bug_12_nasa_api_apostrofo_causa_0_risultati_04_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/bug.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "docs_bug_risolti",
+      "target": "docs_bug_13_login_inertia_intercepta_redirect_verso_pagine_blade_07_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/bug.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "docs_bug_risolti",
+      "target": "docs_bug_14_nasa_force_import_duplicati_in_galleria_07_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/bug.md",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "docs_bug_risolti",
+      "target": "docs_bug_15_nasa_force_import_sovrascrive_immagine_principale_personalizzata_07_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/bug.md",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "docs_bug_risolti",
+      "target": "docs_bug_16_galleria_immagini_corrotte_file_locali_mancanti_07_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/bug.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "docs_bug_risolti",
+      "target": "docs_bug_17_logout_reindirizza_a_homepage_invece_di_login_07_07_2026",
       "confidence_score": 1.0
     },
     {
@@ -18332,6 +18532,16 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "docs_index",
+      "target": "docs_changelog",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
@@ -18339,6 +18549,26 @@
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_0_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "docs_changelog_changelog",
+      "target": "docs_changelog_fase_10_ui_ux_tema_scuro_sistema_solare_paginazione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "docs_changelog_changelog",
+      "target": "docs_changelog_fase_11_bugfix_inertia_blade_nasa_dedup_galleria_cleanup",
       "confidence_score": 1.0
     },
     {
@@ -18419,6 +18649,16 @@
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_8_nasa_import_multi_immagine_service_layer_cli_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "docs_changelog_changelog",
+      "target": "docs_changelog_fase_9_1_bug_critici_route_fillable_seeder",
       "confidence_score": 1.0
     },
     {
@@ -18714,11 +18954,51 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "docs_changelog_fase_9_1_bug_critici_route_fillable_seeder",
+      "target": "docs_changelog_9_1_05_07_2026_3034aba_fix_bug_critici_route_senza_virgolette_nasa_id_in_fillable_categoria_id_dinamico_nel_seeder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "docs_changelog_fase_10_ui_ux_tema_scuro_sistema_solare_paginazione",
+      "target": "docs_changelog_10_0_06_07_2026_2d736af_be1ee9b_14ed82f_feat_tema_scuro_auth_pages_link_register_ridotta_velocit\u00e0_orbite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "docs_changelog_fase_11_bugfix_inertia_blade_nasa_dedup_galleria_cleanup",
+      "target": "docs_changelog_11_0_07_07_2026_65ed6d4_fix_inertia_blade_transizione_nasa_import_dedup_galleria_cleanup_e_ordinamento",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/documentazione.md",
       "source_location": "L1",
       "weight": 1.0,
       "source": "docs_documentazione",
       "target": "docs_documentazione_astralis_documentazione_di_progetto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "docs_index",
+      "target": "docs_documentazione",
       "confidence_score": 1.0
     },
     {
@@ -18745,7 +19025,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/documentazione.md",
-      "source_location": "L281",
+      "source_location": "L286",
       "weight": 1.0,
       "source": "docs_documentazione_astralis_documentazione_di_progetto",
       "target": "docs_documentazione_credenziali_admin_demo",
@@ -18765,7 +19045,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/documentazione.md",
-      "source_location": "L243",
+      "source_location": "L248",
       "weight": 1.0,
       "source": "docs_documentazione_astralis_documentazione_di_progetto",
       "target": "docs_documentazione_guida_all_installazione",
@@ -18874,6 +19154,46 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_index",
+      "target": "docs_index_documentazione_astralis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "docs_index",
+      "target": "docs_todo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "docs_index_documentazione_astralis",
+      "target": "docs_index_collegamenti_rapidi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "docs_index_documentazione_astralis",
+      "target": "docs_index_indice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -18885,63 +19205,63 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L3",
+      "source_location": "L21",
       "weight": 1.0,
       "source": "docs_todo_todo",
-      "target": "docs_todo_completate",
+      "target": "docs_todo_da_fare",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L22",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "docs_todo_todo",
-      "target": "docs_todo_future",
+      "target": "docs_todo_fatto",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L18",
+      "source_location": "L62",
       "weight": 1.0,
       "source": "docs_todo_todo",
-      "target": "docs_todo_in_corso",
+      "target": "docs_todo_note",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0,
-      "source": "docs_todo_future",
-      "target": "docs_todo_priorit\u00e0_alta",
+      "source": "docs_todo_da_fare",
+      "target": "docs_todo_alta",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L67",
+      "source_location": "L47",
       "weight": 1.0,
-      "source": "docs_todo_future",
-      "target": "docs_todo_priorit\u00e0_bassa",
+      "source": "docs_todo_da_fare",
+      "target": "docs_todo_bassa",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L40",
+      "source_location": "L29",
       "weight": 1.0,
-      "source": "docs_todo_future",
-      "target": "docs_todo_priorit\u00e0_media",
+      "source": "docs_todo_da_fare",
+      "target": "docs_todo_media",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d52aee4a0b32f7b3db064a9493e37928aba3834d"
+  "built_at_commit": "8ff8add78243a554ed5d3db3e10b9b0bc2c8e169"
 }

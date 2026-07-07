@@ -19,6 +19,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
 - Upload di immagini con Intervention Image v4
 - NASA Import: importa immagini da NASA API (singolo, massivo con Force Import All, o via CLI con `php artisan astralis:fetch-nasa`)
+- Manutenzione galleria immagini (`php artisan astralis:gallery --fix`)
 - Dashboard con statistiche
 - Dark theme (`#0A0A1A`, `#111128`, `#22D3EE`)
 
@@ -102,6 +103,9 @@ php artisan migrate --seed
 # (Opzionale) Scarica immagini NASA per tutti i corpi celesti
 php artisan astralis:fetch-nasa --gallery=5
 
+# (Opzionale) Sostituisce immagini seed mancanti con URL NASA
+php artisan astralis:gallery --fix
+
 # Storage per upload
 php artisan storage:link
 
@@ -124,17 +128,16 @@ npm run dev
   - `/admin/corpi-celesti` — Gestione corpi celesti (CRUD + upload immagini) ✅
   - `/admin/missioni` — Gestione missioni spaziali (CRUD + upload logo) ✅
   - `/admin/curiosita` — Gestione curiosità (CRUD) ✅
-  - `/admin/galleria` — Gestione galleria immagini (CRUD) ✅
+  - `/admin/galleria` — Gestione galleria immagini (CRUD + ordinamento inline) ✅
 - **Credenziali demo**: admin@astralis.it / password
 - **API**: `http://localhost:8000/api/corpi-celesti`, `/api/categorie`, `/api/missioni`, `/api/curiosita`, `/api/galleria`, `/api/dashboard/stats`
 
 ## 📚 Documentazione
 
-La documentazione completa del progetto è disponibile in [`docs/progetto.md`](docs/progetto.md).
+La documentazione completa del progetto è disponibile in [`docs/index.md`](docs/index.md).
 
 ## 🔮 Sviluppi Futuri
 
-- Integrazione con NASA API per immagini in tempo reale
 - Dark/light mode toggle
 - Multi-lingua (IT/EN)
 - Dashboard admin con grafici

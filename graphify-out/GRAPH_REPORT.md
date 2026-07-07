@@ -1,16 +1,16 @@
 # Graph Report - astralis  (2026-07-07)
 
 ## Corpus Check
-- 184 files · ~56,154 words
+- 185 files · ~56,933 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 758 nodes · 1084 edges · 114 communities (113 shown, 1 thin omitted)
+- 772 nodes · 1102 edges · 113 communities (112 shown, 1 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 55 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d52aee4a`
+- Built from commit: `8ff8add7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,7 +33,6 @@
 - [[_COMMUNITY_composer.json|composer.json]]
 - [[_COMMUNITY_scripts|scripts]]
 - [[_COMMUNITY_require-dev|require-dev]]
-- [[_COMMUNITY_Future|Future]]
 - [[_COMMUNITY_Edit.jsx|Edit.jsx]]
 - [[_COMMUNITY_HandleInertiaRequests|HandleInertiaRequests]]
 - [[_COMMUNITY_config|config]]
@@ -54,8 +53,8 @@
 6. `Missione` - 20 edges
 7. `TestCase` - 20 edges
 8. `NasaImageService` - 19 edges
-9. `Curiosita` - 15 edges
-10. `Risolti` - 13 edges
+9. `Risolti` - 18 edges
+10. `Curiosita` - 15 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `CategoriaController` --inherits--> `Controller`  [EXTRACTED]
@@ -72,7 +71,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (114 total, 1 thin omitted)
+## Communities (113 total, 1 thin omitted)
 
 ### Community 0 - "User"
 Cohesion: 0.07
@@ -87,16 +86,16 @@ Cohesion: 0.06
 Nodes (20): CorpoCelesteController, JsonResponse, RedirectResponse, Request, View, CorpoCeleste, BelongsTo, BelongsToMany (+12 more)
 
 ### Community 4 - "Missione"
-Cohesion: 0.15
-Nodes (9): MissioneController, RedirectResponse, Request, View, MissioneController, Request, Missione, BelongsToMany (+1 more)
+Cohesion: 0.12
+Nodes (11): DashboardController, View, MissioneController, RedirectResponse, Request, View, MissioneController, Request (+3 more)
 
 ### Community 5 - "Changelog"
-Cohesion: 0.05
-Nodes (39): 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione, 1.0 — 03/07/2026 — `0a57208` — feat: database e modelli con seeders, 2.1 — 03/07/2026 — `070da55` — feat: admin backoffice layout, sidebar navigation e dashboard, 2.2 — 03/07/2026 — `758be4c` — feat: CRUD categorie backoffice, 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice, 2.4 — 03/07/2026 — `6d86177` — feat: CRUD missioni backoffice, 2.5 — 03/07/2026 — `2f8a67e` — feat: CRUD curiosità backoffice, 2.6 — 03/07/2026 — `99615bb` — feat: CRUD galleria backoffice (+31 more)
+Cohesion: 0.04
+Nodes (45): 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione, 10.0 — 06/07/2026 — `2d736af` `be1ee9b` `14ed82f` — feat: tema scuro auth pages, link Register, ridotta velocità orbite, 11.0 — 07/07/2026 — `65ed6d4` — fix: Inertia→Blade transizione, NASA import dedup, galleria cleanup e ordinamento, 1.0 — 03/07/2026 — `0a57208` — feat: database e modelli con seeders, 2.1 — 03/07/2026 — `070da55` — feat: admin backoffice layout, sidebar navigation e dashboard, 2.2 — 03/07/2026 — `758be4c` — feat: CRUD categorie backoffice, 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice, 2.4 — 03/07/2026 — `6d86177` — feat: CRUD missioni backoffice (+37 more)
 
 ### Community 6 - "JsonResource"
-Cohesion: 0.10
-Nodes (15): CorpoCelesteController, Request, CuriositaController, GalleriaController, CategoriaResource, Request, CorpoCelesteResource, Request (+7 more)
+Cohesion: 0.11
+Nodes (14): CorpoCelesteController, Request, GalleriaController, CategoriaResource, Request, CorpoCelesteResource, Request, CuriositaResource (+6 more)
 
 ### Community 7 - "LoginRequest"
 Cohesion: 0.12
@@ -119,16 +118,16 @@ Cohesion: 0.12
 Nodes (16): API REST, API REST (Endpoint), Architettura, Astralis — Documentazione di Progetto, Backoffice Admin, Badge Categoria, Credenziali Admin (demo), Dettaglio Entità (+8 more)
 
 ### Community 13 - "Risolti"
-Cohesion: 0.12
-Nodes (15): [01] bootstrap/cache non scrivibile — 02/07/2026 (ricorrente su Windows), [02] bootstrap.js mancante — 03/07/2026, [03] GalleriaCorpoSeeder percorso con prefisso — 03/07/2026, [04] Vite config missing CSS input — 03/07/2026, [05] CorpoCeleste show view URL galleria sbagliato — 03/07/2026, [06] Sluggable config mancante — 03/07/2026, [07] Profile: Link Inertia intercetta navigazione Blade — 04/07/2026, [08] NASA Import: nomi italiani danno 0 risultati — 04/07/2026 (+7 more)
+Cohesion: 0.04
+Nodes (42): [01] bootstrap/cache non scrivibile — 02/07/2026 (ricorrente su Windows), [02] bootstrap.js mancante — 03/07/2026, [03] GalleriaCorpoSeeder percorso con prefisso — 03/07/2026, [04] Vite config missing CSS input — 03/07/2026, [05] CorpoCeleste show view URL galleria sbagliato — 03/07/2026, [06] Sluggable config mancante — 03/07/2026, [07] Profile: Link Inertia intercetta navigazione Blade — 04/07/2026, [08] NASA Import: nomi italiani danno 0 risultati — 04/07/2026 (+34 more)
 
 ### Community 14 - "Parte 1: Backoffice in Laravel"
 Cohesion: 0.14
 Nodes (13): 🔒 Autenticazione e Accesso, 💡 Consigli, Descrizione, 💡 Esempi di Struttura, 📦 Gestione Entità (CRUD), 💻 Note Tecniche, 🎯 Obiettivo, Parte 1: Backoffice in Laravel (+5 more)
 
 ### Community 15 - "🪐 Astralis — Catalogo di Corpi Celesti"
-Cohesion: 0.14
-Nodes (13): 🚀 Accesso, 🛰️ API REST, 🏗️ Architettura, 🪐 Astralis — Catalogo di Corpi Celesti, 👨‍💼 Backoffice (Laravel + Blade), 📚 Documentazione, 🗄️ Entità e Relazioni, 🌟 Frontend (React + Vite) (+5 more)
+Cohesion: 0.20
+Nodes (8): CuriositaController, RedirectResponse, Request, View, CuriositaController, Curiosita, BelongsTo, Model
 
 ### Community 16 - "require"
 Cohesion: 0.18
@@ -145,10 +144,6 @@ Nodes (9): scripts, dev, post-autoload-dump, post-create-project-cmd, post-root-
 ### Community 19 - "require-dev"
 Cohesion: 0.25
 Nodes (8): require-dev, fakerphp/faker, laravel/pail, laravel/pao, laravel/pint, mockery/mockery, nunomaduro/collision, phpunit/phpunit
-
-### Community 20 - "Future"
-Cohesion: 0.25
-Nodes (7): Completate, Future, In corso, Priorità Alta, Priorità Bassa, Priorità Media, Todo
 
 ### Community 21 - "Edit.jsx"
 Cohesion: 0.36
@@ -167,8 +162,8 @@ Cohesion: 0.29
 Nodes (6): compilerOptions, baseUrl, paths, exclude, @/*, ziggy-js
 
 ### Community 25 - "Seeder"
-Cohesion: 0.08
-Nodes (20): CategoriaController, RedirectResponse, Request, View, CuriositaController, RedirectResponse, Request, View (+12 more)
+Cohesion: 0.14
+Nodes (11): CategoriaController, RedirectResponse, Request, View, CategoriaController, DashboardController, JsonResponse, Categoria (+3 more)
 
 ### Community 26 - "UserFactory"
 Cohesion: 0.47
@@ -187,19 +182,19 @@ Cohesion: 0.67
 Nodes (3): extra, laravel, dont-discover
 
 ## Knowledge Gaps
-- **162 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+157 more)
+- **171 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+166 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Controller` connect `Curiosita` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `GalleriaCorpo`, `Seeder`?**
-  _High betweenness centrality (0.128) - this node is a cross-community bridge._
-- **Why does `CorpoCeleste` connect `CorpoCeleste` to `Seeder`, `GalleriaCorpo`, `JsonResource`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Why does `Controller` connect `Curiosita` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `GalleriaCorpo`, `🪐 Astralis — Catalogo di Corpi Celesti`, `Seeder`?**
+  _High betweenness centrality (0.124) - this node is a cross-community bridge._
+- **Why does `CorpoCeleste` connect `CorpoCeleste` to `Missione`, `JsonResource`, `GalleriaCorpo`, `🪐 Astralis — Catalogo di Corpi Celesti`, `Seeder`?**
+  _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **Why does `User` connect `User` to `Curiosita`, `CorpoCeleste`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Are the 11 inferred relationships involving `CorpoCeleste` (e.g. with `.create()` and `.edit()`) actually correct?**
   _`CorpoCeleste` has 11 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `User` (e.g. with `.store()` and `.run()`) actually correct?**

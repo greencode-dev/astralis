@@ -1,9 +1,5 @@
 # Bug Tracker
 
-## Aperti
-
-_(Nessun bug aperto.)_
-
 ## Risolti
 
 ### [01] bootstrap/cache non scrivibile — 02/07/2026 (ricorrente su Windows)
@@ -92,3 +88,33 @@ _(Nessun bug aperto.)_
 - **Causa**: NASA API non gestisce apostrofi nelle query di ricerca. `Halley's` (con apostrofo) non matcha `Halleys` (senza) nei database NASA
 - **Soluzione**: `NasaImageService::searchNasa()` ora prova automaticamente query senza apostrofi (`str_replace(["'", "`", "’", "'s ", "'s"], "", $query)`) e aggiunge fallback extra "comet" per nomi contenenti "comet"/"halley". Le immagini vengono inoltre salvate come URL remoti invece di essere scaricate, eliminando il memory limit problem.
 - **Fixato in**: Fase 9.0
+
+### [13] Login: Inertia intercepta redirect verso pagine Blade — 07/07/2026
+- **Descrizione**: Dopo il login, i link della navbar admin non funzionano fino a refresh manuale
+- **Causa**: Transizione Inertia (React login) → Blade (admin dashboard). Inertia intercetta il redirect 302 e prova a caricare la risposta come JSON, ma Blade restituisce HTML
+- **Soluzione**: Sostituito `redirect()->intended()` con `Inertia::location()` in AuthenticatedSessionController::store(). Stesso fix per altri 5 auth controller POST
+- **Fixato in**: Fase 11.0
+
+### [14] NASA Force Import: duplicati in galleria — 07/07/2026
+- **Descrizione**: Eseguendo Force Import più volte, le stesse immagini NASA venivano aggiunte più volte alla galleria
+- **Causa**: Nessun controllo duplicati in NasaImageService::importForBody() — creava sempre nuovi GalleriaCorpo
+- **Soluzione**: Aggiunto check `GalleriaCorpo::where('corpo_celeste_id', $id)->where('percorso', $url)->exists()` prima di creare
+- **Fixato in**: Fase 11.0
+
+### [15] NASA Force Import: sovrascrive immagine principale personalizzata — 07/07/2026
+- **Descrizione**: Il Force Import sostituiva l'immagine principale anche se l'utente l'aveva cambiata manualmente dalla galleria
+- **Causa**: Nessuna distinzione tra immagini impostate dall'utente e immagini importate da NASA
+- **Soluzione**: Aggiunta colonna `immagine_utente` (boolean, default false). CorpoCelesteController::setImageFromGallery() e update() la impostano a true. NasaImageService::importForBody() non sovrascrive se true, anche con force=true
+- **Fixato in**: Fase 11.0
+
+### [16] Galleria: immagini corrotte (file locali mancanti) — 07/07/2026
+- **Descrizione**: Galleria mostrava placeholder rotti per immagini seed che puntavano a file inesistenti su disco (plutone-1.jpg, etc.)
+- **Causa**: I seed di GalleriaCorpo (IDs 1-16) salvavano riferimenti a file locali mai creati su `storage/app/public/galleria/`
+- **Soluzione**: Creato comando `php artisan astralis:gallery --fix` che verifica ogni record (HEAD per URL remoti, Storage::exists() per locali) e sostituisce quelli ko con immagini NASA. Aggiunto onerror placeholder nelle view
+- **Fixato in**: Fase 11.0
+
+### [17] Logout reindirizza a homepage invece di login — 07/07/2026
+- **Descrizione**: Dopo il logout, l'utente veniva reindirizzato a `/` (guest SPA) invece che a `/login`
+- **Causa**: AuthenticatedSessionController::destroy() usava `return redirect('/')`
+- **Soluzione**: Sostituito con `return redirect('/login')`
+- **Fixato in**: Fase 11.0

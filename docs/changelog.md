@@ -193,3 +193,31 @@
 - **Test**: 25/25 PHPUnit passati (61 assertions)
 - **Vite build**: 3173 moduli, zero errori
 - **Documentazione**: changelog, todo, bug, documentazione, session.log, SKILL.md aggiornati
+
+## Fase 9.1 — Bug critici (route, fillable, seeder)
+
+### 9.1 — 05/07/2026 — `3034aba` — fix: bug critici — route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder
+- Fix: route() senza virgolette in CorpoCelesteController
+- Fix: `nasa_id` aggiunto a `$fillable` in CorpoCeleste model
+- Fix: `categoria_id` dinamico nel seeder (non hard-coded)
+
+## Fase 10 — UI/UX tema scuro, sistema solare, paginazione
+
+### 10.0 — 06/07/2026 — `2d736af` `be1ee9b` `14ed82f` — feat: tema scuro auth pages, link Register, ridotta velocità orbite
+- GuestLayout, Login, Register: tema scuro (`#0A0A1A`, `#111128`)
+- "Register" link su Login page per nuovi utenti
+- Velocità orbitali differenziate: pianeti lontani ruotano più lentamente
+- Paginazione admin (`->paginate(20)`) su corpi-celesti, galleria, missioni, curiosità
+
+## Fase 11 — Bugfix Inertia→Blade, NASA dedup, galleria cleanup
+
+### 11.0 — 07/07/2026 — `65ed6d4` — fix: Inertia→Blade transizione, NASA import dedup, galleria cleanup e ordinamento
+- Login/logout: `Inertia::location()` per full page reload, logout redirect a `/login`
+- Tutti gli auth controller POST → `Inertia::location()` (6 controllers)
+- NASA import: deduplicazione galleria (stesso `percorso` + `corpo_celeste_id`)
+- NASA import: preserva `immagine_utente` (non sovrascrive se flag true)
+- Colonna `immagine_utente` (boolean) su `corpi_celesti`
+- Comando `astralis:gallery` con `--check`/`--clean`/`--sync`/`--fix`/`--dry-run`
+- Galleria: inline ordering (pulsanti su/giù), onerror placeholder, "Imposta come principale"
+- `uploadImmagine()` con try/catch, `destroy()` skip file locali per URL remoti
+- Galleria cleanup: sostituite 16 immagini seed mancanti con URL NASA
