@@ -18,7 +18,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 ## Tech stack & gotchas
 
 - **Backend**: Laravel 13, PHP 8.x
-- **Auth**: Laravel Breeze (Inertia login/register → Blade admin)
+- **Auth**: Laravel Breeze (Blade puro login/register → Blade admin)
 - **Database**: MySQL (port 3307)
 - **Guest frontend**: React 19, Vite, framer-motion, react-router-dom, lucide-react, yet-another-react-lightbox
 - **Admin frontend**: Blade, Alpine.js (CDN da unpkg — no local fallback)
@@ -34,7 +34,6 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Admin pages**: Blade puro (`resources/views/admin/`). Master layout: `layouts/app.blade.php`
 - **API**: `routes/api.php` — 10 endpoint JSON pubblici
 - **Authorization**: Policy + Gates in `app/Policies/` e `app/Providers/AuthServiceProvider.php`
-- **Transizione Inertia→Blade**: i controller auth che fanno POST da pagine Inertia e reindirizzano a route Blade devono usare `Inertia::location()` invece di `redirect()->to()`. Questo forza un full page reload lato client, evitando che Inertia intercetti il redirect e tenti di caricare HTML come JSON. Controller interessati: AuthenticatedSessionController, ConfirmablePasswordController, EmailVerificationNotificationController, EmailVerificationPromptController, RegisteredUserController, VerifyEmailController.
 
 ## Entità chiave
 

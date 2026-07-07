@@ -257,7 +257,7 @@ Filtri disponibili:
 - **Controller protetti**: ogni metodo CRUD nei controller admin (`CategoriaController`, `CorpoCelesteController`, `MissioneController`, `CuriositaController`, `GalleriaController`) chiama `$this->authorize()` con l'ability appropriata. `NasaImportController` usa `Gate::authorize('admin')` per proteggere index, import e importAll.
 - **API pubbliche**: le API REST (`routes/api.php`) rimangono pubbliche (nessuna autenticazione richiesta).
 
-**Transizione Inertia→Blade**: Poiché il login/register usano Inertia (React) ma l'admin usa Blade, i controller auth che fanno POST da pagine Inertia e reindirizzano a route Blade usano `Inertia::location()` invece di `redirect()->to()`. Questo forza un full page reload lato client, evitando che Inertia intercetti il redirect e tenti di caricare HTML come JSON. Controller interessati: AuthenticatedSessionController, ConfirmablePasswordController, EmailVerificationNotificationController, EmailVerificationPromptController, RegisteredUserController, VerifyEmailController.
+**Auth**: Le pagine di autenticazione (login, register, password reset, email verification) sono realizzate in **Blade puro** con tema scuro (`#0A0A1A`, `#111128`, `#22D3EE`). Usano il layout `resources/views/layouts/guest.blade.php` tramite il componente `x-guest-layout`. La pagina profilo (`/profile`) usa `x-app-layout` che carica il layout admin con sidebar.
 
 ## Guida all'installazione
 

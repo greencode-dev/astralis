@@ -235,3 +235,12 @@
 - `$this->authorize()` aggiunto a tutti i metodi CRUD di: CategoriaController, CorpoCelesteController, MissioneController, CuriositaController, GalleriaController
 - `Gate::authorize('admin')` aggiunto a NasaImportController (index, import, importAll)
 - Fix: CategoriaController.php — riparata doppia dichiarazione di classe (residuo sessione precedente)
+
+### 12.1 — 07/07/2026 — feat: auth pages da Inertia a Blade puro
+- Create 11 viste Blade per auth e profilo con tema scuro
+- `app/View/Components/GuestLayout.php` e `AppLayout.php` per compatibilità x-*
+- Rimossi `Inertia::render()` e `Inertia::location()` da 9 controller auth
+- Sostituiti con `view()` e `redirect()->intended()`/`redirect()`
+- Eliminati file JSX Inertia non più utilizzati (`Pages/Auth/`, `Pages/Profile/`)
+- Test aggiornati (redirect `/dashboard` → `/admin`, logout `/` → `/login`)
+- 25/25 test pass, 61 assertions
