@@ -81,3 +81,15 @@ Prima di eseguire `graphify update .`, assicurati che:
 5. Infine commit
 
 Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
+
+## Cross-PC sync
+
+Quando pulli la repo su un'altra macchina (o dopo tanto tempo), esegui in ordine:
+
+1. `composer install` — aggiorna dipendenze PHP
+2. `npm install` — aggiorna dipendenze JS
+3. `php artisan migrate` — applica nuove migrazioni
+4. `php artisan storage:link` — ricrea il symlink storage
+5. `php artisan astralis:gallery --fix` — ripara immagini galleria se necessario
+6. `npx graphify update .` — ricostruisce il grafo locale
+7. Verifica `git status` — working tree deve essere pulito dopo grafo

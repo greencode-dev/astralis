@@ -100,14 +100,14 @@ php artisan key:generate
 # Database
 php artisan migrate --seed
 
-# (Opzionale) Scarica immagini NASA per tutti i corpi celesti
+# Storage per upload
+php artisan storage:link
+
+# (Opzionale) Recupera immagini da NASA per tutti i corpi celesti
 php artisan astralis:fetch-nasa --gallery=5
 
 # (Opzionale) Sostituisce immagini seed mancanti con URL NASA
 php artisan astralis:gallery --fix
-
-# Storage per upload
-php artisan storage:link
 
 # Avvia (due terminali)
 php artisan serve

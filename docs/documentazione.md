@@ -33,7 +33,7 @@ astralis/
 │   ├── Services/        ← Logica di business (NasaImageService)
 │   └── ...
 ├── database/
-│   └── migrations/      ← 6 file di migrazione
+│   └── migrations/      ← 9 file di migrazione
 ├── resources/
 │   ├── views/           ← Blade templates (backoffice admin)
 │   └── js/              ← React (components, pages, API)
@@ -269,9 +269,12 @@ php artisan key:generate
 # Migrazioni e seed
 php artisan migrate --seed
 
-# (Opzionale) Scarica immagini da NASA per tutti i corpi celesti
+# (Opzionale) Recupera immagini da NASA per tutti i corpi celesti
 # --force per sovrascrivere esistenti, --gallery=N per numero immagini galleria
 php artisan astralis:fetch-nasa --gallery=5
+
+# (Opzionale) Sostituisce immagini seed mancanti con URL NASA
+php artisan astralis:gallery --fix
 
 # Link storage per upload
 php artisan storage:link
