@@ -1,86 +1,70 @@
 # Todo
 
-## Completate
+*Ultimo aggiornamento: 2026-07-07*
 
-- [x] Fase 11: Bugfix — Login Inertia→Blade redirect, Auth controller transizioni, NASA import deduplicazione, galleria cleanup, ordinamento inline
-- [x] Fase 10: Bug critici — route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder
-- [x] Fase 9: Remote URLs, nome_it/nome_display, wordMap espansa, auto-suggest admin
-- [x] Fase 8: NASA Import multi-immagine in galleria, Service Layer, CLI fetch-nasa
-- [x] Fase 7: Bugfix Intervention Image v4, Force Import All con Alpine.js
-- [x] Fase 6: Fix orbite, redirect route, profilo, documentazione
-- [x] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore
-- [x] Fase 4: React — Homepage + Sistema solare animato + Lista
-- [x] Fase 3: API REST (10 endpoint)
-- [x] Fase 2: CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria)
-- [x] Fase 1: Database e Modelli (6 migrations, 5 models, seeder)
-- [x] Fase 0: Setup iniziale Laravel + Breeze + React + documentazione
+## Fatto
 
-## In corso
+- [x] **Fase 11** — Bugfix login Inertia→Blade, auth controller transizioni, NASA import dedup, galleria cleanup e ordinamento
+- [x] **Fase 10** — Bug critici: route() senza virgolette, nasa_id in fillable, categoria_id dinamico seeder
+- [x] **Fase 9** — Remote URLs, nome_it/nome_display, wordMap espansa, auto-suggest admin
+- [x] **Fase 8** — NASA Import multi-immagine, Service Layer, CLI fetch-nasa
+- [x] **Fase 7** — Bugfix Intervention Image v4, Force Import All Alpine.js
+- [x] **Fase 6** — Fix orbite, redirect route, profilo, documentazione
+- [x] **Fase 5** — React: Dettaglio, Lightbox, Missioni, Comparatore
+- [x] **Fase 4** — React: Homepage, Sistema solare animato, Lista
+- [x] **Fase 3** — API REST (10 endpoint)
+- [x] **Fase 2** — CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria)
+- [x] **Fase 1** — Database e Modelli (6 migrations, 5 models, seeder)
+- [x] **Fase 0** — Setup Laravel + Breeze + React + documentazione
+- [x] UI/UX: tema scuro auth pages, link Register, paginazione admin, badge in_evidenza
 
-_Nessuna attività in corso._
+## Da Fare
 
-## Future
+### Alta
 
-### Priorità Alta
+- [ ] `[backend]` Rate limiting (`throttle`) su API pubbliche — `routes/api.php`
+- [ ] `[backend]` Authorization (Policy/Gates) ai controller admin — `app/Policies/`, `app/Providers/AuthServiceProvider.php`
+- [ ] `[backend]` Aggiungere FormRequest per validazione store/update CorpoCeleste — `app/Http/Requests/`
 
-**UI/UX**
-- [x] Adattare pagine login e register allo stile scuro dell'app (GuestLayout, auth pages)
-- [x] Controllare e uniformare tutte le pagine dell'app allo stile del tema scuro
-- [x] Aggiungere link "Register" su Login page per chi non ha account
+### Media
 
-**Sistema Solare**
-- [x] Ridurre la velocità di rotazione dei pianeti
-- [x] Sistemare velocità orbitali: pianeti più lontani devono ruotare più lentamente di quelli vicini
+- [ ] `[frontend]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
+- [ ] `[frontend]` Sostituire onMouseEnter/onMouseLeave con CSS `:hover` — tutti i blade e JSX
+- [ ] `[frontend]` Error handling utente nel frontend (sostituire `.catch(() => {})`) — `resources/js/**/*.jsx`
+- [ ] `[frontend]` Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
+- [ ] `[frontend]` Aggiungere `role="img"` / `aria-label` a icone fallback immagini
+- [ ] `[backend]` Cast decimal/float a campi scientifici (massa_kg, distanza_km, etc.) — `app/Models/CorpoCeleste.php`
+- [ ] `[backend]` Ordinamento default a relazioni `galleria()` e `curiosita()` — `app/Models/CorpoCeleste.php`
+- [ ] `[backend]` Rimuovere `inRandomOrder()` in `simili()` — alternativa performante — `app/Models/CorpoCeleste.php`
+- [ ] `[backend]` Aggiungere massimo a `per_page` (es. max 100) — `app/Http/Controllers/Api/`
+- [ ] `[backend]` Esporre `nasa_id` in CorpoCelesteResource — `app/Http/Resources/CorpoCelesteResource.php`
+- [ ] `[database]` Aggiungere missing indexes: `tipo`, `in_evidenza`, `nome` (FULLTEXT) — migration
+- [ ] `[database]` Index su `galleria_corpi.ordine` — migration
+- [ ] `[test]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
+- [ ] `[test]` Test HTTP API endpoints (list, filter, dettaglio, simili) — `tests/Feature/Api/`
+- [ ] `[test]` Test CRUD admin CorpoCeleste (store, update, validation) — `tests/Feature/Admin/`
 
-**Backend**
-- [x] Aggiungere paginazione (`->paginate(20)`) in admin index (corpi-celesti, galleria, missioni, curiosità)
-- [ ] Aggiungere rate limiting (`throttle`) su API pubbliche
-- [ ] Aggiungere authorization (Policy/Gates) ai controller admin
+### Bassa
 
-### Priorità Media
+- [ ] `[frontend]` Valutare orbita 2D → 3D (react-three-fiber / prospettiva CSS) — `resources/js/guest/components/SolarSystem.jsx`
+- [ ] `[backend]` Estrarre `$wordMap` in servizio dedicato — `app/Services/WordMapService.php`
+- [ ] `[test]` Test componenti React (SolarSystem, CorpoCard, Lightbox) — Vitest
+- [ ] `[test]` Test integrazione API (apiClient, guest pages)
+- [ ] `[test]` Test E2E: login → admin → CRUD → NASA import
+- [ ] `[feature]` Sistema di rating per corpi celesti
+- [ ] `[feature]` Dashboard admin con grafici (Chart.js/Recharts)
+- [ ] `[feature]` Multi-lingua (IT/EN)
+- [ ] `[feature]` Dark/light mode toggle
+- [ ] `[feature]` Notifiche email per nuove missioni
 
-**UI/UX**
-- [ ] Spostare gli stili inline in file CSS/Tailwind classi per alleggerire e ottimizzare
-- [ ] Sostituire `onMouseEnter`/`onMouseLeave` hover con CSS `:hover`
-- [ ] Aggiungere error handling utente nel frontend (sostituire `.catch(() => {})`)
-- [ ] Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
-- [ ] Aggiungere `role="img"`/`aria-label` a icone fallback immagini
+---
 
-**Backend / API**
-- [ ] Aggiungere FormRequest per validazione in store/update CorpoCeleste
-- [ ] Aggiungere cast decimal/float a campi scientifici (massa_kg, distanza_km, ecc.)
-- [ ] Aggiungere ordinamento default a relazioni `galleria()` e `curiosita()`
-- [ ] Rimuovere `inRandomOrder()` in `simili()` — alternativa performante
-- [ ] Aggiungere rate limiting su route NASA import
-- [ ] Aggiungere massimo a `per_page` (es. max 100)
-- [ ] Esporre `nasa_id` in CorpoCelesteResource
+## Note
 
-**Database**
-- [ ] Aggiungere missing indexes: `tipo`, `in_evidenza`, `nome` (FULLTEXT) su corpi_celesti
-- [ ] Aggiungere index su `galleria_corpi.ordine`
-
-**Testing**
-- [ ] Test backend: test unitari per NasaImageService (search, fallback, metadata)
-- [ ] Test backend: test HTTP per API endpoints (list, filter, dettaglio, simili)
-- [ ] Test backend: test CRUD admin CorpoCeleste (store, update, validation)
-
-### Priorità Bassa
-
-**Sistema Solare**
-- [ ] Valutare fattibilità trasformazione orbita 2D → 3D (react-three-fiber / prospettiva CSS)
-
-**Backend / API**
-- [ ] Estrarre `$wordMap` in servizio dedicato
-
-**Testing**
-- [ ] Test frontend: test componenti React con Vitest (SolarSystem, CorpoCard, Lightbox)
-- [ ] Test frontend: test integrazione API (apiClient, pagine guest)
-- [ ] Test E2E: flusso login → admin → CRUD corpo celeste → NASA import
-
-**Future Features**
-- [ ] Sistema di rating per corpi celesti
-- [ ] Dashboard admin con grafici (Chart.js/Recharts)
-- [ ] Multi-lingua (IT/EN)
-- [ ] Dark/light mode toggle
-- [ ] Tema notte con stelle cadenti CSS
-- [ ] Notifiche email per nuove missioni
+- **Prossimo task consigliato**: il primo della sezione Alta
+- Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
+- Formato per aggiungere un nuovo task:
+  ```
+  - [ ] `[tag]` Descrizione — `file/principale/coinvolto`
+  ```
+  Tag disponibili: `backend`, `frontend`, `database`, `test`, `feature`
