@@ -30,6 +30,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
         'categorie' => 'categoria',
     ]);
     Route::post('corpi-celesti/suggest-nome', [CorpoCelesteController::class, 'suggestNome'])->name('corpi-celesti.suggest-nome');
+    Route::post('corpi-celesti/{corpoCeleste}/set-image/{galleriaCorpo}', [CorpoCelesteController::class, 'setImageFromGallery'])->name('corpi-celesti.set-image');
     Route::resource('corpi-celesti', CorpoCelesteController::class)->parameters([
         'corpi-celesti' => 'corpoCeleste',
     ]);
@@ -42,9 +43,15 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     Route::resource('galleria', GalleriaController::class)->except(['show'])->parameters([
         'galleria' => 'galleriaCorpo',
     ]);
+    Route::post('galleria/{galleriaCorpo}/ordine', [GalleriaController::class, 'aggiornaOrdine'])->name('galleria.ordine');
     Route::get('nasa-import', [NasaImportController::class, 'index'])->name('nasa-import.index');
     Route::post('nasa-import/import-all', [NasaImportController::class, 'importAll'])->name('nasa-import.import-all');
     Route::post('nasa-import/{corpoCeleste}', [NasaImportController::class, 'import'])->name('nasa-import.import');
 });
 
 require __DIR__.'/auth.php';
+
+// Catch-all per SPA: deve stare DOPO tutte le route specifiche (auth comprese)
+Route::get('/{any}', function () {
+    return view('guest');
+})->where('any', '.*');

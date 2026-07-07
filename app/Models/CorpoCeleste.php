@@ -34,6 +34,7 @@ class CorpoCeleste extends Model
         'anno_scoperta',
         'in_evidenza',
         'nasa_id',
+        'immagine_utente',
     ];
 
     protected function casts(): array
@@ -44,6 +45,7 @@ class CorpoCeleste extends Model
             'periodo_orbitale' => 'decimal:4',
             'anno_scoperta' => 'integer',
             'in_evidenza' => 'boolean',
+            'immagine_utente' => 'boolean',
         ];
     }
 

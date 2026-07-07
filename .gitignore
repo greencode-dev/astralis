@@ -39,6 +39,7 @@ nul
 # graphify-out/ is meant to be committed so the team shares the map
 # exclude only local/temp files
 graphify-out/cost.json
-# graphify-out/cache/         # optional: commit for speed, skip to keep repo small
+graphify-out/cache/
+graphify-out/2026-07-07/
 /AGENTS.md
 /.graphifyignore

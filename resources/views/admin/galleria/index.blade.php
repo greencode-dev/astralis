@@ -39,7 +39,8 @@
                          alt="{{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                          class="w-full h-full object-cover transition-transform duration-300"
                          onmouseover="this.style.transform='scale(1.05)';"
-                         onmouseout="this.style.transform='scale(1)';">
+                         onmouseout="this.style.transform='scale(1)';"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;height:100%;padding:1rem;text-align:center;color:#6B7280;font-size:0.75rem;\">Immagine non disponibile</div>';">
                 </div>
                 <div class="p-3">
                     <p class="text-sm font-medium truncate" style="color: #F0F0FA;">{{ $item->didascalia ?? 'Senza didascalia' }}</p>
@@ -52,7 +53,33 @@
                         </a>
                     </p>
                     <div class="flex items-center justify-between mt-2">
-                        <span class="text-xs" style="color: #6B7280;">Ordine: {{ $item->ordine }}</span>
+                        <div class="flex items-center gap-1">
+                            <form method="POST" action="{{ route('admin.galleria.ordine', $item) }}" class="inline">
+                                @csrf
+                                <input type="hidden" name="direzione" value="su">
+                                <button type="submit"
+                                        class="p-1 rounded-lg transition-all duration-200"
+                                        style="color: #6B7280;"
+                                        onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.1)';"
+                                        onmouseout="this.style.color='#6B7280'; this.style.backgroundColor='transparent';"
+                                        title="Sposta su">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+                                </button>
+                            </form>
+                            <span class="text-xs font-mono" style="color: #6B7280; min-width: 1.5rem; text-align: center;">{{ $item->ordine }}</span>
+                            <form method="POST" action="{{ route('admin.galleria.ordine', $item) }}" class="inline">
+                                @csrf
+                                <input type="hidden" name="direzione" value="giu">
+                                <button type="submit"
+                                        class="p-1 rounded-lg transition-all duration-200"
+                                        style="color: #6B7280;"
+                                        onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.1)';"
+                                        onmouseout="this.style.color='#6B7280'; this.style.backgroundColor='transparent';"
+                                        title="Sposta giù">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                            </form>
+                        </div>
                         <div class="flex items-center gap-1">
                             <a href="{{ route('admin.galleria.edit', $item) }}"
                                class="p-1.5 rounded-lg transition-all duration-200"

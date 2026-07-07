@@ -2,22 +2,18 @@
 
 ## Completate
 
-- [x] Fase 0: Setup iniziale Laravel + Breeze + React + documentazione
-- [x] Fase 1: Database e Modelli (6 migrations, 5 models, seeder con dati reali)
-- [x] Fase 2.1: Admin layout e navigazione (sidebar, master layout, dashboard)
-- [x] Fase 2.2: CRUD Categorie
-- [x] Fase 2.3: CRUD Corpi Celesti
-- [x] Fase 2.4: CRUD Missioni
-- [x] Fase 2.5: CRUD Curiosità
-- [x] Fase 2.6: CRUD Galleria
-- [x] Fase 3: API REST (10 endpoint)
-- [x] Fase 4: React — Homepage + Sistema solare animato + Lista
+- [x] Fase 11: Bugfix — Login Inertia→Blade redirect, Auth controller transizioni, NASA import deduplicazione, galleria cleanup, ordinamento inline
+- [x] Fase 10: Bug critici — route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder
+- [x] Fase 9: Remote URLs, nome_it/nome_display, wordMap espansa, auto-suggest admin
+- [x] Fase 8: NASA Import multi-immagine in galleria, Service Layer, CLI fetch-nasa
+- [x] Fase 7: Bugfix Intervention Image v4, Force Import All con Alpine.js
+- [x] Fase 6: Fix orbite, redirect route, profilo, documentazione
 - [x] Fase 5: React — Dettaglio, Lightbox, Missioni, Comparatore
-- [x] Fase 6: Fix orbite sistema solare, NASA Import, redirect route, profilo, documentazione
-- [x] Fase 7: Bugfix Intervention Image v4, Force Import All con Alpine.js, documentazione
-- [x] Fase 8: NASA Import multi-immagine in galleria, Service Layer, CLI `astralis:fetch-nasa`, metadati NASA
-- [x] Fase 9: Remote URLs (nessun download), nome_it/nome_display, wordMap espansa, apostrophe fallback, auto-suggest admin, documentazione
-- [x] Fase 9.1: Bug critici — route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder
+- [x] Fase 4: React — Homepage + Sistema solare animato + Lista
+- [x] Fase 3: API REST (10 endpoint)
+- [x] Fase 2: CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria)
+- [x] Fase 1: Database e Modelli (6 migrations, 5 models, seeder)
+- [x] Fase 0: Setup iniziale Laravel + Breeze + React + documentazione
 
 ## In corso
 

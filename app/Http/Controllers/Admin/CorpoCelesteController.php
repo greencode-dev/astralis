@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\CorpoCeleste;
+use App\Models\GalleriaCorpo;
 use App\Services\NasaImageService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -97,6 +98,10 @@ class CorpoCelesteController extends Controller
 
         $validated['in_evidenza'] = $request->boolean('in_evidenza');
 
+        if ($request->filled('immagine')) {
+            $validated['immagine_utente'] = true;
+        }
+
         $corpoCeleste->update($validated);
 
         return redirect()->route('admin.corpi-celesti.index')
@@ -109,6 +114,17 @@ class CorpoCelesteController extends Controller
 
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste eliminato con successo.');
+    }
+
+    public function setImageFromGallery(CorpoCeleste $corpoCeleste, GalleriaCorpo $galleriaCorpo): RedirectResponse
+    {
+        $corpoCeleste->update([
+            'immagine' => $galleriaCorpo->percorso,
+            'immagine_utente' => true,
+        ]);
+
+        return redirect()->route('admin.corpi-celesti.show', $corpoCeleste)
+            ->with('success', 'Immagine principale aggiornata con successo.');
     }
 
     public function suggestNome(Request $request, NasaImageService $nasaService): \Illuminate\Http\JsonResponse

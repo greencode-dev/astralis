@@ -4,13 +4,123 @@
   "graph": {},
   "nodes": [
     {
+      "label": "CleanupGalleryDuplicates.php",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates",
+      "community": 11,
+      "norm_label": "cleanupgalleryduplicates.php"
+    },
+    {
+      "label": "CleanupGalleryDuplicates",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "community": 11,
+      "norm_label": "cleanupgalleryduplicates"
+    },
+    {
+      "label": "Command",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "command",
+      "community": 11,
+      "norm_label": "command"
+    },
+    {
+      "label": ".__construct()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_construct",
+      "community": 11,
+      "norm_label": ".__construct()"
+    },
+    {
+      "label": ".handle()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handle",
+      "community": 11,
+      "norm_label": ".handle()"
+    },
+    {
+      "label": ".removeDuplicates()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removeduplicates",
+      "community": 11,
+      "norm_label": ".removeduplicates()"
+    },
+    {
+      "label": ".cleanOrphanedFiles()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_cleanorphanedfiles",
+      "community": 11,
+      "norm_label": ".cleanorphanedfiles()"
+    },
+    {
+      "label": ".handleBrokenUrls()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
+      "community": 11,
+      "norm_label": ".handlebrokenurls()"
+    },
+    {
+      "label": ".headRequest()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L184",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_headrequest",
+      "community": 11,
+      "norm_label": ".headrequest()"
+    },
+    {
+      "label": ".handleSync()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L201",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlesync",
+      "community": 11,
+      "norm_label": ".handlesync()"
+    },
+    {
+      "label": ".handleDelete()",
+      "file_type": "code",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L249",
+      "_origin": "ast",
+      "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handledelete",
+      "community": 11,
+      "norm_label": ".handledelete()"
+    },
+    {
       "label": "FetchNasaCommand.php",
       "file_type": "code",
       "source_file": "app/Console/Commands/FetchNasaCommand.php",
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand",
-      "community": 3,
+      "community": 11,
       "norm_label": "fetchnasacommand.php"
     },
     {
@@ -20,18 +130,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand",
-      "community": 3,
+      "community": 11,
       "norm_label": "fetchnasacommand"
-    },
-    {
-      "label": "Command",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "command",
-      "community": 3,
-      "norm_label": "command"
     },
     {
       "label": ".handle()",
@@ -40,7 +140,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
-      "community": 3,
+      "community": 11,
       "norm_label": ".handle()"
     },
     {
@@ -50,7 +150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller",
-      "community": 9,
+      "community": 25,
       "norm_label": "categoriacontroller.php"
     },
     {
@@ -60,7 +160,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller",
-      "community": 9,
+      "community": 25,
       "norm_label": "categoriacontroller"
     },
     {
@@ -70,7 +170,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller_index",
-      "community": 9,
+      "community": 25,
       "norm_label": ".index()"
     },
     {
@@ -80,7 +180,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_php_view",
-      "community": 9,
+      "community": 25,
       "norm_label": "view"
     },
     {
@@ -90,7 +190,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller_create",
-      "community": 9,
+      "community": 25,
       "norm_label": ".create()"
     },
     {
@@ -100,7 +200,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller_store",
-      "community": 9,
+      "community": 25,
       "norm_label": ".store()"
     },
     {
@@ -110,7 +210,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_php_request",
-      "community": 9,
+      "community": 25,
       "norm_label": "request"
     },
     {
@@ -120,7 +220,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_php_redirectresponse",
-      "community": 9,
+      "community": 25,
       "norm_label": "redirectresponse"
     },
     {
@@ -130,7 +230,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller_show",
-      "community": 9,
+      "community": 25,
       "norm_label": ".show()"
     },
     {
@@ -140,7 +240,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller_edit",
-      "community": 9,
+      "community": 25,
       "norm_label": ".edit()"
     },
     {
@@ -150,7 +250,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller_update",
-      "community": 9,
+      "community": 25,
       "norm_label": ".update()"
     },
     {
@@ -160,7 +260,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "app_http_controllers_admin_categoriacontroller_categoriacontroller_destroy",
-      "community": 9,
+      "community": 25,
       "norm_label": ".destroy()"
     },
     {
@@ -177,7 +277,7 @@
       "label": "CorpoCelesteController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "community": 3,
@@ -187,7 +287,7 @@
       "label": ".index()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_index",
       "community": 3,
@@ -217,7 +317,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_create",
       "community": 3,
@@ -227,7 +327,7 @@
       "label": ".store()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
       "community": 3,
@@ -247,7 +347,7 @@
       "label": ".show()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L64",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
       "community": 3,
@@ -257,7 +357,7 @@
       "label": ".edit()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L71",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
       "community": 3,
@@ -267,7 +367,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L78",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
       "community": 3,
@@ -277,17 +377,27 @@
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L106",
+      "source_location": "L111",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
       "community": 3,
       "norm_label": ".destroy()"
     },
     {
+      "label": ".setImageFromGallery()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
+      "source_location": "L119",
+      "_origin": "ast",
+      "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
+      "community": 3,
+      "norm_label": ".setimagefromgallery()"
+    },
+    {
       "label": ".suggestNome()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L114",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
       "community": 3,
@@ -307,7 +417,7 @@
       "label": ".guessEnglishName()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L219",
+      "source_location": "L235",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_guessenglishname",
       "community": 3,
@@ -320,7 +430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller",
-      "community": 10,
+      "community": 25,
       "norm_label": "curiositacontroller.php"
     },
     {
@@ -330,7 +440,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller",
-      "community": 10,
+      "community": 25,
       "norm_label": "curiositacontroller"
     },
     {
@@ -340,7 +450,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_index",
-      "community": 10,
+      "community": 25,
       "norm_label": ".index()"
     },
     {
@@ -350,7 +460,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_php_view",
-      "community": 10,
+      "community": 25,
       "norm_label": "view"
     },
     {
@@ -360,7 +470,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_create",
-      "community": 10,
+      "community": 25,
       "norm_label": ".create()"
     },
     {
@@ -370,7 +480,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_store",
-      "community": 10,
+      "community": 25,
       "norm_label": ".store()"
     },
     {
@@ -380,7 +490,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_php_request",
-      "community": 10,
+      "community": 25,
       "norm_label": "request"
     },
     {
@@ -390,7 +500,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_php_redirectresponse",
-      "community": 10,
+      "community": 25,
       "norm_label": "redirectresponse"
     },
     {
@@ -400,7 +510,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_edit",
-      "community": 10,
+      "community": 25,
       "norm_label": ".edit()"
     },
     {
@@ -410,7 +520,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_update",
-      "community": 10,
+      "community": 25,
       "norm_label": ".update()"
     },
     {
@@ -420,7 +530,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_destroy",
-      "community": 10,
+      "community": 25,
       "norm_label": ".destroy()"
     },
     {
@@ -430,7 +540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 10,
+      "community": 25,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -440,7 +550,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 10,
+      "community": 25,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -450,7 +560,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 10,
+      "community": 25,
       "norm_label": ".index()"
     },
     {
@@ -460,7 +570,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 10,
+      "community": 25,
       "norm_label": "view"
     },
     {
@@ -477,7 +587,7 @@
       "label": "GalleriaController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "community": 11,
@@ -487,7 +597,7 @@
       "label": ".index()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_index",
       "community": 11,
@@ -507,7 +617,7 @@
       "label": ".create()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_create",
       "community": 11,
@@ -517,7 +627,7 @@
       "label": ".store()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_store",
       "community": 11,
@@ -547,7 +657,7 @@
       "label": ".edit()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L53",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_edit",
       "community": 11,
@@ -557,7 +667,7 @@
       "label": ".update()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L60",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_update",
       "community": 11,
@@ -567,17 +677,27 @@
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L83",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_destroy",
       "community": 11,
       "norm_label": ".destroy()"
     },
     {
+      "label": ".aggiornaOrdine()",
+      "file_type": "code",
+      "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
+      "source_location": "L96",
+      "_origin": "ast",
+      "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_aggiornaordine",
+      "community": 11,
+      "norm_label": ".aggiornaordine()"
+    },
+    {
       "label": ".uploadImmagine()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L93",
+      "source_location": "L109",
       "_origin": "ast",
       "id": "app_http_controllers_admin_galleriacontroller_galleriacontroller_uploadimmagine",
       "community": 11,
@@ -720,7 +840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller",
-      "community": 3,
+      "community": 11,
       "norm_label": "nasaimportcontroller.php"
     },
     {
@@ -730,7 +850,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller",
-      "community": 3,
+      "community": 11,
       "norm_label": "nasaimportcontroller"
     },
     {
@@ -740,7 +860,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_construct",
-      "community": 3,
+      "community": 11,
       "norm_label": ".__construct()"
     },
     {
@@ -750,7 +870,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_index",
-      "community": 3,
+      "community": 11,
       "norm_label": ".index()"
     },
     {
@@ -760,7 +880,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_view",
-      "community": 3,
+      "community": 11,
       "norm_label": "view"
     },
     {
@@ -770,7 +890,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_import",
-      "community": 3,
+      "community": 11,
       "norm_label": ".import()"
     },
     {
@@ -780,7 +900,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_redirectresponse",
-      "community": 3,
+      "community": 11,
       "norm_label": "redirectresponse"
     },
     {
@@ -790,7 +910,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_importall",
-      "community": 3,
+      "community": 11,
       "norm_label": ".importall()"
     },
     {
@@ -800,7 +920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller",
-      "community": 1,
+      "community": 25,
       "norm_label": "categoriacontroller.php"
     },
     {
@@ -810,7 +930,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller",
-      "community": 1,
+      "community": 25,
       "norm_label": "categoriacontroller"
     },
     {
@@ -820,7 +940,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_index",
-      "community": 6,
+      "community": 25,
       "norm_label": ".index()"
     },
     {
@@ -830,7 +950,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_show",
-      "community": 9,
+      "community": 25,
       "norm_label": ".show()"
     },
     {
@@ -840,7 +960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller",
-      "community": 3,
+      "community": 6,
       "norm_label": "corpocelestecontroller.php"
     },
     {
@@ -850,7 +970,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller",
-      "community": 3,
+      "community": 6,
       "norm_label": "corpocelestecontroller"
     },
     {
@@ -860,7 +980,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_index",
-      "community": 3,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -870,7 +990,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_php_request",
-      "community": 3,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -880,7 +1000,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_show",
-      "community": 3,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -890,7 +1010,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_simili",
-      "community": 3,
+      "community": 6,
       "norm_label": ".simili()"
     },
     {
@@ -930,7 +1050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller",
-      "community": 9,
+      "community": 25,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -940,7 +1060,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller",
-      "community": 9,
+      "community": 25,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -950,7 +1070,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller_stats",
-      "community": 9,
+      "community": 25,
       "norm_label": ".stats()"
     },
     {
@@ -960,7 +1080,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_php_jsonresponse",
-      "community": 9,
+      "community": 25,
       "norm_label": "jsonresponse"
     },
     {
@@ -1000,7 +1120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller",
-      "community": 9,
+      "community": 4,
       "norm_label": "missionecontroller.php"
     },
     {
@@ -1094,20 +1214,10 @@
       "norm_label": ".store()"
     },
     {
-      "label": "RedirectResponse",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_redirectresponse",
-      "community": 7,
-      "norm_label": "redirectresponse"
-    },
-    {
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/AuthenticatedSessionController.php",
-      "source_location": "L42",
+      "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_destroy",
       "community": 7,
@@ -1124,33 +1234,43 @@
       "norm_label": "request"
     },
     {
+      "label": "RedirectResponse",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_redirectresponse",
+      "community": 7,
+      "norm_label": "redirectresponse"
+    },
+    {
       "label": "ConfirmablePasswordController.php",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "confirmablepasswordcontroller.php"
     },
     {
       "label": "ConfirmablePasswordController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L13",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "confirmablepasswordcontroller"
     },
     {
       "label": ".show()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L18",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_show",
-      "community": 1,
+      "community": 10,
       "norm_label": ".show()"
     },
     {
@@ -1160,17 +1280,17 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_response",
-      "community": 1,
+      "community": 10,
       "norm_label": "response"
     },
     {
       "label": ".store()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L26",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_store",
-      "community": 1,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1180,18 +1300,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_request",
-      "community": 1,
+      "community": 10,
       "norm_label": "request"
-    },
-    {
-      "label": "RedirectResponse",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_redirectresponse",
-      "community": 1,
-      "norm_label": "redirectresponse"
     },
     {
       "label": "EmailVerificationNotificationController.php",
@@ -1200,7 +1310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "emailverificationnotificationcontroller.php"
     },
     {
@@ -1210,7 +1320,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "emailverificationnotificationcontroller"
     },
     {
@@ -1220,7 +1330,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller_store",
-      "community": 1,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1230,18 +1340,18 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_request",
-      "community": 1,
+      "community": 10,
       "norm_label": "request"
     },
     {
-      "label": "RedirectResponse",
+      "label": "Response",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_redirectresponse",
-      "community": 1,
-      "norm_label": "redirectresponse"
+      "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_response",
+      "community": 10,
+      "norm_label": "response"
     },
     {
       "label": "EmailVerificationPromptController.php",
@@ -1250,27 +1360,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "emailverificationpromptcontroller.php"
     },
     {
       "label": "EmailVerificationPromptController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L11",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "emailverificationpromptcontroller"
     },
     {
       "label": ".__invoke()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L16",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
-      "community": 1,
+      "community": 10,
       "norm_label": ".__invoke()"
     },
     {
@@ -1280,18 +1390,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_request",
-      "community": 1,
+      "community": 10,
       "norm_label": "request"
-    },
-    {
-      "label": "RedirectResponse",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_redirectresponse",
-      "community": 1,
-      "norm_label": "redirectresponse"
     },
     {
       "label": "Response",
@@ -1300,7 +1400,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_response",
-      "community": 1,
+      "community": 10,
       "norm_label": "response"
     },
     {
@@ -1310,7 +1410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "newpasswordcontroller.php"
     },
     {
@@ -1320,7 +1420,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "newpasswordcontroller"
     },
     {
@@ -1330,7 +1430,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_create",
-      "community": 1,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1340,7 +1440,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_request",
-      "community": 1,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1350,7 +1450,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_response",
-      "community": 1,
+      "community": 10,
       "norm_label": "response"
     },
     {
@@ -1360,7 +1460,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_store",
-      "community": 1,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1370,7 +1470,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_redirectresponse",
-      "community": 1,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1380,7 +1480,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "passwordcontroller.php"
     },
     {
@@ -1390,7 +1490,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "passwordcontroller"
     },
     {
@@ -1400,7 +1500,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller_update",
-      "community": 1,
+      "community": 10,
       "norm_label": ".update()"
     },
     {
@@ -1410,7 +1510,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_request",
-      "community": 1,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1420,7 +1520,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_redirectresponse",
-      "community": 1,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1430,7 +1530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "passwordresetlinkcontroller.php"
     },
     {
@@ -1440,7 +1540,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "passwordresetlinkcontroller"
     },
     {
@@ -1450,7 +1550,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_create",
-      "community": 1,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1460,7 +1560,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_response",
-      "community": 1,
+      "community": 10,
       "norm_label": "response"
     },
     {
@@ -1470,7 +1570,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_store",
-      "community": 1,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1480,7 +1580,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_request",
-      "community": 1,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1490,7 +1590,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_redirectresponse",
-      "community": 1,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1500,27 +1600,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "registeredusercontroller.php"
     },
     {
       "label": "RegisteredUserController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L17",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "registeredusercontroller"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L22",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_create",
-      "community": 1,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1530,17 +1630,17 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_response",
-      "community": 1,
+      "community": 10,
       "norm_label": "response"
     },
     {
       "label": ".store()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L32",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
-      "community": 1,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1550,18 +1650,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_request",
-      "community": 1,
+      "community": 10,
       "norm_label": "request"
-    },
-    {
-      "label": "RedirectResponse",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "app_http_controllers_auth_registeredusercontroller_php_redirectresponse",
-      "community": 1,
-      "norm_label": "redirectresponse"
     },
     {
       "label": "VerifyEmailController.php",
@@ -1570,7 +1660,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "verifyemailcontroller.php"
     },
     {
@@ -1580,7 +1670,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller",
-      "community": 1,
+      "community": 10,
       "norm_label": "verifyemailcontroller"
     },
     {
@@ -1590,7 +1680,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller_invoke",
-      "community": 1,
+      "community": 10,
       "norm_label": ".__invoke()"
     },
     {
@@ -1600,18 +1690,18 @@
       "source_location": "",
       "_origin": "ast",
       "id": "emailverificationrequest",
-      "community": 1,
+      "community": 10,
       "norm_label": "emailverificationrequest"
     },
     {
-      "label": "RedirectResponse",
+      "label": "Response",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "app_http_controllers_auth_verifyemailcontroller_php_redirectresponse",
-      "community": 1,
-      "norm_label": "redirectresponse"
+      "id": "app_http_controllers_auth_verifyemailcontroller_php_response",
+      "community": 10,
+      "norm_label": "response"
     },
     {
       "label": "Controller.php",
@@ -1620,7 +1710,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_controller",
-      "community": 1,
+      "community": 10,
       "norm_label": "controller.php"
     },
     {
@@ -1630,7 +1720,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_http_controllers_controller_controller",
-      "community": 1,
+      "community": 10,
       "norm_label": "controller"
     },
     {
@@ -1780,7 +1870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest",
-      "community": 1,
+      "community": 10,
       "norm_label": "loginrequest.php"
     },
     {
@@ -2100,7 +2190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_categoria",
-      "community": 9,
+      "community": 25,
       "norm_label": "categoria.php"
     },
     {
@@ -2110,7 +2200,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_models_categoria_categoria",
-      "community": 9,
+      "community": 25,
       "norm_label": "categoria"
     },
     {
@@ -2120,7 +2210,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "model",
-      "community": 10,
+      "community": 25,
       "norm_label": "model"
     },
     {
@@ -2130,7 +2220,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "hasslug",
-      "community": 9,
+      "community": 25,
       "norm_label": "hasslug"
     },
     {
@@ -2140,7 +2230,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_models_categoria_categoria_getslugoptions",
-      "community": 9,
+      "community": 25,
       "norm_label": ".getslugoptions()"
     },
     {
@@ -2150,7 +2240,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_categoria_php_slugoptions",
-      "community": 9,
+      "community": 25,
       "norm_label": "slugoptions"
     },
     {
@@ -2160,7 +2250,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_models_categoria_categoria_corpicelesti",
-      "community": 9,
+      "community": 25,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2170,7 +2260,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_categoria_php_hasmany",
-      "community": 9,
+      "community": 25,
       "norm_label": "hasmany"
     },
     {
@@ -2180,7 +2270,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_corpoceleste",
-      "community": 10,
+      "community": 3,
       "norm_label": "corpoceleste.php"
     },
     {
@@ -2197,7 +2287,7 @@
       "label": ".casts()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L39",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_casts",
       "community": 3,
@@ -2207,10 +2297,10 @@
       "label": ".getSlugOptions()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L50",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getslugoptions",
-      "community": 10,
+      "community": 3,
       "norm_label": ".getslugoptions()"
     },
     {
@@ -2220,17 +2310,17 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_slugoptions",
-      "community": 10,
+      "community": 3,
       "norm_label": "slugoptions"
     },
     {
       "label": ".categoria()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L57",
+      "source_location": "L59",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_categoria",
-      "community": 10,
+      "community": 3,
       "norm_label": ".categoria()"
     },
     {
@@ -2240,14 +2330,14 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongsto",
-      "community": 10,
+      "community": 3,
       "norm_label": "belongsto"
     },
     {
       "label": ".galleria()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L62",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_galleria",
       "community": 3,
@@ -2267,7 +2357,7 @@
       "label": ".curiosita()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L67",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_curiosita",
       "community": 3,
@@ -2277,10 +2367,10 @@
       "label": ".missioni()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L72",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_missioni",
-      "community": 10,
+      "community": 3,
       "norm_label": ".missioni()"
     },
     {
@@ -2290,14 +2380,14 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongstomany",
-      "community": 10,
+      "community": 3,
       "norm_label": "belongstomany"
     },
     {
       "label": ".getNomeDisplayAttribute()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L79",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getnomedisplayattribute",
       "community": 3,
@@ -2307,7 +2397,7 @@
       "label": ".getImmagineUrlAttribute()",
       "file_type": "code",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L84",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getimmagineurlattribute",
       "community": 3,
@@ -2320,7 +2410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_curiosita",
-      "community": 10,
+      "community": 25,
       "norm_label": "curiosita.php"
     },
     {
@@ -2330,7 +2420,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_models_curiosita_curiosita",
-      "community": 10,
+      "community": 25,
       "norm_label": "curiosita"
     },
     {
@@ -2340,7 +2430,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_models_curiosita_curiosita_corpoceleste",
-      "community": 10,
+      "community": 25,
       "norm_label": ".corpoceleste()"
     },
     {
@@ -2350,7 +2440,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_curiosita_php_belongsto",
-      "community": 10,
+      "community": 25,
       "norm_label": "belongsto"
     },
     {
@@ -2550,7 +2640,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver",
-      "community": 3,
+      "community": 11,
       "norm_label": "corpocelesteobserver"
     },
     {
@@ -2560,7 +2650,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_construct",
-      "community": 3,
+      "community": 11,
       "norm_label": ".__construct()"
     },
     {
@@ -2570,7 +2660,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_created",
-      "community": 3,
+      "community": 11,
       "norm_label": ".created()"
     },
     {
@@ -2630,7 +2720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_services_nasaimageservice",
-      "community": 3,
+      "community": 11,
       "norm_label": "nasaimageservice.php"
     },
     {
@@ -2640,7 +2730,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice",
-      "community": 3,
+      "community": 11,
       "norm_label": "nasaimageservice"
     },
     {
@@ -2650,47 +2740,47 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_searchnasa",
-      "community": 3,
+      "community": 11,
       "norm_label": ".searchnasa()"
     },
     {
       "label": ".extractMetadata()",
       "file_type": "code",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L47",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_extractmetadata",
-      "community": 3,
+      "community": 11,
       "norm_label": ".extractmetadata()"
     },
     {
       "label": ".pickImageUrl()",
       "file_type": "code",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L60",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_pickimageurl",
-      "community": 3,
+      "community": 11,
       "norm_label": ".pickimageurl()"
     },
     {
       "label": ".importForBody()",
       "file_type": "code",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L72",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importforbody",
-      "community": 3,
+      "community": 11,
       "norm_label": ".importforbody()"
     },
     {
       "label": ".importAll()",
       "file_type": "code",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L157",
+      "source_location": "L178",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importall",
-      "community": 3,
+      "community": 11,
       "norm_label": ".importall()"
     },
     {
@@ -3774,13 +3864,43 @@
       "norm_label": "down()"
     },
     {
+      "label": "2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "database_migrations_2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table",
+      "community": 9,
+      "norm_label": "2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php"
+    },
+    {
+      "label": "up()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "database_migrations_2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table_up",
+      "community": 9,
+      "norm_label": "up()"
+    },
+    {
+      "label": "down()",
+      "file_type": "code",
+      "source_file": "database/migrations/2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "database_migrations_2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table_down",
+      "community": 9,
+      "norm_label": "down()"
+    },
+    {
       "label": "CategoriaSeeder.php",
       "file_type": "code",
       "source_file": "database/seeders/CategoriaSeeder.php",
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "categoriaseeder.php"
     },
     {
@@ -3790,7 +3910,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "categoriaseeder"
     },
     {
@@ -3800,7 +3920,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "seeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "seeder"
     },
     {
@@ -3810,7 +3930,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder_run",
-      "community": 10,
+      "community": 3,
       "norm_label": ".run()"
     },
     {
@@ -3820,7 +3940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "corpocelestemissioneseeder.php"
     },
     {
@@ -3830,7 +3950,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "corpocelestemissioneseeder"
     },
     {
@@ -3840,7 +3960,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder_run",
-      "community": 10,
+      "community": 3,
       "norm_label": ".run()"
     },
     {
@@ -3850,7 +3970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "corpocelesteseeder.php"
     },
     {
@@ -3860,7 +3980,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "corpocelesteseeder"
     },
     {
@@ -3870,7 +3990,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder_run",
-      "community": 10,
+      "community": 3,
       "norm_label": ".run()"
     },
     {
@@ -3880,7 +4000,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "curiositaseeder.php"
     },
     {
@@ -3890,7 +4010,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "curiositaseeder"
     },
     {
@@ -3900,7 +4020,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder_run",
-      "community": 10,
+      "community": 3,
       "norm_label": ".run()"
     },
     {
@@ -3910,7 +4030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "databaseseeder.php"
     },
     {
@@ -3920,7 +4040,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "databaseseeder"
     },
     {
@@ -3930,7 +4050,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder_run",
-      "community": 10,
+      "community": 3,
       "norm_label": ".run()"
     },
     {
@@ -3940,7 +4060,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "galleriacorposeeder.php"
     },
     {
@@ -3950,7 +4070,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder",
-      "community": 10,
+      "community": 3,
       "norm_label": "galleriacorposeeder"
     },
     {
@@ -3960,7 +4080,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder_run",
-      "community": 10,
+      "community": 3,
       "norm_label": ".run()"
     },
     {
@@ -3970,7 +4090,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder",
-      "community": 4,
+      "community": 3,
       "norm_label": "missioneseeder.php"
     },
     {
@@ -3980,7 +4100,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder",
-      "community": 4,
+      "community": 3,
       "norm_label": "missioneseeder"
     },
     {
@@ -3990,7 +4110,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder_run",
-      "community": 4,
+      "community": 3,
       "norm_label": ".run()"
     },
     {
@@ -5107,7 +5227,7 @@
       "label": "formatDistance()",
       "file_type": "code",
       "source_file": "resources/js/guest/components/CorpoCard.jsx",
-      "source_location": "L102",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "resources_js_guest_components_corpocard_formatdistance",
       "community": 2,
@@ -5710,7 +5830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_api",
-      "community": 9,
+      "community": 25,
       "norm_label": "api.php"
     },
     {
@@ -5720,7 +5840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_auth",
-      "community": 1,
+      "community": 10,
       "norm_label": "auth.php"
     },
     {
@@ -5740,108 +5860,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_web",
-      "community": 9,
+      "community": 25,
       "norm_label": "web.php"
-    },
-    {
-      "label": "0079552f2330bfb933d02f675d7fae1e.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/0079552f2330bfb933d02f675d7fae1e.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_0079552f2330bfb933d02f675d7fae1e",
-      "community": 99,
-      "norm_label": "0079552f2330bfb933d02f675d7fae1e.php"
-    },
-    {
-      "label": "0102e8bc3944f025b8dec238ff035f52.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/0102e8bc3944f025b8dec238ff035f52.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_0102e8bc3944f025b8dec238ff035f52",
-      "community": 100,
-      "norm_label": "0102e8bc3944f025b8dec238ff035f52.php"
-    },
-    {
-      "label": "052b7b62aef43969807ea08d8142130a.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/052b7b62aef43969807ea08d8142130a.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_052b7b62aef43969807ea08d8142130a",
-      "community": 101,
-      "norm_label": "052b7b62aef43969807ea08d8142130a.php"
-    },
-    {
-      "label": "074a1126587239d20c8421dd9152a1f8.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/074a1126587239d20c8421dd9152a1f8.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_074a1126587239d20c8421dd9152a1f8",
-      "community": 102,
-      "norm_label": "074a1126587239d20c8421dd9152a1f8.php"
-    },
-    {
-      "label": "07906d173f80e2cf3847b395f5e155d6.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/07906d173f80e2cf3847b395f5e155d6.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_07906d173f80e2cf3847b395f5e155d6",
-      "community": 103,
-      "norm_label": "07906d173f80e2cf3847b395f5e155d6.php"
-    },
-    {
-      "label": "09148a75d062e713df3d45fc211829ce.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/09148a75d062e713df3d45fc211829ce.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_09148a75d062e713df3d45fc211829ce",
-      "community": 104,
-      "norm_label": "09148a75d062e713df3d45fc211829ce.php"
-    },
-    {
-      "label": "0dfb30b1f0830e33ea56f2fb83a842e3.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/0dfb30b1f0830e33ea56f2fb83a842e3.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_0dfb30b1f0830e33ea56f2fb83a842e3",
-      "community": 105,
-      "norm_label": "0dfb30b1f0830e33ea56f2fb83a842e3.php"
-    },
-    {
-      "label": "158a58073f7c339cee02d82d7f1f6a13.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/158a58073f7c339cee02d82d7f1f6a13.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_158a58073f7c339cee02d82d7f1f6a13",
-      "community": 106,
-      "norm_label": "158a58073f7c339cee02d82d7f1f6a13.php"
-    },
-    {
-      "label": "1cca292344e066f15fdb501df69ab831.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/1cca292344e066f15fdb501df69ab831.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_1cca292344e066f15fdb501df69ab831",
-      "community": 107,
-      "norm_label": "1cca292344e066f15fdb501df69ab831.php"
-    },
-    {
-      "label": "1e32e383242536371572d37076fcd0d9.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/1e32e383242536371572d37076fcd0d9.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_1e32e383242536371572d37076fcd0d9",
-      "community": 108,
-      "norm_label": "1e32e383242536371572d37076fcd0d9.php"
     },
     {
       "label": "1feba0814ee0d999cc60b850dce00bf0.php",
@@ -5874,36 +5894,6 @@
       "norm_label": "2f0b2672335a9102d30315f3470c9de0.php"
     },
     {
-      "label": "31486c49ea9ea651def85a83d09f56cc.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/31486c49ea9ea651def85a83d09f56cc.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_31486c49ea9ea651def85a83d09f56cc",
-      "community": 112,
-      "norm_label": "31486c49ea9ea651def85a83d09f56cc.php"
-    },
-    {
-      "label": "341e301dccce084f7d1052613f1bc217.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/341e301dccce084f7d1052613f1bc217.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_341e301dccce084f7d1052613f1bc217",
-      "community": 113,
-      "norm_label": "341e301dccce084f7d1052613f1bc217.php"
-    },
-    {
-      "label": "3eb91ccff5d382c8678a9448e6d626f1.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/3eb91ccff5d382c8678a9448e6d626f1.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_3eb91ccff5d382c8678a9448e6d626f1",
-      "community": 114,
-      "norm_label": "3eb91ccff5d382c8678a9448e6d626f1.php"
-    },
-    {
       "label": "416b5acd62ac97fdecf87ae2da422c99.php",
       "file_type": "code",
       "source_file": "storage/framework/views/416b5acd62ac97fdecf87ae2da422c99.php",
@@ -5912,26 +5902,6 @@
       "id": "storage_framework_views_416b5acd62ac97fdecf87ae2da422c99",
       "community": 115,
       "norm_label": "416b5acd62ac97fdecf87ae2da422c99.php"
-    },
-    {
-      "label": "468044b4106d5a761bbe05f4a3b2009c.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/468044b4106d5a761bbe05f4a3b2009c.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_468044b4106d5a761bbe05f4a3b2009c",
-      "community": 116,
-      "norm_label": "468044b4106d5a761bbe05f4a3b2009c.php"
-    },
-    {
-      "label": "4c99732996df6afb78ef9b7ae5c108e1.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/4c99732996df6afb78ef9b7ae5c108e1.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_4c99732996df6afb78ef9b7ae5c108e1",
-      "community": 117,
-      "norm_label": "4c99732996df6afb78ef9b7ae5c108e1.php"
     },
     {
       "label": "4d97c4b1fe351df04e9668386470c5ee.php",
@@ -5954,54 +5924,14 @@
       "norm_label": "511164019d61ce822a7f487b8b4ce4dd.php"
     },
     {
-      "label": "5d95b9640ef000501d80daeb998d379d.php",
+      "label": "57592fac1a0a2cdc65efd4ff89e8ba29.php",
       "file_type": "code",
-      "source_file": "storage/framework/views/5d95b9640ef000501d80daeb998d379d.php",
+      "source_file": "storage/framework/views/57592fac1a0a2cdc65efd4ff89e8ba29.php",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "storage_framework_views_5d95b9640ef000501d80daeb998d379d",
-      "community": 120,
-      "norm_label": "5d95b9640ef000501d80daeb998d379d.php"
-    },
-    {
-      "label": "62be3120d819dc0d59d086ef1f4ddaeb.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/62be3120d819dc0d59d086ef1f4ddaeb.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_62be3120d819dc0d59d086ef1f4ddaeb",
-      "community": 121,
-      "norm_label": "62be3120d819dc0d59d086ef1f4ddaeb.php"
-    },
-    {
-      "label": "67788011fd8d6f1c211be36791be7a99.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/67788011fd8d6f1c211be36791be7a99.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_67788011fd8d6f1c211be36791be7a99",
-      "community": 122,
-      "norm_label": "67788011fd8d6f1c211be36791be7a99.php"
-    },
-    {
-      "label": "699016eb2e76ea8fe861ec633db8850d.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/699016eb2e76ea8fe861ec633db8850d.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_699016eb2e76ea8fe861ec633db8850d",
-      "community": 123,
-      "norm_label": "699016eb2e76ea8fe861ec633db8850d.php"
-    },
-    {
-      "label": "6d76f20e09e87300634318c08e560e92.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/6d76f20e09e87300634318c08e560e92.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_6d76f20e09e87300634318c08e560e92",
-      "community": 124,
-      "norm_label": "6d76f20e09e87300634318c08e560e92.php"
+      "id": "storage_framework_views_57592fac1a0a2cdc65efd4ff89e8ba29",
+      "community": 99,
+      "norm_label": "57592fac1a0a2cdc65efd4ff89e8ba29.php"
     },
     {
       "label": "7194bae39dfcdc1597a0f00c92a16a9a.php",
@@ -6014,44 +5944,14 @@
       "norm_label": "7194bae39dfcdc1597a0f00c92a16a9a.php"
     },
     {
-      "label": "73c86c83dde47032e8d456e6194f24f1.php",
+      "label": "7922efd6a75895240fa8c9f8c5abd0b4.php",
       "file_type": "code",
-      "source_file": "storage/framework/views/73c86c83dde47032e8d456e6194f24f1.php",
+      "source_file": "storage/framework/views/7922efd6a75895240fa8c9f8c5abd0b4.php",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "storage_framework_views_73c86c83dde47032e8d456e6194f24f1",
-      "community": 126,
-      "norm_label": "73c86c83dde47032e8d456e6194f24f1.php"
-    },
-    {
-      "label": "771619527f9b41b8e32dd5ea3ac22d56.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/771619527f9b41b8e32dd5ea3ac22d56.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_771619527f9b41b8e32dd5ea3ac22d56",
-      "community": 127,
-      "norm_label": "771619527f9b41b8e32dd5ea3ac22d56.php"
-    },
-    {
-      "label": "7f9880d585e7d71425b2e2f544bbf348.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/7f9880d585e7d71425b2e2f544bbf348.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_7f9880d585e7d71425b2e2f544bbf348",
-      "community": 128,
-      "norm_label": "7f9880d585e7d71425b2e2f544bbf348.php"
-    },
-    {
-      "label": "8cd972a4f30aece1f60ee6abc5b111fa.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/8cd972a4f30aece1f60ee6abc5b111fa.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_8cd972a4f30aece1f60ee6abc5b111fa",
-      "community": 129,
-      "norm_label": "8cd972a4f30aece1f60ee6abc5b111fa.php"
+      "id": "storage_framework_views_7922efd6a75895240fa8c9f8c5abd0b4",
+      "community": 100,
+      "norm_label": "7922efd6a75895240fa8c9f8c5abd0b4.php"
     },
     {
       "label": "902a3553ae64fcfe3326f1a5f5f0a770.php",
@@ -6064,96 +5964,6 @@
       "norm_label": "902a3553ae64fcfe3326f1a5f5f0a770.php"
     },
     {
-      "label": "9540698a592fcafea361c028fe8b6d17.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/9540698a592fcafea361c028fe8b6d17.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_9540698a592fcafea361c028fe8b6d17",
-      "community": 131,
-      "norm_label": "9540698a592fcafea361c028fe8b6d17.php"
-    },
-    {
-      "label": "9a58383271212ccab7ce001f4f42997d.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/9a58383271212ccab7ce001f4f42997d.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_9a58383271212ccab7ce001f4f42997d",
-      "community": 132,
-      "norm_label": "9a58383271212ccab7ce001f4f42997d.php"
-    },
-    {
-      "label": "9ef95af84a4490fff2ca1d263f648a8b.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/9ef95af84a4490fff2ca1d263f648a8b.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_9ef95af84a4490fff2ca1d263f648a8b",
-      "community": 133,
-      "norm_label": "9ef95af84a4490fff2ca1d263f648a8b.php"
-    },
-    {
-      "label": "a0309fdfc368355b03d18cf619fec999.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/a0309fdfc368355b03d18cf619fec999.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_a0309fdfc368355b03d18cf619fec999",
-      "community": 134,
-      "norm_label": "a0309fdfc368355b03d18cf619fec999.php"
-    },
-    {
-      "label": "a9828575808d66c2f7b85c94b5f44a1a.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/a9828575808d66c2f7b85c94b5f44a1a.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_a9828575808d66c2f7b85c94b5f44a1a",
-      "community": 135,
-      "norm_label": "a9828575808d66c2f7b85c94b5f44a1a.php"
-    },
-    {
-      "label": "abb3f532df82caaf468de6f16b0c5d55.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/abb3f532df82caaf468de6f16b0c5d55.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_abb3f532df82caaf468de6f16b0c5d55",
-      "community": 136,
-      "norm_label": "abb3f532df82caaf468de6f16b0c5d55.php"
-    },
-    {
-      "label": "b3c7c21728117f8e9b066081e268c981.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/b3c7c21728117f8e9b066081e268c981.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_b3c7c21728117f8e9b066081e268c981",
-      "community": 137,
-      "norm_label": "b3c7c21728117f8e9b066081e268c981.php"
-    },
-    {
-      "label": "b852bfbcb7d110f638cec6293edf6510.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/b852bfbcb7d110f638cec6293edf6510.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_b852bfbcb7d110f638cec6293edf6510",
-      "community": 138,
-      "norm_label": "b852bfbcb7d110f638cec6293edf6510.php"
-    },
-    {
-      "label": "bc505792ebcc5f4fb64099cf7217e9d7.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/bc505792ebcc5f4fb64099cf7217e9d7.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_bc505792ebcc5f4fb64099cf7217e9d7",
-      "community": 139,
-      "norm_label": "bc505792ebcc5f4fb64099cf7217e9d7.php"
-    },
-    {
       "label": "bd63c3bfd5a99b3c50f00686ce5133ec.php",
       "file_type": "code",
       "source_file": "storage/framework/views/bd63c3bfd5a99b3c50f00686ce5133ec.php",
@@ -6164,64 +5974,14 @@
       "norm_label": "bd63c3bfd5a99b3c50f00686ce5133ec.php"
     },
     {
-      "label": "c2c25815d397febc3aa1bb3a4f67641d.php",
+      "label": "db1cb51494627765ac48414e99948e15.php",
       "file_type": "code",
-      "source_file": "storage/framework/views/c2c25815d397febc3aa1bb3a4f67641d.php",
+      "source_file": "storage/framework/views/db1cb51494627765ac48414e99948e15.php",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "storage_framework_views_c2c25815d397febc3aa1bb3a4f67641d",
-      "community": 141,
-      "norm_label": "c2c25815d397febc3aa1bb3a4f67641d.php"
-    },
-    {
-      "label": "c36858f4022725158a3d0b8374929c5b.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/c36858f4022725158a3d0b8374929c5b.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_c36858f4022725158a3d0b8374929c5b",
-      "community": 142,
-      "norm_label": "c36858f4022725158a3d0b8374929c5b.php"
-    },
-    {
-      "label": "d010e30a38fde4ace41380645e10e215.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/d010e30a38fde4ace41380645e10e215.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_d010e30a38fde4ace41380645e10e215",
-      "community": 143,
-      "norm_label": "d010e30a38fde4ace41380645e10e215.php"
-    },
-    {
-      "label": "d24b732e50d0b3764f024eea66a5ba9f.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/d24b732e50d0b3764f024eea66a5ba9f.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_d24b732e50d0b3764f024eea66a5ba9f",
-      "community": 144,
-      "norm_label": "d24b732e50d0b3764f024eea66a5ba9f.php"
-    },
-    {
-      "label": "d5559aac3c4c77dc01d10685520cf531.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/d5559aac3c4c77dc01d10685520cf531.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_d5559aac3c4c77dc01d10685520cf531",
-      "community": 145,
-      "norm_label": "d5559aac3c4c77dc01d10685520cf531.php"
-    },
-    {
-      "label": "d6d63571279937d3cf16ed42c4c20924.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/d6d63571279937d3cf16ed42c4c20924.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_d6d63571279937d3cf16ed42c4c20924",
-      "community": 146,
-      "norm_label": "d6d63571279937d3cf16ed42c4c20924.php"
+      "id": "storage_framework_views_db1cb51494627765ac48414e99948e15",
+      "community": 1,
+      "norm_label": "db1cb51494627765ac48414e99948e15.php"
     },
     {
       "label": "dc2d6e0c6f76415dab9fb4a0f8919c4b.php",
@@ -6234,36 +5994,6 @@
       "norm_label": "dc2d6e0c6f76415dab9fb4a0f8919c4b.php"
     },
     {
-      "label": "dc5cc08b02e5372dce816183da77c36a.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/dc5cc08b02e5372dce816183da77c36a.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_dc5cc08b02e5372dce816183da77c36a",
-      "community": 148,
-      "norm_label": "dc5cc08b02e5372dce816183da77c36a.php"
-    },
-    {
-      "label": "e47496da7e17842bcb0108c298d9c02b.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/e47496da7e17842bcb0108c298d9c02b.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_e47496da7e17842bcb0108c298d9c02b",
-      "community": 149,
-      "norm_label": "e47496da7e17842bcb0108c298d9c02b.php"
-    },
-    {
-      "label": "e8c87fddca534cf2e07477eb36e77c2a.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/e8c87fddca534cf2e07477eb36e77c2a.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_e8c87fddca534cf2e07477eb36e77c2a",
-      "community": 150,
-      "norm_label": "e8c87fddca534cf2e07477eb36e77c2a.php"
-    },
-    {
       "label": "e958c3e9005acd5155e10228bb0de30a.php",
       "file_type": "code",
       "source_file": "storage/framework/views/e958c3e9005acd5155e10228bb0de30a.php",
@@ -6272,16 +6002,6 @@
       "id": "storage_framework_views_e958c3e9005acd5155e10228bb0de30a",
       "community": 151,
       "norm_label": "e958c3e9005acd5155e10228bb0de30a.php"
-    },
-    {
-      "label": "ecb6311cc7b1a90c9b698bf1359c214a.php",
-      "file_type": "code",
-      "source_file": "storage/framework/views/ecb6311cc7b1a90c9b698bf1359c214a.php",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "storage_framework_views_ecb6311cc7b1a90c9b698bf1359c214a",
-      "community": 152,
-      "norm_label": "ecb6311cc7b1a90c9b698bf1359c214a.php"
     },
     {
       "label": "tailwind.config.js",
@@ -7817,7 +7537,7 @@
       "label": "In corso",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L22",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "docs_todo_in_corso",
       "community": 20,
@@ -7827,7 +7547,7 @@
       "label": "Future",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L26",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "docs_todo_future",
       "community": 20,
@@ -7837,7 +7557,7 @@
       "label": "Priorit\u00e0 Alta",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L28",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "docs_todo_priorit\u00e0_alta",
       "community": 20,
@@ -7847,7 +7567,7 @@
       "label": "Priorit\u00e0 Media",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L44",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "docs_todo_priorit\u00e0_media",
       "community": 20,
@@ -7857,7 +7577,7 @@
       "label": "Priorit\u00e0 Bassa",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L71",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "docs_todo_priorit\u00e0_bassa",
       "community": 20,
@@ -7865,6 +7585,313 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates",
+      "target": "app_services_nasaimageservice_nasaimageservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates",
+      "target": "command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_cleanorphanedfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_construct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L249",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handledelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlesync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_headrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removeduplicates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "field",
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "app_services_nasaimageservice_nasaimageservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
+      "target": "command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/FetchNasaCommand.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_console_commands_fetchnasacommand",
+      "target": "command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/FetchNasaCommand.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_console_commands_fetchnasacommand_fetchnasacommand",
+      "target": "command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references_constant",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app/Console/Commands/FetchNasaCommand.php",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
+      "target": "command"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_construct",
+      "target": "app_services_nasaimageservice_nasaimageservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handle",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_cleanorphanedfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handle",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handle",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removeduplicates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removeduplicates",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_cleanorphanedfiles",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L168",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handledelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlesync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
+      "target": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_headrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L201",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlesync",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
+      "source_location": "L249",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handledelete",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -7887,17 +7914,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Console/Commands/FetchNasaCommand.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "app_console_commands_fetchnasacommand",
-      "target": "command",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Console/Commands/FetchNasaCommand.php",
@@ -7906,26 +7922,6 @@
       "source": "app_console_commands_fetchnasacommand_fetchnasacommand",
       "target": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
       "confidence_score": 1.0
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Console/Commands/FetchNasaCommand.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "app_console_commands_fetchnasacommand_fetchnasacommand",
-      "target": "command",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references_constant",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app/Console/Commands/FetchNasaCommand.php",
-      "source_location": "L66",
-      "weight": 1.0,
-      "source": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
-      "target": "command"
     },
     {
       "relation": "references",
@@ -8274,7 +8270,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
@@ -8285,7 +8281,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_php_redirectresponse",
@@ -8296,7 +8292,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_php_request",
@@ -8307,7 +8303,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_php_view",
@@ -8341,6 +8337,17 @@
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
       "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_http_controllers_admin_corpocelestecontroller",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller",
       "target": "app_services_nasaimageservice_nasaimageservice",
@@ -8383,7 +8390,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_create",
@@ -8393,7 +8400,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L106",
+      "source_location": "L111",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
@@ -8403,7 +8410,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L71",
+      "source_location": "L72",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
@@ -8413,7 +8420,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L219",
+      "source_location": "L235",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_guessenglishname",
@@ -8423,7 +8430,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_index",
@@ -8433,7 +8440,17 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L64",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
+      "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
@@ -8443,7 +8460,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
@@ -8453,7 +8470,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L114",
+      "source_location": "L130",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -8463,7 +8480,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L78",
+      "source_location": "L79",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -8473,7 +8490,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_controller_controller",
@@ -8483,7 +8500,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_index",
@@ -8494,7 +8511,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_index",
@@ -8506,7 +8523,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_index",
       "target": "app_models_corpoceleste_corpoceleste",
@@ -8516,7 +8533,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
@@ -8527,7 +8544,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L114",
+      "source_location": "L130",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -8538,7 +8555,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L78",
+      "source_location": "L79",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -8549,7 +8566,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_create",
@@ -8560,7 +8577,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L71",
+      "source_location": "L72",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
@@ -8571,7 +8588,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
@@ -8584,7 +8601,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_create",
       "target": "app_models_categoria_categoria"
@@ -8593,7 +8610,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
@@ -8605,7 +8622,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L58",
+      "source_location": "L59",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
       "target": "app_models_corpoceleste_corpoceleste",
@@ -8615,7 +8632,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L106",
+      "source_location": "L111",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
@@ -8626,7 +8643,18 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L78",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
+      "target": "app_http_controllers_admin_corpocelestecontroller_php_redirectresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
+      "source_location": "L79",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -8637,7 +8665,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
@@ -8650,7 +8678,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L73",
+      "source_location": "L74",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
       "target": "app_models_categoria_categoria"
@@ -8659,7 +8687,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L71",
+      "source_location": "L72",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
@@ -8667,10 +8695,21 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
+      "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L78",
+      "source_location": "L79",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -8681,7 +8720,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L106",
+      "source_location": "L111",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
@@ -8689,11 +8728,33 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
+      "target": "app_models_corpoceleste_corpoceleste",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L122",
+      "source_location": "L138",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_guessenglishname",
@@ -8703,7 +8764,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L114",
+      "source_location": "L130",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -8714,7 +8775,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L114",
+      "source_location": "L130",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -9209,7 +9270,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
@@ -9242,7 +9303,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_php_view",
@@ -9282,32 +9343,20 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
+      "relation": "method",
       "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L8",
+      "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
+      "source_location": "L96",
       "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_galleriacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_galleriacontroller",
+      "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
+      "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_aggiornaordine",
       "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_create",
@@ -9317,7 +9366,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_destroy",
@@ -9327,7 +9376,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_edit",
@@ -9337,7 +9386,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_index",
@@ -9347,7 +9396,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_store",
@@ -9357,7 +9406,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_update",
@@ -9367,7 +9416,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L93",
+      "source_location": "L109",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_uploadimmagine",
@@ -9377,7 +9426,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller",
       "target": "app_http_controllers_controller_controller",
@@ -9387,7 +9436,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_index",
@@ -9399,7 +9448,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_index",
       "target": "app_models_galleriacorpo_galleriacorpo",
@@ -9409,7 +9458,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_create",
@@ -9420,7 +9469,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_edit",
@@ -9433,7 +9482,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_create",
       "target": "app_models_corpoceleste_corpoceleste"
@@ -9443,7 +9492,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_store",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_uploadimmagine",
@@ -9453,7 +9502,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_store",
@@ -9464,7 +9513,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_store",
@@ -9476,7 +9525,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_store",
       "target": "app_models_galleriacorpo_galleriacorpo",
@@ -9486,7 +9535,18 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L60",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_aggiornaordine",
+      "target": "app_http_controllers_admin_galleriacontroller_php_request",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
+      "source_location": "L61",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_update",
@@ -9497,7 +9557,18 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L83",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "return_type",
+      "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_aggiornaordine",
+      "target": "app_http_controllers_admin_galleriacontroller_php_redirectresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
+      "source_location": "L84",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_destroy",
@@ -9508,7 +9579,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_update",
@@ -9521,7 +9592,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_edit",
       "target": "app_models_corpoceleste_corpoceleste"
@@ -9530,7 +9601,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_edit",
@@ -9542,7 +9613,18 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L72",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_aggiornaordine",
+      "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
+      "source_location": "L73",
       "weight": 1.0,
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_update",
       "target": "app_http_controllers_admin_galleriacontroller_galleriacontroller_uploadimmagine",
@@ -9552,7 +9634,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_update",
@@ -9563,10 +9645,21 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_destroy",
+      "target": "app_models_galleriacorpo_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Http/Controllers/Admin/GalleriaController.php",
+      "source_location": "L96",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "source": "app_http_controllers_admin_galleriacontroller_galleriacontroller_aggiornaordine",
       "target": "app_models_galleriacorpo_galleriacorpo",
       "confidence_score": 1.0
     },
@@ -10646,7 +10739,7 @@
       "source_location": "L7",
       "weight": 1.0,
       "source": "app_http_controllers_api_galleriacontroller",
-      "target": "app_models_galleriacorpo_galleriacorpo",
+      "target": "app_models_galleriacorpo",
       "confidence_score": 1.0
     },
     {
@@ -10658,6 +10751,28 @@
       "weight": 1.0,
       "source": "app_http_controllers_api_galleriacontroller",
       "target": "app_http_resources_galleriacorporesource",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_galleriacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_galleriacontroller",
       "confidence_score": 1.0
     },
     {
@@ -10694,8 +10809,8 @@
     {
       "relation": "calls",
       "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Api/GalleriaController.php",
       "source_location": "L13",
       "weight": 1.0,
@@ -10942,7 +11057,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/AuthenticatedSessionController.php",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "source": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller",
       "target": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_destroy",
@@ -10987,7 +11102,7 @@
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_store",
-      "target": "app_http_controllers_auth_authenticatedsessioncontroller_php_redirectresponse",
+      "target": "app_http_controllers_auth_authenticatedsessioncontroller_php_response",
       "confidence_score": 1.0
     },
     {
@@ -11005,7 +11120,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/AuthenticatedSessionController.php",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_destroy",
@@ -11016,7 +11131,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/AuthenticatedSessionController.php",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_destroy",
@@ -11027,7 +11142,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller",
       "target": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller",
@@ -11041,17 +11156,6 @@
       "source_location": "L6",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller",
-      "target": "app_http_controllers_auth_confirmablepasswordcontroller_php_redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "app_http_controllers_auth_confirmablepasswordcontroller",
       "target": "app_http_controllers_auth_confirmablepasswordcontroller_php_request",
       "confidence_score": 1.0
     },
@@ -11060,7 +11164,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller",
       "target": "app_http_controllers_auth_confirmablepasswordcontroller_php_response",
@@ -11082,7 +11186,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller",
       "target": "routes_auth",
@@ -11092,7 +11196,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller",
       "target": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_show",
@@ -11102,7 +11206,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L26",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller",
       "target": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_store",
@@ -11112,7 +11216,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller",
       "target": "app_http_controllers_controller_controller",
@@ -11122,7 +11226,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_show",
@@ -11133,18 +11237,18 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L26",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_store",
-      "target": "app_http_controllers_auth_confirmablepasswordcontroller_php_redirectresponse",
+      "target": "app_http_controllers_auth_confirmablepasswordcontroller_php_response",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/ConfirmablePasswordController.php",
-      "source_location": "L26",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_store",
@@ -11167,17 +11271,6 @@
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationNotificationController.php",
       "source_location": "L6",
-      "weight": 1.0,
-      "source": "app_http_controllers_auth_emailverificationnotificationcontroller",
-      "target": "app_http_controllers_auth_emailverificationnotificationcontroller_php_redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Auth/EmailVerificationNotificationController.php",
-      "source_location": "L7",
       "weight": 1.0,
       "source": "app_http_controllers_auth_emailverificationnotificationcontroller",
       "target": "app_http_controllers_auth_emailverificationnotificationcontroller_php_request",
@@ -11231,9 +11324,9 @@
       "source_file": "app/Http/Controllers/Auth/EmailVerificationNotificationController.php",
       "source_location": "L14",
       "weight": 1.0,
-      "context": "return_type",
+      "context": "parameter_type",
       "source": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller_store",
-      "target": "app_http_controllers_auth_emailverificationnotificationcontroller_php_redirectresponse",
+      "target": "app_http_controllers_auth_emailverificationnotificationcontroller_php_request",
       "confidence_score": 1.0
     },
     {
@@ -11242,16 +11335,16 @@
       "source_file": "app/Http/Controllers/Auth/EmailVerificationNotificationController.php",
       "source_location": "L14",
       "weight": 1.0,
-      "context": "parameter_type",
+      "context": "return_type",
       "source": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller_store",
-      "target": "app_http_controllers_auth_emailverificationnotificationcontroller_php_request",
+      "target": "app_http_controllers_auth_emailverificationnotificationcontroller_php_response",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_auth_emailverificationpromptcontroller",
       "target": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
@@ -11265,17 +11358,6 @@
       "source_location": "L6",
       "weight": 1.0,
       "source": "app_http_controllers_auth_emailverificationpromptcontroller",
-      "target": "app_http_controllers_auth_emailverificationpromptcontroller_php_redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "app_http_controllers_auth_emailverificationpromptcontroller",
       "target": "app_http_controllers_auth_emailverificationpromptcontroller_php_request",
       "confidence_score": 1.0
     },
@@ -11284,7 +11366,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_controllers_auth_emailverificationpromptcontroller",
       "target": "app_http_controllers_auth_emailverificationpromptcontroller_php_response",
@@ -11316,7 +11398,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
       "target": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
@@ -11326,7 +11408,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
       "target": "app_http_controllers_controller_controller",
@@ -11336,18 +11418,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L16",
-      "weight": 1.0,
-      "context": "return_type",
-      "source": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
-      "target": "app_http_controllers_auth_emailverificationpromptcontroller_php_redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
@@ -11358,7 +11429,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/EmailVerificationPromptController.php",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
@@ -11736,17 +11807,6 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
-      "target": "app_http_controllers_auth_registeredusercontroller_php_redirectresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "app_http_controllers_auth_registeredusercontroller",
       "target": "app_http_controllers_auth_registeredusercontroller_php_request",
       "confidence_score": 1.0
     },
@@ -11755,7 +11815,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
       "target": "app_http_controllers_auth_registeredusercontroller_php_response",
@@ -11765,7 +11825,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
       "target": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
@@ -11787,7 +11847,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
       "target": "routes_auth",
@@ -11808,7 +11868,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
       "target": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_create",
@@ -11818,7 +11878,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
       "target": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
@@ -11828,7 +11888,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
       "target": "app_http_controllers_controller_controller",
@@ -11838,7 +11898,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_create",
@@ -11849,18 +11909,18 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
-      "target": "app_http_controllers_auth_registeredusercontroller_php_redirectresponse",
+      "target": "app_http_controllers_auth_registeredusercontroller_php_response",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L32",
+      "source_location": "L31",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
@@ -11873,21 +11933,10 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Auth/RegisteredUserController.php",
-      "source_location": "L40",
+      "source_location": "L39",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
       "target": "app_models_user_user"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Auth/VerifyEmailController.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "app_http_controllers_auth_verifyemailcontroller",
-      "target": "app_http_controllers_auth_verifyemailcontroller_php_redirectresponse",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11960,7 +12009,7 @@
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller_invoke",
-      "target": "app_http_controllers_auth_verifyemailcontroller_php_redirectresponse",
+      "target": "app_http_controllers_auth_verifyemailcontroller_php_response",
       "confidence_score": 1.0
     },
     {
@@ -13185,7 +13234,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_casts",
@@ -13195,7 +13244,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_categoria",
@@ -13205,7 +13254,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_curiosita",
@@ -13215,7 +13264,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L62",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_galleria",
@@ -13225,7 +13274,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L84",
+      "source_location": "L86",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_getimmagineurlattribute",
@@ -13235,7 +13284,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L79",
+      "source_location": "L81",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_getnomedisplayattribute",
@@ -13245,7 +13294,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L50",
+      "source_location": "L52",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_getslugoptions",
@@ -13255,7 +13304,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L72",
+      "source_location": "L74",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste",
       "target": "app_models_corpoceleste_corpoceleste_missioni",
@@ -13310,7 +13359,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L159",
+      "source_location": "L182",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice_importall",
       "target": "app_models_corpoceleste_corpoceleste",
@@ -13320,7 +13369,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_services_nasaimageservice_nasaimageservice_importforbody",
@@ -13376,7 +13425,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L50",
+      "source_location": "L52",
       "weight": 1.0,
       "source": "app_models_corpoceleste_corpoceleste_getslugoptions",
       "target": "app_models_corpoceleste_php_slugoptions",
@@ -13386,7 +13435,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_models_corpoceleste_corpoceleste_categoria",
@@ -13397,7 +13446,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L62",
+      "source_location": "L64",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_models_corpoceleste_corpoceleste_galleria",
@@ -13408,7 +13457,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_models_corpoceleste_corpoceleste_curiosita",
@@ -13419,7 +13468,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/CorpoCeleste.php",
-      "source_location": "L72",
+      "source_location": "L74",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_models_corpoceleste_corpoceleste_missioni",
@@ -13512,6 +13561,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/Services/NasaImageService.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_services_nasaimageservice",
+      "target": "app_models_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "database/seeders/GalleriaCorpoSeeder.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "database_seeders_galleriacorposeeder",
+      "target": "app_models_galleriacorpo",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Models/GalleriaCorpo.php",
@@ -13532,43 +13603,21 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "app_services_nasaimageservice",
-      "target": "app_models_galleriacorpo_galleriacorpo",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L120",
+      "source_location": "L124",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice_importforbody",
       "target": "app_models_galleriacorpo_galleriacorpo"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "database/seeders/GalleriaCorpoSeeder.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "database_seeders_galleriacorposeeder",
-      "target": "app_models_galleriacorpo_galleriacorpo",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "database/seeders/GalleriaCorpoSeeder.php",
       "source_location": "L45",
       "weight": 1.0,
@@ -14266,7 +14315,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice",
       "target": "app_services_nasaimageservice_nasaimageservice_extractmetadata",
@@ -14276,7 +14325,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L157",
+      "source_location": "L178",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice",
       "target": "app_services_nasaimageservice_nasaimageservice_importall",
@@ -14286,7 +14335,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice",
       "target": "app_services_nasaimageservice_nasaimageservice_importforbody",
@@ -14296,7 +14345,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice",
       "target": "app_services_nasaimageservice_nasaimageservice_pickimageurl",
@@ -14317,7 +14366,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L85",
+      "source_location": "L86",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice_importforbody",
       "target": "app_services_nasaimageservice_nasaimageservice_searchnasa",
@@ -14328,7 +14377,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L96",
+      "source_location": "L100",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice_importforbody",
       "target": "app_services_nasaimageservice_nasaimageservice_extractmetadata",
@@ -14339,7 +14388,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L101",
+      "source_location": "L105",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice_importforbody",
       "target": "app_services_nasaimageservice_nasaimageservice_pickimageurl",
@@ -14350,7 +14399,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Services/NasaImageService.php",
-      "source_location": "L166",
+      "source_location": "L189",
       "weight": 1.0,
       "source": "app_services_nasaimageservice_nasaimageservice_importall",
       "target": "app_services_nasaimageservice_nasaimageservice_importforbody",
@@ -15197,6 +15246,26 @@
       "weight": 1.0,
       "source": "database_migrations_2026_07_04_164500_add_nome_it_to_corpi_celesti_table",
       "target": "database_migrations_2026_07_04_164500_add_nome_it_to_corpi_celesti_table_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "database_migrations_2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table",
+      "target": "database_migrations_2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table_down",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "database/migrations/2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "database_migrations_2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table",
+      "target": "database_migrations_2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table_up",
       "confidence_score": 1.0
     },
     {
@@ -16713,7 +16782,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "resources/js/guest/components/CorpoCard.jsx",
-      "source_location": "L102",
+      "source_location": "L105",
       "weight": 1.0,
       "source": "resources_js_guest_components_corpocard",
       "target": "resources_js_guest_components_corpocard_formatdistance",
@@ -16757,7 +16826,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "resources/js/guest/components/CorpoCard.jsx",
-      "source_location": "L94",
+      "source_location": "L97",
       "weight": 1.0,
       "source": "resources_js_guest_components_corpocard_corpocard",
       "target": "resources_js_guest_components_corpocard_formatdistance",
@@ -18826,7 +18895,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L26",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "docs_todo_todo",
       "target": "docs_todo_future",
@@ -18836,7 +18905,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L22",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "docs_todo_todo",
       "target": "docs_todo_in_corso",
@@ -18846,7 +18915,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L28",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "docs_todo_future",
       "target": "docs_todo_priorit\u00e0_alta",
@@ -18856,7 +18925,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L71",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "docs_todo_future",
       "target": "docs_todo_priorit\u00e0_bassa",
@@ -18866,7 +18935,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L44",
+      "source_location": "L40",
       "weight": 1.0,
       "source": "docs_todo_future",
       "target": "docs_todo_priorit\u00e0_media",
@@ -18874,5 +18943,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "741e32dbcafcc87a1a618c54ffaf973ecd7a4fbb"
+  "built_at_commit": "d52aee4a0b32f7b3db064a9493e37928aba3834d"
 }

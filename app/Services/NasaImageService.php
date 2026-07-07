@@ -23,7 +23,8 @@ class NasaImageService
 
         foreach ($queries as $q) {
             $response = Http::withoutVerifying()
-                ->timeout(15)
+                ->timeout(30)
+                ->retry(2, 1000)
                 ->get('https://images-api.nasa.gov/search', [
                     'q' => $q,
                     'media_type' => 'image',
@@ -57,7 +58,7 @@ class NasaImageService
         ];
     }
 
-    private function pickImageUrl(array $item): ?string
+    public function pickImageUrl(array $item): ?string
     {
         foreach (['alternate', 'preview', 'canonical'] as $rel) {
             foreach ($item['links'] ?? [] as $link) {
@@ -90,13 +91,16 @@ class NasaImageService
         $items = $searchResult['items'];
         $mainImported = false;
         $galleryImported = 0;
+        $gallerySkipped = 0;
         $errors = [];
+
+        $canOverwriteMain = $force && !$corpo->immagine_utente;
 
         foreach ($items as $index => $item) {
             $metadata = $this->extractMetadata($item);
             $nasaId = $metadata['nasa_id'] ?? uniqid();
 
-            $isMain = !$mainImported;
+            $isMain = !$mainImported && $canOverwriteMain;
 
             $imageUrl = $this->pickImageUrl($item);
             if (!$imageUrl) {
@@ -106,7 +110,7 @@ class NasaImageService
             }
 
             if ($isMain) {
-                if ($corpo->immagine) {
+                if ($corpo->immagine && !str_starts_with($corpo->immagine, 'http')) {
                     Storage::disk('public')->delete('corpi-celesti/' . $corpo->immagine);
                 }
 
@@ -117,6 +121,15 @@ class NasaImageService
                 $corpo->update($updateData);
                 $mainImported = true;
             } else {
+                $exists = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)
+                    ->where('percorso', $imageUrl)
+                    ->exists();
+
+                if ($exists) {
+                    $gallerySkipped++;
+                    continue;
+                }
+
                 GalleriaCorpo::create([
                     'corpo_celeste_id' => $corpo->id,
                     'percorso' => $imageUrl,
@@ -127,9 +140,13 @@ class NasaImageService
                 $galleryImported++;
             }
 
-            if ($mainImported && $galleryImported >= $galleryCount) {
+            if ($galleryImported >= $galleryCount) {
                 break;
             }
+        }
+
+        if (!$canOverwriteMain && $corpo->immagine) {
+            $mainImported = true;
         }
 
         $parts = [];
@@ -139,6 +156,10 @@ class NasaImageService
             $parts[] = "{$galleryImported} immagini galleria aggiunte";
         } else {
             $parts[] = "nessuna immagine galleria";
+        }
+
+        if ($gallerySkipped > 0) {
+            $parts[] = "{$gallerySkipped} già presenti (skippate)";
         }
 
         if (!empty($errors)) {
@@ -156,6 +177,8 @@ class NasaImageService
 
     public function importAll(int $galleryCount = 5, bool $force = false, bool $updateDescription = false): array
     {
+        set_time_limit(300);
+
         $corpi = CorpoCeleste::all();
         $results = [];
         $successCount = 0;
@@ -164,6 +187,11 @@ class NasaImageService
 
         foreach ($corpi as $corpo) {
             $result = $this->importForBody($corpo, $galleryCount, $force, $updateDescription);
+
+            if (!empty($result['errors'])) {
+                $result['message'] .= ' ' . implode('; ', array_slice($result['errors'], 0, 2));
+            }
+
             $results[] = $result;
             if ($result['success']) {
                 $successCount++;

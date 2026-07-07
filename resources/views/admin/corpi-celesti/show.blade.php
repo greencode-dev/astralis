@@ -135,6 +135,16 @@
                                     <p class="text-xs" style="color: #9CA3AF;">{{ $foto->didascalia }}</p>
                                 </div>
                             @endif
+                            <form method="POST" action="{{ route('admin.corpi-celesti.set-image', [$corpoCeleste, $foto]) }}">
+                                @csrf
+                                <button type="submit"
+                                        class="w-full text-xs py-1.5 font-medium transition-all duration-200"
+                                        style="background-color: rgba(34, 211, 238, 0.1); color: #22D3EE;"
+                                        onmouseover="this.style.backgroundColor='rgba(34,211,238,0.25)'"
+                                        onmouseout="this.style.backgroundColor='rgba(34,211,238,0.1)'">
+                                    Imposta come principale
+                                </button>
+                            </form>
                         </div>
                     @endforeach
                 </div>

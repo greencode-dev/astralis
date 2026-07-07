@@ -1,22 +1,21 @@
 # Graph Report - astralis  (2026-07-07)
 
 ## Corpus Check
-- 222 files · ~65,444 words
+- 184 files · ~56,154 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 786 nodes · 1051 edges · 154 communities (153 shown, 1 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 52 edges (avg confidence: 0.8)
+- 758 nodes · 1084 edges · 114 communities (113 shown, 1 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 55 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `741e32db`
+- Built from commit: `d52aee4a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_User|User]]
-- [[_COMMUNITY_Controller|Controller]]
 - [[_COMMUNITY_CorpoDettaglio.jsx|CorpoDettaglio.jsx]]
 - [[_COMMUNITY_CorpoCeleste|CorpoCeleste]]
 - [[_COMMUNITY_Missione|Missione]]
@@ -24,7 +23,6 @@
 - [[_COMMUNITY_JsonResource|JsonResource]]
 - [[_COMMUNITY_LoginRequest|LoginRequest]]
 - [[_COMMUNITY_devDependencies|devDependencies]]
-- [[_COMMUNITY_Categoria|Categoria]]
 - [[_COMMUNITY_Curiosita|Curiosita]]
 - [[_COMMUNITY_GalleriaCorpo|GalleriaCorpo]]
 - [[_COMMUNITY_Astralis — Documentazione di Progetto|Astralis — Documentazione di Progetto]]
@@ -40,6 +38,7 @@
 - [[_COMMUNITY_HandleInertiaRequests|HandleInertiaRequests]]
 - [[_COMMUNITY_config|config]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
+- [[_COMMUNITY_Seeder|Seeder]]
 - [[_COMMUNITY_UserFactory|UserFactory]]
 - [[_COMMUNITY_Dropdown.jsx|Dropdown.jsx]]
 - [[_COMMUNITY_psr-4|psr-4]]
@@ -48,13 +47,13 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `Controller` - 46 edges
-2. `CorpoCeleste` - 41 edges
+2. `CorpoCeleste` - 42 edges
 3. `User` - 26 edges
-4. `Categoria` - 20 edges
-5. `Missione` - 20 edges
-6. `TestCase` - 20 edges
-7. `GalleriaCorpo` - 16 edges
-8. `NasaImageService` - 16 edges
+4. `GalleriaCorpo` - 22 edges
+5. `Categoria` - 20 edges
+6. `Missione` - 20 edges
+7. `TestCase` - 20 edges
+8. `NasaImageService` - 19 edges
 9. `Curiosita` - 15 edges
 10. `Risolti` - 13 edges
 
@@ -73,35 +72,31 @@
 ## Import Cycles
 - None detected.
 
-## Communities (154 total, 1 thin omitted)
+## Communities (114 total, 1 thin omitted)
 
 ### Community 0 - "User"
 Cohesion: 0.07
 Nodes (16): User, Authenticatable, BaseTestCase, HasFactory, Notifiable, RefreshDatabase, AuthenticationTest, EmailVerificationTest (+8 more)
-
-### Community 1 - "Controller"
-Cohesion: 0.06
-Nodes (31): CategoriaController, ConfirmablePasswordController, RedirectResponse, Request, Response, EmailVerificationNotificationController, RedirectResponse, Request (+23 more)
 
 ### Community 2 - "CorpoDettaglio.jsx"
 Cohesion: 0.06
 Nodes (31): apiClient, fetchCategorie(), fetchCorpiCelesti(), fetchCorpoCeleste(), fetchDashboardStats(), fetchSimili(), App(), CategoriaBadge() (+23 more)
 
 ### Community 3 - "CorpoCeleste"
-Cohesion: 0.07
-Nodes (18): FetchNasaCommand, CorpoCelesteController, JsonResponse, RedirectResponse, Request, View, NasaImportController, RedirectResponse (+10 more)
+Cohesion: 0.06
+Nodes (20): CorpoCelesteController, JsonResponse, RedirectResponse, Request, View, CorpoCeleste, BelongsTo, BelongsToMany (+12 more)
 
 ### Community 4 - "Missione"
-Cohesion: 0.13
-Nodes (10): MissioneController, RedirectResponse, Request, View, MissioneController, Request, Missione, BelongsToMany (+2 more)
+Cohesion: 0.15
+Nodes (9): MissioneController, RedirectResponse, Request, View, MissioneController, Request, Missione, BelongsToMany (+1 more)
 
 ### Community 5 - "Changelog"
 Cohesion: 0.05
 Nodes (39): 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione, 1.0 — 03/07/2026 — `0a57208` — feat: database e modelli con seeders, 2.1 — 03/07/2026 — `070da55` — feat: admin backoffice layout, sidebar navigation e dashboard, 2.2 — 03/07/2026 — `758be4c` — feat: CRUD categorie backoffice, 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice, 2.4 — 03/07/2026 — `6d86177` — feat: CRUD missioni backoffice, 2.5 — 03/07/2026 — `2f8a67e` — feat: CRUD curiosità backoffice, 2.6 — 03/07/2026 — `99615bb` — feat: CRUD galleria backoffice (+31 more)
 
 ### Community 6 - "JsonResource"
-Cohesion: 0.12
-Nodes (13): CuriositaController, GalleriaController, CategoriaResource, Request, CorpoCelesteResource, Request, CuriositaResource, Request (+5 more)
+Cohesion: 0.10
+Nodes (15): CorpoCelesteController, Request, CuriositaController, GalleriaController, CategoriaResource, Request, CorpoCelesteResource, Request (+7 more)
 
 ### Community 7 - "LoginRequest"
 Cohesion: 0.12
@@ -111,17 +106,13 @@ Nodes (11): AuthenticatedSessionController, RedirectResponse, Request, Response,
 Cohesion: 0.07
 Nodes (26): dependencies, axios, framer-motion, lucide-react, react-router-dom, @vitejs/plugin-react, yet-another-react-lightbox, devDependencies (+18 more)
 
-### Community 9 - "Categoria"
-Cohesion: 0.14
-Nodes (10): CategoriaController, RedirectResponse, Request, View, DashboardController, JsonResponse, Categoria, HasMany (+2 more)
-
 ### Community 10 - "Curiosita"
 Cohesion: 0.07
-Nodes (19): CuriositaController, RedirectResponse, Request, View, DashboardController, View, BelongsTo, BelongsToMany (+11 more)
+Nodes (27): ConfirmablePasswordController, Request, Response, EmailVerificationNotificationController, Request, Response, EmailVerificationPromptController, Request (+19 more)
 
 ### Community 11 - "GalleriaCorpo"
-Cohesion: 0.24
-Nodes (6): GalleriaController, RedirectResponse, Request, View, GalleriaCorpo, BelongsTo
+Cohesion: 0.08
+Nodes (14): CleanupGalleryDuplicates, FetchNasaCommand, GalleriaController, RedirectResponse, Request, View, NasaImportController, RedirectResponse (+6 more)
 
 ### Community 12 - "Astralis — Documentazione di Progetto"
 Cohesion: 0.12
@@ -175,6 +166,10 @@ Nodes (7): pestphp/pest-plugin, php-http/discovery, config, allow-plugins, optim
 Cohesion: 0.29
 Nodes (6): compilerOptions, baseUrl, paths, exclude, @/*, ziggy-js
 
+### Community 25 - "Seeder"
+Cohesion: 0.08
+Nodes (20): CategoriaController, RedirectResponse, Request, View, CuriositaController, RedirectResponse, Request, View (+12 more)
+
 ### Community 26 - "UserFactory"
 Cohesion: 0.47
 Nodes (3): UserFactory, Factory, static
@@ -199,17 +194,17 @@ Nodes (3): extra, laravel, dont-discover
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Controller` connect `Controller` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `Categoria`, `Curiosita`, `GalleriaCorpo`?**
-  _High betweenness centrality (0.115) - this node is a cross-community bridge._
-- **Why does `CorpoCeleste` connect `CorpoCeleste` to `Categoria`, `Curiosita`, `GalleriaCorpo`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
-- **Why does `User` connect `User` to `Controller`, `Curiosita`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+- **Why does `Controller` connect `Curiosita` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `GalleriaCorpo`, `Seeder`?**
+  _High betweenness centrality (0.128) - this node is a cross-community bridge._
+- **Why does `CorpoCeleste` connect `CorpoCeleste` to `Seeder`, `GalleriaCorpo`, `JsonResource`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Why does `User` connect `User` to `Curiosita`, `CorpoCeleste`?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Are the 11 inferred relationships involving `CorpoCeleste` (e.g. with `.create()` and `.edit()`) actually correct?**
   _`CorpoCeleste` has 11 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `User` (e.g. with `.store()` and `.run()`) actually correct?**
   _`User` has 21 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 3 inferred relationships involving `GalleriaCorpo` (e.g. with `.index()` and `.importForBody()`) actually correct?**
+  _`GalleriaCorpo` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 5 inferred relationships involving `Categoria` (e.g. with `.create()` and `.edit()`) actually correct?**
   _`Categoria` has 5 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 4 inferred relationships involving `Missione` (e.g. with `.index()` and `.stats()`) actually correct?**
-  _`Missione` has 4 INFERRED edges - model-reasoned connections that need verification._
