@@ -19,7 +19,7 @@ class GalleriaController extends Controller
         $galleria = GalleriaCorpo::with('corpoCeleste')
             ->orderBy('ordine')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(20);
 
         return view('admin.galleria.index', compact('galleria'));
     }

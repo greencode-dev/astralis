@@ -92,4 +92,8 @@
             </tbody>
         </table>
     </div>
+
+    <div class="mt-4">
+        {{ $missioni->links() }}
+    </div>
 @endsection

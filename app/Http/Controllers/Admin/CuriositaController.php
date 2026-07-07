@@ -15,7 +15,7 @@ class CuriositaController extends Controller
     {
         $curiosita = Curiosita::with('corpoCeleste.categoria')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(20);
 
         return view('admin.curiosita.index', compact('curiosita'));
     }

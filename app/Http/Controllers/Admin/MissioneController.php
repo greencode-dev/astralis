@@ -15,7 +15,7 @@ class MissioneController extends Controller
 {
     public function index(): View
     {
-        $missioni = Missione::orderBy('data_lancio', 'desc')->get();
+        $missioni = Missione::orderBy('data_lancio', 'desc')->paginate(20);
 
         return view('admin.missioni.index', compact('missioni'));
     }

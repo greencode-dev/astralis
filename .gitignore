@@ -36,6 +36,9 @@ nul
 # AI tooling config files (dev-local, not part of the project)
 /.ai/
 /.opencode/
-/graphify-out/
+# graphify-out/ is meant to be committed so the team shares the map
+# exclude only local/temp files
+graphify-out/cost.json
+# graphify-out/cache/         # optional: commit for speed, skip to keep repo small
 /AGENTS.md
 /.graphifyignore

@@ -88,4 +88,8 @@
             </div>
         @endforelse
     </div>
+
+    <div class="mt-4">
+        {{ $galleria->links() }}
+    </div>
 @endsection

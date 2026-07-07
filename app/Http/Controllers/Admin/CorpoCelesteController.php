@@ -21,7 +21,7 @@ class CorpoCelesteController extends Controller
                 ->orWhere('nome_it', 'like', "%{$search}%");
         }
 
-        $corpi = $query->orderBy('nome')->get();
+        $corpi = $query->orderBy('nome')->paginate(20)->withQueryString();
 
         return view('admin.corpi-celesti.index', compact('corpi'));
     }

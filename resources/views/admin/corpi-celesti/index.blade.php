@@ -152,4 +152,8 @@
             </tbody>
         </table>
     </div>
+
+    <div class="mt-4">
+        {{ $corpi->links() }}
+    </div>
 @endsection

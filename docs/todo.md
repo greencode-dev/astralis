@@ -30,14 +30,14 @@ _Nessuna attività in corso._
 **UI/UX**
 - [x] Adattare pagine login e register allo stile scuro dell'app (GuestLayout, auth pages)
 - [x] Controllare e uniformare tutte le pagine dell'app allo stile del tema scuro
-- [ ] Aggiungere link "Register" su Login page per chi non ha account
+- [x] Aggiungere link "Register" su Login page per chi non ha account
 
 **Sistema Solare**
-- [ ] Ridurre la velocità di rotazione dei pianeti
-- [ ] Sistemare velocità orbitali: pianeti più lontani devono ruotare più lentamente di quelli vicini
+- [x] Ridurre la velocità di rotazione dei pianeti
+- [x] Sistemare velocità orbitali: pianeti più lontani devono ruotare più lentamente di quelli vicini
 
 **Backend**
-- [ ] Aggiungere paginazione (`->paginate()`) in admin index corpi-celesti
+- [x] Aggiungere paginazione (`->paginate(20)`) in admin index (corpi-celesti, galleria, missioni, curiosità)
 - [ ] Aggiungere rate limiting (`throttle`) su API pubbliche
 - [ ] Aggiungere authorization (Policy/Gates) ai controller admin
 

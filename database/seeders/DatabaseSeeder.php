@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
             CuriositaSeeder::class,
             CorpoCelesteMissioneSeeder::class,
         ]);
+
+        $this->command->call('astralis:fetch-nasa', ['--force' => true]);
     }
 }

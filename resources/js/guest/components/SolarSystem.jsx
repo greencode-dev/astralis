@@ -2,14 +2,14 @@ import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useEffect } from 'react';
 
 const planets = [
-    { name: 'Mercurio', size: 8, orbit: 50, color: '#94A3B8', speed: 4 },
-    { name: 'Venere', size: 12, orbit: 70, color: '#F97316', speed: 3.5 },
-    { name: 'Terra', size: 14, orbit: 90, color: '#22D3EE', speed: 3 },
+    { name: 'Mercurio', size: 8, orbit: 50, color: '#94A3B8', speed: 1.2 },
+    { name: 'Venere', size: 12, orbit: 70, color: '#F97316', speed: 1.5 },
+    { name: 'Terra', size: 14, orbit: 90, color: '#22D3EE', speed: 1.8 },
     { name: 'Marte', size: 10, orbit: 110, color: '#EF4444', speed: 2.5 },
-    { name: 'Giove', size: 22, orbit: 140, color: '#FACC15', speed: 2 },
-    { name: 'Saturno', size: 18, orbit: 170, color: '#D4A373', speed: 1.8 },
-    { name: 'Urano', size: 14, orbit: 200, color: '#67E8F9', speed: 1.5 },
-    { name: 'Nettuno', size: 14, orbit: 230, color: '#3B82F6', speed: 1.2 },
+    { name: 'Giove', size: 22, orbit: 140, color: '#FACC15', speed: 3 },
+    { name: 'Saturno', size: 18, orbit: 170, color: '#D4A373', speed: 3.5 },
+    { name: 'Urano', size: 14, orbit: 200, color: '#67E8F9', speed: 4 },
+    { name: 'Nettuno', size: 14, orbit: 230, color: '#3B82F6', speed: 5 },
 ];
 
 function Planet({ planet }) {
