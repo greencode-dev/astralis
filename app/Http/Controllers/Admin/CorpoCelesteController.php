@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCorpoCelesteRequest;
+use App\Http\Requests\UpdateCorpoCelesteRequest;
 use App\Models\Categoria;
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
@@ -38,31 +40,11 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.create', compact('categorie'));
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreCorpoCelesteRequest $request): RedirectResponse
     {
         $this->authorize('create', CorpoCeleste::class);
 
-        $validated = $request->validate([
-            'nome' => ['required', 'string', 'max:255', 'unique:corpi_celesti,nome'],
-            'nome_it' => ['nullable', 'string', 'max:255'],
-            'categoria_id' => ['required', 'exists:categorie,id'],
-            'immagine' => ['nullable', 'string', 'max:2048'],
-            'descrizione' => ['nullable', 'string', 'max:5000'],
-            'tipo' => ['nullable', 'string', 'max:50'],
-            'massa_kg' => ['nullable', 'string', 'max:50'],
-            'distanza_km' => ['nullable', 'string', 'max:50'],
-            'diametro_km' => ['nullable', 'string', 'max:50'],
-            'gravita' => ['nullable', 'numeric', 'max:999999'],
-            'temperatura' => ['nullable', 'numeric', 'max:999999'],
-            'periodo_orbitale' => ['nullable', 'numeric', 'max:999999'],
-            'scopritore' => ['nullable', 'string', 'max:100'],
-            'anno_scoperta' => ['nullable', 'integer', 'min:-5000', 'max:3000'],
-            'in_evidenza' => ['nullable', 'boolean'],
-        ]);
-
-        $validated['in_evidenza'] = $request->boolean('in_evidenza');
-
-        CorpoCeleste::create($validated);
+        CorpoCeleste::create($request->validated());
 
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste creato con successo.');
@@ -86,29 +68,11 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.edit', compact('corpoCeleste', 'categorie'));
     }
 
-    public function update(Request $request, CorpoCeleste $corpoCeleste): RedirectResponse
+    public function update(UpdateCorpoCelesteRequest $request, CorpoCeleste $corpoCeleste): RedirectResponse
     {
         $this->authorize('update', $corpoCeleste);
 
-        $validated = $request->validate([
-            'nome' => ['required', 'string', 'max:255', 'unique:corpi_celesti,nome,' . $corpoCeleste->id],
-            'nome_it' => ['nullable', 'string', 'max:255'],
-            'categoria_id' => ['required', 'exists:categorie,id'],
-            'immagine' => ['nullable', 'string', 'max:2048'],
-            'descrizione' => ['nullable', 'string', 'max:5000'],
-            'tipo' => ['nullable', 'string', 'max:50'],
-            'massa_kg' => ['nullable', 'string', 'max:50'],
-            'distanza_km' => ['nullable', 'string', 'max:50'],
-            'diametro_km' => ['nullable', 'string', 'max:50'],
-            'gravita' => ['nullable', 'numeric', 'max:999999'],
-            'temperatura' => ['nullable', 'numeric', 'max:999999'],
-            'periodo_orbitale' => ['nullable', 'numeric', 'max:999999'],
-            'scopritore' => ['nullable', 'string', 'max:100'],
-            'anno_scoperta' => ['nullable', 'integer', 'min:-5000', 'max:3000'],
-            'in_evidenza' => ['nullable', 'boolean'],
-        ]);
-
-        $validated['in_evidenza'] = $request->boolean('in_evidenza');
+        $validated = $request->validated();
 
         if ($request->filled('immagine')) {
             $validated['immagine_utente'] = true;

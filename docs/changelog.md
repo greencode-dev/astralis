@@ -236,6 +236,13 @@
 - `Gate::authorize('admin')` aggiunto a NasaImportController (index, import, importAll)
 - Fix: CategoriaController.php — riparata doppia dichiarazione di classe (residuo sessione precedente)
 
+### 12.3 — 08/07/2026 — feat: FormRequest per validazione store/update CorpoCeleste
+- Creati `StoreCorpoCelesteRequest` e `UpdateCorpoCelesteRequest` in `app/Http/Requests/`
+- Estratta validazione inline da `CorpoCelesteController` nei FormRequest
+- `UpdateCorpoCelesteRequest` estende `StoreCorpoCelesteRequest` (differenza: unique su nome ignora record corrente)
+- `in_evidenza` convertito a boolean in `passedValidation()`
+- 25/25 test pass, 61 assertions
+
 ### 12.2 — 08/07/2026 — `f62f945` — feat: rimossa dipendenza Inertia (Fase 12.2)
 - Rimosso `app/Http/Middleware/HandleInertiaRequests.php`
 - Rimossi tutti i componenti JSX Inertia (13 Components, 2 Layouts, 2 Pages, app.jsx)
