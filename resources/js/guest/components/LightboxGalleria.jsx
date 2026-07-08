@@ -22,7 +22,7 @@ export default function LightboxGalleria({ immagini }) {
                         onClick={() => { setIndex(i); setOpen(true); }}
                         className="relative group rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:scale-[1.02]"
                         style={{ backgroundColor: '#111128', border: '1px solid rgba(34, 211, 238, 0.1)' }}
-                        aria-label={slide.didascalia || 'Apri immagine nella galleria'}}
+                        aria-label={slide.didascalia || 'Apri immagine nella galleria'}
                     >
                         <div className="aspect-[4/3] overflow-hidden">
                             <img loading="lazy"
