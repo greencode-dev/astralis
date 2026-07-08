@@ -1,9 +1,10 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-07*
+*Ultimo aggiornamento: 2026-07-08*
 
 ## Fatto
 
+- [x] **Fase 12.2** — Rimossa dipendenza Inertia (middleware, JSX, composer/npm)
 - [x] **Fase 12.1** — Auth pages: Inertia→Blade puro (GuestLayout/AppLayout components)
 - [x] **Fase 12** — Authorization (Policy/Gates) ai controller admin
 - [x] **Fase 11** — Bugfix login Inertia→Blade, auth controller transizioni, NASA import dedup, galleria cleanup e ordinamento
@@ -26,7 +27,7 @@
 
 - [ ] `[backend]` Rate limiting (`throttle`) su API pubbliche — `routes/api.php`
 - [ ] `[backend]` Aggiungere FormRequest per validazione store/update CorpoCeleste — `app/Http/Requests/`
-- [ ] `[backend]` Rimuovere dipendenza Inertia (se non più usata) — `composer.json`
+
 
 ### Media
 

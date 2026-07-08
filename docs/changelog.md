@@ -236,6 +236,18 @@
 - `Gate::authorize('admin')` aggiunto a NasaImportController (index, import, importAll)
 - Fix: CategoriaController.php — riparata doppia dichiarazione di classe (residuo sessione precedente)
 
+### 12.2 — 08/07/2026 — `f62f945` — feat: rimossa dipendenza Inertia (Fase 12.2)
+- Rimosso `app/Http/Middleware/HandleInertiaRequests.php`
+- Rimossi tutti i componenti JSX Inertia (13 Components, 2 Layouts, 2 Pages, app.jsx)
+- Rimossa root view `resources/views/app.blade.php`
+- Rimosse dipendenze composer: `inertiajs/inertia-laravel`, `tightenco/ziggy`
+- Rimossa dipendenza npm: `@inertiajs/react`
+- Adeguati: Controller.php, bootstrap/app.php, providers.php, routes/web.php, vite.config.js
+- Adeguate viste: admin/layouts/app.blade.php, profile/edit.blade.php
+- Fix: autoloader PSR-4 corrotto (laravel/pail mancante) rigenerato con `composer dump-autoload`
+- Fix: permessi bootstrap/cache/ ripristinati
+- 25/25 test pass, 61 assertions
+
 ### 12.1 — 07/07/2026 — feat: auth pages da Inertia a Blade puro
 - Create 11 viste Blade per auth e profilo con tema scuro
 - `app/View/Components/GuestLayout.php` e `AppLayout.php` per compatibilità x-*

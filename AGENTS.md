@@ -30,7 +30,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 
 ## Dual rendering (critical)
 
-- **Guest pages**: Inertia React (`resources/js/guest/`). Entry: `main.jsx`. Routes: `/`, `/corpi-celesti`, `/corpi-celesti/:slug`, `/confronta`
+- **Guest pages**: React SPA standalone (`resources/js/guest/`). Entry: `main.jsx`. Routes: `/`, `/corpi-celesti`, `/corpi-celesti/:slug`, `/confronta`
 - **Admin pages**: Blade puro (`resources/views/admin/`). Master layout: `layouts/app.blade.php`
 - **API**: `routes/api.php` — 10 endpoint JSON pubblici
 - **Authorization**: Policy + Gates in `app/Policies/` e `app/Providers/AuthServiceProvider.php`
@@ -56,7 +56,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `app/Providers/AuthServiceProvider.php` | Registrazione Policy + Gate `admin` |
 | `app/Http/Controllers/Admin/` | Controller CRUD admin (Blade) |
 | `app/Http/Controllers/Api/` | Controller API (JSON) |
-| `app/Http/Controllers/Auth/` | Controller auth Breeze (Inertia) |
+| `app/Http/Controllers/Auth/` | Controller auth Breeze (Blade) |
 | `resources/views/admin/layouts/app.blade.php` | Master layout admin (sidebar + Alpine.js CDN + x-cloak) |
 | `resources/js/guest/` | React SPA guest |
 
