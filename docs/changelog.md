@@ -236,6 +236,11 @@
 - `Gate::authorize('admin')` aggiunto a NasaImportController (index, import, importAll)
 - Fix: CategoriaController.php — riparata doppia dichiarazione di classe (residuo sessione precedente)
 
+### 12.5 — 08/07/2026 — docs: sostituito sistema priorità Alta/Media/Bassa con P0-P4 nel todo
+- Nuovo sistema: P0 (bloccante) → P1 (utente) → P2 (manutenzione) → P3 (accessibilità) → P4 (futuro)
+- Tutti i task riclassificati con tag `[Px]` nel formato `[categoria][Px]`
+- Sezioni Alta/Media/Bassa rimosse, ordine per priorità discendente
+
 ### 12.4 — 08/07/2026 — feat: quick wins — per_page, ordinamento relazioni, .catch, nasa_id, indexes
 - Max `per_page` (100) in Api\CorpoCelesteController — previene abuso
 - Ordinamento default: `galleria()` per `ordine`, `curiosita()` per `created_at desc`
