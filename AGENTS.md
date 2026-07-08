@@ -50,7 +50,8 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `routes/web.php` | Route admin + auth + catch-all SPA (`/{any}` → `guest.blade.php`) |
 | `routes/api.php` | 10 endpoint JSON pubblici |
 | `routes/auth.php` | Route Breeze (login, register, etc.) |
-| `app/Services/NasaImageService.php` | Import NASA con dedup, preserva immagine utente, timeout 30s, retry 2 |
+| `app/Services/NasaImageService.php` | Import NASA con dedup, preserva immagine utente, timeout 30s, retry 2, testing guard |
+| `app/Observers/CorpoCelesteObserver.php` | Auto-import NASA su created (skip in testing via `app()->environment('testing')`) |
 | `app/Services/WordMapService.php` | Traduzione italiano→inglese per NASA suggest admin |
 | `app/Console/Commands/CleanupGalleryDuplicates.php` | Comando `astralis:gallery` (--check/--clean/--sync/--fix/--dry-run) |
 | `app/Policies/` | Policy autorizzazione (5 Policy, una per entità) |
@@ -60,6 +61,13 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `app/Http/Controllers/Auth/` | Controller auth Breeze (Blade) |
 | `resources/views/admin/layouts/app.blade.php` | Master layout admin (sidebar + Alpine.js CDN + x-cloak) |
 | `resources/js/guest/` | React SPA guest |
+
+## Testing
+
+- **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
+- **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
+- **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
+- **Run**: `php artisan test` — 84 test, 220 assertion, nessuna dipendenza esterna.
 
 ## Bugs noti / Pattern da evitare
 

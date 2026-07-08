@@ -4,6 +4,10 @@
 
 ## Fatto
 
+- [x] **Test P2** — NasaImageService unit test (26 test, 63 assertion) + bugfix query stripping, immagine_utente force skip
+- [x] **Test P2** — API endpoint tests (8 file, 84 total test) — Http::fake, observer testing guard, response structure fixes
+- [x] **Test P2** — Admin CRUD tests — fixed observer interference, all green
+- [x] **HasFactory** — Aggiunto trait a tutti i 5 modelli + factories esistenti
 - [x] **Wave 4** — Frontend P2: stili inline → Tailwind classi admin
 - [x] **Wave 3** — Frontend P2: onMouseEnter/onMouseLeave → CSS :hover
 - [x] **Wave 2** — Frontend P3: aria-label, role="img" su pulsanti e fallback immagini
@@ -37,9 +41,9 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 
 ### 🔵 P2 — Manutenzione (refactoring, test, performance)
 
-- [ ] `[🧪test][🔵P2]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
-- [ ] `[🧪test][🔵P2]` Test HTTP API endpoints (list, filter, dettaglio, simili) — `tests/Feature/Api/`
-- [ ] `[🧪test][🔵P2]` Test CRUD admin CorpoCeleste (store, update, validation) — `tests/Feature/Admin/`
+- [x] `[🧪test][🔵P2]` Test unitari NasaImageService (26 test, search, fallback, metadata, import) — `tests/Unit/NasaImageServiceTest.php`
+- [x] `[🧪test][🔵P2]` Test HTTP API endpoints (8 file, list, filter, dettaglio, simili, stats) — `tests/Feature/Api/`
+- [x] `[🧪test][🔵P2]` Test CRUD admin CorpoCeleste (store, update, validation, auth) — `tests/Feature/Admin/CorpoCelesteCrudTest.php`
 - [ ] `[🧪test][🔵P2]` Test componenti React (SolarSystem, CorpoCard, Lightbox) — Vitest
 - [ ] `[🧪test][🔵P2]` Test integrazione API (apiClient, guest pages)
 
@@ -61,7 +65,7 @@ _Nessun task di accessibilità in sospeso. Wave 2 ha coperto questa fascia._ �
 
 ## Note
 
-- **Prossimo task consigliato**: `[🧪test][🔵P2]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
+- **Prossimo task consigliato**: `[🧪test][🔵P2]` Test componenti React (SolarSystem, CorpoCard, Lightbox) — Vitest
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

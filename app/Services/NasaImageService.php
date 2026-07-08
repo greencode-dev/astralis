@@ -13,7 +13,7 @@ class NasaImageService
     {
         $fallbacks = $extraFallbacks;
 
-        $stripped = str_replace(["'", "`", "’", "'s ", "'s"], "", $query);
+        $stripped = str_replace(["'s", "'", "`", "’"], "", $query);
         $stripped = trim(preg_replace('/\s+/', ' ', $stripped));
         if ($stripped !== $query) {
             $fallbacks[] = $stripped;
@@ -72,7 +72,7 @@ class NasaImageService
 
     public function importForBody(CorpoCeleste $corpo, int $galleryCount = 5, bool $force = false, bool $updateDescription = false): array
     {
-        if (!$force && $corpo->immagine) {
+        if ($corpo->immagine && (!$force || $corpo->immagine_utente)) {
             return ['success' => true, 'message' => "{$corpo->nome}: già presente, skip."];
         }
 

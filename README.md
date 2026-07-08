@@ -60,6 +60,18 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 └─────────────────────────────────────────────────────┘
 ```
 
+## 🧪 Test
+
+```bash
+# Suite completa (84 test, 220 assertion, nessuna dipendenza esterna)
+php artisan test
+
+# Test specifici
+php artisan test tests/Unit/NasaImageServiceTest.php  # 26 test — NASA import service
+php artisan test tests/Feature/Api/                    # 8 file — API REST endpoint
+php artisan test tests/Feature/Admin/                  # 1 file — CRUD admin
+```
+
 ## 🗄️ Entità e Relazioni
 
 | Entità            | Descrizione                  | Relazioni                                                |

@@ -13,6 +13,10 @@ class CorpoCelesteObserver
 
     public function created(CorpoCeleste $corpo): void
     {
+        if (app()->environment('testing')) {
+            return;
+        }
+
         $this->nasaService->importForBody($corpo, galleryCount: 3, force: true);
     }
 }

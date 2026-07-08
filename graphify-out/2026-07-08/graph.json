@@ -10,7 +10,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates",
-      "community": 50,
+      "community": 11,
       "norm_label": "cleanupgalleryduplicates.php"
     },
     {
@@ -30,7 +30,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "command",
-      "community": 50,
+      "community": 11,
       "norm_label": "command"
     },
     {
@@ -120,7 +120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand",
-      "community": 50,
+      "community": 11,
       "norm_label": "fetchnasacommand.php"
     },
     {
@@ -130,7 +130,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand",
-      "community": 50,
+      "community": 11,
       "norm_label": "fetchnasacommand"
     },
     {
@@ -140,7 +140,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
-      "community": 50,
+      "community": 11,
       "norm_label": ".handle()"
     },
     {
@@ -530,7 +530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 15,
+      "community": 50,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -540,7 +540,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 15,
+      "community": 50,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -550,7 +550,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 15,
+      "community": 50,
       "norm_label": ".index()"
     },
     {
@@ -560,7 +560,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 15,
+      "community": 50,
       "norm_label": "view"
     },
     {
@@ -830,7 +830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller",
-      "community": 50,
+      "community": 11,
       "norm_label": "nasaimportcontroller.php"
     },
     {
@@ -840,7 +840,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller",
-      "community": 50,
+      "community": 11,
       "norm_label": "nasaimportcontroller"
     },
     {
@@ -850,7 +850,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_construct",
-      "community": 50,
+      "community": 11,
       "norm_label": ".__construct()"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_index",
-      "community": 50,
+      "community": 11,
       "norm_label": ".index()"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_view",
-      "community": 50,
+      "community": 11,
       "norm_label": "view"
     },
     {
@@ -880,7 +880,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_import",
-      "community": 50,
+      "community": 11,
       "norm_label": ".import()"
     },
     {
@@ -890,7 +890,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_redirectresponse",
-      "community": 50,
+      "community": 11,
       "norm_label": "redirectresponse"
     },
     {
@@ -900,7 +900,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_importall",
-      "community": 50,
+      "community": 11,
       "norm_label": ".importall()"
     },
     {
@@ -1010,7 +1010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller",
-      "community": 6,
+      "community": 50,
       "norm_label": "curiositacontroller.php"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller_curiositacontroller",
-      "community": 6,
+      "community": 50,
       "norm_label": "curiositacontroller"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller_curiositacontroller_index",
-      "community": 6,
+      "community": 50,
       "norm_label": ".index()"
     },
     {
@@ -1110,7 +1110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller",
-      "community": 50,
+      "community": 4,
       "norm_label": "missionecontroller.php"
     },
     {
@@ -1240,7 +1240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller",
-      "community": 49,
+      "community": 10,
       "norm_label": "confirmablepasswordcontroller.php"
     },
     {
@@ -1250,7 +1250,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller",
-      "community": 49,
+      "community": 10,
       "norm_label": "confirmablepasswordcontroller"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_show",
-      "community": 49,
+      "community": 10,
       "norm_label": ".show()"
     },
     {
@@ -1270,7 +1270,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_view",
-      "community": 49,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1280,7 +1280,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_store",
-      "community": 49,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1290,7 +1290,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_request",
-      "community": 49,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1300,7 +1300,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_redirectresponse",
-      "community": 49,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1310,7 +1310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller",
-      "community": 168,
+      "community": 10,
       "norm_label": "emailverificationnotificationcontroller.php"
     },
     {
@@ -1320,7 +1320,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller",
-      "community": 168,
+      "community": 10,
       "norm_label": "emailverificationnotificationcontroller"
     },
     {
@@ -1330,7 +1330,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller_store",
-      "community": 168,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1340,7 +1340,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_request",
-      "community": 168,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_redirectresponse",
-      "community": 168,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1360,7 +1360,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller",
-      "community": 167,
+      "community": 10,
       "norm_label": "emailverificationpromptcontroller.php"
     },
     {
@@ -1370,7 +1370,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
-      "community": 167,
+      "community": 10,
       "norm_label": "emailverificationpromptcontroller"
     },
     {
@@ -1380,7 +1380,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
-      "community": 167,
+      "community": 10,
       "norm_label": ".__invoke()"
     },
     {
@@ -1390,7 +1390,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_request",
-      "community": 167,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1400,7 +1400,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_redirectresponse",
-      "community": 167,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1410,7 +1410,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_view",
-      "community": 167,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1420,7 +1420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller",
-      "community": 103,
+      "community": 10,
       "norm_label": "newpasswordcontroller.php"
     },
     {
@@ -1430,7 +1430,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller",
-      "community": 103,
+      "community": 10,
       "norm_label": "newpasswordcontroller"
     },
     {
@@ -1440,7 +1440,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_create",
-      "community": 103,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1450,7 +1450,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_request",
-      "community": 103,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1460,7 +1460,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_view",
-      "community": 103,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1470,7 +1470,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_store",
-      "community": 103,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1480,7 +1480,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_redirectresponse",
-      "community": 103,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1490,7 +1490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller",
-      "community": 161,
+      "community": 10,
       "norm_label": "passwordcontroller.php"
     },
     {
@@ -1500,7 +1500,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller",
-      "community": 161,
+      "community": 10,
       "norm_label": "passwordcontroller"
     },
     {
@@ -1510,7 +1510,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller_update",
-      "community": 161,
+      "community": 10,
       "norm_label": ".update()"
     },
     {
@@ -1520,7 +1520,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_request",
-      "community": 161,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_redirectresponse",
-      "community": 161,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1540,7 +1540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller",
-      "community": 162,
+      "community": 10,
       "norm_label": "passwordresetlinkcontroller.php"
     },
     {
@@ -1550,7 +1550,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller",
-      "community": 162,
+      "community": 10,
       "norm_label": "passwordresetlinkcontroller"
     },
     {
@@ -1560,7 +1560,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_create",
-      "community": 162,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1570,7 +1570,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_view",
-      "community": 162,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1580,7 +1580,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_store",
-      "community": 162,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1590,7 +1590,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_request",
-      "community": 162,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1600,7 +1600,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_redirectresponse",
-      "community": 162,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1610,7 +1610,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller",
-      "community": 163,
+      "community": 10,
       "norm_label": "registeredusercontroller.php"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
-      "community": 163,
+      "community": 10,
       "norm_label": "registeredusercontroller"
     },
     {
@@ -1630,7 +1630,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_create",
-      "community": 163,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1640,7 +1640,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_view",
-      "community": 163,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1650,7 +1650,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
-      "community": 163,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1660,7 +1660,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_request",
-      "community": 163,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1670,7 +1670,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_redirectresponse",
-      "community": 163,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1770,7 +1770,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller",
-      "community": 3,
+      "community": 7,
       "norm_label": "profilecontroller.php"
     },
     {
@@ -1780,7 +1780,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller",
-      "community": 3,
+      "community": 7,
       "norm_label": "profilecontroller"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_edit",
-      "community": 3,
+      "community": 7,
       "norm_label": ".edit()"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_request",
-      "community": 3,
+      "community": 7,
       "norm_label": "request"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_view",
-      "community": 3,
+      "community": 7,
       "norm_label": "view"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_update",
-      "community": 3,
+      "community": 7,
       "norm_label": ".update()"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_redirectresponse",
-      "community": 3,
+      "community": 7,
       "norm_label": "redirectresponse"
     },
     {
@@ -1840,7 +1840,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_destroy",
-      "community": 3,
+      "community": 7,
       "norm_label": ".destroy()"
     },
     {
@@ -1850,7 +1850,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest",
-      "community": 161,
+      "community": 10,
       "norm_label": "loginrequest.php"
     },
     {
@@ -1870,7 +1870,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "formrequest",
-      "community": 3,
+      "community": 7,
       "norm_label": "formrequest"
     },
     {
@@ -1930,7 +1930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest",
-      "community": 3,
+      "community": 7,
       "norm_label": "profileupdaterequest.php"
     },
     {
@@ -1940,7 +1940,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest",
-      "community": 3,
+      "community": 7,
       "norm_label": "profileupdaterequest"
     },
     {
@@ -1950,7 +1950,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest_rules",
-      "community": 3,
+      "community": 7,
       "norm_label": ".rules()"
     },
     {
@@ -1960,7 +1960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest",
-      "community": 50,
+      "community": 7,
       "norm_label": "storecorpocelesterequest.php"
     },
     {
@@ -1970,7 +1970,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest",
-      "community": 50,
+      "community": 7,
       "norm_label": "storecorpocelesterequest"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_authorize",
-      "community": 50,
+      "community": 7,
       "norm_label": ".authorize()"
     },
     {
@@ -1990,7 +1990,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_rules",
-      "community": 50,
+      "community": 7,
       "norm_label": ".rules()"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_passedvalidation",
-      "community": 50,
+      "community": 7,
       "norm_label": ".passedvalidation()"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest",
-      "community": 50,
+      "community": 7,
       "norm_label": "updatecorpocelesterequest.php"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest",
-      "community": 50,
+      "community": 7,
       "norm_label": "updatecorpocelesterequest"
     },
     {
@@ -2030,7 +2030,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest_rules",
-      "community": 50,
+      "community": 7,
       "norm_label": ".rules()"
     },
     {
@@ -2330,7 +2330,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_corpoceleste",
-      "community": 15,
+      "community": 50,
       "norm_label": "corpoceleste.php"
     },
     {
@@ -2360,7 +2360,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getslugoptions",
-      "community": 15,
+      "community": 50,
       "norm_label": ".getslugoptions()"
     },
     {
@@ -2370,7 +2370,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_slugoptions",
-      "community": 15,
+      "community": 50,
       "norm_label": "slugoptions"
     },
     {
@@ -2380,7 +2380,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_categoria",
-      "community": 15,
+      "community": 50,
       "norm_label": ".categoria()"
     },
     {
@@ -2390,7 +2390,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongsto",
-      "community": 15,
+      "community": 50,
       "norm_label": "belongsto"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_missioni",
-      "community": 15,
+      "community": 50,
       "norm_label": ".missioni()"
     },
     {
@@ -2440,7 +2440,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongstomany",
-      "community": 15,
+      "community": 50,
       "norm_label": "belongstomany"
     },
     {
@@ -2690,7 +2690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver",
-      "community": 48,
+      "community": 50,
       "norm_label": "corpocelesteobserver.php"
     },
     {
@@ -2700,7 +2700,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver",
-      "community": 50,
+      "community": 11,
       "norm_label": "corpocelesteobserver"
     },
     {
@@ -2710,7 +2710,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_construct",
-      "community": 50,
+      "community": 11,
       "norm_label": ".__construct()"
     },
     {
@@ -2720,7 +2720,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_created",
-      "community": 50,
+      "community": 11,
       "norm_label": ".created()"
     },
     {
@@ -2730,7 +2730,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy",
-      "community": 48,
+      "community": 50,
       "norm_label": "categoriapolicy.php"
     },
     {
@@ -2890,7 +2890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy",
-      "community": 0,
+      "community": 15,
       "norm_label": "curiositapolicy.php"
     },
     {
@@ -2900,7 +2900,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy",
-      "community": 0,
+      "community": 15,
       "norm_label": "curiositapolicy"
     },
     {
@@ -2910,7 +2910,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_before",
-      "community": 0,
+      "community": 15,
       "norm_label": ".before()"
     },
     {
@@ -2920,7 +2920,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_viewany",
-      "community": 0,
+      "community": 15,
       "norm_label": ".viewany()"
     },
     {
@@ -2930,7 +2930,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_view",
-      "community": 0,
+      "community": 15,
       "norm_label": ".view()"
     },
     {
@@ -2940,7 +2940,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_create",
-      "community": 0,
+      "community": 15,
       "norm_label": ".create()"
     },
     {
@@ -2950,7 +2950,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_update",
-      "community": 0,
+      "community": 15,
       "norm_label": ".update()"
     },
     {
@@ -2960,7 +2960,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_delete",
-      "community": 0,
+      "community": 15,
       "norm_label": ".delete()"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_missionepolicy",
-      "community": 4,
+      "community": 0,
       "norm_label": "missionepolicy.php"
     },
     {
@@ -3060,7 +3060,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy",
-      "community": 4,
+      "community": 0,
       "norm_label": "missionepolicy"
     },
     {
@@ -3070,7 +3070,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_before",
-      "community": 4,
+      "community": 0,
       "norm_label": ".before()"
     },
     {
@@ -3080,7 +3080,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_viewany",
-      "community": 4,
+      "community": 0,
       "norm_label": ".viewany()"
     },
     {
@@ -3090,7 +3090,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_view",
-      "community": 4,
+      "community": 0,
       "norm_label": ".view()"
     },
     {
@@ -3100,7 +3100,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_create",
-      "community": 4,
+      "community": 0,
       "norm_label": ".create()"
     },
     {
@@ -3110,7 +3110,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_update",
-      "community": 4,
+      "community": 0,
       "norm_label": ".update()"
     },
     {
@@ -3120,7 +3120,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_delete",
-      "community": 4,
+      "community": 0,
       "norm_label": ".delete()"
     },
     {
@@ -3130,7 +3130,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider",
-      "community": 48,
+      "community": 50,
       "norm_label": "appserviceprovider.php"
     },
     {
@@ -3140,7 +3140,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider",
-      "community": 48,
+      "community": 50,
       "norm_label": "appserviceprovider"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "serviceprovider",
-      "community": 48,
+      "community": 50,
       "norm_label": "serviceprovider"
     },
     {
@@ -3160,7 +3160,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_register",
-      "community": 48,
+      "community": 50,
       "norm_label": ".register()"
     },
     {
@@ -3170,7 +3170,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_boot",
-      "community": 48,
+      "community": 50,
       "norm_label": ".boot()"
     },
     {
@@ -3180,7 +3180,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider",
-      "community": 48,
+      "community": 50,
       "norm_label": "authserviceprovider.php"
     },
     {
@@ -3190,7 +3190,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider",
-      "community": 48,
+      "community": 50,
       "norm_label": "authserviceprovider"
     },
     {
@@ -3200,7 +3200,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider_boot",
-      "community": 48,
+      "community": 50,
       "norm_label": ".boot()"
     },
     {
@@ -3220,7 +3220,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice",
-      "community": 50,
+      "community": 11,
       "norm_label": "nasaimageservice"
     },
     {
@@ -3230,7 +3230,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_searchnasa",
-      "community": 50,
+      "community": 11,
       "norm_label": ".searchnasa()"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_extractmetadata",
-      "community": 50,
+      "community": 11,
       "norm_label": ".extractmetadata()"
     },
     {
@@ -3250,7 +3250,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_pickimageurl",
-      "community": 50,
+      "community": 11,
       "norm_label": ".pickimageurl()"
     },
     {
@@ -3260,7 +3260,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importforbody",
-      "community": 50,
+      "community": 11,
       "norm_label": ".importforbody()"
     },
     {
@@ -3270,7 +3270,7 @@
       "source_location": "L178",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importall",
-      "community": 50,
+      "community": 11,
       "norm_label": ".importall()"
     },
     {
@@ -3430,7 +3430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bootstrap_providers",
-      "community": 48,
+      "community": 50,
       "norm_label": "providers.php"
     },
     {
@@ -4560,7 +4560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "categoriaseeder.php"
     },
     {
@@ -4570,7 +4570,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "categoriaseeder"
     },
     {
@@ -4580,7 +4580,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "seeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "seeder"
     },
     {
@@ -4590,7 +4590,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder_run",
-      "community": 15,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -4600,7 +4600,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "corpocelestemissioneseeder.php"
     },
     {
@@ -4610,7 +4610,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "corpocelestemissioneseeder"
     },
     {
@@ -4620,7 +4620,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder_run",
-      "community": 15,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -4630,7 +4630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "corpocelesteseeder.php"
     },
     {
@@ -4640,7 +4640,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "corpocelesteseeder"
     },
     {
@@ -4650,7 +4650,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder_run",
-      "community": 15,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -4660,7 +4660,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "curiositaseeder.php"
     },
     {
@@ -4670,7 +4670,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "curiositaseeder"
     },
     {
@@ -4680,7 +4680,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder_run",
-      "community": 15,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -4690,7 +4690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "databaseseeder.php"
     },
     {
@@ -4700,7 +4700,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "databaseseeder"
     },
     {
@@ -4710,7 +4710,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder_run",
-      "community": 15,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -4720,7 +4720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "galleriacorposeeder.php"
     },
     {
@@ -4730,7 +4730,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "galleriacorposeeder"
     },
     {
@@ -4740,7 +4740,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder_run",
-      "community": 15,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -4750,7 +4750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "missioneseeder.php"
     },
     {
@@ -4760,7 +4760,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder",
-      "community": 15,
+      "community": 4,
       "norm_label": "missioneseeder"
     },
     {
@@ -4770,7 +4770,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder_run",
-      "community": 15,
+      "community": 4,
       "norm_label": ".run()"
     },
     {
@@ -6050,7 +6050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_auth",
-      "community": 161,
+      "community": 10,
       "norm_label": "auth.php"
     },
     {
@@ -7200,7 +7200,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "readme_funzionalit\u00e0",
-      "community": 164,
+      "community": 101,
       "norm_label": "\u2728 funzionalita"
     },
     {
@@ -7210,7 +7210,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "readme_backoffice_laravel_blade",
-      "community": 164,
+      "community": 101,
       "norm_label": "\ud83d\udc68\u200d\ud83d\udcbc backoffice (laravel + blade)"
     },
     {
@@ -7220,7 +7220,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "readme_frontend_react_vite",
-      "community": 164,
+      "community": 101,
       "norm_label": "\ud83c\udf1f frontend (react + vite)"
     },
     {
@@ -7230,7 +7230,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "readme_api_rest",
-      "community": 164,
+      "community": 101,
       "norm_label": "\ud83d\udef0\ufe0f api rest"
     },
     {
@@ -7720,7 +7720,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "docs_changelog_fase_2_backoffice_blade_crud",
-      "community": 44,
+      "community": 5,
       "norm_label": "fase 2 \u2014 backoffice blade crud"
     },
     {
@@ -7730,7 +7730,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "docs_changelog_2_1_03_07_2026_070da55_feat_admin_backoffice_layout_sidebar_navigation_e_dashboard",
-      "community": 44,
+      "community": 5,
       "norm_label": "2.1 \u2014 03/07/2026 \u2014 `070da55` \u2014 feat: admin backoffice layout, sidebar navigation e dashboard"
     },
     {
@@ -7740,7 +7740,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "docs_changelog_2_2_03_07_2026_758be4c_feat_crud_categorie_backoffice",
-      "community": 44,
+      "community": 5,
       "norm_label": "2.2 \u2014 03/07/2026 \u2014 `758be4c` \u2014 feat: crud categorie backoffice"
     },
     {
@@ -7750,7 +7750,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "docs_changelog_2_3_03_07_2026_18a6b20_feat_crud_corpi_celesti_backoffice",
-      "community": 44,
+      "community": 5,
       "norm_label": "2.3 \u2014 03/07/2026 \u2014 `18a6b20` \u2014 feat: crud corpi celesti backoffice"
     },
     {
@@ -7760,7 +7760,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "docs_changelog_2_4_03_07_2026_6d86177_feat_crud_missioni_backoffice",
-      "community": 44,
+      "community": 5,
       "norm_label": "2.4 \u2014 03/07/2026 \u2014 `6d86177` \u2014 feat: crud missioni backoffice"
     },
     {
@@ -7770,7 +7770,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "docs_changelog_2_5_03_07_2026_2f8a67e_feat_crud_curiosit\u00e0_backoffice",
-      "community": 44,
+      "community": 5,
       "norm_label": "2.5 \u2014 03/07/2026 \u2014 `2f8a67e` \u2014 feat: crud curiosita backoffice"
     },
     {
@@ -7780,7 +7780,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "docs_changelog_2_6_03_07_2026_99615bb_feat_crud_galleria_backoffice",
-      "community": 44,
+      "community": 5,
       "norm_label": "2.6 \u2014 03/07/2026 \u2014 `99615bb` \u2014 feat: crud galleria backoffice"
     },
     {
@@ -7830,7 +7830,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "docs_changelog_fase_5_react_guest_dettaglio_lightbox_missioni_comparatore",
-      "community": 169,
+      "community": 5,
       "norm_label": "fase 5 \u2014 react guest dettaglio, lightbox, missioni, comparatore"
     },
     {
@@ -7840,7 +7840,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "docs_changelog_5_0_04_07_2026_0e18a60_feat_dettaglio_corpo_celeste_lightbox_timeline_missioni_comparatore_pianeti",
-      "community": 169,
+      "community": 5,
       "norm_label": "5.0 \u2014 04/07/2026 \u2014 `0e18a60` \u2014 feat: dettaglio corpo celeste, lightbox, timeline missioni, comparatore pianeti"
     },
     {
@@ -7850,7 +7850,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
-      "community": 25,
+      "community": 5,
       "norm_label": "fase 6 \u2014 fix sistema solare, nasa import, profilo, documentazione"
     },
     {
@@ -7860,7 +7860,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "docs_changelog_6_0_04_07_2026_45e01ad_docs_fase_6_completata",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.0 \u2014 04/07/2026 \u2014 `45e01ad` \u2014 docs: fase 6 completata"
     },
     {
@@ -7870,7 +7870,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "docs_changelog_6_1_04_07_2026_fde7aaf_fix_orbita_pianeti_transformorigin_centrato_sul_sole",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.1 \u2014 04/07/2026 \u2014 `fde7aaf` \u2014 fix: orbita pianeti - transformorigin centrato sul sole"
     },
     {
@@ -7880,7 +7880,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "docs_changelog_6_2_04_07_2026_a6e612a_fix_etichette_pianeti_solidali_e_contro_rotanti_nell_orbita",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.2 \u2014 04/07/2026 \u2014 `a6e612a` \u2014 fix: etichette pianeti solidali e contro-rotanti nell orbita"
     },
     {
@@ -7890,7 +7890,7 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "docs_changelog_6_3_04_07_2026_4e354ea_fix_orbita_pianeti_con_usemotionvalue_usetransform",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.3 \u2014 04/07/2026 \u2014 `4e354ea` \u2014 fix: orbita pianeti con usemotionvalue/usetransform"
     },
     {
@@ -7900,7 +7900,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "docs_changelog_6_4_04_07_2026_196dd15_fix_orbite_e_pianeti_allineati_al_sole",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.4 \u2014 04/07/2026 \u2014 `196dd15` \u2014 fix: orbite e pianeti allineati al sole"
     },
     {
@@ -7910,7 +7910,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "docs_changelog_6_5_04_07_2026_aed8789_feat_nasa_import_da_api_nel_backoffice",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.5 \u2014 04/07/2026 \u2014 `aed8789` \u2014 feat: nasa import da api nel backoffice"
     },
     {
@@ -7920,7 +7920,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "docs_changelog_6_6_04_07_2026_c82001d_fix_dashboard_reindirizza_a_admin_torna_al_sito_alla_home_guest",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.6 \u2014 04/07/2026 \u2014 `c82001d` \u2014 fix: /dashboard reindirizza a /admin, torna al sito alla home guest"
     },
     {
@@ -7930,7 +7930,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "docs_changelog_6_7_04_07_2026_5ade134_feat_link_profilo_nella_sidebar_admin",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.7 \u2014 04/07/2026 \u2014 `5ade134` \u2014 feat: link profilo nella sidebar admin"
     },
     {
@@ -7940,7 +7940,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "docs_changelog_6_8_04_07_2026_aa1ff42_feat_pagine_profilo_adattate_al_tema_scuro",
-      "community": 25,
+      "community": 5,
       "norm_label": "6.8 \u2014 04/07/2026 \u2014 `aa1ff42` \u2014 feat: pagine profilo adattate al tema scuro"
     },
     {
@@ -7950,7 +7950,7 @@
       "source_location": "L136",
       "_origin": "ast",
       "id": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
-      "community": 45,
+      "community": 5,
       "norm_label": "fase 7 \u2014 bugfix intervention image v4, nasa import force all, documentazione"
     },
     {
@@ -7960,7 +7960,7 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "docs_changelog_7_0_04_07_2026_fix_profile_navigation_link_inertia_a_tag_per_href_esterno",
-      "community": 45,
+      "community": 5,
       "norm_label": "7.0 \u2014 04/07/2026 \u2014 fix: profile navigation \u2014 link inertia \u2192 a tag per href esterno"
     },
     {
@@ -7970,7 +7970,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "docs_changelog_7_1_04_07_2026_fix_nasa_import_mappatura_nomi_italiano_inglese",
-      "community": 45,
+      "community": 5,
       "norm_label": "7.1 \u2014 04/07/2026 \u2014 fix: nasa import \u2014 mappatura nomi italiano\u2192inglese"
     },
     {
@@ -7980,7 +7980,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "docs_changelog_7_2_04_07_2026_fix_ssl_curl_error_60_su_windows",
-      "community": 45,
+      "community": 5,
       "norm_label": "7.2 \u2014 04/07/2026 \u2014 fix: ssl curl error 60 su windows"
     },
     {
@@ -7990,7 +7990,7 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "docs_changelog_7_3_04_07_2026_fix_intervention_image_v3_v4_api_migration",
-      "community": 45,
+      "community": 5,
       "norm_label": "7.3 \u2014 04/07/2026 \u2014 fix: intervention image v3\u2192v4 api migration"
     },
     {
@@ -8000,7 +8000,7 @@
       "source_location": "L153",
       "_origin": "ast",
       "id": "docs_changelog_7_4_04_07_2026_feat_force_import_all_con_alpine_js_modal",
-      "community": 45,
+      "community": 5,
       "norm_label": "7.4 \u2014 04/07/2026 \u2014 feat: force import all con alpine.js modal"
     },
     {
@@ -8040,7 +8040,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "docs_changelog_fase_9_remote_urls_nome_it_wordmap_apostrophe_fallback",
-      "community": 166,
+      "community": 5,
       "norm_label": "fase 9 \u2014 remote urls, nome_it, wordmap, apostrophe fallback"
     },
     {
@@ -8050,7 +8050,7 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "docs_changelog_9_0_04_07_2026_feat_remote_nasa_urls_nome_it_wordmap_espansa_apostrophe_fallback_auto_suggest",
-      "community": 166,
+      "community": 5,
       "norm_label": "9.0 \u2014 04/07/2026 \u2014 feat: remote nasa urls, nome_it, wordmap espansa, apostrophe fallback, auto-suggest"
     },
     {
@@ -8224,10 +8224,20 @@
       "norm_label": "wave 1 \u2014 08/07/2026 \u2014 feat: backend p2 (wordmapservice, simili ordinati)"
     },
     {
-      "label": "Wave 3 \u2014 08/07/2026 \u2014 feat: frontend P2 onMouseEnter/onMouseLeave \u2192 CSS :hover",
+      "label": "Wave 4 \u2014 08/07/2026 \u2014 feat: frontend P2 stili inline \u2192 Tailwind classi admin",
       "file_type": "document",
       "source_file": "docs/changelog.md",
       "source_location": "L305",
+      "_origin": "ast",
+      "id": "docs_changelog_wave_4_08_07_2026_feat_frontend_p2_stili_inline_tailwind_classi_admin",
+      "community": 46,
+      "norm_label": "wave 4 \u2014 08/07/2026 \u2014 feat: frontend p2 stili inline \u2192 tailwind classi admin"
+    },
+    {
+      "label": "Wave 3 \u2014 08/07/2026 \u2014 feat: frontend P2 onMouseEnter/onMouseLeave \u2192 CSS :hover",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L311",
       "_origin": "ast",
       "id": "docs_changelog_wave_3_08_07_2026_feat_frontend_p2_onmouseenter_onmouseleave_css_hover",
       "community": 46,
@@ -8237,7 +8247,7 @@
       "label": "Wave 2 \u2014 08/07/2026 \u2014 feat: frontend P3 accessibilit\u00e0 (aria-label, role=\"img\")",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L311",
+      "source_location": "L317",
       "_origin": "ast",
       "id": "docs_changelog_wave_2_08_07_2026_feat_frontend_p3_accessibilit\u00e0_aria_label_role_img",
       "community": 46,
@@ -8247,7 +8257,7 @@
       "label": "12.1 \u2014 07/07/2026 \u2014 feat: auth pages da Inertia a Blade puro",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L322",
+      "source_location": "L328",
       "_origin": "ast",
       "id": "docs_changelog_12_1_07_07_2026_feat_auth_pages_da_inertia_a_blade_puro",
       "community": 46,
@@ -8360,7 +8370,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "docs_documentazione_palette_colori",
-      "community": 12,
+      "community": 3,
       "norm_label": "palette colori"
     },
     {
@@ -8370,7 +8380,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "docs_documentazione_badge_categoria",
-      "community": 12,
+      "community": 3,
       "norm_label": "badge categoria"
     },
     {
@@ -8380,7 +8390,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "docs_documentazione_frontend_guest_react_spa",
-      "community": 12,
+      "community": 3,
       "norm_label": "frontend guest (react spa)"
     },
     {
@@ -8390,7 +8400,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "docs_documentazione_backoffice_admin",
-      "community": 12,
+      "community": 3,
       "norm_label": "backoffice admin"
     },
     {
@@ -8400,7 +8410,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "docs_documentazione_api_rest",
-      "community": 12,
+      "community": 3,
       "norm_label": "api rest"
     },
     {
@@ -8497,7 +8507,7 @@
       "label": "Da Fare",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "docs_todo_da_fare",
       "community": 102,
@@ -8507,7 +8517,7 @@
       "label": "\ud83d\udd34 P0 \u2014 Bloccante",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "docs_todo_p0_bloccante",
       "community": 102,
@@ -8517,7 +8527,7 @@
       "label": "\ud83d\udfe0 P1 \u2014 Utente",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "docs_todo_p1_utente",
       "community": 102,
@@ -8527,7 +8537,7 @@
       "label": "\ud83d\udd35 P2 \u2014 Manutenzione (refactoring, test, performance)",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "docs_todo_p2_manutenzione_refactoring_test_performance",
       "community": 102,
@@ -8537,7 +8547,7 @@
       "label": "\ud83d\udfe3 P3 \u2014 Accessibilit\u00e0",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L45",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "docs_todo_p3_accessibilit\u00e0",
       "community": 102,
@@ -8547,7 +8557,7 @@
       "label": "\u26aa P4 \u2014 Futuro (nice-to-have)",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L48",
+      "source_location": "L49",
       "_origin": "ast",
       "id": "docs_todo_p4_futuro_nice_to_have",
       "community": 102,
@@ -8557,7 +8567,7 @@
       "label": "Note",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L61",
+      "source_location": "L62",
       "_origin": "ast",
       "id": "docs_todo_note",
       "community": 102,
@@ -9870,28 +9880,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_curiositacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_curiositacontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CuriositaController.php",
@@ -10804,6 +10792,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/MissioneController.php",
@@ -11625,6 +11635,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_curiositacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_curiositacontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CuriositaController.php",
@@ -11932,28 +11964,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_api_missionecontroller",
       "target": "app_http_resources_missioneresource",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_missionecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_missionecontroller",
       "confidence_score": 1.0
     },
     {
@@ -20968,7 +20978,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L322",
+      "source_location": "L328",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_1_07_07_2026_feat_auth_pages_da_inertia_a_blade_puro",
@@ -21068,7 +21078,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L311",
+      "source_location": "L317",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_wave_2_08_07_2026_feat_frontend_p3_accessibilit\u00e0_aria_label_role_img",
@@ -21078,10 +21088,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L305",
+      "source_location": "L311",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_wave_3_08_07_2026_feat_frontend_p2_onmouseenter_onmouseleave_css_hover",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L305",
+      "weight": 1.0,
+      "source": "docs_changelog_fase_12_authorization_policy_gates",
+      "target": "docs_changelog_wave_4_08_07_2026_feat_frontend_p2_stili_inline_tailwind_classi_admin",
       "confidence_score": 1.0
     },
     {
@@ -21308,7 +21328,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "docs_todo_todo",
       "target": "docs_todo_da_fare",
@@ -21328,7 +21348,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "source": "docs_todo_todo",
       "target": "docs_todo_note",
@@ -21338,7 +21358,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "docs_todo_da_fare",
       "target": "docs_todo_p0_bloccante",
@@ -21348,7 +21368,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "docs_todo_da_fare",
       "target": "docs_todo_p1_utente",
@@ -21358,7 +21378,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0,
       "source": "docs_todo_da_fare",
       "target": "docs_todo_p2_manutenzione_refactoring_test_performance",
@@ -21368,7 +21388,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0,
       "source": "docs_todo_da_fare",
       "target": "docs_todo_p3_accessibilit\u00e0",
@@ -21378,7 +21398,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0,
       "source": "docs_todo_da_fare",
       "target": "docs_todo_p4_futuro_nice_to_have",
@@ -21386,5 +21406,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c7e91d219fbf77088ac8ef622394d74c192c8ea0"
+  "built_at_commit": "f6252d77c4809e3d7f821c544808fe071638ea00"
 }

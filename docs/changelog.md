@@ -325,6 +325,16 @@
 - Blade: fix onerror galleria — `role="img"` nel fallback "Immagine non disponibile"
 - Tutti gli SVG decorativi icon-only hanno `aria-hidden="true"`
 
+### 13.0 — 08/07/2026 — feat: HasFactory su 5 modelli, 26 test NasaImageService, observer testing guard, 84 test verdi
+- Aggiunto trait `HasFactory` ai 5 modelli (Categoria, CorpoCeleste, Curiosita, GalleriaCorpo, Missione) — le factory esistevano già
+- Fix: `CorpoCelesteObserver::created()` skip in ambiente testing (`app()->environment('testing')`) — prima faceva chiamate HTTP reali
+- Fix: `NasaImageService::searchNasa()` — riordinato `str_replace` in query stripping (`'s` prima di `'`) per correggere fallback possessivo inglese
+- Fix: `NasaImageService::importForBody()` — with `immagine_utente=true` e `force=true`, ora skip completo (non crea voci galleria)
+- Fix: `Missione.php` — imports su riga singola riparati (a capo mancante)
+- 26 test unitari NasaImageServiceTest (searchNasa, extractMetadata, pickImageUrl, importForBody, importAll) — 63 assertion
+- 9 file feature test fixati con `Http::fake()` e response structure corrette
+- **84/84 test pass, 220 assertion**
+
 ### 12.1 — 07/07/2026 — feat: auth pages da Inertia a Blade puro
 - Create 11 viste Blade per auth e profilo con tema scuro
 - `app/View/Components/GuestLayout.php` e `AppLayout.php` per compatibilità x-*

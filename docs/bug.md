@@ -114,6 +114,28 @@
 - **Fixato in**: Fase 11.0
 
 ### [17] Logout reindirizza a homepage invece di login — 07/07/2026
+
+---
+
+### [18] Query stripping NASA: apostrofo rimosso prima di 's — 08/07/2026
+- **Descrizione**: `NasaImageService::searchNasa()` produceva `"Earths Moon"` invece di `"Earth Moon"` come fallback per `"Earth's Moon"`. L'apostrofo veniva rimosso singolarmente prima della sequenza `'s`, quindi `'s` non matchava più.
+- **Causa**: `str_replace(["'", ... , "'s "], ...)` — l'apostrofo singolo era prima di `'s` nell'array. PHP processa in ordine, quindi `'` veniva rimosso per primo, `'s` non trovava più match.
+- **Soluzione**: Riordinato array: `str_replace(["'s", "'", "`", "’"], ...)` — ora `'s` viene matchato prima come unità.
+- **Sintomi**: Ricaduta su qualsiasi nome inglese con possessivo (`Earth's Moon`, `Halley's Comet`)
+- **Fixato in**: Fase 13.0
+
+### [19] NASA Force Import: crea voci galleria anche con immagine utente — 08/07/2026
+- **Descrizione**: Usando `--force` su un corpo con `immagine_utente=true`, l'immagine principale era preservata (corretto) ma venivano comunque create voci in galleria
+- **Causa**: La guard `if (!$force && $corpo->immagine)` skip solo se force=false. La protezione `immagine_utente` era implementata solo per l'immagine principale (`$canOverwriteMain`), non per il flusso generale
+- **Soluzione**: Modificata la guard in: `if ($corpo->immagine && (!$force || $corpo->immagine_utente))` — se l'immagine è utente, skip sempre, anche con force
+- **Fixato in**: Fase 13.0
+
+### [20] CorpoCelesteObserver chiama NASA API durante i test — 08/07/2026
+- **Descrizione**: Creando un `CorpoCeleste::factory()->create()` in un test PHPUnit, l'observer `CorpoCelesteObserver::created()` effettuava chiamate HTTP reali verso images-api.nasa.gov
+- **Causa**: L'observer non aveva alcun check sull'ambiente. I test feature API che non impostavano `Http::fake()` dipendevano dalla connettività esterna
+- **Soluzione**: Aggiunto `if (app()->environment('testing')) return;` in `CorpoCelesteObserver::created()`. Aggiunto `Http::fake()` nei setUp dei test feature come safety net
+- **Sintomi**: Test fallivano in assenza di connessione Internet; rallentamento suite test (~30s per timeout); galleria popolata da dati NASA reali durante i test
+- **Fixato in**: Fase 13.0
 - **Descrizione**: Dopo il logout, l'utente veniva reindirizzato a `/` (guest SPA) invece che a `/login`
 - **Causa**: AuthenticatedSessionController::destroy() usava `return redirect('/')`
 - **Soluzione**: Sostituito con `return redirect('/login')`
