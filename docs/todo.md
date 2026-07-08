@@ -25,45 +25,50 @@
 
 ## Da Fare
 
-### P2 — Manutenzione (refactoring, test, performance)
+### 🔴 P0 — Bloccante
+_Nessun task bloccante. Il progetto non ha bug critici o blocchi noti._ 🟢
 
-- [ ] `[backend][P2]` Rimuovere `inRandomOrder()` in `simili()` — `app/Http/Controllers/Api/CorpoCelesteController.php`
-- [ ] `[backend][P2]` Estrarre `$wordMap` in servizio dedicato — `app/Services/WordMapService.php`
-- [ ] `[test][P2]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
-- [ ] `[test][P2]` Test HTTP API endpoints (list, filter, dettaglio, simili) — `tests/Feature/Api/`
-- [ ] `[test][P2]` Test CRUD admin CorpoCeleste (store, update, validation) — `tests/Feature/Admin/`
-- [ ] `[test][P2]` Test componenti React (SolarSystem, CorpoCard, Lightbox) — Vitest
-- [ ] `[test][P2]` Test integrazione API (apiClient, guest pages)
-- [ ] `[test][P2]` Test E2E: login → admin → CRUD → NASA import
-- [ ] `[frontend][P2]` Sostituire onMouseEnter/onMouseLeave con CSS `:hover` — tutti i blade e JSX
-- [ ] `[frontend][P2]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
+### 🟠 P1 — Utente
+_Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ 🟢
 
-### P3 — Accessibilità
+### 🔵 P2 — Manutenzione (refactoring, test, performance)
 
-- [ ] `[frontend][P3]` Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
-- [ ] `[frontend][P3]` Aggiungere `role="img"` / `aria-label` a icone fallback immagini
+- [ ] `[🖥️backend][🔵P2]` Rimuovere `inRandomOrder()` in `simili()` — `app/Http/Controllers/Api/CorpoCelesteController.php`
+- [ ] `[🖥️backend][🔵P2]` Estrarre `$wordMap` in servizio dedicato — `app/Services/WordMapService.php`
+- [ ] `[🧪test][🔵P2]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
+- [ ] `[🧪test][🔵P2]` Test HTTP API endpoints (list, filter, dettaglio, simili) — `tests/Feature/Api/`
+- [ ] `[🧪test][🔵P2]` Test CRUD admin CorpoCeleste (store, update, validation) — `tests/Feature/Admin/`
+- [ ] `[🧪test][🔵P2]` Test componenti React (SolarSystem, CorpoCard, Lightbox) — Vitest
+- [ ] `[🧪test][🔵P2]` Test integrazione API (apiClient, guest pages)
+- [ ] `[🧪test][🔵P2]` Test E2E: login → admin → CRUD → NASA import
+- [ ] `[🎨frontend][🔵P2]` Sostituire onMouseEnter/onMouseLeave con CSS `:hover` — tutti i blade e JSX
+- [ ] `[🎨frontend][🔵P2]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
 
-### P4 — Futuro (nice-to-have)
+### 🟣 P3 — Accessibilità
 
-- [ ] `[backend][P4]` Cast decimal/float a campi scientifici (massa_kg, distanza_km, etc.) — `app/Models/CorpoCeleste.php`
-- [ ] `[backend][P4]` Rate limiting (`throttle`) su API pubbliche — `routes/api.php`
-- [ ] `[frontend][P4]` Valutare orbita 2D → 3D (react-three-fiber / prospettiva CSS) — `resources/js/guest/components/SolarSystem.jsx`
-- [ ] `[feature][P4]` Sistema di rating per corpi celesti
-- [ ] `[feature][P4]` Dashboard admin con grafici (Chart.js/Recharts)
-- [ ] `[feature][P4]` Multi-lingua (IT/EN)
-- [ ] `[feature][P4]` Dark/light mode toggle
-- [ ] `[feature][P4]` Notifiche email per nuove missioni
+- [ ] `[🎨frontend][🟣P3]` Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
+- [ ] `[🎨frontend][🟣P3]` Aggiungere `role="img"` / `aria-label` a icone fallback immagini
+
+### ⚪ P4 — Futuro (nice-to-have)
+
+- [ ] `[🖥️backend][⚪P4]` Cast decimal/float a campi scientifici (massa_kg, distanza_km, etc.) — `app/Models/CorpoCeleste.php`
+- [ ] `[🖥️backend][⚪P4]` Rate limiting (`throttle`) su API pubbliche — `routes/api.php`
+- [ ] `[🎨frontend][⚪P4]` Valutare orbita 2D → 3D (react-three-fiber / prospettiva CSS) — `resources/js/guest/components/SolarSystem.jsx`
+- [ ] `[✨feature][⚪P4]` Sistema di rating per corpi celesti
+- [ ] `[✨feature][⚪P4]` Dashboard admin con grafici (Chart.js/Recharts)
+- [ ] `[✨feature][⚪P4]` Multi-lingua (IT/EN)
+- [ ] `[✨feature][⚪P4]` Dark/light mode toggle
+- [ ] `[✨feature][⚪P4]` Notifiche email per nuove missioni
 
 ---
 
 ## Note
 
-- **Prossimo task consigliato**: il primo del blocco P2 (più piccolo sforzo)
+- **Prossimo task consigliato**: `[🖥️backend][🔵P2]` Rimuovere `inRandomOrder()` — il più piccolo (~5 min)
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
-- Priorità: **P0** (bloccante) → **P1** (utente) → **P2** (manutenzione) → **P3** (accessibilità) → **P4** (futuro). I task P0 e P1 sono attualmente vuoti (completati).
 - Formato per aggiungere un nuovo task:
   ```
-  - [ ] `[tag][Px]` Descrizione — `file/principale/coinvolto`
+  - [ ] `[🖥️🎨💾🧪✨📝][🔴🟠🔵🟣⚪Px]` Descrizione — `file/principale/coinvolto`
   ```
-  Tag disponibili: `backend`, `frontend`, `database`, `test`, `feature`, `docs`
-  Priorità: `P0`, `P1`, `P2`, `P3`, `P4`
+  **Tag (oggetti — ambito)**: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`
+  **Priorità (cerchi — urgenza)**: 🔴P0 bloccante · 🟠P1 utente · 🔵P2 manutenzione · 🟣P3 accessibilità · ⚪P4 futuro
