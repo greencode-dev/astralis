@@ -19,7 +19,7 @@ export default function CorpiLista() {
     const tipi = ['Pianeta', 'Stella', 'Luna', 'Galassia', 'Nebulosa', 'Asteroide', 'Cometa', 'Pianeta Nano'];
 
     useEffect(() => {
-        fetchCategorie().then(res => setCategorie(res.data || [])).catch(() => {});
+        fetchCategorie().then(res => setCategorie(res.data || [])).catch(err => console.error('Errore caricamento categorie:', err));
     }, []);
 
     useEffect(() => {

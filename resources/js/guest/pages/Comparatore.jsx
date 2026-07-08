@@ -27,7 +27,7 @@ export default function Comparatore() {
     useEffect(() => {
         fetchCorpiCelesti({ per_page: 100 })
             .then(res => setCorpi(res.data || []))
-            .catch(() => {});
+            .catch(err => console.error('Errore caricamento corpi:', err));
     }, []);
 
     useEffect(() => {

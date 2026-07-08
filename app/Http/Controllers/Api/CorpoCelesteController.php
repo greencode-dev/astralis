@@ -35,7 +35,7 @@ class CorpoCelesteController extends Controller
             $query->where('in_evidenza', true);
         }
 
-        $perPage = $request->integer('per_page', 12);
+        $perPage = min($request->integer('per_page', 12), 100);
         $corpiCelesti = $query->orderBy('nome')->paginate($perPage);
 
         return CorpoCelesteResource::collection($corpiCelesti);

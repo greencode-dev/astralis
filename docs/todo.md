@@ -4,6 +4,7 @@
 
 ## Fatto
 
+- [x] **Fase 12.4** — Quick wins: max per_page, ordinamento relazioni, .catch, nasa_id in resource, indexes
 - [x] **Fase 12.3** — FormRequest per validazione store/update CorpoCeleste
 - [x] **Fase 12.2** — Rimossa dipendenza Inertia (middleware, JSX, composer/npm)
 - [x] **Fase 12.1** — Auth pages: Inertia→Blade puro (GuestLayout/AppLayout components)
@@ -26,30 +27,23 @@
 
 ### Alta
 
-- [ ] `[backend]` Rate limiting (`throttle`) su API pubbliche — `routes/api.php`
-
 
 
 ### Media
 
 - [ ] `[frontend]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
 - [ ] `[frontend]` Sostituire onMouseEnter/onMouseLeave con CSS `:hover` — tutti i blade e JSX
-- [ ] `[frontend]` Error handling utente nel frontend (sostituire `.catch(() => {})`) — `resources/js/**/*.jsx`
 - [ ] `[frontend]` Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
 - [ ] `[frontend]` Aggiungere `role="img"` / `aria-label` a icone fallback immagini
 - [ ] `[backend]` Cast decimal/float a campi scientifici (massa_kg, distanza_km, etc.) — `app/Models/CorpoCeleste.php`
-- [ ] `[backend]` Ordinamento default a relazioni `galleria()` e `curiosita()` — `app/Models/CorpoCeleste.php`
 - [ ] `[backend]` Rimuovere `inRandomOrder()` in `simili()` — alternativa performante — `app/Models/CorpoCeleste.php`
-- [ ] `[backend]` Aggiungere massimo a `per_page` (es. max 100) — `app/Http/Controllers/Api/`
-- [ ] `[backend]` Esporre `nasa_id` in CorpoCelesteResource — `app/Http/Resources/CorpoCelesteResource.php`
-- [ ] `[database]` Aggiungere missing indexes: `tipo`, `in_evidenza`, `nome` (FULLTEXT) — migration
-- [ ] `[database]` Index su `galleria_corpi.ordine` — migration
 - [ ] `[test]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
 - [ ] `[test]` Test HTTP API endpoints (list, filter, dettaglio, simili) — `tests/Feature/Api/`
 - [ ] `[test]` Test CRUD admin CorpoCeleste (store, update, validation) — `tests/Feature/Admin/`
 
 ### Bassa
 
+- [ ] `[backend]` Rate limiting (`throttle`) su API pubbliche — `routes/api.php`
 - [ ] `[frontend]` Valutare orbita 2D → 3D (react-three-fiber / prospettiva CSS) — `resources/js/guest/components/SolarSystem.jsx`
 - [ ] `[backend]` Estrarre `$wordMap` in servizio dedicato — `app/Services/WordMapService.php`
 - [ ] `[test]` Test componenti React (SolarSystem, CorpoCard, Lightbox) — Vitest

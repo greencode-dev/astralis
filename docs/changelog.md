@@ -236,6 +236,15 @@
 - `Gate::authorize('admin')` aggiunto a NasaImportController (index, import, importAll)
 - Fix: CategoriaController.php — riparata doppia dichiarazione di classe (residuo sessione precedente)
 
+### 12.4 — 08/07/2026 — feat: quick wins — per_page, ordinamento relazioni, .catch, nasa_id, indexes
+- Max `per_page` (100) in Api\CorpoCelesteController — previene abuso
+- Ordinamento default: `galleria()` per `ordine`, `curiosita()` per `created_at desc`
+- Sostituiti 3 `.catch(() => {})` silenziosi con `console.error` in React
+- Esposto `nasa_id` in CorpoCelesteResource
+- Migration: index su `tipo`, `in_evidenza`, `galleria_corpi.ordine`
+- Spostato task rate limiting in Bassa priorità
+- 25/25 test pass, 61 assertions
+
 ### 12.3 — 08/07/2026 — feat: FormRequest per validazione store/update CorpoCeleste
 - Creati `StoreCorpoCelesteRequest` e `UpdateCorpoCelesteRequest` in `app/Http/Requests/`
 - Estratta validazione inline da `CorpoCelesteController` nei FormRequest

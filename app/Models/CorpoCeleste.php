@@ -63,12 +63,12 @@ class CorpoCeleste extends Model
 
     public function galleria(): HasMany
     {
-        return $this->hasMany(GalleriaCorpo::class);
+        return $this->hasMany(GalleriaCorpo::class)->orderBy('ordine');
     }
 
     public function curiosita(): HasMany
     {
-        return $this->hasMany(Curiosita::class);
+        return $this->hasMany(Curiosita::class)->orderByDesc('created_at');
     }
 
     public function missioni(): BelongsToMany

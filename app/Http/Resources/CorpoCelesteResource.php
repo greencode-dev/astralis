@@ -27,6 +27,7 @@ class CorpoCelesteResource extends JsonResource
             'scopritore' => $this->scopritore,
             'anno_scoperta' => $this->anno_scoperta,
             'in_evidenza' => $this->in_evidenza,
+            'nasa_id' => $this->nasa_id,
             'galleria' => GalleriaCorpoResource::collection($this->whenLoaded('galleria')),
             'curiosita' => CuriositaResource::collection($this->whenLoaded('curiosita')),
             'missioni' => MissioneResource::collection($this->whenLoaded('missioni')),

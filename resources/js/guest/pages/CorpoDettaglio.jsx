@@ -67,7 +67,7 @@ export default function CorpoDettaglio() {
         if (corpo?.id) {
             fetchSimili(corpo.id)
                 .then(res => setSimili(res.data || []))
-                .catch(() => {});
+                .catch(err => console.error('Errore caricamento simili:', err));
         }
     }, [corpo?.id]);
 
