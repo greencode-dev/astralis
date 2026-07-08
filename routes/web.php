@@ -8,9 +8,7 @@ use App\Http\Controllers\Admin\GalleriaController;
 use App\Http\Controllers\Admin\MissioneController;
 use App\Http\Controllers\Admin\NasaImportController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', function () {
     return view('guest');

@@ -15,7 +15,7 @@
 <body class="font-sans antialiased" style="background-color: #0A0A1A; color: #F0F0FA;">
     <div class="flex h-screen overflow-hidden">
 
-        <aside class="w-64 flex-shrink-0 overflow-y-auto" style="background-color: #111128; border-right: 1px solid rgba(34, 211, 238, 0.1);">
+        <aside class="flex-shrink-0 w-64 overflow-y-auto" style="background-color: #111128; border-right: 1px solid rgba(34, 211, 238, 0.1);">
 
             <div class="flex items-center gap-3 px-6 py-5" style="border-bottom: 1px solid rgba(34, 211, 238, 0.1);">
                 <span class="text-2xl">🚀</span>
@@ -38,7 +38,7 @@
                 $currentRoute = request()->route()?->getName();
             @endphp
 
-            <nav class="mt-4 px-3 space-y-1">
+            <nav class="px-3 mt-4 space-y-1">
                 @foreach ($navItems as $item)
                     @php
                         $isActive = $currentRoute && str_starts_with($currentRoute, explode('.', $item['route'])[0] . '.' . explode('.', $item['route'])[1]);
@@ -47,7 +47,7 @@
                         }
                     @endphp
                     <a href="{{ route($item['route']) }}"
-                       class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                       class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
                        @if ($isActive)
                            style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE;"
                        @else
@@ -55,7 +55,7 @@
                            onmouseover="this.style.backgroundColor='rgba(34,211,238,0.08)'; this.style.color='#22D3EE';"
                            onmouseout="this.style.backgroundColor='transparent'; this.style.color='#9CA3AF';"
                        @endif>
-                        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="flex-shrink-0 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $item['icon'] }}"/>
                         </svg>
                         {{ $item['label'] }}
@@ -63,9 +63,9 @@
                 @endforeach
             </nav>
 
-            <div class="mt-auto px-3 py-4 space-y-1" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
+            <div class="px-3 py-4 mt-auto space-y-1" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
                 <a href="{{ route('profile.edit') }}"
-                   class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
                    style="color: #9CA3AF;"
                    onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.08)';"
                    onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
@@ -73,7 +73,7 @@
                     Profilo
                 </a>
                 <a href="{{ route('home') }}"
-                   class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
                    style="color: #9CA3AF;"
                    onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.08)';"
                    onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
@@ -83,15 +83,15 @@
             </div>
         </aside>
 
-        <div class="flex flex-1 flex-col overflow-hidden">
-            <header class="flex items-center justify-between px-6 py-4" style="background-color: #111128; border-bottom: 1px solid rgba(34, 211, 238, 0.1);">
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <header class="flex items-center justify-between px-6 py-5" style="background-color: #111128; border-bottom: 1px solid rgba(34, 211, 238, 0.1);">
                 <h2 class="text-lg font-semibold">@yield('page_title', 'Dashboard')</h2>
                 <div class="flex items-center gap-4">
                     <span class="text-sm" style="color: #9CA3AF;">{{ Auth::user()->name }}</span>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit"
-                                class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg"
                                 style="color: #F0F0FA; background-color: rgba(249, 115, 22, 0.15);"
                                 onmouseover="this.style.backgroundColor='rgba(249,115,22,0.3)';"
                                 onmouseout="this.style.backgroundColor='rgba(249,115,22,0.15)';">
@@ -102,8 +102,12 @@
                 </div>
             </header>
 
-            <main class="flex-1 overflow-y-auto p-6">
-                @yield('content')
+            <main class="flex-1 p-6 overflow-y-auto">
+                @isset($slot)
+                    {{ $slot }}
+                @else
+                    @yield('content')
+                @endisset
             </main>
         </div>
     </div>

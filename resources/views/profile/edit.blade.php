@@ -1,3 +1,6 @@
+@section('title', 'Profilo')
+@section('page_title', 'Profilo')
+
 <x-app-layout>
     <div class="max-w-3xl mx-auto space-y-8">
         @include('profile.partials.update-profile-information-form')
@@ -10,9 +13,4 @@
 
         @include('profile.partials.delete-user-form')
     </div>
-
-    @push('scripts')
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <style>[x-cloak] { display: none !important; }</style>
-    @endpush
 </x-app-layout>

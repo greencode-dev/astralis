@@ -8,14 +8,12 @@
     "require": {
         "php": "^8.3",
         "barryvdh/laravel-dompdf": "*",
-        "inertiajs/inertia-laravel": "^2.0",
         "intervention/image": "*",
         "laravel/breeze": "^2.4",
         "laravel/framework": "^13.8",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0",
-        "spatie/laravel-sluggable": "*",
-        "tightenco/ziggy": "^2.0"
+        "spatie/laravel-sluggable": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
