@@ -18,7 +18,7 @@
                          class="w-32 h-32 rounded-full object-cover mb-4"
                          style="border: 3px solid rgba(34, 211, 238, 0.2);">
                 @else
-                    <div class="w-32 h-32 rounded-full flex items-center justify-center text-4xl mb-4" style="background-color: rgba(34, 211, 238, 0.1); color: #22D3EE;">
+                    <div class="w-32 h-32 rounded-full flex items-center justify-center text-4xl mb-4" style="background-color: rgba(34, 211, 238, 0.1); color: #22D3EE;" role="img" aria-label="{{ $corpoCeleste->nome }}">
                         ★
                     </div>
                     <form method="POST" action="{{ route('admin.nasa-import.import', $corpoCeleste) }}" class="mt-3">

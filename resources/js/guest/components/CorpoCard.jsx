@@ -66,8 +66,10 @@ export default function CorpoCard({ corpo }) {
                     style={{ background: gradient }}
                     onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
                     onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                    role="img"
+                    aria-label={corpo.categoria?.nome + ' — ' + (corpo.nome_display || corpo.nome)}
                 >
-                    <FallbackIcon size={56} style={{ color: 'rgba(255,255,255,0.6)' }} />
+                    <FallbackIcon size={56} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
                     {corpo.in_evidenza && (
                         <span className="absolute right-3 top-3 z-10 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-lg" style={{ backgroundColor: 'rgba(250, 204, 21, 0.9)', color: '#1A1A2E' }}>
                             ★ In evidenza

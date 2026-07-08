@@ -111,8 +111,9 @@ export default function Comparatore() {
                                             style={{ color: '#7A7A9A' }}
                                             onMouseEnter={e => e.currentTarget.style.color = '#F97316'}
                                             onMouseLeave={e => e.currentTarget.style.color = '#7A7A9A'}
+                                            aria-label="Resetta selezione"
                                         >
-                                            <RotateCcw size={16} />
+                                            <RotateCcw size={16} aria-hidden="true" />
                                         </button>
                                     )}
                                 </div>

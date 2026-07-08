@@ -57,7 +57,8 @@
                                     style="background-color: {{ $c }}; border-color: {{ old('colore', '#22D3EE') === $c ? '#F0F0FA' : 'transparent' }};"
                                     onclick="document.getElementById('colore').value='{{ $c }}'; document.getElementById('colore_hex').value='{{ $c }}'; this.style.borderColor='#F0F0FA';"
                                     onmouseover="this.style.transform='scale(1.15)';"
-                                    onmouseout="this.style.transform='scale(1)';"></button>
+                                    onmouseout="this.style.transform='scale(1)';"
+                                    aria-label="Seleziona colore {{ $c }}"></button>
                         @endforeach
                     </div>
                     <p class="mt-1 text-xs" style="color: #6B7280;">Il colore del badge associato alla categoria</p>

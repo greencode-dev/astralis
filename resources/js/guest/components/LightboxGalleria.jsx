@@ -22,6 +22,7 @@ export default function LightboxGalleria({ immagini }) {
                         onClick={() => { setIndex(i); setOpen(true); }}
                         className="relative group rounded-xl overflow-hidden transition-all duration-300"
                         style={{ backgroundColor: '#111128', border: '1px solid rgba(34, 211, 238, 0.1)' }}
+                        aria-label={slide.didascalia || 'Apri immagine nella galleria'}}
                         onMouseEnter={e => {
                             e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.4)';
                             e.currentTarget.style.transform = 'scale(1.02)';

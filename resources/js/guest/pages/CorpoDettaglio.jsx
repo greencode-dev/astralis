@@ -116,8 +116,10 @@ export default function CorpoDettaglio() {
                 {corpo.immagine_url ? (
                     <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome_display || corpo.nome} className="w-full h-64 lg:h-80 object-cover" />
                 ) : (
-                    <div className="w-full h-64 lg:h-80 flex items-center justify-center" style={{ background: gradient }}>
-                        <FallbackIcon size={96} style={{ color: 'rgba(255,255,255,0.4)' }} />
+                    <div className="w-full h-64 lg:h-80 flex items-center justify-center" style={{ background: gradient }}
+                        role="img"
+                        aria-label={corpo.nome_display || corpo.nome}>
+                        <FallbackIcon size={96} style={{ color: 'rgba(255,255,255,0.4)' }} aria-hidden="true" />
                     </div>
                 )}
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(transparent 40%, #0A0A1A)' }} />

@@ -60,7 +60,7 @@
                                          class="w-8 h-8 rounded-full object-cover"
                                          style="border: 1px solid rgba(34, 211, 238, 0.2);">
                                 @else
-                                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm" style="background-color: rgba(34, 211, 238, 0.1); color: #22D3EE;">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm" style="background-color: rgba(34, 211, 238, 0.1); color: #22D3EE;" role="img" aria-label="{{ $corpo->nome }}">
                                         ★
                                     </div>
                                 @endif

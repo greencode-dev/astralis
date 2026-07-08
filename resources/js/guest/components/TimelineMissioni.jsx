@@ -46,8 +46,10 @@ export default function TimelineMissioni({ missioni }) {
                                         {missione.logo_url ? (
                                             <img src={missione.logo_url} alt={missione.nome} className="w-10 h-10 rounded-lg object-cover" />
                                         ) : (
-                                            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(34, 211, 238, 0.1)' }}>
-                                                <Rocket size={20} style={{ color: '#22D3EE' }} />
+                                            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(34, 211, 238, 0.1)' }}
+                                                role="img"
+                                                aria-label={'Logo ' + missione.nome}>
+                                                <Rocket size={20} style={{ color: '#22D3EE' }} aria-hidden="true" />
                                             </div>
                                         )}
                                         <div>

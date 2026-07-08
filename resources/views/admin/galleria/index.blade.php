@@ -40,7 +40,7 @@
                          class="w-full h-full object-cover transition-transform duration-300"
                          onmouseover="this.style.transform='scale(1.05)';"
                          onmouseout="this.style.transform='scale(1)';"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;height:100%;padding:1rem;text-align:center;color:#6B7280;font-size:0.75rem;\">Immagine non disponibile</div>';">
+                         onerror="this.alt='Immagine non disponibile'; this.style.display='none'; this.parentElement.innerHTML='<div role=\"img\" aria-label=\"Immagine non disponibile per {{ $item->corpoCeleste->nome }}\" style=\"display:flex;align-items:center;justify-content:center;height:100%;padding:1rem;text-align:center;color:#6B7280;font-size:0.75rem;\">Immagine non disponibile</div>';">
                 </div>
                 <div class="p-3">
                     <p class="text-sm font-medium truncate" style="color: #F0F0FA;">{{ $item->didascalia ?? 'Senza didascalia' }}</p>
@@ -62,6 +62,7 @@
                                         style="color: #6B7280;"
                                         onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.1)';"
                                         onmouseout="this.style.color='#6B7280'; this.style.backgroundColor='transparent';"
+                                        aria-label="Sposta su {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                         title="Sposta su">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
                                 </button>
@@ -75,6 +76,7 @@
                                         style="color: #6B7280;"
                                         onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.1)';"
                                         onmouseout="this.style.color='#6B7280'; this.style.backgroundColor='transparent';"
+                                        aria-label="Sposta giù {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                         title="Sposta giù">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                                 </button>
@@ -86,6 +88,7 @@
                                style="color: #9CA3AF;"
                                onmouseover="this.style.color='#F97316'; this.style.backgroundColor='rgba(249,115,22,0.1)';"
                                onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';"
+                               aria-label="Modifica {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                title="Modifica">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                             </a>
@@ -97,6 +100,7 @@
                                         style="color: #9CA3AF;"
                                         onmouseover="this.style.color='#EF4444'; this.style.backgroundColor='rgba(239,68,68,0.1)';"
                                         onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';"
+                                        aria-label="Elimina {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                         title="Elimina">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                                 </button>

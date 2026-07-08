@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CorpoCelesteController.php": {
-    "mtime": 1783495178.3749642,
-    "ast_hash": "95f4be557a746e1d77595fa5d8e8df15",
+    "mtime": 1783498137.8603866,
+    "ast_hash": "2f3815779d9308115da4f74c1fda7ddf",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CuriositaController.php": {
@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Api/CorpoCelesteController.php": {
-    "mtime": 1783078188.7923844,
-    "ast_hash": "5be92f0e75373386026c3967c09ed4f2",
+    "mtime": 1783498117.915524,
+    "ast_hash": "00ecbef58fca7cb14cd3c9a77bcc2dfa",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Api/CuriositaController.php": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "app/Http/Resources/CorpoCelesteResource.php": {
-    "mtime": 1783403404.3757522,
-    "ast_hash": "bccd15deb5d7d974b1b9042b0e24ed72",
+    "mtime": 1783496018.3949156,
+    "ast_hash": "d71f25c0535eff24fddea6ecc5d4c075",
     "semantic_hash": ""
   },
   "app/Http/Resources/CuriositaResource.php": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "app/Models/CorpoCeleste.php": {
-    "mtime": 1783417080.1623502,
-    "ast_hash": "e1874d1e42a75e8fe2cafb93b35cf312",
+    "mtime": 1783496017.7084577,
+    "ast_hash": "bfc2a292fac447f0877997306c12c08d",
     "semantic_hash": ""
   },
   "app/Models/Curiosita.php": {
@@ -450,18 +450,18 @@
     "semantic_hash": ""
   },
   "resources/js/guest/pages/Comparatore.jsx": {
-    "mtime": 1783150351.1056104,
-    "ast_hash": "43ce2db6067f4b498faf2b969c642ec7",
+    "mtime": 1783496019.576229,
+    "ast_hash": "1e81c729a29f57bd572f1a28ecc609c6",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/CorpiLista.jsx": {
-    "mtime": 1783144830.2399976,
-    "ast_hash": "07c3ae632a8d89f00b2d30e264dee5dc",
+    "mtime": 1783496020.2526138,
+    "ast_hash": "fff82467fe2c7fe936bc3344a0b939ee",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/CorpoDettaglio.jsx": {
-    "mtime": 1783403404.421277,
-    "ast_hash": "c7f68a45c1473706918061d59b87815b",
+    "mtime": 1783496019.0101733,
+    "ast_hash": "9d49ab05d676b45c20cbf5267524dad6",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/HomePage.jsx": {
@@ -715,8 +715,8 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1783495271.7174118,
-    "ast_hash": "b343530f8d6ccc1e30bb78d16f79c79e",
+    "mtime": 1783498219.6896214,
+    "ast_hash": "20a22ad53d704670ac572d02e0201e7d",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
@@ -725,8 +725,8 @@
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1783495269.3737352,
-    "ast_hash": "6ba6beb4036ba9a89d67ec3df602d6e1",
+    "mtime": 1783498233.454236,
+    "ast_hash": "13a524ead51a044afd6c9c7bcfd9b6e7",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -1127,6 +1127,16 @@
   "storage/framework/views/ecb6311cc7b1a90c9b698bf1359c214a.php": {
     "mtime": 1783434596.846215,
     "ast_hash": "d52f0689381287f8968c3d622bd5bfb7",
+    "semantic_hash": ""
+  },
+  "app/Services/WordMapService.php": {
+    "mtime": 1783498122.687084,
+    "ast_hash": "88822a1da7259c92d313d9e54b43b58f",
+    "semantic_hash": ""
+  },
+  "database/migrations/2026_07_08_073349_add_indexes_to_corpi_celesti_and_galleria.php": {
+    "mtime": 1783496059.4876847,
+    "ast_hash": "ef23b984789c33fc02201ed24a156bfa",
     "semantic_hash": ""
   }
 }

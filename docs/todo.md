@@ -4,6 +4,7 @@
 
 ## Fatto
 
+- [x] **Wave 2** — Frontend P3: aria-label, role="img" su pulsanti e fallback immagini
 - [x] **Wave 1** — Backend P2: WordMapService, simili ordinati
 - [x] **Fase 12.4** — Quick wins: max per_page, ordinamento relazioni, .catch, nasa_id in resource, indexes
 - [x] **Fase 12.3** — FormRequest per validazione store/update CorpoCeleste
@@ -44,9 +45,7 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 - [ ] `[🎨frontend][🔵P2]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
 
 ### 🟣 P3 — Accessibilità
-
-- [ ] `[🎨frontend][🟣P3]` Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
-- [ ] `[🎨frontend][🟣P3]` Aggiungere `role="img"` / `aria-label` a icone fallback immagini
+_Nessun task di accessibilità in sospeso. Wave 2 ha coperto questa fascia._ 🟢
 
 ### ⚪ P4 — Futuro (nice-to-have)
 
@@ -63,7 +62,7 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 
 ## Note
 
-- **Prossimo task consigliato**: `[🎨frontend][🟣P3]` Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
+- **Prossimo task consigliato**: `[🎨frontend][🔵P2]` Sostituire onMouseEnter/onMouseLeave con CSS `:hover` — tutti i blade e JSX
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

@@ -302,6 +302,17 @@
 - Rimossa duplicazione `'Anello' => 'Ring'` nel wordMap
 - Rimossa private method `guessEnglishName()` dal controller
 
+### Wave 2 — 08/07/2026 — feat: frontend P3 accessibilità (aria-label, role="img")
+- React: aggiunto `aria-label` a pulsante reset selezioni (Comparatore)
+- React: aggiunto `aria-label` a pulsanti galleria thumbnail (LightboxGalleria)
+- React: aggiunto `role="img"` + `aria-label` a fallback gradient icon (CorpoCard, CorpoDettaglio)
+- React: aggiunto `role="img"` + `aria-label` a fallback mission logo (TimelineMissioni)
+- Blade: aggiunto `aria-label` a tutti i pulsanti/link azione tabelle admin (5 CRUD index)
+- Blade: aggiunto `aria-label` a 10 color swatch categoria (create + edit)
+- Blade: aggiunto `role="img"` + `aria-label` a fallback avatar/logo (corpi, missioni, nasa-import)
+- Blade: fix onerror galleria — `role="img"` nel fallback "Immagine non disponibile"
+- Tutti gli SVG decorativi icon-only hanno `aria-hidden="true"`
+
 ### 12.1 — 07/07/2026 — feat: auth pages da Inertia a Blade puro
 - Create 11 viste Blade per auth e profilo con tema scuro
 - `app/View/Components/GuestLayout.php` e `AppLayout.php` per compatibilità x-*
