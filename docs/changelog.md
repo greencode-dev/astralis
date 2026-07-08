@@ -302,6 +302,12 @@
 - Rimossa duplicazione `'Anello' => 'Ring'` nel wordMap
 - Rimossa private method `guessEnglishName()` dal controller
 
+### Wave 4 — 08/07/2026 — feat: frontend P2 stili inline → Tailwind classi admin
+- Convertiti stili inline color/bg/border in classi Tailwind in 21 file Blade admin
+- Usata palette `admin.*` da tailwind.config.js (admin.bg, admin.card, admin.text, admin.primary, admin.secondary, admin.accent)
+- Rimosse centinaia di `style=""` con classi Tailwind equivalenti
+- Mantenuti inline solo: input onfocus/onblur (52 occorrenze) e colori dinamici PHP (34 occorrenze)
+
 ### Wave 3 — 08/07/2026 — feat: frontend P2 onMouseEnter/onMouseLeave → CSS :hover
 - React: convertiti tutti gli inline onMouseEnter/onMouseLeave in hover: Tailwind (5 file JSX)
 - Blade: convertiti tutti gli inline onmouseover/onmouseout in hover: Tailwind (19 file Blade)

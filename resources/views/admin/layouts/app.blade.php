@@ -12,16 +12,16 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>[x-cloak] { display: none !important; }</style>
 </head>
-<body class="font-sans antialiased" style="background-color: #0A0A1A; color: #F0F0FA;">
+<body class="font-sans antialiased bg-admin-bg text-admin-text">
     <div class="flex h-screen overflow-hidden">
 
-        <aside class="flex-shrink-0 w-64 overflow-y-auto" style="background-color: #111128; border-right: 1px solid rgba(34, 211, 238, 0.1);">
+        <aside class="flex-shrink-0 w-64 overflow-y-auto bg-admin-card border-r border-admin-primary/10">
 
-            <div class="flex items-center gap-3 px-6 py-5" style="border-bottom: 1px solid rgba(34, 211, 238, 0.1);">
+            <div class="flex items-center gap-3 px-6 py-5 border-b border-admin-primary/10">
                 <span class="text-2xl">🚀</span>
                 <div>
-                    <h1 class="text-lg font-bold" style="color: #22D3EE;">Astralis</h1>
-                    <p class="text-xs" style="color: #A855F7;">Backoffice</p>
+                    <h1 class="text-lg font-bold text-admin-primary">Astralis</h1>
+                    <p class="text-xs text-admin-secondary">Backoffice</p>
                 </div>
             </div>
 
@@ -48,12 +48,10 @@
                     @endphp
                     <a href="{{ route($item['route']) }}"
                        @if ($isActive)
-                           class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
-                           style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE;"
-                       @else
-                           class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
-                           style="color: #9CA3AF;"
-                       @endif>
+                            class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg bg-admin-primary/15 text-admin-primary"
+                        @else
+                            class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg text-gray-400 hover:bg-admin-primary/8 hover:text-admin-primary"
+                        @endif>
                         <svg class="flex-shrink-0 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $item['icon'] }}"/>
                         </svg>
@@ -62,16 +60,14 @@
                 @endforeach
             </nav>
 
-            <div class="px-3 py-4 mt-auto space-y-1" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
+            <div class="px-3 py-4 mt-auto space-y-1 border-t border-admin-primary/10">
                 <a href="{{ route('profile.edit') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
-                   style="color: #9CA3AF;">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg text-gray-400 hover:bg-admin-primary/8 hover:text-admin-primary">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                     Profilo
                 </a>
                 <a href="{{ route('home') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
-                   style="color: #9CA3AF;">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg text-gray-400 hover:bg-admin-primary/8 hover:text-admin-primary">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     Torna al sito
                 </a>
@@ -79,15 +75,14 @@
         </aside>
 
         <div class="flex flex-col flex-1 overflow-hidden">
-            <header class="flex items-center justify-between px-6 py-5" style="background-color: #111128; border-bottom: 1px solid rgba(34, 211, 238, 0.1);">
+            <header class="flex items-center justify-between px-6 py-5 bg-admin-card border-b border-admin-primary/10">
                 <h2 class="text-lg font-semibold">@yield('page_title', 'Dashboard')</h2>
                 <div class="flex items-center gap-4">
-                    <span class="text-sm" style="color: #9CA3AF;">{{ Auth::user()->name }}</span>
+                    <span class="text-sm text-gray-400">{{ Auth::user()->name }}</span>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit"
-                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(249,115,22,0.3)]"
-                                style="color: #F0F0FA; background-color: rgba(249, 115, 22, 0.15);">
+                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg text-admin-text bg-admin-accent/15 hover:bg-admin-accent/30">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
                             Esci
                         </button>

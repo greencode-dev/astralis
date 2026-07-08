@@ -4,6 +4,7 @@
 
 ## Fatto
 
+- [x] **Wave 4** — Frontend P2: stili inline → Tailwind classi admin
 - [x] **Wave 3** — Frontend P2: onMouseEnter/onMouseLeave → CSS :hover
 - [x] **Wave 2** — Frontend P3: aria-label, role="img" su pulsanti e fallback immagini
 - [x] **Wave 1** — Backend P2: WordMapService, simili ordinati
@@ -60,7 +61,7 @@ _Nessun task di accessibilità in sospeso. Wave 2 ha coperto questa fascia._ �
 
 ## Note
 
-- **Prossimo task consigliato**: `[🎨frontend][🔵P2]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
+- **Prossimo task consigliato**: `[🧪test][🔵P2]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```
