@@ -7,7 +7,7 @@ export default function LightboxGalleria({ immagini }) {
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(0);
 
-    const slides = immagini
+    const slides = (immagini || [])
         .filter(img => img.immagine_url)
         .map(img => ({ src: img.immagine_url, alt: img.didascalia, didascalia: img.didascalia, crediti: img.crediti }));
 

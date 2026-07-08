@@ -375,8 +375,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1783437307.128516,
-    "ast_hash": "459f6e9ea475b1d2dd928287512e71d0",
+    "mtime": 1783509608.4940007,
+    "ast_hash": "1a7afbb237cf0552a1f51e8583a92bf2",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/components/LightboxGalleria.jsx": {
-    "mtime": 1783503019.3779895,
-    "ast_hash": "0d64bae79224246b27c8b465d8bacf85",
+    "mtime": 1783509698.3256555,
+    "ast_hash": "16623ae99f9415f5a7b7a5209b8c3293",
     "semantic_hash": ""
   },
   "resources/js/guest/components/Navbar.jsx": {
@@ -710,8 +710,8 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1783505311.5451627,
-    "ast_hash": "48bbe266324eb917efcea21e2c84cd83",
+    "mtime": 1783510150.2753863,
+    "ast_hash": "5b7cd64fb22970236ac62e3439e11428",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
@@ -720,8 +720,8 @@
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1783504782.9550245,
-    "ast_hash": "06da35bc9d490782c2c80dbc808c2c14",
+    "mtime": 1783510090.974432,
+    "ast_hash": "a0097a1374f4ca265cbd40518d30f632",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -750,8 +750,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1783506555.0177119,
-    "ast_hash": "41a69154085aeda185fdbea73ba42829",
+    "mtime": 1783508536.9782982,
+    "ast_hash": "3bab53d3a8ff27b888b800a03e46fb43",
     "semantic_hash": ""
   },
   "app/Policies/CategoriaPolicy.php": {
@@ -1220,8 +1220,38 @@
     "semantic_hash": ""
   },
   "docs/testing.md": {
-    "mtime": 1783506013.7578022,
-    "ast_hash": "2463de96a263a75d88aa92c0c8c0b050",
+    "mtime": 1783510125.8155906,
+    "ast_hash": "9e8d46e4d37ca3f75ca03989b1f0a2f1",
+    "semantic_hash": ""
+  },
+  "resources/js/guest/test/CategoriaBadge.test.jsx": {
+    "mtime": 1783509540.2704036,
+    "ast_hash": "db8870dd4ad18f80617a99bc6f4a1256",
+    "semantic_hash": ""
+  },
+  "resources/js/guest/test/CorpoCard.test.jsx": {
+    "mtime": 1783509709.5149662,
+    "ast_hash": "9bc3580350a0091efdc9e5860be2e4f1",
+    "semantic_hash": ""
+  },
+  "resources/js/guest/test/LightboxGalleria.test.jsx": {
+    "mtime": 1783509566.6272516,
+    "ast_hash": "4db07bc2b6cbd7326a63cb15dc9ccc7f",
+    "semantic_hash": ""
+  },
+  "resources/js/guest/test/SolarSystem.test.jsx": {
+    "mtime": 1783509577.2861896,
+    "ast_hash": "9fd45aa5dd258e2052ded077d60f6e2f",
+    "semantic_hash": ""
+  },
+  "resources/js/guest/test/setup.js": {
+    "mtime": 1783509529.8380997,
+    "ast_hash": "00e47f7b9836e8f731101981fa2bb2de",
+    "semantic_hash": ""
+  },
+  "vitest.config.js": {
+    "mtime": 1783509719.7440164,
+    "ast_hash": "022b1f5ed719297e14bf7426a623cf23",
     "semantic_hash": ""
   }
 }

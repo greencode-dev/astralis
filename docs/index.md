@@ -18,4 +18,4 @@
 - [Bug tracker](bug.md)
 - [Test](testing.md)
 - [Documentazione completa](documentazione.md)
-- [Consegna progetto](Progetto%20Finale.md)
+- [Consegna progetto](progetto-finale.md)

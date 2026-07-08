@@ -325,6 +325,13 @@
 - Blade: fix onerror galleria — `role="img"` nel fallback "Immagine non disponibile"
 - Tutti gli SVG decorativi icon-only hanno `aria-hidden="true"`
 
+### 13.1 — 08/07/2026 — feat: Vitest per componenti React — 27 test (CategoriaBadge, CorpoCard, Lightbox, SolarSystem)
+- Installati `vitest`, `jsdom`, `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`
+- Configurazione `vitest.config.js` con environment jsdom + React plugin
+- Fix: `LightboxGalleria.jsx` — aggiunto null guard `(immagini || [])` per prevenire crash su props null
+- 27 test Vitest per 4 componenti React: CategoriaBadge (5), CorpoCard (10), LightboxGalleria (8), SolarSystem (4)
+- `docs/testing.md` aggiornato con sezione Vitest e comandi npm test
+
 ### 13.0 — 08/07/2026 — feat: HasFactory su 5 modelli, 26 test NasaImageService, observer testing guard, 84 test verdi
 - Aggiunto trait `HasFactory` ai 5 modelli (Categoria, CorpoCeleste, Curiosita, GalleriaCorpo, Missione) — le factory esistevano già
 - Fix: `CorpoCelesteObserver::created()` skip in ambiente testing (`app()->environment('testing')`) — prima faceva chiamate HTTP reali

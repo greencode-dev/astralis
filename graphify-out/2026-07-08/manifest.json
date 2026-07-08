@@ -704,11 +704,6 @@
     "ast_hash": "6beb44e514a362ecff1a19d665af4164",
     "semantic_hash": ""
   },
-  "docs/Progetto Finale.md": {
-    "mtime": 1782995912.201213,
-    "ast_hash": "f6b9c5f0b66dd925289697642e88a82c",
-    "semantic_hash": ""
-  },
   "docs/bug.md": {
     "mtime": 1783505323.586826,
     "ast_hash": "8b834178b7eaf9ba9f6bbe3a28c47448",
@@ -755,8 +750,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1783423930.0716734,
-    "ast_hash": "20430f6031fe6efa3990776a7f090126",
+    "mtime": 1783506555.0177119,
+    "ast_hash": "41a69154085aeda185fdbea73ba42829",
     "semantic_hash": ""
   },
   "app/Policies/CategoriaPolicy.php": {
@@ -1217,6 +1212,16 @@
   "tests/Unit/NasaImageServiceTest.php": {
     "mtime": 1783504541.665671,
     "ast_hash": "bc3159e225a11332cc8154e2b4bc15b1",
+    "semantic_hash": ""
+  },
+  "docs/progetto-finale.md": {
+    "mtime": 1782995912.201213,
+    "ast_hash": "f6b9c5f0b66dd925289697642e88a82c",
+    "semantic_hash": ""
+  },
+  "docs/testing.md": {
+    "mtime": 1783506013.7578022,
+    "ast_hash": "2463de96a263a75d88aa92c0c8c0b050",
     "semantic_hash": ""
   }
 }

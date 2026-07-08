@@ -1,30 +1,41 @@
 # Test — Astralis
 
-Suite di test PHPUnit per il catalogo di corpi celesti.
+Suite di test per backend (PHPUnit) e frontend React (Vitest).
 
 ## Esecuzione
 
+### Backend (PHPUnit) — 84 test, 220 assertion
+
 ```bash
-# Tutta la suite (84 test, 220 assertion, nessuna dipendenza esterna)
-php artisan test
+php artisan test                              # Tutti
+php artisan test tests/Unit/...               # Unit
+php artisan test tests/Feature/Api/           # API
+php artisan test tests/Feature/Admin/...      # Admin CRUD
+```
 
-# Solo NasaImageService (26 test)
-php artisan test tests/Unit/NasaImageServiceTest.php
+### Frontend React (Vitest) — 27 test
 
-# Solo API endpoint (8 file)
-php artisan test tests/Feature/Api/
-
-# Solo Admin CRUD (1 file)
-php artisan test tests/Feature/Admin/CorpoCelesteCrudTest.php
+```bash
+npm test                                       # Tutti (vitest run)
+npm run test:watch                             # Modalità watch
+npx vitest run resources/js/guest/test/CorpoCard.test.jsx   # Singolo file
 ```
 
 ## Configurazione
+
+### PHPUnit
 
 - **Database**: SQLite `:memory:` — ogni test parte con DB pulito (`RefreshDatabase`)
 - **Ambiente**: `APP_ENV=testing` — disabilita `CorpoCelesteObserver` (non chiama NASA)
 - **HTTP**: `Http::fake()` mocka tutte le chiamate verso `images-api.nasa.gov/*` — nessuna connettività esterna
 - **Cache/Session**: array in memoria
 - **Factory**: tutti i 5 modelli hanno `HasFactory`; `CorpoCelesteFactory` crea automaticamente una `Categoria` associata
+
+### Vitest
+
+- **Config**: `vitest.config.js` — environment `jsdom`, `globals: true`
+- **Setup**: `resources/js/guest/test/setup.js` — import `@testing-library/jest-dom`
+- **Dipendenza network**: nessuna — i componenti vengono montati in DOM simulato (jsdom)
 
 ## Struttura
 
@@ -117,6 +128,15 @@ if (app()->environment('testing')) {
 ```
 
 Questo previene chiamate HTTP reali durante la creazione di factory nei test.
+
+### React — `resources/js/guest/test/` (4 file, 27 test)
+
+| File | Componente | Test | Cosa copre |
+|---|---|---|---|
+| `CategoriaBadge.test.jsx` | CategoriaBadge | 5 | null safety, renders nome, colore per categoria nota, fallback sconosciuto |
+| `CorpoCard.test.jsx` | CorpoCard | 10 | nome/descrizione, image vs gradient fallback, in_evidenza badge, categoria badge, link dettaglio, tipo, formatDistance, nome fallback |
+| `LightboxGalleria.test.jsx` | LightboxGalleria | 8 | null/empty, grid thumbnails, filtra senza URL, aria-label, didascalia/crediti, click apre lightbox |
+| `SolarSystem.test.jsx` | SolarSystem | 4 | render senza crash, label Sole, 8 pianeti, 8 orbite |
 
 ## Scrivere nuovi test
 
