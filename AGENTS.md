@@ -51,6 +51,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `routes/api.php` | 10 endpoint JSON pubblici |
 | `routes/auth.php` | Route Breeze (login, register, etc.) |
 | `app/Services/NasaImageService.php` | Import NASA con dedup, preserva immagine utente, timeout 30s, retry 2 |
+| `app/Services/WordMapService.php` | Traduzione italiano→inglese per NASA suggest admin |
 | `app/Console/Commands/CleanupGalleryDuplicates.php` | Comando `astralis:gallery` (--check/--clean/--sync/--fix/--dry-run) |
 | `app/Policies/` | Policy autorizzazione (5 Policy, una per entità) |
 | `app/Providers/AuthServiceProvider.php` | Registrazione Policy + Gate `admin` |

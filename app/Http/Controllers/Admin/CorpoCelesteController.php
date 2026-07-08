@@ -9,6 +9,7 @@ use App\Models\Categoria;
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
 use App\Services\NasaImageService;
+use App\Services\WordMapService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -107,7 +108,7 @@ class CorpoCelesteController extends Controller
             ->with('success', 'Immagine principale aggiornata con successo.');
     }
 
-    public function suggestNome(Request $request, NasaImageService $nasaService): \Illuminate\Http\JsonResponse
+    public function suggestNome(Request $request, NasaImageService $nasaService, WordMapService $wordMapService): \Illuminate\Http\JsonResponse
     {
         $this->authorize('viewAny', CorpoCeleste::class);
 
@@ -117,94 +118,17 @@ class CorpoCelesteController extends Controller
 
         $result = $nasaService->searchNasa($nomeIt);
         if ($result['success']) {
-            $suggested = $this->guessEnglishName($result['items'], $nomeIt);
+            $suggested = $wordMapService->guessEnglishName($result['items'], $nomeIt);
             if ($suggested) {
                 return response()->json(['success' => true, 'nome' => $suggested]);
             }
         }
 
-        $wordMap = [
-            'Nebulosa' => 'Nebula',
-            'Cometa' => 'Comet',
-            'Galassia' => 'Galaxy',
-            'Pianeta' => 'Planet',
-            'Stella' => 'Star',
-            'Asteroide' => 'Asteroid',
-            'Luna' => 'Moon',
-            'Sole' => 'Sun',
-            'Satellite' => 'Moon',
-            'Anello' => 'Ring',
-            'Buco Nero' => 'Black Hole',
-            'Ammasso' => 'Cluster',
-            'Nana' => 'Dwarf',
-            'Grande' => 'Great',
-            'Piccola' => 'Small',
-            'Nube' => 'Cloud',
-            'Nuvola' => 'Cloud',
-            'Via Lattea' => 'Milky Way',
-            'Martello' => 'Hammer',
-            'Boomerang' => 'Boomerang',
-            'Falce' => 'Sickle',
-            'Orsa' => 'Bear',
-            'Cane' => 'Dog',
-            'Granchio' => 'Crab',
-            'Anello' => 'Ring',
-            'Testa' => 'Head',
-            'Coda' => 'Tail',
-            'Giove' => 'Jupiter',
-            'Marte' => 'Mars',
-            'Venere' => 'Venus',
-            'Mercurio' => 'Mercury',
-            'Saturno' => 'Saturn',
-            'Urano' => 'Uranus',
-            'Nettuno' => 'Neptune',
-            'Plutone' => 'Pluto',
-            'Terra' => 'Earth',
-            'Cerere' => 'Ceres',
-            'Caronte' => 'Charon',
-            'Europa' => 'Europa',
-            'Titano' => 'Titan',
-            'Encelado' => 'Enceladus',
-            'Io' => 'Io',
-            'Callisto' => 'Callisto',
-            'Ganimede' => 'Ganymede',
-            'Tritone' => 'Triton',
-            'Fobos' => 'Phobos',
-            'Deimos' => 'Deimos',
-            'Titania' => 'Titania',
-            'Oberon' => 'Oberon',
-            'di' => '',
-            'del' => '',
-            'della' => '',
-            'dell' => '',
-            'degli' => '',
-            'delle' => '',
-            'con' => '',
-            'per' => '',
-            'tra' => '',
-            'fra' => '',
-            'sul' => '',
-            'sulla' => '',
-            'sulle' => '',
-            'nell' => '',
-            'nella' => '',
-            'nelle' => '',
-            'agli' => '',
-            'alle' => '',
-            'dal' => '',
-            'dalla' => '',
-            'dalle' => '',
-        ];
-
-        $translated = collect(explode(' ', $nomeIt))
-            ->map(fn($w) => $wordMap[ucfirst($w)] ?? $wordMap[$w] ?? $w)
-            ->filter()
-            ->implode(' ');
-
+        $translated = $wordMapService->translate($nomeIt);
         if ($translated !== $nomeIt) {
             $result = $nasaService->searchNasa($translated);
             if ($result['success']) {
-                $suggested = $this->guessEnglishName($result['items'], $translated);
+                $suggested = $wordMapService->guessEnglishName($result['items'], $translated);
                 if ($suggested) {
                     return response()->json(['success' => true, 'nome' => $suggested]);
                 }
@@ -212,21 +136,5 @@ class CorpoCelesteController extends Controller
         }
 
         return response()->json(['success' => false, 'message' => 'Nome inglese non trovato. Prova a cercare manualmente su NASA.']);
-    }
-
-    private function guessEnglishName(array $items, string $query): ?string
-    {
-        $lower = strtolower($query);
-        foreach ($items as $item) {
-            $title = $item['data'][0]['title'] ?? '';
-            $keywords = $item['data'][0]['keywords'] ?? [];
-            $all = $title . ' ' . implode(' ', $keywords);
-
-            if (preg_match('/\b' . preg_quote($lower, '/') . '\b/i', $all)) {
-                return $title;
-            }
-        }
-
-        return $items[0]['data'][0]['title'] ?? null;
     }
 }

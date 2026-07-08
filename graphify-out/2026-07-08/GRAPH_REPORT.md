@@ -1,16 +1,16 @@
-# Graph Report - astralis  (2026-07-07)
+# Graph Report - astralis  (2026-07-08)
 
 ## Corpus Check
-- 192 files · ~57,808 words
+- 225 files · ~65,753 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 820 nodes · 1217 edges · 119 communities (118 shown, 1 thin omitted)
+- 839 nodes · 1210 edges · 161 communities (159 shown, 2 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 58 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `63a1ffa3`
+- Built from commit: `b17c0d91`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -35,7 +35,6 @@
 - [[_COMMUNITY_require-dev|require-dev]]
 - [[_COMMUNITY_index|index.md]]
 - [[_COMMUNITY_Edit.jsx|Edit.jsx]]
-- [[_COMMUNITY_HandleInertiaRequests|HandleInertiaRequests]]
 - [[_COMMUNITY_config|config]]
 - [[_COMMUNITY_compilerOptions|compilerOptions]]
 - [[_COMMUNITY_Seeder|Seeder]]
@@ -44,15 +43,21 @@
 - [[_COMMUNITY_psr-4|psr-4]]
 - [[_COMMUNITY_autoload-dev|autoload-dev]]
 - [[_COMMUNITY_extra|extra]]
+- [[_COMMUNITY_ApplicationLogo.jsx|ApplicationLogo.jsx]]
+- [[_COMMUNITY_Checkbox.jsx|Checkbox.jsx]]
+- [[_COMMUNITY_DangerButton.jsx|DangerButton.jsx]]
+- [[_COMMUNITY_InputError.jsx|InputError.jsx]]
+- [[_COMMUNITY_InputLabel.jsx|InputLabel.jsx]]
+- [[_COMMUNITY_Modal.jsx|Modal.jsx]]
+- [[_COMMUNITY_NavLink.jsx|NavLink.jsx]]
 - [[_COMMUNITY_🪐 Astralis — Catalogo di Corpi Celesti|🪐 Astralis — Catalogo di Corpi Celesti]]
 - [[_COMMUNITY_Da Fare|Da Fare]]
 - [[_COMMUNITY_Palette Colori|Palette Colori]]
-- [[_COMMUNITY_✨ Funzionalità|✨ Funzionalità]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `User` - 61 edges
-2. `CorpoCeleste` - 48 edges
-3. `Controller` - 46 edges
+2. `Controller` - 48 edges
+3. `CorpoCeleste` - 48 edges
 4. `GalleriaCorpo` - 27 edges
 5. `Categoria` - 25 edges
 6. `Missione` - 25 edges
@@ -76,11 +81,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (119 total, 1 thin omitted)
+## Communities (161 total, 2 thin omitted)
 
 ### Community 0 - "User"
-Cohesion: 0.05
-Nodes (18): User, CategoriaPolicy, CuriositaPolicy, Authenticatable, BaseTestCase, HasFactory, Notifiable, RefreshDatabase (+10 more)
+Cohesion: 0.06
+Nodes (18): User, CategoriaPolicy, CorpoCelestePolicy, Authenticatable, BaseTestCase, HasFactory, Notifiable, RefreshDatabase (+10 more)
 
 ### Community 2 - "CorpoDettaglio.jsx"
 Cohesion: 0.06
@@ -88,35 +93,35 @@ Nodes (31): apiClient, fetchCategorie(), fetchCorpiCelesti(), fetchCorpoCeleste(
 
 ### Community 3 - "CorpoCeleste"
 Cohesion: 0.06
-Nodes (18): FetchNasaCommand, CorpoCelesteController, JsonResponse, RedirectResponse, Request, View, NasaImportController, RedirectResponse (+10 more)
+Nodes (17): CorpoCelesteController, JsonResponse, RedirectResponse, Request, View, NasaImportController, RedirectResponse, View (+9 more)
 
 ### Community 4 - "Missione"
-Cohesion: 0.11
-Nodes (10): MissioneController, RedirectResponse, Request, View, MissioneController, Request, Missione, BelongsToMany (+2 more)
+Cohesion: 0.17
+Nodes (6): MissioneController, RedirectResponse, Request, View, Missione, MissionePolicy
 
 ### Community 5 - "Changelog"
-Cohesion: 0.04
-Nodes (47): 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione, 10.0 — 06/07/2026 — `2d736af` `be1ee9b` `14ed82f` — feat: tema scuro auth pages, link Register, ridotta velocità orbite, 11.0 — 07/07/2026 — `65ed6d4` — fix: Inertia→Blade transizione, NASA import dedup, galleria cleanup e ordinamento, 12.0 — 07/07/2026 — feat: authorization admin con Policy e Gates, 1.0 — 03/07/2026 — `0a57208` — feat: database e modelli con seeders, 2.1 — 03/07/2026 — `070da55` — feat: admin backoffice layout, sidebar navigation e dashboard, 2.2 — 03/07/2026 — `758be4c` — feat: CRUD categorie backoffice, 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice (+39 more)
+Cohesion: 0.13
+Nodes (15): 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione, 10.0 — 06/07/2026 — `2d736af` `be1ee9b` `14ed82f` — feat: tema scuro auth pages, link Register, ridotta velocità orbite, 1.0 — 03/07/2026 — `0a57208` — feat: database e modelli con seeders, 3.0 — 03/07/2026 — feat: API REST (10 endpoint JSON), 4.0 — 04/07/2026 — feat: React SPA guest (homepage + lista corpi celesti), 5.0 — 04/07/2026 — `0e18a60` — feat: dettaglio corpo celeste, lightbox, timeline missioni, comparatore pianeti, 9.1 — 05/07/2026 — `3034aba` — fix: bug critici — route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder, Changelog (+7 more)
 
 ### Community 6 - "JsonResource"
 Cohesion: 0.09
-Nodes (16): CorpoCelesteController, Request, CuriositaController, DashboardController, JsonResponse, CategoriaResource, Request, CorpoCelesteResource (+8 more)
+Nodes (17): CorpoCelesteController, Request, CuriositaController, GalleriaController, MissioneController, Request, CategoriaResource, Request (+9 more)
 
 ### Community 7 - "LoginRequest"
 Cohesion: 0.12
-Nodes (11): AuthenticatedSessionController, RedirectResponse, Request, Response, RedirectResponse, Request, Response, ProfileController (+3 more)
+Nodes (11): AuthenticatedSessionController, RedirectResponse, Request, View, RedirectResponse, Request, View, ProfileController (+3 more)
 
 ### Community 8 - "devDependencies"
-Cohesion: 0.07
-Nodes (26): dependencies, axios, framer-motion, lucide-react, react-router-dom, @vitejs/plugin-react, yet-another-react-lightbox, devDependencies (+18 more)
+Cohesion: 0.08
+Nodes (25): dependencies, axios, framer-motion, lucide-react, react-router-dom, @vitejs/plugin-react, yet-another-react-lightbox, devDependencies (+17 more)
 
 ### Community 10 - "Curiosita"
 Cohesion: 0.06
-Nodes (28): GalleriaController, ConfirmablePasswordController, Request, Response, EmailVerificationNotificationController, Request, Response, EmailVerificationPromptController (+20 more)
+Nodes (32): ConfirmablePasswordController, RedirectResponse, Request, View, EmailVerificationNotificationController, RedirectResponse, Request, EmailVerificationPromptController (+24 more)
 
 ### Community 11 - "GalleriaCorpo"
 Cohesion: 0.11
-Nodes (8): CleanupGalleryDuplicates, GalleriaController, RedirectResponse, Request, View, GalleriaCorpo, BelongsTo, GalleriaCorpoPolicy
+Nodes (9): CleanupGalleryDuplicates, FetchNasaCommand, GalleriaController, RedirectResponse, Request, View, GalleriaCorpo, GalleriaCorpoPolicy (+1 more)
 
 ### Community 12 - "Astralis — Documentazione di Progetto"
 Cohesion: 0.18
@@ -131,12 +136,12 @@ Cohesion: 0.14
 Nodes (13): 🔒 Autenticazione e Accesso, 💡 Consigli, Descrizione, 💡 Esempi di Struttura, 📦 Gestione Entità (CRUD), 💻 Note Tecniche, 🎯 Obiettivo, Parte 1: Backoffice in Laravel (+5 more)
 
 ### Community 15 - "🪐 Astralis — Catalogo di Corpi Celesti"
-Cohesion: 0.07
-Nodes (20): CuriositaController, RedirectResponse, Request, View, DashboardController, View, BelongsTo, BelongsToMany (+12 more)
+Cohesion: 0.05
+Nodes (26): CategoriaController, RedirectResponse, Request, View, CategoriaController, DashboardController, JsonResponse, Categoria (+18 more)
 
 ### Community 16 - "require"
-Cohesion: 0.18
-Nodes (11): require, barryvdh/laravel-dompdf, inertiajs/inertia-laravel, intervention/image, laravel/breeze, laravel/framework, laravel/sanctum, laravel/tinker (+3 more)
+Cohesion: 0.22
+Nodes (9): require, barryvdh/laravel-dompdf, intervention/image, laravel/breeze, laravel/framework, laravel/sanctum, laravel/tinker, php (+1 more)
 
 ### Community 17 - "composer.json"
 Cohesion: 0.22
@@ -155,12 +160,8 @@ Cohesion: 0.22
 Nodes (4): Bug Tracker, Collegamenti rapidi, Documentazione Astralis, Indice
 
 ### Community 21 - "Edit.jsx"
-Cohesion: 0.36
-Nodes (3): DeleteUserForm(), UpdatePasswordForm(), UpdateProfileInformation()
-
-### Community 22 - "HandleInertiaRequests"
-Cohesion: 0.43
-Nodes (3): HandleInertiaRequests, Request, Middleware
+Cohesion: 0.13
+Nodes (9): CuriositaController, RedirectResponse, Request, View, DashboardController, View, Curiosita, BelongsTo (+1 more)
 
 ### Community 23 - "config"
 Cohesion: 0.29
@@ -171,12 +172,16 @@ Cohesion: 0.29
 Nodes (6): compilerOptions, baseUrl, paths, exclude, @/*, ziggy-js
 
 ### Community 25 - "Seeder"
-Cohesion: 0.17
-Nodes (9): CategoriaController, RedirectResponse, Request, View, CategoriaController, Categoria, HasMany, SlugOptions (+1 more)
+Cohesion: 0.20
+Nodes (10): 6.0 — 04/07/2026 — `45e01ad` — docs: Fase 6 completata, 6.1 — 04/07/2026 — `fde7aaf` — fix: orbita pianeti - transformOrigin centrato sul Sole, 6.2 — 04/07/2026 — `a6e612a` — fix: etichette pianeti solidali e contro-rotanti nell orbita, 6.3 — 04/07/2026 — `4e354ea` — fix: orbita pianeti con useMotionValue/useTransform, 6.4 — 04/07/2026 — `196dd15` — fix: orbite e pianeti allineati al Sole, 6.5 — 04/07/2026 — `aed8789` — feat: NASA Import da API nel backoffice, 6.6 — 04/07/2026 — `c82001d` — fix: /dashboard reindirizza a /admin, Torna al sito alla home guest, 6.7 — 04/07/2026 — `5ade134` — feat: link Profilo nella sidebar admin (+2 more)
 
 ### Community 26 - "UserFactory"
 Cohesion: 0.47
 Nodes (3): UserFactory, Factory, static
+
+### Community 27 - "Dropdown.jsx"
+Cohesion: 0.33
+Nodes (5): AppLayout, View, GuestLayout, View, Component
 
 ### Community 28 - "psr-4"
 Cohesion: 0.40
@@ -190,9 +195,29 @@ Nodes (3): autoload-dev, psr-4, Tests\\
 Cohesion: 0.67
 Nodes (3): extra, laravel, dont-discover
 
+### Community 44 - "ApplicationLogo.jsx"
+Cohesion: 0.29
+Nodes (7): 2.1 — 03/07/2026 — `070da55` — feat: admin backoffice layout, sidebar navigation e dashboard, 2.2 — 03/07/2026 — `758be4c` — feat: CRUD categorie backoffice, 2.3 — 03/07/2026 — `18a6b20` — feat: CRUD corpi celesti backoffice, 2.4 — 03/07/2026 — `6d86177` — feat: CRUD missioni backoffice, 2.5 — 03/07/2026 — `2f8a67e` — feat: CRUD curiosità backoffice, 2.6 — 03/07/2026 — `99615bb` — feat: CRUD galleria backoffice, Fase 2 — Backoffice Blade CRUD
+
+### Community 45 - "Checkbox.jsx"
+Cohesion: 0.33
+Nodes (6): 7.0 — 04/07/2026 — fix: Profile navigation — Link Inertia → a tag per href esterno, 7.1 — 04/07/2026 — fix: NASA Import — mappatura nomi italiano→inglese, 7.2 — 04/07/2026 — fix: SSL cURL error 60 su Windows, 7.3 — 04/07/2026 — fix: Intervention Image v3→v4 API migration, 7.4 — 04/07/2026 — feat: Force Import All con Alpine.js modal, Fase 7 — Bugfix Intervention Image v4, NASA Import Force All, Documentazione
+
+### Community 46 - "DangerButton.jsx"
+Cohesion: 0.40
+Nodes (5): 12.0 — 07/07/2026 — feat: authorization admin con Policy e Gates, 12.1 — 07/07/2026 — feat: auth pages da Inertia a Blade puro, 12.2 — 08/07/2026 — `f62f945` — feat: rimossa dipendenza Inertia (Fase 12.2), 12.3 — 08/07/2026 — feat: FormRequest per validazione store/update CorpoCeleste, Fase 12 — Authorization (Policy + Gates)
+
+### Community 47 - "InputError.jsx"
+Cohesion: 0.50
+Nodes (3): profile.partials.delete-user-form, profile.partials.update-password-form, profile.partials.update-profile-information-form
+
+### Community 48 - "InputLabel.jsx"
+Cohesion: 0.67
+Nodes (3): 8.0 — 04/07/2026 — feat: NASA Import multi-immagine in galleria + CLI fetch-nasa + metadati, 8.1 — 04/07/2026 — fix: memory limit per immagini NASA grandi + fallback URL per item, Fase 8 — NASA Import multi-immagine, Service Layer, CLI Command
+
 ### Community 101 - "🪐 Astralis — Catalogo di Corpi Celesti"
-Cohesion: 0.22
-Nodes (9): 🚀 Accesso, 🏗️ Architettura, 🪐 Astralis — Catalogo di Corpi Celesti, 📚 Documentazione, 🗄️ Entità e Relazioni, 🛠️ Installazione, 📄 Licenza, 🎨 Palette Colori (+1 more)
+Cohesion: 0.15
+Nodes (13): 🚀 Accesso, 🛰️ API REST, 🏗️ Architettura, 🪐 Astralis — Catalogo di Corpi Celesti, 👨‍💼 Backoffice (Laravel + Blade), 📚 Documentazione, 🗄️ Entità e Relazioni, 🌟 Frontend (React + Vite) (+5 more)
 
 ### Community 102 - "Da Fare"
 Cohesion: 0.25
@@ -202,23 +227,19 @@ Nodes (7): Alta, Bassa, Da Fare, Fatto, Media, Note, Todo
 Cohesion: 0.40
 Nodes (5): API REST, Backoffice Admin, Badge Categoria, Frontend Guest (React SPA), Palette Colori
 
-### Community 104 - "✨ Funzionalità"
-Cohesion: 0.50
-Nodes (4): 🛰️ API REST, 👨‍💼 Backoffice (Laravel + Blade), 🌟 Frontend (React + Vite), ✨ Funzionalità
-
 ## Knowledge Gaps
-- **172 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+167 more)
+- **174 isolated node(s):** `$schema`, `name`, `type`, `description`, `keywords` (+169 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Controller` connect `Curiosita` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `GalleriaCorpo`, `🪐 Astralis — Catalogo di Corpi Celesti`, `Seeder`?**
-  _High betweenness centrality (0.087) - this node is a cross-community bridge._
-- **Why does `User` connect `User` to `CorpoCeleste`, `Missione`, `Curiosita`, `GalleriaCorpo`, `🪐 Astralis — Catalogo di Corpi Celesti`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `CorpoCeleste` connect `CorpoCeleste` to `Seeder`, `GalleriaCorpo`, `JsonResource`, `🪐 Astralis — Catalogo di Corpi Celesti`?**
+- **Why does `Controller` connect `Curiosita` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `GalleriaCorpo`, `🪐 Astralis — Catalogo di Corpi Celesti`, `Edit.jsx`?**
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
+- **Why does `User` connect `User` to `Missione`, `Curiosita`, `GalleriaCorpo`, `🪐 Astralis — Catalogo di Corpi Celesti`, `Edit.jsx`?**
+  _High betweenness centrality (0.059) - this node is a cross-community bridge._
+- **Why does `CorpoCeleste` connect `CorpoCeleste` to `User`, `JsonResource`, `GalleriaCorpo`, `🪐 Astralis — Catalogo di Corpi Celesti`, `Edit.jsx`?**
   _High betweenness centrality (0.044) - this node is a cross-community bridge._
 - **Are the 21 inferred relationships involving `User` (e.g. with `.store()` and `.run()`) actually correct?**
   _`User` has 21 INFERRED edges - model-reasoned connections that need verification._

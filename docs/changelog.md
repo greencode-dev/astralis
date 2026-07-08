@@ -270,6 +270,38 @@
 - Fix: permessi bootstrap/cache/ ripristinati
 - 25/25 test pass, 61 assertions
 
+### 12.2 — 08/07/2026 — `0931d17` — feat: rimossa dipendenza Inertia
+- Rimosso HandleInertiaRequests middleware
+- Cancellati 13 componenti JSX Inertia, Layouts, Pages
+- Rimosse dipendenze composer (inertia-laravel, ziggy) e npm (@inertiajs/*)
+- routes/web.php aggiornato (catch-all SPA invece di Inertia fallback)
+- vite.config.js, bootstrap/app.php, providers.php aggiornati
+- resources/views/admin/layouts/app.blade.php adattato per non-Inertia
+- Guest pages React standalone (main.jsx, non app.jsx)
+
+### 12.3 — 08/07/2026 — `b17c0d9` — feat: FormRequest per validazione CorpoCeleste
+- Creati `StoreCorpoCelesteRequest` e `UpdateCorpoCelesteRequest` in `app/Http/Requests/`
+- Validazione inline del controller ridotta da ~40 righe a 2 righe (DI)
+- `in_evidenza` convertito a boolean in `passedValidation()`
+
+### 12.4 — 08/07/2026 — `1869bc8` — feat: quick wins (per_page, ordinamento, .catch, nasa_id, indexes)
+- Max `per_page=100` in API controller
+- Ordinamento default per `galleria()` (ordine) e `curiosita()` (created_at desc)
+- 3 `.catch(() => {})` silenziosi → `console.error`
+- `nasa_id` esposto in `CorpoCelesteResource`
+- Migration per indici su `tipo`, `in_evidenza`, `galleria_corpi.ordine`
+
+### 12.5 — 08/07/2026 — docs: sistema priorità P0-P4 con emoji
+- Nuovo formato `[🎨frontend][🔵P2]` nel todo.md
+- Sezioni P0/P1 vuote con messaggio verde 🟢
+
+### Wave 1 — 08/07/2026 — feat: backend P2 (WordMapService, simili ordinati)
+- Sostituito `inRandomOrder()` con `orderBy('nome')->limit(4)` in `Api/CorpoCelesteController@simili`
+- Creato `app/Services/WordMapService.php` con metodi `translate()` e `guessEnglishName()`
+- Estratto `$wordMap` inline dal controller admin al servizio dedicato
+- Rimossa duplicazione `'Anello' => 'Ring'` nel wordMap
+- Rimossa private method `guessEnglishName()` dal controller
+
 ### 12.1 — 07/07/2026 — feat: auth pages da Inertia a Blade puro
 - Create 11 viste Blade per auth e profilo con tema scuro
 - `app/View/Components/GuestLayout.php` e `AppLayout.php` per compatibilità x-*

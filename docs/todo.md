@@ -4,6 +4,7 @@
 
 ## Fatto
 
+- [x] **Wave 1** — Backend P2: WordMapService, simili ordinati
 - [x] **Fase 12.4** — Quick wins: max per_page, ordinamento relazioni, .catch, nasa_id in resource, indexes
 - [x] **Fase 12.3** — FormRequest per validazione store/update CorpoCeleste
 - [x] **Fase 12.2** — Rimossa dipendenza Inertia (middleware, JSX, composer/npm)
@@ -33,8 +34,6 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 
 ### 🔵 P2 — Manutenzione (refactoring, test, performance)
 
-- [ ] `[🖥️backend][🔵P2]` Rimuovere `inRandomOrder()` in `simili()` — `app/Http/Controllers/Api/CorpoCelesteController.php`
-- [ ] `[🖥️backend][🔵P2]` Estrarre `$wordMap` in servizio dedicato — `app/Services/WordMapService.php`
 - [ ] `[🧪test][🔵P2]` Test unitari NasaImageService (search, fallback, metadata) — `tests/Unit/`
 - [ ] `[🧪test][🔵P2]` Test HTTP API endpoints (list, filter, dettaglio, simili) — `tests/Feature/Api/`
 - [ ] `[🧪test][🔵P2]` Test CRUD admin CorpoCeleste (store, update, validation) — `tests/Feature/Admin/`
@@ -64,7 +63,7 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 
 ## Note
 
-- **Prossimo task consigliato**: `[🖥️backend][🔵P2]` Rimuovere `inRandomOrder()` — il più piccolo (~5 min)
+- **Prossimo task consigliato**: `[🎨frontend][🟣P3]` Aggiungere `aria-label` a pulsanti paginazione, nav, SVG
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

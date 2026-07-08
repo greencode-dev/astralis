@@ -53,8 +53,8 @@ class CorpoCelesteController extends Controller
         $simili = CorpoCeleste::with(['categoria', 'galleria'])
             ->where('categoria_id', $corpoCeleste->categoria_id)
             ->where('id', '!=', $corpoCeleste->id)
-            ->inRandomOrder()
-            ->take(4)
+            ->orderBy('nome')
+            ->limit(4)
             ->get();
 
         return CorpoCelesteResource::collection($simili);
