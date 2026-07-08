@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="max-w-2xl">
-        <a href="{{ route('admin.galleria.index') }}" class="inline-flex items-center gap-2 text-sm mb-6 transition-colors duration-150" style="color: #9CA3AF;" onmouseover="this.style.color='#22D3EE';" onmouseout="this.style.color='#9CA3AF';">
+        <a href="{{ route('admin.galleria.index') }}" class="inline-flex items-center gap-2 text-sm mb-6 transition-colors duration-150 hover:text-[#22D3EE]" style="color: #9CA3AF;">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
             Torna alla lista
         </a>
@@ -85,17 +85,13 @@
 
                 <div class="flex items-center gap-3">
                     <button type="submit"
-                            class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
-                            style="background-color: #22D3EE; color: #0A0A1A;"
-                            onmouseover="this.style.backgroundColor='#1BB8D1';"
-                            onmouseout="this.style.backgroundColor='#22D3EE';">
+                            class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[#1BB8D1]"
+                            style="background-color: #22D3EE; color: #0A0A1A;">
                         Salva Immagine
                     </button>
                     <a href="{{ route('admin.galleria.index') }}"
-                       class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
-                       style="color: #9CA3AF;"
-                       onmouseover="this.style.color='#F0F0FA'; this.style.backgroundColor='rgba(255,255,255,0.05)';"
-                       onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
+                       class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:text-[#F0F0FA] hover:bg-[rgba(255,255,255,0.05)]"
+                       style="color: #9CA3AF;">
                         Annulla
                     </a>
                 </div>

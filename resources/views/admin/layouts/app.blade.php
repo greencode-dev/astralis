@@ -47,13 +47,12 @@
                         }
                     @endphp
                     <a href="{{ route($item['route']) }}"
-                       class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
                        @if ($isActive)
+                           class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
                            style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE;"
                        @else
+                           class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
                            style="color: #9CA3AF;"
-                           onmouseover="this.style.backgroundColor='rgba(34,211,238,0.08)'; this.style.color='#22D3EE';"
-                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#9CA3AF';"
                        @endif>
                         <svg class="flex-shrink-0 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $item['icon'] }}"/>
@@ -65,18 +64,14 @@
 
             <div class="px-3 py-4 mt-auto space-y-1" style="border-top: 1px solid rgba(34, 211, 238, 0.1);">
                 <a href="{{ route('profile.edit') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
-                   style="color: #9CA3AF;"
-                   onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.08)';"
-                   onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
+                   style="color: #9CA3AF;">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                     Profilo
                 </a>
                 <a href="{{ route('home') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg"
-                   style="color: #9CA3AF;"
-                   onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.08)';"
-                   onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
+                   style="color: #9CA3AF;">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     Torna al sito
                 </a>
@@ -91,10 +86,8 @@
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit"
-                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg"
-                                style="color: #F0F0FA; background-color: rgba(249, 115, 22, 0.15);"
-                                onmouseover="this.style.backgroundColor='rgba(249,115,22,0.3)';"
-                                onmouseout="this.style.backgroundColor='rgba(249,115,22,0.15)';">
+                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg hover:bg-[rgba(249,115,22,0.3)]"
+                                style="color: #F0F0FA; background-color: rgba(249, 115, 22, 0.15);">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
                             Esci
                         </button>

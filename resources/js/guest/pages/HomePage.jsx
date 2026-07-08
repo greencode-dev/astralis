@@ -59,13 +59,11 @@ export default function HomePage() {
                             <div className="flex flex-wrap gap-4">
                                 <Link
                                     to="/corpi-celesti"
-                                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200"
+                                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-[#1CB8D0]"
                                     style={{
                                         backgroundColor: '#22D3EE',
                                         color: '#0A0A1A',
                                     }}
-                                    onMouseEnter={e => e.currentTarget.style.backgroundColor = '#1CB8D0'}
-                                    onMouseLeave={e => e.currentTarget.style.backgroundColor = '#22D3EE'}
                                 >
                                     <Telescope size={20} />
                                     Esplora i Corpi Celesti
@@ -156,18 +154,10 @@ export default function HomePage() {
                     <div className="text-center mt-10">
                         <Link
                             to="/corpi-celesti"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.6)]"
                             style={{
                                 color: '#22D3EE',
                                 border: '1px solid rgba(34, 211, 238, 0.3)',
-                            }}
-                            onMouseEnter={e => {
-                                e.currentTarget.style.backgroundColor = 'rgba(34, 211, 238, 0.1)';
-                                e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.6)';
-                            }}
-                            onMouseLeave={e => {
-                                e.currentTarget.style.backgroundColor = 'transparent';
-                                e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.3)';
                             }}
                         >
                             Vedi tutti i corpi celesti →

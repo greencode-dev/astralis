@@ -103,10 +103,8 @@ export default function CorpoDettaglio() {
     return (
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Back link */}
-            <Link to="/corpi-celesti" className="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-all"
-                style={{ color: '#22D3EE' }}
-                onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
-                onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
+            <Link to="/corpi-celesti" className="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-all hover:opacity-70"
+                style={{ color: '#22D3EE' }}>
                 <ArrowLeft size={16} /> Torna alla lista
             </Link>
 
@@ -229,10 +227,8 @@ export default function CorpoDettaglio() {
                     {corpo.categoria?.nome === 'Pianeta' && (
                         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                             <Link to={`/confronta?primo=${corpo.slug}`}
-                                className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200"
-                                style={{ backgroundColor: 'rgba(168, 85, 247, 0.1)', color: '#A855F7', border: '1px solid rgba(168, 85, 247, 0.2)' }}
-                                onMouseEnter={e => { e.currentTarget.style.backgroundColor = 'rgba(168, 85, 247, 0.2)'; e.currentTarget.style.borderColor = 'rgba(168, 85, 247, 0.4)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'rgba(168, 85, 247, 0.1)'; e.currentTarget.style.borderColor = 'rgba(168, 85, 247, 0.2)'; }}>
+                                className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-[rgba(168,85,247,0.2)] hover:border-[rgba(168,85,247,0.4)]"
+                                style={{ backgroundColor: 'rgba(168, 85, 247, 0.1)', color: '#A855F7', border: '1px solid rgba(168, 85, 247, 0.2)' }}>
                                 <OrbitIcon size={16} /> Confronta con un altro pianeta
                             </Link>
                         </motion.div>

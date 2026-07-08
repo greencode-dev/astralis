@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="max-w-3xl">
-        <a href="{{ route('admin.corpi-celesti.index') }}" class="inline-flex items-center gap-2 text-sm mb-6 transition-colors duration-150" style="color: #9CA3AF;" onmouseover="this.style.color='#22D3EE';" onmouseout="this.style.color='#9CA3AF';">
+        <a href="{{ route('admin.corpi-celesti.index') }}" class="inline-flex items-center gap-2 text-sm mb-6 transition-colors duration-150 hover:text-[#22D3EE]" style="color: #9CA3AF;">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
             Torna alla lista
         </a>
@@ -34,10 +34,8 @@
                                    onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
                                    onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
                             <button type="button" id="cercaNasaBtn"
-                                    class="px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap"
-                                    style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2);"
-                                    onmouseover="this.style.backgroundColor='rgba(34,211,238,0.25)'; this.style.borderColor='rgba(34,211,238,0.4)';"
-                                    onmouseout="this.style.backgroundColor='rgba(34,211,238,0.15)'; this.style.borderColor='rgba(34,211,238,0.2)';">
+                                    class="px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap hover:bg-[rgba(34,211,238,0.25)] hover:border-[rgba(34,211,238,0.4)]"
+                                    style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2);">
                                 Cerca su NASA
                             </button>
                         </div>
@@ -183,17 +181,13 @@
 
                 <div class="flex items-center gap-3">
                     <button type="submit"
-                            class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
-                            style="background-color: #22D3EE; color: #0A0A1A;"
-                            onmouseover="this.style.backgroundColor='#1BB8D1';"
-                            onmouseout="this.style.backgroundColor='#22D3EE';">
+                            class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[#1BB8D1]"
+                            style="background-color: #22D3EE; color: #0A0A1A;">
                         Salva Corpo Celeste
                     </button>
                     <a href="{{ route('admin.corpi-celesti.index') }}"
-                       class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
-                       style="color: #9CA3AF;"
-                       onmouseover="this.style.color='#F0F0FA'; this.style.backgroundColor='rgba(255,255,255,0.05)';"
-                       onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';">
+                       class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:text-[#F0F0FA] hover:bg-[rgba(255,255,255,0.05)]"
+                       style="color: #9CA3AF;">
                         Annulla
                     </a>
                 </div>

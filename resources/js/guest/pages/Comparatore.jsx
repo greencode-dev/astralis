@@ -59,10 +59,8 @@ export default function Comparatore() {
 
     return (
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <Link to="/corpi-celesti" className="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-all"
-                style={{ color: '#22D3EE' }}
-                onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
-                onMouseLeave={e => e.currentTarget.style.opacity = '1'}>
+            <Link to="/corpi-celesti" className="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-all hover:opacity-70"
+                style={{ color: '#22D3EE' }}>
                 <ArrowLeft size={16} /> Torna alla lista
             </Link>
 
@@ -107,10 +105,8 @@ export default function Comparatore() {
                                     {slug && (
                                         <button
                                             onClick={() => setSlug('')}
-                                            className="absolute right-3 top-1/2 -translate-y-1/2 transition-all"
+                                            className="absolute right-3 top-1/2 -translate-y-1/2 transition-all hover:text-[#F97316]"
                                             style={{ color: '#7A7A9A' }}
-                                            onMouseEnter={e => e.currentTarget.style.color = '#F97316'}
-                                            onMouseLeave={e => e.currentTarget.style.color = '#7A7A9A'}
                                             aria-label="Resetta selezione"
                                         >
                                             <RotateCcw size={16} aria-hidden="true" />

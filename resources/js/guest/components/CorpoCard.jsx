@@ -32,27 +32,15 @@ export default function CorpoCard({ corpo }) {
     return (
         <Link
             to={`/corpi-celesti/${corpo.slug}`}
-            className="block rounded-xl overflow-hidden transition-all duration-300"
+            className="block rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(34,211,238,0.1)]"
             style={{ backgroundColor: '#111128', border: '1px solid rgba(34, 211, 238, 0.1)' }}
-            onMouseEnter={e => {
-                e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.4)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 8px 30px rgba(34, 211, 238, 0.1)';
-            }}
-            onMouseLeave={e => {
-                e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.1)';
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
-            }}
         >
             {hasImage ? (
                 <div className="aspect-[16/9] relative">
                     <img loading="lazy"
                         src={corpo.immagine_url}
                         alt={corpo.nome_display || corpo.nome}
-                        className="w-full h-full object-cover transition-transform duration-300"
-                        onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-                        onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                     {corpo.in_evidenza && (
                         <span className="absolute right-3 top-3 z-10 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-lg" style={{ backgroundColor: 'rgba(250, 204, 21, 0.9)', color: '#1A1A2E' }}>
@@ -62,10 +50,8 @@ export default function CorpoCard({ corpo }) {
                 </div>
             ) : (
                 <div
-                    className="aspect-[16/9] flex items-center justify-center transition-transform duration-300 relative"
+                    className="aspect-[16/9] flex items-center justify-center transition-transform duration-300 relative hover:scale-105"
                     style={{ background: gradient }}
-                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
-                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                     role="img"
                     aria-label={corpo.categoria?.nome + ' — ' + (corpo.nome_display || corpo.nome)}
                 >

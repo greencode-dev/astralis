@@ -20,25 +20,15 @@ export default function LightboxGalleria({ immagini }) {
                     <button
                         key={i}
                         onClick={() => { setIndex(i); setOpen(true); }}
-                        className="relative group rounded-xl overflow-hidden transition-all duration-300"
+                        className="relative group rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:scale-[1.02]"
                         style={{ backgroundColor: '#111128', border: '1px solid rgba(34, 211, 238, 0.1)' }}
                         aria-label={slide.didascalia || 'Apri immagine nella galleria'}}
-                        onMouseEnter={e => {
-                            e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.4)';
-                            e.currentTarget.style.transform = 'scale(1.02)';
-                        }}
-                        onMouseLeave={e => {
-                            e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.1)';
-                            e.currentTarget.style.transform = 'scale(1)';
-                        }}
                     >
                         <div className="aspect-[4/3] overflow-hidden">
                             <img loading="lazy"
                                 src={slide.src}
                                 alt={slide.alt}
-                                className="w-full h-full object-cover transition-transform duration-300"
-                                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
-                                onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                             />
                         </div>
                         <div className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"

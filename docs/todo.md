@@ -4,6 +4,7 @@
 
 ## Fatto
 
+- [x] **Wave 3** — Frontend P2: onMouseEnter/onMouseLeave → CSS :hover
 - [x] **Wave 2** — Frontend P3: aria-label, role="img" su pulsanti e fallback immagini
 - [x] **Wave 1** — Backend P2: WordMapService, simili ordinati
 - [x] **Fase 12.4** — Quick wins: max per_page, ordinamento relazioni, .catch, nasa_id in resource, indexes
@@ -40,9 +41,6 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 - [ ] `[🧪test][🔵P2]` Test CRUD admin CorpoCeleste (store, update, validation) — `tests/Feature/Admin/`
 - [ ] `[🧪test][🔵P2]` Test componenti React (SolarSystem, CorpoCard, Lightbox) — Vitest
 - [ ] `[🧪test][🔵P2]` Test integrazione API (apiClient, guest pages)
-- [ ] `[🧪test][🔵P2]` Test E2E: login → admin → CRUD → NASA import
-- [ ] `[🎨frontend][🔵P2]` Sostituire onMouseEnter/onMouseLeave con CSS `:hover` — tutti i blade e JSX
-- [ ] `[🎨frontend][🔵P2]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
 
 ### 🟣 P3 — Accessibilità
 _Nessun task di accessibilità in sospeso. Wave 2 ha coperto questa fascia._ 🟢
@@ -62,7 +60,7 @@ _Nessun task di accessibilità in sospeso. Wave 2 ha coperto questa fascia._ �
 
 ## Note
 
-- **Prossimo task consigliato**: `[🎨frontend][🔵P2]` Sostituire onMouseEnter/onMouseLeave con CSS `:hover` — tutti i blade e JSX
+- **Prossimo task consigliato**: `[🎨frontend][🔵P2]` Spostare stili inline in CSS/Tailwind classi — `resources/views/admin/*.blade.php`
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

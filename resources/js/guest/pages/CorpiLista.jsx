@@ -92,10 +92,8 @@ export default function CorpiLista() {
                     {hasFilters && (
                         <button
                             onClick={resetFilters}
-                            className="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
+                            className="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(249,115,22,0.1)]"
                             style={{ color: '#F97316', border: '1px solid rgba(249, 115, 22, 0.3)' }}
-                            onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgba(249, 115, 22, 0.1)'}
-                            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
                         >
                             Reset filtri
                         </button>
@@ -109,24 +107,13 @@ export default function CorpiLista() {
                         <button
                             key={cat.id}
                             onClick={() => handleCategoria(cat.slug)}
-                            className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
+                            className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
                             style={{
                                 backgroundColor: categoriaSlug === cat.slug ? 'rgba(34, 211, 238, 0.15)' : 'rgba(255, 255, 255, 0.05)',
                                 color: categoriaSlug === cat.slug ? '#22D3EE' : '#B8B8D0',
                                 border: categoriaSlug === cat.slug ? '1px solid rgba(34, 211, 238, 0.4)' : '1px solid transparent',
                             }}
-                            onMouseEnter={e => {
-                                if (categoriaSlug !== cat.slug) {
-                                    e.currentTarget.style.backgroundColor = 'rgba(34, 211, 238, 0.08)';
-                                    e.currentTarget.style.color = '#22D3EE';
-                                }
-                            }}
-                            onMouseLeave={e => {
-                                if (categoriaSlug !== cat.slug) {
-                                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                                    e.currentTarget.style.color = '#B8B8D0';
-                                }
-                            }}
+
                         >
                             {cat.nome}
                             {cat.corpi_count !== undefined && (
@@ -143,24 +130,13 @@ export default function CorpiLista() {
                         <button
                             key={t}
                             onClick={() => handleTipo(t)}
-                            className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
+                            className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(168,85,247,0.08)] hover:text-[#A855F7]"
                             style={{
                                 backgroundColor: tipo === t ? 'rgba(168, 85, 247, 0.15)' : 'rgba(255, 255, 255, 0.05)',
                                 color: tipo === t ? '#A855F7' : '#B8B8D0',
                                 border: tipo === t ? '1px solid rgba(168, 85, 247, 0.4)' : '1px solid transparent',
                             }}
-                            onMouseEnter={e => {
-                                if (tipo !== t) {
-                                    e.currentTarget.style.backgroundColor = 'rgba(168, 85, 247, 0.08)';
-                                    e.currentTarget.style.color = '#A855F7';
-                                }
-                            }}
-                            onMouseLeave={e => {
-                                if (tipo !== t) {
-                                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                                    e.currentTarget.style.color = '#B8B8D0';
-                                }
-                            }}
+
                         >
                             {t}
                         </button>
@@ -197,15 +173,11 @@ export default function CorpiLista() {
                             <button
                                 onClick={() => setPage(p => Math.max(1, p - 1))}
                                 disabled={page === 1}
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)]"
                                 style={{
                                     color: '#22D3EE',
                                     border: '1px solid rgba(34, 211, 238, 0.3)',
                                 }}
-                                onMouseEnter={e => {
-                                    if (page > 1) e.currentTarget.style.backgroundColor = 'rgba(34, 211, 238, 0.1)';
-                                }}
-                                onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
                             >
                                 ← Precedente
                             </button>
@@ -220,21 +192,12 @@ export default function CorpiLista() {
                                             )}
                                             <button
                                                 onClick={() => setPage(p)}
-                                                className="w-9 h-9 rounded-lg text-sm font-medium transition-all duration-200"
+                                                className="w-9 h-9 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)]"
                                                 style={{
                                                     backgroundColor: p === page ? 'rgba(34, 211, 238, 0.15)' : 'transparent',
                                                     color: p === page ? '#22D3EE' : '#B8B8D0',
                                                 }}
-                                                onMouseEnter={e => {
-                                                    if (p !== page) {
-                                                        e.currentTarget.style.backgroundColor = 'rgba(34, 211, 238, 0.08)';
-                                                    }
-                                                }}
-                                                onMouseLeave={e => {
-                                                    if (p !== page) {
-                                                        e.currentTarget.style.backgroundColor = 'transparent';
-                                                    }
-                                                }}
+
                                             >
                                                 {p}
                                             </button>
@@ -245,15 +208,11 @@ export default function CorpiLista() {
                             <button
                                 onClick={() => setPage(p => Math.min(lastPage, p + 1))}
                                 disabled={page === lastPage}
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)]"
                                 style={{
                                     color: '#22D3EE',
                                     border: '1px solid rgba(34, 211, 238, 0.3)',
                                 }}
-                                onMouseEnter={e => {
-                                    if (page < lastPage) e.currentTarget.style.backgroundColor = 'rgba(34, 211, 238, 0.1)';
-                                }}
-                                onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
                             >
                                 Successiva →
                             </button>

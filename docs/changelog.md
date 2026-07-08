@@ -302,6 +302,12 @@
 - Rimossa duplicazione `'Anello' => 'Ring'` nel wordMap
 - Rimossa private method `guessEnglishName()` dal controller
 
+### Wave 3 — 08/07/2026 — feat: frontend P2 onMouseEnter/onMouseLeave → CSS :hover
+- React: convertiti tutti gli inline onMouseEnter/onMouseLeave in hover: Tailwind (5 file JSX)
+- Blade: convertiti tutti gli inline onmouseover/onmouseout in hover: Tailwind (19 file Blade)
+- Rimossi ~270 righe di inline JavaScript event handlers, sostituiti con CSS :hover
+- Pattern comuni: hover:bg-[rgba(...)], hover:text-[#...], hover:scale-105, hover:-translate-y-0.5
+
 ### Wave 2 — 08/07/2026 — feat: frontend P3 accessibilità (aria-label, role="img")
 - React: aggiunto `aria-label` a pulsante reset selezioni (Comparatore)
 - React: aggiunto `aria-label` a pulsanti galleria thumbnail (LightboxGalleria)

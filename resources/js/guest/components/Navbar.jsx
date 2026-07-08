@@ -24,22 +24,10 @@ export default function Navbar() {
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
                                     style={{
                                         backgroundColor: isActive ? 'rgba(34, 211, 238, 0.15)' : 'transparent',
                                         color: isActive ? '#22D3EE' : '#B8B8D0',
-                                    }}
-                                    onMouseEnter={e => {
-                                        if (!isActive) {
-                                            e.target.style.backgroundColor = 'rgba(34, 211, 238, 0.08)';
-                                            e.target.style.color = '#22D3EE';
-                                        }
-                                    }}
-                                    onMouseLeave={e => {
-                                        if (!isActive) {
-                                            e.target.style.backgroundColor = 'transparent';
-                                            e.target.style.color = '#B8B8D0';
-                                        }
                                     }}
                                 >
                                     {link.label}

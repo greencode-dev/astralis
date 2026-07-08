@@ -27,18 +27,9 @@ export default function TimelineMissioni({ missioni }) {
 
                                 {/* Card missione */}
                                 <div
-                                    className="rounded-xl p-4 transition-all duration-200"
+                                    className="rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-[rgba(34,211,238,0.4)]"
                                     style={{
                                         backgroundColor: '#111128',
-                                        border: '1px solid rgba(34, 211, 238, 0.1)',
-                                    }}
-                                    onMouseEnter={e => {
-                                        e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.4)';
-                                        e.currentTarget.style.transform = 'translateY(-2px)';
-                                    }}
-                                    onMouseLeave={e => {
-                                        e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.1)';
-                                        e.currentTarget.style.transform = 'translateY(0)';
                                     }}
                                 >
                                     {/* Logo o icona */}

@@ -7,10 +7,8 @@
     <div class="flex justify-between items-center mb-6">
         <p class="text-sm" style="color: #9CA3AF;">Gestisci le immagini della galleria dei corpi celesti</p>
         <a href="{{ route('admin.galleria.create') }}"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-           style="background-color: #22D3EE; color: #0A0A1A;"
-           onmouseover="this.style.backgroundColor='#1BB8D1';"
-           onmouseout="this.style.backgroundColor='#22D3EE';">
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[#1BB8D1]"
+           style="background-color: #22D3EE; color: #0A0A1A;">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             Nuova Immagine
         </a>
@@ -30,25 +28,19 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         @forelse ($galleria as $item)
-            <div class="rounded-xl overflow-hidden transition-all duration-200"
-                 style="background-color: #111128; border: 1px solid rgba(34, 211, 238, 0.1);"
-                 onmouseover="this.style.borderColor='rgba(34,211,238,0.3)'; this.style.transform='translateY(-2px)';"
-                 onmouseout="this.style.borderColor='rgba(34,211,238,0.1)'; this.style.transform='translateY(0)';">
+            <div class="rounded-xl overflow-hidden transition-all duration-200 hover:border-[rgba(34,211,238,0.3)] hover:-translate-y-0.5"
+                 style="background-color: #111128; border: 1px solid rgba(34, 211, 238, 0.1);">
                 <div class="aspect-video relative overflow-hidden" style="background-color: #0A0A1A;">
                     <img loading="lazy" src="{{ $item->percorso_url }}"
                          alt="{{ $item->didascalia ?? $item->corpoCeleste->nome }}"
-                         class="w-full h-full object-cover transition-transform duration-300"
-                         onmouseover="this.style.transform='scale(1.05)';"
-                         onmouseout="this.style.transform='scale(1)';"
+                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                          onerror="this.alt='Immagine non disponibile'; this.style.display='none'; this.parentElement.innerHTML='<div role=\"img\" aria-label=\"Immagine non disponibile per {{ $item->corpoCeleste->nome }}\" style=\"display:flex;align-items:center;justify-content:center;height:100%;padding:1rem;text-align:center;color:#6B7280;font-size:0.75rem;\">Immagine non disponibile</div>';">
                 </div>
                 <div class="p-3">
                     <p class="text-sm font-medium truncate" style="color: #F0F0FA;">{{ $item->didascalia ?? 'Senza didascalia' }}</p>
                     <p class="text-xs mt-1" style="color: #22D3EE;">
                         <a href="{{ route('admin.corpi-celesti.show', $item->corpoCeleste) }}"
-                           class="transition-colors duration-150"
-                           onmouseover="this.style.color='#A855F7';"
-                           onmouseout="this.style.color='#22D3EE';">
+                           class="transition-colors duration-150 hover:text-[#A855F7]">
                             {{ $item->corpoCeleste->nome }}
                         </a>
                     </p>
@@ -57,12 +49,10 @@
                             <form method="POST" action="{{ route('admin.galleria.ordine', $item) }}" class="inline">
                                 @csrf
                                 <input type="hidden" name="direzione" value="su">
-                                <button type="submit"
-                                        class="p-1 rounded-lg transition-all duration-200"
-                                        style="color: #6B7280;"
-                                        onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.1)';"
-                                        onmouseout="this.style.color='#6B7280'; this.style.backgroundColor='transparent';"
-                                        aria-label="Sposta su {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
+                                        <button type="submit"
+                                                class="p-1 rounded-lg transition-all duration-200 hover:text-[#22D3EE] hover:bg-[rgba(34,211,238,0.1)]"
+                                                style="color: #6B7280;"
+                                                aria-label="Sposta su {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                         title="Sposta su">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
                                 </button>
@@ -71,12 +61,10 @@
                             <form method="POST" action="{{ route('admin.galleria.ordine', $item) }}" class="inline">
                                 @csrf
                                 <input type="hidden" name="direzione" value="giu">
-                                <button type="submit"
-                                        class="p-1 rounded-lg transition-all duration-200"
-                                        style="color: #6B7280;"
-                                        onmouseover="this.style.color='#22D3EE'; this.style.backgroundColor='rgba(34,211,238,0.1)';"
-                                        onmouseout="this.style.color='#6B7280'; this.style.backgroundColor='transparent';"
-                                        aria-label="Sposta giù {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
+                                        <button type="submit"
+                                                class="p-1 rounded-lg transition-all duration-200 hover:text-[#22D3EE] hover:bg-[rgba(34,211,238,0.1)]"
+                                                style="color: #6B7280;"
+                                                aria-label="Sposta giù {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                         title="Sposta giù">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                                 </button>
@@ -84,10 +72,8 @@
                         </div>
                         <div class="flex items-center gap-1">
                             <a href="{{ route('admin.galleria.edit', $item) }}"
-                               class="p-1.5 rounded-lg transition-all duration-200"
+                               class="p-1.5 rounded-lg transition-all duration-200 hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.1)]"
                                style="color: #9CA3AF;"
-                               onmouseover="this.style.color='#F97316'; this.style.backgroundColor='rgba(249,115,22,0.1)';"
-                               onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';"
                                aria-label="Modifica {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                title="Modifica">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
@@ -96,10 +82,8 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
-                                        class="p-1.5 rounded-lg transition-all duration-200"
+                                        class="p-1.5 rounded-lg transition-all duration-200 hover:text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)]"
                                         style="color: #9CA3AF;"
-                                        onmouseover="this.style.color='#EF4444'; this.style.backgroundColor='rgba(239,68,68,0.1)';"
-                                        onmouseout="this.style.color='#9CA3AF'; this.style.backgroundColor='transparent';"
                                         aria-label="Elimina {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                         title="Elimina">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
@@ -115,7 +99,7 @@
         @empty
             <div class="col-span-full text-center py-16">
                 <p class="text-lg mb-2" style="color: #6B7280;">Nessuna immagine nella galleria</p>
-                <a href="{{ route('admin.galleria.create') }}" class="text-sm font-medium transition-colors duration-150" style="color: #22D3EE;" onmouseover="this.style.color='#A855F7';" onmouseout="this.style.color='#22D3EE';">Aggiungi la prima immagine</a>
+                <a href="{{ route('admin.galleria.create') }}" class="text-sm font-medium transition-colors duration-150 hover:text-[#A855F7]" style="color: #22D3EE;">Aggiungi la prima immagine</a>
             </div>
         @endforelse
     </div>

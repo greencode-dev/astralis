@@ -30,10 +30,8 @@
     <div class="mb-6 flex justify-end">
         <button type="button"
                 @click="modalOpen = true"
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-                style="background-color: rgba(249, 115, 22, 0.15); color: #F97316; border: 1px solid rgba(249, 115, 22, 0.2);"
-                onmouseover="this.style.backgroundColor='rgba(249,115,22,0.25)'; this.style.borderColor='rgba(249,115,22,0.4)';"
-                onmouseout="this.style.backgroundColor='rgba(249,115,22,0.15)'; this.style.borderColor='rgba(249,115,22,0.2)';">
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(249,115,22,0.25)] hover:border-[rgba(249,115,22,0.4)]"
+                style="background-color: rgba(249, 115, 22, 0.15); color: #F97316; border: 1px solid rgba(249, 115, 22, 0.2);">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             Force Import All
         </button>
@@ -51,7 +49,7 @@
             </thead>
             <tbody>
                 @forelse ($corpi as $corpo)
-                    <tr style="border-bottom: 1px solid rgba(34, 211, 238, 0.05);" class="transition-colors duration-150" onmouseover="this.style.backgroundColor='rgba(34,211,238,0.03)';" onmouseout="this.style.backgroundColor='transparent';">
+                    <tr style="border-bottom: 1px solid rgba(34, 211, 238, 0.05);" class="hover:bg-[rgba(34,211,238,0.03)]">
                         <td class="py-3 px-4">
                             <div class="flex items-center gap-3">
                                 @if ($corpo->immagine)
@@ -64,7 +62,7 @@
                                         ★
                                     </div>
                                 @endif
-                                <a href="{{ route('admin.corpi-celesti.show', $corpo) }}" class="font-medium transition-colors duration-150" style="color: #F0F0FA;" onmouseover="this.style.color='#22D3EE';" onmouseout="this.style.color='#F0F0FA';">
+                                <a href="{{ route('admin.corpi-celesti.show', $corpo) }}" class="font-medium transition-colors duration-150 hover:text-[#22D3EE]" style="color: #F0F0FA;">
                                     {{ $corpo->nome }}
                                 </a>
                             </div>
@@ -97,10 +95,8 @@
                                 <form method="POST" action="{{ route('admin.nasa-import.import', $corpo) }}" class="inline" onsubmit="return confirm('Sostituire l\'immagine di {{ $corpo->nome }} con una nuova da NASA?');">
                                     @csrf
                                     <button type="submit"
-                                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
-                                            style="background-color: rgba(249, 115, 22, 0.15); color: #F97316; border: 1px solid rgba(249, 115, 22, 0.2);"
-                                            onmouseover="this.style.backgroundColor='rgba(249,115,22,0.25)'; this.style.borderColor='rgba(249,115,22,0.4)';"
-                                            onmouseout="this.style.backgroundColor='rgba(249,115,22,0.15)'; this.style.borderColor='rgba(249,115,22,0.2)';">
+                                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 hover:bg-[rgba(249,115,22,0.25)] hover:border-[rgba(249,115,22,0.4)]"
+                                            style="background-color: rgba(249, 115, 22, 0.15); color: #F97316; border: 1px solid rgba(249, 115, 22, 0.2);">
                                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                                         Forza import
                                     </button>
@@ -109,10 +105,8 @@
                                 <form method="POST" action="{{ route('admin.nasa-import.import', $corpo) }}" class="inline">
                                     @csrf
                                     <button type="submit"
-                                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
-                                            style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2);"
-                                            onmouseover="this.style.backgroundColor='rgba(34,211,238,0.25)'; this.style.borderColor='rgba(34,211,238,0.4)';"
-                                            onmouseout="this.style.backgroundColor='rgba(34,211,238,0.15)'; this.style.borderColor='rgba(34,211,238,0.2)';">
+                                            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.25)] hover:border-[rgba(34,211,238,0.4)]"
+                                            style="background-color: rgba(34, 211, 238, 0.15); color: #22D3EE; border: 1px solid rgba(34, 211, 238, 0.2);">
                                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
                                         Importa da NASA
                                     </button>
@@ -134,7 +128,7 @@
     <div class="mt-6 p-4 rounded-lg" style="background-color: #111128; border: 1px solid rgba(34, 211, 238, 0.1);">
         <h3 class="text-sm font-semibold mb-2" style="color: #F0F0FA;">Note</h3>
         <ul class="text-xs space-y-1" style="color: #9CA3AF;">
-            <li>• Le immagini vengono cercate su <a href="https://images.nasa.gov" target="_blank" class="transition-colors" style="color: #22D3EE;" onmouseover="this.style.color='#A855F7';" onmouseout="this.style.color='#22D3EE';">images.nasa.gov</a> usando il nome del corpo celeste.</li>
+            <li>• Le immagini vengono cercate su <a href="https://images.nasa.gov" target="_blank" class="transition-colors hover:text-[#A855F7]" style="color: #22D3EE;">images.nasa.gov</a> usando il nome del corpo celeste.</li>
             <li>• Le immagini vengono ridimensionate a 800px (lato lungo) e salvate in <code style="color: #FACC15;">storage/app/public/corpi-celesti/</code>.</li>
             <li>• Il pulsante <strong style="color: #22D3EE;">Importa da NASA</strong> appare solo per i corpi senza immagine.</li>
             <li>• Il pulsante <strong style="color: #F97316;">Forza import</strong> sostituisce l'immagine esistente.</li>
@@ -157,19 +151,15 @@
             <div class="flex justify-end gap-3">
                 <button type="button"
                         @click="modalOpen = false"
-                        class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-                        style="color: #9CA3AF; background-color: rgba(107, 114, 128, 0.15);"
-                        onmouseover="this.style.backgroundColor='rgba(107,114,128,0.25)';"
-                        onmouseout="this.style.backgroundColor='rgba(107,114,128,0.15)';">
+                        class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(107,114,128,0.25)]"
+                        style="color: #9CA3AF; background-color: rgba(107, 114, 128, 0.15);">
                     Annulla
                 </button>
                 <form method="POST" action="{{ route('admin.nasa-import.import-all') }}">
                     @csrf
                     <button type="submit"
-                            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-                            style="background-color: #F97316; color: #fff;"
-                            onmouseover="this.style.backgroundColor='#ea580c';"
-                            onmouseout="this.style.backgroundColor='#F97316';">
+                            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[#ea580c]"
+                            style="background-color: #F97316; color: #fff;">
                         Avvia importazione
                     </button>
                 </form>
