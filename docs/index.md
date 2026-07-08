@@ -2,18 +2,20 @@
 
 ## Indice
 
-| File | Descrizione |
-|---|---|
-| [`todo.md`](todo.md) | Task plan — cosa fare e cosa è stato fatto |
-| [`changelog.md`](changelog.md) | Cronologia versioni con commit e date |
-| [`bug.md`](bug.md) | Bug tracker — problemi riscontrati e soluzioni |
-| [`documentazione.md`](documentazione.md) | Documentazione architetturale completa |
-| [`Progetto Finale.md`](Progetto%20Finale.md) | Consegna originale del progetto scolastico |
+| File                                       | Descrizione                                    |     |
+| ------------------------------------------ | ---------------------------------------------- | --- |
+| [`todo.md`](todo.md)                       | Task plan — cosa fare e cosa è stato fatto     |     |
+| [`changelog.md`](changelog.md)             | Cronologia versioni con commit e date          |     |
+| [`bug.md`](bug.md)                         | Bug tracker — problemi riscontrati e soluzioni |     |
+| [`testing.md`](testing.md)                 | Istruzioni e spiegazione della suite di test   |     |
+| [`documentazione.md`](documentazione.md)   | Documentazione architetturale completa         |     |
+| [`progetto-finale.md`](progetto-finale.md) | Consegna originale del progetto scolastico     |     |
 
 ## Collegamenti rapidi
 
 - [Task plan](todo.md)
 - [Changelog](changelog.md)
 - [Bug tracker](bug.md)
+- [Test](testing.md)
 - [Documentazione completa](documentazione.md)
 - [Consegna progetto](Progetto%20Finale.md)

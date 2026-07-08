@@ -530,7 +530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 25,
+      "community": 21,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -540,7 +540,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 25,
+      "community": 21,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -550,7 +550,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 25,
+      "community": 21,
       "norm_label": ".index()"
     },
     {
@@ -560,7 +560,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 25,
+      "community": 21,
       "norm_label": "view"
     },
     {
@@ -910,7 +910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller",
-      "community": 10,
+      "community": 6,
       "norm_label": "categoriacontroller.php"
     },
     {
@@ -920,7 +920,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller",
-      "community": 21,
+      "community": 6,
       "norm_label": "categoriacontroller"
     },
     {
@@ -930,7 +930,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_index",
-      "community": 21,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -940,7 +940,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_show",
-      "community": 21,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -1010,7 +1010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller",
-      "community": 10,
+      "community": 6,
       "norm_label": "curiositacontroller.php"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller_curiositacontroller",
-      "community": 10,
+      "community": 6,
       "norm_label": "curiositacontroller"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller",
-      "community": 10,
+      "community": 21,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller",
-      "community": 10,
+      "community": 21,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller_stats",
-      "community": 10,
+      "community": 21,
       "norm_label": ".stats()"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_php_jsonresponse",
-      "community": 10,
+      "community": 21,
       "norm_label": "jsonresponse"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_galleriacontroller",
-      "community": 10,
+      "community": 6,
       "norm_label": "galleriacontroller.php"
     },
     {
@@ -1090,7 +1090,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_api_galleriacontroller_galleriacontroller",
-      "community": 10,
+      "community": 6,
       "norm_label": "galleriacontroller"
     },
     {
@@ -1110,7 +1110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller",
-      "community": 10,
+      "community": 6,
       "norm_label": "missionecontroller.php"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller",
-      "community": 10,
+      "community": 6,
       "norm_label": "missionecontroller"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_index",
-      "community": 10,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_php_request",
-      "community": 10,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -1150,7 +1150,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_show",
-      "community": 44,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -1160,7 +1160,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller",
-      "community": 7,
+      "community": 10,
       "norm_label": "authenticatedsessioncontroller.php"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller",
-      "community": 7,
+      "community": 10,
       "norm_label": "authenticatedsessioncontroller"
     },
     {
@@ -1180,7 +1180,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_create",
-      "community": 7,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1190,7 +1190,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_view",
-      "community": 7,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1200,7 +1200,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_store",
-      "community": 7,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1210,7 +1210,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_redirectresponse",
-      "community": 7,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1220,7 +1220,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_destroy",
-      "community": 7,
+      "community": 10,
       "norm_label": ".destroy()"
     },
     {
@@ -1230,7 +1230,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_request",
-      "community": 7,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1860,7 +1860,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest",
-      "community": 7,
+      "community": 10,
       "norm_label": "loginrequest"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authorize",
-      "community": 7,
+      "community": 10,
       "norm_label": ".authorize()"
     },
     {
@@ -1890,7 +1890,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_rules",
-      "community": 7,
+      "community": 10,
       "norm_label": ".rules()"
     },
     {
@@ -1900,7 +1900,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authenticate",
-      "community": 7,
+      "community": 10,
       "norm_label": ".authenticate()"
     },
     {
@@ -1910,7 +1910,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_ensureisnotratelimited",
-      "community": 7,
+      "community": 10,
       "norm_label": ".ensureisnotratelimited()"
     },
     {
@@ -1920,7 +1920,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_throttlekey",
-      "community": 7,
+      "community": 10,
       "norm_label": ".throttlekey()"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_categoria",
-      "community": 25,
+      "community": 21,
       "norm_label": "categoria.php"
     },
     {
@@ -2270,7 +2270,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "model",
-      "community": 25,
+      "community": 21,
       "norm_label": "model"
     },
     {
@@ -2280,7 +2280,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "hasfactory",
-      "community": 25,
+      "community": 21,
       "norm_label": "hasfactory"
     },
     {
@@ -2290,7 +2290,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "hasslug",
-      "community": 25,
+      "community": 21,
       "norm_label": "hasslug"
     },
     {
@@ -2320,7 +2320,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_models_categoria_categoria_corpicelesti",
-      "community": 25,
+      "community": 21,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2330,7 +2330,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_categoria_php_hasmany",
-      "community": 25,
+      "community": 21,
       "norm_label": "hasmany"
     },
     {
@@ -2480,7 +2480,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_curiosita",
-      "community": 25,
+      "community": 21,
       "norm_label": "curiosita.php"
     },
     {
@@ -2500,7 +2500,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_models_curiosita_curiosita_corpoceleste",
-      "community": 25,
+      "community": 21,
       "norm_label": ".corpoceleste()"
     },
     {
@@ -2510,7 +2510,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_curiosita_php_belongsto",
-      "community": 25,
+      "community": 21,
       "norm_label": "belongsto"
     },
     {
@@ -2570,7 +2570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_missione",
-      "community": 25,
+      "community": 21,
       "norm_label": "missione.php"
     },
     {
@@ -2620,7 +2620,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_models_missione_missione_corpicelesti",
-      "community": 25,
+      "community": 21,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2630,7 +2630,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_missione_php_belongstomany",
-      "community": 25,
+      "community": 21,
       "norm_label": "belongstomany"
     },
     {
@@ -2640,7 +2640,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_user",
-      "community": 161,
+      "community": 168,
       "norm_label": "user.php"
     },
     {
@@ -2670,7 +2670,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "notifiable",
-      "community": 161,
+      "community": 168,
       "norm_label": "notifiable"
     },
     {
@@ -2810,7 +2810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy",
-      "community": 25,
+      "community": 168,
       "norm_label": "corpocelestepolicy.php"
     },
     {
@@ -3180,7 +3180,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider",
-      "community": 25,
+      "community": 168,
       "norm_label": "authserviceprovider.php"
     },
     {
@@ -3190,7 +3190,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider",
-      "community": 25,
+      "community": 168,
       "norm_label": "authserviceprovider"
     },
     {
@@ -3200,7 +3200,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider_boot",
-      "community": 25,
+      "community": 168,
       "norm_label": ".boot()"
     },
     {
@@ -3980,7 +3980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_auth",
-      "community": 161,
+      "community": 168,
       "norm_label": "auth.php"
     },
     {
@@ -6190,7 +6190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_api",
-      "community": 10,
+      "community": 6,
       "norm_label": "api.php"
     },
     {
@@ -6220,7 +6220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_web",
-      "community": 10,
+      "community": 6,
       "norm_label": "web.php"
     },
     {
@@ -7050,7 +7050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest",
-      "community": 168,
+      "community": 0,
       "norm_label": "categoriaapitest.php"
     },
     {
@@ -7060,7 +7060,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest",
-      "community": 168,
+      "community": 0,
       "norm_label": "categoriaapitest"
     },
     {
@@ -7070,7 +7070,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_setup",
-      "community": 168,
+      "community": 0,
       "norm_label": ".setup()"
     },
     {
@@ -7080,7 +7080,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_index_returns_all_categorie",
-      "community": 168,
+      "community": 0,
       "norm_label": ".test_index_returns_all_categorie()"
     },
     {
@@ -7090,7 +7090,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_categoria_with_corpi_count",
-      "community": 168,
+      "community": 0,
       "norm_label": ".test_show_returns_categoria_with_corpi_count()"
     },
     {
@@ -7100,7 +7100,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_404_for_invalid_slug",
-      "community": 168,
+      "community": 0,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -7290,7 +7290,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_dashboardapitest",
-      "community": 103,
+      "community": 0,
       "norm_label": "dashboardapitest.php"
     },
     {
@@ -7300,7 +7300,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_dashboardapitest_dashboardapitest",
-      "community": 103,
+      "community": 0,
       "norm_label": "dashboardapitest"
     },
     {
@@ -7310,7 +7310,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_dashboardapitest_dashboardapitest_setup",
-      "community": 103,
+      "community": 0,
       "norm_label": ".setup()"
     },
     {
@@ -7320,7 +7320,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_dashboardapitest_dashboardapitest_test_stats_returns_counts",
-      "community": 103,
+      "community": 0,
       "norm_label": ".test_stats_returns_counts()"
     },
     {
@@ -7330,7 +7330,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest",
-      "community": 170,
+      "community": 25,
       "norm_label": "galleriaapitest.php"
     },
     {
@@ -7340,7 +7340,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest",
-      "community": 170,
+      "community": 25,
       "norm_label": "galleriaapitest"
     },
     {
@@ -7350,7 +7350,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_setup",
-      "community": 170,
+      "community": 25,
       "norm_label": ".setup()"
     },
     {
@@ -7360,7 +7360,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_teardown",
-      "community": 170,
+      "community": 25,
       "norm_label": ".teardown()"
     },
     {
@@ -7370,7 +7370,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_test_index_returns_all_galleria",
-      "community": 170,
+      "community": 25,
       "norm_label": ".test_index_returns_all_galleria()"
     },
     {
@@ -7490,7 +7490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest",
-      "community": 161,
+      "community": 177,
       "norm_label": "emailverificationtest.php"
     },
     {
@@ -7500,7 +7500,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest",
-      "community": 161,
+      "community": 177,
       "norm_label": "emailverificationtest"
     },
     {
@@ -7510,7 +7510,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_verification_screen_can_be_rendered",
-      "community": 161,
+      "community": 177,
       "norm_label": ".test_email_verification_screen_can_be_rendered()"
     },
     {
@@ -7520,7 +7520,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_can_be_verified",
-      "community": 161,
+      "community": 177,
       "norm_label": ".test_email_can_be_verified()"
     },
     {
@@ -7530,7 +7530,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_is_not_verified_with_invalid_hash",
-      "community": 161,
+      "community": 177,
       "norm_label": ".test_email_is_not_verified_with_invalid_hash()"
     },
     {
@@ -7540,7 +7540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest",
-      "community": 0,
+      "community": 178,
       "norm_label": "passwordconfirmationtest.php"
     },
     {
@@ -7550,7 +7550,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest",
-      "community": 0,
+      "community": 178,
       "norm_label": "passwordconfirmationtest"
     },
     {
@@ -7560,7 +7560,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_confirm_password_screen_can_be_rendered",
-      "community": 0,
+      "community": 178,
       "norm_label": ".test_confirm_password_screen_can_be_rendered()"
     },
     {
@@ -7570,7 +7570,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_can_be_confirmed",
-      "community": 0,
+      "community": 178,
       "norm_label": ".test_password_can_be_confirmed()"
     },
     {
@@ -7580,7 +7580,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_is_not_confirmed_with_invalid_password",
-      "community": 0,
+      "community": 178,
       "norm_label": ".test_password_is_not_confirmed_with_invalid_password()"
     },
     {
@@ -7650,7 +7650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest",
-      "community": 0,
+      "community": 103,
       "norm_label": "passwordupdatetest.php"
     },
     {
@@ -7660,7 +7660,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest",
-      "community": 0,
+      "community": 103,
       "norm_label": "passwordupdatetest"
     },
     {
@@ -7670,7 +7670,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_password_can_be_updated",
-      "community": 0,
+      "community": 103,
       "norm_label": ".test_password_can_be_updated()"
     },
     {
@@ -7680,7 +7680,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_correct_password_must_be_provided_to_update_password",
-      "community": 0,
+      "community": 103,
       "norm_label": ".test_correct_password_must_be_provided_to_update_password()"
     },
     {
@@ -7760,7 +7760,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_profiletest",
-      "community": 161,
+      "community": 168,
       "norm_label": "profiletest.php"
     },
     {
@@ -8210,7 +8210,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "readme_funzionalit\u00e0",
-      "community": 171,
+      "community": 101,
       "norm_label": "\u2728 funzionalita"
     },
     {
@@ -8220,7 +8220,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "readme_backoffice_laravel_blade",
-      "community": 171,
+      "community": 101,
       "norm_label": "\ud83d\udc68\u200d\ud83d\udcbc backoffice (laravel + blade)"
     },
     {
@@ -8230,7 +8230,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "readme_frontend_react_vite",
-      "community": 171,
+      "community": 101,
       "norm_label": "\ud83c\udf1f frontend (react + vite)"
     },
     {
@@ -8240,7 +8240,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "readme_api_rest",
-      "community": 171,
+      "community": 101,
       "norm_label": "\ud83d\udef0\ufe0f api rest"
     },
     {
@@ -8332,146 +8332,6 @@
       "id": "readme_licenza",
       "community": 101,
       "norm_label": "\ud83d\udcc4 licenza"
-    },
-    {
-      "label": "Progetto Finale.md",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_progetto_finale",
-      "community": 14,
-      "norm_label": "progetto finale.md"
-    },
-    {
-      "label": "Progetto Finale",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_progetto_finale",
-      "community": 14,
-      "norm_label": "progetto finale"
-    },
-    {
-      "label": "Descrizione",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_descrizione",
-      "community": 14,
-      "norm_label": "descrizione"
-    },
-    {
-      "label": "Parte 1: Backoffice in Laravel",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "community": 14,
-      "norm_label": "parte 1: backoffice in laravel"
-    },
-    {
-      "label": "\ud83d\udd12 Autenticazione e Accesso",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_autenticazione_e_accesso",
-      "community": 14,
-      "norm_label": "\ud83d\udd12 autenticazione e accesso"
-    },
-    {
-      "label": "\ud83d\udce6 Gestione Entit\u00e0 (CRUD)",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_gestione_entit\u00e0_crud",
-      "community": 14,
-      "norm_label": "\ud83d\udce6 gestione entita (crud)"
-    },
-    {
-      "label": "\u2699\ufe0f Requisiti Minimi",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_requisiti_minimi",
-      "community": 14,
-      "norm_label": "\u2699\ufe0f requisiti minimi"
-    },
-    {
-      "label": "\ud83d\uddbc\ufe0f Upload Media",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_upload_media",
-      "community": 14,
-      "norm_label": "\ud83d\uddbc\ufe0f upload media"
-    },
-    {
-      "label": "\ud83d\udca1 Esempi di Struttura",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_esempi_di_struttura",
-      "community": 14,
-      "norm_label": "\ud83d\udca1 esempi di struttura"
-    },
-    {
-      "label": "\ud83d\udcbb Note Tecniche",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_note_tecniche",
-      "community": 14,
-      "norm_label": "\ud83d\udcbb note tecniche"
-    },
-    {
-      "label": "Parte 2: Sito guest in React",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_parte_2_sito_guest_in_react",
-      "community": 14,
-      "norm_label": "parte 2: sito guest in react"
-    },
-    {
-      "label": "\ud83c\udfaf Obiettivo",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L60",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_obiettivo",
-      "community": 14,
-      "norm_label": "\ud83c\udfaf obiettivo"
-    },
-    {
-      "label": "\ud83d\udca1 Consigli",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L67",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_consigli",
-      "community": 14,
-      "norm_label": "\ud83d\udca1 consigli"
-    },
-    {
-      "label": "Parte 3: Live Coding",
-      "file_type": "document",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "docs_progetto_finale_parte_3_live_coding",
-      "community": 14,
-      "norm_label": "parte 3: live coding"
     },
     {
       "label": "bug.md",
@@ -9430,7 +9290,7 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "docs_documentazione_palette_colori",
-      "community": 12,
+      "community": 171,
       "norm_label": "palette colori"
     },
     {
@@ -9440,7 +9300,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "docs_documentazione_badge_categoria",
-      "community": 12,
+      "community": 171,
       "norm_label": "badge categoria"
     },
     {
@@ -9450,7 +9310,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "docs_documentazione_frontend_guest_react_spa",
-      "community": 12,
+      "community": 171,
       "norm_label": "frontend guest (react spa)"
     },
     {
@@ -9460,7 +9320,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "docs_documentazione_backoffice_admin",
-      "community": 12,
+      "community": 171,
       "norm_label": "backoffice admin"
     },
     {
@@ -9470,7 +9330,7 @@
       "source_location": "L208",
       "_origin": "ast",
       "id": "docs_documentazione_api_rest",
-      "community": 12,
+      "community": 171,
       "norm_label": "api rest"
     },
     {
@@ -9527,11 +9387,281 @@
       "label": "Collegamenti rapidi",
       "file_type": "document",
       "source_file": "docs/index.md",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "docs_index_collegamenti_rapidi",
       "community": 20,
       "norm_label": "collegamenti rapidi"
+    },
+    {
+      "label": "progetto-finale.md",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_progetto_finale",
+      "community": 14,
+      "norm_label": "progetto-finale.md"
+    },
+    {
+      "label": "Progetto Finale",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_progetto_finale",
+      "community": 14,
+      "norm_label": "progetto finale"
+    },
+    {
+      "label": "Descrizione",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_descrizione",
+      "community": 14,
+      "norm_label": "descrizione"
+    },
+    {
+      "label": "Parte 1: Backoffice in Laravel",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "community": 14,
+      "norm_label": "parte 1: backoffice in laravel"
+    },
+    {
+      "label": "\ud83d\udd12 Autenticazione e Accesso",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_autenticazione_e_accesso",
+      "community": 14,
+      "norm_label": "\ud83d\udd12 autenticazione e accesso"
+    },
+    {
+      "label": "\ud83d\udce6 Gestione Entit\u00e0 (CRUD)",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_gestione_entit\u00e0_crud",
+      "community": 14,
+      "norm_label": "\ud83d\udce6 gestione entita (crud)"
+    },
+    {
+      "label": "\u2699\ufe0f Requisiti Minimi",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_requisiti_minimi",
+      "community": 14,
+      "norm_label": "\u2699\ufe0f requisiti minimi"
+    },
+    {
+      "label": "\ud83d\uddbc\ufe0f Upload Media",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_upload_media",
+      "community": 14,
+      "norm_label": "\ud83d\uddbc\ufe0f upload media"
+    },
+    {
+      "label": "\ud83d\udca1 Esempi di Struttura",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_esempi_di_struttura",
+      "community": 14,
+      "norm_label": "\ud83d\udca1 esempi di struttura"
+    },
+    {
+      "label": "\ud83d\udcbb Note Tecniche",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_note_tecniche",
+      "community": 14,
+      "norm_label": "\ud83d\udcbb note tecniche"
+    },
+    {
+      "label": "Parte 2: Sito guest in React",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_parte_2_sito_guest_in_react",
+      "community": 14,
+      "norm_label": "parte 2: sito guest in react"
+    },
+    {
+      "label": "\ud83c\udfaf Obiettivo",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_obiettivo",
+      "community": 14,
+      "norm_label": "\ud83c\udfaf obiettivo"
+    },
+    {
+      "label": "\ud83d\udca1 Consigli",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_consigli",
+      "community": 14,
+      "norm_label": "\ud83d\udca1 consigli"
+    },
+    {
+      "label": "Parte 3: Live Coding",
+      "file_type": "document",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "docs_progetto_finale_parte_3_live_coding",
+      "community": 14,
+      "norm_label": "parte 3: live coding"
+    },
+    {
+      "label": "testing.md",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_testing",
+      "community": 170,
+      "norm_label": "testing.md"
+    },
+    {
+      "label": "Test \u2014 Astralis",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_testing_test_astralis",
+      "community": 170,
+      "norm_label": "test \u2014 astralis"
+    },
+    {
+      "label": "Esecuzione",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "docs_testing_esecuzione",
+      "community": 170,
+      "norm_label": "esecuzione"
+    },
+    {
+      "label": "Configurazione",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "docs_testing_configurazione",
+      "community": 170,
+      "norm_label": "configurazione"
+    },
+    {
+      "label": "Struttura",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "docs_testing_struttura",
+      "community": 176,
+      "norm_label": "struttura"
+    },
+    {
+      "label": "Unit \u2014 `tests/Unit/NasaImageServiceTest.php` (26 test, 63 assertion)",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "docs_testing_unit_tests_unit_nasaimageservicetest_php_26_test_63_assertion",
+      "community": 176,
+      "norm_label": "unit \u2014 `tests/unit/nasaimageservicetest.php` (26 test, 63 assertion)"
+    },
+    {
+      "label": "Pattern usati",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "docs_testing_pattern_usati",
+      "community": 176,
+      "norm_label": "pattern usati"
+    },
+    {
+      "label": "Feature API \u2014 `tests/Feature/Api/` (8 file)",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "docs_testing_feature_api_tests_feature_api_8_file",
+      "community": 176,
+      "norm_label": "feature api \u2014 `tests/feature/api/` (8 file)"
+    },
+    {
+      "label": "Feature Admin \u2014 `tests/Feature/Admin/CorpoCelesteCrudTest.php` (12 test)",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "docs_testing_feature_admin_tests_feature_admin_corpocelestecrudtest_php_12_test",
+      "community": 176,
+      "norm_label": "feature admin \u2014 `tests/feature/admin/corpocelestecrudtest.php` (12 test)"
+    },
+    {
+      "label": "API di supporto",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "docs_testing_api_di_supporto",
+      "community": 170,
+      "norm_label": "api di supporto"
+    },
+    {
+      "label": "`Http::fake()`",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "docs_testing_http_fake",
+      "community": 170,
+      "norm_label": "`http::fake()`"
+    },
+    {
+      "label": "`CorpoCelesteObserver`",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L109",
+      "_origin": "ast",
+      "id": "docs_testing_corpocelesteobserver",
+      "community": 170,
+      "norm_label": "`corpocelesteobserver`"
+    },
+    {
+      "label": "Scrivere nuovi test",
+      "file_type": "document",
+      "source_file": "docs/testing.md",
+      "source_location": "L121",
+      "_origin": "ast",
+      "id": "docs_testing_scrivere_nuovi_test",
+      "community": 170,
+      "norm_label": "scrivere nuovi test"
     },
     {
       "label": "todo.md",
@@ -23546,136 +23676,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "docs_progetto_finale",
-      "target": "docs_progetto_finale_progetto_finale",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_progetto_finale",
-      "target": "docs_progetto_finale_descrizione",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_progetto_finale",
-      "target": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_progetto_finale",
-      "target": "docs_progetto_finale_parte_2_sito_guest_in_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L73",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_progetto_finale",
-      "target": "docs_progetto_finale_parte_3_live_coding",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "target": "docs_progetto_finale_autenticazione_e_accesso",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "target": "docs_progetto_finale_esempi_di_struttura",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "target": "docs_progetto_finale_gestione_entit\u00e0_crud",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L45",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "target": "docs_progetto_finale_note_tecniche",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "target": "docs_progetto_finale_requisiti_minimi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L33",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "target": "docs_progetto_finale_upload_media",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L67",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_2_sito_guest_in_react",
-      "target": "docs_progetto_finale_consigli",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/Progetto Finale.md",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "docs_progetto_finale_parte_2_sito_guest_in_react",
-      "target": "docs_progetto_finale_obiettivo",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "docs/bug.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -24537,7 +24537,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "docs/index.md",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "docs_index",
       "target": "docs_documentazione",
@@ -24707,6 +24707,26 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "docs/index.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "docs_index",
+      "target": "docs_progetto_finale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "docs_index",
+      "target": "docs_testing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/index.md",
       "source_location": "L7",
       "weight": 1.0,
       "source": "docs_index",
@@ -24717,7 +24737,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/index.md",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "docs_index_documentazione_astralis",
       "target": "docs_index_collegamenti_rapidi",
@@ -24731,6 +24751,256 @@
       "weight": 1.0,
       "source": "docs_index_documentazione_astralis",
       "target": "docs_index_indice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_progetto_finale",
+      "target": "docs_progetto_finale_progetto_finale",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_progetto_finale",
+      "target": "docs_progetto_finale_descrizione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_progetto_finale",
+      "target": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_progetto_finale",
+      "target": "docs_progetto_finale_parte_2_sito_guest_in_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_progetto_finale",
+      "target": "docs_progetto_finale_parte_3_live_coding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "target": "docs_progetto_finale_autenticazione_e_accesso",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "target": "docs_progetto_finale_esempi_di_struttura",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "target": "docs_progetto_finale_gestione_entit\u00e0_crud",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "target": "docs_progetto_finale_note_tecniche",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "target": "docs_progetto_finale_requisiti_minimi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_1_backoffice_in_laravel",
+      "target": "docs_progetto_finale_upload_media",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_2_sito_guest_in_react",
+      "target": "docs_progetto_finale_consigli",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/progetto-finale.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "docs_progetto_finale_parte_2_sito_guest_in_react",
+      "target": "docs_progetto_finale_obiettivo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_testing",
+      "target": "docs_testing_test_astralis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "docs_testing_test_astralis",
+      "target": "docs_testing_api_di_supporto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "docs_testing_test_astralis",
+      "target": "docs_testing_configurazione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "docs_testing_test_astralis",
+      "target": "docs_testing_esecuzione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "docs_testing_test_astralis",
+      "target": "docs_testing_scrivere_nuovi_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "docs_testing_test_astralis",
+      "target": "docs_testing_struttura",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "docs_testing_struttura",
+      "target": "docs_testing_feature_admin_tests_feature_admin_corpocelestecrudtest_php_12_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "docs_testing_struttura",
+      "target": "docs_testing_feature_api_tests_feature_api_8_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "docs_testing_struttura",
+      "target": "docs_testing_unit_tests_unit_nasaimageservicetest_php_26_test_63_assertion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "docs_testing_unit_tests_unit_nasaimageservicetest_php_26_test_63_assertion",
+      "target": "docs_testing_pattern_usati",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "docs_testing_api_di_supporto",
+      "target": "docs_testing_corpocelesteobserver",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/testing.md",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "docs_testing_api_di_supporto",
+      "target": "docs_testing_http_fake",
       "confidence_score": 1.0
     },
     {
@@ -24825,5 +25095,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ea61ca1040dc96bf0327eafef6a886a7e0e4d205"
+  "built_at_commit": "56f901462204a463327d6c09ad5711b44600d5c0"
 }
