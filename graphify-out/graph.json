@@ -540,7 +540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 103,
+      "community": 180,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -550,7 +550,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 103,
+      "community": 180,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -560,7 +560,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 103,
+      "community": 180,
       "norm_label": ".index()"
     },
     {
@@ -570,7 +570,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 103,
+      "community": 180,
       "norm_label": "view"
     },
     {
@@ -920,7 +920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller",
-      "community": 6,
+      "community": 180,
       "norm_label": "categoriacontroller.php"
     },
     {
@@ -930,7 +930,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller",
-      "community": 6,
+      "community": 21,
       "norm_label": "categoriacontroller"
     },
     {
@@ -940,7 +940,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_index",
-      "community": 6,
+      "community": 21,
       "norm_label": ".index()"
     },
     {
@@ -950,7 +950,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_show",
-      "community": 6,
+      "community": 21,
       "norm_label": ".show()"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller",
-      "community": 10,
+      "community": 3,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller",
-      "community": 10,
+      "community": 3,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller_stats",
-      "community": 10,
+      "community": 3,
       "norm_label": ".stats()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_php_jsonresponse",
-      "community": 10,
+      "community": 3,
       "norm_label": "jsonresponse"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller",
-      "community": 3,
+      "community": 180,
       "norm_label": "missionecontroller.php"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller",
-      "community": 3,
+      "community": 180,
       "norm_label": "missionecontroller"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_index",
-      "community": 3,
+      "community": 180,
       "norm_label": ".index()"
     },
     {
@@ -1150,7 +1150,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_php_request",
-      "community": 3,
+      "community": 180,
       "norm_label": "request"
     },
     {
@@ -1160,7 +1160,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_show",
-      "community": 3,
+      "community": 180,
       "norm_label": ".show()"
     },
     {
@@ -1320,7 +1320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller",
-      "community": 10,
+      "community": 184,
       "norm_label": "emailverificationnotificationcontroller.php"
     },
     {
@@ -1330,7 +1330,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller",
-      "community": 10,
+      "community": 184,
       "norm_label": "emailverificationnotificationcontroller"
     },
     {
@@ -1340,7 +1340,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller_store",
-      "community": 10,
+      "community": 184,
       "norm_label": ".store()"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_request",
-      "community": 10,
+      "community": 184,
       "norm_label": "request"
     },
     {
@@ -1360,7 +1360,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_redirectresponse",
-      "community": 10,
+      "community": 184,
       "norm_label": "redirectresponse"
     },
     {
@@ -1370,7 +1370,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller",
-      "community": 10,
+      "community": 188,
       "norm_label": "emailverificationpromptcontroller.php"
     },
     {
@@ -1380,7 +1380,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
-      "community": 10,
+      "community": 188,
       "norm_label": "emailverificationpromptcontroller"
     },
     {
@@ -1390,7 +1390,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
-      "community": 10,
+      "community": 188,
       "norm_label": ".__invoke()"
     },
     {
@@ -1400,7 +1400,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_request",
-      "community": 10,
+      "community": 188,
       "norm_label": "request"
     },
     {
@@ -1410,7 +1410,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_redirectresponse",
-      "community": 10,
+      "community": 188,
       "norm_label": "redirectresponse"
     },
     {
@@ -1420,7 +1420,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_view",
-      "community": 10,
+      "community": 188,
       "norm_label": "view"
     },
     {
@@ -1430,7 +1430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller",
-      "community": 10,
+      "community": 185,
       "norm_label": "newpasswordcontroller.php"
     },
     {
@@ -1440,7 +1440,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller",
-      "community": 10,
+      "community": 185,
       "norm_label": "newpasswordcontroller"
     },
     {
@@ -1450,7 +1450,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_create",
-      "community": 10,
+      "community": 185,
       "norm_label": ".create()"
     },
     {
@@ -1460,7 +1460,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_request",
-      "community": 10,
+      "community": 185,
       "norm_label": "request"
     },
     {
@@ -1470,7 +1470,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_view",
-      "community": 10,
+      "community": 185,
       "norm_label": "view"
     },
     {
@@ -1480,7 +1480,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_store",
-      "community": 10,
+      "community": 185,
       "norm_label": ".store()"
     },
     {
@@ -1490,7 +1490,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_redirectresponse",
-      "community": 10,
+      "community": 185,
       "norm_label": "redirectresponse"
     },
     {
@@ -1500,7 +1500,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller",
-      "community": 10,
+      "community": 194,
       "norm_label": "passwordcontroller.php"
     },
     {
@@ -1510,7 +1510,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller",
-      "community": 10,
+      "community": 194,
       "norm_label": "passwordcontroller"
     },
     {
@@ -1520,7 +1520,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller_update",
-      "community": 10,
+      "community": 194,
       "norm_label": ".update()"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_request",
-      "community": 10,
+      "community": 194,
       "norm_label": "request"
     },
     {
@@ -1540,7 +1540,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_redirectresponse",
-      "community": 10,
+      "community": 194,
       "norm_label": "redirectresponse"
     },
     {
@@ -1550,7 +1550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller",
-      "community": 10,
+      "community": 186,
       "norm_label": "passwordresetlinkcontroller.php"
     },
     {
@@ -1560,7 +1560,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller",
-      "community": 10,
+      "community": 186,
       "norm_label": "passwordresetlinkcontroller"
     },
     {
@@ -1570,7 +1570,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_create",
-      "community": 10,
+      "community": 186,
       "norm_label": ".create()"
     },
     {
@@ -1580,7 +1580,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_view",
-      "community": 10,
+      "community": 186,
       "norm_label": "view"
     },
     {
@@ -1590,7 +1590,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_store",
-      "community": 10,
+      "community": 186,
       "norm_label": ".store()"
     },
     {
@@ -1600,7 +1600,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_request",
-      "community": 10,
+      "community": 186,
       "norm_label": "request"
     },
     {
@@ -1610,7 +1610,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_redirectresponse",
-      "community": 10,
+      "community": 186,
       "norm_label": "redirectresponse"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller",
-      "community": 10,
+      "community": 187,
       "norm_label": "registeredusercontroller.php"
     },
     {
@@ -1630,7 +1630,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
-      "community": 10,
+      "community": 187,
       "norm_label": "registeredusercontroller"
     },
     {
@@ -1640,7 +1640,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_create",
-      "community": 10,
+      "community": 187,
       "norm_label": ".create()"
     },
     {
@@ -1650,7 +1650,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_view",
-      "community": 10,
+      "community": 187,
       "norm_label": "view"
     },
     {
@@ -1660,7 +1660,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
-      "community": 10,
+      "community": 187,
       "norm_label": ".store()"
     },
     {
@@ -1670,7 +1670,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_request",
-      "community": 10,
+      "community": 187,
       "norm_label": "request"
     },
     {
@@ -1680,7 +1680,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_redirectresponse",
-      "community": 10,
+      "community": 187,
       "norm_label": "redirectresponse"
     },
     {
@@ -1690,7 +1690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller",
-      "community": 10,
+      "community": 195,
       "norm_label": "verifyemailcontroller.php"
     },
     {
@@ -1700,7 +1700,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller",
-      "community": 10,
+      "community": 195,
       "norm_label": "verifyemailcontroller"
     },
     {
@@ -1710,7 +1710,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller_invoke",
-      "community": 10,
+      "community": 195,
       "norm_label": ".__invoke()"
     },
     {
@@ -1720,7 +1720,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "emailverificationrequest",
-      "community": 10,
+      "community": 195,
       "norm_label": "emailverificationrequest"
     },
     {
@@ -1730,7 +1730,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_php_redirectresponse",
-      "community": 10,
+      "community": 195,
       "norm_label": "redirectresponse"
     },
     {
@@ -1740,7 +1740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_controller",
-      "community": 10,
+      "community": 180,
       "norm_label": "controller.php"
     },
     {
@@ -1750,7 +1750,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_http_controllers_controller_controller",
-      "community": 10,
+      "community": 180,
       "norm_label": "controller"
     },
     {
@@ -1760,7 +1760,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "authorizesrequests",
-      "community": 10,
+      "community": 180,
       "norm_label": "authorizesrequests"
     },
     {
@@ -1770,7 +1770,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "validatesrequests",
-      "community": 10,
+      "community": 180,
       "norm_label": "validatesrequests"
     },
     {
@@ -1780,7 +1780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller",
-      "community": 192,
+      "community": 183,
       "norm_label": "profilecontroller.php"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller",
-      "community": 192,
+      "community": 183,
       "norm_label": "profilecontroller"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_edit",
-      "community": 192,
+      "community": 183,
       "norm_label": ".edit()"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_request",
-      "community": 192,
+      "community": 183,
       "norm_label": "request"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_view",
-      "community": 192,
+      "community": 183,
       "norm_label": "view"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_update",
-      "community": 192,
+      "community": 183,
       "norm_label": ".update()"
     },
     {
@@ -1840,7 +1840,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_redirectresponse",
-      "community": 192,
+      "community": 183,
       "norm_label": "redirectresponse"
     },
     {
@@ -1850,7 +1850,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_destroy",
-      "community": 192,
+      "community": 183,
       "norm_label": ".destroy()"
     },
     {
@@ -1860,7 +1860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest",
-      "community": 192,
+      "community": 184,
       "norm_label": "loginrequest.php"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "formrequest",
-      "community": 192,
+      "community": 183,
       "norm_label": "formrequest"
     },
     {
@@ -1940,7 +1940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest",
-      "community": 192,
+      "community": 183,
       "norm_label": "profileupdaterequest.php"
     },
     {
@@ -1950,7 +1950,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest",
-      "community": 192,
+      "community": 183,
       "norm_label": "profileupdaterequest"
     },
     {
@@ -1960,7 +1960,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest_rules",
-      "community": 192,
+      "community": 183,
       "norm_label": ".rules()"
     },
     {
@@ -2330,7 +2330,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_models_categoria_categoria_corpicelesti",
-      "community": 21,
+      "community": 103,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_categoria_php_hasmany",
-      "community": 21,
+      "community": 103,
       "norm_label": "hasmany"
     },
     {
@@ -2530,7 +2530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_galleriacorpo",
-      "community": 103,
+      "community": 25,
       "norm_label": "galleriacorpo.php"
     },
     {
@@ -2630,7 +2630,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_models_missione_missione_corpicelesti",
-      "community": 103,
+      "community": 3,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2640,7 +2640,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_missione_php_belongstomany",
-      "community": 103,
+      "community": 3,
       "norm_label": "belongstomany"
     },
     {
@@ -3190,7 +3190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider",
-      "community": 103,
+      "community": 48,
       "norm_label": "authserviceprovider.php"
     },
     {
@@ -3220,7 +3220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_services_nasaimageservice",
-      "community": 103,
+      "community": 25,
       "norm_label": "nasaimageservice.php"
     },
     {
@@ -3970,7 +3970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_auth",
-      "community": 192,
+      "community": 161,
       "norm_label": "auth.php"
     },
     {
@@ -6620,7 +6620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_api",
-      "community": 6,
+      "community": 180,
       "norm_label": "api.php"
     },
     {
@@ -6630,7 +6630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_auth",
-      "community": 10,
+      "community": 184,
       "norm_label": "auth.php"
     },
     {
@@ -6650,7 +6650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_web",
-      "community": 6,
+      "community": 180,
       "norm_label": "web.php"
     },
     {
@@ -7900,7 +7900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest",
-      "community": 103,
+      "community": 25,
       "norm_label": "galleriacrudtest.php"
     },
     {
@@ -8380,7 +8380,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest",
-      "community": 44,
+      "community": 103,
       "norm_label": "curiositaapitest.php"
     },
     {
@@ -8390,7 +8390,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest",
-      "community": 44,
+      "community": 103,
       "norm_label": "curiositaapitest"
     },
     {
@@ -8400,7 +8400,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_setup",
-      "community": 44,
+      "community": 103,
       "norm_label": ".setup()"
     },
     {
@@ -8410,7 +8410,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_test_index_returns_all_curiosita",
-      "community": 44,
+      "community": 103,
       "norm_label": ".test_index_returns_all_curiosita()"
     },
     {
@@ -8560,7 +8560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest",
-      "community": 161,
+      "community": 189,
       "norm_label": "authenticationtest.php"
     },
     {
@@ -8570,7 +8570,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest",
-      "community": 161,
+      "community": 189,
       "norm_label": "authenticationtest"
     },
     {
@@ -8580,7 +8580,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_login_screen_can_be_rendered",
-      "community": 161,
+      "community": 189,
       "norm_label": ".test_login_screen_can_be_rendered()"
     },
     {
@@ -8590,7 +8590,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_authenticate_using_the_login_screen",
-      "community": 161,
+      "community": 189,
       "norm_label": ".test_users_can_authenticate_using_the_login_screen()"
     },
     {
@@ -8600,7 +8600,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_not_authenticate_with_invalid_password",
-      "community": 161,
+      "community": 189,
       "norm_label": ".test_users_can_not_authenticate_with_invalid_password()"
     },
     {
@@ -8610,7 +8610,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_logout",
-      "community": 161,
+      "community": 189,
       "norm_label": ".test_users_can_logout()"
     },
     {
@@ -8620,7 +8620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest",
-      "community": 25,
+      "community": 44,
       "norm_label": "emailverificationtest.php"
     },
     {
@@ -8630,7 +8630,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest",
-      "community": 25,
+      "community": 44,
       "norm_label": "emailverificationtest"
     },
     {
@@ -8640,7 +8640,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_verification_screen_can_be_rendered",
-      "community": 25,
+      "community": 44,
       "norm_label": ".test_email_verification_screen_can_be_rendered()"
     },
     {
@@ -8650,7 +8650,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_can_be_verified",
-      "community": 25,
+      "community": 44,
       "norm_label": ".test_email_can_be_verified()"
     },
     {
@@ -8660,7 +8660,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_is_not_verified_with_invalid_hash",
-      "community": 25,
+      "community": 44,
       "norm_label": ".test_email_is_not_verified_with_invalid_hash()"
     },
     {
@@ -8900,7 +8900,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest",
-      "community": 48,
+      "community": 190,
       "norm_label": "profiletest"
     },
     {
@@ -8910,7 +8910,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_profile_page_is_displayed",
-      "community": 48,
+      "community": 190,
       "norm_label": ".test_profile_page_is_displayed()"
     },
     {
@@ -8920,7 +8920,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_profile_information_can_be_updated",
-      "community": 48,
+      "community": 190,
       "norm_label": ".test_profile_information_can_be_updated()"
     },
     {
@@ -8930,7 +8930,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged",
-      "community": 48,
+      "community": 190,
       "norm_label": ".test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged()"
     },
     {
@@ -8940,7 +8940,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_user_can_delete_their_account",
-      "community": 48,
+      "community": 190,
       "norm_label": ".test_user_can_delete_their_account()"
     },
     {
@@ -8950,7 +8950,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_correct_password_must_be_provided_to_delete_account",
-      "community": 48,
+      "community": 190,
       "norm_label": ".test_correct_password_must_be_provided_to_delete_account()"
     },
     {
@@ -9020,7 +9020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest",
-      "community": 103,
+      "community": 25,
       "norm_label": "nasaimageservicetest.php"
     },
     {
@@ -9350,7 +9350,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "readme_funzionalit\u00e0",
-      "community": 101,
+      "community": 196,
       "norm_label": "\u2728 funzionalita"
     },
     {
@@ -9360,7 +9360,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "readme_backoffice_laravel_blade",
-      "community": 101,
+      "community": 196,
       "norm_label": "\ud83d\udc68\u200d\ud83d\udcbc backoffice (laravel + blade)"
     },
     {
@@ -9370,7 +9370,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "readme_frontend_react_vite",
-      "community": 101,
+      "community": 196,
       "norm_label": "\ud83c\udf1f frontend (react + vite)"
     },
     {
@@ -9380,7 +9380,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "readme_api_rest",
-      "community": 101,
+      "community": 196,
       "norm_label": "\ud83d\udef0\ufe0f api rest"
     },
     {
@@ -10550,7 +10550,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "docs_documentazione_palette_colori",
-      "community": 180,
+      "community": 12,
       "norm_label": "palette colori"
     },
     {
@@ -10560,7 +10560,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "docs_documentazione_badge_categoria",
-      "community": 180,
+      "community": 12,
       "norm_label": "badge categoria"
     },
     {
@@ -10570,7 +10570,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "docs_documentazione_frontend_guest_react_spa",
-      "community": 180,
+      "community": 12,
       "norm_label": "frontend guest (react spa)"
     },
     {
@@ -10580,7 +10580,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "docs_documentazione_backoffice_admin",
-      "community": 180,
+      "community": 12,
       "norm_label": "backoffice admin"
     },
     {
@@ -10590,7 +10590,7 @@
       "source_location": "L218",
       "_origin": "ast",
       "id": "docs_documentazione_api_rest",
-      "community": 180,
+      "community": 12,
       "norm_label": "api rest"
     },
     {
@@ -10694,30 +10694,30 @@
       "norm_label": "2. fasi di sviluppo"
     },
     {
-      "label": "Fase 0 \u2014 Setup (02/07)",
+      "label": "Fase 0 \u2014 Setup del Progetto (02/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_0_setup_02_07",
+      "id": "docs_presentazione_progetto_fase_0_setup_del_progetto_02_07",
       "community": 4,
-      "norm_label": "fase 0 \u2014 setup (02/07)"
+      "norm_label": "fase 0 \u2014 setup del progetto (02/07)"
     },
     {
-      "label": "Fase 1 \u2014 Database e Modelli (03/07)",
+      "label": "Fase 1 \u2014 Database, Modelli e Relazioni (03/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L23",
+      "source_location": "L27",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_1_database_e_modelli_03_07",
+      "id": "docs_presentazione_progetto_fase_1_database_modelli_e_relazioni_03_07",
       "community": 4,
-      "norm_label": "fase 1 \u2014 database e modelli (03/07)"
+      "norm_label": "fase 1 \u2014 database, modelli e relazioni (03/07)"
     },
     {
       "label": "Fase 2 \u2014 CRUD Admin Blade (03/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L27",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_fase_2_crud_admin_blade_03_07",
       "community": 4,
@@ -10727,7 +10727,7 @@
       "label": "Fase 3 \u2014 API REST (03/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L31",
+      "source_location": "L70",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_fase_3_api_rest_03_07",
       "community": 4,
@@ -10737,87 +10737,87 @@
       "label": "Fase 4-5 \u2014 React SPA Guest (04/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L35",
+      "source_location": "L100",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_fase_4_5_react_spa_guest_04_07",
       "community": 4,
       "norm_label": "fase 4-5 \u2014 react spa guest (04/07)"
     },
     {
-      "label": "Fase 6 \u2014 Bugfix Orbite e NASA Import (04/07)",
+      "label": "Fase 6 \u2014 Sistema Solare Animato e NASA Import (04/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L39",
+      "source_location": "L126",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_6_bugfix_orbite_e_nasa_import_04_07",
+      "id": "docs_presentazione_progetto_fase_6_sistema_solare_animato_e_nasa_import_04_07",
       "community": 4,
-      "norm_label": "fase 6 \u2014 bugfix orbite e nasa import (04/07)"
+      "norm_label": "fase 6 \u2014 sistema solare animato e nasa import (04/07)"
     },
     {
-      "label": "Fase 7 \u2014 Intervention Image v4 (04/07)",
+      "label": "Fase 7 \u2014 Migration Intervention Image v3 \u2192 v4 (04/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L43",
+      "source_location": "L138",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_7_intervention_image_v4_04_07",
+      "id": "docs_presentazione_progetto_fase_7_migration_intervention_image_v3_v4_04_07",
       "community": 4,
-      "norm_label": "fase 7 \u2014 intervention image v4 (04/07)"
+      "norm_label": "fase 7 \u2014 migration intervention image v3 \u2192 v4 (04/07)"
     },
     {
       "label": "Fase 8 \u2014 NasaImageService e CLI (04/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L47",
+      "source_location": "L160",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_fase_8_nasaimageservice_e_cli_04_07",
       "community": 4,
       "norm_label": "fase 8 \u2014 nasaimageservice e cli (04/07)"
     },
     {
-      "label": "Fase 9 \u2014 URL Remoti e WordMap (04/07)",
+      "label": "Fase 9 \u2014 URL Remoti, nome_it e WordMap (04/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L51",
+      "source_location": "L179",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_9_url_remoti_e_wordmap_04_07",
+      "id": "docs_presentazione_progetto_fase_9_url_remoti_nome_it_e_wordmap_04_07",
       "community": 4,
-      "norm_label": "fase 9 \u2014 url remoti e wordmap (04/07)"
+      "norm_label": "fase 9 \u2014 url remoti, nome_it e wordmap (04/07)"
     },
     {
       "label": "Fase 10 \u2014 UI Auth e Paginazione (06/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L55",
+      "source_location": "L191",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_fase_10_ui_auth_e_paginazione_06_07",
       "community": 4,
       "norm_label": "fase 10 \u2014 ui auth e paginazione (06/07)"
     },
     {
-      "label": "Fase 11 \u2014 Inertia\u2192Blade, Dedup, Galleria Cleanup (07/07)",
+      "label": "Fase 11 \u2014 Inertia \u2192 Blade Puro (07/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L59",
+      "source_location": "L201",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_11_inertia_blade_dedup_galleria_cleanup_07_07",
+      "id": "docs_presentazione_progetto_fase_11_inertia_blade_puro_07_07",
       "community": 4,
-      "norm_label": "fase 11 \u2014 inertia\u2192blade, dedup, galleria cleanup (07/07)"
+      "norm_label": "fase 11 \u2014 inertia \u2192 blade puro (07/07)"
     },
     {
-      "label": "Fase 12 \u2014 Authorization e FormRequest (07/07)",
+      "label": "Fase 12 \u2014 Authorization, Policy e FormRequest (07/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L63",
+      "source_location": "L217",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_12_authorization_e_formrequest_07_07",
+      "id": "docs_presentazione_progetto_fase_12_authorization_policy_e_formrequest_07_07",
       "community": 4,
-      "norm_label": "fase 12 \u2014 authorization e formrequest (07/07)"
+      "norm_label": "fase 12 \u2014 authorization, policy e formrequest (07/07)"
     },
     {
       "label": "Wave 1-4 \u2014 Refactoring P2/P3 (08/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L67",
+      "source_location": "L255",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_wave_1_4_refactoring_p2_p3_08_07",
       "community": 4,
@@ -10827,57 +10827,57 @@
       "label": "Fase 13 \u2014 Testing Completo (08/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L71",
+      "source_location": "L266",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_fase_13_testing_completo_08_07",
       "community": 4,
       "norm_label": "fase 13 \u2014 testing completo (08/07)"
     },
     {
-      "label": "Fase 14 \u2014 Bugfix e Dashboard (09/07)",
+      "label": "Fase 14 \u2014 Bugfix, Dashboard e Pulizia Dipendenze (09/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L75",
+      "source_location": "L292",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_14_bugfix_e_dashboard_09_07",
+      "id": "docs_presentazione_progetto_fase_14_bugfix_dashboard_e_pulizia_dipendenze_09_07",
       "community": 4,
-      "norm_label": "fase 14 \u2014 bugfix e dashboard (09/07)"
+      "norm_label": "fase 14 \u2014 bugfix, dashboard e pulizia dipendenze (09/07)"
     },
     {
-      "label": "Fase 15 \u2014 CRUD Test e SEO (09/07)",
+      "label": "Fase 15 \u2014 CRUD Test Admin e SEO (09/07)",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L79",
+      "source_location": "L317",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_fase_15_crud_test_e_seo_09_07",
+      "id": "docs_presentazione_progetto_fase_15_crud_test_admin_e_seo_09_07",
       "community": 4,
-      "norm_label": "fase 15 \u2014 crud test e seo (09/07)"
+      "norm_label": "fase 15 \u2014 crud test admin e seo (09/07)"
     },
     {
       "label": "3. Checklist Requisiti \u2192 Realizzato",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L85",
+      "source_location": "L337",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_3_checklist_requisiti_realizzato",
       "community": 4,
       "norm_label": "3. checklist requisiti \u2192 realizzato"
     },
     {
-      "label": "Cosa abbiamo fatto IN PI\u00d9 (Wow Factor)",
+      "label": "Wow Factor \u2014 Oltre la Traccia",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L102",
+      "source_location": "L354",
       "_origin": "ast",
-      "id": "docs_presentazione_progetto_cosa_abbiamo_fatto_in_pi\u00f9_wow_factor",
+      "id": "docs_presentazione_progetto_wow_factor_oltre_la_traccia",
       "community": 4,
-      "norm_label": "cosa abbiamo fatto in piu (wow factor)"
+      "norm_label": "wow factor \u2014 oltre la traccia"
     },
     {
       "label": "4. Guide Pratiche",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L120",
+      "source_location": "L371",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_4_guide_pratiche",
       "community": 4,
@@ -10887,7 +10887,7 @@
       "label": "Come Testare le API con Postman",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L122",
+      "source_location": "L373",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_come_testare_le_api_con_postman",
       "community": 4,
@@ -10897,7 +10897,7 @@
       "label": "Come Creare una Migrazione",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L149",
+      "source_location": "L400",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_come_creare_una_migrazione",
       "community": 4,
@@ -10907,7 +10907,7 @@
       "label": "Come Creare una Relazione 1-N",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L169",
+      "source_location": "L420",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_come_creare_una_relazione_1_n",
       "community": 4,
@@ -10917,7 +10917,7 @@
       "label": "Come Creare una Relazione N-N con Pivot",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L185",
+      "source_location": "L436",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_come_creare_una_relazione_n_n_con_pivot",
       "community": 4,
@@ -10927,7 +10927,7 @@
       "label": "Come Creare un Model + Controller + Migrazione in un Comando",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L212",
+      "source_location": "L463",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_come_creare_un_model_controller_migrazione_in_un_comando",
       "community": 4,
@@ -10937,7 +10937,7 @@
       "label": "5. Il Nostro Stack Tecnologico",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L223",
+      "source_location": "L474",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_5_il_nostro_stack_tecnologico",
       "community": 4,
@@ -10947,7 +10947,7 @@
       "label": "6. Comandi Rapidi",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L245",
+      "source_location": "L496",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_6_comandi_rapidi",
       "community": 4,
@@ -10957,11 +10957,51 @@
       "label": "7. Credenziali",
       "file_type": "document",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L278",
+      "source_location": "L529",
       "_origin": "ast",
       "id": "docs_presentazione_progetto_7_credenziali",
       "community": 4,
       "norm_label": "7. credenziali"
+    },
+    {
+      "label": "8. \ud83d\udccc Schede Riassuntive",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L538",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_8_schede_riassuntive",
+      "community": 4,
+      "norm_label": "8. \ud83d\udccc schede riassuntive"
+    },
+    {
+      "label": "Scheda 1 \u2014 Relazioni Eloquent",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L540",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_scheda_1_relazioni_eloquent",
+      "community": 4,
+      "norm_label": "scheda 1 \u2014 relazioni eloquent"
+    },
+    {
+      "label": "Scheda 2 \u2014 Pattern Ricorrenti",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L550",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_scheda_2_pattern_ricorrenti",
+      "community": 4,
+      "norm_label": "scheda 2 \u2014 pattern ricorrenti"
+    },
+    {
+      "label": "Scheda 3 \u2014 Errori Comuni da NON Fare",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L568",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_scheda_3_errori_comuni_da_non_fare",
+      "community": 4,
+      "norm_label": "scheda 3 \u2014 errori comuni da non fare"
     },
     {
       "label": "progetto-finale.md",
@@ -12781,6 +12821,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_curiositacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_curiositacontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CuriositaController.php",
@@ -13747,28 +13809,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_missionecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_missionecontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/MissioneController.php",
@@ -14601,28 +14641,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_curiositacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_curiositacontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CuriositaController.php",
@@ -14933,6 +14951,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/MissioneController.php",
@@ -15079,18 +15119,7 @@
       "source_location": "L9",
       "weight": 1.0,
       "source": "app_http_controllers_auth_authenticatedsessioncontroller",
-      "target": "config_auth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/auth.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_auth",
-      "target": "app_http_controllers_auth_authenticatedsessioncontroller",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -15250,18 +15279,7 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller",
-      "target": "config_auth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/auth.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_auth",
-      "target": "app_http_controllers_auth_confirmablepasswordcontroller",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -15966,7 +15984,7 @@
       "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
-      "target": "config_auth",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -15978,17 +15996,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
       "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/auth.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "routes_auth",
-      "target": "app_http_controllers_auth_registeredusercontroller",
       "confidence_score": 1.0
     },
     {
@@ -16285,7 +16292,7 @@
       "source_location": "L9",
       "weight": 1.0,
       "source": "app_http_controllers_profilecontroller",
-      "target": "config_auth",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -16413,7 +16420,7 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_requests_auth_loginrequest",
-      "target": "config_auth",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -28747,7 +28754,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L85",
+      "source_location": "L337",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
       "target": "docs_presentazione_progetto_3_checklist_requisiti_realizzato",
@@ -28757,7 +28764,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L120",
+      "source_location": "L371",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
       "target": "docs_presentazione_progetto_4_guide_pratiche",
@@ -28767,7 +28774,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L223",
+      "source_location": "L474",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
       "target": "docs_presentazione_progetto_5_il_nostro_stack_tecnologico",
@@ -28777,7 +28784,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L245",
+      "source_location": "L496",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
       "target": "docs_presentazione_progetto_6_comandi_rapidi",
@@ -28787,7 +28794,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L278",
+      "source_location": "L529",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
       "target": "docs_presentazione_progetto_7_credenziali",
@@ -28797,17 +28804,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L19",
+      "source_location": "L538",
       "weight": 1.0,
-      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_0_setup_02_07",
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_8_schede_riassuntive",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L55",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_0_setup_del_progetto_02_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L191",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
       "target": "docs_presentazione_progetto_fase_10_ui_auth_e_paginazione_06_07",
@@ -28817,27 +28834,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L59",
+      "source_location": "L201",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_11_inertia_blade_dedup_galleria_cleanup_07_07",
+      "target": "docs_presentazione_progetto_fase_11_inertia_blade_puro_07_07",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L63",
+      "source_location": "L217",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_12_authorization_e_formrequest_07_07",
+      "target": "docs_presentazione_progetto_fase_12_authorization_policy_e_formrequest_07_07",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L71",
+      "source_location": "L266",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
       "target": "docs_presentazione_progetto_fase_13_testing_completo_08_07",
@@ -28847,30 +28864,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L75",
+      "source_location": "L292",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_14_bugfix_e_dashboard_09_07",
+      "target": "docs_presentazione_progetto_fase_14_bugfix_dashboard_e_pulizia_dipendenze_09_07",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L79",
+      "source_location": "L317",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_15_crud_test_e_seo_09_07",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_1_database_e_modelli_03_07",
+      "target": "docs_presentazione_progetto_fase_15_crud_test_admin_e_seo_09_07",
       "confidence_score": 1.0
     },
     {
@@ -28880,6 +28887,16 @@
       "source_location": "L27",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_1_database_modelli_e_relazioni_03_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
       "target": "docs_presentazione_progetto_fase_2_crud_admin_blade_03_07",
       "confidence_score": 1.0
     },
@@ -28887,7 +28904,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L31",
+      "source_location": "L70",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
       "target": "docs_presentazione_progetto_fase_3_api_rest_03_07",
@@ -28897,7 +28914,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L35",
+      "source_location": "L100",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
       "target": "docs_presentazione_progetto_fase_4_5_react_spa_guest_04_07",
@@ -28907,27 +28924,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L39",
+      "source_location": "L126",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_6_bugfix_orbite_e_nasa_import_04_07",
+      "target": "docs_presentazione_progetto_fase_6_sistema_solare_animato_e_nasa_import_04_07",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L43",
+      "source_location": "L138",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_7_intervention_image_v4_04_07",
+      "target": "docs_presentazione_progetto_fase_7_migration_intervention_image_v3_v4_04_07",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L47",
+      "source_location": "L160",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
       "target": "docs_presentazione_progetto_fase_8_nasaimageservice_e_cli_04_07",
@@ -28937,17 +28954,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L51",
+      "source_location": "L179",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
-      "target": "docs_presentazione_progetto_fase_9_url_remoti_e_wordmap_04_07",
+      "target": "docs_presentazione_progetto_fase_9_url_remoti_nome_it_e_wordmap_04_07",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L67",
+      "source_location": "L255",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
       "target": "docs_presentazione_progetto_wave_1_4_refactoring_p2_p3_08_07",
@@ -28957,17 +28974,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L102",
+      "source_location": "L354",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_3_checklist_requisiti_realizzato",
-      "target": "docs_presentazione_progetto_cosa_abbiamo_fatto_in_pi\u00f9_wow_factor",
+      "target": "docs_presentazione_progetto_wow_factor_oltre_la_traccia",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L212",
+      "source_location": "L463",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_4_guide_pratiche",
       "target": "docs_presentazione_progetto_come_creare_un_model_controller_migrazione_in_un_comando",
@@ -28977,7 +28994,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L149",
+      "source_location": "L400",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_4_guide_pratiche",
       "target": "docs_presentazione_progetto_come_creare_una_migrazione",
@@ -28987,7 +29004,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L169",
+      "source_location": "L420",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_4_guide_pratiche",
       "target": "docs_presentazione_progetto_come_creare_una_relazione_1_n",
@@ -28997,7 +29014,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L185",
+      "source_location": "L436",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_4_guide_pratiche",
       "target": "docs_presentazione_progetto_come_creare_una_relazione_n_n_con_pivot",
@@ -29007,10 +29024,40 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/presentazione-progetto.md",
-      "source_location": "L122",
+      "source_location": "L373",
       "weight": 1.0,
       "source": "docs_presentazione_progetto_4_guide_pratiche",
       "target": "docs_presentazione_progetto_come_testare_le_api_con_postman",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L540",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_8_schede_riassuntive",
+      "target": "docs_presentazione_progetto_scheda_1_relazioni_eloquent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L550",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_8_schede_riassuntive",
+      "target": "docs_presentazione_progetto_scheda_2_pattern_ricorrenti",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L568",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_8_schede_riassuntive",
+      "target": "docs_presentazione_progetto_scheda_3_errori_comuni_da_non_fare",
       "confidence_score": 1.0
     },
     {
@@ -29485,5 +29532,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4b61d722162db4573a99784a680b3674dba5390c"
+  "built_at_commit": "d8882ac64e96e8084e2437e9afdd4d0991b58567"
 }

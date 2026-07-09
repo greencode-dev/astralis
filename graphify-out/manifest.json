@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783583249.0965776,
-    "ast_hash": "4b7a8af324db098139de7952a5819796",
+    "mtime": 1783613051.6199305,
+    "ast_hash": "0321a9be59ac97b4ed0e0ba0a10d7732",
     "semantic_hash": ""
   },
   "docs/bug.md": {
@@ -1375,8 +1375,8 @@
     "semantic_hash": ""
   },
   "docs/presentazione-progetto.md": {
-    "mtime": 1783611605.2521818,
-    "ast_hash": "6477ed312a192ae9cf871a1925fe4af9",
+    "mtime": 1783612440.1723661,
+    "ast_hash": "8118af1c8790ba386d8b0c0a940476de",
     "semantic_hash": ""
   }
 }

@@ -182,18 +182,9 @@
   "180": "ConfirmablePasswordController.php",
   "181": "NewPasswordController.php",
   "182": "PasswordResetLinkController.php",
-  "183": "RegisteredUserController.php",
-  "184": ".suggestNome",
-  "185": "auth.php",
-  "186": "EmailVerificationPromptController.php",
   "191": "✨ Funzionalità",
   "192": "Fase 9.1 — Bug critici (route, fillable, seeder)",
   "193": "Fase 15 — P2/P3 manutenzione e accessibilità",
-  "194": "API di supporto",
-  "195": "CategoriaApiTest",
-  "196": "CorpoCelesteController",
-  "197": "CuriositaApiTest.php",
-  "198": "DashboardApiTest.php",
   "199": "Fase 14 — 10 Bug critici fixati",
   "200": "show.blade.php",
   "201": "06275c1cca3e62ecb19f4140a5da4291.php",
@@ -207,8 +198,5 @@
   "209": "aebcaf54b6e931ec20b0b981b0e449e5.php",
   "210": "c2ffd5840063245b4dbadef9e75add7b.php",
   "211": "d9a5339113a1f5830c987a8d4f37435c.php",
-  "212": "dfe5955e638d01ec782459fa0454fb58.php",
-  "213": "10. Testing",
-  "214": "11. SEO e Robustezza",
-  "215": "5. API REST"
+  "212": "dfe5955e638d01ec782459fa0454fb58.php"
 }
