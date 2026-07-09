@@ -10,7 +10,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates",
-      "community": 11,
+      "community": 7,
       "norm_label": "cleanupgalleryduplicates.php"
     },
     {
@@ -30,7 +30,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "command",
-      "community": 11,
+      "community": 7,
       "norm_label": "command"
     },
     {
@@ -120,7 +120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand",
-      "community": 11,
+      "community": 7,
       "norm_label": "fetchnasacommand.php"
     },
     {
@@ -130,7 +130,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand",
-      "community": 11,
+      "community": 7,
       "norm_label": "fetchnasacommand"
     },
     {
@@ -140,7 +140,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
-      "community": 11,
+      "community": 7,
       "norm_label": ".handle()"
     },
     {
@@ -330,7 +330,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
-      "community": 192,
+      "community": 50,
       "norm_label": ".store()"
     },
     {
@@ -540,7 +540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 190,
+      "community": 103,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -550,7 +550,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 190,
+      "community": 103,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -560,7 +560,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 190,
+      "community": 103,
       "norm_label": ".index()"
     },
     {
@@ -570,7 +570,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 190,
+      "community": 103,
       "norm_label": "view"
     },
     {
@@ -840,7 +840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller",
-      "community": 11,
+      "community": 7,
       "norm_label": "nasaimportcontroller.php"
     },
     {
@@ -850,7 +850,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller",
-      "community": 11,
+      "community": 7,
       "norm_label": "nasaimportcontroller"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_construct",
-      "community": 11,
+      "community": 7,
       "norm_label": ".__construct()"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_index",
-      "community": 11,
+      "community": 7,
       "norm_label": ".index()"
     },
     {
@@ -880,7 +880,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_view",
-      "community": 11,
+      "community": 7,
       "norm_label": "view"
     },
     {
@@ -890,7 +890,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_import",
-      "community": 11,
+      "community": 7,
       "norm_label": ".import()"
     },
     {
@@ -900,7 +900,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_redirectresponse",
-      "community": 11,
+      "community": 7,
       "norm_label": "redirectresponse"
     },
     {
@@ -910,7 +910,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_importall",
-      "community": 11,
+      "community": 7,
       "norm_label": ".importall()"
     },
     {
@@ -920,7 +920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller",
-      "community": 190,
+      "community": 6,
       "norm_label": "categoriacontroller.php"
     },
     {
@@ -930,7 +930,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller",
-      "community": 190,
+      "community": 6,
       "norm_label": "categoriacontroller"
     },
     {
@@ -940,7 +940,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_index",
-      "community": 190,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -950,7 +950,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_show",
-      "community": 190,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -970,7 +970,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller",
-      "community": 6,
+      "community": 177,
       "norm_label": "corpocelestecontroller"
     },
     {
@@ -980,7 +980,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_index",
-      "community": 6,
+      "community": 177,
       "norm_label": ".index()"
     },
     {
@@ -990,7 +990,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_php_request",
-      "community": 6,
+      "community": 177,
       "norm_label": "request"
     },
     {
@@ -1000,7 +1000,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_show",
-      "community": 6,
+      "community": 177,
       "norm_label": ".show()"
     },
     {
@@ -1010,7 +1010,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_simili",
-      "community": 6,
+      "community": 177,
       "norm_label": ".simili()"
     },
     {
@@ -1020,7 +1020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller",
-      "community": 190,
+      "community": 6,
       "norm_label": "curiositacontroller.php"
     },
     {
@@ -1030,7 +1030,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller_curiositacontroller",
-      "community": 190,
+      "community": 6,
       "norm_label": "curiositacontroller"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_curiositacontroller_curiositacontroller_index",
-      "community": 190,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller",
-      "community": 184,
+      "community": 103,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller",
-      "community": 184,
+      "community": 103,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller_stats",
-      "community": 184,
+      "community": 103,
       "norm_label": ".stats()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_php_jsonresponse",
-      "community": 184,
+      "community": 103,
       "norm_label": "jsonresponse"
     },
     {
@@ -1090,7 +1090,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_galleriacontroller",
-      "community": 170,
+      "community": 6,
       "norm_label": "galleriacontroller.php"
     },
     {
@@ -1100,7 +1100,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_api_galleriacontroller_galleriacontroller",
-      "community": 170,
+      "community": 6,
       "norm_label": "galleriacontroller"
     },
     {
@@ -1110,7 +1110,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_galleriacontroller_galleriacontroller_index",
-      "community": 170,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller",
-      "community": 7,
+      "community": 6,
       "norm_label": "missionecontroller.php"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller",
-      "community": 7,
+      "community": 6,
       "norm_label": "missionecontroller"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_index",
-      "community": 7,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -1150,7 +1150,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_php_request",
-      "community": 7,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -1160,7 +1160,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_show",
-      "community": 7,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -1250,7 +1250,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller",
-      "community": 180,
+      "community": 10,
       "norm_label": "confirmablepasswordcontroller.php"
     },
     {
@@ -1260,7 +1260,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller",
-      "community": 180,
+      "community": 10,
       "norm_label": "confirmablepasswordcontroller"
     },
     {
@@ -1270,7 +1270,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_show",
-      "community": 180,
+      "community": 10,
       "norm_label": ".show()"
     },
     {
@@ -1280,7 +1280,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_view",
-      "community": 180,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1290,7 +1290,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_confirmablepasswordcontroller_store",
-      "community": 180,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1300,7 +1300,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_request",
-      "community": 180,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1310,7 +1310,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_confirmablepasswordcontroller_php_redirectresponse",
-      "community": 180,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1320,7 +1320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller",
-      "community": 185,
+      "community": 10,
       "norm_label": "emailverificationnotificationcontroller.php"
     },
     {
@@ -1330,7 +1330,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller",
-      "community": 185,
+      "community": 10,
       "norm_label": "emailverificationnotificationcontroller"
     },
     {
@@ -1340,7 +1340,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_emailverificationnotificationcontroller_store",
-      "community": 185,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1350,7 +1350,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_request",
-      "community": 185,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1360,7 +1360,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationnotificationcontroller_php_redirectresponse",
-      "community": 185,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1370,7 +1370,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller",
-      "community": 186,
+      "community": 10,
       "norm_label": "emailverificationpromptcontroller.php"
     },
     {
@@ -1380,7 +1380,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
-      "community": 186,
+      "community": 10,
       "norm_label": "emailverificationpromptcontroller"
     },
     {
@@ -1390,7 +1390,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
-      "community": 186,
+      "community": 10,
       "norm_label": ".__invoke()"
     },
     {
@@ -1400,7 +1400,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_request",
-      "community": 186,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1410,7 +1410,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_redirectresponse",
-      "community": 186,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1420,7 +1420,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_php_view",
-      "community": 186,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1430,7 +1430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller",
-      "community": 181,
+      "community": 10,
       "norm_label": "newpasswordcontroller.php"
     },
     {
@@ -1440,7 +1440,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller",
-      "community": 181,
+      "community": 10,
       "norm_label": "newpasswordcontroller"
     },
     {
@@ -1450,7 +1450,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_create",
-      "community": 181,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1460,7 +1460,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_request",
-      "community": 181,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1470,7 +1470,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_view",
-      "community": 181,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1480,7 +1480,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_newpasswordcontroller_store",
-      "community": 181,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1490,7 +1490,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller_php_redirectresponse",
-      "community": 181,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1500,7 +1500,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller",
-      "community": 189,
+      "community": 10,
       "norm_label": "passwordcontroller.php"
     },
     {
@@ -1510,7 +1510,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller",
-      "community": 189,
+      "community": 10,
       "norm_label": "passwordcontroller"
     },
     {
@@ -1520,7 +1520,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_passwordcontroller_update",
-      "community": 189,
+      "community": 10,
       "norm_label": ".update()"
     },
     {
@@ -1530,7 +1530,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_request",
-      "community": 189,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1540,7 +1540,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordcontroller_php_redirectresponse",
-      "community": 189,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1550,7 +1550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller",
-      "community": 182,
+      "community": 10,
       "norm_label": "passwordresetlinkcontroller.php"
     },
     {
@@ -1560,7 +1560,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller",
-      "community": 182,
+      "community": 10,
       "norm_label": "passwordresetlinkcontroller"
     },
     {
@@ -1570,7 +1570,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_create",
-      "community": 182,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1580,7 +1580,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_view",
-      "community": 182,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1590,7 +1590,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_passwordresetlinkcontroller_store",
-      "community": 182,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1600,7 +1600,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_request",
-      "community": 182,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1610,7 +1610,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_passwordresetlinkcontroller_php_redirectresponse",
-      "community": 182,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller",
-      "community": 183,
+      "community": 10,
       "norm_label": "registeredusercontroller.php"
     },
     {
@@ -1630,7 +1630,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller",
-      "community": 183,
+      "community": 10,
       "norm_label": "registeredusercontroller"
     },
     {
@@ -1640,7 +1640,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_create",
-      "community": 183,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1650,7 +1650,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_view",
-      "community": 183,
+      "community": 10,
       "norm_label": "view"
     },
     {
@@ -1660,7 +1660,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_registeredusercontroller_store",
-      "community": 183,
+      "community": 10,
       "norm_label": ".store()"
     },
     {
@@ -1670,7 +1670,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_request",
-      "community": 183,
+      "community": 10,
       "norm_label": "request"
     },
     {
@@ -1680,7 +1680,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_registeredusercontroller_php_redirectresponse",
-      "community": 183,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1690,7 +1690,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller",
-      "community": 177,
+      "community": 10,
       "norm_label": "verifyemailcontroller.php"
     },
     {
@@ -1700,7 +1700,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller",
-      "community": 177,
+      "community": 10,
       "norm_label": "verifyemailcontroller"
     },
     {
@@ -1710,7 +1710,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_verifyemailcontroller_invoke",
-      "community": 177,
+      "community": 10,
       "norm_label": ".__invoke()"
     },
     {
@@ -1720,7 +1720,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "emailverificationrequest",
-      "community": 177,
+      "community": 10,
       "norm_label": "emailverificationrequest"
     },
     {
@@ -1730,7 +1730,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_verifyemailcontroller_php_redirectresponse",
-      "community": 177,
+      "community": 10,
       "norm_label": "redirectresponse"
     },
     {
@@ -1740,7 +1740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_controller",
-      "community": 190,
+      "community": 10,
       "norm_label": "controller.php"
     },
     {
@@ -1750,7 +1750,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_http_controllers_controller_controller",
-      "community": 190,
+      "community": 10,
       "norm_label": "controller"
     },
     {
@@ -1760,7 +1760,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "authorizesrequests",
-      "community": 190,
+      "community": 10,
       "norm_label": "authorizesrequests"
     },
     {
@@ -1770,7 +1770,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "validatesrequests",
-      "community": 190,
+      "community": 10,
       "norm_label": "validatesrequests"
     },
     {
@@ -1780,7 +1780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller",
-      "community": 10,
+      "community": 192,
       "norm_label": "profilecontroller.php"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller",
-      "community": 10,
+      "community": 192,
       "norm_label": "profilecontroller"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_edit",
-      "community": 10,
+      "community": 192,
       "norm_label": ".edit()"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_request",
-      "community": 10,
+      "community": 192,
       "norm_label": "request"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_view",
-      "community": 10,
+      "community": 192,
       "norm_label": "view"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_update",
-      "community": 10,
+      "community": 192,
       "norm_label": ".update()"
     },
     {
@@ -1840,7 +1840,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_redirectresponse",
-      "community": 10,
+      "community": 192,
       "norm_label": "redirectresponse"
     },
     {
@@ -1850,7 +1850,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_destroy",
-      "community": 10,
+      "community": 192,
       "norm_label": ".destroy()"
     },
     {
@@ -1860,7 +1860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest",
-      "community": 185,
+      "community": 10,
       "norm_label": "loginrequest.php"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "formrequest",
-      "community": 10,
+      "community": 192,
       "norm_label": "formrequest"
     },
     {
@@ -1940,7 +1940,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest",
-      "community": 10,
+      "community": 192,
       "norm_label": "profileupdaterequest.php"
     },
     {
@@ -1950,7 +1950,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest",
-      "community": 10,
+      "community": 192,
       "norm_label": "profileupdaterequest"
     },
     {
@@ -1960,7 +1960,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest_rules",
-      "community": 10,
+      "community": 192,
       "norm_label": ".rules()"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest",
-      "community": 192,
+      "community": 50,
       "norm_label": "updatecorpocelesterequest.php"
     },
     {
@@ -2030,7 +2030,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest",
-      "community": 192,
+      "community": 50,
       "norm_label": "updatecorpocelesterequest"
     },
     {
@@ -2040,7 +2040,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest_rules",
-      "community": 192,
+      "community": 50,
       "norm_label": ".rules()"
     },
     {
@@ -2180,7 +2180,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_resources_galleriacorporesource",
-      "community": 170,
+      "community": 6,
       "norm_label": "galleriacorporesource.php"
     },
     {
@@ -2190,7 +2190,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_http_resources_galleriacorporesource_galleriacorporesource",
-      "community": 170,
+      "community": 6,
       "norm_label": "galleriacorporesource"
     },
     {
@@ -2200,7 +2200,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_resources_galleriacorporesource_galleriacorporesource_toarray",
-      "community": 170,
+      "community": 6,
       "norm_label": ".toarray()"
     },
     {
@@ -2210,7 +2210,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_resources_galleriacorporesource_php_request",
-      "community": 170,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -2220,7 +2220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_resources_missioneresource",
-      "community": 7,
+      "community": 6,
       "norm_label": "missioneresource.php"
     },
     {
@@ -2230,7 +2230,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_resources_missioneresource_missioneresource",
-      "community": 7,
+      "community": 6,
       "norm_label": "missioneresource"
     },
     {
@@ -2240,7 +2240,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_resources_missioneresource_missioneresource_toarray",
-      "community": 7,
+      "community": 6,
       "norm_label": ".toarray()"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_resources_missioneresource_php_request",
-      "community": 7,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -2260,7 +2260,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_categoria",
-      "community": 184,
+      "community": 103,
       "norm_label": "categoria.php"
     },
     {
@@ -2280,7 +2280,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "model",
-      "community": 184,
+      "community": 103,
       "norm_label": "model"
     },
     {
@@ -2290,7 +2290,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "hasfactory",
-      "community": 184,
+      "community": 103,
       "norm_label": "hasfactory"
     },
     {
@@ -2300,7 +2300,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "hasslug",
-      "community": 184,
+      "community": 103,
       "norm_label": "hasslug"
     },
     {
@@ -2330,7 +2330,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_models_categoria_categoria_corpicelesti",
-      "community": 184,
+      "community": 21,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_categoria_php_hasmany",
-      "community": 184,
+      "community": 21,
       "norm_label": "hasmany"
     },
     {
@@ -2350,7 +2350,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_corpoceleste",
-      "community": 184,
+      "community": 103,
       "norm_label": "corpoceleste.php"
     },
     {
@@ -2380,7 +2380,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getslugoptions",
-      "community": 217,
+      "community": 49,
       "norm_label": ".getslugoptions()"
     },
     {
@@ -2390,7 +2390,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_slugoptions",
-      "community": 217,
+      "community": 49,
       "norm_label": "slugoptions"
     },
     {
@@ -2420,7 +2420,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_galleria",
-      "community": 49,
+      "community": 181,
       "norm_label": ".galleria()"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_hasmany",
-      "community": 49,
+      "community": 181,
       "norm_label": "hasmany"
     },
     {
@@ -2440,7 +2440,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_curiosita",
-      "community": 49,
+      "community": 181,
       "norm_label": ".curiosita()"
     },
     {
@@ -2450,7 +2450,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_missioni",
-      "community": 49,
+      "community": 183,
       "norm_label": ".missioni()"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongstomany",
-      "community": 49,
+      "community": 183,
       "norm_label": "belongstomany"
     },
     {
@@ -2490,7 +2490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_curiosita",
-      "community": 184,
+      "community": 103,
       "norm_label": "curiosita.php"
     },
     {
@@ -2530,7 +2530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_galleriacorpo",
-      "community": 184,
+      "community": 103,
       "norm_label": "galleriacorpo.php"
     },
     {
@@ -2580,7 +2580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_missione",
-      "community": 184,
+      "community": 103,
       "norm_label": "missione.php"
     },
     {
@@ -2650,7 +2650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_user",
-      "community": 187,
+      "community": 103,
       "norm_label": "user.php"
     },
     {
@@ -2680,7 +2680,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "notifiable",
-      "community": 187,
+      "community": 48,
       "norm_label": "notifiable"
     },
     {
@@ -2700,7 +2700,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver",
-      "community": 11,
+      "community": 7,
       "norm_label": "corpocelesteobserver.php"
     },
     {
@@ -2710,7 +2710,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver",
-      "community": 11,
+      "community": 7,
       "norm_label": "corpocelesteobserver"
     },
     {
@@ -2720,7 +2720,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_construct",
-      "community": 11,
+      "community": 7,
       "norm_label": ".__construct()"
     },
     {
@@ -2730,7 +2730,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_created",
-      "community": 11,
+      "community": 7,
       "norm_label": ".created()"
     },
     {
@@ -2740,7 +2740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy",
-      "community": 184,
+      "community": 48,
       "norm_label": "categoriapolicy.php"
     },
     {
@@ -2980,7 +2980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy",
-      "community": 184,
+      "community": 11,
       "norm_label": "galleriacorpopolicy.php"
     },
     {
@@ -2990,7 +2990,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy",
-      "community": 48,
+      "community": 11,
       "norm_label": "galleriacorpopolicy"
     },
     {
@@ -3000,7 +3000,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_before",
-      "community": 48,
+      "community": 11,
       "norm_label": ".before()"
     },
     {
@@ -3010,7 +3010,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_viewany",
-      "community": 48,
+      "community": 11,
       "norm_label": ".viewany()"
     },
     {
@@ -3020,7 +3020,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_view",
-      "community": 48,
+      "community": 11,
       "norm_label": ".view()"
     },
     {
@@ -3030,7 +3030,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_create",
-      "community": 48,
+      "community": 11,
       "norm_label": ".create()"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_update",
-      "community": 48,
+      "community": 11,
       "norm_label": ".update()"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_delete",
-      "community": 48,
+      "community": 11,
       "norm_label": ".delete()"
     },
     {
@@ -3140,7 +3140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider",
-      "community": 11,
+      "community": 7,
       "norm_label": "appserviceprovider.php"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider",
-      "community": 11,
+      "community": 7,
       "norm_label": "appserviceprovider"
     },
     {
@@ -3160,7 +3160,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "serviceprovider",
-      "community": 11,
+      "community": 7,
       "norm_label": "serviceprovider"
     },
     {
@@ -3170,7 +3170,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_register",
-      "community": 11,
+      "community": 7,
       "norm_label": ".register()"
     },
     {
@@ -3180,7 +3180,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_boot",
-      "community": 11,
+      "community": 7,
       "norm_label": ".boot()"
     },
     {
@@ -3190,7 +3190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider",
-      "community": 184,
+      "community": 103,
       "norm_label": "authserviceprovider.php"
     },
     {
@@ -3200,7 +3200,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider",
-      "community": 11,
+      "community": 7,
       "norm_label": "authserviceprovider"
     },
     {
@@ -3210,7 +3210,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider_boot",
-      "community": 11,
+      "community": 7,
       "norm_label": ".boot()"
     },
     {
@@ -3220,7 +3220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_services_nasaimageservice",
-      "community": 184,
+      "community": 7,
       "norm_label": "nasaimageservice.php"
     },
     {
@@ -3230,7 +3230,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice",
-      "community": 11,
+      "community": 7,
       "norm_label": "nasaimageservice"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_searchnasa",
-      "community": 11,
+      "community": 7,
       "norm_label": ".searchnasa()"
     },
     {
@@ -3250,7 +3250,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_extractmetadata",
-      "community": 11,
+      "community": 7,
       "norm_label": ".extractmetadata()"
     },
     {
@@ -3260,7 +3260,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_pickimageurl",
-      "community": 11,
+      "community": 7,
       "norm_label": ".pickimageurl()"
     },
     {
@@ -3270,7 +3270,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importforbody",
-      "community": 11,
+      "community": 7,
       "norm_label": ".importforbody()"
     },
     {
@@ -3280,7 +3280,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importall",
-      "community": 11,
+      "community": 7,
       "norm_label": ".importall()"
     },
     {
@@ -3440,7 +3440,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bootstrap_providers",
-      "community": 11,
+      "community": 7,
       "norm_label": "providers.php"
     },
     {
@@ -3970,7 +3970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_auth",
-      "community": 187,
+      "community": 103,
       "norm_label": "auth.php"
     },
     {
@@ -4700,7 +4700,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "categoriaseeder.php"
     },
     {
@@ -4710,7 +4710,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "categoriaseeder"
     },
     {
@@ -4720,7 +4720,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "seeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "seeder"
     },
     {
@@ -4730,7 +4730,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder_run",
-      "community": 44,
+      "community": 103,
       "norm_label": ".run()"
     },
     {
@@ -4740,7 +4740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "corpocelestemissioneseeder.php"
     },
     {
@@ -4750,7 +4750,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "corpocelestemissioneseeder"
     },
     {
@@ -4760,7 +4760,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder_run",
-      "community": 44,
+      "community": 103,
       "norm_label": ".run()"
     },
     {
@@ -4770,7 +4770,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "corpocelesteseeder.php"
     },
     {
@@ -4780,7 +4780,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "corpocelesteseeder"
     },
     {
@@ -4790,7 +4790,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder_run",
-      "community": 44,
+      "community": 103,
       "norm_label": ".run()"
     },
     {
@@ -4800,7 +4800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "curiositaseeder.php"
     },
     {
@@ -4810,7 +4810,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "curiositaseeder"
     },
     {
@@ -4820,7 +4820,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder_run",
-      "community": 44,
+      "community": 103,
       "norm_label": ".run()"
     },
     {
@@ -4830,7 +4830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "databaseseeder.php"
     },
     {
@@ -4840,7 +4840,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "databaseseeder"
     },
     {
@@ -4850,7 +4850,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder_run",
-      "community": 44,
+      "community": 103,
       "norm_label": ".run()"
     },
     {
@@ -4860,7 +4860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "galleriacorposeeder.php"
     },
     {
@@ -4870,7 +4870,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "galleriacorposeeder"
     },
     {
@@ -4880,7 +4880,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder_run",
-      "community": 44,
+      "community": 103,
       "norm_label": ".run()"
     },
     {
@@ -4890,7 +4890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "missioneseeder.php"
     },
     {
@@ -4900,7 +4900,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder",
-      "community": 44,
+      "community": 103,
       "norm_label": "missioneseeder"
     },
     {
@@ -4910,7 +4910,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder_run",
-      "community": 44,
+      "community": 103,
       "norm_label": ".run()"
     },
     {
@@ -6620,7 +6620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_api",
-      "community": 190,
+      "community": 6,
       "norm_label": "api.php"
     },
     {
@@ -6630,7 +6630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_auth",
-      "community": 185,
+      "community": 10,
       "norm_label": "auth.php"
     },
     {
@@ -6650,7 +6650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_web",
-      "community": 190,
+      "community": 6,
       "norm_label": "web.php"
     },
     {
@@ -7430,7 +7430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_categoriacrudtest",
-      "community": 184,
+      "community": 103,
       "norm_label": "categoriacrudtest.php"
     },
     {
@@ -7610,7 +7610,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_corpocelestecrudtest",
-      "community": 184,
+      "community": 103,
       "norm_label": "corpocelestecrudtest.php"
     },
     {
@@ -7770,7 +7770,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_curiositacrudtest",
-      "community": 184,
+      "community": 103,
       "norm_label": "curiositacrudtest.php"
     },
     {
@@ -7900,7 +7900,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest",
-      "community": 184,
+      "community": 103,
       "norm_label": "galleriacrudtest.php"
     },
     {
@@ -8020,7 +8020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_missionecrudtest",
-      "community": 184,
+      "community": 103,
       "norm_label": "missionecrudtest.php"
     },
     {
@@ -8190,7 +8190,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest",
-      "community": 103,
+      "community": 21,
       "norm_label": "categoriaapitest"
     },
     {
@@ -8200,7 +8200,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_setup",
-      "community": 103,
+      "community": 21,
       "norm_label": ".setup()"
     },
     {
@@ -8210,7 +8210,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_index_returns_all_categorie",
-      "community": 103,
+      "community": 21,
       "norm_label": ".test_index_returns_all_categorie()"
     },
     {
@@ -8220,7 +8220,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_categoria_with_corpi_count",
-      "community": 103,
+      "community": 21,
       "norm_label": ".test_show_returns_categoria_with_corpi_count()"
     },
     {
@@ -8230,7 +8230,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_404_for_invalid_slug",
-      "community": 103,
+      "community": 21,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -8240,7 +8240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest",
-      "community": 184,
+      "community": 103,
       "norm_label": "corpocelesteapitest.php"
     },
     {
@@ -8260,7 +8260,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_setup",
-      "community": 49,
+      "community": 21,
       "norm_label": ".setup()"
     },
     {
@@ -8410,7 +8410,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_test_index_returns_all_curiosita",
-      "community": 103,
+      "community": 15,
       "norm_label": ".test_index_returns_all_curiosita()"
     },
     {
@@ -8450,7 +8450,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_dashboardapitest_dashboardapitest_test_stats_returns_counts",
-      "community": 103,
+      "community": 3,
       "norm_label": ".test_stats_returns_counts()"
     },
     {
@@ -8470,7 +8470,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest",
-      "community": 103,
+      "community": 49,
       "norm_label": "galleriaapitest"
     },
     {
@@ -8480,7 +8480,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_setup",
-      "community": 103,
+      "community": 49,
       "norm_label": ".setup()"
     },
     {
@@ -8490,7 +8490,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_teardown",
-      "community": 103,
+      "community": 49,
       "norm_label": ".teardown()"
     },
     {
@@ -8500,7 +8500,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_test_index_returns_all_galleria",
-      "community": 103,
+      "community": 49,
       "norm_label": ".test_index_returns_all_galleria()"
     },
     {
@@ -8560,7 +8560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest",
-      "community": 187,
+      "community": 103,
       "norm_label": "authenticationtest.php"
     },
     {
@@ -8570,7 +8570,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest",
-      "community": 187,
+      "community": 48,
       "norm_label": "authenticationtest"
     },
     {
@@ -8580,7 +8580,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_login_screen_can_be_rendered",
-      "community": 187,
+      "community": 48,
       "norm_label": ".test_login_screen_can_be_rendered()"
     },
     {
@@ -8590,7 +8590,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_authenticate_using_the_login_screen",
-      "community": 187,
+      "community": 48,
       "norm_label": ".test_users_can_authenticate_using_the_login_screen()"
     },
     {
@@ -8600,7 +8600,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_not_authenticate_with_invalid_password",
-      "community": 187,
+      "community": 48,
       "norm_label": ".test_users_can_not_authenticate_with_invalid_password()"
     },
     {
@@ -8610,7 +8610,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_logout",
-      "community": 187,
+      "community": 48,
       "norm_label": ".test_users_can_logout()"
     },
     {
@@ -8620,7 +8620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest",
-      "community": 187,
+      "community": 103,
       "norm_label": "emailverificationtest.php"
     },
     {
@@ -8630,7 +8630,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest",
-      "community": 187,
+      "community": 48,
       "norm_label": "emailverificationtest"
     },
     {
@@ -8640,7 +8640,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_verification_screen_can_be_rendered",
-      "community": 187,
+      "community": 48,
       "norm_label": ".test_email_verification_screen_can_be_rendered()"
     },
     {
@@ -8650,7 +8650,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_can_be_verified",
-      "community": 187,
+      "community": 48,
       "norm_label": ".test_email_can_be_verified()"
     },
     {
@@ -8660,7 +8660,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_is_not_verified_with_invalid_hash",
-      "community": 187,
+      "community": 48,
       "norm_label": ".test_email_is_not_verified_with_invalid_hash()"
     },
     {
@@ -8670,7 +8670,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest",
-      "community": 161,
+      "community": 103,
       "norm_label": "passwordconfirmationtest.php"
     },
     {
@@ -8680,7 +8680,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest",
-      "community": 161,
+      "community": 48,
       "norm_label": "passwordconfirmationtest"
     },
     {
@@ -8690,7 +8690,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_confirm_password_screen_can_be_rendered",
-      "community": 161,
+      "community": 48,
       "norm_label": ".test_confirm_password_screen_can_be_rendered()"
     },
     {
@@ -8700,7 +8700,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_can_be_confirmed",
-      "community": 161,
+      "community": 48,
       "norm_label": ".test_password_can_be_confirmed()"
     },
     {
@@ -8710,7 +8710,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_is_not_confirmed_with_invalid_password",
-      "community": 161,
+      "community": 48,
       "norm_label": ".test_password_is_not_confirmed_with_invalid_password()"
     },
     {
@@ -8720,7 +8720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest",
-      "community": 188,
+      "community": 103,
       "norm_label": "passwordresettest.php"
     },
     {
@@ -8730,7 +8730,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest",
-      "community": 188,
+      "community": 48,
       "norm_label": "passwordresettest"
     },
     {
@@ -8740,7 +8740,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_reset_password_link_screen_can_be_rendered",
-      "community": 188,
+      "community": 48,
       "norm_label": ".test_reset_password_link_screen_can_be_rendered()"
     },
     {
@@ -8750,7 +8750,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_reset_password_link_can_be_requested",
-      "community": 188,
+      "community": 48,
       "norm_label": ".test_reset_password_link_can_be_requested()"
     },
     {
@@ -8760,7 +8760,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_reset_password_screen_can_be_rendered",
-      "community": 188,
+      "community": 48,
       "norm_label": ".test_reset_password_screen_can_be_rendered()"
     },
     {
@@ -8770,7 +8770,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_password_can_be_reset_with_valid_token",
-      "community": 188,
+      "community": 48,
       "norm_label": ".test_password_can_be_reset_with_valid_token()"
     },
     {
@@ -8800,7 +8800,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_password_can_be_updated",
-      "community": 103,
+      "community": 48,
       "norm_label": ".test_password_can_be_updated()"
     },
     {
@@ -8810,7 +8810,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_correct_password_must_be_provided_to_update_password",
-      "community": 103,
+      "community": 48,
       "norm_label": ".test_correct_password_must_be_provided_to_update_password()"
     },
     {
@@ -8890,7 +8890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_profiletest",
-      "community": 187,
+      "community": 103,
       "norm_label": "profiletest.php"
     },
     {
@@ -9020,7 +9020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest",
-      "community": 184,
+      "community": 103,
       "norm_label": "nasaimageservicetest.php"
     },
     {
@@ -9220,7 +9220,7 @@
       "source_location": "L321",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_creates_gallery_entries",
-      "community": 45,
+      "community": 11,
       "norm_label": ".test_import_for_body_creates_gallery_entries()"
     },
     {
@@ -9230,7 +9230,7 @@
       "source_location": "L363",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_skips_duplicate_gallery_entries",
-      "community": 49,
+      "community": 11,
       "norm_label": ".test_import_for_body_skips_duplicate_gallery_entries()"
     },
     {
@@ -9240,7 +9240,7 @@
       "source_location": "L397",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_updates_description_when_requested",
-      "community": 49,
+      "community": 45,
       "norm_label": ".test_import_for_body_updates_description_when_requested()"
     },
     {
@@ -9250,7 +9250,7 @@
       "source_location": "L423",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_does_not_update_description_by_default",
-      "community": 49,
+      "community": 45,
       "norm_label": ".test_import_for_body_does_not_update_description_by_default()"
     },
     {
@@ -9300,7 +9300,7 @@
       "source_location": "L545",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_all_counts_partial_successes",
-      "community": 49,
+      "community": 45,
       "norm_label": ".test_import_all_counts_partial_successes()"
     },
     {
@@ -9350,7 +9350,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "readme_funzionalit\u00e0",
-      "community": 216,
+      "community": 101,
       "norm_label": "\u2728 funzionalita"
     },
     {
@@ -9360,7 +9360,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "readme_backoffice_laravel_blade",
-      "community": 216,
+      "community": 101,
       "norm_label": "\ud83d\udc68\u200d\ud83d\udcbc backoffice (laravel + blade)"
     },
     {
@@ -9370,7 +9370,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "readme_frontend_react_vite",
-      "community": 216,
+      "community": 101,
       "norm_label": "\ud83c\udf1f frontend (react + vite)"
     },
     {
@@ -9380,7 +9380,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "readme_api_rest",
-      "community": 216,
+      "community": 101,
       "norm_label": "\ud83d\udef0\ufe0f api rest"
     },
     {
@@ -9860,7 +9860,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "docs_changelog_fase_4_react_guest_frontend",
-      "community": 5,
+      "community": 185,
       "norm_label": "fase 4 \u2014 react guest frontend"
     },
     {
@@ -9870,7 +9870,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "docs_changelog_4_0_04_07_2026_feat_react_spa_guest_homepage_lista_corpi_celesti",
-      "community": 5,
+      "community": 185,
       "norm_label": "4.0 \u2014 04/07/2026 \u2014 feat: react spa guest (homepage + lista corpi celesti)"
     },
     {
@@ -10060,7 +10060,7 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "docs_changelog_fase_8_nasa_import_multi_immagine_service_layer_cli_command",
-      "community": 5,
+      "community": 182,
       "norm_label": "fase 8 \u2014 nasa import multi-immagine, service layer, cli command"
     },
     {
@@ -10070,7 +10070,7 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "docs_changelog_8_0_04_07_2026_feat_nasa_import_multi_immagine_in_galleria_cli_fetch_nasa_metadati",
-      "community": 5,
+      "community": 182,
       "norm_label": "8.0 \u2014 04/07/2026 \u2014 feat: nasa import multi-immagine in galleria + cli fetch-nasa + metadati"
     },
     {
@@ -10080,7 +10080,7 @@
       "source_location": "L175",
       "_origin": "ast",
       "id": "docs_changelog_8_1_04_07_2026_fix_memory_limit_per_immagini_nasa_grandi_fallback_url_per_item",
-      "community": 5,
+      "community": 182,
       "norm_label": "8.1 \u2014 04/07/2026 \u2014 fix: memory limit per immagini nasa grandi + fallback url per item"
     },
     {
@@ -10090,7 +10090,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "docs_changelog_fase_9_remote_urls_nome_it_wordmap_apostrophe_fallback",
-      "community": 5,
+      "community": 186,
       "norm_label": "fase 9 \u2014 remote urls, nome_it, wordmap, apostrophe fallback"
     },
     {
@@ -10100,7 +10100,7 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "docs_changelog_9_0_04_07_2026_feat_remote_nasa_urls_nome_it_wordmap_espansa_apostrophe_fallback_auto_suggest",
-      "community": 5,
+      "community": 186,
       "norm_label": "9.0 \u2014 04/07/2026 \u2014 feat: remote nasa urls, nome_it, wordmap espansa, apostrophe fallback, auto-suggest"
     },
     {
@@ -10550,7 +10550,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "docs_documentazione_palette_colori",
-      "community": 12,
+      "community": 180,
       "norm_label": "palette colori"
     },
     {
@@ -10560,7 +10560,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "docs_documentazione_badge_categoria",
-      "community": 12,
+      "community": 180,
       "norm_label": "badge categoria"
     },
     {
@@ -10570,7 +10570,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "docs_documentazione_frontend_guest_react_spa",
-      "community": 12,
+      "community": 180,
       "norm_label": "frontend guest (react spa)"
     },
     {
@@ -10580,7 +10580,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "docs_documentazione_backoffice_admin",
-      "community": 12,
+      "community": 180,
       "norm_label": "backoffice admin"
     },
     {
@@ -10590,7 +10590,7 @@
       "source_location": "L218",
       "_origin": "ast",
       "id": "docs_documentazione_api_rest",
-      "community": 12,
+      "community": 180,
       "norm_label": "api rest"
     },
     {
@@ -11334,6 +11334,246 @@
       "norm_label": "15. debugging \u2014 problemi gia incontrati (e risolti)"
     },
     {
+      "label": "16. Mappa dei File \u2014 \"Cosa fa cosa\" e Comandi",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L798",
+      "_origin": "ast",
+      "id": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "community": 44,
+      "norm_label": "16. mappa dei file \u2014 \"cosa fa cosa\" e comandi"
+    },
+    {
+      "label": "`app/Models/` \u2014 6 Modelli Eloquent",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L800",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_models_6_modelli_eloquent",
+      "community": 44,
+      "norm_label": "`app/models/` \u2014 6 modelli eloquent"
+    },
+    {
+      "label": "`app/Http/Controllers/` \u2014 21 Controller",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L811",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_http_controllers_21_controller",
+      "community": 44,
+      "norm_label": "`app/http/controllers/` \u2014 21 controller"
+    },
+    {
+      "label": "`app/Policies/` \u2014 5 Policy",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L836",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_policies_5_policy",
+      "community": 44,
+      "norm_label": "`app/policies/` \u2014 5 policy"
+    },
+    {
+      "label": "`app/Services/` \u2014 2 Service Layer",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L848",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_services_2_service_layer",
+      "community": 44,
+      "norm_label": "`app/services/` \u2014 2 service layer"
+    },
+    {
+      "label": "`app/Observers/` \u2014 1 Observer",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L863",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_observers_1_observer",
+      "community": 44,
+      "norm_label": "`app/observers/` \u2014 1 observer"
+    },
+    {
+      "label": "`app/Providers/` \u2014 Provider",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L869",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_providers_provider",
+      "community": 44,
+      "norm_label": "`app/providers/` \u2014 provider"
+    },
+    {
+      "label": "`app/Http/Requests/` \u2014 2 FormRequest",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L876",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_http_requests_2_formrequest",
+      "community": 44,
+      "norm_label": "`app/http/requests/` \u2014 2 formrequest"
+    },
+    {
+      "label": "`app/Http/Resources/` \u2014 5 API Resources",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L885",
+      "_origin": "ast",
+      "id": "docs_guida_esame_app_http_resources_5_api_resources",
+      "community": 44,
+      "norm_label": "`app/http/resources/` \u2014 5 api resources"
+    },
+    {
+      "label": "`routes/` \u2014 3 File",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L895",
+      "_origin": "ast",
+      "id": "docs_guida_esame_routes_3_file",
+      "community": 44,
+      "norm_label": "`routes/` \u2014 3 file"
+    },
+    {
+      "label": "`resources/views/` \u2014 Template Blade",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L903",
+      "_origin": "ast",
+      "id": "docs_guida_esame_resources_views_template_blade",
+      "community": 44,
+      "norm_label": "`resources/views/` \u2014 template blade"
+    },
+    {
+      "label": "`resources/js/guest/` \u2014 React SPA",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L914",
+      "_origin": "ast",
+      "id": "docs_guida_esame_resources_js_guest_react_spa",
+      "community": 44,
+      "norm_label": "`resources/js/guest/` \u2014 react spa"
+    },
+    {
+      "label": "`database/` \u2014 Migrazioni, Seeder, Factory",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L934",
+      "_origin": "ast",
+      "id": "docs_guida_esame_database_migrazioni_seeder_factory",
+      "community": 44,
+      "norm_label": "`database/` \u2014 migrazioni, seeder, factory"
+    },
+    {
+      "label": "`tests/` \u2014 Suite di Test",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L951",
+      "_origin": "ast",
+      "id": "docs_guida_esame_tests_suite_di_test",
+      "community": 44,
+      "norm_label": "`tests/` \u2014 suite di test"
+    },
+    {
+      "label": "`docs/` \u2014 Documentazione",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L969",
+      "_origin": "ast",
+      "id": "docs_guida_esame_docs_documentazione",
+      "community": 44,
+      "norm_label": "`docs/` \u2014 documentazione"
+    },
+    {
+      "label": "17. Script di Presentazione per l'Esame",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L983",
+      "_origin": "ast",
+      "id": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "community": 161,
+      "norm_label": "17. script di presentazione per l'esame"
+    },
+    {
+      "label": "Apertura \u2014 30 secondi",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L987",
+      "_origin": "ast",
+      "id": "docs_guida_esame_apertura_30_secondi",
+      "community": 161,
+      "norm_label": "apertura \u2014 30 secondi"
+    },
+    {
+      "label": "Architettura \u2014 1 minuto",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L991",
+      "_origin": "ast",
+      "id": "docs_guida_esame_architettura_1_minuto",
+      "community": 161,
+      "norm_label": "architettura \u2014 1 minuto"
+    },
+    {
+      "label": "Demo Guidata \u2014 1 minuto",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L997",
+      "_origin": "ast",
+      "id": "docs_guida_esame_demo_guidata_1_minuto",
+      "community": 161,
+      "norm_label": "demo guidata \u2014 1 minuto"
+    },
+    {
+      "label": "Backoffice \u2014 1 minuto",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1001",
+      "_origin": "ast",
+      "id": "docs_guida_esame_backoffice_1_minuto",
+      "community": 161,
+      "norm_label": "backoffice \u2014 1 minuto"
+    },
+    {
+      "label": "Testing & Robustezza \u2014 30 secondi",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1007",
+      "_origin": "ast",
+      "id": "docs_guida_esame_testing_robustezza_30_secondi",
+      "community": 161,
+      "norm_label": "testing & robustezza \u2014 30 secondi"
+    },
+    {
+      "label": "Sfide Affrontate \u2014 30 secondi",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1013",
+      "_origin": "ast",
+      "id": "docs_guida_esame_sfide_affrontate_30_secondi",
+      "community": 161,
+      "norm_label": "sfide affrontate \u2014 30 secondi"
+    },
+    {
+      "label": "Chiusura \u2014 30 secondi",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1017",
+      "_origin": "ast",
+      "id": "docs_guida_esame_chiusura_30_secondi",
+      "community": 161,
+      "norm_label": "chiusura \u2014 30 secondi"
+    },
+    {
+      "label": "Slide Rapida \u2014 Comandi Che Potrebbero Chiedere",
+      "file_type": "document",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1021",
+      "_origin": "ast",
+      "id": "docs_guida_esame_slide_rapida_comandi_che_potrebbero_chiedere",
+      "community": 161,
+      "norm_label": "slide rapida \u2014 comandi che potrebbero chiedere"
+    },
+    {
       "label": "index.md",
       "file_type": "document",
       "source_file": "docs/index.md",
@@ -11410,7 +11650,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "community": 0,
+      "community": 170,
       "norm_label": "parte 1: backoffice in laravel"
     },
     {
@@ -11420,7 +11660,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "docs_progetto_finale_autenticazione_e_accesso",
-      "community": 0,
+      "community": 170,
       "norm_label": "\ud83d\udd12 autenticazione e accesso"
     },
     {
@@ -11430,7 +11670,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "docs_progetto_finale_gestione_entit\u00e0_crud",
-      "community": 0,
+      "community": 170,
       "norm_label": "\ud83d\udce6 gestione entita (crud)"
     },
     {
@@ -11440,7 +11680,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "docs_progetto_finale_requisiti_minimi",
-      "community": 0,
+      "community": 170,
       "norm_label": "\u2699\ufe0f requisiti minimi"
     },
     {
@@ -11450,7 +11690,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "docs_progetto_finale_upload_media",
-      "community": 0,
+      "community": 170,
       "norm_label": "\ud83d\uddbc\ufe0f upload media"
     },
     {
@@ -11460,7 +11700,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "docs_progetto_finale_esempi_di_struttura",
-      "community": 0,
+      "community": 170,
       "norm_label": "\ud83d\udca1 esempi di struttura"
     },
     {
@@ -11470,7 +11710,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "docs_progetto_finale_note_tecniche",
-      "community": 0,
+      "community": 170,
       "norm_label": "\ud83d\udcbb note tecniche"
     },
     {
@@ -12287,6 +12527,28 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_categoriacontroller",
       "target": "app_models_categoria_categoria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_categoriacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_categoriacontroller",
       "confidence_score": 1.0
     },
     {
@@ -13533,28 +13795,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
@@ -14679,28 +14919,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_categoriacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_categoriacontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CategoriaController.php",
@@ -15115,6 +15333,28 @@
       "weight": 1.0,
       "source": "app_http_controllers_api_dashboardcontroller",
       "target": "app_models_missione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_dashboardcontroller",
       "confidence_score": 1.0
     },
     {
@@ -29104,6 +29344,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/guida-esame.md",
+      "source_location": "L798",
+      "weight": 1.0,
+      "source": "docs_guida_esame_guida_all_esame_astralis",
+      "target": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L983",
+      "weight": 1.0,
+      "source": "docs_guida_esame_guida_all_esame_astralis",
+      "target": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
       "source_location": "L3",
       "weight": 1.0,
       "source": "docs_guida_esame_guida_all_esame_astralis",
@@ -29743,6 +30003,226 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L811",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_http_controllers_21_controller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L876",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_http_requests_2_formrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L885",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_http_resources_5_api_resources",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L800",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_models_6_modelli_eloquent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L863",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_observers_1_observer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L836",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_policies_5_policy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L869",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_providers_provider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L848",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_app_services_2_service_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L934",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_database_migrazioni_seeder_factory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L969",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_docs_documentazione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L914",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_resources_js_guest_react_spa",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L903",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_resources_views_template_blade",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L895",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_routes_3_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L951",
+      "weight": 1.0,
+      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
+      "target": "docs_guida_esame_tests_suite_di_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L987",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_apertura_30_secondi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L991",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_architettura_1_minuto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1001",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_backoffice_1_minuto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1017",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_chiusura_30_secondi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L997",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_demo_guidata_1_minuto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1013",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_sfide_affrontate_30_secondi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1021",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_slide_rapida_comandi_che_potrebbero_chiedere",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/guida-esame.md",
+      "source_location": "L1007",
+      "weight": 1.0,
+      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
+      "target": "docs_guida_esame_testing_robustezza_30_secondi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/index.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -30272,5 +30752,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2138075ca406d3465f14495c9d670df35e41dd02"
+  "built_at_commit": "bdffed54ade174a1937ae3db378434e5812ed70a"
 }

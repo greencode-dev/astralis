@@ -750,8 +750,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1783508536.9782982,
-    "ast_hash": "3bab53d3a8ff27b888b800a03e46fb43",
+    "mtime": 1783608268.3510506,
+    "ast_hash": "446819dfa082dab41680c69cf870d1bb",
     "semantic_hash": ""
   },
   "app/Policies/CategoriaPolicy.php": {
@@ -1372,6 +1372,11 @@
   "tests/Feature/Admin/MissioneCrudTest.php": {
     "mtime": 1783595877.0604463,
     "ast_hash": "b97e3afd05e7aed67be80c587dc053b9",
+    "semantic_hash": ""
+  },
+  "docs/guida-esame.md": {
+    "mtime": 1783608252.9664583,
+    "ast_hash": "ad04f19d0fb826367ef4b4a399fa3c71",
     "semantic_hash": ""
   }
 }

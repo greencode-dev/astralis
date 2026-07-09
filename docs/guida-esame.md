@@ -792,3 +792,239 @@ npm run dev                               # Frontend Vite (porta 5173)
 | NaN km su CorpoCard | `formatDistance()` su valori null/undefined | Aggiunto `isNaN` guard |
 | NASA ricerca fallisce per "Halley's Comet" | Apostrofo nella query | Fallback automatico: prova senza apostrofi, poi "comet" |
 | `@endif` mancanti in Blade | Errori di copia/incolla durante refactoring | Aggiunti `@endif` mancanti in 3 file |
+
+---
+
+## 16. Mappa dei File — "Cosa fa cosa" e Comandi
+
+### `app/Models/` — 6 Modelli Eloquent
+
+| File | Cosa fa | Comandi |
+|------|---------|---------|
+| `Categoria.php` | Nome, slug, colore, icona. HasMany → CorpoCeleste | `php artisan make:model Categoria -mf` |
+| `CorpoCeleste.php` | Dati scientifici (massa, distanza, diametro...). BelongsTo Categoria, HasMany Galleria/Curiosita, BelongsToMany Missioni. Accessor: `nome_display` (ita↔eng) | `php artisan make:model CorpoCeleste -mf` |
+| `Missione.php` | Nome, agenzia, stato, date. BelongsToMany CorpoCeleste | `php artisan make:model Missione -mf` |
+| `Curiosita.php` | Titolo, descrizione, fonte. BelongsTo CorpoCeleste | `php artisan make:model Curiosita -mf` |
+| `GalleriaCorpo.php` | Percorso immagine, didascalia, crediti, ordine. BelongsTo CorpoCeleste | `php artisan make:model GalleriaCorpo -mf` |
+| `User.php` | Esteso con `is_admin` (boolean). Cast: password→hashed | `php artisan make:model User` |
+
+### `app/Http/Controllers/` — 21 Controller
+
+| Directory | File | Cosa fa |
+|-----------|------|---------|
+| **Admin/** | `DashboardController` | Stats + Chart.js per admin dashboard |
+| | `CategoriaController` | CRUD categorie + protezione delete con corpi |
+| | `CorpoCelesteController` | CRUD corpi + `setImageFromGallery()` + `suggestNome()` (WordMap) |
+| | `MissioneController` | CRUD missioni + upload logo (scaleDown 300) |
+| | `CuriositaController` | CRUD curiosità (parametro route: `{curiositum}`) |
+| | `GalleriaController` | CRUD galleria + upload (scaleDown 1200) + ordinamento inline |
+| | `NasaImportController` | Import singolo/massivo da NASA API |
+| **Api/** | `CorpoCelesteController` | Lista (filtrata/paginata), dettaglio, simili |
+| | `CategoriaController` | Lista con conteggio, dettaglio |
+| | `MissioneController` | Lista (filtrata), dettaglio |
+| | `CuriositaController` | Lista |
+| | `GalleriaController` | Lista |
+| | `DashboardController` | Stats JSON (`/api/dashboard/stats`) |
+| **Auth/** | 9 controller | Breeze standard su Blade (login, register, password, verify) |
+
+**Comandi**:
+```bash
+php artisan make:controller Admin/CategoriaController --resource
+php artisan make:controller Api/CorpoCelesteController
+```
+
+### `app/Policies/` — 5 Policy
+
+| File | Regola |
+|------|--------|
+| `CategoriaPolicy` | `before():` se admin→true. viewAny/view→true. create/update/delete→false |
+| `CorpoCelestePolicy` | Stesso pattern |
+| `CuriositaPolicy` | Stesso pattern |
+| `GalleriaCorpoPolicy` | Stesso pattern |
+| `MissionePolicy` | Stesso pattern |
+
+**Comando**: `php artisan make:policy NomePolicy --model=Nome`
+
+### `app/Services/` — 2 Service Layer
+
+| File | Cosa fa |
+|------|---------|
+| `NasaImageService.php` | Cerca su NASA API, estrae metadati, sceglie URL migliore, importa per corpo o per tutti |
+
+```bash
+php artisan astralis:fetch-nasa           # CLI: importa per tutti
+php artisan astralis:gallery --fix        # CLI: ripara galleria
+```
+
+| File | Cosa fa |
+|------|---------|
+| `WordMapService.php` | Traduce italiano→inglese (~70 termini). Usato da `suggestNome()` |
+
+### `app/Observers/` — 1 Observer
+
+| File | Cosa fa |
+|------|---------|
+| `CorpoCelesteObserver.php` | `created()` → importa NASA automaticamente. Skip in testing. Registrato in `AppServiceProvider` |
+
+### `app/Providers/` — Provider
+
+| File | Cosa fa |
+|------|---------|
+| `AppServiceProvider.php` | Registra `CorpoCelesteObserver` |
+| `AuthServiceProvider.php` | Registra 5 Policy + Gate `admin` |
+
+### `app/Http/Requests/` — 2 FormRequest
+
+| File | Cosa fa |
+|------|---------|
+| `StoreCorpoCelesteRequest.php` | Validazione store: nome unico, categoria_id required, in_evidenza→boolean |
+| `UpdateCorpoCelesteRequest.php` | Estende StoreCorpoCelesteRequest, ignora record corrente per unique |
+
+**Comando**: `php artisan make:request StoreCorpoCelesteRequest`
+
+### `app/Http/Resources/` — 5 API Resources
+
+| File | Espone |
+|------|--------|
+| `CorpoCelesteResource.php` | `nome_display`, `categoria`, relazioni eager caricate |
+| `CategoriaResource.php` | `corpi_count` |
+| `MissioneResource.php` | Dati missione + badge stato |
+| `CuriositaResource.php` | Titolo, descrizione, corpo associato |
+| `GalleriaCorpoResource.php` | URL immagine, didascalia, crediti, `nome_display` del corpo |
+
+### `routes/` — 3 File
+
+| File | Contiene | Protezione |
+|------|----------|------------|
+| `web.php` | Route admin (50+), profile, catch-all SPA `/{any}` | `auth` + `verified` middleware |
+| `api.php` | 10 endpoint JSON pubblici | Nessuna (API pubbliche) |
+| `auth.php` | Breeze: login, register, password, verify | `guest` / `auth` |
+
+### `resources/views/` — Template Blade
+
+| Directory | File count | Cosa contiene |
+|-----------|------------|---------------|
+| `admin/` | 20 file | Layout, dashboard, CRUD per 5 entità, NASA Import |
+| `admin/layouts/app.blade.php` | 1 | Master layout: sidebar Alpine.js, `[x-cloak]`, palette dark |
+| `auth/` | 6 file | Login, register, password, verify (tema scuro) |
+| `layouts/guest.blade.php` | 1 | Layout base auth pages |
+| `profile/` | 4 file | Profilo: info, password, delete account |
+| `guest.blade.php` | 1 | Entry point SPA: `<div id="guest-root">` |
+
+### `resources/js/guest/` — React SPA
+
+| Directory | File count | Cosa contiene |
+|-----------|------------|---------------|
+| `main.jsx` | 1 | Entry point: `createRoot(document.getElementById('guest-root'))` |
+| `App.jsx` | 1 | BrowserRouter + ErrorBoundary + 5 route |
+| `components/` | 9 file | Navbar, Footer, SolarSystem, CorpoCard, CategoriaBadge, SearchBar, LightboxGalleria, TimelineMissioni, ErrorBoundary |
+| `pages/` | 5 file | HomePage, CorpiLista, CorpoDettaglio, Comparatore, NotFound |
+| `test/` | 10 file | 88 test Vitest (apiClient + 4 pagine + 4 componenti + setup) |
+| `apiClient.js` | 1 | 6 funzioni axios verso `/api/...` |
+
+**Comandi**:
+```bash
+npm run dev           # Dev server Vite (porta 5173)
+npx vite build        # Build produzione
+npm test              # Vitest (88 test)
+npm run test:watch    # Vitest in watch mode
+npx vitest run --reporter=verbose  # Output dettagliato
+```
+
+### `database/` — Migrazioni, Seeder, Factory
+
+| Directory | File count | Cosa contiene |
+|-----------|------------|---------------|
+| `migrations/` | 13 file | 5 tabelle dominio + users/cache/jobs + colonne aggiunte (nasa_id, nome_it, immagine_utente, is_admin) + indexes |
+| `seeders/` | 7 file | Categorie (8), Corpi Celesti (18), Missioni (10), Galleria (16), Curiosità (18), Pivot (17), admin user |
+| `factories/` | 6 file | Factory per ogni modello + UserFactory |
+
+**Comandi**:
+```bash
+php artisan migrate                    # Applica migrazioni
+php artisan migrate:fresh --seed       # Reset + seed
+php artisan make:migration add_xxx_to_table
+php artisan make:seeder NomeSeeder
+php artisan make:factory NomeFactory --model=Nome
+```
+
+### `tests/` — Suite di Test
+
+| Directory | File count | Cosa contiene |
+|-----------|------------|---------------|
+| `Unit/NasaImageServiceTest.php` | 1 file | 26 test per service NASA |
+| `Feature/Api/` | 6 file | Test endpoint API REST |
+| `Feature/Admin/` | 5 file | Test CRUD admin (59 test totali) |
+| `Feature/Auth/` | 6 file | Test Breeze standard |
+
+**Comandi**:
+```bash
+php artisan test                            # Tutti (130 test)
+php artisan test --filter=CategoriaCrudTest  # Singolo file
+php artisan test tests/Feature/Admin/        # Directory
+php artisan test --testsuite=Feature         # Solo Feature
+php artisan make:test NomeTest --unit        # Nuovo test
+```
+
+### `docs/` — Documentazione
+
+| File | Cosa contiene |
+|------|---------------|
+| `index.md` | Indice navigabile |
+| `guida-esame.md` | **Questo file** — guida allo studio |
+| `documentazione.md` | Documentazione architetturale completa |
+| `testing.md` | Istruzioni e pattern di test |
+| `changelog.md` | Cronologia versioni con commit hash |
+| `todo.md` | Task plan P0-P4 |
+| `bug.md` | Bug tracker (problemi e soluzioni) |
+
+---
+
+## 17. Script di Presentazione per l'Esame
+
+> **Durata**: ~5 minuti. **Tono**: parla del progetto come se fosse una startup reale, non un compito scolastico.
+
+### Apertura — 30 secondi
+
+> "Buongiorno, oggi vi presento **Astralis**, un catalogo web di corpi celesti. L'idea è semplice: permettere a chiunque di esplorare pianeti, stelle, galassie e nebulose con un'interfaccia moderna e immersiva, e dare agli amministratori strumenti completi per gestire i contenuti. Il progetto è full-stack: backend Laravel 13, frontend guest in React 19 con Vite, admin in Blade con Tailwind CSS, database MySQL."
+
+### Architettura — 1 minuto
+
+> "L'architettura si basa su un concetto che chiamo **dual-rendering**. Gli utenti non autenticati — i visitatori del sito — vedono una **React SPA standalone** che comunica con il backend esclusivamente via API REST JSON. Abbiamo 10 endpoint pubblici che espongono dati filtrati e paginati. Dall'altra parte, gli amministratori accedono a un **backoffice in Blade puro**, con pagine renderizzate lato server, protette da autenticazione Breeze e autorizzazione tramite Policy e Gates. Le due facce condividono lo stesso database ma hanno percorsi di esecuzione completamente separati."
+
+> "La scelta di non usare Inertia — che era l'installazione predefinita di Breeze — è stata deliberata: abbiamo rimosso Inertia nella Fase 12.2 perché non serviva. La SPA React è indipendente, comunica via API, e si avvicina di più a uno scenario di produzione reale."
+
+### Demo Guidata — 1 minuto
+
+> "Entriamo nel frontend guest. La **homepage** mostra un sistema solare animato con framer-motion: i pianeti orbitano intorno al Sole con velocità differenziate — Mercurio più veloce, Nettuno più lento — calcolate con seno e coseno. Sotto, sei corpi celesti in evidenza. La **pagina catalogo** permette di filtrare per categoria, tipo e parola chiave, con paginazione. Cliccando su un corpo, si apre una **scheda dettaglio** completa: massa, diametro, temperatura, gravità — tutto da dati reali — più una galleria immagini con lightbox a schermo intero, una timeline delle missioni spaziali, e le curiosità. C'è anche un **comparatore** che affianca due pianeti per confrontare tutte le metriche."
+
+### Backoffice — 1 minuto
+
+> "Lato admin, abbiamo un CRUD completo per cinque entità — categorie, corpi celesti, missioni, curiosità e galleria — con un pattern uniforme. La **dashboard** mostra statistiche in tempo reale con tre grafici Chart.js: corpi per categoria, corpi per tipo, missioni per stato. Il modulo **NASA Import** è il fiore all'occhiello: da una tabella vediamo quali corpi hanno già un'immagine e quali no; con un click, interroghiamo la NASA Image API, scegliamo l'URL migliore, e salviamo tutto — immagine principale più fino a cinque immagini in galleria. C'è anche un pulsante 'Force Import All' che processa tutto il catalogo in automatico."
+
+> "L'autorizzazione usa Policy Eloquent. Abbiamo cinque Policy — una per entità — tutte con lo stesso pattern: `before()` dà il via libera agli admin, mentre create/update/delete restituiscono false per gli altri utenti. Un Gate 'admin' protegge il NASA Import."
+
+### Testing & Robustezza — 30 secondi
+
+> "La suite di test è composta da **130 test PHPUnit** con 335 assertion per il backend, e **88 test Vitest** per il frontend React. I test backend coprono il service layer NASA, tutti gli endpoint API, tutti i CRUD admin, e l'autenticazione. I test frontend coprono componenti e pagine con integrazione API. Ogni test che interagisce con CorpoCeleste usa `Http::fake()` per mockare le chiamate NASA, e l'observer viene disabilitato automaticamente in ambiente testing."
+
+> "Sul fronte robustezza, abbiamo un **Error Boundary globale** React che cattura errori di rendering e mostra un fallback UI, e ogni pagina imposta il **titolo SEO** via JavaScript."
+
+### Sfide Affrontate — 30 secondi
+
+> "Durante lo sviluppo abbiamo risolto diverse sfide tecniche. La migrazione da **Intervention Image v3 a v4** ha richiesto di passare da `Image::read()` a `ImageManager(new Driver())->decodePath()` e da `resize()` a `scaleDown()`. Su **Windows**, i certificati SSL non sono configurati di default, quindi `Http::withoutVerifying()` è stato inserito con una guardia per ambiente. La **rimozione di Inertia** ha richiesto di riscrivere 9 controller auth e 11 viste Blade. Abbiamo anche fixato un **bug N+1** su Missione show aggiungendo eager loading."
+
+### Chiusura — 30 secondi
+
+> "In conclusione, Astralis è un progetto full-stack completo che copre: sviluppo backend con Laravel (modelli, relazioni, servizi, observer, policy, API), sviluppo frontend con React moderno (hooks, framer-motion, react-router, testing), amministrazione con Blade, integrazione con API esterne (NASA), test automation, e gestione di problemi reali come migrazioni di librerie e differenze tra piattaforme. Sono pronto per le domande."
+
+### Slide Rapida — Comandi Che Potrebbero Chiedere
+
+| Se ti chiedono... | Rispondi |
+|-------------------|----------|
+| Come si avvia il progetto? | `php artisan serve` + `npm run dev` |
+| Come si eseguono i test? | `php artisan test` (backend) / `npm test` (frontend) |
+| Come si importano immagini NASA? | `php artisan astralis:fetch-nasa` da CLI, o dal pannello admin `/admin/nasa-import` |
+| Come si resetta il database? | `php artisan migrate:fresh --seed` |
+| Come si crea un nuovo modello? | `php artisan make:model Nome -mf` (modello + migration + factory) |
+| Come si costruisce il frontend? | `npx vite build` |
