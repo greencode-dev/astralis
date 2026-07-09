@@ -750,8 +750,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1783608268.3510506,
-    "ast_hash": "446819dfa082dab41680c69cf870d1bb",
+    "mtime": 1783611636.8310134,
+    "ast_hash": "2a6f9f4e7f2aa66ea8f9092bbd687093",
     "semantic_hash": ""
   },
   "app/Policies/CategoriaPolicy.php": {
@@ -1374,9 +1374,9 @@
     "ast_hash": "b97e3afd05e7aed67be80c587dc053b9",
     "semantic_hash": ""
   },
-  "docs/guida-esame.md": {
-    "mtime": 1783609932.4118118,
-    "ast_hash": "4f1ccec815ac29ee5506c5780ace37b2",
+  "docs/presentazione-progetto.md": {
+    "mtime": 1783611605.2521818,
+    "ast_hash": "6477ed312a192ae9cf871a1925fe4af9",
     "semantic_hash": ""
   }
 }

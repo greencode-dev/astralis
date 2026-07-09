@@ -10,7 +10,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates",
-      "community": 7,
+      "community": 11,
       "norm_label": "cleanupgalleryduplicates.php"
     },
     {
@@ -30,7 +30,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "command",
-      "community": 7,
+      "community": 11,
       "norm_label": "command"
     },
     {
@@ -120,7 +120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand",
-      "community": 7,
+      "community": 11,
       "norm_label": "fetchnasacommand.php"
     },
     {
@@ -130,7 +130,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand",
-      "community": 7,
+      "community": 11,
       "norm_label": "fetchnasacommand"
     },
     {
@@ -140,7 +140,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
-      "community": 7,
+      "community": 11,
       "norm_label": ".handle()"
     },
     {
@@ -400,7 +400,7 @@
       "source_location": "L115",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
-      "community": 50,
+      "community": 177,
       "norm_label": ".suggestnome()"
     },
     {
@@ -410,7 +410,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_php_jsonresponse",
-      "community": 50,
+      "community": 177,
       "norm_label": "jsonresponse"
     },
     {
@@ -840,7 +840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller",
-      "community": 7,
+      "community": 11,
       "norm_label": "nasaimportcontroller.php"
     },
     {
@@ -850,7 +850,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller",
-      "community": 7,
+      "community": 11,
       "norm_label": "nasaimportcontroller"
     },
     {
@@ -860,7 +860,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_construct",
-      "community": 7,
+      "community": 11,
       "norm_label": ".__construct()"
     },
     {
@@ -870,7 +870,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_index",
-      "community": 7,
+      "community": 11,
       "norm_label": ".index()"
     },
     {
@@ -880,7 +880,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_view",
-      "community": 7,
+      "community": 11,
       "norm_label": "view"
     },
     {
@@ -890,7 +890,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_import",
-      "community": 7,
+      "community": 11,
       "norm_label": ".import()"
     },
     {
@@ -900,7 +900,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_redirectresponse",
-      "community": 7,
+      "community": 11,
       "norm_label": "redirectresponse"
     },
     {
@@ -910,7 +910,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_importall",
-      "community": 7,
+      "community": 11,
       "norm_label": ".importall()"
     },
     {
@@ -970,7 +970,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller",
-      "community": 177,
+      "community": 6,
       "norm_label": "corpocelestecontroller"
     },
     {
@@ -980,7 +980,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_index",
-      "community": 177,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -990,7 +990,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_php_request",
-      "community": 177,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -1000,7 +1000,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_show",
-      "community": 177,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -1010,7 +1010,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "app_http_controllers_api_corpocelestecontroller_corpocelestecontroller_simili",
-      "community": 177,
+      "community": 6,
       "norm_label": ".simili()"
     },
     {
@@ -1050,7 +1050,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller",
-      "community": 103,
+      "community": 10,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -1060,7 +1060,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller",
-      "community": 103,
+      "community": 10,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -1070,7 +1070,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller_stats",
-      "community": 103,
+      "community": 10,
       "norm_label": ".stats()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_php_jsonresponse",
-      "community": 103,
+      "community": 10,
       "norm_label": "jsonresponse"
     },
     {
@@ -1120,7 +1120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller",
-      "community": 6,
+      "community": 3,
       "norm_label": "missionecontroller.php"
     },
     {
@@ -1130,7 +1130,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller",
-      "community": 6,
+      "community": 3,
       "norm_label": "missionecontroller"
     },
     {
@@ -1140,7 +1140,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_index",
-      "community": 6,
+      "community": 3,
       "norm_label": ".index()"
     },
     {
@@ -1150,7 +1150,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_php_request",
-      "community": 6,
+      "community": 3,
       "norm_label": "request"
     },
     {
@@ -1160,7 +1160,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_show",
-      "community": 6,
+      "community": 3,
       "norm_label": ".show()"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller",
-      "community": 10,
+      "community": 192,
       "norm_label": "authenticatedsessioncontroller.php"
     },
     {
@@ -1180,7 +1180,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller",
-      "community": 10,
+      "community": 192,
       "norm_label": "authenticatedsessioncontroller"
     },
     {
@@ -1190,7 +1190,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_create",
-      "community": 10,
+      "community": 192,
       "norm_label": ".create()"
     },
     {
@@ -1200,7 +1200,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_view",
-      "community": 10,
+      "community": 192,
       "norm_label": "view"
     },
     {
@@ -1210,7 +1210,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_store",
-      "community": 10,
+      "community": 192,
       "norm_label": ".store()"
     },
     {
@@ -1220,7 +1220,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_redirectresponse",
-      "community": 10,
+      "community": 192,
       "norm_label": "redirectresponse"
     },
     {
@@ -1230,7 +1230,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_authenticatedsessioncontroller_destroy",
-      "community": 10,
+      "community": 192,
       "norm_label": ".destroy()"
     },
     {
@@ -1240,7 +1240,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_auth_authenticatedsessioncontroller_php_request",
-      "community": 10,
+      "community": 192,
       "norm_label": "request"
     },
     {
@@ -1860,7 +1860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest",
-      "community": 10,
+      "community": 192,
       "norm_label": "loginrequest.php"
     },
     {
@@ -1870,7 +1870,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest",
-      "community": 10,
+      "community": 192,
       "norm_label": "loginrequest"
     },
     {
@@ -1890,7 +1890,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authorize",
-      "community": 10,
+      "community": 192,
       "norm_label": ".authorize()"
     },
     {
@@ -1900,7 +1900,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_rules",
-      "community": 10,
+      "community": 192,
       "norm_label": ".rules()"
     },
     {
@@ -1910,7 +1910,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authenticate",
-      "community": 10,
+      "community": 192,
       "norm_label": ".authenticate()"
     },
     {
@@ -1920,7 +1920,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_ensureisnotratelimited",
-      "community": 10,
+      "community": 192,
       "norm_label": ".ensureisnotratelimited()"
     },
     {
@@ -1930,7 +1930,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_throttlekey",
-      "community": 10,
+      "community": 192,
       "norm_label": ".throttlekey()"
     },
     {
@@ -1970,7 +1970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest",
-      "community": 192,
+      "community": 50,
       "norm_label": "storecorpocelesterequest.php"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest",
-      "community": 192,
+      "community": 50,
       "norm_label": "storecorpocelesterequest"
     },
     {
@@ -1990,7 +1990,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_authorize",
-      "community": 192,
+      "community": 50,
       "norm_label": ".authorize()"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_rules",
-      "community": 192,
+      "community": 50,
       "norm_label": ".rules()"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_passedvalidation",
-      "community": 192,
+      "community": 50,
       "norm_label": ".passedvalidation()"
     },
     {
@@ -2400,7 +2400,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_categoria",
-      "community": 184,
+      "community": 103,
       "norm_label": ".categoria()"
     },
     {
@@ -2410,7 +2410,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongsto",
-      "community": 184,
+      "community": 103,
       "norm_label": "belongsto"
     },
     {
@@ -2420,7 +2420,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_galleria",
-      "community": 181,
+      "community": 49,
       "norm_label": ".galleria()"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_hasmany",
-      "community": 181,
+      "community": 49,
       "norm_label": "hasmany"
     },
     {
@@ -2440,7 +2440,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_curiosita",
-      "community": 181,
+      "community": 49,
       "norm_label": ".curiosita()"
     },
     {
@@ -2450,7 +2450,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_missioni",
-      "community": 183,
+      "community": 49,
       "norm_label": ".missioni()"
     },
     {
@@ -2460,7 +2460,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongstomany",
-      "community": 183,
+      "community": 49,
       "norm_label": "belongstomany"
     },
     {
@@ -2630,7 +2630,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_models_missione_missione_corpicelesti",
-      "community": 3,
+      "community": 103,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2640,7 +2640,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_missione_php_belongstomany",
-      "community": 3,
+      "community": 103,
       "norm_label": "belongstomany"
     },
     {
@@ -2650,7 +2650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_user",
-      "community": 103,
+      "community": 161,
       "norm_label": "user.php"
     },
     {
@@ -2680,7 +2680,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "notifiable",
-      "community": 48,
+      "community": 161,
       "norm_label": "notifiable"
     },
     {
@@ -2710,7 +2710,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver",
-      "community": 7,
+      "community": 11,
       "norm_label": "corpocelesteobserver"
     },
     {
@@ -2720,7 +2720,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_construct",
-      "community": 7,
+      "community": 11,
       "norm_label": ".__construct()"
     },
     {
@@ -2730,7 +2730,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_created",
-      "community": 7,
+      "community": 11,
       "norm_label": ".created()"
     },
     {
@@ -3220,7 +3220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_services_nasaimageservice",
-      "community": 7,
+      "community": 103,
       "norm_label": "nasaimageservice.php"
     },
     {
@@ -3230,7 +3230,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice",
-      "community": 7,
+      "community": 11,
       "norm_label": "nasaimageservice"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_searchnasa",
-      "community": 7,
+      "community": 11,
       "norm_label": ".searchnasa()"
     },
     {
@@ -3250,7 +3250,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_extractmetadata",
-      "community": 7,
+      "community": 11,
       "norm_label": ".extractmetadata()"
     },
     {
@@ -3260,7 +3260,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_pickimageurl",
-      "community": 7,
+      "community": 11,
       "norm_label": ".pickimageurl()"
     },
     {
@@ -3270,7 +3270,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importforbody",
-      "community": 7,
+      "community": 11,
       "norm_label": ".importforbody()"
     },
     {
@@ -3280,7 +3280,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importall",
-      "community": 7,
+      "community": 11,
       "norm_label": ".importall()"
     },
     {
@@ -3290,7 +3290,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_services_wordmapservice",
-      "community": 50,
+      "community": 177,
       "norm_label": "wordmapservice.php"
     },
     {
@@ -3300,7 +3300,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "app_services_wordmapservice_wordmapservice",
-      "community": 50,
+      "community": 177,
       "norm_label": "wordmapservice"
     },
     {
@@ -3310,7 +3310,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "app_services_wordmapservice_wordmapservice_translate",
-      "community": 50,
+      "community": 177,
       "norm_label": ".translate()"
     },
     {
@@ -3320,7 +3320,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "app_services_wordmapservice_wordmapservice_guessenglishname",
-      "community": 50,
+      "community": 177,
       "norm_label": ".guessenglishname()"
     },
     {
@@ -3970,7 +3970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_auth",
-      "community": 103,
+      "community": 192,
       "norm_label": "auth.php"
     },
     {
@@ -4700,7 +4700,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "categoriaseeder.php"
     },
     {
@@ -4710,7 +4710,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "categoriaseeder"
     },
     {
@@ -4720,7 +4720,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "seeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "seeder"
     },
     {
@@ -4730,7 +4730,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_categoriaseeder_categoriaseeder_run",
-      "community": 103,
+      "community": 14,
       "norm_label": ".run()"
     },
     {
@@ -4740,7 +4740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "corpocelestemissioneseeder.php"
     },
     {
@@ -4750,7 +4750,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "corpocelestemissioneseeder"
     },
     {
@@ -4760,7 +4760,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_corpocelestemissioneseeder_corpocelestemissioneseeder_run",
-      "community": 103,
+      "community": 14,
       "norm_label": ".run()"
     },
     {
@@ -4770,7 +4770,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "corpocelesteseeder.php"
     },
     {
@@ -4780,7 +4780,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "corpocelesteseeder"
     },
     {
@@ -4790,7 +4790,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_corpocelesteseeder_corpocelesteseeder_run",
-      "community": 103,
+      "community": 14,
       "norm_label": ".run()"
     },
     {
@@ -4800,7 +4800,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "curiositaseeder.php"
     },
     {
@@ -4810,7 +4810,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "curiositaseeder"
     },
     {
@@ -4820,7 +4820,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_curiositaseeder_curiositaseeder_run",
-      "community": 103,
+      "community": 14,
       "norm_label": ".run()"
     },
     {
@@ -4830,7 +4830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "databaseseeder.php"
     },
     {
@@ -4840,7 +4840,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "databaseseeder"
     },
     {
@@ -4850,7 +4850,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_databaseseeder_databaseseeder_run",
-      "community": 103,
+      "community": 14,
       "norm_label": ".run()"
     },
     {
@@ -4860,7 +4860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "galleriacorposeeder.php"
     },
     {
@@ -4870,7 +4870,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "galleriacorposeeder"
     },
     {
@@ -4880,7 +4880,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "database_seeders_galleriacorposeeder_galleriacorposeeder_run",
-      "community": 103,
+      "community": 14,
       "norm_label": ".run()"
     },
     {
@@ -4890,7 +4890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "missioneseeder.php"
     },
     {
@@ -4900,7 +4900,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder",
-      "community": 103,
+      "community": 14,
       "norm_label": "missioneseeder"
     },
     {
@@ -4910,7 +4910,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "database_seeders_missioneseeder_missioneseeder_run",
-      "community": 103,
+      "community": 14,
       "norm_label": ".run()"
     },
     {
@@ -7450,7 +7450,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "refreshdatabase",
-      "community": 103,
+      "community": 44,
       "norm_label": "refreshdatabase"
     },
     {
@@ -8180,7 +8180,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest",
-      "community": 103,
+      "community": 181,
       "norm_label": "categoriaapitest.php"
     },
     {
@@ -8190,7 +8190,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest",
-      "community": 21,
+      "community": 181,
       "norm_label": "categoriaapitest"
     },
     {
@@ -8200,7 +8200,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_setup",
-      "community": 21,
+      "community": 181,
       "norm_label": ".setup()"
     },
     {
@@ -8210,7 +8210,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_index_returns_all_categorie",
-      "community": 21,
+      "community": 181,
       "norm_label": ".test_index_returns_all_categorie()"
     },
     {
@@ -8220,7 +8220,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_categoria_with_corpi_count",
-      "community": 21,
+      "community": 181,
       "norm_label": ".test_show_returns_categoria_with_corpi_count()"
     },
     {
@@ -8230,7 +8230,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_404_for_invalid_slug",
-      "community": 21,
+      "community": 181,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -8380,7 +8380,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest",
-      "community": 103,
+      "community": 44,
       "norm_label": "curiositaapitest.php"
     },
     {
@@ -8390,7 +8390,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest",
-      "community": 103,
+      "community": 44,
       "norm_label": "curiositaapitest"
     },
     {
@@ -8400,7 +8400,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_setup",
-      "community": 103,
+      "community": 44,
       "norm_label": ".setup()"
     },
     {
@@ -8410,7 +8410,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_test_index_returns_all_curiosita",
-      "community": 15,
+      "community": 44,
       "norm_label": ".test_index_returns_all_curiosita()"
     },
     {
@@ -8450,7 +8450,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_dashboardapitest_dashboardapitest_test_stats_returns_counts",
-      "community": 3,
+      "community": 103,
       "norm_label": ".test_stats_returns_counts()"
     },
     {
@@ -8460,7 +8460,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest",
-      "community": 103,
+      "community": 25,
       "norm_label": "galleriaapitest.php"
     },
     {
@@ -8470,7 +8470,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest",
-      "community": 49,
+      "community": 25,
       "norm_label": "galleriaapitest"
     },
     {
@@ -8480,7 +8480,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_setup",
-      "community": 49,
+      "community": 25,
       "norm_label": ".setup()"
     },
     {
@@ -8490,7 +8490,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_teardown",
-      "community": 49,
+      "community": 25,
       "norm_label": ".teardown()"
     },
     {
@@ -8500,7 +8500,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_test_index_returns_all_galleria",
-      "community": 49,
+      "community": 25,
       "norm_label": ".test_index_returns_all_galleria()"
     },
     {
@@ -8510,7 +8510,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest",
-      "community": 103,
+      "community": 44,
       "norm_label": "missioneapitest.php"
     },
     {
@@ -8520,7 +8520,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest",
-      "community": 103,
+      "community": 44,
       "norm_label": "missioneapitest"
     },
     {
@@ -8530,7 +8530,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_index_returns_all_missioni",
-      "community": 103,
+      "community": 44,
       "norm_label": ".test_index_returns_all_missioni()"
     },
     {
@@ -8540,7 +8540,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_missione",
-      "community": 103,
+      "community": 44,
       "norm_label": ".test_show_returns_missione()"
     },
     {
@@ -8550,7 +8550,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_404_for_invalid_slug",
-      "community": 103,
+      "community": 44,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -8560,7 +8560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest",
-      "community": 103,
+      "community": 161,
       "norm_label": "authenticationtest.php"
     },
     {
@@ -8570,7 +8570,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest",
-      "community": 48,
+      "community": 161,
       "norm_label": "authenticationtest"
     },
     {
@@ -8580,7 +8580,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_login_screen_can_be_rendered",
-      "community": 48,
+      "community": 161,
       "norm_label": ".test_login_screen_can_be_rendered()"
     },
     {
@@ -8590,7 +8590,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_authenticate_using_the_login_screen",
-      "community": 48,
+      "community": 161,
       "norm_label": ".test_users_can_authenticate_using_the_login_screen()"
     },
     {
@@ -8600,7 +8600,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_not_authenticate_with_invalid_password",
-      "community": 48,
+      "community": 161,
       "norm_label": ".test_users_can_not_authenticate_with_invalid_password()"
     },
     {
@@ -8610,7 +8610,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_logout",
-      "community": 48,
+      "community": 161,
       "norm_label": ".test_users_can_logout()"
     },
     {
@@ -8620,7 +8620,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest",
-      "community": 103,
+      "community": 25,
       "norm_label": "emailverificationtest.php"
     },
     {
@@ -8630,7 +8630,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest",
-      "community": 48,
+      "community": 25,
       "norm_label": "emailverificationtest"
     },
     {
@@ -8640,7 +8640,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_verification_screen_can_be_rendered",
-      "community": 48,
+      "community": 25,
       "norm_label": ".test_email_verification_screen_can_be_rendered()"
     },
     {
@@ -8650,7 +8650,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_can_be_verified",
-      "community": 48,
+      "community": 25,
       "norm_label": ".test_email_can_be_verified()"
     },
     {
@@ -8660,7 +8660,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_is_not_verified_with_invalid_hash",
-      "community": 48,
+      "community": 25,
       "norm_label": ".test_email_is_not_verified_with_invalid_hash()"
     },
     {
@@ -8670,7 +8670,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest",
-      "community": 103,
+      "community": 161,
       "norm_label": "passwordconfirmationtest.php"
     },
     {
@@ -8680,7 +8680,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest",
-      "community": 48,
+      "community": 161,
       "norm_label": "passwordconfirmationtest"
     },
     {
@@ -8690,7 +8690,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_confirm_password_screen_can_be_rendered",
-      "community": 48,
+      "community": 161,
       "norm_label": ".test_confirm_password_screen_can_be_rendered()"
     },
     {
@@ -8700,7 +8700,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_can_be_confirmed",
-      "community": 48,
+      "community": 161,
       "norm_label": ".test_password_can_be_confirmed()"
     },
     {
@@ -8710,7 +8710,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_is_not_confirmed_with_invalid_password",
-      "community": 48,
+      "community": 161,
       "norm_label": ".test_password_is_not_confirmed_with_invalid_password()"
     },
     {
@@ -8720,7 +8720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest",
-      "community": 103,
+      "community": 182,
       "norm_label": "passwordresettest.php"
     },
     {
@@ -8730,7 +8730,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest",
-      "community": 48,
+      "community": 182,
       "norm_label": "passwordresettest"
     },
     {
@@ -8740,7 +8740,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_reset_password_link_screen_can_be_rendered",
-      "community": 48,
+      "community": 182,
       "norm_label": ".test_reset_password_link_screen_can_be_rendered()"
     },
     {
@@ -8750,7 +8750,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_reset_password_link_can_be_requested",
-      "community": 48,
+      "community": 182,
       "norm_label": ".test_reset_password_link_can_be_requested()"
     },
     {
@@ -8760,7 +8760,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_reset_password_screen_can_be_rendered",
-      "community": 48,
+      "community": 182,
       "norm_label": ".test_reset_password_screen_can_be_rendered()"
     },
     {
@@ -8770,7 +8770,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest_passwordresettest_test_password_can_be_reset_with_valid_token",
-      "community": 48,
+      "community": 182,
       "norm_label": ".test_password_can_be_reset_with_valid_token()"
     },
     {
@@ -8780,7 +8780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest",
-      "community": 103,
+      "community": 44,
       "norm_label": "passwordupdatetest.php"
     },
     {
@@ -8790,7 +8790,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest",
-      "community": 103,
+      "community": 44,
       "norm_label": "passwordupdatetest"
     },
     {
@@ -8800,7 +8800,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_password_can_be_updated",
-      "community": 48,
+      "community": 44,
       "norm_label": ".test_password_can_be_updated()"
     },
     {
@@ -8810,7 +8810,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_correct_password_must_be_provided_to_update_password",
-      "community": 48,
+      "community": 44,
       "norm_label": ".test_correct_password_must_be_provided_to_update_password()"
     },
     {
@@ -8820,7 +8820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest",
-      "community": 103,
+      "community": 44,
       "norm_label": "registrationtest.php"
     },
     {
@@ -8830,7 +8830,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest_registrationtest",
-      "community": 103,
+      "community": 44,
       "norm_label": "registrationtest"
     },
     {
@@ -8840,7 +8840,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest_registrationtest_test_registration_screen_can_be_rendered",
-      "community": 103,
+      "community": 44,
       "norm_label": ".test_registration_screen_can_be_rendered()"
     },
     {
@@ -8850,7 +8850,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest_registrationtest_test_new_users_can_register",
-      "community": 103,
+      "community": 44,
       "norm_label": ".test_new_users_can_register()"
     },
     {
@@ -8860,7 +8860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_exampletest",
-      "community": 103,
+      "community": 25,
       "norm_label": "exampletest.php"
     },
     {
@@ -8870,7 +8870,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "tests_feature_exampletest_exampletest",
-      "community": 103,
+      "community": 25,
       "norm_label": "exampletest"
     },
     {
@@ -8880,7 +8880,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_exampletest_exampletest_test_the_application_returns_a_successful_response",
-      "community": 103,
+      "community": 25,
       "norm_label": ".test_the_application_returns_a_successful_response()"
     },
     {
@@ -8890,7 +8890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_profiletest",
-      "community": 103,
+      "community": 161,
       "norm_label": "profiletest.php"
     },
     {
@@ -8960,7 +8960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_testcase",
-      "community": 103,
+      "community": 25,
       "norm_label": "testcase.php"
     },
     {
@@ -8970,7 +8970,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "tests_testcase_testcase",
-      "community": 103,
+      "community": 25,
       "norm_label": "testcase"
     },
     {
@@ -8980,7 +8980,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "basetestcase",
-      "community": 103,
+      "community": 25,
       "norm_label": "basetestcase"
     },
     {
@@ -8990,7 +8990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_exampletest",
-      "community": 103,
+      "community": 25,
       "norm_label": "exampletest.php"
     },
     {
@@ -9000,7 +9000,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "tests_unit_exampletest_exampletest",
-      "community": 103,
+      "community": 25,
       "norm_label": "exampletest"
     },
     {
@@ -9010,7 +9010,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_unit_exampletest_exampletest_test_that_true_is_true",
-      "community": 103,
+      "community": 25,
       "norm_label": ".test_that_true_is_true()"
     },
     {
@@ -9860,7 +9860,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "docs_changelog_fase_4_react_guest_frontend",
-      "community": 185,
+      "community": 5,
       "norm_label": "fase 4 \u2014 react guest frontend"
     },
     {
@@ -9870,7 +9870,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "docs_changelog_4_0_04_07_2026_feat_react_spa_guest_homepage_lista_corpi_celesti",
-      "community": 185,
+      "community": 5,
       "norm_label": "4.0 \u2014 04/07/2026 \u2014 feat: react spa guest (homepage + lista corpi celesti)"
     },
     {
@@ -10060,7 +10060,7 @@
       "source_location": "L159",
       "_origin": "ast",
       "id": "docs_changelog_fase_8_nasa_import_multi_immagine_service_layer_cli_command",
-      "community": 182,
+      "community": 5,
       "norm_label": "fase 8 \u2014 nasa import multi-immagine, service layer, cli command"
     },
     {
@@ -10070,7 +10070,7 @@
       "source_location": "L161",
       "_origin": "ast",
       "id": "docs_changelog_8_0_04_07_2026_feat_nasa_import_multi_immagine_in_galleria_cli_fetch_nasa_metadati",
-      "community": 182,
+      "community": 5,
       "norm_label": "8.0 \u2014 04/07/2026 \u2014 feat: nasa import multi-immagine in galleria + cli fetch-nasa + metadati"
     },
     {
@@ -10080,7 +10080,7 @@
       "source_location": "L175",
       "_origin": "ast",
       "id": "docs_changelog_8_1_04_07_2026_fix_memory_limit_per_immagini_nasa_grandi_fallback_url_per_item",
-      "community": 182,
+      "community": 5,
       "norm_label": "8.1 \u2014 04/07/2026 \u2014 fix: memory limit per immagini nasa grandi + fallback url per item"
     },
     {
@@ -10090,7 +10090,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "docs_changelog_fase_9_remote_urls_nome_it_wordmap_apostrophe_fallback",
-      "community": 186,
+      "community": 5,
       "norm_label": "fase 9 \u2014 remote urls, nome_it, wordmap, apostrophe fallback"
     },
     {
@@ -10100,7 +10100,7 @@
       "source_location": "L182",
       "_origin": "ast",
       "id": "docs_changelog_9_0_04_07_2026_feat_remote_nasa_urls_nome_it_wordmap_espansa_apostrophe_fallback_auto_suggest",
-      "community": 186,
+      "community": 5,
       "norm_label": "9.0 \u2014 04/07/2026 \u2014 feat: remote nasa urls, nome_it, wordmap espansa, apostrophe fallback, auto-suggest"
     },
     {
@@ -10614,966 +10614,6 @@
       "norm_label": "credenziali admin (demo)"
     },
     {
-      "label": "guida-esame.md",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_guida_esame",
-      "community": 20,
-      "norm_label": "guida-esame.md"
-    },
-    {
-      "label": "Guida all'Esame \u2014 Astralis",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "docs_guida_esame_guida_all_esame_astralis",
-      "community": 25,
-      "norm_label": "guida all'esame \u2014 astralis"
-    },
-    {
-      "label": "1. Identikit del Progetto",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "docs_guida_esame_1_identikit_del_progetto",
-      "community": 25,
-      "norm_label": "1. identikit del progetto"
-    },
-    {
-      "label": "2. Database e Modelli",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "docs_guida_esame_2_database_e_modelli",
-      "community": 14,
-      "norm_label": "2. database e modelli"
-    },
-    {
-      "label": "Schema Entit\u00e0-Relazioni",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "docs_guida_esame_schema_entit\u00e0_relazioni",
-      "community": 14,
-      "norm_label": "schema entita-relazioni"
-    },
-    {
-      "label": "Tabella: `categorie`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tabella_categorie",
-      "community": 14,
-      "norm_label": "tabella: `categorie`"
-    },
-    {
-      "label": "Tabella: `corpi_celesti`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L47",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tabella_corpi_celesti",
-      "community": 14,
-      "norm_label": "tabella: `corpi_celesti`"
-    },
-    {
-      "label": "Tabella: `galleria_corpi`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L83",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tabella_galleria_corpi",
-      "community": 14,
-      "norm_label": "tabella: `galleria_corpi`"
-    },
-    {
-      "label": "Tabella: `missioni`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L96",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tabella_missioni",
-      "community": 14,
-      "norm_label": "tabella: `missioni`"
-    },
-    {
-      "label": "Tabella: `curiosita`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L113",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tabella_curiosita",
-      "community": 14,
-      "norm_label": "tabella: `curiosita`"
-    },
-    {
-      "label": "Tabella Pivot: `corpo_celeste_missione`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L123",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tabella_pivot_corpo_celeste_missione",
-      "community": 14,
-      "norm_label": "tabella pivot: `corpo_celeste_missione`"
-    },
-    {
-      "label": "Tabella: `users` (estesa)",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L134",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tabella_users_estesa",
-      "community": 14,
-      "norm_label": "tabella: `users` (estesa)"
-    },
-    {
-      "label": "3. Routing \u2014 La Mappa delle URL",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L140",
-      "_origin": "ast",
-      "id": "docs_guida_esame_3_routing_la_mappa_delle_url",
-      "community": 196,
-      "norm_label": "3. routing \u2014 la mappa delle url"
-    },
-    {
-      "label": "Tripartizione dei file route",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L142",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tripartizione_dei_file_route",
-      "community": 196,
-      "norm_label": "tripartizione dei file route"
-    },
-    {
-      "label": "`routes/web.php` \u2014 Admin e Catch-all",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L153",
-      "_origin": "ast",
-      "id": "docs_guida_esame_routes_web_php_admin_e_catch_all",
-      "community": 196,
-      "norm_label": "`routes/web.php` \u2014 admin e catch-all"
-    },
-    {
-      "label": "`routes/api.php` \u2014 10 Endpoint JSON Pubblici",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L178",
-      "_origin": "ast",
-      "id": "docs_guida_esame_routes_api_php_10_endpoint_json_pubblici",
-      "community": 196,
-      "norm_label": "`routes/api.php` \u2014 10 endpoint json pubblici"
-    },
-    {
-      "label": "`routes/auth.php` \u2014 Breeze Standard",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L195",
-      "_origin": "ast",
-      "id": "docs_guida_esame_routes_auth_php_breeze_standard",
-      "community": 196,
-      "norm_label": "`routes/auth.php` \u2014 breeze standard"
-    },
-    {
-      "label": "4. Admin Blade \u2014 CRUD e Dashboard",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L201",
-      "_origin": "ast",
-      "id": "docs_guida_esame_4_admin_blade_crud_e_dashboard",
-      "community": 197,
-      "norm_label": "4. admin blade \u2014 crud e dashboard"
-    },
-    {
-      "label": "Pattern Comune (stesso per tutte e 5 le entit\u00e0)",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L203",
-      "_origin": "ast",
-      "id": "docs_guida_esame_pattern_comune_stesso_per_tutte_e_5_le_entit\u00e0",
-      "community": 197,
-      "norm_label": "pattern comune (stesso per tutte e 5 le entita)"
-    },
-    {
-      "label": "Differenze tra entit\u00e0",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L215",
-      "_origin": "ast",
-      "id": "docs_guida_esame_differenze_tra_entit\u00e0",
-      "community": 197,
-      "norm_label": "differenze tra entita"
-    },
-    {
-      "label": "Dashboard",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L225",
-      "_origin": "ast",
-      "id": "docs_guida_esame_dashboard",
-      "community": 197,
-      "norm_label": "dashboard"
-    },
-    {
-      "label": "Master Layout",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L236",
-      "_origin": "ast",
-      "id": "docs_guida_esame_master_layout",
-      "community": 197,
-      "norm_label": "master layout"
-    },
-    {
-      "label": "5. API REST",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L246",
-      "_origin": "ast",
-      "id": "docs_guida_esame_5_api_rest",
-      "community": 215,
-      "norm_label": "5. api rest"
-    },
-    {
-      "label": "API Resources",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L248",
-      "_origin": "ast",
-      "id": "docs_guida_esame_api_resources",
-      "community": 215,
-      "norm_label": "api resources"
-    },
-    {
-      "label": "Filtri in `Api\\CorpoCelesteController`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L254",
-      "_origin": "ast",
-      "id": "docs_guida_esame_filtri_in_api_corpocelestecontroller",
-      "community": 215,
-      "norm_label": "filtri in `api\\corpocelestecontroller`"
-    },
-    {
-      "label": "Eager Loading",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L270",
-      "_origin": "ast",
-      "id": "docs_guida_esame_eager_loading",
-      "community": 215,
-      "norm_label": "eager loading"
-    },
-    {
-      "label": "6. React SPA Guest",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L281",
-      "_origin": "ast",
-      "id": "docs_guida_esame_6_react_spa_guest",
-      "community": 194,
-      "norm_label": "6. react spa guest"
-    },
-    {
-      "label": "Entry Point",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L283",
-      "_origin": "ast",
-      "id": "docs_guida_esame_entry_point",
-      "community": 194,
-      "norm_label": "entry point"
-    },
-    {
-      "label": "Router (App.jsx)",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L294",
-      "_origin": "ast",
-      "id": "docs_guida_esame_router_app_jsx",
-      "community": 194,
-      "norm_label": "router (app.jsx)"
-    },
-    {
-      "label": "Flusso dati",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L312",
-      "_origin": "ast",
-      "id": "docs_guida_esame_flusso_dati",
-      "community": 194,
-      "norm_label": "flusso dati"
-    },
-    {
-      "label": "Pagine React",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L330",
-      "_origin": "ast",
-      "id": "docs_guida_esame_pagine_react",
-      "community": 194,
-      "norm_label": "pagine react"
-    },
-    {
-      "label": "Componenti",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L342",
-      "_origin": "ast",
-      "id": "docs_guida_esame_componenti",
-      "community": 194,
-      "norm_label": "componenti"
-    },
-    {
-      "label": "Error Boundary",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L356",
-      "_origin": "ast",
-      "id": "docs_guida_esame_error_boundary",
-      "community": 194,
-      "norm_label": "error boundary"
-    },
-    {
-      "label": "7. NASA Integration",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L375",
-      "_origin": "ast",
-      "id": "docs_guida_esame_7_nasa_integration",
-      "community": 195,
-      "norm_label": "7. nasa integration"
-    },
-    {
-      "label": "Architettura",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L377",
-      "_origin": "ast",
-      "id": "docs_guida_esame_architettura",
-      "community": 195,
-      "norm_label": "architettura"
-    },
-    {
-      "label": "`NasaImageService` \u2014 Metodi pubblici",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L395",
-      "_origin": "ast",
-      "id": "docs_guida_esame_nasaimageservice_metodi_pubblici",
-      "community": 195,
-      "norm_label": "`nasaimageservice` \u2014 metodi pubblici"
-    },
-    {
-      "label": "Fallback Query per Apostrofi",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L405",
-      "_origin": "ast",
-      "id": "docs_guida_esame_fallback_query_per_apostrofi",
-      "community": 195,
-      "norm_label": "fallback query per apostrofi"
-    },
-    {
-      "label": "WordMapService",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L415",
-      "_origin": "ast",
-      "id": "docs_guida_esame_wordmapservice",
-      "community": 195,
-      "norm_label": "wordmapservice"
-    },
-    {
-      "label": "CorpoCelesteObserver",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L427",
-      "_origin": "ast",
-      "id": "docs_guida_esame_corpocelesteobserver",
-      "community": 195,
-      "norm_label": "corpocelesteobserver"
-    },
-    {
-      "label": "CLI Commands",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L434",
-      "_origin": "ast",
-      "id": "docs_guida_esame_cli_commands",
-      "community": 195,
-      "norm_label": "cli commands"
-    },
-    {
-      "label": "8. Autenticazione e Autorizzazione",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L443",
-      "_origin": "ast",
-      "id": "docs_guida_esame_8_autenticazione_e_autorizzazione",
-      "community": 198,
-      "norm_label": "8. autenticazione e autorizzazione"
-    },
-    {
-      "label": "Breeze su Blade (non Inertia)",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L445",
-      "_origin": "ast",
-      "id": "docs_guida_esame_breeze_su_blade_non_inertia",
-      "community": 198,
-      "norm_label": "breeze su blade (non inertia)"
-    },
-    {
-      "label": "Policy (5 entit\u00e0)",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L451",
-      "_origin": "ast",
-      "id": "docs_guida_esame_policy_5_entit\u00e0",
-      "community": 198,
-      "norm_label": "policy (5 entita)"
-    },
-    {
-      "label": "Gate `admin`",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L474",
-      "_origin": "ast",
-      "id": "docs_guida_esame_gate_admin",
-      "community": 198,
-      "norm_label": "gate `admin`"
-    },
-    {
-      "label": "Flusso di autorizzazione",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L486",
-      "_origin": "ast",
-      "id": "docs_guida_esame_flusso_di_autorizzazione",
-      "community": 198,
-      "norm_label": "flusso di autorizzazione"
-    },
-    {
-      "label": "9. Image Handling",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L499",
-      "_origin": "ast",
-      "id": "docs_guida_esame_9_image_handling",
-      "community": 25,
-      "norm_label": "9. image handling"
-    },
-    {
-      "label": "Due modalit\u00e0",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L501",
-      "_origin": "ast",
-      "id": "docs_guida_esame_due_modalit\u00e0",
-      "community": 25,
-      "norm_label": "due modalita"
-    },
-    {
-      "label": "Intervention Image v4 \u2014 SENZA Facade",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L509",
-      "_origin": "ast",
-      "id": "docs_guida_esame_intervention_image_v4_senza_facade",
-      "community": 25,
-      "norm_label": "intervention image v4 \u2014 senza facade"
-    },
-    {
-      "label": "10. Testing",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L527",
-      "_origin": "ast",
-      "id": "docs_guida_esame_10_testing",
-      "community": 213,
-      "norm_label": "10. testing"
-    },
-    {
-      "label": "PHPUnit \u2014 130 test, 335 assertion",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L529",
-      "_origin": "ast",
-      "id": "docs_guida_esame_phpunit_130_test_335_assertion",
-      "community": 213,
-      "norm_label": "phpunit \u2014 130 test, 335 assertion"
-    },
-    {
-      "label": "Pattern essenziali per i test",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L555",
-      "_origin": "ast",
-      "id": "docs_guida_esame_pattern_essenziali_per_i_test",
-      "community": 213,
-      "norm_label": "pattern essenziali per i test"
-    },
-    {
-      "label": "Vitest \u2014 88 test",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L577",
-      "_origin": "ast",
-      "id": "docs_guida_esame_vitest_88_test",
-      "community": 213,
-      "norm_label": "vitest \u2014 88 test"
-    },
-    {
-      "label": "11. SEO e Robustezza",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L597",
-      "_origin": "ast",
-      "id": "docs_guida_esame_11_seo_e_robustezza",
-      "community": 214,
-      "norm_label": "11. seo e robustezza"
-    },
-    {
-      "label": "SEO Meta Tags",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L599",
-      "_origin": "ast",
-      "id": "docs_guida_esame_seo_meta_tags",
-      "community": 214,
-      "norm_label": "seo meta tags"
-    },
-    {
-      "label": "Error Boundary",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L615",
-      "_origin": "ast",
-      "id": "docs_guida_esame_error_boundary_615",
-      "community": 214,
-      "norm_label": "error boundary"
-    },
-    {
-      "label": "Search/Filtri Admin",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L622",
-      "_origin": "ast",
-      "id": "docs_guida_esame_search_filtri_admin",
-      "community": 214,
-      "norm_label": "search/filtri admin"
-    },
-    {
-      "label": "12. Domande Possibili all'Esame",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L633",
-      "_origin": "ast",
-      "id": "docs_guida_esame_12_domande_possibili_all_esame",
-      "community": 4,
-      "norm_label": "12. domande possibili all'esame"
-    },
-    {
-      "label": "1. Perch\u00e9 React SPA e non Inertia?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L635",
-      "_origin": "ast",
-      "id": "docs_guida_esame_1_perch\u00e9_react_spa_e_non_inertia",
-      "community": 4,
-      "norm_label": "1. perche react spa e non inertia?"
-    },
-    {
-      "label": "2. Come funziona la catch-all `/{any}`?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L641",
-      "_origin": "ast",
-      "id": "docs_guida_esame_2_come_funziona_la_catch_all_any",
-      "community": 4,
-      "norm_label": "2. come funziona la catch-all `/{any}`?"
-    },
-    {
-      "label": "3. Differenza tra Policy e Gate?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L647",
-      "_origin": "ast",
-      "id": "docs_guida_esame_3_differenza_tra_policy_e_gate",
-      "community": 4,
-      "norm_label": "3. differenza tra policy e gate?"
-    },
-    {
-      "label": "4. Perch\u00e9 `{curiositum}` come parametro route?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L658",
-      "_origin": "ast",
-      "id": "docs_guida_esame_4_perch\u00e9_curiositum_come_parametro_route",
-      "community": 4,
-      "norm_label": "4. perche `{curiositum}` come parametro route?"
-    },
-    {
-      "label": "5. Cosa succede se cancello una categoria con corpi associati?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L662",
-      "_origin": "ast",
-      "id": "docs_guida_esame_5_cosa_succede_se_cancello_una_categoria_con_corpi_associati",
-      "community": 4,
-      "norm_label": "5. cosa succede se cancello una categoria con corpi associati?"
-    },
-    {
-      "label": "6. Come si prevengono duplicati nell'import NASA?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L666",
-      "_origin": "ast",
-      "id": "docs_guida_esame_6_come_si_prevengono_duplicati_nell_import_nasa",
-      "community": 4,
-      "norm_label": "6. come si prevengono duplicati nell'import nasa?"
-    },
-    {
-      "label": "7. Problema Windows con SSL?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L670",
-      "_origin": "ast",
-      "id": "docs_guida_esame_7_problema_windows_con_ssl",
-      "community": 4,
-      "norm_label": "7. problema windows con ssl?"
-    },
-    {
-      "label": "8. Come si passa da una pagina admin alla SPA guest?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L681",
-      "_origin": "ast",
-      "id": "docs_guida_esame_8_come_si_passa_da_una_pagina_admin_alla_spa_guest",
-      "community": 4,
-      "norm_label": "8. come si passa da una pagina admin alla spa guest?"
-    },
-    {
-      "label": "9. Perch\u00e9 `varchar` per massa/distanza/diametro?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L685",
-      "_origin": "ast",
-      "id": "docs_guida_esame_9_perch\u00e9_varchar_per_massa_distanza_diametro",
-      "community": 4,
-      "norm_label": "9. perche `varchar` per massa/distanza/diametro?"
-    },
-    {
-      "label": "10. Come funziona l'ordinamento inline della galleria?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L689",
-      "_origin": "ast",
-      "id": "docs_guida_esame_10_come_funziona_l_ordinamento_inline_della_galleria",
-      "community": 4,
-      "norm_label": "10. come funziona l'ordinamento inline della galleria?"
-    },
-    {
-      "label": "11. React SPA fa SSR? No.",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L701",
-      "_origin": "ast",
-      "id": "docs_guida_esame_11_react_spa_fa_ssr_no",
-      "community": 4,
-      "norm_label": "11. react spa fa ssr? no."
-    },
-    {
-      "label": "12. Cos'\u00e8 `nome_display`?",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L705",
-      "_origin": "ast",
-      "id": "docs_guida_esame_12_cos_\u00e8_nome_display",
-      "community": 4,
-      "norm_label": "12. cos'e `nome_display`?"
-    },
-    {
-      "label": "13. Comandi che devo ricordare",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L718",
-      "_origin": "ast",
-      "id": "docs_guida_esame_13_comandi_che_devo_ricordare",
-      "community": 25,
-      "norm_label": "13. comandi che devo ricordare"
-    },
-    {
-      "label": "14. Timeline del Progetto (per domande sul processo)",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L760",
-      "_origin": "ast",
-      "id": "docs_guida_esame_14_timeline_del_progetto_per_domande_sul_processo",
-      "community": 25,
-      "norm_label": "14. timeline del progetto (per domande sul processo)"
-    },
-    {
-      "label": "15. Debugging \u2014 Problemi gi\u00e0 incontrati (e risolti)",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L783",
-      "_origin": "ast",
-      "id": "docs_guida_esame_15_debugging_problemi_gi\u00e0_incontrati_e_risolti",
-      "community": 25,
-      "norm_label": "15. debugging \u2014 problemi gia incontrati (e risolti)"
-    },
-    {
-      "label": "16. Mappa dei File \u2014 \"Cosa fa cosa\" e Comandi",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L798",
-      "_origin": "ast",
-      "id": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "community": 44,
-      "norm_label": "16. mappa dei file \u2014 \"cosa fa cosa\" e comandi"
-    },
-    {
-      "label": "`app/Models/` \u2014 6 Modelli Eloquent",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L800",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_models_6_modelli_eloquent",
-      "community": 44,
-      "norm_label": "`app/models/` \u2014 6 modelli eloquent"
-    },
-    {
-      "label": "`app/Http/Controllers/` \u2014 21 Controller",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L811",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_http_controllers_21_controller",
-      "community": 44,
-      "norm_label": "`app/http/controllers/` \u2014 21 controller"
-    },
-    {
-      "label": "`app/Policies/` \u2014 5 Policy",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L836",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_policies_5_policy",
-      "community": 44,
-      "norm_label": "`app/policies/` \u2014 5 policy"
-    },
-    {
-      "label": "`app/Services/` \u2014 2 Service Layer",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L848",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_services_2_service_layer",
-      "community": 44,
-      "norm_label": "`app/services/` \u2014 2 service layer"
-    },
-    {
-      "label": "`app/Observers/` \u2014 1 Observer",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L863",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_observers_1_observer",
-      "community": 44,
-      "norm_label": "`app/observers/` \u2014 1 observer"
-    },
-    {
-      "label": "`app/Providers/` \u2014 Provider",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L869",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_providers_provider",
-      "community": 44,
-      "norm_label": "`app/providers/` \u2014 provider"
-    },
-    {
-      "label": "`app/Http/Requests/` \u2014 2 FormRequest",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L876",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_http_requests_2_formrequest",
-      "community": 44,
-      "norm_label": "`app/http/requests/` \u2014 2 formrequest"
-    },
-    {
-      "label": "`app/Http/Resources/` \u2014 5 API Resources",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L885",
-      "_origin": "ast",
-      "id": "docs_guida_esame_app_http_resources_5_api_resources",
-      "community": 44,
-      "norm_label": "`app/http/resources/` \u2014 5 api resources"
-    },
-    {
-      "label": "`routes/` \u2014 3 File",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L895",
-      "_origin": "ast",
-      "id": "docs_guida_esame_routes_3_file",
-      "community": 44,
-      "norm_label": "`routes/` \u2014 3 file"
-    },
-    {
-      "label": "`resources/views/` \u2014 Template Blade",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L903",
-      "_origin": "ast",
-      "id": "docs_guida_esame_resources_views_template_blade",
-      "community": 44,
-      "norm_label": "`resources/views/` \u2014 template blade"
-    },
-    {
-      "label": "`resources/js/guest/` \u2014 React SPA",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L914",
-      "_origin": "ast",
-      "id": "docs_guida_esame_resources_js_guest_react_spa",
-      "community": 44,
-      "norm_label": "`resources/js/guest/` \u2014 react spa"
-    },
-    {
-      "label": "`database/` \u2014 Migrazioni, Seeder, Factory",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L934",
-      "_origin": "ast",
-      "id": "docs_guida_esame_database_migrazioni_seeder_factory",
-      "community": 44,
-      "norm_label": "`database/` \u2014 migrazioni, seeder, factory"
-    },
-    {
-      "label": "`tests/` \u2014 Suite di Test",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L951",
-      "_origin": "ast",
-      "id": "docs_guida_esame_tests_suite_di_test",
-      "community": 44,
-      "norm_label": "`tests/` \u2014 suite di test"
-    },
-    {
-      "label": "`docs/` \u2014 Documentazione",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L969",
-      "_origin": "ast",
-      "id": "docs_guida_esame_docs_documentazione",
-      "community": 44,
-      "norm_label": "`docs/` \u2014 documentazione"
-    },
-    {
-      "label": "17. Script di Presentazione per l'Esame",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L983",
-      "_origin": "ast",
-      "id": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "community": 161,
-      "norm_label": "17. script di presentazione per l'esame"
-    },
-    {
-      "label": "Apertura \u2014 30 secondi",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L987",
-      "_origin": "ast",
-      "id": "docs_guida_esame_apertura_30_secondi",
-      "community": 161,
-      "norm_label": "apertura \u2014 30 secondi"
-    },
-    {
-      "label": "Architettura \u2014 1 minuto",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L991",
-      "_origin": "ast",
-      "id": "docs_guida_esame_architettura_1_minuto",
-      "community": 161,
-      "norm_label": "architettura \u2014 1 minuto"
-    },
-    {
-      "label": "Demo Guidata \u2014 1 minuto",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L997",
-      "_origin": "ast",
-      "id": "docs_guida_esame_demo_guidata_1_minuto",
-      "community": 161,
-      "norm_label": "demo guidata \u2014 1 minuto"
-    },
-    {
-      "label": "Backoffice \u2014 1 minuto",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1001",
-      "_origin": "ast",
-      "id": "docs_guida_esame_backoffice_1_minuto",
-      "community": 161,
-      "norm_label": "backoffice \u2014 1 minuto"
-    },
-    {
-      "label": "Testing & Robustezza \u2014 30 secondi",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1007",
-      "_origin": "ast",
-      "id": "docs_guida_esame_testing_robustezza_30_secondi",
-      "community": 161,
-      "norm_label": "testing & robustezza \u2014 30 secondi"
-    },
-    {
-      "label": "Sfide Affrontate \u2014 30 secondi",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1013",
-      "_origin": "ast",
-      "id": "docs_guida_esame_sfide_affrontate_30_secondi",
-      "community": 161,
-      "norm_label": "sfide affrontate \u2014 30 secondi"
-    },
-    {
-      "label": "Chiusura \u2014 30 secondi",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1017",
-      "_origin": "ast",
-      "id": "docs_guida_esame_chiusura_30_secondi",
-      "community": 161,
-      "norm_label": "chiusura \u2014 30 secondi"
-    },
-    {
-      "label": "Slide Rapida \u2014 Comandi Che Potrebbero Chiedere",
-      "file_type": "document",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1021",
-      "_origin": "ast",
-      "id": "docs_guida_esame_slide_rapida_comandi_che_potrebbero_chiedere",
-      "community": 161,
-      "norm_label": "slide rapida \u2014 comandi che potrebbero chiedere"
-    },
-    {
       "label": "index.md",
       "file_type": "document",
       "source_file": "docs/index.md",
@@ -11612,6 +10652,316 @@
       "id": "docs_index_collegamenti_rapidi",
       "community": 20,
       "norm_label": "collegamenti rapidi"
+    },
+    {
+      "label": "presentazione-progetto.md",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto",
+      "community": 4,
+      "norm_label": "presentazione-progetto.md"
+    },
+    {
+      "label": "Astralis \u2014 Presentazione del Progetto",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "community": 4,
+      "norm_label": "astralis \u2014 presentazione del progetto"
+    },
+    {
+      "label": "1. Il Progetto in Breve",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_1_il_progetto_in_breve",
+      "community": 4,
+      "norm_label": "1. il progetto in breve"
+    },
+    {
+      "label": "2. Fasi di Sviluppo",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "community": 4,
+      "norm_label": "2. fasi di sviluppo"
+    },
+    {
+      "label": "Fase 0 \u2014 Setup (02/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_0_setup_02_07",
+      "community": 4,
+      "norm_label": "fase 0 \u2014 setup (02/07)"
+    },
+    {
+      "label": "Fase 1 \u2014 Database e Modelli (03/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_1_database_e_modelli_03_07",
+      "community": 4,
+      "norm_label": "fase 1 \u2014 database e modelli (03/07)"
+    },
+    {
+      "label": "Fase 2 \u2014 CRUD Admin Blade (03/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_2_crud_admin_blade_03_07",
+      "community": 4,
+      "norm_label": "fase 2 \u2014 crud admin blade (03/07)"
+    },
+    {
+      "label": "Fase 3 \u2014 API REST (03/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_3_api_rest_03_07",
+      "community": 4,
+      "norm_label": "fase 3 \u2014 api rest (03/07)"
+    },
+    {
+      "label": "Fase 4-5 \u2014 React SPA Guest (04/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_4_5_react_spa_guest_04_07",
+      "community": 4,
+      "norm_label": "fase 4-5 \u2014 react spa guest (04/07)"
+    },
+    {
+      "label": "Fase 6 \u2014 Bugfix Orbite e NASA Import (04/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_6_bugfix_orbite_e_nasa_import_04_07",
+      "community": 4,
+      "norm_label": "fase 6 \u2014 bugfix orbite e nasa import (04/07)"
+    },
+    {
+      "label": "Fase 7 \u2014 Intervention Image v4 (04/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_7_intervention_image_v4_04_07",
+      "community": 4,
+      "norm_label": "fase 7 \u2014 intervention image v4 (04/07)"
+    },
+    {
+      "label": "Fase 8 \u2014 NasaImageService e CLI (04/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_8_nasaimageservice_e_cli_04_07",
+      "community": 4,
+      "norm_label": "fase 8 \u2014 nasaimageservice e cli (04/07)"
+    },
+    {
+      "label": "Fase 9 \u2014 URL Remoti e WordMap (04/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_9_url_remoti_e_wordmap_04_07",
+      "community": 4,
+      "norm_label": "fase 9 \u2014 url remoti e wordmap (04/07)"
+    },
+    {
+      "label": "Fase 10 \u2014 UI Auth e Paginazione (06/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_10_ui_auth_e_paginazione_06_07",
+      "community": 4,
+      "norm_label": "fase 10 \u2014 ui auth e paginazione (06/07)"
+    },
+    {
+      "label": "Fase 11 \u2014 Inertia\u2192Blade, Dedup, Galleria Cleanup (07/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_11_inertia_blade_dedup_galleria_cleanup_07_07",
+      "community": 4,
+      "norm_label": "fase 11 \u2014 inertia\u2192blade, dedup, galleria cleanup (07/07)"
+    },
+    {
+      "label": "Fase 12 \u2014 Authorization e FormRequest (07/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_12_authorization_e_formrequest_07_07",
+      "community": 4,
+      "norm_label": "fase 12 \u2014 authorization e formrequest (07/07)"
+    },
+    {
+      "label": "Wave 1-4 \u2014 Refactoring P2/P3 (08/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_wave_1_4_refactoring_p2_p3_08_07",
+      "community": 4,
+      "norm_label": "wave 1-4 \u2014 refactoring p2/p3 (08/07)"
+    },
+    {
+      "label": "Fase 13 \u2014 Testing Completo (08/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_13_testing_completo_08_07",
+      "community": 4,
+      "norm_label": "fase 13 \u2014 testing completo (08/07)"
+    },
+    {
+      "label": "Fase 14 \u2014 Bugfix e Dashboard (09/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_14_bugfix_e_dashboard_09_07",
+      "community": 4,
+      "norm_label": "fase 14 \u2014 bugfix e dashboard (09/07)"
+    },
+    {
+      "label": "Fase 15 \u2014 CRUD Test e SEO (09/07)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_fase_15_crud_test_e_seo_09_07",
+      "community": 4,
+      "norm_label": "fase 15 \u2014 crud test e seo (09/07)"
+    },
+    {
+      "label": "3. Checklist Requisiti \u2192 Realizzato",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_3_checklist_requisiti_realizzato",
+      "community": 4,
+      "norm_label": "3. checklist requisiti \u2192 realizzato"
+    },
+    {
+      "label": "Cosa abbiamo fatto IN PI\u00d9 (Wow Factor)",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_cosa_abbiamo_fatto_in_pi\u00f9_wow_factor",
+      "community": 4,
+      "norm_label": "cosa abbiamo fatto in piu (wow factor)"
+    },
+    {
+      "label": "4. Guide Pratiche",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L120",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_4_guide_pratiche",
+      "community": 4,
+      "norm_label": "4. guide pratiche"
+    },
+    {
+      "label": "Come Testare le API con Postman",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_come_testare_le_api_con_postman",
+      "community": 4,
+      "norm_label": "come testare le api con postman"
+    },
+    {
+      "label": "Come Creare una Migrazione",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_come_creare_una_migrazione",
+      "community": 4,
+      "norm_label": "come creare una migrazione"
+    },
+    {
+      "label": "Come Creare una Relazione 1-N",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L169",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_come_creare_una_relazione_1_n",
+      "community": 4,
+      "norm_label": "come creare una relazione 1-n"
+    },
+    {
+      "label": "Come Creare una Relazione N-N con Pivot",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L185",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_come_creare_una_relazione_n_n_con_pivot",
+      "community": 4,
+      "norm_label": "come creare una relazione n-n con pivot"
+    },
+    {
+      "label": "Come Creare un Model + Controller + Migrazione in un Comando",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L212",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_come_creare_un_model_controller_migrazione_in_un_comando",
+      "community": 4,
+      "norm_label": "come creare un model + controller + migrazione in un comando"
+    },
+    {
+      "label": "5. Il Nostro Stack Tecnologico",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L223",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_5_il_nostro_stack_tecnologico",
+      "community": 4,
+      "norm_label": "5. il nostro stack tecnologico"
+    },
+    {
+      "label": "6. Comandi Rapidi",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L245",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_6_comandi_rapidi",
+      "community": 4,
+      "norm_label": "6. comandi rapidi"
+    },
+    {
+      "label": "7. Credenziali",
+      "file_type": "document",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L278",
+      "_origin": "ast",
+      "id": "docs_presentazione_progetto_7_credenziali",
+      "community": 4,
+      "norm_label": "7. credenziali"
     },
     {
       "label": "progetto-finale.md",
@@ -12530,28 +11880,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_categoriacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_categoriacontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CategoriaController.php",
@@ -12946,6 +12274,28 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller",
       "target": "app_models_categoria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_corpocelestecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_corpocelestecontroller",
       "confidence_score": 1.0
     },
     {
@@ -13795,6 +13145,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
@@ -14375,6 +13747,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/MissioneController.php",
@@ -14919,6 +14313,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_categoriacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_categoriacontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CategoriaController.php",
@@ -15033,28 +14449,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_api_corpocelestecontroller",
       "target": "app_http_resources_corpocelesteresource",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_corpocelestecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_corpocelestecontroller",
       "confidence_score": 1.0
     },
     {
@@ -15336,28 +14730,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/DashboardController.php",
@@ -15561,28 +14933,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_missionecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_missionecontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/MissioneController.php",
@@ -15729,7 +15079,18 @@
       "source_location": "L9",
       "weight": 1.0,
       "source": "app_http_controllers_auth_authenticatedsessioncontroller",
-      "target": "routes_auth",
+      "target": "config_auth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/auth.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_auth",
+      "target": "app_http_controllers_auth_authenticatedsessioncontroller",
       "confidence_score": 1.0
     },
     {
@@ -15889,7 +15250,18 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller",
-      "target": "routes_auth",
+      "target": "config_auth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/auth.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "routes_auth",
+      "target": "app_http_controllers_auth_confirmablepasswordcontroller",
       "confidence_score": 1.0
     },
     {
@@ -16594,7 +15966,7 @@
       "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
-      "target": "routes_auth",
+      "target": "config_auth",
       "confidence_score": 1.0
     },
     {
@@ -16606,6 +15978,17 @@
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
       "target": "app_models_user",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/auth.php",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "routes_auth",
+      "target": "app_http_controllers_auth_registeredusercontroller",
       "confidence_score": 1.0
     },
     {
@@ -16902,7 +16285,7 @@
       "source_location": "L9",
       "weight": 1.0,
       "source": "app_http_controllers_profilecontroller",
-      "target": "routes_auth",
+      "target": "config_auth",
       "confidence_score": 1.0
     },
     {
@@ -17030,7 +16413,7 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_requests_auth_loginrequest",
-      "target": "routes_auth",
+      "target": "config_auth",
       "confidence_score": 1.0
     },
     {
@@ -29263,11 +28646,11 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
+      "source_file": "docs/index.md",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "docs_guida_esame",
-      "target": "docs_guida_esame_guida_all_esame_astralis",
+      "source": "docs_index",
+      "target": "docs_index_documentazione_astralis",
       "confidence_score": 1.0
     },
     {
@@ -29277,957 +28660,7 @@
       "source_location": "L12",
       "weight": 1.0,
       "source": "docs_index",
-      "target": "docs_guida_esame",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L527",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_10_testing",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L597",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_11_seo_e_robustezza",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L633",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_12_domande_possibili_all_esame",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L718",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_13_comandi_che_devo_ricordare",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L760",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_14_timeline_del_progetto_per_domande_sul_processo",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L783",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_15_debugging_problemi_gi\u00e0_incontrati_e_risolti",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L798",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L983",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_1_identikit_del_progetto",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_2_database_e_modelli",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L140",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_3_routing_la_mappa_delle_url",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L201",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_4_admin_blade_crud_e_dashboard",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L246",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_5_api_rest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L281",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_6_react_spa_guest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L375",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_7_nasa_integration",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L443",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_8_autenticazione_e_autorizzazione",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L499",
-      "weight": 1.0,
-      "source": "docs_guida_esame_guida_all_esame_astralis",
-      "target": "docs_guida_esame_9_image_handling",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_schema_entit\u00e0_relazioni",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L34",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_tabella_categorie",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L47",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_tabella_corpi_celesti",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L113",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_tabella_curiosita",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L83",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_tabella_galleria_corpi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L96",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_tabella_missioni",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L123",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_tabella_pivot_corpo_celeste_missione",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L134",
-      "weight": 1.0,
-      "source": "docs_guida_esame_2_database_e_modelli",
-      "target": "docs_guida_esame_tabella_users_estesa",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L178",
-      "weight": 1.0,
-      "source": "docs_guida_esame_3_routing_la_mappa_delle_url",
-      "target": "docs_guida_esame_routes_api_php_10_endpoint_json_pubblici",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L195",
-      "weight": 1.0,
-      "source": "docs_guida_esame_3_routing_la_mappa_delle_url",
-      "target": "docs_guida_esame_routes_auth_php_breeze_standard",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L153",
-      "weight": 1.0,
-      "source": "docs_guida_esame_3_routing_la_mappa_delle_url",
-      "target": "docs_guida_esame_routes_web_php_admin_e_catch_all",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L142",
-      "weight": 1.0,
-      "source": "docs_guida_esame_3_routing_la_mappa_delle_url",
-      "target": "docs_guida_esame_tripartizione_dei_file_route",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L225",
-      "weight": 1.0,
-      "source": "docs_guida_esame_4_admin_blade_crud_e_dashboard",
-      "target": "docs_guida_esame_dashboard",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L215",
-      "weight": 1.0,
-      "source": "docs_guida_esame_4_admin_blade_crud_e_dashboard",
-      "target": "docs_guida_esame_differenze_tra_entit\u00e0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L236",
-      "weight": 1.0,
-      "source": "docs_guida_esame_4_admin_blade_crud_e_dashboard",
-      "target": "docs_guida_esame_master_layout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L203",
-      "weight": 1.0,
-      "source": "docs_guida_esame_4_admin_blade_crud_e_dashboard",
-      "target": "docs_guida_esame_pattern_comune_stesso_per_tutte_e_5_le_entit\u00e0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L248",
-      "weight": 1.0,
-      "source": "docs_guida_esame_5_api_rest",
-      "target": "docs_guida_esame_api_resources",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L270",
-      "weight": 1.0,
-      "source": "docs_guida_esame_5_api_rest",
-      "target": "docs_guida_esame_eager_loading",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L254",
-      "weight": 1.0,
-      "source": "docs_guida_esame_5_api_rest",
-      "target": "docs_guida_esame_filtri_in_api_corpocelestecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L342",
-      "weight": 1.0,
-      "source": "docs_guida_esame_6_react_spa_guest",
-      "target": "docs_guida_esame_componenti",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L283",
-      "weight": 1.0,
-      "source": "docs_guida_esame_6_react_spa_guest",
-      "target": "docs_guida_esame_entry_point",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L356",
-      "weight": 1.0,
-      "source": "docs_guida_esame_6_react_spa_guest",
-      "target": "docs_guida_esame_error_boundary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L312",
-      "weight": 1.0,
-      "source": "docs_guida_esame_6_react_spa_guest",
-      "target": "docs_guida_esame_flusso_dati",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L330",
-      "weight": 1.0,
-      "source": "docs_guida_esame_6_react_spa_guest",
-      "target": "docs_guida_esame_pagine_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L294",
-      "weight": 1.0,
-      "source": "docs_guida_esame_6_react_spa_guest",
-      "target": "docs_guida_esame_router_app_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L377",
-      "weight": 1.0,
-      "source": "docs_guida_esame_7_nasa_integration",
-      "target": "docs_guida_esame_architettura",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L434",
-      "weight": 1.0,
-      "source": "docs_guida_esame_7_nasa_integration",
-      "target": "docs_guida_esame_cli_commands",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L427",
-      "weight": 1.0,
-      "source": "docs_guida_esame_7_nasa_integration",
-      "target": "docs_guida_esame_corpocelesteobserver",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L405",
-      "weight": 1.0,
-      "source": "docs_guida_esame_7_nasa_integration",
-      "target": "docs_guida_esame_fallback_query_per_apostrofi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L395",
-      "weight": 1.0,
-      "source": "docs_guida_esame_7_nasa_integration",
-      "target": "docs_guida_esame_nasaimageservice_metodi_pubblici",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L415",
-      "weight": 1.0,
-      "source": "docs_guida_esame_7_nasa_integration",
-      "target": "docs_guida_esame_wordmapservice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L445",
-      "weight": 1.0,
-      "source": "docs_guida_esame_8_autenticazione_e_autorizzazione",
-      "target": "docs_guida_esame_breeze_su_blade_non_inertia",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L486",
-      "weight": 1.0,
-      "source": "docs_guida_esame_8_autenticazione_e_autorizzazione",
-      "target": "docs_guida_esame_flusso_di_autorizzazione",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L474",
-      "weight": 1.0,
-      "source": "docs_guida_esame_8_autenticazione_e_autorizzazione",
-      "target": "docs_guida_esame_gate_admin",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L451",
-      "weight": 1.0,
-      "source": "docs_guida_esame_8_autenticazione_e_autorizzazione",
-      "target": "docs_guida_esame_policy_5_entit\u00e0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L501",
-      "weight": 1.0,
-      "source": "docs_guida_esame_9_image_handling",
-      "target": "docs_guida_esame_due_modalit\u00e0",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L509",
-      "weight": 1.0,
-      "source": "docs_guida_esame_9_image_handling",
-      "target": "docs_guida_esame_intervention_image_v4_senza_facade",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L555",
-      "weight": 1.0,
-      "source": "docs_guida_esame_10_testing",
-      "target": "docs_guida_esame_pattern_essenziali_per_i_test",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L529",
-      "weight": 1.0,
-      "source": "docs_guida_esame_10_testing",
-      "target": "docs_guida_esame_phpunit_130_test_335_assertion",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L577",
-      "weight": 1.0,
-      "source": "docs_guida_esame_10_testing",
-      "target": "docs_guida_esame_vitest_88_test",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L615",
-      "weight": 1.0,
-      "source": "docs_guida_esame_11_seo_e_robustezza",
-      "target": "docs_guida_esame_error_boundary_615",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L622",
-      "weight": 1.0,
-      "source": "docs_guida_esame_11_seo_e_robustezza",
-      "target": "docs_guida_esame_search_filtri_admin",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L599",
-      "weight": 1.0,
-      "source": "docs_guida_esame_11_seo_e_robustezza",
-      "target": "docs_guida_esame_seo_meta_tags",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L689",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_10_come_funziona_l_ordinamento_inline_della_galleria",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L701",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_11_react_spa_fa_ssr_no",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L705",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_12_cos_\u00e8_nome_display",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L635",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_1_perch\u00e9_react_spa_e_non_inertia",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L641",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_2_come_funziona_la_catch_all_any",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L647",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_3_differenza_tra_policy_e_gate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L658",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_4_perch\u00e9_curiositum_come_parametro_route",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L662",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_5_cosa_succede_se_cancello_una_categoria_con_corpi_associati",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L666",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_6_come_si_prevengono_duplicati_nell_import_nasa",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L670",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_7_problema_windows_con_ssl",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L681",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_8_come_si_passa_da_una_pagina_admin_alla_spa_guest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L685",
-      "weight": 1.0,
-      "source": "docs_guida_esame_12_domande_possibili_all_esame",
-      "target": "docs_guida_esame_9_perch\u00e9_varchar_per_massa_distanza_diametro",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L811",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_http_controllers_21_controller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L876",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_http_requests_2_formrequest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L885",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_http_resources_5_api_resources",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L800",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_models_6_modelli_eloquent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L863",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_observers_1_observer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L836",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_policies_5_policy",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L869",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_providers_provider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L848",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_app_services_2_service_layer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L934",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_database_migrazioni_seeder_factory",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L969",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_docs_documentazione",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L914",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_resources_js_guest_react_spa",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L903",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_resources_views_template_blade",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L895",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_routes_3_file",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L951",
-      "weight": 1.0,
-      "source": "docs_guida_esame_16_mappa_dei_file_cosa_fa_cosa_e_comandi",
-      "target": "docs_guida_esame_tests_suite_di_test",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L987",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_apertura_30_secondi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L991",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_architettura_1_minuto",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1001",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_backoffice_1_minuto",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1017",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_chiusura_30_secondi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L997",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_demo_guidata_1_minuto",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1013",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_sfide_affrontate_30_secondi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1021",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_slide_rapida_comandi_che_potrebbero_chiedere",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/guida-esame.md",
-      "source_location": "L1007",
-      "weight": 1.0,
-      "source": "docs_guida_esame_17_script_di_presentazione_per_l_esame",
-      "target": "docs_guida_esame_testing_robustezza_30_secondi",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "docs/index.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "docs_index",
-      "target": "docs_index_documentazione_astralis",
+      "target": "docs_presentazione_progetto",
       "confidence_score": 1.0
     },
     {
@@ -30278,6 +28711,306 @@
       "weight": 1.0,
       "source": "docs_index_documentazione_astralis",
       "target": "docs_index_indice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto",
+      "target": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_1_il_progetto_in_breve",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_3_checklist_requisiti_realizzato",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_4_guide_pratiche",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_5_il_nostro_stack_tecnologico",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L245",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_6_comandi_rapidi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_astralis_presentazione_del_progetto",
+      "target": "docs_presentazione_progetto_7_credenziali",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_0_setup_02_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_10_ui_auth_e_paginazione_06_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_11_inertia_blade_dedup_galleria_cleanup_07_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_12_authorization_e_formrequest_07_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_13_testing_completo_08_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_14_bugfix_e_dashboard_09_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_15_crud_test_e_seo_09_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_1_database_e_modelli_03_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_2_crud_admin_blade_03_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_3_api_rest_03_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_4_5_react_spa_guest_04_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_6_bugfix_orbite_e_nasa_import_04_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_7_intervention_image_v4_04_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_8_nasaimageservice_e_cli_04_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_fase_9_url_remoti_e_wordmap_04_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_2_fasi_di_sviluppo",
+      "target": "docs_presentazione_progetto_wave_1_4_refactoring_p2_p3_08_07",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_3_checklist_requisiti_realizzato",
+      "target": "docs_presentazione_progetto_cosa_abbiamo_fatto_in_pi\u00f9_wow_factor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_4_guide_pratiche",
+      "target": "docs_presentazione_progetto_come_creare_un_model_controller_migrazione_in_un_comando",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_4_guide_pratiche",
+      "target": "docs_presentazione_progetto_come_creare_una_migrazione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_4_guide_pratiche",
+      "target": "docs_presentazione_progetto_come_creare_una_relazione_1_n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_4_guide_pratiche",
+      "target": "docs_presentazione_progetto_come_creare_una_relazione_n_n_con_pivot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/presentazione-progetto.md",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "docs_presentazione_progetto_4_guide_pratiche",
+      "target": "docs_presentazione_progetto_come_testare_le_api_con_postman",
       "confidence_score": 1.0
     },
     {
@@ -30752,5 +29485,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bdffed54ade174a1937ae3db378434e5812ed70a"
+  "built_at_commit": "4b61d722162db4573a99784a680b3674dba5390c"
 }
