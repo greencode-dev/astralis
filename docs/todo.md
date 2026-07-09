@@ -46,7 +46,7 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 - [x] `[🧪test][🔵P2]` Test HTTP API endpoints (8 file, list, filter, dettaglio, simili, stats) — `tests/Feature/Api/`
 - [x] `[🧪test][🔵P2]` Test CRUD admin CorpoCeleste (store, update, validation, auth) — `tests/Feature/Admin/CorpoCelesteCrudTest.php`
 - [x] `[🧪test][🔵P2]` Test componenti React (4 file, 27 test, SolarSystem, CorpoCard, Lightbox, CategoriaBadge) — Vitest
-- [ ] `[🧪test][🔵P2]` Test integrazione API (apiClient, guest pages)
+- [x] `[🧪test][🔵P2]` Test integrazione API (apiClient, guest pages) — 61 test, 5 file
 
 ### 🟣 P3 — Accessibilità
 _Nessun task di accessibilità in sospeso. Wave 2 ha coperto questa fascia._ 🟢
