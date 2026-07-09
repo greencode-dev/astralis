@@ -22,7 +22,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 - Upload di immagini con Intervention Image v4
 - NASA Import: importa immagini da NASA API (singolo, massivo con Force Import All, o via CLI con `php artisan astralis:fetch-nasa`)
 - Manutenzione galleria immagini (`php artisan astralis:gallery --fix`)
-- Dashboard con statistiche
+- Dashboard con statistiche e grafici (Chart.js: corpi per categoria/tipo, missioni per stato)
 - Dark theme (`#0A0A1A`, `#111128`, `#22D3EE`)
 
 ### 🌟 Frontend (React + Vite)
@@ -154,7 +154,6 @@ La documentazione completa del progetto è disponibile in [`docs/index.md`](docs
 
 - Dark/light mode toggle
 - Multi-lingua (IT/EN)
-- Dashboard admin con grafici
 - Sistema di rating per corpi celesti
 
 ## 📄 Licenza

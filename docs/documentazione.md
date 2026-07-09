@@ -20,6 +20,8 @@ Astralis è un catalogo web di corpi celesti (pianeti, stelle, galassie, nebulos
 | Slug       | spatie/laravel-sluggable   |
 | PDF        | barryvdh/laravel-dompdf    |
 | Modal      | Alpine.js (CDN)            |
+| Grafici    | Chart.js (CDN)             |
+| Test       | PHPUnit, Vitest, Testing Library, jsdom |
 
 ## Architettura
 
@@ -92,6 +94,7 @@ GET    /api/dashboard/stats            — Stats per homepage
 4. **Timeline missioni** — linea del tempo orizzontale delle missioni spaziali con badge stato
 5. **Badge categoria** — colori diversi per ogni tipo di corpo celeste
 6. **NASA Import** — import immagini da NASA API direttamente dal backoffice con auto-suggest traduzione italiano→inglese
+7. **Dashboard admin con grafici** — 3 chart interattivi (donut corpi/categoria, barre corpi/tipo, barre missioni/stato)
 
 ## Palette Colori
 
@@ -177,7 +180,7 @@ L'admin è raggiungibile su `/admin` dopo il login. Utilizza layout Blade con te
 resources/views/admin/
 ├── layouts/
 │   └── app.blade.php           ← Master layout con sidebar + topbar
-├── dashboard.blade.php         ← Dashboard stats
+├── dashboard.blade.php         ← Dashboard stats + 3 grafici Chart.js
 ├── categorie/                  ← CRUD Categorie ✅
 │   ├── index.blade.php         ← Lista con tabella
 │   ├── create.blade.php        ← Form creazione

@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/DashboardController.php": {
-    "mtime": 1783579017.8000069,
-    "ast_hash": "3abead71608a8083d6cfdbc6fb90b85a",
+    "mtime": 1783068980.944085,
+    "ast_hash": "a435390d8d14c4bb910221b3bdeb8201",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/GalleriaController.php": {
@@ -525,8 +525,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/dashboard.blade.php": {
-    "mtime": 1783579032.4107685,
-    "ast_hash": "6ee5a0a66c457230bca76b1b8c231345",
+    "mtime": 1783500062.512122,
+    "ast_hash": "56acd48265775417df433ee675963f87",
     "semantic_hash": ""
   },
   "resources/views/admin/galleria/create.blade.php": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783580959.9946308,
-    "ast_hash": "1ae9818785fcb349ab0dc4cebbdcb135",
+    "mtime": 1783505365.3028128,
+    "ast_hash": "6beb44e514a362ecff1a19d665af4164",
     "semantic_hash": ""
   },
   "docs/bug.md": {
@@ -710,18 +710,18 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1783580919.4311976,
-    "ast_hash": "d3419c4b59d6b0e0b10342cd4e64db64",
+    "mtime": 1783510150.2753863,
+    "ast_hash": "5b7cd64fb22970236ac62e3439e11428",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
-    "mtime": 1783580950.0982804,
-    "ast_hash": "f64b25101abf71808e71f602b8c36310",
+    "mtime": 1783434336.7919204,
+    "ast_hash": "d3084945cfafa7e5d5b7d5da5eb4db85",
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1783580904.0638318,
-    "ast_hash": "d7735154d4d67777bc3689c28031477c",
+    "mtime": 1783510090.974432,
+    "ast_hash": "a0097a1374f4ca265cbd40518d30f632",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -1220,8 +1220,8 @@
     "semantic_hash": ""
   },
   "docs/testing.md": {
-    "mtime": 1783580933.5303218,
-    "ast_hash": "45d9a7a90b763e8aa903f3c16f879214",
+    "mtime": 1783510125.8155906,
+    "ast_hash": "9e8d46e4d37ca3f75ca03989b1f0a2f1",
     "semantic_hash": ""
   },
   "resources/js/guest/test/CategoriaBadge.test.jsx": {
@@ -1245,38 +1245,13 @@
     "semantic_hash": ""
   },
   "resources/js/guest/test/setup.js": {
-    "mtime": 1783576206.6559896,
-    "ast_hash": "50b5368d49b544a88e087e22a54bc229",
+    "mtime": 1783509529.8380997,
+    "ast_hash": "00e47f7b9836e8f731101981fa2bb2de",
     "semantic_hash": ""
   },
   "vitest.config.js": {
     "mtime": 1783509719.7440164,
     "ast_hash": "022b1f5ed719297e14bf7426a623cf23",
-    "semantic_hash": ""
-  },
-  "resources/js/guest/test/Comparatore.test.jsx": {
-    "mtime": 1783576533.614008,
-    "ast_hash": "2dc4b40fd97ce236e1ce7ea9545eb5dd",
-    "semantic_hash": ""
-  },
-  "resources/js/guest/test/CorpiLista.test.jsx": {
-    "mtime": 1783576621.9347048,
-    "ast_hash": "f5e10d79c045f36f8e67f722f30c6edd",
-    "semantic_hash": ""
-  },
-  "resources/js/guest/test/CorpoDettaglio.test.jsx": {
-    "mtime": 1783576623.1256192,
-    "ast_hash": "cd57c842df0fe2a6bfc6a56a1c826792",
-    "semantic_hash": ""
-  },
-  "resources/js/guest/test/HomePage.test.jsx": {
-    "mtime": 1783576717.3916595,
-    "ast_hash": "899778aaf0a71773204e72e70ed3c4fe",
-    "semantic_hash": ""
-  },
-  "resources/js/guest/test/apiClient.test.js": {
-    "mtime": 1783576716.3005352,
-    "ast_hash": "e2bb24ee5cfeeaf0a91f7d6a5ba01dc4",
     "semantic_hash": ""
   }
 }

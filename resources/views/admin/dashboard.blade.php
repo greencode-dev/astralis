@@ -88,4 +88,111 @@
             </table>
         </div>
     </div>
+
+    {{-- Grafici --}}
+    @if($corpiPerCategoria->isNotEmpty() || $corpiPerTipo->isNotEmpty())
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+            @if($corpiPerCategoria->isNotEmpty())
+                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
+                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Corpi per Categoria</h3>
+                    <canvas id="chart-categorie" height="250" role="img" aria-label="Grafico a ciambella: distribuzione corpi celesti per categoria"></canvas>
+                </div>
+            @endif
+
+            @if($corpiPerTipo->isNotEmpty())
+                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
+                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Corpi per Tipo</h3>
+                    <canvas id="chart-tipi" height="250" role="img" aria-label="Grafico a barre: corpi celesti per tipo"></canvas>
+                </div>
+            @endif
+
+            @if(!empty(array_filter($missioniPerStato)))
+                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10 {{ $corpiPerTipo->isNotEmpty() && $corpiPerCategoria->isNotEmpty() ? 'lg:col-span-2 max-w-md mx-auto w-full' : '' }}">
+                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Missioni per Stato</h3>
+                    <canvas id="chart-missioni" height="200" role="img" aria-label="Grafico a barre orizzontali: missioni per stato"></canvas>
+                </div>
+            @endif
+        </div>
+    @endif
 @endsection
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Chart.defaults.color = '#9CA3AF';
+            Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.05)';
+
+            var chartCategorie = document.getElementById('chart-categorie');
+            if (chartCategorie) {
+                new Chart(chartCategorie, {
+                    type: 'doughnut',
+                    data: {
+                        labels: @json($corpiPerCategoria->pluck('nome')),
+                        datasets: [{
+                            data: @json($corpiPerCategoria->pluck('count')),
+                            backgroundColor: @json($corpiPerCategoria->pluck('colore')),
+                            borderWidth: 2,
+                            borderColor: '#111128',
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'right', labels: { padding: 12, usePointStyle: true } }
+                        }
+                    }
+                });
+            }
+
+            var chartTipi = document.getElementById('chart-tipi');
+            if (chartTipi) {
+                new Chart(chartTipi, {
+                    type: 'bar',
+                    data: {
+                        labels: @json($corpiPerTipo->pluck('tipo')),
+                        datasets: [{
+                            label: 'Corpi Celesti',
+                            data: @json($corpiPerTipo->pluck('count')),
+                            backgroundColor: ['#22D3EE', '#A855F7', '#F97316'],
+                            borderRadius: 6,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
+                            x: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            }
+
+            var chartMissioni = document.getElementById('chart-missioni');
+            if (chartMissioni) {
+                new Chart(chartMissioni, {
+                    type: 'bar',
+                    data: {
+                        labels: @json(array_keys($missioniPerStato)),
+                        datasets: [{
+                            label: 'Missioni',
+                            data: @json(array_values($missioniPerStato)),
+                            backgroundColor: ['#22C55E', '#FACC15', '#9CA3AF'],
+                            borderRadius: 6,
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
+                            y: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
+                        },
+                        plugins: { legend: { display: false } }
+                    }
+                });
+            }
+        });
+    </script>
+@endpush

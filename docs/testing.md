@@ -13,7 +13,7 @@ php artisan test tests/Feature/Api/           # API
 php artisan test tests/Feature/Admin/...      # Admin CRUD
 ```
 
-### Frontend React (Vitest) — 27 test
+### Frontend React (Vitest) — 88 test
 
 ```bash
 npm test                                       # Tutti (vitest run)
@@ -129,7 +129,9 @@ if (app()->environment('testing')) {
 
 Questo previene chiamate HTTP reali durante la creazione di factory nei test.
 
-### React — `resources/js/guest/test/` (4 file, 27 test)
+### React — `resources/js/guest/test/` (9 file, 88 test)
+
+#### Componenti (4 file, 27 test)
 
 | File | Componente | Test | Cosa copre |
 |---|---|---|---|
@@ -137,6 +139,16 @@ Questo previene chiamate HTTP reali durante la creazione di factory nei test.
 | `CorpoCard.test.jsx` | CorpoCard | 10 | nome/descrizione, image vs gradient fallback, in_evidenza badge, categoria badge, link dettaglio, tipo, formatDistance, nome fallback |
 | `LightboxGalleria.test.jsx` | LightboxGalleria | 8 | null/empty, grid thumbnails, filtra senza URL, aria-label, didascalia/crediti, click apre lightbox |
 | `SolarSystem.test.jsx` | SolarSystem | 4 | render senza crash, label Sole, 8 pianeti, 8 orbite |
+
+#### Integrazione API (5 file, 61 test)
+
+| File | Pagina | Test | Cosa copre |
+|---|---|---|---|
+| `apiClient.test.js` | Layer API | 12 | 6 funzioni fetch con params, unwrap, slug diversi |
+| `HomePage.test.jsx` | HomePage | 11 | hero, loading skeleton, corpi in evidenza, stats dashboard, error API |
+| `CorpiLista.test.jsx` | CorpiLista | 12 | filtri categoria/tipo, ricerca, paginazione, reset, error |
+| `CorpoDettaglio.test.jsx` | CorpoDettaglio | 16 | metriche, galleria, curiosità, missioni, simili, 404, compare link |
+| `Comparatore.test.jsx` | Comparatore | 10 | dropdown, pre-fill URL, tabella confronto, esclusione pianeta |
 
 ## Scrivere nuovi test
 

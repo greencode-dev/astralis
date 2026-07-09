@@ -71,7 +71,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 
 ## Bugs noti / Pattern da evitare
 
-- **Alpine.js CDN**: dipende da connettività esterna. Nessun fallback locale.
+- **CDN (Alpine.js + Chart.js)**: dipendono da connettività esterna. Nessun fallback locale.
 - **bootstrap/cache**: su Windows, se creata da Git Bash, va ricreata con `cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'`
 - **`[x-cloak]`**: style presente nel `<head>` di `app.blade.php` per prevenire FOUC con Alpine.js
 - **Dual slash in cmd**: da Git Bash usare `cmd //c` (doppio slash), non `cmd /c`

@@ -350,3 +350,18 @@
 - Eliminati file JSX Inertia non più utilizzati (`Pages/Auth/`, `Pages/Profile/`)
 - Test aggiornati (redirect `/dashboard` → `/admin`, logout `/` → `/login`)
 - 25/25 test pass, 61 assertions
+
+### 13.2 — 09/07/2026 — feat: Vitest integrazione API — 61 test (apiClient + 4 guest pages)
+- `resources/js/guest/test/setup.js`: mock globale IntersectionObserver (richiesto da framer-motion `whileInView`)
+- `apiClient.test.js` — 12 test per 6 funzioni di apiClient (fetchCorpiCelesti, fetchCategorie, fetchCorpoCeleste, fetchSimili, fetchMissioni, fetchDashboardStats)
+- `HomePage.test.jsx` — 11 test di integrazione (hero, loading, corpi in evidenza, stats, error)
+- `CorpiLista.test.jsx` — 12 test di integrazione (filtri, paginazione, ricerca, reset, error)
+- `CorpoDettaglio.test.jsx` — 16 test di integrazione (metriche, galleria, curiosità, missioni, simili, errore 404)
+- `Comparatore.test.jsx` — 10 test di integrazione (dropdown, pre-fill URL, tabella confronto, esclusione)
+
+### 13.3 — 09/07/2026 — feat: Dashboard admin con grafici Chart.js
+- `app/Http/Controllers/Admin/DashboardController.php`: aggiunte 3 query — corpi per categoria (withCount, filtrata count>0), corpi per tipo (groupBy), missioni per stato (3 count)
+- `resources/views/admin/dashboard.blade.php`: 3 canvas Chart.js — donut corpi/categoria, barre verticali corpi/tipo, barre orizzontali missioni/stato
+- Chart.js v4.4.7 caricato da CDN via `@push('scripts')` (stesso pattern Alpine.js)
+- Tema dark: `Chart.defaults.color` e `borderColor` configurati per palette admin
+- Accessibilità: `role="img"` + `aria-label` su ogni canvas
