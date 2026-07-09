@@ -58,7 +58,7 @@ class MissioneController extends Controller
     {
         $this->authorize('view', $missione);
 
-        $missione->load('corpiCelesti');
+        $missione->load('corpiCelesti.categoria');
 
         return view('admin.missioni.show', compact('missione'));
     }

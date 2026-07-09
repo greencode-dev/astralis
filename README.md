@@ -135,6 +135,7 @@ npm run dev
   - `/corpi-celesti` — Lista con filtri e paginazione
   - `/corpi-celesti/{slug}` — Dettaglio con metriche, galleria lightbox, missioni, curiosità
   - `/confronta` — Comparatore pianeti affiancato
+  - `/*` — Pagina 404 (catch-all)
 - **Backoffice**: `http://localhost:8000/admin`
 - **Struttura backoffice**:
   - `/admin` — Dashboard con statistiche ✅

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('agenzia', 100)->nullable();
             $table->date('data_lancio')->nullable();
             $table->integer('durata_giorni')->nullable();
-            $table->string('stato', 50)->default('completata');
+            $table->string('stato', 50)->default('Completata');
             $table->text('descrizione')->nullable();
             $table->string('sito_web')->nullable();
             $table->timestamps();

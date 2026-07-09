@@ -360,6 +360,19 @@
 - `Comparatore.test.jsx` — 10 test di integrazione (dropdown, pre-fill URL, tabella confronto, esclusione)
 
 ### 13.3 — 09/07/2026 — feat: Dashboard admin con grafici Chart.js
+
+## Fase 14 — 10 Bug critici fixati
+
+### 14.0 — 09/07/2026 — fix: 10 bug critici (Blade @endif, React null guard, 404 route, N+1, senza SSL, import duplicato)
+- `curiosita/index.blade.php`: aggiunti 2 `@endif` mancanti — tabella e paginazione non erano più intrappolate nei condizionali
+- `categorie/index.blade.php` e `galleria/index.blade.php`: chiuso `@if (session('success'))` prima di annidare `@if (session('error'))`, rimosso blocco errore duplicato
+- `CorpoCard.jsx`: aggiunto `isNaN` guard in `formatDistance()` per prevenire "NaN km"
+- `App.jsx` + nuova `NotFound.jsx`: aggiunta route catch-all `path="*"` per URL sconosciuti
+- `CorpoCelesteController.php::setImageFromGallery`: aggiunto ownership check (`abort(404)` se `$galleriaCorpo->corpo_celeste_id !== $corpoCeleste->id`)
+- `MissioneController.php::show`: eager loading `corpiCelesti.categoria` (N+1 fix)
+- Migration `create_missioni_table`: default `stato` da `'completata'` a `'Completata'`
+- `NasaImageService.php`: `withoutVerifying()` ora solo in ambiente `local`/`testing`
+- `CorpoDettaglio.jsx`: unificato import duplicato `Orbit` da lucide-react (rimosso da linea 4, usato `OrbitIcon` da linea 10)
 - `app/Http/Controllers/Admin/DashboardController.php`: aggiunte 3 query — corpi per categoria (withCount, filtrata count>0), corpi per tipo (groupBy), missioni per stato (3 count)
 - `resources/views/admin/dashboard.blade.php`: 3 canvas Chart.js — donut corpi/categoria, barre verticali corpi/tipo, barre orizzontali missioni/stato
 - Chart.js v4.4.7 caricato da CDN via `@push('scripts')` (stesso pattern Alpine.js)

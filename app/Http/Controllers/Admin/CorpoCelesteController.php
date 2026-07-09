@@ -99,6 +99,10 @@ class CorpoCelesteController extends Controller
     {
         $this->authorize('update', $corpoCeleste);
 
+        if ($galleriaCorpo->corpo_celeste_id !== $corpoCeleste->id) {
+            abort(404);
+        }
+
         $corpoCeleste->update([
             'immagine' => $galleriaCorpo->percorso,
             'immagine_utente' => true,

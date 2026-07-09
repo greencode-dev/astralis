@@ -18,7 +18,7 @@ Astralis è un catalogo web di corpi celesti (pianeti, stelle, galassie, nebulos
 | Lightbox   | yet-another-react-lightbox |
 | Upload     | Intervention Image (solo Missioni/Galleria) |
 | Slug       | spatie/laravel-sluggable   |
-| PDF        | barryvdh/laravel-dompdf    |
+| PDF        | barryvdh/laravel-dompdf    | (previsto, non implementato)
 | Modal      | Alpine.js (CDN)            |
 | Grafici    | Chart.js (CDN)             |
 | Test       | PHPUnit, Vitest, Testing Library, jsdom |
@@ -149,6 +149,7 @@ resources/js/guest/
     ├── HomePage.jsx            ← Hero + sistema solare + in evidenza
     ├── CorpiLista.jsx          ← Griglia + filtri + paginazione
     ├── CorpoDettaglio.jsx      ← Dettaglio con metriche, galleria, curiosità, missioni, simili
+    ├── NotFound.jsx            ← Pagina 404 (catch-all route)
     └── Comparatore.jsx         ← Confronto pianeti affiancato
 ```
 
@@ -159,6 +160,7 @@ resources/js/guest/
 /corpi-celesti     → CorpiLista (con filtri)
 /corpi-celesti/:slug → CorpoDettaglio (metriche, galleria lightbox, curiosità, missioni, simili)
 /confronta         → Comparatore (confronto pianeti, parametri ?primo=slug&secondo=slug)
+*                  → NotFound (404 catch-all)
 ```
 
 **API utilizzate:**
@@ -238,7 +240,7 @@ Filtri disponibili:
   - **Backoffice** (`/admin/nasa-import`): tabella di tutti i corpi celesti con badge "Presente"/"Assente". Bottone "Importa da NASA" (ciano) per singolo corpo. Bottone "Forza import" (arancione) per sovrascrivere. Bottone "Force Import All" (arancione) per import massivo con modale di conferma Alpine.js. Importa fino a 5 immagini in galleria per ogni corpo. Pulsante "Cerca su NASA" nei form create/edit di Corpi Celesti.
   - **CLI** (`php artisan astralis:fetch-nasa`): comando Artisan per l'import automatico. Opzioni: `--force` (sovrascrivi), `--gallery=N` (numero immagini galleria, default 5), `--update-description` (aggiorna descrizione corpo con metadati NASA). Ideale per il setup iniziale dopo `migrate --seed`.
   - **Manutenzione galleria** (`php artisan astralis:gallery`): verifica e ripara immagini non raggiungibili. Opzioni: `--check` (solo report), `--clean` (elimina record ko), `--sync` (sostituisce da NASA), `--fix` (scorciatoia per sync+clean), `--dry-run`.
-  - **Architettura**: la logica è centralizzata in `app/Services/NasaImageService.php`. Il controller e il comando Artisan delegano entrambi al service. Utilizza `Http::withoutVerifying()` per Windows. **Nessun download/processing locale**: le immagini NASA sono salvate come URL remoti (`~medium.jpg`). Priorità URL: `rel=alternate` (medium) → `preview` (thumb) → `canonical` (orig fallback).
+    - **Architettura**: la logica è centralizzata in `app/Services/NasaImageService.php`. Il controller e il comando Artisan delegano entrambi al service. Utilizza `Http::withoutVerifying()` solo in ambiente `local`/`testing` (Windows). **Nessun download/processing locale**: le immagini NASA sono salvate come URL remoti (`~medium.jpg`). Priorità URL: `rel=alternate` (medium) → `preview` (thumb) → `canonical` (orig fallback).
   - **Deduplicazione**: importForBody() controlla se un'immagine con stesso `percorso` e `corpo_celeste_id` esiste già in galleria prima di creare un nuovo record. Force Import non genera duplicati.
   - **Protezione immagine utente**: Se l'utente ha impostato manualmente l'immagine principale (colonna `immagine_utente = true`), Force Import non la sovrascrive.
   - **WordMap**: il controller `CorpoCelesteController` contiene un array `$wordMap` (~50 termini) per tradurre nomi italiano→inglese parola per parola (es. "Buco Nero" → "Black Hole", "Ammasso" → "Cluster", "Nana" → "Dwarf"). Usato nel metodo `suggestNome()` per l'auto-suggest admin.

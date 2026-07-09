@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Ruler, Weight, Thermometer, Gauge, Orbit, MapPin, Calendar, User, Star, Rocket, Lightbulb } from 'lucide-react';
+import { ArrowLeft, Ruler, Weight, Thermometer, Gauge, MapPin, Calendar, User, Star, Rocket, Lightbulb } from 'lucide-react';
 import { fetchCorpoCeleste, fetchSimili } from '../apiClient';
 import CategoriaBadge from '../components/CategoriaBadge';
 import LightboxGalleria from '../components/LightboxGalleria';
@@ -37,7 +37,7 @@ const metriche = [
     { key: 'distanza_km', label: 'Distanza dal Sole', icon: MapPin, format: v => formatDistance(v) },
     { key: 'gravita', label: 'Gravità', icon: Gauge, format: v => v + ' m/s²' },
     { key: 'temperatura', label: 'Temperatura', icon: Thermometer, format: v => v + ' °C' },
-    { key: 'periodo_orbitale', label: 'Periodo Orbitale', icon: Orbit, format: v => formatNumber(v) + ' giorni' },
+    { key: 'periodo_orbitale', label: 'Periodo Orbitale', icon: OrbitIcon, format: v => formatNumber(v) + ' giorni' },
 ];
 
 export default function CorpoDettaglio() {

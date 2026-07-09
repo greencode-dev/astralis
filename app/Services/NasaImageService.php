@@ -22,10 +22,11 @@ class NasaImageService
         $queries = array_merge([$query], $fallbacks);
 
         foreach ($queries as $q) {
-            $response = Http::withoutVerifying()
-                ->timeout(30)
-                ->retry(2, 1000)
-                ->get('https://images-api.nasa.gov/search', [
+            $http = Http::timeout(30)->retry(2, 1000);
+            if (app()->environment('local', 'testing')) {
+                $http = $http->withoutVerifying();
+            }
+            $response = $http->get('https://images-api.nasa.gov/search', [
                     'q' => $q,
                     'media_type' => 'image',
                 ]);
