@@ -9,6 +9,7 @@
 | [`bug.md`](bug.md)                         | Bug tracker — problemi riscontrati e soluzioni |     |
 | [`testing.md`](testing.md)                 | Istruzioni e spiegazione della suite di test   |     |
 | [`documentazione.md`](documentazione.md)   | Documentazione architetturale completa         |     |
+| [`guida-esame.md`](guida-esame.md)         | Guida allo studio per l'esame                  |     |
 | [`progetto-finale.md`](progetto-finale.md) | Consegna originale del progetto scolastico     |     |
 
 ## Collegamenti rapidi
@@ -18,4 +19,5 @@
 - [Bug tracker](bug.md)
 - [Test](testing.md)
 - [Documentazione completa](documentazione.md)
+- [Guida all'esame](guida-esame.md)
 - [Consegna progetto](progetto-finale.md)
