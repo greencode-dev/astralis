@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Ruler, Weight, Thermometer, Gauge, MapPin, RotateCcw } from 'lucide-react';
+import { ArrowLeft, Ruler, RotateCcw } from 'lucide-react';
 import { fetchCorpiCelesti, fetchCorpoCeleste } from '../apiClient';
 import CategoriaBadge from '../components/CategoriaBadge';
 

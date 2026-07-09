@@ -26,7 +26,6 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Upload**: Intervention Image v4 — **NO facade**. Usare `ImageManager(new Driver())->decodePath()`/`->decodeBinary()`, `scaleDown()` invece di `resize()`
 - **SSL**: `Http::withoutVerifying()` solo in local/testing (Windows)
 - **Slug**: spatie/laravel-sluggable
-- **PDF**: barryvdh/laravel-dompdf (previsto, non utilizzato)
 
 ## Dual rendering (critical)
 

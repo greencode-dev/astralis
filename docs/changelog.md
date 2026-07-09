@@ -378,3 +378,13 @@
 - Chart.js v4.4.7 caricato da CDN via `@push('scripts')` (stesso pattern Alpine.js)
 - Tema dark: `Chart.defaults.color` e `borderColor` configurati per palette admin
 - Accessibilità: `role="img"` + `aria-label` su ogni canvas
+
+### 14.1 — 09/07/2026 — chore: rimossi import morti React e dipendenze inutilizzate/malposizionate
+- `LightboxGalleria.jsx`: rimosso import morto `Image` da lucide-react
+- `Comparatore.jsx`: rimossi import morti `Weight, Thermometer, Gauge, MapPin` da lucide-react
+- `laravel/sanctum`: `composer remove` (mai usato, API pubbliche)
+- `barryvdh/laravel-dompdf`: `composer remove` (mai usato, nessuna generazione PDF)
+- `@tailwindcss/vite`: `npm uninstall` (incompatibile con Tailwind v3)
+- `@headlessui/react`: `npm uninstall` (mai importato)
+- `react`/`react-dom`: spostati da `devDependencies` a `dependencies`
+- `@vitejs/plugin-react`: spostato da `dependencies` a `devDependencies`

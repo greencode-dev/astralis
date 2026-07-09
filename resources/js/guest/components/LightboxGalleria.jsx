@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import { Image } from 'lucide-react';
 
 export default function LightboxGalleria({ immagini }) {
     const [open, setOpen] = useState(false);

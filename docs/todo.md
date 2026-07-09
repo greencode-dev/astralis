@@ -13,6 +13,7 @@
 - [x] **P4 Dashboard** — Admin dashboard con 3 grafici Chart.js (corpi/categoria, corpi/tipo, missioni/stato)
 - [x] **Test P2** — API integration tests (Vitest, 5 file, 61 test, apiClient + 4 guest pages)
 - [x] **Fase 14** — 10 bug critici fixati: 3 Blade @endif mancanti/annidati, formatDistance NaN guard, 404 route React, ownership check setImageFromGallery, N+1 MissioneController, migration stato lowercase, withoutVerifying condizionale, Orbit import duplicato
+- [x] **Fase 14.1** — Rimossi import morti React (Image, Weight, Thermometer, Gauge, MapPin), dipendenze inutilizzate (laravel/sanctum, barryvdh/laravel-dompdf, @tailwindcss/vite, @headlessui/react), malposizionate (react/react-dom in devDependencies, @vitejs/plugin-react in dependencies)
 - [x] **HasFactory** — Aggiunto trait a tutti i 5 modelli + factories esistenti
 - [x] **Wave 4** — Frontend P2: stili inline → Tailwind classi admin
 - [x] **Wave 3** — Frontend P2: onMouseEnter/onMouseLeave → CSS :hover
