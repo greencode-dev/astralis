@@ -48,6 +48,16 @@ export default function CorpoDettaglio() {
     const [error, setError] = useState(false);
 
     useEffect(() => {
+        document.title = 'Astralis — Corpo Celeste';
+    }, []);
+
+    useEffect(() => {
+        if (corpo?.nome_display || corpo?.nome) {
+            document.title = `${corpo.nome_display || corpo.nome} — Astralis`;
+        }
+    }, [corpo]);
+
+    useEffect(() => {
         async function load() {
             setLoading(true);
             setError(false);

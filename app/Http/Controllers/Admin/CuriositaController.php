@@ -11,15 +11,27 @@ use Illuminate\View\View;
 
 class CuriositaController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         $this->authorize('viewAny', Curiosita::class);
 
         $curiosita = Curiosita::with('corpoCeleste.categoria')
+            ->when($request->get('search'), fn($q, $v) => $q->where('titolo', 'like', "%{$v}%"))
+            ->when($request->get('corpo_celeste_id'), fn($q, $v) => $q->where('corpo_celeste_id', $v))
             ->orderBy('created_at', 'desc')
-            ->paginate(20);
+            ->paginate(20)
+            ->withQueryString();
 
         return view('admin.curiosita.index', compact('curiosita'));
+    }
+
+    public function show(Curiosita $curiositum): View
+    {
+        $this->authorize('view', $curiositum);
+
+        $curiositum->load('corpoCeleste');
+
+        return view('admin.curiosita.show', compact('curiositum'));
     }
 
     public function create(): View

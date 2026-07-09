@@ -388,3 +388,39 @@
 - `@headlessui/react`: `npm uninstall` (mai importato)
 - `react`/`react-dom`: spostati da `devDependencies` a `dependencies`
 - `@vitejs/plugin-react`: spostato da `dependencies` a `devDependencies`
+
+## Fase 15 — P2/P3 manutenzione e accessibilità
+
+### 15.0 — 09/07/2026 — feat: Categoria index pagination, Curiosita show view
+- `CategoriaController::index()`: `->get()` → `->paginate(20)` + `withQueryString()`  
+- Vista categorie/index: aggiunto `$categorie->links()` con paginazione Tailwind
+- `CuriositaController::show()`: nuovo metodo + vista `curiosita/show.blade.php`
+- Route curiosita: `except(['show'])` → `except()` (rimuove except)
+- `resources/views/admin/curiosita/show.blade.php`: **NUOVA** — dettaglio curiosità con layout admin
+
+### 15.1 — 09/07/2026 — feat: search/filter admin per Categoria, Missione, Curiosità, Galleria
+- `CategoriaController::index()`: filtro `->when($request->search, fn($q, $v) => $q->where('nome','like',"%{$v}%"))`
+- `MissioneController::index()`: filtri `search` (nome), `agenzia`, `stato`
+- `CuriositaController::index()`: filtro `search` (titolo)
+- `GalleriaController::index()`: filtro `search` (didascalia)
+- Ogni vista index: barra di ricerca con stesso pattern di corpi-celesti + `withQueryString()` + bottone "Cancella filtro"
+
+### 15.2 — 09/07/2026 — feat: SEO meta tags React (5 pagine guest)
+- `HomePage.jsx`: `document.title = "Astralis — Catalogo di Corpi Celesti"`
+- `CorpiLista.jsx`: `document.title = "Corpi Celesti — Astralis"`
+- `CorpoDettaglio.jsx`: `document.title = "{nome} — Astralis"` (con fallback iniziale)
+- `Comparatore.jsx`: `document.title = "Confronta Pianeti — Astralis"`
+- `NotFound.jsx`: `document.title = "Pagina non trovata — Astralis"`
+- Tutti via `useEffect` con dipendenza appropriata
+
+### 15.3 — 09/07/2026 — feat: Error Boundary globale React
+- `resources/js/guest/components/ErrorBoundary.jsx`: **NUOVO** — class component React con `componentDidCatch`
+- UI fallback: tema dark, icona AlertTriangle, messaggio "Qualcosa è andato storto", link home
+- `App.jsx`: wrapper `<ErrorBoundary>` intorno a `<Routes>`
+
+### 15.4 — 09/07/2026 — feat: Admin CRUD test (4 file)
+- `tests/Feature/Admin/CategoriaCrudTest.php`: **NUOVO** — 13 test (index, create, store, validazione, unique, show, edit, update, delete, protezione cancellazione con corpi associati, 403 per non-admin)
+- `tests/Feature/Admin/MissioneCrudTest.php`: **NUOVO** — 12 test (CRUD completo + filtri search/agenzia/stato + 403)
+- `tests/Feature/Admin/CuriositaCrudTest.php`: **NUOVO** — 11 test (CRUD completo + show + 403)
+- `tests/Feature/Admin/GalleriaCrudTest.php`: **NUOVO** — 11 test (CRUD completo + 403)
+- Totale: 130 test PHPUnit, 335 assertion

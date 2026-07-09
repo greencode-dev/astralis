@@ -13,6 +13,10 @@ export default function CorpiLista() {
     const [categoriaSlug, setCategoriaSlug] = useState('');
     const [tipo, setTipo] = useState('');
     const [page, setPage] = useState(1);
+
+    useEffect(() => {
+        document.title = 'Corpi Celesti — Astralis';
+    }, []);
     const [lastPage, setLastPage] = useState(1);
     const [total, setTotal] = useState(0);
 

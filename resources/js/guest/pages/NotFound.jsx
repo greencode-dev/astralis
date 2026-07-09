@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Telescope } from 'lucide-react';
 
 export default function NotFound() {
+    useEffect(() => {
+        document.title = 'Pagina non trovata — Astralis';
+    }, []);
+
     return (
         <div className="max-w-5xl mx-auto px-4 py-20 text-center">
             <Telescope size={64} style={{ color: '#7A7A9A' }} className="mx-auto mb-4" />

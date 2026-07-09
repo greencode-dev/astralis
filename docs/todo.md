@@ -6,6 +6,12 @@
 
 ## Fatto
 
+- [x] **P2 Admin CRUD test** — 4 nuovi file: CategoriaCrudTest (14), MissioneCrudTest (13), CuriositaCrudTest (10), GalleriaCrudTest (9) — 130 test totali
+- [x] **P2 Categoria pagination** — `->paginate(20)` + `->withQueryString()` + `$categorie->links()`
+- [x] **P2 Curiosita show** — Nuovo metodo `show()` + vista `show.blade.php` + route rimossa da `except`
+- [x] **P2 Search/filter admin** — Search bar su Categoria, Missione (anche agenzia/stato), Curiosità, Galleria
+- [x] **P3 SEO meta tags React** — `document.title` in 5 pagine guest (HomePage, CorpiLista, CorpoDettaglio, Comparatore, NotFound)
+- [x] **P3 Error Boundary globale** — Class component `<ErrorBoundary>` + fallback UI dark in App.jsx
 - [x] **Test P2** — NasaImageService unit test (26 test, 63 assertion) + bugfix query stripping, immagine_utente force skip
 - [x] **Test P2** — API endpoint tests (8 file, 84 total test) — Http::fake, observer testing guard, response structure fixes
 - [x] **Test P2** — Admin CRUD tests — fixed observer interference, all green
@@ -48,10 +54,11 @@ _Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ �
 
 ### 🔵 P2 — Manutenzione (refactoring, test, performance)
 
-_Tutti i task P2 completati._ 🟢
+_Tutti i task P2 completati. Admin CRUD test completi (4 file, 47 test), Categoria pagination, Curiosità show, search/filter admin._ 🟢
 
-### 🟣 P3 — Accessibilità
-_Nessun task di accessibilità in sospeso. Wave 2 ha coperto questa fascia._ 🟢
+### 🟣 P3 — Accessibilità / Robustezza
+
+_Tutti i task P3 completati. SEO meta tags React (5 pagine), Error Boundary globale._ 🟢
 
 ### ⚪ P4 — Futuro (nice-to-have)
 
@@ -61,7 +68,7 @@ _Nessun task P4 in sospeso. Tutti completati._ 🟢
 
 ## Note
 
-- **Stato**: Tutti i task completati. Progetto in manutenzione.
+- **Stato**: Tutti i task completati. Progetto in manutenzione. 130 test PHPUnit + 88 test Vitest.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

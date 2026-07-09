@@ -15,14 +15,17 @@ use Intervention\Image\ImageManager;
 
 class GalleriaController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         $this->authorize('viewAny', GalleriaCorpo::class);
 
         $galleria = GalleriaCorpo::with('corpoCeleste')
+            ->when($request->get('search'), fn($q, $v) => $q->where('didascalia', 'like', "%{$v}%"))
+            ->when($request->get('corpo_celeste_id'), fn($q, $v) => $q->where('corpo_celeste_id', $v))
             ->orderBy('ordine')
             ->orderBy('created_at', 'desc')
-            ->paginate(20);
+            ->paginate(20)
+            ->withQueryString();
 
         return view('admin.galleria.index', compact('galleria'));
     }

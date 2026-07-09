@@ -4,7 +4,7 @@ Suite di test per backend (PHPUnit) e frontend React (Vitest).
 
 ## Esecuzione
 
-### Backend (PHPUnit) — 84 test, 220 assertion
+### Backend (PHPUnit) — 130 test, 335 assertion
 
 ```bash
 php artisan test                              # Tutti
@@ -72,25 +72,91 @@ Testano gli endpoint JSON pubblici in `routes/api.php`.
 | `GalleriaApiTest.php` | `GET /api/galleria` — tutti |
 | `DashboardApiTest.php` | `GET /api/dashboard/stats` — conteggi corpi, categorie, missioni |
 
-### Feature Admin — `tests/Feature/Admin/CorpoCelesteCrudTest.php` (12 test)
+### Feature Admin — 5 file, 59 test
 
-Testa il CRUD backoffice Blade con autenticazione e autorizzazione.
+#### `CorpoCelesteCrudTest.php` (13 test)
 
 | Test | Cosa verifica |
 |---|---|
 | Guest redirect | Visita index → redirect `/login` |
-| Admin index | `GET /admin/corpi-celesti` → 200, vede "Corpi Celesti" |
-| Admin create form | `GET /admin/corpi-celesti/create` → 200, vede "Nuovo Corpo Celeste" |
-| Admin store | `POST /admin/corpi-celesti` → redirect + session success, record in DB |
-| Store validazione | Campi vuoti → session errors (nome, categoria_id) |
-| Store unique nome | Nome duplicato → session errors (nome) |
-| Admin show | `GET /admin/corpi-celesti/{id}` → 200, vede `nome_display` |
-| Admin edit | `GET /admin/corpi-celesti/{id}/edit` → 200, vede "Modifica" |
-| Admin update | `PUT /admin/corpi-celesti/{id}` → redirect + session success, nome aggiornato |
-| Update stesso nome | `PUT` con nome invariato → nessun errore validazione |
-| Admin delete | `DELETE /admin/corpi-celesti/{id}` → redirect + session success, record rimosso |
-| Non-admin store | `POST` come utente normale → 403 |
-| Non-admin delete | `DELETE` come utente normale → 403 |
+| Admin index | `GET /admin/corpi-celesti` → 200 |
+| Admin create form | `GET /admin/corpi-celesti/create` → 200 |
+| Admin store | `POST /admin/corpi-celesti` → redirect + record in DB |
+| Store validazione | Campi vuoti → session errors |
+| Store unique nome | Nome duplicato → session errors |
+| Admin show | `GET /admin/corpi-celesti/{id}` → 200 |
+| Admin edit | `GET /admin/corpi-celesti/{id}/edit` → 200 |
+| Admin update | `PUT /admin/corpi-celesti/{id}` → redirect, nome aggiornato |
+| Update stesso nome | `PUT` con nome invariato → ok |
+| Admin delete | `DELETE /admin/corpi-celesti/{id}` → redirect, record rimosso |
+| Non-admin store | 403 |
+| Non-admin delete | 403 |
+
+#### `CategoriaCrudTest.php` (14 test)
+
+| Test | Cosa verifica |
+|---|---|
+| Guest redirect | `GET /admin/categorie` → `/login` |
+| Admin index | 200 |
+| Admin create | 200 |
+| Admin store | `POST` → redirect + record in DB |
+| Store validazione | Nome vuoto → errors |
+| Store unique nome | Nome duplicato → errors |
+| Admin show | 200 |
+| Admin edit | 200 |
+| Admin update | `PUT` → redirect, nome aggiornato |
+| Update stesso nome | `PUT` nome invariato → ok |
+| Delete con corpi | `DELETE` con corpi associati → error + record preserved |
+| Admin delete | `DELETE` senza corpi → redirect, record rimosso |
+| Non-admin store | 403 |
+| Non-admin delete | 403 |
+
+#### `MissioneCrudTest.php` (13 test)
+
+| Test | Cosa verifica |
+|---|---|
+| Guest redirect | `GET /admin/missioni` → `/login` |
+| Admin index | 200 |
+| Admin create | 200 |
+| Admin store | `POST` → redirect + record in DB |
+| Store validazione | Nome vuoto → errors |
+| Store unique nome | Nome duplicato → errors |
+| Admin show | 200 |
+| Admin edit | 200 |
+| Admin update | `PUT` → redirect, nome aggiornato |
+| Update stesso nome | `PUT` nome invariato → ok |
+| Admin delete | `DELETE` → redirect, record rimosso |
+| Non-admin store | 403 |
+| Non-admin delete | 403 |
+
+#### `CuriositaCrudTest.php` (10 test)
+
+| Test | Cosa verifica |
+|---|---|
+| Guest redirect | `GET /admin/curiosita` → `/login` |
+| Admin index | 200 |
+| Admin create | 200 |
+| Admin store | `POST` → redirect + record in DB |
+| Store validazione | Campi vuoti → errors |
+| Admin show | `GET /admin/curiosita/{id}` → 200, vede titolo |
+| Admin edit | 200 |
+| Admin update | `PUT` → redirect, titolo aggiornato |
+| Admin delete | `DELETE` → redirect, record rimosso |
+| Non-admin store | 403 |
+
+#### `GalleriaCrudTest.php` (9 test)
+
+| Test | Cosa verifica |
+|---|---|
+| Guest redirect | `GET /admin/galleria` → `/login` |
+| Admin index | 200 |
+| Admin create | 200 |
+| Admin store | `POST` + UploadedFile → redirect + record in DB |
+| Store validazione | Campi vuoti → errors |
+| Admin edit | 200 |
+| Admin update | `PUT` → redirect, didascalia aggiornata |
+| Admin delete | `DELETE` → redirect, record rimosso |
+| Non-admin store | 403 |
 
 ## API di supporto
 

@@ -143,7 +143,8 @@ resources/js/guest/
 │   ├── CategoriaBadge.jsx      ← Badge colorato per categoria
 │   ├── SearchBar.jsx           ← Barra ricerca
 │   ├── LightboxGalleria.jsx    ← Lightbox immagini (yet-another-react-lightbox)
-│   └── TimelineMissioni.jsx    ← Timeline orizzontale missioni
+│   ├── TimelineMissioni.jsx    ← Timeline orizzontale missioni
+│   └── ErrorBoundary.jsx       ← Gestione errori React (catch-all fallback UI)
 └── pages/
     ├── HomePage.jsx            ← Hero + sistema solare + in evidenza
     ├── CorpiLista.jsx          ← Griglia + filtri + paginazione
@@ -161,6 +162,10 @@ resources/js/guest/
 /confronta         → Comparatore (confronto pianeti, parametri ?primo=slug&secondo=slug)
 *                  → NotFound (404 catch-all)
 ```
+
+**SEO:** Ogni pagina imposta `document.title` via `useEffect`: HomePage ("Astralis — Catalogo di Corpi Celesti"), CorpiLista ("Corpi Celesti — Astralis"), CorpoDettaglio (`{nome} — Astralis`), Comparatore ("Confronta Pianeti — Astralis"), NotFound ("Pagina non trovata — Astralis").
+
+**Error Boundary:** Un wrapper `<ErrorBoundary>` in `App.jsx` cattura errori di rendering React e mostra un fallback UI con tema dark, icona AlertTriangle, messaggio "Qualcosa è andato storto" e link alla home.
 
 **API utilizzate:**
 
@@ -198,8 +203,9 @@ resources/views/admin/
 │   ├── edit.blade.php          ← Form modifica con logo preview
 │   └── show.blade.php          ← Dettaglio con tabella corpi esplorati
 ├── curiosita/                  ← CRUD Curiosità ✅
-│   ├── index.blade.php         ← Lista con tabella titolo, corpo, descrizione, fonte
+│   ├── index.blade.php         ← Lista con tabella titolo, corpo, descrizione, fonte + search
 │   ├── create.blade.php        ← Form creazione (select corpo, titolo, descrizione, fonte)
+│   ├── show.blade.php          ← Dettaglio curiosità
 │   └── edit.blade.php          ← Form modifica
 ├── galleria/                   ← CRUD Galleria ✅
 │   ├── index.blade.php         ← Griglia con card thumbnail
@@ -225,15 +231,15 @@ Filtri disponibili:
 
 **Controller admin:** `app/Http/Controllers/Admin/` — risorsa per ogni entità.
 
-**CRUD Categorie** — 7 route resource (`GET|POST /admin/categorie`, `GET|PUT /admin/categorie/{id}`, `DELETE /admin/categorie/{id}`). Protezione cancellazione: se la categoria ha corpi celesti associati, viene mostrato errore. Form con color picker + palette rapida 10 colori predefiniti.
+**CRUD Categorie** — 7 route resource (`GET|POST /admin/categorie`, `GET|PUT /admin/categorie/{id}`, `DELETE /admin/categorie/{id}`). Protezione cancellazione: se la categoria ha corpi celesti associati, viene mostrato errore. Form con color picker + palette rapida 10 colori predefiniti. Index con paginazione (20 per pagina) e filtro per nome.
 
 **CRUD Corpi Celesti** — 7 route resource (`/admin/corpi-celesti`). Immagine tramite URL remoto (nessun upload locale — campo testo per URL, validazione URL). Form con 14 campi (incluso `nome_it`), select categoria, checkbox evidenza. Pulsante "Cerca su NASA" nei form create/edit che via AJAX posta a `POST /admin/corpi-celesti/suggest-nome` per auto-suggest. Vista show completa con 8 card metriche scientifiche + sezioni galleria, curiosità, missioni.
 
-**CRUD Missioni** — 7 route resource (`/admin/missioni`). Upload logo con Intervention Image (resize 300px, supporto SVG). Stato con badge colorato (Completata/In corso/Pianificata). Vista show con tabella corpi celesti esplorati (dati pivot: tipo esplorazione, anno arrivo).
+**CRUD Missioni** — 7 route resource (`/admin/missioni`). Upload logo con Intervention Image (resize 300px, supporto SVG). Stato con badge colorato (Completata/In corso/Pianificata). Vista show con tabella corpi celesti esplorati (dati pivot: tipo esplorazione, anno arrivo). Index con filtri per nome, agenzia e stato.
 
-**CRUD Curiosità** — 6 route resource (`/admin/curiosita`, senza show). Parametro route `{curiositum}` (singolare latino di "curiosita"). Form con select corpo celeste, titolo, textarea descrizione, fonte opzionale. Vista index con tabella titolo, corpo celeste (linkabile), descrizione troncata, fonte.
+**CRUD Curiosità** — 7 route resource (`/admin/curiosita`). Parametro route `{curiositum}` (singolare latino di "curiosita"). Form con select corpo celeste, titolo, textarea descrizione, fonte opzionale. Vista index con tabella titolo, corpo celeste (linkabile), descrizione troncata, fonte; filtro per titolo. Vista show con dettaglio completo curiosità.
 
-**CRUD Galleria** — 6 route resource (`/admin/galleria`, senza show). Parametro route `{galleriaCorpo}`. Upload immagini con Intervention Image (resize 1200px, storage `public/galleria/`). Vista index a griglia con card thumbnail, didascalia, corpo celeste linkabile, crediti, ordine di visualizzazione. Ogni card ha pulsanti "Sposta su" e "Sposta giù" per ordinamento inline via POST a `/admin/galleria/{galleriaCorpo}/ordine`. Le immagini con errore di caricamento mostrano un placeholder "Immagine non disponibile".
+**CRUD Galleria** — 6 route resource (`/admin/galleria`, senza show). Parametro route `{galleriaCorpo}`. Upload immagini con Intervention Image (resize 1200px, storage `public/galleria/`). Vista index a griglia con card thumbnail, didascalia, corpo celeste linkabile, crediti, ordine di visualizzazione. Ogni card ha pulsanti "Sposta su" e "Sposta giù" per ordinamento inline via POST a `/admin/galleria/{galleriaCorpo}/ordine`. Le immagini con errore di caricamento mostrano un placeholder "Immagine non disponibile". Index con filtro per didascalia.
 
 **NASA Import** — Due modalità:
   - **Backoffice** (`/admin/nasa-import`): tabella di tutti i corpi celesti con badge "Presente"/"Assente". Bottone "Importa da NASA" (ciano) per singolo corpo. Bottone "Forza import" (arancione) per sovrascrivere. Bottone "Force Import All" (arancione) per import massivo con modale di conferma Alpine.js. Importa fino a 5 immagini in galleria per ogni corpo. Pulsante "Cerca su NASA" nei form create/edit di Corpi Celesti.

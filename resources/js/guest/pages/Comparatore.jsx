@@ -25,6 +25,10 @@ export default function Comparatore() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        document.title = 'Confronta Pianeti — Astralis';
+    }, []);
+
+    useEffect(() => {
         fetchCorpiCelesti({ per_page: 100 })
             .then(res => setCorpi(res.data || []))
             .catch(err => console.error('Errore caricamento corpi:', err));

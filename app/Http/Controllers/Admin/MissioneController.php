@@ -13,11 +13,16 @@ use Intervention\Image\ImageManager;
 
 class MissioneController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         $this->authorize('viewAny', Missione::class);
 
-        $missioni = Missione::orderBy('data_lancio', 'desc')->paginate(20);
+        $missioni = Missione::when($request->get('search'), fn($q, $v) => $q->where('nome', 'like', "%{$v}%"))
+            ->when($request->get('agenzia'), fn($q, $v) => $q->where('agenzia', $v))
+            ->when($request->get('stato'), fn($q, $v) => $q->where('stato', $v))
+            ->orderBy('data_lancio', 'desc')
+            ->paginate(20)
+            ->withQueryString();
 
         return view('admin.missioni.index', compact('missioni'));
     }

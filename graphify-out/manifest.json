@@ -5,18 +5,18 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CategoriaController.php": {
-    "mtime": 1783431453.483679,
-    "ast_hash": "103d4a672f27536d2acf3741fe30cfd5",
+    "mtime": 1783595666.8908007,
+    "ast_hash": "7fd7d14102ac592ba3ed0c96d7cf7c60",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CorpoCelesteController.php": {
-    "mtime": 1783498137.8603866,
-    "ast_hash": "2f3815779d9308115da4f74c1fda7ddf",
+    "mtime": 1783582222.7432117,
+    "ast_hash": "20bb570b7cb5137cc357a20101874c6c",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CuriositaController.php": {
-    "mtime": 1783431483.1315696,
-    "ast_hash": "e92f877d40dbc42d8255f95ce151f553",
+    "mtime": 1783595668.8675156,
+    "ast_hash": "4a5f9559fe006f3ebea85acad23741a9",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/DashboardController.php": {
@@ -25,13 +25,13 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/GalleriaController.php": {
-    "mtime": 1783431488.6506915,
-    "ast_hash": "7778a571884dd0a833ecc732eb2fabf9",
+    "mtime": 1783595672.1978636,
+    "ast_hash": "810b4f55747194adc08a3732bc767b95",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/MissioneController.php": {
-    "mtime": 1783431478.6093016,
-    "ast_hash": "f6184c46ee619083b25e4326e6621596",
+    "mtime": 1783595670.5558667,
+    "ast_hash": "b54cabe9aa25a10ee7571c8be84e3491",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/NasaImportController.php": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "app/Services/NasaImageService.php": {
-    "mtime": 1783504243.138975,
-    "ast_hash": "3aa0073471ef3ab371f2875cad1e47b8",
+    "mtime": 1783582225.374756,
+    "ast_hash": "df888978535bb53ff36680552b0a6c4b",
     "semantic_hash": ""
   },
   "artisan": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "composer.json": {
-    "mtime": 1783437283.5706637,
-    "ast_hash": "7ae99b2d28bf5aa2fc2d9f0ef1e77cec",
+    "mtime": 1783583381.3087568,
+    "ast_hash": "97cd6ca1e9a9958986e30324de50c324",
     "semantic_hash": ""
   },
   "config/app.php": {
@@ -305,8 +305,8 @@
     "semantic_hash": ""
   },
   "database/migrations/2026_07_03_060116_create_missioni_table.php": {
-    "mtime": 1783059442.349081,
-    "ast_hash": "43eb6f17b43c6e582f07dba9ebfe53b7",
+    "mtime": 1783582224.2040296,
+    "ast_hash": "ec52b7da23ef3f4a08e14db0a3bbb96a",
     "semantic_hash": ""
   },
   "database/migrations/2026_07_03_060117_create_galleria_corpi_table.php": {
@@ -375,8 +375,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1783509608.4940007,
-    "ast_hash": "1a7afbb237cf0552a1f51e8583a92bf2",
+    "mtime": 1783583434.6150253,
+    "ast_hash": "aa5ef124c6b3fe19038fc4c3e5624703",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -395,8 +395,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/App.jsx": {
-    "mtime": 1783150404.2065072,
-    "ast_hash": "f8cf362159ae9c09bd08094d607ab117",
+    "mtime": 1783595728.5780766,
+    "ast_hash": "5dec20805f7d017a10bfc0d39849749c",
     "semantic_hash": ""
   },
   "resources/js/guest/apiClient.js": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/components/CorpoCard.jsx": {
-    "mtime": 1783499027.1882284,
-    "ast_hash": "8a998060ea5f10330cb980ef4ddd7689",
+    "mtime": 1783582219.827201,
+    "ast_hash": "ee9fa8d636ecf4eb86cad92f0fda16f6",
     "semantic_hash": ""
   },
   "resources/js/guest/components/Footer.jsx": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/components/LightboxGalleria.jsx": {
-    "mtime": 1783509698.3256555,
-    "ast_hash": "16623ae99f9415f5a7b7a5209b8c3293",
+    "mtime": 1783583376.4210882,
+    "ast_hash": "8d5a22b00f85114a323e7b651dd5da30",
     "semantic_hash": ""
   },
   "resources/js/guest/components/Navbar.jsx": {
@@ -450,23 +450,23 @@
     "semantic_hash": ""
   },
   "resources/js/guest/pages/Comparatore.jsx": {
-    "mtime": 1783499521.5165915,
-    "ast_hash": "b481a1f751a27f4ff57ed36a0ff7749c",
+    "mtime": 1783595708.8407118,
+    "ast_hash": "1d41d80c1ae5c74315e3e988d4cd44b2",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/CorpiLista.jsx": {
-    "mtime": 1783499541.3678775,
-    "ast_hash": "84695b18f1db24004b4d017c21e4a6e3",
+    "mtime": 1783595706.8834915,
+    "ast_hash": "caa8e248422f1b7e4121175d622d69ad",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/CorpoDettaglio.jsx": {
-    "mtime": 1783499524.01567,
-    "ast_hash": "7fce05dda97032a4ce8e41ae403d7f0c",
+    "mtime": 1783595723.4204254,
+    "ast_hash": "d3d604e25d07c0f861a56751b5143339",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/HomePage.jsx": {
-    "mtime": 1783499544.974621,
-    "ast_hash": "2317d44b90e5c104d05b7be6c6d79842",
+    "mtime": 1783595705.3096673,
+    "ast_hash": "1e6a4b1278f388e9eb8ab314d3d3fefe",
     "semantic_hash": ""
   },
   "resources/views/admin/categorie/create.blade.php": {
@@ -480,8 +480,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/categorie/index.blade.php": {
-    "mtime": 1783502042.9997501,
-    "ast_hash": "3a128a5cbc22b84a8bc77de819bcd7e9",
+    "mtime": 1783595676.546317,
+    "ast_hash": "bba03f221f3160ee808735f85f73b2da",
     "semantic_hash": ""
   },
   "resources/views/admin/categorie/show.blade.php": {
@@ -520,8 +520,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/curiosita/index.blade.php": {
-    "mtime": 1783502046.6460342,
-    "ast_hash": "1910726ebfbd57d7a5e809229f248622",
+    "mtime": 1783595679.439345,
+    "ast_hash": "ed221f7884411b488fe9495a55709f77",
     "semantic_hash": ""
   },
   "resources/views/admin/dashboard.blade.php": {
@@ -540,8 +540,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/galleria/index.blade.php": {
-    "mtime": 1783501983.1968367,
-    "ast_hash": "d9b10867079ef385c8028fcc2d3ad99f",
+    "mtime": 1783595685.4815288,
+    "ast_hash": "e2a13928567f43408c0f6be2e236c0bc",
     "semantic_hash": ""
   },
   "resources/views/admin/layouts/app.blade.php": {
@@ -560,8 +560,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/missioni/index.blade.php": {
-    "mtime": 1783501196.8325486,
-    "ast_hash": "2c3cb798b30d05673234a6e2f61af4ca",
+    "mtime": 1783595682.4361286,
+    "ast_hash": "ad4d9da1018e9dcba037ee60d6d45868",
     "semantic_hash": ""
   },
   "resources/views/admin/missioni/show.blade.php": {
@@ -595,8 +595,8 @@
     "semantic_hash": ""
   },
   "routes/web.php": {
-    "mtime": 1783437248.3373685,
-    "ast_hash": "a57123a006a9d5aabf21dd68c65d2fde",
+    "mtime": 1783595672.9254112,
+    "ast_hash": "f32bc9fb653121d80db84c454ec3bd43",
     "semantic_hash": ""
   },
   "storage/framework/views/1feba0814ee0d999cc60b850dce00bf0.php": {
@@ -610,13 +610,13 @@
     "semantic_hash": ""
   },
   "storage/framework/views/2f0b2672335a9102d30315f3470c9de0.php": {
-    "mtime": 1783435808.6289887,
-    "ast_hash": "ac301e791756f906a999e3ef6bc1174a",
+    "mtime": 1783596097.7387636,
+    "ast_hash": "6314876871a1ced10018579a23179093",
     "semantic_hash": ""
   },
   "storage/framework/views/511164019d61ce822a7f487b8b4ce4dd.php": {
-    "mtime": 1783435795.5889916,
-    "ast_hash": "948300b5f953cef404476f85531c594d",
+    "mtime": 1783596087.2637045,
+    "ast_hash": "e9c2ce36fb72c0a6c49e51821500fbc4",
     "semantic_hash": ""
   },
   "storage/framework/views/7194bae39dfcdc1597a0f00c92a16a9a.php": {
@@ -625,8 +625,8 @@
     "semantic_hash": ""
   },
   "storage/framework/views/bd63c3bfd5a99b3c50f00686ce5133ec.php": {
-    "mtime": 1783435803.4328225,
-    "ast_hash": "e57b0ec72fb41a090583347d9e604733",
+    "mtime": 1783596101.7376132,
+    "ast_hash": "43d30d2f8ac29eca649e3d0a343961e6",
     "semantic_hash": ""
   },
   "storage/framework/views/dc2d6e0c6f76415dab9fb4a0f8919c4b.php": {
@@ -635,8 +635,8 @@
     "semantic_hash": ""
   },
   "storage/framework/views/e958c3e9005acd5155e10228bb0de30a.php": {
-    "mtime": 1783500075.7648103,
-    "ast_hash": "981f27d3f46b1881843fb3c56e264907",
+    "mtime": 1783583963.2780974,
+    "ast_hash": "2f03ada29e5a3b5fa54ccadcee33d551",
     "semantic_hash": ""
   },
   "tailwind.config.js": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783580959.9946308,
-    "ast_hash": "1ae9818785fcb349ab0dc4cebbdcb135",
+    "mtime": 1783583249.0965776,
+    "ast_hash": "4b7a8af324db098139de7952a5819796",
     "semantic_hash": ""
   },
   "docs/bug.md": {
@@ -710,18 +710,18 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1783580919.4311976,
-    "ast_hash": "d3419c4b59d6b0e0b10342cd4e64db64",
+    "mtime": 1783596261.716753,
+    "ast_hash": "f7d4fb4a4b673dfccf8fab8c80cd8eaf",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
-    "mtime": 1783580950.0982804,
-    "ast_hash": "f64b25101abf71808e71f602b8c36310",
+    "mtime": 1783596050.5192907,
+    "ast_hash": "f67ac4f15ea186697a5c6594b78b1c1e",
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1783580904.0638318,
-    "ast_hash": "d7735154d4d67777bc3689c28031477c",
+    "mtime": 1783596280.3675907,
+    "ast_hash": "09178a7c76df24c41ef2de0e5688056a",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -1220,8 +1220,8 @@
     "semantic_hash": ""
   },
   "docs/testing.md": {
-    "mtime": 1783580933.5303218,
-    "ast_hash": "45d9a7a90b763e8aa903f3c16f879214",
+    "mtime": 1783596256.3381793,
+    "ast_hash": "ed92c2d1ee85d47eab45cab664ecec40",
     "semantic_hash": ""
   },
   "resources/js/guest/test/CategoriaBadge.test.jsx": {
@@ -1277,6 +1277,101 @@
   "resources/js/guest/test/apiClient.test.js": {
     "mtime": 1783576716.3005352,
     "ast_hash": "e2bb24ee5cfeeaf0a91f7d6a5ba01dc4",
+    "semantic_hash": ""
+  },
+  "resources/js/guest/components/ErrorBoundary.jsx": {
+    "mtime": 1783595725.8603444,
+    "ast_hash": "ef5f39ded39b25b803090365cc091fc2",
+    "semantic_hash": ""
+  },
+  "resources/js/guest/pages/NotFound.jsx": {
+    "mtime": 1783595709.8151093,
+    "ast_hash": "439127b3c3768f1490ce3cf132d98025",
+    "semantic_hash": ""
+  },
+  "resources/views/admin/curiosita/show.blade.php": {
+    "mtime": 1783595704.0871558,
+    "ast_hash": "f8f2af83cacd715245ea418502a649e9",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/06275c1cca3e62ecb19f4140a5da4291.php": {
+    "mtime": 1783596088.0075078,
+    "ast_hash": "c1aaa2a0df7d3e7e467f8173b9d91947",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/093c523dab0375d2ca078c5467b1e929.php": {
+    "mtime": 1783596090.4457035,
+    "ast_hash": "08505de250bd5df40df44139d107f299",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/0f96fd572fde9a8541f33cf6858b5373.php": {
+    "mtime": 1783596102.3704503,
+    "ast_hash": "af8892f3bc72f130c920b65ebfcb2222",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/416b5acd62ac97fdecf87ae2da422c99.php": {
+    "mtime": 1783596109.8249292,
+    "ast_hash": "10076a4dad50b9672b4e94ac7b51a93c",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/4d4e1525e176207ea9a99d967f101289.php": {
+    "mtime": 1783596113.0438063,
+    "ast_hash": "fea7a7b3e14faf4561c3a5775c1d9e5c",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/517558cdbda0829908aef03ee099f9b7.php": {
+    "mtime": 1783596089.8730567,
+    "ast_hash": "0de11bcdd6fdcf19c63b2e7df02e0400",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/57592fac1a0a2cdc65efd4ff89e8ba29.php": {
+    "mtime": 1783596112.4822414,
+    "ast_hash": "f7d18a05b36b0617a234d717dcbe79a1",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/76c988b7019738b3aa7296313afc92c0.php": {
+    "mtime": 1783596099.97396,
+    "ast_hash": "26ec5e832aae9829524957cbd0b7b1c3",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/aebcaf54b6e931ec20b0b981b0e449e5.php": {
+    "mtime": 1783596107.95211,
+    "ast_hash": "6098350d21bd9de0b83aa5c346db4f78",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/c2ffd5840063245b4dbadef9e75add7b.php": {
+    "mtime": 1783596099.572544,
+    "ast_hash": "eb12c773a744017a805f8f166dd35ff3",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/d9a5339113a1f5830c987a8d4f37435c.php": {
+    "mtime": 1783596098.5762308,
+    "ast_hash": "b0411607be2c6a5c57fa2dd387cdb567",
+    "semantic_hash": ""
+  },
+  "storage/framework/views/dfe5955e638d01ec782459fa0454fb58.php": {
+    "mtime": 1783596111.1358118,
+    "ast_hash": "557cb97d06621957fd3c5d38c6583c6f",
+    "semantic_hash": ""
+  },
+  "tests/Feature/Admin/CategoriaCrudTest.php": {
+    "mtime": 1783595870.286873,
+    "ast_hash": "3e774d152e8b129c54f99db8ef2c2d87",
+    "semantic_hash": ""
+  },
+  "tests/Feature/Admin/CuriositaCrudTest.php": {
+    "mtime": 1783595883.4087522,
+    "ast_hash": "a70314ce40c89708d27b6a7cc520cb76",
+    "semantic_hash": ""
+  },
+  "tests/Feature/Admin/GalleriaCrudTest.php": {
+    "mtime": 1783595889.3620756,
+    "ast_hash": "89309a759fa5107d63f540fd7cbc891a",
+    "semantic_hash": ""
+  },
+  "tests/Feature/Admin/MissioneCrudTest.php": {
+    "mtime": 1783595877.0604463,
+    "ast_hash": "b97e3afd05e7aed67be80c587dc053b9",
     "semantic_hash": ""
   }
 }

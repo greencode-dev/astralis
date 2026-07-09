@@ -10,13 +10,15 @@ use Illuminate\View\View;
 
 class CategoriaController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
         $this->authorize('viewAny', Categoria::class);
 
         $categorie = Categoria::withCount('corpiCelesti')
+            ->when($request->get('search'), fn($q, $v) => $q->where('nome', 'like', "%{$v}%"))
             ->orderBy('nome')
-            ->get();
+            ->paginate(20)
+            ->withQueryString();
 
         return view('admin.categorie.index', compact('categorie'));
     }

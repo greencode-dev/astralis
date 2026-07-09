@@ -35,7 +35,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(
     Route::resource('missioni', MissioneController::class)->parameters([
         'missioni' => 'missione',
     ]);
-    Route::resource('curiosita', CuriositaController::class)->except(['show'])->parameters([
+    Route::resource('curiosita', CuriositaController::class)->parameters([
         'curiosita' => 'curiositum',
     ]);
     Route::resource('galleria', GalleriaController::class)->except(['show'])->parameters([

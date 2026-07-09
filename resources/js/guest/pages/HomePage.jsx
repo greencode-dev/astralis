@@ -12,6 +12,10 @@ export default function HomePage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        document.title = 'Astralis — Catalogo di Corpi Celesti';
+    }, []);
+
+    useEffect(() => {
         async function loadData() {
             try {
                 const [corpiRes, statsData] = await Promise.all([

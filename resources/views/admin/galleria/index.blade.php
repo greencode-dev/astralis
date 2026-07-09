@@ -25,6 +25,26 @@
         </div>
     @endif
 
+    <div class="mb-4">
+        <form method="GET" action="{{ route('admin.galleria.index') }}" class="flex gap-2">
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cerca per didascalia..."
+                   class="flex-1 px-4 py-2 rounded-lg text-sm transition-all duration-200"
+                   style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
+                   onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
+                   onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+            <button type="submit"
+                    class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25">
+                Cerca
+            </button>
+            @if (request('search'))
+                <a href="{{ route('admin.galleria.index') }}"
+                   class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 border border-gray-400/20 hover:text-red-500 hover:border-red-500/30">
+                    Cancella filtro
+                </a>
+            @endif
+        </form>
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         @forelse ($galleria as $item)
             <div class="rounded-xl overflow-hidden transition-all duration-200 bg-admin-card border border-admin-primary/10 hover:border-admin-primary/30 hover:-translate-y-0.5">
