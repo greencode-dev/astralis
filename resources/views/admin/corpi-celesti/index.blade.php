@@ -7,31 +7,18 @@
     <div class="flex justify-between items-center mb-6">
         <p class="text-sm text-gray-400">Gestisci i corpi celesti del catalogo</p>
         <a href="{{ route('admin.corpi-celesti.create') }}"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:bg-[#1BB8D1]">
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             Nuovo Corpo Celeste
         </a>
     </div>
 
-    @if (session('success'))
-        <div class="mb-6 p-4 rounded-lg text-sm bg-green-500/15 text-green-500 border border-green-500/20">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="mb-6 p-4 rounded-lg text-sm bg-red-500/15 text-red-500 border border-red-500/20">
-            {{ session('error') }}
-        </div>
-    @endif
+    @include('admin.partials.flash')
 
     <div class="mb-4">
         <form method="GET" action="{{ route('admin.corpi-celesti.index') }}" class="flex gap-2">
             <input type="text" name="search" value="{{ request('search') }}" placeholder="Cerca per nome..."
-                   class="flex-1 px-4 py-2 rounded-lg text-sm transition-all duration-200"
-                   style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                   onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                   onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                   class="admin-input flex-1">
             <button type="submit"
                     class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25">
                 Cerca
@@ -45,7 +32,7 @@
         </form>
     </div>
 
-    <div class="rounded-xl overflow-hidden bg-admin-card border border-admin-primary/10">
+    <div class="rounded-xl overflow-x-auto bg-admin-card border border-admin-primary/10">
         <table class="w-full text-sm">
             <thead>
                 <tr class="border-b border-admin-primary/10">

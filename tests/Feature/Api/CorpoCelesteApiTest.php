@@ -129,7 +129,7 @@ class CorpoCelesteApiTest extends TestCase
         $corpo = CorpoCeleste::factory()->create(['categoria_id' => $this->categoria->id]);
         CorpoCeleste::factory(6)->create(['categoria_id' => $this->categoria->id]);
 
-        $response = $this->getJson("/api/corpi-celesti/{$corpo->id}/simili");
+        $response = $this->getJson("/api/corpi-celesti/{$corpo->slug}/simili");
 
         $response->assertStatus(200);
         $this->assertCount(4, $response->json('data'));
@@ -141,7 +141,7 @@ class CorpoCelesteApiTest extends TestCase
     {
         $corpo = CorpoCeleste::factory()->create(['categoria_id' => $this->categoria->id]);
 
-        $response = $this->getJson("/api/corpi-celesti/{$corpo->id}/simili");
+        $response = $this->getJson("/api/corpi-celesti/{$corpo->slug}/simili");
 
         $ids = array_column($response->json('data'), 'id');
         $this->assertNotContains($corpo->id, $ids);

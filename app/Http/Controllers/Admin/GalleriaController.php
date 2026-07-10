@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AggiornaOrdineRequest;
+use App\Http\Requests\StoreGalleriaCorpoRequest;
+use App\Http\Requests\UpdateGalleriaCorpoRequest;
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
 use Illuminate\Http\RedirectResponse;
@@ -39,18 +42,11 @@ class GalleriaController extends Controller
         return view('admin.galleria.create', compact('corpi'));
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreGalleriaCorpoRequest $request): RedirectResponse
     {
         $this->authorize('create', GalleriaCorpo::class);
 
-        $validated = $request->validate([
-            'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
-            'percorso' => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
-            'didascalia' => ['nullable', 'string', 'max:500'],
-            'crediti' => ['nullable', 'string', 'max:255'],
-            'ordine' => ['nullable', 'integer', 'min:0', 'max:9999'],
-        ]);
-
+        $validated = $request->validated();
         $validated['percorso'] = $this->uploadImmagine($request->file('percorso'));
         $validated['ordine'] = $validated['ordine'] ?? 0;
 
@@ -69,17 +65,11 @@ class GalleriaController extends Controller
         return view('admin.galleria.edit', compact('galleriaCorpo', 'corpi'));
     }
 
-    public function update(Request $request, GalleriaCorpo $galleriaCorpo): RedirectResponse
+    public function update(UpdateGalleriaCorpoRequest $request, GalleriaCorpo $galleriaCorpo): RedirectResponse
     {
         $this->authorize('update', $galleriaCorpo);
 
-        $validated = $request->validate([
-            'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
-            'percorso' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
-            'didascalia' => ['nullable', 'string', 'max:500'],
-            'crediti' => ['nullable', 'string', 'max:255'],
-            'ordine' => ['nullable', 'integer', 'min:0', 'max:9999'],
-        ]);
+        $validated = $request->validated();
 
         if ($request->hasFile('percorso')) {
             Storage::disk('public')->delete('galleria/' . $galleriaCorpo->percorso);
@@ -108,13 +98,11 @@ class GalleriaController extends Controller
             ->with('success', 'Immagine eliminata con successo.');
     }
 
-    public function aggiornaOrdine(Request $request, GalleriaCorpo $galleriaCorpo): RedirectResponse
+    public function aggiornaOrdine(AggiornaOrdineRequest $request, GalleriaCorpo $galleriaCorpo): RedirectResponse
     {
         $this->authorize('update', $galleriaCorpo);
 
-        $request->validate([
-            'direzione' => ['required', 'in:su,giu'],
-        ]);
+        $request->validated();
 
         $step = $request->direzione === 'su' ? -1 : 1;
         $galleriaCorpo->update(['ordine' => max(0, $galleriaCorpo->ordine + $step)]);

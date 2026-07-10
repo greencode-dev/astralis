@@ -12,8 +12,8 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 function PageLoader() {
     return (
-        <div className="flex items-center justify-center py-32" style={{ backgroundColor: '#0A0A1A' }}>
-            <div className="w-8 h-8 rounded-full animate-spin" style={{ border: '3px solid rgba(34, 211, 238, 0.2)', borderTopColor: '#22D3EE' }} />
+        <div className="flex items-center justify-center py-32 bg-admin-bg">
+            <div className="w-8 h-8 rounded-full animate-spin border-[3px] border-admin-primary/20 border-t-admin-primary" />
         </div>
     );
 }
@@ -21,7 +21,7 @@ function PageLoader() {
 export default function App() {
     return (
         <BrowserRouter>
-            <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#0A0A1A' }}>
+            <div className="min-h-screen flex flex-col bg-admin-bg">
                 <ErrorBoundary>
                     <Navbar />
                     <main className="flex-1">

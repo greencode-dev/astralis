@@ -39,7 +39,7 @@
                    class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-accent/15 text-admin-accent border border-admin-accent/20 hover:bg-admin-accent/25">
                     Modifica
                 </a>
-                <form method="POST" action="{{ route('admin.curiosita.destroy', $curiositum) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare questa curiosità?');">
+                <form method="POST" action="{{ route('admin.curiosita.destroy', $curiositum) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $curiositum->titolo }}?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit"

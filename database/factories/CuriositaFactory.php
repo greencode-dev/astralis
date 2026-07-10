@@ -12,6 +12,7 @@ class CuriositaFactory extends Factory
     public function definition(): array
     {
         return [
+            'corpo_celeste_id' => \App\Models\CorpoCeleste::factory(),
             'titolo' => fake()->sentence(3),
             'descrizione' => fake()->paragraph(),
             'fonte' => fake()->url(),

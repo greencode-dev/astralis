@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .admin-input {
+        @apply w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 bg-admin-bg text-admin-text border border-admin-primary/20 focus:border-admin-primary focus:ring-2 focus:ring-admin-primary/10 focus:outline-none;
+    }
+    .admin-input-mono {
+        @apply admin-input font-mono;
+    }
+    .admin-btn-primary {
+        @apply px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90;
+    }
+    .admin-btn-cancel {
+        @apply px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 hover:text-admin-text hover:bg-white/5;
+    }
+}

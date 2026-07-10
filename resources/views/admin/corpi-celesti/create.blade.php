@@ -18,10 +18,7 @@
                     <div>
                         <label for="nome" class="block text-sm font-medium mb-2 text-admin-text">Nome (inglese) <span class="text-red-500">*</span></label>
                         <input type="text" name="nome" id="nome" value="{{ old('nome') }}" required
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         @error('nome')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
@@ -29,10 +26,7 @@
                         <label for="nome_it" class="block text-sm font-medium mb-2 text-admin-text">Nome (italiano)</label>
                         <div class="flex gap-2">
                             <input type="text" name="nome_it" id="nome_it" value="{{ old('nome_it') }}"
-                                   class="flex-1 px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                                   style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                                   onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                                   onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                                   class="admin-input flex-1">
                             <button type="button" id="cercaNasaBtn"
                                     class="px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25 hover:border-admin-primary/40">
                                 Cerca su NASA
@@ -45,10 +39,7 @@
                     <div>
                         <label for="categoria_id" class="block text-sm font-medium mb-2 text-admin-text">Categoria <span class="text-red-500">*</span></label>
                         <select name="categoria_id" id="categoria_id" required
-                                class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                                style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                                onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                                onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                                class="admin-input">
                             <option value="">Seleziona categoria</option>
                             @foreach ($categorie as $categoria)
                                 <option value="{{ $categoria->id }}" {{ old('categoria_id') == $categoria->id ? 'selected' : '' }}>{{ $categoria->nome }} {{ $categoria->icona }}</option>
@@ -60,20 +51,14 @@
                     <div>
                         <label for="tipo" class="block text-sm font-medium mb-2 text-admin-text">Tipo</label>
                         <input type="text" name="tipo" id="tipo" value="{{ old('tipo') }}" placeholder="es. Pianeta roccioso"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         @error('tipo')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="immagine" class="block text-sm font-medium mb-2 text-admin-text">URL Immagine</label>
                         <input type="url" name="immagine" id="immagine" value="{{ old('immagine') }}" placeholder="https://images-assets.nasa.gov/..."
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         <p class="mt-1 text-xs text-gray-500">Lascia vuoto per importare automaticamente da NASA.</p>
                         @error('immagine')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
@@ -81,80 +66,56 @@
                     <div>
                         <label for="massa_kg" class="block text-sm font-medium mb-2 text-admin-text">Massa (kg)</label>
                         <input type="text" name="massa_kg" id="massa_kg" value="{{ old('massa_kg') }}" placeholder="es. 5.972e24"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2); font-family: monospace;"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input-mono">
                         @error('massa_kg')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="distanza_km" class="block text-sm font-medium mb-2 text-admin-text">Distanza (km)</label>
                         <input type="text" name="distanza_km" id="distanza_km" value="{{ old('distanza_km') }}" placeholder="es. 149600000"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2); font-family: monospace;"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input-mono">
                         @error('distanza_km')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="diametro_km" class="block text-sm font-medium mb-2 text-admin-text">Diametro (km)</label>
                         <input type="text" name="diametro_km" id="diametro_km" value="{{ old('diametro_km') }}" placeholder="es. 12756"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2); font-family: monospace;"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input-mono">
                         @error('diametro_km')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="gravita" class="block text-sm font-medium mb-2 text-admin-text">Gravità (m/s²)</label>
                         <input type="number" step="0.0001" name="gravita" id="gravita" value="{{ old('gravita') }}" placeholder="es. 9.81"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         @error('gravita')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="temperatura" class="block text-sm font-medium mb-2 text-admin-text">Temperatura (°C)</label>
                         <input type="number" step="0.01" name="temperatura" id="temperatura" value="{{ old('temperatura') }}" placeholder="es. 15"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         @error('temperatura')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="periodo_orbitale" class="block text-sm font-medium mb-2 text-admin-text">Periodo orbitale (giorni)</label>
                         <input type="number" step="0.000001" name="periodo_orbitale" id="periodo_orbitale" value="{{ old('periodo_orbitale') }}" placeholder="es. 365.25"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         @error('periodo_orbitale')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="scopritore" class="block text-sm font-medium mb-2 text-admin-text">Scopritore</label>
                         <input type="text" name="scopritore" id="scopritore" value="{{ old('scopritore') }}" placeholder="es. Galileo Galilei"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         @error('scopritore')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
 
                     <div>
                         <label for="anno_scoperta" class="block text-sm font-medium mb-2 text-admin-text">Anno scoperta</label>
                         <input type="number" name="anno_scoperta" id="anno_scoperta" value="{{ old('anno_scoperta') }}" placeholder="es. 1781"
-                               class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                               style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                               onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                               onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                               class="admin-input">
                         @error('anno_scoperta')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                     </div>
                 </div>
@@ -162,10 +123,7 @@
                 <div class="mb-5 mt-5">
                     <label for="descrizione" class="block text-sm font-medium mb-2 text-admin-text">Descrizione</label>
                     <textarea name="descrizione" id="descrizione" rows="5"
-                              class="w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200"
-                              style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                              onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                              onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">{{ old('descrizione') }}</textarea>
+                              class="admin-input">{{ old('descrizione') }}</textarea>
                     @error('descrizione')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
                 </div>
 
@@ -179,11 +137,11 @@
 
                 <div class="flex items-center gap-3">
                     <button type="submit"
-                            class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:bg-[#1BB8D1]">
+                            class="admin-btn-primary">
                         Salva Corpo Celeste
                     </button>
                     <a href="{{ route('admin.corpi-celesti.index') }}"
-                       class="px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 hover:text-admin-text hover:bg-white/5">
+                       class="admin-btn-cancel">
                         Annulla
                     </a>
                 </div>
@@ -192,43 +150,4 @@
     </div>
 @endsection
 
-@push('scripts')
-<script>
-document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
-    var nomeIt = document.getElementById('nome_it').value.trim();
-    var resultEl = document.getElementById('suggestResult');
-    if (!nomeIt) {
-        resultEl.textContent = 'Inserisci un nome in italiano.';
-        resultEl.style.color = '#EF4444';
-        return;
-    }
-
-    resultEl.textContent = 'Cerco su NASA...';
-    resultEl.style.color = '#6B7280';
-
-    fetch('{{ route("admin.corpi-celesti.suggest-nome") }}', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        },
-        body: JSON.stringify({ nome_it: nomeIt })
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-        if (data.success) {
-            document.getElementById('nome').value = data.nome;
-            resultEl.textContent = 'Suggerito: ' + data.nome;
-            resultEl.style.color = '#22C55E';
-        } else {
-            resultEl.textContent = data.message;
-            resultEl.style.color = '#EF4444';
-        }
-    })
-    .catch(function() {
-        resultEl.textContent = 'Errore di connessione.';
-        resultEl.style.color = '#EF4444';
-    });
-});
-</script>
-@endpush
+@include('admin.partials.nasa-suggest-js')

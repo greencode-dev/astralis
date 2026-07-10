@@ -9,12 +9,12 @@ export default function Navbar() {
     const location = useLocation();
 
     return (
-        <nav style={{ backgroundColor: '#111128', borderBottom: '1px solid rgba(34, 211, 238, 0.1)' }}>
+        <nav className="bg-admin-card border-b border-admin-primary/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <Link to="/" className="flex items-center gap-3">
                         <span className="text-2xl">🚀</span>
-                        <span className="text-xl font-bold" style={{ color: '#22D3EE' }}>Astralis</span>
+                        <span className="text-xl font-bold text-admin-primary">Astralis</span>
                     </Link>
 
                     <div className="flex items-center gap-1">
@@ -24,11 +24,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
-                                    style={{
-                                        backgroundColor: isActive ? 'rgba(34, 211, 238, 0.15)' : 'transparent',
-                                        color: isActive ? '#22D3EE' : '#B8B8D0',
-                                    }}
+                                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE] ${isActive ? 'bg-admin-primary/15 text-admin-primary' : 'text-admin-dim'}`}
                                 >
                                     {link.label}
                                 </Link>

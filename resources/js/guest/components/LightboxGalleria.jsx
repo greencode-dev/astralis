@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { Image } from 'lucide-react';
@@ -9,8 +9,7 @@ function Thumbnail({ slide, index, onOpen }) {
     return (
         <button
             onClick={() => onOpen(index)}
-            className="relative group rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:scale-[1.02]"
-            style={{ backgroundColor: '#111128', border: '1px solid rgba(34, 211, 238, 0.1)' }}
+            className="relative group rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:scale-[1.02] bg-admin-card border border-admin-primary/10"
             aria-label={slide.didascalia || 'Apri immagine nella galleria'}
         >
             <div className="aspect-[4/3] overflow-hidden">
@@ -22,17 +21,17 @@ function Thumbnail({ slide, index, onOpen }) {
                         onError={() => setError(true)}
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center" style={{ background: '#111128' }}>
-                        <Image size={32} style={{ color: '#7A7A9A' }} aria-hidden="true" />
+                    <div className="w-full h-full flex items-center justify-center bg-admin-card">
+                        <Image size={32} className="text-admin-muted" aria-hidden="true" />
                     </div>
                 )}
             </div>
             <div className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                 style={{ background: 'linear-gradient(transparent 50%, rgba(0,0,0,0.8))' }}>
                 <div className="text-left">
-                    <p className="text-sm font-medium" style={{ color: '#F0F0FA' }}>{slide.didascalia}</p>
+                    <p className="text-sm font-medium text-admin-text">{slide.didascalia}</p>
                     {slide.crediti && (
-                        <p className="text-xs mt-0.5" style={{ color: '#B8B8D0' }}>© {slide.crediti}</p>
+                        <p className="text-xs mt-0.5 text-admin-dim">© {slide.crediti}</p>
                     )}
                 </div>
             </div>
@@ -44,9 +43,10 @@ export default function LightboxGalleria({ immagini }) {
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(0);
 
-    const slides = (immagini || [])
+    const slides = useMemo(() => (immagini || [])
         .filter(img => img.immagine_url)
-        .map(img => ({ src: img.immagine_url, alt: img.didascalia, didascalia: img.didascalia, crediti: img.crediti }));
+        .map(img => ({ src: img.immagine_url, alt: img.didascalia, didascalia: img.didascalia, crediti: img.crediti })),
+    [immagini]);
 
     if (slides.length === 0) return null;
 
@@ -64,10 +64,6 @@ export default function LightboxGalleria({ immagini }) {
                 index={index}
                 slides={slides}
                 styles={{ container: { backgroundColor: 'rgba(10, 10, 26, 0.95)' } }}
-                render={{
-                    buttonPrev: () => null,
-                    buttonNext: () => null,
-                }}
             />
         </div>
     );

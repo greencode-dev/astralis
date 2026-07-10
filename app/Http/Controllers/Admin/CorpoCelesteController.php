@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCorpoCelesteRequest;
+use App\Http\Requests\SuggestNomeRequest;
 use App\Http\Requests\UpdateCorpoCelesteRequest;
 use App\Models\Categoria;
 use App\Models\CorpoCeleste;
@@ -112,11 +113,9 @@ class CorpoCelesteController extends Controller
             ->with('success', 'Immagine principale aggiornata con successo.');
     }
 
-    public function suggestNome(Request $request, NasaImageService $nasaService, WordMapService $wordMapService): \Illuminate\Http\JsonResponse
+    public function suggestNome(SuggestNomeRequest $request, NasaImageService $nasaService, WordMapService $wordMapService): \Illuminate\Http\JsonResponse
     {
         $this->authorize('viewAny', CorpoCeleste::class);
-
-        $request->validate(['nome_it' => ['required', 'string', 'max:255']]);
 
         $nomeIt = $request->input('nome_it');
 

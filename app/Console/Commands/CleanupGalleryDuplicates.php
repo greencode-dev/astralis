@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\GalleriaCorpo;
 use App\Services\NasaImageService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
 class CleanupGalleryDuplicates extends Command
@@ -183,19 +184,17 @@ class CleanupGalleryDuplicates extends Command
 
     private function headRequest(string $url): int
     {
-        $ch = curl_init($url);
-        curl_setopt_array($ch, [
-            CURLOPT_NOBODY => true,
-            CURLOPT_TIMEOUT => 5,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_FOLLOWLOCATION => true,
-        ]);
-        curl_exec($ch);
-        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+        $http = Http::timeout(5)->withoutVerifying();
 
-        return $status;
+        if (app()->environment('local', 'testing')) {
+            $http = $http->withoutVerifying();
+        }
+
+        try {
+            return $http->head($url)->status();
+        } catch (\Exception $e) {
+            return 0;
+        }
     }
 
     private function handleSync(GalleriaCorpo $item, bool $dryRun): bool

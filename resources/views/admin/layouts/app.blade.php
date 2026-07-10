@@ -9,13 +9,16 @@
     <link rel="preconnect" href="https://images-assets.nasa.gov">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css'])
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+            onerror="this.onerror=null;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js';s.defer=true;document.head.appendChild(s);"></script>
     <style>[x-cloak] { display: none !important; }</style>
 </head>
 <body class="font-sans antialiased bg-admin-bg text-admin-text">
-    <div class="flex h-screen overflow-hidden">
+    <div class="flex h-screen overflow-hidden" x-data="{ sidebarOpen: false }">
 
-        <aside class="flex-shrink-0 w-64 overflow-y-auto bg-admin-card border-r border-admin-primary/10">
+        <aside class="fixed inset-y-0 left-0 z-40 flex-shrink-0 w-64 overflow-y-auto transition-transform duration-300 -translate-x-full bg-admin-card border-r border-admin-primary/10 md:relative md:translate-x-0 md:inset-auto"
+               :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+               @click.away="sidebarOpen = false">
 
             <div class="flex items-center gap-3 px-6 py-5 border-b border-admin-primary/10">
                 <span class="text-2xl">🚀</span>
@@ -76,7 +79,14 @@
 
         <div class="flex flex-col flex-1 overflow-hidden">
             <header class="flex items-center justify-between px-6 py-5 bg-admin-card border-b border-admin-primary/10">
-                <h2 class="text-lg font-semibold">@yield('page_title', 'Dashboard')</h2>
+                <div class="flex items-center gap-3">
+                    <button @click="sidebarOpen = !sidebarOpen"
+                            class="p-2 rounded-lg md:hidden text-gray-400 hover:text-admin-primary hover:bg-admin-primary/10"
+                            aria-label="Apri menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <h2 class="text-lg font-semibold">@yield('page_title', 'Dashboard')</h2>
+                </div>
                 <div class="flex items-center gap-4">
                     <span class="text-sm text-gray-400">{{ Auth::user()->name }}</span>
                     <form method="POST" action="{{ route('logout') }}">

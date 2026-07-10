@@ -21,7 +21,8 @@ class MissioneController extends Controller
             $query->where('stato', $request->stato);
         }
 
-        $missioni = $query->with('corpiCelesti')->orderBy('data_lancio', 'desc')->get();
+        $perPage = max(1, min($request->integer('per_page', 20), 100));
+        $missioni = $query->with('corpiCelesti')->orderBy('data_lancio', 'desc')->paginate($perPage);
 
         return MissioneResource::collection($missioni);
     }

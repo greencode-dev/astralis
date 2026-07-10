@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCuriositaRequest;
+use App\Http\Requests\UpdateCuriositaRequest;
 use App\Models\CorpoCeleste;
 use App\Models\Curiosita;
 use Illuminate\Http\RedirectResponse;
@@ -43,18 +45,11 @@ class CuriositaController extends Controller
         return view('admin.curiosita.create', compact('corpi'));
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreCuriositaRequest $request): RedirectResponse
     {
         $this->authorize('create', Curiosita::class);
 
-        $validated = $request->validate([
-            'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
-            'titolo' => ['required', 'string', 'max:255'],
-            'descrizione' => ['required', 'string', 'max:5000'],
-            'fonte' => ['nullable', 'string', 'max:255'],
-        ]);
-
-        Curiosita::create($validated);
+        Curiosita::create($request->validated());
 
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità creata con successo.');
@@ -69,18 +64,11 @@ class CuriositaController extends Controller
         return view('admin.curiosita.edit', compact('curiositum', 'corpi'));
     }
 
-    public function update(Request $request, Curiosita $curiositum): RedirectResponse
+    public function update(UpdateCuriositaRequest $request, Curiosita $curiositum): RedirectResponse
     {
         $this->authorize('update', $curiositum);
 
-        $validated = $request->validate([
-            'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
-            'titolo' => ['required', 'string', 'max:255'],
-            'descrizione' => ['required', 'string', 'max:5000'],
-            'fonte' => ['nullable', 'string', 'max:255'],
-        ]);
-
-        $curiositum->update($validated);
+        $curiositum->update($request->validated());
 
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità aggiornata con successo.');

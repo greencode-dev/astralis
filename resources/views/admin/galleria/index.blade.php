@@ -7,31 +7,18 @@
     <div class="flex justify-between items-center mb-6">
         <p class="text-sm text-gray-400">Gestisci le immagini della galleria dei corpi celesti</p>
         <a href="{{ route('admin.galleria.create') }}"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:bg-[#1BB8D1]">
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             Nuova Immagine
         </a>
     </div>
 
-    @if (session('success'))
-        <div class="mb-6 p-4 rounded-lg text-sm bg-green-500/15 text-green-500 border border-green-500/20">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="mb-6 p-4 rounded-lg text-sm bg-red-500/15 text-red-500 border border-red-500/20">
-            {{ session('error') }}
-        </div>
-    @endif
+    @include('admin.partials.flash')
 
     <div class="mb-4">
         <form method="GET" action="{{ route('admin.galleria.index') }}" class="flex gap-2">
             <input type="text" name="search" value="{{ request('search') }}" placeholder="Cerca per didascalia..."
-                   class="flex-1 px-4 py-2 rounded-lg text-sm transition-all duration-200"
-                   style="background-color: #0A0A1A; color: #F0F0FA; border: 1px solid rgba(34, 211, 238, 0.2);"
-                   onfocus="this.style.borderColor='#22D3EE'; this.style.boxShadow='0 0 0 3px rgba(34,211,238,0.1)';"
-                   onblur="this.style.borderColor='rgba(34,211,238,0.2)'; this.style.boxShadow='none';">
+                   class="admin-input flex-1">
             <button type="submit"
                     class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25">
                 Cerca
@@ -88,16 +75,16 @@
                         </div>
                         <div class="flex items-center gap-1">
                             <a href="{{ route('admin.galleria.edit', $item) }}"
-                               class="p-1.5 rounded-lg transition-all duration-200 hover:text-[#F97316] hover:bg-[rgba(249,115,22,0.1)] text-gray-400"
+                               class="p-1.5 rounded-lg transition-all duration-200 hover:text-admin-accent hover:bg-admin-accent/10 text-gray-400"
                                aria-label="Modifica {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                title="Modifica">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                             </a>
-                            <form method="POST" action="{{ route('admin.galleria.destroy', $item) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare questa immagine?');">
+                            <form method="POST" action="{{ route('admin.galleria.destroy', $item) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $item->didascalia ?? $item->corpoCeleste->nome }}?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
-                                        class="p-1.5 rounded-lg transition-all duration-200 hover:text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] text-gray-400"
+                                        class="p-1.5 rounded-lg transition-all duration-200 hover:text-red-500 hover:bg-red-500/10 text-gray-400"
                                         aria-label="Elimina {{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                                         title="Elimina">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
@@ -113,7 +100,7 @@
         @empty
             <div class="col-span-full text-center py-16">
                 <p class="text-lg mb-2 text-gray-500">Nessuna immagine nella galleria</p>
-                <a href="{{ route('admin.galleria.create') }}" class="text-sm font-medium transition-colors duration-150 hover:text-[#A855F7] text-admin-primary">Aggiungi la prima immagine</a>
+                <a href="{{ route('admin.galleria.create') }}" class="text-sm font-medium transition-colors duration-150 hover:text-admin-secondary text-admin-primary">Aggiungi la prima immagine</a>
             </div>
         @endforelse
     </div>

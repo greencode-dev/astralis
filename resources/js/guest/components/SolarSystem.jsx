@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 const planets = [
     { name: 'Mercurio', size: 8, orbit: 50, color: '#94A3B8', speed: 1.2 },
@@ -49,14 +49,10 @@ function Planet({ planet }) {
                 whileHover={{ scale: 1.5 }}
             />
             <div
-                className="absolute text-xs"
+                className="absolute text-xs text-admin-muted left-1/2 -translate-x-1/2 text-center"
                 style={{
-                    color: '#7A7A9A',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
                     top: planet.size + 4,
                     width: 50,
-                    textAlign: 'center',
                 }}
             >
                 {planet.name}
@@ -66,25 +62,34 @@ function Planet({ planet }) {
 }
 
 export default function SolarSystem() {
+    const stars = useMemo(() => Array.from({ length: 50 }, (_, i) => ({
+        id: i,
+        width: Math.random() * 3 + 1,
+        height: Math.random() * 3 + 1,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        opacity: Math.random() * 0.5 + 0.3,
+        duration: Math.random() * 3 + 2,
+    })), []);
+
     return (
-        <div className="relative flex items-center justify-center" style={{ minHeight: '500px' }}>
-            {/* Stelle sfondo */}
+        <div className="relative flex items-center justify-center min-h-[500px]" aria-hidden="true">
             <div className="absolute inset-0 overflow-hidden">
-                {Array.from({ length: 50 }).map((_, i) => (
+                {stars.map(star => (
                     <motion.div
-                        key={i}
+                        key={star.id}
                         className="absolute rounded-full"
                         style={{
-                            width: Math.random() * 3 + 1,
-                            height: Math.random() * 3 + 1,
+                            width: star.width,
+                            height: star.height,
                             backgroundColor: '#F0F0FA',
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            opacity: Math.random() * 0.5 + 0.3,
+                            left: star.left,
+                            top: star.top,
+                            opacity: star.opacity,
                         }}
                         animate={{ opacity: [0.3, 0.8, 0.3] }}
                         transition={{
-                            duration: Math.random() * 3 + 2,
+                            duration: star.duration,
                             repeat: Infinity,
                             ease: 'easeInOut',
                         }}
@@ -92,42 +97,36 @@ export default function SolarSystem() {
                 ))}
             </div>
 
-            {/* Sole */}
-            <div className="absolute" style={{ zIndex: 10 }}>
+            <div className="absolute z-10">
                 <motion.div
-                    className="rounded-full"
+                    className="rounded-full bg-admin-accent"
                     style={{
                         width: 60,
                         height: 60,
-                        backgroundColor: '#F97316',
                         boxShadow: '0 0 60px rgba(249, 115, 22, 0.6), 0 0 120px rgba(249, 115, 22, 0.3)',
                     }}
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 />
-                <div className="text-center mt-2 text-sm font-semibold" style={{ color: '#F97316' }}>
+                <div className="text-center mt-2 text-sm font-semibold text-admin-accent">
                     Sole
                 </div>
             </div>
 
-            {/* Wrapper orbite + pianeti (stesso origine del Sole) */}
-            <div className="absolute" style={{ zIndex: 5 }}>
-                {/* Orbite */}
+            <div className="absolute z-5">
                 {planets.map(planet => (
                     <div
                         key={planet.name}
-                        className="absolute rounded-full"
+                        className="absolute rounded-full border border-admin-primary/8"
                         style={{
                             width: planet.orbit * 2,
                             height: planet.orbit * 2,
-                            border: '1px solid rgba(34, 211, 238, 0.08)',
                             left: -planet.orbit,
                             top: -planet.orbit,
                         }}
                     />
                 ))}
 
-                {/* Pianeti */}
                 {planets.map(planet => (
                     <Planet key={planet.name} planet={planet} />
                 ))}

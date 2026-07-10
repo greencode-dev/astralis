@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreMissioneRequest;
+use App\Http\Requests\UpdateMissioneRequest;
 use App\Models\Missione;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -34,20 +36,11 @@ class MissioneController extends Controller
         return view('admin.missioni.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreMissioneRequest $request): RedirectResponse
     {
         $this->authorize('create', Missione::class);
 
-        $validated = $request->validate([
-            'nome' => ['required', 'string', 'max:255', 'unique:missioni,nome'],
-            'logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,svg', 'max:1024'],
-            'agenzia' => ['nullable', 'string', 'max:100'],
-            'data_lancio' => ['nullable', 'date'],
-            'durata_giorni' => ['nullable', 'integer', 'min:0'],
-            'stato' => ['nullable', 'string', 'max:50'],
-            'descrizione' => ['nullable', 'string', 'max:5000'],
-            'sito_web' => ['nullable', 'string', 'url', 'max:255'],
-        ]);
+        $validated = $request->validated();
 
         if ($request->hasFile('logo')) {
             $validated['logo'] = $this->uploadLogo($request->file('logo'));
@@ -75,20 +68,11 @@ class MissioneController extends Controller
         return view('admin.missioni.edit', compact('missione'));
     }
 
-    public function update(Request $request, Missione $missione): RedirectResponse
+    public function update(UpdateMissioneRequest $request, Missione $missione): RedirectResponse
     {
         $this->authorize('update', $missione);
 
-        $validated = $request->validate([
-            'nome' => ['required', 'string', 'max:255', 'unique:missioni,nome,' . $missione->id],
-            'logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,svg', 'max:1024'],
-            'agenzia' => ['nullable', 'string', 'max:100'],
-            'data_lancio' => ['nullable', 'date'],
-            'durata_giorni' => ['nullable', 'integer', 'min:0'],
-            'stato' => ['nullable', 'string', 'max:50'],
-            'descrizione' => ['nullable', 'string', 'max:5000'],
-            'sito_web' => ['nullable', 'string', 'url', 'max:255'],
-        ]);
+        $validated = $request->validated();
 
         if ($request->hasFile('logo')) {
             if ($missione->logo) {
@@ -107,7 +91,7 @@ class MissioneController extends Controller
     {
         $this->authorize('delete', $missione);
 
-        if ($missione->corpiCelesti()->count() > 0) {
+        if ($missione->corpiCelesti()->exists()) {
             return redirect()->route('admin.missioni.index')
                 ->with('error', 'Impossibile eliminare: ci sono corpi celesti associati a questa missione.');
         }

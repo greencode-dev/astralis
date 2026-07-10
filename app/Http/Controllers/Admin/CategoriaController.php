@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoriaRequest;
+use App\Http\Requests\UpdateCategoriaRequest;
 use App\Models\Categoria;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,18 +32,11 @@ class CategoriaController extends Controller
         return view('admin.categorie.create');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(StoreCategoriaRequest $request): RedirectResponse
     {
         $this->authorize('create', Categoria::class);
 
-        $validated = $request->validate([
-            'nome' => ['required', 'string', 'max:255', 'unique:categorie,nome'],
-            'icona' => ['nullable', 'string', 'max:50'],
-            'descrizione' => ['nullable', 'string', 'max:1000'],
-            'colore' => ['nullable', 'string', 'max:20'],
-        ]);
-
-        Categoria::create($validated);
+        Categoria::create($request->validated());
 
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria creata con successo.');
@@ -63,18 +58,11 @@ class CategoriaController extends Controller
         return view('admin.categorie.edit', compact('categoria'));
     }
 
-    public function update(Request $request, Categoria $categoria): RedirectResponse
+    public function update(UpdateCategoriaRequest $request, Categoria $categoria): RedirectResponse
     {
         $this->authorize('update', $categoria);
 
-        $validated = $request->validate([
-            'nome' => ['required', 'string', 'max:255', 'unique:categorie,nome,' . $categoria->id],
-            'icona' => ['nullable', 'string', 'max:50'],
-            'descrizione' => ['nullable', 'string', 'max:1000'],
-            'colore' => ['nullable', 'string', 'max:20'],
-        ]);
-
-        $categoria->update($validated);
+        $categoria->update($request->validated());
 
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria aggiornata con successo.');
@@ -84,7 +72,7 @@ class CategoriaController extends Controller
     {
         $this->authorize('delete', $categoria);
 
-        if ($categoria->corpiCelesti()->count() > 0) {
+        if ($categoria->corpiCelesti()->exists()) {
             return redirect()->route('admin.categorie.index')
                 ->with('error', 'Impossibile eliminare: ci sono corpi celesti associati a questa categoria.');
         }

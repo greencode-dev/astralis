@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Filter } from 'lucide-react';
 import CorpoCard from '../components/CorpoCard';
@@ -6,11 +6,21 @@ import SearchBar from '../components/SearchBar';
 import { fetchCorpiCelesti, fetchCategorie } from '../apiClient';
 import { useFetch } from '../hooks/useFetch';
 
+function useDebounce(value, delay = 300) {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+    useEffect(() => {
+        const timer = setTimeout(() => setDebouncedValue(value), delay);
+        return () => clearTimeout(timer);
+    }, [value, delay]);
+    return debouncedValue;
+}
+
 export default function CorpiLista() {
     const [search, setSearch] = useState('');
     const [categoriaSlug, setCategoriaSlug] = useState('');
     const [tipo, setTipo] = useState('');
     const [page, setPage] = useState(1);
+    const debouncedSearch = useDebounce(search);
 
     const { data: categorieData } = useFetch(
         signal => fetchCategorie(signal), []
@@ -20,10 +30,10 @@ export default function CorpiLista() {
             const params = { per_page: 12, page };
             if (categoriaSlug) params.categoria = categoriaSlug;
             if (tipo) params.tipo = tipo;
-            if (search) params.search = search;
+            if (debouncedSearch) params.search = debouncedSearch;
             return fetchCorpiCelesti(params, signal);
         },
-        [page, categoriaSlug, tipo, search]
+        [page, categoriaSlug, tipo, debouncedSearch]
     );
 
     const categorie = categorieData?.data || [];
@@ -63,21 +73,18 @@ export default function CorpiLista() {
 
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            {/* Header */}
             <div className="mb-8">
-                <h1 className="text-3xl font-bold mb-2" style={{ color: '#F0F0FA' }}>
+                <h1 className="text-3xl font-bold mb-2 text-admin-text">
                     Corpi Celesti
                 </h1>
-                <p style={{ color: '#B8B8D0' }}>
+                <p className="text-admin-dim">
                     {total > 0
                         ? `Esplora ${total} corpi celesti nel nostro catalogo`
                         : 'Esplora il catalogo dei corpi celesti'}
                 </p>
             </div>
 
-            {/* Filtri */}
             <div className="mb-8 space-y-4">
-                {/* Search + reset */}
                 <div className="flex flex-col sm:flex-row gap-4">
                     <div className="flex-1">
                         <SearchBar value={search} onChange={handleSearch} placeholder="Cerca per nome o descrizione..." />
@@ -85,28 +92,21 @@ export default function CorpiLista() {
                     {hasFilters && (
                         <button
                             onClick={resetFilters}
-                            className="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(249,115,22,0.1)]"
-                            style={{ color: '#F97316', border: '1px solid rgba(249, 115, 22, 0.3)' }}
+                            className="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(249,115,22,0.1)] text-admin-accent border border-admin-accent/30"
                         >
                             Reset filtri
                         </button>
                     )}
                 </div>
 
-                {/* Categorie */}
                 <div className="flex items-center gap-2 flex-wrap">
-                    <Filter size={16} style={{ color: '#7A7A9A' }} />
+                    <Filter size={16} className="text-admin-muted" />
                     {categorie.map(cat => (
                         <button
                             key={cat.id}
                             onClick={() => handleCategoria(cat.slug)}
-                            className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE]"
-                            style={{
-                                backgroundColor: categoriaSlug === cat.slug ? 'rgba(34, 211, 238, 0.15)' : 'rgba(255, 255, 255, 0.05)',
-                                color: categoriaSlug === cat.slug ? '#22D3EE' : '#B8B8D0',
-                                border: categoriaSlug === cat.slug ? '1px solid rgba(34, 211, 238, 0.4)' : '1px solid transparent',
-                            }}
-
+                            aria-current={categoriaSlug === cat.slug ? 'page' : undefined}
+                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE] ${categoriaSlug === cat.slug ? 'bg-admin-primary/15 text-admin-primary border border-admin-primary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
                         >
                             {cat.nome}
                             {cat.corpi_count !== undefined && (
@@ -116,20 +116,14 @@ export default function CorpiLista() {
                     ))}
                 </div>
 
-                {/* Tipo */}
                 <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-xs font-medium" style={{ color: '#7A7A9A' }}>Tipo:</span>
+                    <span className="text-xs font-medium text-admin-muted">Tipo:</span>
                     {tipi.map(t => (
                         <button
                             key={t}
                             onClick={() => handleTipo(t)}
-                            className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(168,85,247,0.08)] hover:text-[#A855F7]"
-                            style={{
-                                backgroundColor: tipo === t ? 'rgba(168, 85, 247, 0.15)' : 'rgba(255, 255, 255, 0.05)',
-                                color: tipo === t ? '#A855F7' : '#B8B8D0',
-                                border: tipo === t ? '1px solid rgba(168, 85, 247, 0.4)' : '1px solid transparent',
-                            }}
-
+                            aria-current={tipo === t ? 'page' : undefined}
+                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(168,85,247,0.08)] hover:text-[#A855F7] ${tipo === t ? 'bg-admin-secondary/15 text-admin-secondary border border-admin-secondary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
                         >
                             {t}
                         </button>
@@ -137,11 +131,10 @@ export default function CorpiLista() {
                 </div>
             </div>
 
-            {/* Griglia */}
             {loading ? (
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {Array.from({ length: 8 }).map((_, i) => (
-                        <div key={i} className="rounded-xl animate-pulse" style={{ backgroundColor: '#111128', height: 320 }} />
+                        <div key={i} className="rounded-xl animate-pulse bg-admin-card h-[320px]" />
                     ))}
                 </div>
             ) : corpi.length > 0 ? (
@@ -160,17 +153,13 @@ export default function CorpiLista() {
                         ))}
                     </div>
 
-                    {/* Paginazione */}
                     {lastPage > 1 && (
                         <div className="flex items-center justify-center gap-2 mt-10">
                             <button
                                 onClick={() => setPage(p => Math.max(1, p - 1))}
                                 disabled={page === 1}
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)]"
-                                style={{
-                                    color: '#22D3EE',
-                                    border: '1px solid rgba(34, 211, 238, 0.3)',
-                                }}
+                                aria-label="Pagina precedente"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)] text-admin-primary border border-admin-primary/30"
                             >
                                 ← Precedente
                             </button>
@@ -181,16 +170,12 @@ export default function CorpiLista() {
                                     .map((p, idx, arr) => (
                                         <span key={p} className="flex items-center">
                                             {idx > 0 && arr[idx - 1] !== p - 1 && (
-                                                <span className="px-1" style={{ color: '#7A7A9A' }}>...</span>
+                                                <span className="px-1 text-admin-muted">...</span>
                                             )}
                                             <button
                                                 onClick={() => setPage(p)}
-                                                className="w-9 h-9 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)]"
-                                                style={{
-                                                    backgroundColor: p === page ? 'rgba(34, 211, 238, 0.15)' : 'transparent',
-                                                    color: p === page ? '#22D3EE' : '#B8B8D0',
-                                                }}
-
+                                                aria-current={p === page ? 'page' : undefined}
+                                                className={`w-9 h-9 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] ${p === page ? 'bg-admin-primary/15 text-admin-primary' : 'text-admin-dim'}`}
                                             >
                                                 {p}
                                             </button>
@@ -201,11 +186,8 @@ export default function CorpiLista() {
                             <button
                                 onClick={() => setPage(p => Math.min(lastPage, p + 1))}
                                 disabled={page === lastPage}
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)]"
-                                style={{
-                                    color: '#22D3EE',
-                                    border: '1px solid rgba(34, 211, 238, 0.3)',
-                                }}
+                                aria-label="Pagina successiva"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)] text-admin-primary border border-admin-primary/30"
                             >
                                 Successiva →
                             </button>
@@ -213,9 +195,9 @@ export default function CorpiLista() {
                     )}
                 </>
             ) : (
-                <div className="text-center py-20">
-                    <p className="text-lg" style={{ color: '#B8B8D0' }}>Nessun risultato trovato</p>
-                    <p className="text-sm mt-2" style={{ color: '#7A7A9A' }}>Prova a modificare i filtri di ricerca</p>
+                <div className="text-center py-20" role="alert">
+                    <p className="text-lg text-admin-dim">Nessun risultato trovato</p>
+                    <p className="text-sm mt-2 text-admin-muted">Prova a modificare i filtri di ricerca</p>
                 </div>
             )}
         </div>

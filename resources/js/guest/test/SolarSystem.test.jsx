@@ -22,9 +22,10 @@ describe('SolarSystem', () => {
 
     it('renders 8 orbit rings', () => {
         const { container } = render(<SolarSystem />);
-        const orbits = container.querySelectorAll('.rounded-full');
-        // Orbite hanno bordo visibile + rounded-full, mentre i pianeti no
-        const orbitRings = Array.from(orbits).filter(el => el.style.border);
-        expect(orbitRings).toHaveLength(8);
+        const orbitRings = container.querySelectorAll('.rounded-full.border');
+        const adminBorder = Array.from(orbitRings).filter(el =>
+            Array.from(el.classList).some(c => c.startsWith('border-admin-primary'))
+        );
+        expect(adminBorder).toHaveLength(8);
     });
 });

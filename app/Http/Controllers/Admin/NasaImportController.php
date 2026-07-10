@@ -6,14 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\CorpoCeleste;
 use App\Jobs\ImportNasaImage;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 
 class NasaImportController extends Controller
 {
     public function index(): View
     {
-        Gate::authorize('admin');
+        $this->authorize('viewAny', CorpoCeleste::class);
 
         $corpi = CorpoCeleste::with('categoria')
             ->orderBy('nome')
@@ -24,7 +23,7 @@ class NasaImportController extends Controller
 
     public function import(CorpoCeleste $corpoCeleste): RedirectResponse
     {
-        Gate::authorize('admin');
+        $this->authorize('update', $corpoCeleste);
 
         ImportNasaImage::dispatch($corpoCeleste);
 
@@ -34,7 +33,7 @@ class NasaImportController extends Controller
 
     public function importAll(): RedirectResponse
     {
-        Gate::authorize('admin');
+        $this->authorize('create', CorpoCeleste::class);
 
         $count = 0;
         CorpoCeleste::chunk(50, function ($corpi) use (&$count) {

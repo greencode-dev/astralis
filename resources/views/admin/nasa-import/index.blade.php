@@ -36,7 +36,7 @@
         </button>
     </div>
 
-    <div class="rounded-xl overflow-hidden bg-admin-card border border-admin-primary/10">
+    <div class="rounded-xl overflow-x-auto bg-admin-card border border-admin-primary/10">
         <table class="w-full text-sm">
             <thead>
                 <tr class="border-b border-admin-primary/10">
@@ -60,7 +60,7 @@
                                         ★
                                     </div>
                                 @endif
-                                <a href="{{ route('admin.corpi-celesti.show', $corpo) }}" class="font-medium transition-colors duration-150 hover:text-[#22D3EE] text-admin-text">
+                                <a href="{{ route('admin.corpi-celesti.show', $corpo) }}" class="font-medium transition-colors duration-150 hover:text-admin-primary text-admin-text">
                                     {{ $corpo->nome }}
                                 </a>
                             </div>
@@ -124,7 +124,7 @@
     <div class="mt-6 p-4 rounded-lg bg-admin-card border border-admin-primary/10">
         <h3 class="text-sm font-semibold mb-2 text-admin-text">Note</h3>
         <ul class="text-xs space-y-1 text-gray-400">
-            <li>• Le immagini vengono cercate su <a href="https://images.nasa.gov" target="_blank" class="transition-colors hover:text-[#A855F7] text-admin-primary">images.nasa.gov</a> usando il nome del corpo celeste.</li>
+            <li>• Le immagini vengono cercate su <a href="https://images.nasa.gov" target="_blank" class="transition-colors hover:text-admin-secondary text-admin-primary">images.nasa.gov</a> usando il nome del corpo celeste.</li>
             <li>• Le immagini vengono ridimensionate a 800px (lato lungo) e salvate in <code class="text-yellow-400">storage/app/public/corpi-celesti/</code>.</li>
             <li>• Il pulsante <strong class="text-admin-primary">Importa da NASA</strong> appare solo per i corpi senza immagine.</li>
             <li>• Il pulsante <strong class="text-admin-accent">Forza import</strong> sostituisce l'immagine esistente.</li>
@@ -133,11 +133,15 @@
 
     <div x-show="modalOpen"
          x-cloak
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="force-import-title"
          class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60"
-         @click.away="modalOpen = false">
+         @click.away="modalOpen = false"
+         @keydown.escape.window="modalOpen = false">
         <div class="w-full max-w-md rounded-xl p-6 bg-admin-card border border-admin-accent/30"
              @click.stop>
-            <h3 class="text-lg font-semibold mb-2 text-admin-text">Force Import All</h3>
+            <h3 id="force-import-title" class="text-lg font-semibold mb-2 text-admin-text">Force Import All</h3>
             <p class="text-sm mb-6 text-gray-400">
                 Vuoi davvero importare le immagini dalla NASA per <strong class="text-admin-text">tutti</strong> i corpi celesti?<br>
                 Le immagini esistenti verranno sovrascritte.

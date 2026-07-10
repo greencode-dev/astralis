@@ -1,31 +1,11 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Sun, Moon, Star, Stars, Sparkles, Orbit, Asterisk } from 'lucide-react';
+import { Orbit } from 'lucide-react';
+import { categoryIcons, categoryGradients } from '../constants';
+import { formatDistance } from '../utils';
 import CategoriaBadge from './CategoriaBadge';
 
-const categoryIcons = {
-    'Pianeta': Globe,
-    'Stella': Sun,
-    'Luna': Moon,
-    'Galassia': Stars,
-    'Nebulosa': Sparkles,
-    'Asteroide': Asterisk,
-    'Cometa': Star,
-    'Pianeta Nano': Orbit,
-};
-
-const categoryGradients = {
-    'Pianeta': 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
-    'Stella': 'linear-gradient(135deg, #F97316, #FB923C)',
-    'Luna': 'linear-gradient(135deg, #64748B, #94A3B8)',
-    'Galassia': 'linear-gradient(135deg, #7C3AED, #A855F7)',
-    'Nebulosa': 'linear-gradient(135deg, #DB2777, #F472B6)',
-    'Asteroide': 'linear-gradient(135deg, #57534E, #78716C)',
-    'Cometa': 'linear-gradient(135deg, #16A34A, #22C55E)',
-    'Pianeta Nano': 'linear-gradient(135deg, #4B5563, #6B7280)',
-};
-
-export default function CorpoCard({ corpo }) {
+export default memo(function CorpoCard({ corpo }) {
     const [imgError, setImgError] = useState(false);
     const showImage = !!corpo.immagine_url && !imgError;
     const FallbackIcon = categoryIcons[corpo.categoria?.nome] || Orbit;
@@ -34,8 +14,7 @@ export default function CorpoCard({ corpo }) {
     return (
         <Link
             to={`/corpi-celesti/${corpo.slug}`}
-            className="block rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(34,211,238,0.1)]"
-            style={{ backgroundColor: '#111128', border: '1px solid rgba(34, 211, 238, 0.1)' }}
+            className="block rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(34,211,238,0.1)] bg-admin-card border border-admin-primary/10"
         >
             {showImage ? (
                 <div className="aspect-[16/9] relative">
@@ -46,7 +25,7 @@ export default function CorpoCard({ corpo }) {
                         onError={() => setImgError(true)}
                     />
                     {corpo.in_evidenza && (
-                        <span className="absolute right-3 top-3 z-10 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-lg" style={{ backgroundColor: 'rgba(250, 204, 21, 0.9)', color: '#1A1A2E' }}>
+                        <span className="absolute right-3 top-3 z-10 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-lg bg-admin-warning/90 text-[#1A1A2E]">
                             ★ In evidenza
                         </span>
                     )}
@@ -58,9 +37,9 @@ export default function CorpoCard({ corpo }) {
                     role="img"
                     aria-label={corpo.categoria?.nome + ' — ' + (corpo.nome_display || corpo.nome)}
                 >
-                    <FallbackIcon size={56} style={{ color: 'rgba(255,255,255,0.6)' }} aria-hidden="true" />
+                    <FallbackIcon size={56} className="text-white/60" aria-hidden="true" />
                     {corpo.in_evidenza && (
-                        <span className="absolute right-3 top-3 z-10 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-lg" style={{ backgroundColor: 'rgba(250, 204, 21, 0.9)', color: '#1A1A2E' }}>
+                        <span className="absolute right-3 top-3 z-10 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-lg bg-admin-warning/90 text-[#1A1A2E]">
                             ★ In evidenza
                         </span>
                     )}
@@ -68,7 +47,7 @@ export default function CorpoCard({ corpo }) {
             )}
 
             <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#F0F0FA' }}>
+                <h3 className="text-lg font-semibold mb-2 text-admin-text">
                     {corpo.nome_display || corpo.nome}
                 </h3>
 
@@ -76,11 +55,11 @@ export default function CorpoCard({ corpo }) {
                     <CategoriaBadge categoria={corpo.categoria} />
                 </div>
 
-                <p className="text-sm leading-relaxed line-clamp-2" style={{ color: '#B8B8D0' }}>
+                <p className="text-sm leading-relaxed line-clamp-2 text-admin-dim">
                     {corpo.descrizione}
                 </p>
 
-                <div className="mt-3 flex items-center gap-3 text-xs" style={{ color: '#7A7A9A' }}>
+                <div className="mt-3 flex items-center gap-3 text-xs text-admin-muted">
                     {corpo.tipo && (
                         <span>{corpo.tipo}</span>
                     )}
@@ -91,13 +70,4 @@ export default function CorpoCard({ corpo }) {
             </div>
         </Link>
     );
-}
-
-function formatDistance(km) {
-    const num = parseFloat(km);
-    if (isNaN(num)) return '—';
-    if (num >= 1_000_000_000) return `${(num / 1_000_000_000).toFixed(1)} Mld km`;
-    if (num >= 1_000_000) return `${(num / 1_000_000).toFixed(1)} Mln km`;
-    if (num >= 1_000) return `${(num / 1_000).toFixed(1)} Mila km`;
-    return `${num} km`;
-}
+});

@@ -145,7 +145,7 @@
                     @foreach ($corpoCeleste->curiosita as $curiosita)
                         <div class="p-4 rounded-lg bg-admin-bg border border-admin-secondary/15">
                             <h4 class="text-sm font-medium mb-1 text-admin-secondary">{{ $curiosita->titolo }}</h4>
-                            <p class="text-sm text-[#B8B8D0]">{{ $curiosita->descrizione }}</p>
+                            <p class="text-sm text-admin-dim">{{ $curiosita->descrizione }}</p>
                             @if ($curiosita->fonte)
                                 <p class="text-xs mt-1 text-gray-500">Fonte: {{ $curiosita->fonte }}</p>
                             @endif

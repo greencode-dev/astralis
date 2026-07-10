@@ -20,20 +20,18 @@ export default class ErrorBoundary extends Component {
     render() {
         if (this.state.hasError) {
             return (
-                <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0A1A' }}>
+                <div className="min-h-screen flex items-center justify-center bg-admin-bg">
                     <div className="max-w-md mx-auto px-4 py-20 text-center">
-                        <AlertTriangle size={64} style={{ color: '#F97316' }} className="mx-auto mb-4" />
-                        <h2 className="text-2xl font-bold mb-2" style={{ color: '#F0F0FA' }}>Qualcosa è andato storto</h2>
-                        <p className="mb-8" style={{ color: '#B8B8D0' }}>Si è verificato un errore imprevisto. Prova a riprovare o torna alla home.</p>
+                        <AlertTriangle size={64} className="mx-auto mb-4 text-admin-accent" />
+                        <h2 className="text-2xl font-bold mb-2 text-admin-text">Qualcosa è andato storto</h2>
+                        <p className="mb-8 text-admin-dim">Si è verificato un errore imprevisto. Prova a riprovare o torna alla home.</p>
                         <div className="flex items-center justify-center gap-4">
                             <button onClick={this.handleRetry}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-[rgba(34,211,238,0.2)]"
-                                style={{ backgroundColor: 'rgba(34, 211, 238, 0.15)', color: '#22D3EE' }}>
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-[rgba(34,211,238,0.2)] bg-admin-primary/15 text-admin-primary">
                                 <RotateCcw size={16} /> Riprova
                             </button>
                             <Link to="/"
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-[rgba(168,85,247,0.2)]"
-                                style={{ backgroundColor: 'rgba(168, 85, 247, 0.1)', color: '#A855F7' }}>
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-[rgba(168,85,247,0.2)] bg-admin-secondary/10 text-admin-secondary">
                                 <ArrowLeft size={16} /> Torna alla home
                             </Link>
                         </div>
