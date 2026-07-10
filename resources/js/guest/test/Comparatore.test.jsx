@@ -52,7 +52,7 @@ describe('Comparatore', () => {
         renderPage();
 
         await waitFor(() => {
-            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ per_page: 100 });
+            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ per_page: 100 }, expect.any(AbortSignal));
         });
 
         const selects = screen.getAllByRole('combobox');
@@ -75,7 +75,7 @@ describe('Comparatore', () => {
         renderPage(['/confronta?primo=terra']);
 
         await waitFor(() => {
-            expect(fetchCorpoCeleste).toHaveBeenCalledWith('terra');
+            expect(fetchCorpoCeleste).toHaveBeenCalledWith('terra', expect.any(AbortSignal));
         });
     });
 

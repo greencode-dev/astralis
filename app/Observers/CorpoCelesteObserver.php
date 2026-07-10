@@ -3,20 +3,16 @@
 namespace App\Observers;
 
 use App\Models\CorpoCeleste;
-use App\Services\NasaImageService;
+use App\Jobs\ImportNasaImage;
 
 class CorpoCelesteObserver
 {
-    public function __construct(
-        private NasaImageService $nasaService,
-    ) {}
-
     public function created(CorpoCeleste $corpo): void
     {
         if (app()->environment('testing')) {
             return;
         }
 
-        $this->nasaService->importForBody($corpo, galleryCount: 3, force: true);
+        ImportNasaImage::dispatch($corpo);
     }
 }

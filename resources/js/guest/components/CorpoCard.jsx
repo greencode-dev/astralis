@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, Sun, Moon, Star, Stars, Sparkles, Orbit, Asterisk } from 'lucide-react';
 import CategoriaBadge from './CategoriaBadge';
@@ -25,7 +26,8 @@ const categoryGradients = {
 };
 
 export default function CorpoCard({ corpo }) {
-    const hasImage = corpo.immagine_url;
+    const [imgError, setImgError] = useState(false);
+    const showImage = !!corpo.immagine_url && !imgError;
     const FallbackIcon = categoryIcons[corpo.categoria?.nome] || Orbit;
     const gradient = categoryGradients[corpo.categoria?.nome] || 'linear-gradient(135deg, #4B5563, #6B7280)';
 
@@ -35,12 +37,13 @@ export default function CorpoCard({ corpo }) {
             className="block rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(34,211,238,0.1)]"
             style={{ backgroundColor: '#111128', border: '1px solid rgba(34, 211, 238, 0.1)' }}
         >
-            {hasImage ? (
+            {showImage ? (
                 <div className="aspect-[16/9] relative">
                     <img loading="lazy"
                         src={corpo.immagine_url}
                         alt={corpo.nome_display || corpo.nome}
                         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        onError={() => setImgError(true)}
                     />
                     {corpo.in_evidenza && (
                         <span className="absolute right-3 top-3 z-10 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-lg" style={{ backgroundColor: 'rgba(250, 204, 21, 0.9)', color: '#1A1A2E' }}>

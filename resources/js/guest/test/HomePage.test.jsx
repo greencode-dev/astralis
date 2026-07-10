@@ -126,7 +126,7 @@ describe('HomePage', () => {
         renderPage();
 
         await waitFor(() => {
-            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ in_evidenza: true, per_page: 6 });
+            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ in_evidenza: true, per_page: 6 }, expect.any(AbortSignal));
         });
     });
 

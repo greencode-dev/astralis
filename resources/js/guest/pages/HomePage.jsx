@@ -1,36 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, Telescope, Rocket } from 'lucide-react';
 import SolarSystem from '../components/SolarSystem';
 import CorpoCard from '../components/CorpoCard';
 import { fetchCorpiCelesti, fetchDashboardStats } from '../apiClient';
+import { useFetch } from '../hooks/useFetch';
 
 export default function HomePage() {
-    const [corpiEvidenza, setCorpiEvidenza] = useState([]);
-    const [stats, setStats] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const { data: corpiData, loading: corpiLoading } = useFetch(
+        signal => fetchCorpiCelesti({ in_evidenza: true, per_page: 6 }, signal), []
+    );
+    const { data: stats, loading: statsLoading } = useFetch(
+        signal => fetchDashboardStats(signal), []
+    );
+
+    const loading = corpiLoading || statsLoading;
+    const corpiEvidenza = corpiData?.data || [];
 
     useEffect(() => {
         document.title = 'Astralis — Catalogo di Corpi Celesti';
-    }, []);
-
-    useEffect(() => {
-        async function loadData() {
-            try {
-                const [corpiRes, statsData] = await Promise.all([
-                    fetchCorpiCelesti({ in_evidenza: true, per_page: 6 }),
-                    fetchDashboardStats(),
-                ]);
-                setCorpiEvidenza(corpiRes.data || []);
-                setStats(statsData);
-            } catch (err) {
-                console.error('Errore caricamento homepage:', err);
-            } finally {
-                setLoading(false);
-            }
-        }
-        loadData();
     }, []);
 
     return (

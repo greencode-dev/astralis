@@ -2,31 +2,60 @@ import axios from 'axios';
 
 const apiClient = axios.create({
     baseURL: '/api',
+    timeout: 30000,
     headers: {
         'Accept': 'application/json',
     },
 });
 
-export function fetchCorpiCelesti(params = {}) {
-    return apiClient.get('/corpi-celesti', { params }).then(res => res.data);
+apiClient.interceptors.response.use(
+    response => response,
+    async error => {
+        if (axios.isCancel(error)) return Promise.reject(error);
+
+        const config = error.config;
+        if (!config) return Promise.reject(error);
+
+        const retryCount = (config.retryCount || 0) + 1;
+        const shouldRetry = !error.response || (error.response.status >= 500 && error.response.status < 600);
+
+        if (shouldRetry && retryCount <= 2) {
+            config.retryCount = retryCount;
+            const delay = Math.pow(2, retryCount) * 500;
+            await new Promise(resolve => setTimeout(resolve, delay));
+            return apiClient.request(config);
+        }
+
+        if (error.response) {
+            console.error(`API Error ${error.response.status}:`, error.response.data);
+        } else if (error.request) {
+            console.error('API Network Error:', error.message);
+        }
+
+        return Promise.reject(error);
+    }
+);
+
+export function fetchCorpiCelesti(params = {}, signal) {
+    return apiClient.get('/corpi-celesti', { params, signal }).then(res => res.data);
 }
 
-export function fetchCategorie() {
-    return apiClient.get('/categorie').then(res => res.data);
+export function fetchCategorie(signal) {
+    return apiClient.get('/categorie', { signal }).then(res => res.data);
 }
 
-export function fetchCorpoCeleste(slug) {
-    return apiClient.get(`/corpi-celesti/${slug}`).then(res => res.data);
+export function fetchCorpoCeleste(slug, signal) {
+    return apiClient.get(`/corpi-celesti/${slug}`, { signal }).then(res => res.data);
 }
 
-export function fetchSimili(id) {
-    return apiClient.get(`/corpi-celesti/${id}/simili`).then(res => res.data);
+export function fetchSimili(id, signal) {
+    return apiClient.get(`/corpi-celesti/${id}/simili`, { signal }).then(res => res.data);
 }
 
-export function fetchMissioni(params = {}) {
-    return apiClient.get('/missioni', { params }).then(res => res.data);
+export function fetchMissioni(params = {}, signal) {
+    return apiClient.get('/missioni', { params, signal }).then(res => res.data);
 }
 
-export function fetchDashboardStats() {
-    return apiClient.get('/dashboard/stats').then(res => res.data);
+export function fetchDashboardStats(signal) {
+    return apiClient.get('/dashboard/stats', { signal }).then(res => res.data);
 }

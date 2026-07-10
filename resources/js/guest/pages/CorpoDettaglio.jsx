@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Ruler, Weight, Thermometer, Gauge, MapPin, Calendar, User, Star, Rocket, Lightbulb } from 'lucide-react';
 import { fetchCorpoCeleste, fetchSimili } from '../apiClient';
+import { useFetch } from '../hooks/useFetch';
 import CategoriaBadge from '../components/CategoriaBadge';
 import LightboxGalleria from '../components/LightboxGalleria';
 import TimelineMissioni from '../components/TimelineMissioni';
@@ -42,10 +43,19 @@ const metriche = [
 
 export default function CorpoDettaglio() {
     const { slug } = useParams();
-    const [corpo, setCorpo] = useState(null);
-    const [simili, setSimili] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+
+    const { data: corpoData, loading, error } = useFetch(
+        signal => fetchCorpoCeleste(slug, signal), [slug]
+    );
+    const corpo = corpoData?.data || corpoData;
+    const [heroImgError, setHeroImgError] = useState(false);
+
+    const { data: similiData } = useFetch(
+        signal => fetchSimili(corpo?.id, signal),
+        [corpo?.id],
+        !corpo?.id
+    );
+    const simili = similiData?.data || [];
 
     useEffect(() => {
         document.title = 'Astralis — Corpo Celeste';
@@ -56,30 +66,6 @@ export default function CorpoDettaglio() {
             document.title = `${corpo.nome_display || corpo.nome} — Astralis`;
         }
     }, [corpo]);
-
-    useEffect(() => {
-        async function load() {
-            setLoading(true);
-            setError(false);
-            try {
-                const data = await fetchCorpoCeleste(slug);
-                setCorpo(data.data || data);
-            } catch (err) {
-                setError(true);
-            } finally {
-                setLoading(false);
-            }
-        }
-        load();
-    }, [slug]);
-
-    useEffect(() => {
-        if (corpo?.id) {
-            fetchSimili(corpo.id)
-                .then(res => setSimili(res.data || []))
-                .catch(err => console.error('Errore caricamento simili:', err));
-        }
-    }, [corpo?.id]);
 
     if (loading) {
         return (
@@ -121,8 +107,10 @@ export default function CorpoDettaglio() {
             {/* Hero */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
                 className="relative rounded-2xl overflow-hidden mb-8" style={{ minHeight: 300 }}>
-                {corpo.immagine_url ? (
-                    <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome_display || corpo.nome} className="w-full h-64 lg:h-80 object-cover" />
+                {corpo.immagine_url && !heroImgError ? (
+                    <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome_display || corpo.nome}
+                        className="w-full h-64 lg:h-80 object-cover"
+                        onError={() => setHeroImgError(true)} />
                 ) : (
                     <div className="w-full h-64 lg:h-80 flex items-center justify-center" style={{ background: gradient }}
                         role="img"

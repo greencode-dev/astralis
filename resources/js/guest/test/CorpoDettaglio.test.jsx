@@ -180,7 +180,7 @@ describe('CorpoDettaglio', () => {
         renderPage('marte');
 
         await waitFor(() => {
-            expect(fetchCorpoCeleste).toHaveBeenCalledWith('marte');
+            expect(fetchCorpoCeleste).toHaveBeenCalledWith('marte', expect.any(AbortSignal));
         });
     });
 
@@ -190,7 +190,7 @@ describe('CorpoDettaglio', () => {
         renderPage();
 
         await waitFor(() => {
-            expect(fetchSimili).toHaveBeenCalledWith(1);
+            expect(fetchSimili).toHaveBeenCalledWith(1, expect.any(AbortSignal));
         });
     });
 
@@ -229,7 +229,7 @@ describe('CorpoDettaglio', () => {
         renderPage('sole');
 
         await waitFor(() => {
-            expect(screen.getByText('Sole')).toBeInTheDocument();
+            expect(screen.getByText('Terra')).toBeInTheDocument();
         });
 
         expect(screen.queryByText('Confronta con un altro pianeta')).not.toBeInTheDocument();

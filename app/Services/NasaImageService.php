@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -11,39 +12,42 @@ class NasaImageService
 {
     public function searchNasa(string $query, array $extraFallbacks = []): array
     {
-        $fallbacks = $extraFallbacks;
+        $cacheKey = 'nasa_search_' . md5($query . '|' . implode(',', $extraFallbacks));
 
-        $stripped = str_replace(["'s", "'", "`", "’"], "", $query);
-        $stripped = trim(preg_replace('/\s+/', ' ', $stripped));
-        if ($stripped !== $query) {
-            $fallbacks[] = $stripped;
-        }
+        return Cache::remember($cacheKey, 86400, function () use ($query, $extraFallbacks) {
+            $fallbacks = $extraFallbacks;
 
-        $queries = array_merge([$query], $fallbacks);
-
-        foreach ($queries as $q) {
-            $http = Http::timeout(30)->retry(2, 1000);
-            if (app()->environment('local', 'testing')) {
-                $http = $http->withoutVerifying();
-            }
-            $response = $http->get('https://images-api.nasa.gov/search', [
-                    'q' => $q,
-                    'media_type' => 'image',
-                ]);
-
-            if ($response->failed()) {
-                continue;
+            $stripped = str_replace(["'s", "'", "`", "’"], "", $query);
+            $stripped = trim(preg_replace('/\s+/', ' ', $stripped));
+            if ($stripped !== $query) {
+                $fallbacks[] = $stripped;
             }
 
-            $items = $response->json('collection.items');
+            $queries = array_merge([$query], $fallbacks);
 
-            if (!empty($items)) {
-                return ['success' => true, 'items' => $items, 'used_query' => $q];
+            foreach ($queries as $q) {
+                $http = Http::timeout(30)->retry(2, 1000);
+                if (app()->environment('local', 'testing')) {
+                    $http = $http->withoutVerifying();
+                }
+                $response = $http->get('https://images-api.nasa.gov/search', [
+                        'q' => $q,
+                        'media_type' => 'image',
+                    ]);
+
+                if ($response->failed()) {
+                    continue;
+                }
+
+                $items = $response->json('collection.items');
+
+                if (!empty($items)) {
+                    return ['success' => true, 'items' => $items, 'used_query' => $q];
+                }
             }
-        }
 
-        $last = $queries[count($queries) - 1];
-        return ['success' => false, 'message' => "Nessuna immagine trovata per \"{$query}\"."];
+            return ['success' => false, 'message' => "Nessuna immagine trovata per \"{$query}\"."];
+        });
     }
 
     public function extractMetadata(array $item): array
@@ -180,32 +184,35 @@ class NasaImageService
     {
         set_time_limit(300);
 
-        $corpi = CorpoCeleste::all();
         $results = [];
         $successCount = 0;
+        $totalCount = 0;
         $totalMain = 0;
         $totalGallery = 0;
 
-        foreach ($corpi as $corpo) {
-            $result = $this->importForBody($corpo, $galleryCount, $force, $updateDescription);
+        CorpoCeleste::chunk(50, function ($corpi) use ($galleryCount, $force, $updateDescription, &$results, &$successCount, &$totalCount, &$totalMain, &$totalGallery) {
+            foreach ($corpi as $corpo) {
+                $result = $this->importForBody($corpo, $galleryCount, $force, $updateDescription);
 
-            if (!empty($result['errors'])) {
-                $result['message'] .= ' ' . implode('; ', array_slice($result['errors'], 0, 2));
-            }
+                if (!empty($result['errors'])) {
+                    $result['message'] .= ' ' . implode('; ', array_slice($result['errors'], 0, 2));
+                }
 
-            $results[] = $result;
-            if ($result['success']) {
-                $successCount++;
+                $results[] = $result;
+                $totalCount++;
+                if ($result['success']) {
+                    $successCount++;
+                }
+                if (isset($result['main']) && $result['main']) {
+                    $totalMain++;
+                }
+                $totalGallery += $result['gallery'] ?? 0;
             }
-            if (isset($result['main']) && $result['main']) {
-                $totalMain++;
-            }
-            $totalGallery += $result['gallery'] ?? 0;
-        }
+        });
 
         return [
             'success' => $successCount,
-            'total' => $corpi->count(),
+            'total' => $totalCount,
             'total_main' => $totalMain,
             'total_gallery' => $totalGallery,
             'results' => $results,

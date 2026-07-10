@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Rocket, Calendar, Building2, Globe } from 'lucide-react';
 
 const statoColors = {
@@ -5,6 +6,27 @@ const statoColors = {
     'In corso': { bg: 'rgba(34, 211, 238, 0.15)', text: '#22D3EE' },
     'Pianificata': { bg: 'rgba(250, 204, 21, 0.15)', text: '#FACC15' },
 };
+
+function LogoFallback({ nome }) {
+    return (
+        <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(34, 211, 238, 0.1)' }}
+            role="img" aria-label={'Logo ' + nome}>
+            <Rocket size={20} style={{ color: '#22D3EE' }} aria-hidden="true" />
+        </div>
+    );
+}
+
+function MissioneLogo({ missione }) {
+    const [error, setError] = useState(false);
+
+    if (!missione.logo_url || error) {
+        return <LogoFallback nome={missione.nome} />;
+    }
+
+    return (
+        <img src={missione.logo_url} alt={missione.nome} className="w-10 h-10 rounded-lg object-cover" onError={() => setError(true)} />
+    );
+}
 
 export default function TimelineMissioni({ missioni }) {
     if (!missioni || missioni.length === 0) return null;
@@ -34,15 +56,7 @@ export default function TimelineMissioni({ missioni }) {
                                 >
                                     {/* Logo o icona */}
                                     <div className="flex items-center gap-3 mb-3">
-                                        {missione.logo_url ? (
-                                            <img src={missione.logo_url} alt={missione.nome} className="w-10 h-10 rounded-lg object-cover" />
-                                        ) : (
-                                            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(34, 211, 238, 0.1)' }}
-                                                role="img"
-                                                aria-label={'Logo ' + missione.nome}>
-                                                <Rocket size={20} style={{ color: '#22D3EE' }} aria-hidden="true" />
-                                            </div>
-                                        )}
+                                        <MissioneLogo missione={missione} />
                                         <div>
                                             <h4 className="font-semibold text-sm" style={{ color: '#F0F0FA' }}>{missione.nome}</h4>
                                             <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{

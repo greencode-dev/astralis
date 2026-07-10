@@ -4,49 +4,38 @@ import { Filter } from 'lucide-react';
 import CorpoCard from '../components/CorpoCard';
 import SearchBar from '../components/SearchBar';
 import { fetchCorpiCelesti, fetchCategorie } from '../apiClient';
+import { useFetch } from '../hooks/useFetch';
 
 export default function CorpiLista() {
-    const [corpi, setCorpi] = useState([]);
-    const [categorie, setCategorie] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
     const [categoriaSlug, setCategoriaSlug] = useState('');
     const [tipo, setTipo] = useState('');
     const [page, setPage] = useState(1);
 
+    const { data: categorieData } = useFetch(
+        signal => fetchCategorie(signal), []
+    );
+    const { data: corpiData, loading } = useFetch(
+        signal => {
+            const params = { per_page: 12, page };
+            if (categoriaSlug) params.categoria = categoriaSlug;
+            if (tipo) params.tipo = tipo;
+            if (search) params.search = search;
+            return fetchCorpiCelesti(params, signal);
+        },
+        [page, categoriaSlug, tipo, search]
+    );
+
+    const categorie = categorieData?.data || [];
+    const corpi = corpiData?.data || [];
+    const total = corpiData?.meta?.total || 0;
+    const lastPage = corpiData?.meta?.last_page || 1;
+
     useEffect(() => {
         document.title = 'Corpi Celesti — Astralis';
     }, []);
-    const [lastPage, setLastPage] = useState(1);
-    const [total, setTotal] = useState(0);
 
     const tipi = ['Pianeta', 'Stella', 'Luna', 'Galassia', 'Nebulosa', 'Asteroide', 'Cometa', 'Pianeta Nano'];
-
-    useEffect(() => {
-        fetchCategorie().then(res => setCategorie(res.data || [])).catch(err => console.error('Errore caricamento categorie:', err));
-    }, []);
-
-    useEffect(() => {
-        async function load() {
-            setLoading(true);
-            try {
-                const params = { per_page: 12, page };
-                if (categoriaSlug) params.categoria = categoriaSlug;
-                if (tipo) params.tipo = tipo;
-                if (search) params.search = search;
-
-                const res = await fetchCorpiCelesti(params);
-                setCorpi(res.data || []);
-                setLastPage(res.meta?.last_page || 1);
-                setTotal(res.meta?.total || 0);
-            } catch (err) {
-                console.error('Errore caricamento corpi celesti:', err);
-            } finally {
-                setLoading(false);
-            }
-        }
-        load();
-    }, [page, categoriaSlug, tipo, search]);
 
     function handleSearch(value) {
         setSearch(value);

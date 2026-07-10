@@ -136,7 +136,7 @@ describe('CorpiLista', () => {
         renderPage();
 
         await waitFor(() => {
-            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ per_page: 12, page: 1 });
+            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ per_page: 12, page: 1 }, expect.any(AbortSignal));
         });
     });
 
@@ -189,7 +189,7 @@ describe('CorpiLista', () => {
         fireEvent.change(searchInput, { target: { value: 'Marte' } });
 
         await waitFor(() => {
-            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ per_page: 12, page: 1, search: 'Marte' });
+            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ per_page: 12, page: 1, search: 'Marte' }, expect.any(AbortSignal));
         });
     });
 

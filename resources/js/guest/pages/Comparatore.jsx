@@ -3,6 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Ruler, RotateCcw } from 'lucide-react';
 import { fetchCorpiCelesti, fetchCorpoCeleste } from '../apiClient';
+import { useFetch } from '../hooks/useFetch';
 import CategoriaBadge from '../components/CategoriaBadge';
 
 const campi = [
@@ -17,46 +18,36 @@ const campi = [
 
 export default function Comparatore() {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [corpi, setCorpi] = useState([]);
-    const [primo, setPrimo] = useState(null);
-    const [secondo, setSecondo] = useState(null);
     const [primoSlug, setPrimoSlug] = useState(searchParams.get('primo') || '');
     const [secondoSlug, setSecondoSlug] = useState(searchParams.get('secondo') || '');
-    const [loading, setLoading] = useState(true);
+
+    const { data: corpiData } = useFetch(
+        signal => fetchCorpiCelesti({ per_page: 100 }, signal), []
+    );
+    const { data: primoData, loading: loadingPrimo } = useFetch(
+        signal => primoSlug ? fetchCorpoCeleste(primoSlug, signal) : Promise.resolve(null),
+        [primoSlug]
+    );
+    const { data: secondoData, loading: loadingSecondo } = useFetch(
+        signal => secondoSlug ? fetchCorpoCeleste(secondoSlug, signal) : Promise.resolve(null),
+        [secondoSlug]
+    );
 
     useEffect(() => {
         document.title = 'Confronta Pianeti — Astralis';
     }, []);
 
     useEffect(() => {
-        fetchCorpiCelesti({ per_page: 100 })
-            .then(res => setCorpi(res.data || []))
-            .catch(err => console.error('Errore caricamento corpi:', err));
-    }, []);
-
-    useEffect(() => {
-        async function load() {
-            setLoading(true);
-            try {
-                const [p, s] = await Promise.all([
-                    primoSlug ? fetchCorpoCeleste(primoSlug) : Promise.resolve(null),
-                    secondoSlug ? fetchCorpoCeleste(secondoSlug) : Promise.resolve(null),
-                ]);
-                setPrimo(p?.data || p || null);
-                setSecondo(s?.data || s || null);
-                // Aggiorna URL
-                const params = {};
-                if (primoSlug) params.primo = primoSlug;
-                if (secondoSlug) params.secondo = secondoSlug;
-                setSearchParams(params, { replace: true });
-            } catch (err) {
-                console.error('Errore caricamento comparatore:', err);
-            } finally {
-                setLoading(false);
-            }
-        }
-        load();
+        const params = {};
+        if (primoSlug) params.primo = primoSlug;
+        if (secondoSlug) params.secondo = secondoSlug;
+        setSearchParams(params, { replace: true });
     }, [primoSlug, secondoSlug]);
+
+    const loading = loadingPrimo || loadingSecondo;
+    const corpi = corpiData?.data || [];
+    const primo = primoData?.data || primoData || null;
+    const secondo = secondoData?.data || secondoData || null;
 
     const hasBoth = primo && secondo;
     const pianeti = corpi.filter(c => c.categoria?.nome === 'Pianeta');

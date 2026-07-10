@@ -132,3 +132,114 @@ Quando pulli la repo su un'altra macchina (o dopo tanto tempo), esegui in ordine
 5. `php artisan astralis:gallery --fix` — ripara immagini galleria se necessario
 6. `npx graphify update .` — ricostruisce il grafo locale
 7. Verifica `git status` — working tree deve essere pulito dopo grafo
+
+## Piano di ottimizzazione
+
+### Fase 1 — Critico React Frontend (P0)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 1.1 | **AbortController in tutti gli API fetch** — HomePage, CorpiLista, CorpoDettaglio, Comparatore | Impedisce `setState()` su componenti smontati, elimina race condition e memory leak |
+| 1.2 | **Custom hook `useFetch` con useReducer** — creare `hooks/useFetch.js` | Centralizza loading/error/data/abort, elimina duplicazione useState/useEffect in 4 pagine |
+| 1.3 | **ErrorBoundary globale in App.jsx con pulsante retry** — wrappa Navbar+Footer+Routes | Se Navbar/Footer crashano, l'errore non è catturato. Retry ripristina senza cambio pagina |
+| 1.4 | **Guard immagini vuote/rotte** — CorpoCard, CorpoDettaglio, LightboxGalleria, TimelineMissioni | onError con fallback a gradiente + icona invece di broken image |
+| 1.5 | **Axios interceptors + retry in apiClient.js** | Timeout, retry su fallimenti rete, gestione errori centralizzata |
+
+### Fase 2 — Critico Backend Laravel (P0)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 2.1 | **Observer → Job Queue** — CorpoCelesteObserver::created() chiama NASA HTTP sincrono | Creazione corpo torna immediata, import NASA in background |
+| 2.2 | **NasaImportController sync → Job Queue** — importAll() con set_time_limit(300) | Admin non bloccato per minuti, processato in coda |
+| 2.3 | **NasaImageService::importAll() con chunk(50)** — CorpoCeleste::all() carica tutto in memoria | Riduce picco memoria da migliaia a decine di modelli |
+| 2.4 | **Rate limiting API routes** — throttle:60,1 su tutti e 10 gli endpoint | Protegge DB da scraping/abuso, 60 req/min per IP |
+| 2.5 | **Caching NasaImageService::searchNasa()** — Cache::remember() | Evita HTTP call NASA duplicate per query già fatte |
+
+### Fase 3 — Alto React Frontend (P1)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 3.1 | **React.lazy + Suspense** — tutte le 5 page in lazy loading | Bundle iniziale ridotto ~40%, TTI migliorato |
+| 3.2 | **Inline styles → Tailwind classes** — ~68 oggetti style in 15 file | CSS compilato a build time, deduplicabile, più performante di style runtime |
+| 3.3 | **CSS variables per palette admin** — #22D3EE, #111128 ripetuti ~70x | Cambiare palette in un punto solo, manutenibilità |
+| 3.4 | **framer-motion → CSS transitions** — fade/slide/pulse/twinkle in CSS, mantieni orbita+scroll | Animazioni su compositor GPU, -22KB bundle, niente main thread |
+| 3.5 | **Deduplicazione codice** — categoryIcons/gradients in constants.js, helpers in utils.js | Bug fix in un file non rischia di lasciare l'altro non aggiornato |
+| 3.6 | **Direct DOM → React state** — onFocus/onBlur in SearchBar, Comparatore | React gestisce DOM virtuale, rendering deterministico |
+
+### Fase 4 — Alto Backend Laravel (P1)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 4.1 | **Caching DashboardController** — Admin + API, Cache::remember(3600) | Da 10+ query a 1 per richiesta, caricamento admin più veloce |
+| 4.2 | **Paginazione API endpoint mancanti** — Galleria, Curiosità, Missioni | Payload JSON ridotto, scala con dataset crescenti |
+| 4.3 | **GROUP BY ottimizzato missioni stato** — 3 COUNT → una query GROUP BY | Da 3 round trip a 1 |
+| 4.4 | **per_page lower bound** — max(1, min(...)) | Per_page=0 causava errore SQL con paginate(0) |
+| 4.5 | **Route binding consistente** — simili usa ID, show usa slug | API predicibile, developer non confuso |
+| 4.6 | **exists() statt count() > 0** — Categoria/Missione destroy | Fino a 10x più veloce su tabelle grandi |
+
+### Fase 5 — Alto Admin Blade (P1)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 5.1 | **CSS component class per input** — classe .admin-input in app.css | Elimina ~140 attributi style + onfocus/onblur inline, -15% peso HTML |
+| 5.2 | **Hardcoded hex → CSS variables** — 50+ valori hex sparsi | Cambio colore in un punto, tema unificato garantito |
+| 5.3 | **Estrarre partials Blade** — flash, search, actions, stat-cards, back-link | ~680 linee risparmiate, modifiche consistenti |
+| 5.4 | **Form partial per create/edit** — unificare coppie create/edit per entità | Modifica applicata in entrambi, niente dimenticanze |
+| 5.5 | **Fix bug strutturale edit.blade.php** — @section('content') mai chiuso | Aggiornamento Laravel non romperà la pagina |
+
+### Fase 6 — Medio React Frontend (P2)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 6.1 | **React.memo su componenti in lista** — CorpoCard, SearchBar, CategoriaBadge, TimelineMissioni | Salta re-render se props non cambiate |
+| 6.2 | **Debounce search input** — 300ms prima di API call | Da ~10 chiamate a 1 per ricerca |
+| 6.3 | **useMemo per slides Lightbox** — .filter().map() ricalcolato ad ogni render | Skip calcolo se immagini invariato |
+| 6.4 | **SolarSystem stabilità** — Math.random() su ogni render | Stelle non "saltano" a ogni re-render |
+| 6.5 | **Accessibilità React** — aria-current, role="alert", aria-hidden, aria-label | Allineamento WCAG per screen reader |
+| 6.6 | **Lightbox prev/next buttons** — buttonNext: () => null riabilitato | Navigazione completa senza chiudere/riaprire |
+| 6.7 | **Fetch waterfall parallelo** — corpo + simili in Promise.all | Risparmia un round trip (200-800ms) |
+
+### Fase 7 — Medio Backend Laravel (P2)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 7.1 | **FormRequest per tutti gli admin controller** — 5/7 usano validate() inline | Validazione centralizzata, create/edit coerenti |
+| 7.2 | **Authorization consistente** — Gate::authorize('admin') → $this->authorize() | Pattern uniforme in tutti i controller |
+| 7.3 | **suggestNome caching + debounce** — 2 chiamate NASA HTTP sincrone | Risultati già visti non richiamano NASA |
+| 7.4 | **curl → Http facade** — CleanupGalleryDuplicates | Testabile con Http::fake(), coerente col progetto |
+| 7.5 | **exists() per delete checks** — count() > 0 in tutti i controller | Più veloce, semanticamente corretto |
+
+### Fase 8 — Medio Admin Blade (P2)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 8.1 | **Estrarre JS NASA suggest e color picker** — JS copiato in create+edit | Bug fix in un file non lascia l'altro obsoleto |
+| 8.2 | **Delete confirm con nome entità** — 5 confirm generiche | Admin vede cosa cancella, riduce errori umani |
+| 8.3 | **CDN fallback Alpine.js + Chart.js** — locale fallback script | Admin funziona anche offline/senza CDN |
+| 8.4 | **Sidebar mobile responsive + table overflow-x-auto** | Admin utilizzabile da tablet/smartphone |
+| 8.5 | **Paginazione Tailwind custom** — vendor/pagination personalizzato | Paginazione coerente con palette dark admin |
+| 8.6 | **Modal accessibilità** — role="dialog", aria-modal, Escape key | Screen reader identificano il dialog, usabile da tastiera |
+
+### Fase 9 — Test (P1-P3)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 9.1 | **AdminTestCase base class** — setUp condiviso (Http::fake, admin user, RefreshDatabase) | -15 righe boilerplate, zero dimenticanze setup |
+| 9.2 | **Data provider authorization tests** — store/update/delete per entità in poche righe | Aggiungere nuovo ruolo = test automatico su tutte le operazioni |
+| 9.3 | **Uniformare Http::fake() pattern** — rimuovere unsetEventDispatcher ridondante | Pattern unico, chiarezza su come mockare HTTP |
+| 9.4 | **Frontend test fixtures condivise** — fixtures.js centralizzato | Struttura API cambia = 1 file da aggiornare |
+| 9.5 | **Factory foreign key fix** — corpo_celeste_id in GalleriaCorpoFactory, CuriositaFactory | Test scrivono .for($corpo) invece di ricordarsi il campo |
+| 9.6 | **Copertura test mancante** — suggestNome, aggiornaOrdine, setImageFromGallery, nasa-import, edge case API | Regression test per route non testate |
+| 9.7 | **DashboardApiTest assertions complete** — verifica tutti i 5+ campi restituiti | Modifica silenziosa al controller rilevata dal test |
+
+### Fase 10 — UI/UX & Writing Review (P4)
+
+| # | Task | Beneficio |
+|---|------|-----------|
+| 10.1 | **Web Design Guidelines review** — accessibilità, contrasto, focus, responsive, semantica HTML | Allineamento WCAG standards internazionali |
+| 10.2 | **Writing Guidelines review** — labels, errori, empty state, flash messages | Coerenza tono, chiarezza, active voice in italiano |
+| 10.3 | **Frontend Design review** — palette, tipografia, layout signature, coerenza guest/admin | Identità visiva intenzionale, niente template default |
+
+### Comando per nuova sessione
+
+Apri nuova sessione e dì: **"riprendi il piano da Fase X"** (X = numero fase) — l'agente carica AGENTS.md + skill automaticamente.

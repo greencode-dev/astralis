@@ -1,8 +1,13 @@
-const mockGet = vi.fn();
+const mockGet = vi.hoisted(() => vi.fn());
 
 vi.mock('axios', () => ({
     default: {
-        create: vi.fn(() => ({ get: mockGet })),
+        create: vi.fn(() => ({
+            get: mockGet,
+            interceptors: {
+                response: { use: vi.fn() },
+            },
+        })),
     },
 }));
 
@@ -32,7 +37,7 @@ describe('apiClient', () => {
 
             const result = await fetchCorpiCelesti({ categoria: 'pianeti', per_page: 12 });
 
-            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti', { params: { categoria: 'pianeti', per_page: 12 } });
+            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti', { params: { categoria: 'pianeti', per_page: 12 }, signal: undefined });
             expect(result).toEqual(mockData);
         });
 
@@ -41,7 +46,7 @@ describe('apiClient', () => {
 
             await fetchCorpiCelesti();
 
-            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti', { params: {} });
+            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti', { params: {}, signal: undefined });
         });
 
         it('unwraps res.data correctly on success', async () => {
@@ -61,7 +66,7 @@ describe('apiClient', () => {
 
             const result = await fetchCategorie();
 
-            expect(mockGet).toHaveBeenCalledWith('/categorie');
+            expect(mockGet).toHaveBeenCalledWith('/categorie', { signal: undefined });
             expect(result).toEqual(categorie);
         });
     });
@@ -73,7 +78,7 @@ describe('apiClient', () => {
 
             const result = await fetchCorpoCeleste('terra');
 
-            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/terra');
+            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/terra', { signal: undefined });
             expect(result).toEqual(corpo);
         });
 
@@ -82,7 +87,7 @@ describe('apiClient', () => {
 
             await fetchCorpoCeleste('giove');
 
-            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/giove');
+            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/giove', { signal: undefined });
         });
     });
 
@@ -93,7 +98,7 @@ describe('apiClient', () => {
 
             const result = await fetchSimili(1);
 
-            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/1/simili');
+            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/1/simili', { signal: undefined });
             expect(result).toEqual(simili);
         });
 
@@ -102,7 +107,7 @@ describe('apiClient', () => {
 
             await fetchSimili(42);
 
-            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/42/simili');
+            expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/42/simili', { signal: undefined });
         });
     });
 
@@ -113,7 +118,7 @@ describe('apiClient', () => {
 
             const result = await fetchMissioni({ stato: 'completata' });
 
-            expect(mockGet).toHaveBeenCalledWith('/missioni', { params: { stato: 'completata' } });
+            expect(mockGet).toHaveBeenCalledWith('/missioni', { params: { stato: 'completata' }, signal: undefined });
             expect(result).toEqual(missioni);
         });
 
@@ -122,7 +127,7 @@ describe('apiClient', () => {
 
             await fetchMissioni();
 
-            expect(mockGet).toHaveBeenCalledWith('/missioni', { params: {} });
+            expect(mockGet).toHaveBeenCalledWith('/missioni', { params: {}, signal: undefined });
         });
     });
 
@@ -133,7 +138,7 @@ describe('apiClient', () => {
 
             const result = await fetchDashboardStats();
 
-            expect(mockGet).toHaveBeenCalledWith('/dashboard/stats');
+            expect(mockGet).toHaveBeenCalledWith('/dashboard/stats', { signal: undefined });
             expect(result).toEqual(stats);
         });
     });

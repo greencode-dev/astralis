@@ -4,17 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CorpoCeleste;
-use App\Services\NasaImageService;
+use App\Jobs\ImportNasaImage;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 
 class NasaImportController extends Controller
 {
-    public function __construct(
-        private NasaImageService $nasaService,
-    ) {}
-
     public function index(): View
     {
         Gate::authorize('admin');
@@ -30,41 +26,25 @@ class NasaImportController extends Controller
     {
         Gate::authorize('admin');
 
-        $result = $this->nasaService->importForBody($corpoCeleste, galleryCount: 3, force: true);
-        $key = $result['success'] ? 'success' : 'error';
-        return redirect()->route('admin.nasa-import.index')->with($key, $result['message']);
+        ImportNasaImage::dispatch($corpoCeleste);
+
+        return redirect()->route('admin.nasa-import.index')
+            ->with('success', "Importazione NASA per {$corpoCeleste->nome} accodata.");
     }
 
     public function importAll(): RedirectResponse
     {
         Gate::authorize('admin');
 
-        $result = $this->nasaService->importAll(galleryCount: 5, force: true);
-
-        $total = $result['total'];
-        $successCount = $result['success'];
-
-        if ($successCount === $total) {
-            return redirect()->route('admin.nasa-import.index')
-                ->with('success', "Tutte le {$total} immagini sono state importate con successo ({$result['total_gallery']} galleria).");
-        }
-
-        $errors = [];
-        foreach ($result['results'] as $r) {
-            if (!$r['success']) {
-                $errors[] = $r['message'];
+        $count = 0;
+        CorpoCeleste::chunk(50, function ($corpi) use (&$count) {
+            foreach ($corpi as $corpo) {
+                ImportNasaImage::dispatch($corpo, galleryCount: 5, force: true);
+                $count++;
             }
-            if (!empty($r['errors'])) {
-                $errors = array_merge($errors, $r['errors']);
-            }
-        }
-
-        if ($successCount === 0) {
-            return redirect()->route('admin.nasa-import.index')
-                ->with('error', 'Nessuna immagine importata. Errori: ' . implode(' | ', array_slice($errors, 0, 5)) . (count($errors) > 5 ? ' (e altri ' . (count($errors) - 5) . ')' : ''));
-        }
+        });
 
         return redirect()->route('admin.nasa-import.index')
-            ->with('warning', "Importate {$successCount} su {$total} immagini ({$result['total_gallery']} galleria). Errori: " . implode(' | ', array_slice($errors, 0, 5)) . (count($errors) > 5 ? ' (e altri ' . (count($errors) - 5) . ')' : ''));
+            ->with('success', "{$count} importazioni NASA sono state accodate per l'elaborazione.");
     }
 }
