@@ -93,6 +93,34 @@ Prima di eseguire `graphify update .`, assicurati che:
 
 Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
 
+## Skill installate
+
+Skill globali sempre disponibili in `~/.config/opencode/skills/`:
+
+| Skill | Attivazione |
+|---|---|
+| `frontend-design` | Design UI/UX, componenti React, layout |
+| `react-best-practices` | Ottimizzazione React/Next.js (70 regole) |
+| `composition-patterns` | Pattern composizione React |
+| `webapp-testing` | Testing Playwright |
+| `web-design-guidelines` | Review UI/accessibilità |
+| `writing-guidelines` | Review scrittura documentazione |
+| `claude-api` | Documentazione API Claude/SDK |
+| `mcp-builder` | Creazione MCP server |
+| `theme-factory` | Tema colori/font per artefatti |
+| `web-artifacts-builder` | Artefatti React+Tailwind+shadcn |
+| `skill-creator` | Creazione/modifica skill |
+| `brand-guidelines` | Brand Identity Anthropic |
+
+Skill custom Astralis in `.opencode/skills/`:
+
+| Skill | Scopo |
+|---|---|
+| `astralis-laravel` | Pattern backend Laravel (Observer, Policy, Service, Command) |
+| `astralis-react-spa` | Pattern frontend React SPA (routing, API, animazioni) |
+| `astralis-blade-admin` | Pattern admin Blade (Alpine.js, CRUD, palette) |
+| `astralis-testing` | Pattern test (PHPUnit + Vitest, factory, Http::fake) |
+
 ## Cross-PC sync
 
 Quando pulli la repo su un'altra macchina (o dopo tanto tempo), esegui in ordine:

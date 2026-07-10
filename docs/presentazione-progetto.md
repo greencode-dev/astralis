@@ -2,15 +2,15 @@
 
 ## 1. Il Progetto in Breve
 
-| Cosa | Dettaglio |
-|------|-----------|
-| **Cos'è** | Catalogo web di corpi celesti (pianeti, stelle, galassie, nebulose, lune, comete, asteroidi) |
-| **Stack** | Laravel 13 + React 19 + Vite + Blade + Tailwind CSS + MySQL |
-| **Frontend guest** | React SPA standalone (no Inertia), comunicazione via API REST JSON |
-| **Backoffice admin** | Blade puro con Alpine.js, autenticazione Breeze, autorizzazione Policy/Gates |
-| **Test** | 130 PHPUnit + 88 Vitest (218 test totali) |
-| **API esterne** | NASA Image API — import automatico immagini reali |
-| **Repository** | [github.com/tuo-username/astralis](https://github.com/tuo-username/astralis) |
+| Cosa                 | Dettaglio                                                                                    |
+| -------------------- | -------------------------------------------------------------------------------------------- |
+| **Cos'è**            | Catalogo web di corpi celesti (pianeti, stelle, galassie, nebulose, lune, comete, asteroidi) |
+| **Stack**            | Laravel 13 + React 19 + Vite + Blade + Tailwind CSS + MySQL                                  |
+| **Frontend guest**   | React SPA standalone (no Inertia), comunicazione via API REST JSON                           |
+| **Backoffice admin** | Blade puro con Alpine.js, autenticazione Breeze, autorizzazione Policy/Gates                 |
+| **Test**             | 130 PHPUnit + 88 Vitest (218 test totali)                                                    |
+| **API esterne**      | NASA Image API — import automatico immagini reali                                            |
+| **Repository**       | [github.com/tuo-username/astralis](https://github.com/tuo-username/astralis)                 |
 
 ---
 
@@ -30,10 +30,10 @@
 
 ✅ **Noi abbiamo realizzato**: 5 entità del dominio (Categoria, CorpoCeleste, Missione, Curiosita, GalleriaCorpo) + una tabella pivot (corpo_celeste_missione). Tre tipi di relazione:
 
-| Relazione | Esempio | Cos'è |
-|-----------|---------|-------|
-| **BelongsTo / HasMany** (1-N) | Categoria → CorpoCeleste, CorpoCeleste → Galleria, CorpoCeleste → Curiosità | Una categoria contiene molti corpi. Un corpo ha molte immagini. La FK (`categoria_id`) sta su `corpi_celesti` |
-| **BelongsToMany** (N-N) | CorpoCeleste ↔ Missione | Un corpo visitato da più missioni, una missione visita più corpi. Richiede tabella pivot con dati extra (tipo_esplorazione, anno_arrivo) |
+| Relazione                     | Esempio                                                                     | Cos'è                                                                                                                                    |
+| ----------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **BelongsTo / HasMany** (1-N) | Categoria → CorpoCeleste, CorpoCeleste → Galleria, CorpoCeleste → Curiosità | Una categoria contiene molti corpi. Un corpo ha molte immagini. La FK (`categoria_id`) sta su `corpi_celesti`                            |
+| **BelongsToMany** (N-N)       | CorpoCeleste ↔ Missione                                                     | Un corpo visitato da più missioni, una missione visita più corpi. Richiede tabella pivot con dati extra (tipo_esplorazione, anno_arrivo) |
 
 **Perché entità separate e non un unico grande JSON?** Perché normalizziamo: ogni entità ha il suo CRUD, le sue policy, la sua factory. La pivot ci permette di conservare metadati sulla relazione (es. l'Apollo 11 ha visitato la Luna con tipo "atterraggio" nel 1969).
 
@@ -42,6 +42,7 @@ Seeder con dati reali: 8 categorie, 18 corpi celesti (da Mercurio a Plutone), 10
 📌 **Comando per creare un modello con migration e factory**: `php artisan make:model Nome -mf`. Per creare una migration per una tabella esistente: `php artisan make:migration add_campo_to_tabella_table --table=tabella`.
 
 📌 **Differenza relazioni**:
+
 - **BelongsTo**: la FK è sulla tabella di QUESTO modello (es. `CorpoCeleste` ha `categoria_id`)
 - **HasMany**: la FK è sull'ALTRO modello (es. `Categoria` ha tanti `CorpoCeleste`, ma la FK è su `corpi_celesti.categoria_id`)
 - **BelongsToMany**: nessuna delle due ha la FK — serve una terza tabella pivot
@@ -57,6 +58,7 @@ Seeder con dati reali: 8 categorie, 18 corpi celesti (da Mercurio a Plutone), 10
 ✅ **Noi abbiamo realizzato**: layout master (`resources/views/admin/layouts/app.blade.php`) con sidebar navigazione, tema scuro (`#0A0A1A` sfondo, `#111128` card, `#22D3EE` primario). Dashboard con statistiche (conteggio entità, ultimi 5 corpi, grafici Chart.js). CRUD completo per 5 entità: ogni controller ha 7 metodi (index, create, store, show, edit, update, destroy).
 
 **Protezioni implementate**:
+
 - Categoria: se ha corpi celesti associati → blocco cancellazione con messaggio
 - Missione: se ha corpi associati → blocco cancellazione (stesso pattern)
 - Upload file: Missioni (logo 300px), Galleria (immagini 1200x1200) con Intervention Image v4
@@ -74,6 +76,7 @@ Seeder con dati reali: 8 categorie, 18 corpi celesti (da Mercurio a Plutone), 10
 ✅ **Noi abbiamo realizzato**: 10 endpoint pubblici in `routes/api.php` (file separato da `web.php`). API Resources per trasformare i modelli in JSON controllato. Filtri su quasi tutti gli endpoint: `?categoria=`, `?tipo=`, `?search=`, `?in_evidenza=`, `?per_page=` (max 100), `?agenzia=`, `?stato=`.
 
 **Endpoint**:
+
 ```
 GET /api/corpi-celesti        ← lista filtrata/paginata con categoria, tipo, search, in_evidenza
 GET /api/corpi-celesti/{slug}  ← dettaglio con tutte le relazioni
@@ -103,13 +106,13 @@ GET /api/dashboard/stats      ← conteggi per homepage
 
 ✅ **Noi abbiamo realizzato**: SPA React 19 standalone con Vite. Entry point separato (`resources/js/guest/main.jsx`), routing lato client con react-router-dom. Cinque pagine:
 
-| Pagina | Route | Cosa mostra |
-|--------|-------|-------------|
-| **HomePage** | `/` | Hero, sistema solare animato, 6 corpi in evidenza, stats |
-| **CorpiLista** | `/corpi-celesti` | Griglia filtrata (categoria, tipo, search), paginazione "Carica altri" |
-| **CorpoDettaglio** | `/corpi-celesti/:slug` | Metriche scientifiche, galleria, curiosità, missioni, simili |
-| **Comparatore** | `/confronta` | Due dropdown, tabella confronto 7 campi |
-| **NotFound** | `/*` | 404 con icona Telescope + link home |
+| Pagina             | Route                  | Cosa mostra                                                            |
+| ------------------ | ---------------------- | ---------------------------------------------------------------------- |
+| **HomePage**       | `/`                    | Hero, sistema solare animato, 6 corpi in evidenza, stats               |
+| **CorpiLista**     | `/corpi-celesti`       | Griglia filtrata (categoria, tipo, search), paginazione "Carica altri" |
+| **CorpoDettaglio** | `/corpi-celesti/:slug` | Metriche scientifiche, galleria, curiosità, missioni, simili           |
+| **Comparatore**    | `/confronta`           | Due dropdown, tabella confronto 7 campi                                |
+| **NotFound**       | `/*`                   | 404 con icona Telescope + link home                                    |
 
 **Componenti riutilizzabili**: Navbar, Footer, SolarSystem (framer-motion), CorpoCard (gradiente + fallback icona), CategoriaBadge (8 colori), SearchBar, LightboxGalleria, TimelineMissioni, ErrorBoundary.
 
@@ -142,6 +145,7 @@ GET /api/dashboard/stats      ← conteggi per homepage
 ✅ **Noi abbiamo realizzato**: upload per Missioni (logo 300px) e Galleria (immagini 1200x1200). Durante lo sviluppo, la libreria Intervention Image è passata dalla versione 3 alla 4 con API completamente diversa.
 
 📌 **ERRORE COMUNE DA NON FARE**: in v4 NON esiste `Image::read()`. Si usa:
+
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -164,6 +168,7 @@ $image->save($path);
 ✅ Struttura a **service layer**: `app/Services/NasaImageService.php` contiene tutta la logica. Separata dal controller (che gestisce solo la request/response HTTP). Separata dal comando Artisan (che gestisce solo l'input/output CLI).
 
 **Metodi principali**:
+
 - `searchNasa(query, extraFallbacks)` → chiama `images-api.nasa.gov`, timeout 30s, retry 2. Fallback automatico per apostrofi (`Earth's Moon` → `Earth Moon` → `Moon`)
 - `extractMetadata(item)` → estrae `nasa_id`, `title`, `photographer`, `description`, `keywords`
 - `pickImageUrl(item)` → sceglie URL: `alternate` (~medium.jpg) → `preview` (~thumb.jpg) → `canonical` (~orig.jpg, ultima spiaggia)
@@ -223,6 +228,7 @@ Riscritti 9 controller auth (da `Inertia::render()` a `view()`). Create 11 viste
 **Colonna `is_admin`**: boolean su tabella `users`, default false. Admin demo ha `true`.
 
 **5 Policy** (una per entità): tutte con lo stesso pattern:
+
 ```php
 public function before(User $user): ?bool
 {
@@ -242,7 +248,8 @@ public function delete(): bool { return false; }
 
 📌 **`before()` con `?bool`**: se restituisce `true` → bypassa tutto (admin). Se restituisce `null` → Laravel controlla il metodo specifico (non-admin). Se restituisce `false` → blocca TUTTO, anche viewAny. Questo pattern è comodissimo: un unico `before()` gestisce tutti i casi.
 
-📌 **Policy vs Gate**: 
+📌 **Policy vs Gate**:
+
 - Policy = gruppo di permessi su un modello (Categoria, CorpoCeleste...)
 - Gate = singola azione (es. "admin"). Si usa con `Gate::authorize('admin')`
 
@@ -268,6 +275,7 @@ public function delete(): bool { return false; }
 🎯 **La traccia non richiedeva esplicitamente test. Ma un progetto professionale ne ha.**
 
 ✅ **218 test totali**:
+
 - **130 PHPUnit** (335 assertion): 26 test unitari NasaImageService + 8 file test API + 5 file test Admin CRUD + 6 file auth Breeze
 - **88 Vitest**: 27 test componenti React + 61 test integrazione API
 - **HasFactory** su tutti i 5 modelli del dominio
@@ -275,6 +283,7 @@ public function delete(): bool { return false; }
 - **`Http::fake()`** in tutti i test che creano CorpoCeleste
 
 📌 **Pattern obbligatorio per i test**:
+
 ```php
 protected function setUp(): void
 {
@@ -294,6 +303,7 @@ protected function setUp(): void
 🎯 **La traccia non richiedeva una dashboard con grafici. Extra Wow Factor.**
 
 ✅ **10 bug critici fixati**:
+
 - Blade: `@endif` mancanti in 3 file (categorie, galleria, curiosità)
 - React: NaN km in CorpoCard (aggiunto `isNaN` guard)
 - React: route catch-all `path="*"` mancante (404 non funzionava)
@@ -304,6 +314,7 @@ protected function setUp(): void
 - React: import duplicato Orbit da lucide-react
 
 ✅ **Dashboard Chart.js**: 3 grafici interattivi con tema dark:
+
 - Donut: corpi per categoria (es. quanti pianeti, quante stelle)
 - Barre verticali: corpi per tipo (es. gigante gassoso, pianeta roccioso)
 - Barre orizzontali: missioni per stato (Completata, In corso, Pianificata)
@@ -330,41 +341,41 @@ protected function setUp(): void
 
 ✅ **Error Boundary**: class component React che avvolge `<Routes>` in App.jsx. Se un componente crasha, mostra fallback UI con tema dark + icona AlertTriangle + "Qualcosa è andato storto" + link home.
 
-📌 **document.title in React per SEO** — non c'è SSR, ma almeno il titolo della scheda browser è descrittivo. Ogni pagina lo imposta via useEffect  con dipendenza appropriata (es. CorpoDettaglio si aggiorna quando arriva il nome dall'API).
+📌 **document.title in React per SEO** — non c'è SSR, ma almeno il titolo della scheda browser è descrittivo. Ogni pagina lo imposta via useEffect con dipendenza appropriata (es. CorpoDettaglio si aggiorna quando arriva il nome dall'API).
 
 ---
 
 ## 3. Checklist Requisiti → Realizzato
 
-| # | Requisito | Realizzato in | Stato |
-|---|-----------|---------------|-------|
-| 1 | Backoffice Laravel con Blade | **Fase 2** — 20 viste Blade, layout master, sidebar, tema dark | ✅ |
-| 2 | Autenticazione Breeze | **Fase 11** — Breeze su Blade puro (Inertia rimosso), tema scuro | ✅ |
-| 3 | CRUD entità principale | **Fase 2** — CorpoCeleste: index con paginazione+ricerca, create, store, show, edit, update, destroy | ✅ |
-| 4 | Relazioni 1-N o N-N | **Fase 1** — 3 tipi: BelongsTo/HasMany (1-N), BelongsToMany (N-N con pivot) | ✅ |
-| 5 | CRUD entità secondarie | **Fase 2** — Categoria, Missione, Curiosità, Galleria — CRUD completo ciascuno | ✅ |
-| 6 | Upload media | **Fase 7** — Missioni (logo 300px), Galleria (1200x1200) con Intervention Image v4 | ✅ |
-| 7 | SPA React guest | **Fase 4-5** — React 19 standalone, 5 pagine, 9 componenti, react-router-dom | ✅ |
-| 8 | Lista elementi guest | **Fase 4-5** — CorpiLista.jsx: griglia, filtri (categoria/tipo/search), paginazione | ✅ |
-| 9 | Dettaglio elemento guest | **Fase 4-5** — CorpoDettaglio.jsx: metriche, galleria, curiosità, missioni, simili | ✅ |
-| 10 | Info correlate | **Fase 4-5** — Badge categoria, lightbox, timeline missioni, simili, curiosità | ✅ |
-| 11 | API REST | **Fase 3** — 10 endpoint JSON, filtri, eager loading, API Resources, slug binding | ✅ |
-| 12 | Test API via Postman | **Fase 3** — Endpoint pubblici, response JSON, filtri via query params | ✅ |
+| #   | Requisito                    | Realizzato in                                                                                        | Stato |
+| --- | ---------------------------- | ---------------------------------------------------------------------------------------------------- | ----- |
+| 1   | Backoffice Laravel con Blade | **Fase 2** — 20 viste Blade, layout master, sidebar, tema dark                                       | ✅    |
+| 2   | Autenticazione Breeze        | **Fase 11** — Breeze su Blade puro (Inertia rimosso), tema scuro                                     | ✅    |
+| 3   | CRUD entità principale       | **Fase 2** — CorpoCeleste: index con paginazione+ricerca, create, store, show, edit, update, destroy | ✅    |
+| 4   | Relazioni 1-N o N-N          | **Fase 1** — 3 tipi: BelongsTo/HasMany (1-N), BelongsToMany (N-N con pivot)                          | ✅    |
+| 5   | CRUD entità secondarie       | **Fase 2** — Categoria, Missione, Curiosità, Galleria — CRUD completo ciascuno                       | ✅    |
+| 6   | Upload media                 | **Fase 7** — Missioni (logo 300px), Galleria (1200x1200) con Intervention Image v4                   | ✅    |
+| 7   | SPA React guest              | **Fase 4-5** — React 19 standalone, 5 pagine, 9 componenti, react-router-dom                         | ✅    |
+| 8   | Lista elementi guest         | **Fase 4-5** — CorpiLista.jsx: griglia, filtri (categoria/tipo/search), paginazione                  | ✅    |
+| 9   | Dettaglio elemento guest     | **Fase 4-5** — CorpoDettaglio.jsx: metriche, galleria, curiosità, missioni, simili                   | ✅    |
+| 10  | Info correlate               | **Fase 4-5** — Badge categoria, lightbox, timeline missioni, simili, curiosità                       | ✅    |
+| 11  | API REST                     | **Fase 3** — 10 endpoint JSON, filtri, eager loading, API Resources, slug binding                    | ✅    |
+| 12  | Test API via Postman         | **Fase 3** — Endpoint pubblici, response JSON, filtri via query params                               | ✅    |
 
 ### Wow Factor — Oltre la Traccia
 
-| Extra | Descrizione | Dove |
-|-------|-------------|------|
-| 🚀 **NASA API Integration** | Import automatico immagini reali, fallback apostrofi, auto-import su created | Fase 8-9 |
-| 🪐 **Sistema Solare Animato** | 8 pianeti orbitanti con velocità differenziate, framer-motion | Fase 6 |
-| 🖼️ **Lightbox Galleria** | Schermo intero con swipe mobile, slideshow | Fase 5 |
-| ⚖️ **Comparatore Pianeti** | Confronto 2 corpi su 7 metriche, pre-fill via URL params | Fase 5 |
-| 📅 **Timeline Missioni** | Scrolling orizzontale con badge stato colorato | Fase 5 |
-| 📊 **Dashboard Chart.js** | 3 grafici donut/barre con tema dark | Fase 14 |
-| 🛠️ **CLI Commands** | `astralis:fetch-nasa` e `astralis:gallery` per manutenzione | Fase 8-11 |
-| 🛡️ **Error Boundary** | Fallback UI globale per crash React | Fase 15 |
-| 🔍 **SEO Meta Tags** | `document.title` dinamico su 5 pagine | Fase 15 |
-| 🧪 **218 Test Totali** | 130 PHPUnit + 88 Vitest, Http::fake(), observer skip | Fase 13-15 |
+| Extra                         | Descrizione                                                                  | Dove       |
+| ----------------------------- | ---------------------------------------------------------------------------- | ---------- |
+| 🚀 **NASA API Integration**   | Import automatico immagini reali, fallback apostrofi, auto-import su created | Fase 8-9   |
+| 🪐 **Sistema Solare Animato** | 8 pianeti orbitanti con velocità differenziate, framer-motion                | Fase 6     |
+| 🖼️ **Lightbox Galleria**      | Schermo intero con swipe mobile, slideshow                                   | Fase 5     |
+| ⚖️ **Comparatore Pianeti**    | Confronto 2 corpi su 7 metriche, pre-fill via URL params                     | Fase 5     |
+| 📅 **Timeline Missioni**      | Scrolling orizzontale con badge stato colorato                               | Fase 5     |
+| 📊 **Dashboard Chart.js**     | 3 grafici donut/barre con tema dark                                          | Fase 14    |
+| 🛠️ **CLI Commands**           | `astralis:fetch-nasa` e `astralis:gallery` per manutenzione                  | Fase 8-11  |
+| 🛡️ **Error Boundary**         | Fallback UI globale per crash React                                          | Fase 15    |
+| 🔍 **SEO Meta Tags**          | `document.title` dinamico su 5 pagine                                        | Fase 15    |
+| 🧪 **218 Test Totali**        | 130 PHPUnit + 88 Vitest, Http::fake(), observer skip                         | Fase 13-15 |
 
 ---
 
@@ -375,26 +386,33 @@ protected function setUp(): void
 Tutti gli endpoint sono **pubblici** (nessun token, nessuna autenticazione). Basta puntare Postman a `http://localhost:8000`.
 
 **Esempio 1 — Lista corpi celesti con filtro**:
+
 ```
 GET http://localhost:8000/api/corpi-celesti?categoria=pianeta&per_page=5
 ```
+
 Response: JSON con `data[]`, `meta` (pagination), `links`. Ogni corpo ha `nome_display` (italiano se disponibile).
 
 **Esempio 2 — Dettaglio con slug**:
+
 ```
 GET http://localhost:8000/api/corpi-celesti/terra
 ```
+
 Response: JSON con categoria, galleria (url immagine, didascalia, crediti), curiosità, missioni (con pivot: tipo_esplorazione, anno_arrivo).
 
 **Esempio 3 — Filtri multipli**:
+
 ```
 GET http://localhost:8000/api/missioni?agenzia=NASA&stato=Completata
 ```
 
 **Esempio 4 — Stats dashboard**:
+
 ```
 GET http://localhost:8000/api/dashboard/stats
 ```
+
 Response: conteggio corpi, categorie, missioni; ultimi 5 corpi; missioni per stato.
 
 ### Come Creare una Migrazione
@@ -426,7 +444,7 @@ public function commenti(): HasMany
     return $this->hasMany(Commento::class);
 }
 
-// Su Commento.php (il "uno")  
+// Su Commento.php (il "uno")
 public function corpoCeleste(): BelongsTo
 {
     return $this->belongsTo(CorpoCeleste::class);
@@ -473,23 +491,23 @@ Questo crea: `app/Models/Commento.php`, `database/migrations/...create_commenti_
 
 ## 5. Il Nostro Stack Tecnologico
 
-| Livello | Tecnologia | Versione | Perché |
-|---------|-----------|----------|--------|
-| **Backend** | Laravel | 13 | Richiesto dalla traccia. Eloquent ORM, migrazioni, artisan CLI |
-| **Database** | MySQL | 8.x | Richiesto. Porta 3307 |
-| **Auth** | Laravel Breeze | — | Richiesto. Configurato con Blade (non Inertia) |
-| **Frontend guest** | React | 19 | Richiesto. SPA standalone con Vite |
-| **Frontend admin** | Blade + Alpine.js | — | Richiesto per admin (Blade). Alpine.js per modali conferma |
-| **CSS** | Tailwind CSS | 3.2 | Utility-first, tema dark custom |
-| **Animazioni** | framer-motion | 12 | Sistema solare, transizioni pagina |
-| **Icone** | lucide-react | 1 | Icone categorìa, navigazione, azioni |
-| **Lightbox** | yet-another-react-lightbox | 3 | Galleria immagini a schermo intero |
-| **Immagini** | Intervention Image | 4 | Upload con scaleDown (NO facade) |
-| **Slug** | spatie/laravel-sluggable | — | Slug automatici su 3 modelli |
-| **Grafici** | Chart.js (CDN) | 4.4 | Dashboard admin (donut, barre) |
-| **API esterne** | NASA Image API | — | Import immagini reali, auto-suggest |
-| **Test PHP** | PHPUnit | — | 130 test, 335 assertion |
-| **Test JS** | Vitest + Testing Library | 4 | 88 test, environment jsdom |
+| Livello            | Tecnologia                 | Versione | Perché                                                         |
+| ------------------ | -------------------------- | -------- | -------------------------------------------------------------- |
+| **Backend**        | Laravel                    | 13       | Richiesto dalla traccia. Eloquent ORM, migrazioni, artisan CLI |
+| **Database**       | MySQL                      | 8.x      | Richiesto. Porta 3307                                          |
+| **Auth**           | Laravel Breeze             | —        | Richiesto. Configurato con Blade (non Inertia)                 |
+| **Frontend guest** | React                      | 19       | Richiesto. SPA standalone con Vite                             |
+| **Frontend admin** | Blade + Alpine.js          | —        | Richiesto per admin (Blade). Alpine.js per modali conferma     |
+| **CSS**            | Tailwind CSS               | 3.2      | Utility-first, tema dark custom                                |
+| **Animazioni**     | framer-motion              | 12       | Sistema solare, transizioni pagina                             |
+| **Icone**          | lucide-react               | 1        | Icone categorìa, navigazione, azioni                           |
+| **Lightbox**       | yet-another-react-lightbox | 3        | Galleria immagini a schermo intero                             |
+| **Immagini**       | Intervention Image         | 4        | Upload con scaleDown (NO facade)                               |
+| **Slug**           | spatie/laravel-sluggable   | —        | Slug automatici su 3 modelli                                   |
+| **Grafici**        | Chart.js (CDN)             | 4.4      | Dashboard admin (donut, barre)                                 |
+| **API esterne**    | NASA Image API             | —        | Import immagini reali, auto-suggest                            |
+| **Test PHP**       | PHPUnit                    | —        | 130 test, 335 assertion                                        |
+| **Test JS**        | Vitest + Testing Library   | 4        | 88 test, environment jsdom                                     |
 
 ---
 
@@ -528,10 +546,10 @@ php artisan make:test NomeTest --unit
 
 ## 7. Credenziali
 
-| Ruolo | Email | Password |
-|-------|-------|----------|
-| **Admin** | admin@astralis.it | password |
-| **Utente normale** | (registrazione libera su /register) | — |
+| Ruolo              | Email                               | Password |
+| ------------------ | ----------------------------------- | -------- |
+| **Admin**          | admin@astralis.it                   | password |
+| **Utente normale** | (registrazione libera su /register) | —        |
 
 ---
 
@@ -539,46 +557,46 @@ php artisan make:test NomeTest --unit
 
 ### Scheda 1 — Relazioni Eloquent
 
-| Tipo | Cos'è | La FK sta su... | Esempio dal progetto | Comando |
-|------|-------|-----------------|---------------------|---------|
-| **BelongsTo** (1) | Il modello "figlio" appartiene al "padre" | Questo modello | `CorpoCeleste` → `categoria_id` | `$this->belongsTo(Categoria::class)` |
-| **HasMany** (N) | Il modello "padre" ha molti "figli" | L'altro modello | `Categoria` → `corpiCelesti()` | `$this->hasMany(CorpoCeleste::class)` |
-| **BelongsToMany** (N-N) | Molti-a-molti, serve tabella pivot | Nessuno (terza tabella) | `CorpoCeleste` ↔ `Missione` via `corpo_celeste_missione` | `$this->belongsToMany(Missione::class)->withPivot(['tipo_esplorazione'])` |
+| Tipo                    | Cos'è                                     | La FK sta su...         | Esempio dal progetto                                     | Comando                                                                   |
+| ----------------------- | ----------------------------------------- | ----------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **BelongsTo** (1)       | Il modello "figlio" appartiene al "padre" | Questo modello          | `CorpoCeleste` → `categoria_id`                          | `$this->belongsTo(Categoria::class)`                                      |
+| **HasMany** (N)         | Il modello "padre" ha molti "figli"       | L'altro modello         | `Categoria` → `corpiCelesti()`                           | `$this->hasMany(CorpoCeleste::class)`                                     |
+| **BelongsToMany** (N-N) | Molti-a-molti, serve tabella pivot        | Nessuno (terza tabella) | `CorpoCeleste` ↔ `Missione` via `corpo_celeste_missione` | `$this->belongsToMany(Missione::class)->withPivot(['tipo_esplorazione'])` |
 
 **Regola pratica**: se la risposta a "chi ha la chiave esterna?" è "questo modello" → `BelongsTo`. Se è "l'altro modello" → `HasMany`. Se non c'è una chiave esterna in nessuno dei due → `BelongsToMany` (pivot).
 
 ### Scheda 2 — Pattern Ricorrenti
 
-| Pattern | Dove si usa | Codice |
-|---------|------------|--------|
-| **Route resource** | web.php — 6 CRUD admin | `Route::resource('/admin/categorie', CategoriaController::class)` genera 7 route |
-| **Filtri condizionali** | Controller Admin e Api | `$query->when($request->search, fn($q, $v) => $q->where('nome', 'like', "%{$v}%"))` |
-| **Eager loading** | show() di ogni controller | `CorpoCeleste::with(['categoria','galleria','curiosita','missioni'])->firstOrFail()` |
-| **Authorize** | CRUD admin | `$this->authorize('create', Categoria::class)` |
-| **Paginazione** | Index admin | `$categorie = Categoria::paginate(20)->withQueryString()` + `{{ $categorie->links() }}` nella vista |
-| **withQueryString** | Index admin | Preserva i parametri `?search=` durante la paginazione |
-| **Http::fake()** | Test PHPUnit | `Http::fake(['images-api.nasa.gov/*' => Http::response([...])])` |
-| **withoutVerifying** | NasaImageService | `if (app()->environment('local', 'testing')) { $request->withoutVerifying(); }` |
-| **app()->environment('testing')** | Observer | `if (app()->environment('testing')) { return; }` — skip NASA in test |
-| **Route model binding con slug** | api.php | `Route::get('/.../{corpoCeleste:slug}')` — cerca per slug, non per id |
-| **scaleDown()** | Upload immagini | `$image->scaleDown(width: 1200, height: 1200)` — ridimensiona solo se più grande |
-| **$fillable** | Modelli | `protected $fillable = ['nome', 'slug', 'categoria_id', ...]` — campi assegnabili in massa |
-| **Accessor** | Modelli | `public function getNomeDisplayAttribute(): string { return $this->nome_it ?? $this->nome; }` |
+| Pattern                           | Dove si usa               | Codice                                                                                              |
+| --------------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Route resource**                | web.php — 6 CRUD admin    | `Route::resource('/admin/categorie', CategoriaController::class)` genera 7 route                    |
+| **Filtri condizionali**           | Controller Admin e Api    | `$query->when($request->search, fn($q, $v) => $q->where('nome', 'like', "%{$v}%"))`                 |
+| **Eager loading**                 | show() di ogni controller | `CorpoCeleste::with(['categoria','galleria','curiosita','missioni'])->firstOrFail()`                |
+| **Authorize**                     | CRUD admin                | `$this->authorize('create', Categoria::class)`                                                      |
+| **Paginazione**                   | Index admin               | `$categorie = Categoria::paginate(20)->withQueryString()` + `{{ $categorie->links() }}` nella vista |
+| **withQueryString**               | Index admin               | Preserva i parametri `?search=` durante la paginazione                                              |
+| **Http::fake()**                  | Test PHPUnit              | `Http::fake(['images-api.nasa.gov/*' => Http::response([...])])`                                    |
+| **withoutVerifying**              | NasaImageService          | `if (app()->environment('local', 'testing')) { $request->withoutVerifying(); }`                     |
+| **app()->environment('testing')** | Observer                  | `if (app()->environment('testing')) { return; }` — skip NASA in test                                |
+| **Route model binding con slug**  | api.php                   | `Route::get('/.../{corpoCeleste:slug}')` — cerca per slug, non per id                               |
+| **scaleDown()**                   | Upload immagini           | `$image->scaleDown(width: 1200, height: 1200)` — ridimensiona solo se più grande                    |
+| **$fillable**                     | Modelli                   | `protected $fillable = ['nome', 'slug', 'categoria_id', ...]` — campi assegnabili in massa          |
+| **Accessor**                      | Modelli                   | `public function getNomeDisplayAttribute(): string { return $this->nome_it ?? $this->nome; }`       |
 
 ### Scheda 3 — Errori Comuni da NON Fare
 
-| Errore | Perché è sbagliato | Cosa fare invece |
-|--------|--------------------|------------------|
-| `Image::read()` in Intervention v4 | La facade è stata rimossa in v4. Cause: `Call to undefined method read()` | `new ImageManager(new Driver())->read($path)` o `->decodePath()` |
-| `resize()` invece di `scaleDown()` | `resize()` forza le dimensioni e distorce l'immagine | `scaleDown(width, height)` preserva aspect ratio e scala solo se necessario |
-| Dimenticare `Http::fake()` nei test | L'observer chiama NASA API reale → test lenti o falliti | `Http::fake()` in setUp() di ogni test che crea CorpoCeleste |
-| Dimenticare eager loading nelle show | **N+1 problem**: se una vista chiama `$missione->corpiCelesti` in un loop, fai N query extra | `Missione::with('corpiCelesti.categoria')->findOrFail($id)` |
-| Usare `->get()` invece di `->paginate()` | Su migliaia di record, carica tutto in memoria | `->paginate(20)` con `->withQueryString()` e `{{ $records->links() }}` nella vista |
-| `@if` senza `@endif` in Blade | Sintassi Blade incompleta → errore 500 silenzioso | Controllare sempre che ogni `@if`/`@foreach` abbia la sua chiusura |
-| Dimenticare `->constrained()` nelle migration FK | La colonna viene creata senza FK reale | `$table->foreignId('categoria_id')->constrained()->cascadeOnDelete()` |
-| Mantenere Inertia quando non serve | Dipendenze inutili, complessità, possibili conflitti di routing | Se la SPA è standalone (comunica via API), Inertia non serve — rimuovilo |
-| `$fillable` senza `nasa_id` | Mass assignment exception quando crei/aggiorni CorpoCeleste | Aggiungere TUTTI i campi che ricevono dati da request/API in `$fillable` |
+| Errore                                           | Perché è sbagliato                                                                           | Cosa fare invece                                                                   |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `Image::read()` in Intervention v4               | La facade è stata rimossa in v4. Cause: `Call to undefined method read()`                    | `new ImageManager(new Driver())->read($path)` o `->decodePath()`                   |
+| `resize()` invece di `scaleDown()`               | `resize()` forza le dimensioni e distorce l'immagine                                         | `scaleDown(width, height)` preserva aspect ratio e scala solo se necessario        |
+| Dimenticare `Http::fake()` nei test              | L'observer chiama NASA API reale → test lenti o falliti                                      | `Http::fake()` in setUp() di ogni test che crea CorpoCeleste                       |
+| Dimenticare eager loading nelle show             | **N+1 problem**: se una vista chiama `$missione->corpiCelesti` in un loop, fai N query extra | `Missione::with('corpiCelesti.categoria')->findOrFail($id)`                        |
+| Usare `->get()` invece di `->paginate()`         | Su migliaia di record, carica tutto in memoria                                               | `->paginate(20)` con `->withQueryString()` e `{{ $records->links() }}` nella vista |
+| `@if` senza `@endif` in Blade                    | Sintassi Blade incompleta → errore 500 silenzioso                                            | Controllare sempre che ogni `@if`/`@foreach` abbia la sua chiusura                 |
+| Dimenticare `->constrained()` nelle migration FK | La colonna viene creata senza FK reale                                                       | `$table->foreignId('categoria_id')->constrained()->cascadeOnDelete()`              |
+| Mantenere Inertia quando non serve               | Dipendenze inutili, complessità, possibili conflitti di routing                              | Se la SPA è standalone (comunica via API), Inertia non serve — rimuovilo           |
+| `$fillable` senza `nasa_id`                      | Mass assignment exception quando crei/aggiorni CorpoCeleste                                  | Aggiungere TUTTI i campi che ricevono dati da request/API in `$fillable`           |
 
 ---
 
-*Documento generato il 09/07/2026 — Astralis v13.18*
+_Documento generato il 09/07/2026 — Astralis v13.18_
