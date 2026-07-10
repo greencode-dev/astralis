@@ -20,7 +20,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 - Autorizzazione admin con Policy e Gates (soli admin possono creare/modificare/eliminare)
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
 - Upload di immagini con Intervention Image v4
-- NASA Import: importa immagini da NASA API (singolo, massivo con Force Import All, o via CLI con `php artisan astralis:fetch-nasa`)
+- NASA Import: importa immagini da NASA API (singolo, massivo in coda via Job Queue, o via CLI con `php artisan astralis:fetch-nasa`)
 - Manutenzione galleria immagini (`php artisan astralis:gallery --fix`)
 - Dashboard con statistiche e grafici (Chart.js: corpi per categoria/tipo, missioni per stato)
 - Dark theme (`#0A0A1A`, `#111128`, `#22D3EE`)
@@ -28,7 +28,8 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ### 🌟 Frontend (React + Vite)
 
 - Sistema solare animato con orbite dei pianeti
-- Lista e dettaglio di ogni corpo celeste con dati scientifici
+- Lista e dettaglio di ogni corpo celeste con dati scientifici (con AbortController e retry automatico)
+- ErrorBoundary globale con retry e guard per immagini rotte
 - Galleria immagini con lightbox a schermo intero
 - Timeline delle missioni spaziali
 - Comparatore di pianeti (confronta massa, diametro, temperatura, gravità)
@@ -63,13 +64,16 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ## 🧪 Test
 
 ```bash
-# Suite completa (130 test, 335 assertion, nessuna dipendenza esterna)
+# Suite completa (103 test PHPUnit, nessuna dipendenza esterna)
 php artisan test
 
-# Test specifici
+# Frontend (87 test Vitest)
+npm test
+
+# Test specifici PHP
 php artisan test tests/Unit/NasaImageServiceTest.php  # 26 test — NASA import service
-php artisan test tests/Feature/Api/                    # 8 file — API REST endpoint
-php artisan test tests/Feature/Admin/                  # 5 file — CRUD admin (46 test)
+php artisan test tests/Feature/Api/                    # API REST endpoint
+php artisan test tests/Feature/Admin/                  # CRUD admin
 ```
 
 ## 🗄️ Entità e Relazioni

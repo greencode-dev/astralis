@@ -1,10 +1,13 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-09*
+*Ultimo aggiornamento: 2026-07-10*
 
-## Pre-commit 2026-07-09 — 10 bug critici fixati
+## Post-commit 2026-07-10 — Fase 1 (React P0) + Fase 2 (Laravel P0) completate
 
 ## Fatto
+
+- [x] **Fase 1 — React P0 critico**: AbortController + useFetch hook + ErrorBoundary globale + guard immagini rotte + axios interceptors retry
+- [x] **Fase 2 — Laravel P0 critico**: Job queue ImportNasaImage + chunk(50) + rate limiting API (throttle:60,1) + caching searchNasa()
 
 - [x] **P2 Admin CRUD test** — 4 nuovi file: CategoriaCrudTest (14), MissioneCrudTest (13), CuriositaCrudTest (10), GalleriaCrudTest (9) — 130 test totali
 - [x] **P2 Categoria pagination** — `->paginate(20)` + `->withQueryString()` + `$categorie->links()`
@@ -44,31 +47,59 @@
 - [x] **Fase 0** — Setup Laravel + Breeze + React + documentazione
 - [x] UI/UX: tema scuro auth pages, link Register, paginazione admin, badge in_evidenza
 
-## Da Fare
+## Da Fare (Piano di Ottimizzazione)
 
-### 🔴 P0 — Bloccante
-_Nessun task bloccante. Il progetto non ha bug critici o blocchi noti._ 🟢
+### Fase 3 — Alto React Frontend (P1)
+- [ ] 3.2 Inline styles → Tailwind classes (~5-6 convertibili su 15)
+- [ ] 3.4 framer-motion → CSS transitions (4/5 file convertibili, ~3h)
+- [ ] 3.6 onFocus/onBlur → CSS :focus-within
+- _3.1 React.lazy, 3.5 Dedup categoryIcons: già fatti_ ✅
 
-### 🟠 P1 — Utente
-_Nessun task utente in sospeso. Fasce 12.3-12.4 hanno coperto questa fascia._ 🟢
+### Fase 4 — Alto Backend Laravel (P1)
+- [ ] 4.1 Cache dashboard + invalidazione su create/update/delete
+- _4.2-4.6: già fatti_ ✅
 
-### 🔵 P2 — Manutenzione (refactoring, test, performance)
+### Fase 5 — Alto Admin Blade (P1)
+- [ ] 5.1 CSS component class .admin-input per form
+- [ ] 5.2 Hardcoded hex → CSS variables
+- [ ] 5.3 Estrarre partials Blade (actions, stat-cards)
+- [ ] 5.4 Form partial unificato per create/edit
+- _5.5 @section fix: già fatto_ ✅
 
-_Tutti i task P2 completati. Admin CRUD test completi (4 file, 47 test), Categoria pagination, Curiosità show, search/filter admin._ 🟢
+### Fase 6 — Medio React Frontend (P2)
+- [ ] 6.1 React.memo (LightboxGalleria)
+- [ ] 6.4 SolarSystem stabilità (stelle non saltano al mount)
+- _6.2 Debounce, 6.3 useMemo Lightbox: già fatti_ ✅
 
-### 🟣 P3 — Accessibilità / Robustezza
+### Fase 7 — Medio Backend Laravel (P2)
+- [ ] 7.2 DashboardController → $this->authorize() consistente
+- [ ] 7.3 suggestNome: invertire ordine chiamate (inglese prima), debounce frontend
+- _7.1, 7.4, 7.5: già fatti_ ✅
 
-_Tutti i task P3 completati. SEO meta tags React (5 pagine), Error Boundary globale._ 🟢
+### Fase 8 — Medio Admin Blade (P2)
+- [ ] 8.1 Estrarre HTML NASA suggest duplicato in create/edit
+- [ ] 8.3 CDN fallback locale Alpine.js + Chart.js
+- _8.2, 8.4: già fatti_ ✅
 
-### ⚪ P4 — Futuro (nice-to-have)
+### Fase 9 — Test (P1-P3)
+- [ ] 9.1 AdminTestCase refactoring (5 CRUD test → estendono classe base)
+- [ ] 9.2 Data provider authorization tests
+- [ ] 9.3 Uniformare Http::fake() pattern
+- [ ] 9.4 Frontend fixtures.js centralizzato
+- [ ] 9.5 Factory foreign key fix (->for())
+- [ ] 9.6 Copertura test mancante (7 route admin + 2 comandi + 3 API)
+- [ ] 9.7 DashboardApiTest assertions complete
 
-_Nessun task P4 in sospeso. Tutti completati._ 🟢
+### Fase 10 — UI/UX & Writing Review (P4)
+- [ ] 10.1 Web Design Guidelines review
+- [ ] 10.2 Writing Guidelines review
+- [ ] 10.3 Frontend Design review
 
 ---
 
 ## Note
 
-- **Stato**: Tutti i task completati. Progetto in manutenzione. 130 test PHPUnit + 88 test Vitest.
+- **Stato**: Fase 1 (React P0) e Fase 2 (Laravel P0) completate. Prossime: Fase 3 (React P1). 190 test (103 PHPUnit + 87 Vitest).
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

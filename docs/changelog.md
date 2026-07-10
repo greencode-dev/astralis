@@ -424,3 +424,23 @@
 - `tests/Feature/Admin/CuriositaCrudTest.php`: **NUOVO** — 11 test (CRUD completo + show + 403)
 - `tests/Feature/Admin/GalleriaCrudTest.php`: **NUOVO** — 11 test (CRUD completo + 403)
 - Totale: 130 test PHPUnit, 335 assertion
+
+## Fase 1 — Critico React Frontend (P0)
+
+### 1.0 — 10/07/2026 — `f5ed6ab` — feat: React P0 — AbortController, useFetch, ErrorBoundary, image guards, axios interceptors
+- **AbortController** in HomePage, CorpiLista, CorpoDettaglio, Comparatore — impedisce `setState()` su componenti smontati
+- **Custom hook `useFetch`** con useReducer in `hooks/useFetch.js` — centralizza loading/error/data/abort
+- **ErrorBoundary globale** in App.jsx con pulsante retry — wrappa Navbar+Footer+Routes
+- **Guard immagini rotte** — CorpoCard, CorpoDettaglio, LightboxGalleria, TimelineMissioni: onError con fallback gradiente+icona
+- **Axios interceptors + retry** in apiClient.js — timeout 15s, 3 tentativi, gestione errori centralizzata
+
+## Fase 2 — Critico Backend Laravel (P0)
+
+### 2.0 — 10/07/2026 — `f5ed6ab` — feat: Laravel P0 — Job queue, chunk(50), rate limiting, caching NASA
+- **Observer → Job Queue**: `CorpoCelesteObserver::created()` ora dispatcha `ImportNasaImage` job invece di chiamata HTTP sincrona
+- **`app/Jobs/ImportNasaImage.php`**: **NUOVO** — job dispatchato alla queue `import-nasa`, 2 retry, 30s timeout
+- **`NasaImportController::importAll()`**: sostituito `set_time_limit(300)` con dispatch massivo via Job Queue
+- **`NasaImageService::importAll()`**: `CorpoCeleste::all()` → `CorpoCeleste::chunk(50)` — riduce memoria da migliaia a decine di modelli
+- **Rate limiting API**: `throttle:60,1` su tutti e 10 gli endpoint in `routes/api.php`
+- **Caching `searchNasa()`**: `Cache::remember(86400)` per risultati NASA API
+- **Update routes/api.php**: raggruppate 10 route sotto middleware `throttle:60,1` + `throttle:100,1` per dashboard

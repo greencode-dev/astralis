@@ -67,7 +67,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 130 test, 335 assertion, nessuna dipendenza esterna.
+- **Run**: `php artisan test` — 103 test PHPUnit, nessuna dipendenza esterna. `npm test` — 87 test Vitest. Totale: 190 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -133,29 +133,25 @@ Quando pulli la repo su un'altra macchina (o dopo tanto tempo), esegui in ordine
 6. `npx graphify update .` — ricostruisce il grafo locale
 7. Verifica `git status` — working tree deve essere pulito dopo grafo
 
-## Piano di ottimizzazione
+## Stato avanzamento piano ottimizzazione
 
-### Fase 1 — Critico React Frontend (P0)
+### ✅ Completato (10/07/2026)
 
-| # | Task | Beneficio |
-|---|------|-----------|
-| 1.1 | **AbortController in tutti gli API fetch** — HomePage, CorpiLista, CorpoDettaglio, Comparatore | Impedisce `setState()` su componenti smontati, elimina race condition e memory leak |
-| 1.2 | **Custom hook `useFetch` con useReducer** — creare `hooks/useFetch.js` | Centralizza loading/error/data/abort, elimina duplicazione useState/useEffect in 4 pagine |
-| 1.3 | **ErrorBoundary globale in App.jsx con pulsante retry** — wrappa Navbar+Footer+Routes | Se Navbar/Footer crashano, l'errore non è catturato. Retry ripristina senza cambio pagina |
-| 1.4 | **Guard immagini vuote/rotte** — CorpoCard, CorpoDettaglio, LightboxGalleria, TimelineMissioni | onError con fallback a gradiente + icona invece di broken image |
-| 1.5 | **Axios interceptors + retry in apiClient.js** | Timeout, retry su fallimenti rete, gestione errori centralizzata |
+| Fase | Task | Commit |
+|------|------|--------|
+| **1** | AbortController, useFetch hook, ErrorBoundary, image guards, axios interceptors | `f5ed6ab` |
+| **2** | Job queue (ImportNasaImage), chunk(50), rate limiting API, caching searchNasa | `f5ed6ab` |
 
-### Fase 2 — Critico Backend Laravel (P0)
+### 🔄 Da fare
 
-| # | Task | Beneficio |
-|---|------|-----------|
-| 2.1 | **Observer → Job Queue** — CorpoCelesteObserver::created() chiama NASA HTTP sincrono | Creazione corpo torna immediata, import NASA in background |
-| 2.2 | **NasaImportController sync → Job Queue** — importAll() con set_time_limit(300) | Admin non bloccato per minuti, processato in coda |
-| 2.3 | **NasaImageService::importAll() con chunk(50)** — CorpoCeleste::all() carica tutto in memoria | Riduce picco memoria da migliaia a decine di modelli |
-| 2.4 | **Rate limiting API routes** — throttle:60,1 su tutti e 10 gli endpoint | Protegge DB da scraping/abuso, 60 req/min per IP |
-| 2.5 | **Caching NasaImageService::searchNasa()** — Cache::remember() | Evita HTTP call NASA duplicate per query già fatte |
-
-### Fase 3 — Alto React Frontend (P1)
+- **Fase 3** (React P1): 3.2 Tailwind, 3.4 framer-motion→CSS, 3.6 :focus-within. Già fatti: 3.1, 3.5
+- **Fase 4** (Laravel P1): 4.1 cache invalidazione. Già fatti: 4.2-4.6
+- **Fase 5** (Admin Blade P1): 5.1 admin-input, 5.2 CSS vars, 5.3 partials, 5.4 form partial. Già fatto: 5.5
+- **Fase 6** (React P2): 6.1 memo, 6.4 SolarSystem. Già fatti: 6.2, 6.3
+- **Fase 7** (Laravel P2): 7.2 authorization, 7.3 suggestNome. Già fatti: 7.1, 7.4, 7.5
+- **Fase 8** (Admin Blade P2): 8.1 NASA suggest partial, 8.3 CDN fallback. Già fatti: 8.2, 8.4
+- **Fase 9** (Test P1-P3): Tutto da fare (20.5h)
+- **Fase 10** (UI/UX P4): Tutto da fare (~4h)
 
 | # | Task | Beneficio |
 |---|------|-----------|
