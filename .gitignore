@@ -35,11 +35,13 @@ nul
 
 # AI tooling config files (dev-local, not part of the project)
 /.ai/
-/.opencode/
+.opencode/node_modules/
+.opencode/bun.lock
+.opencode/opencode.json
+.opencode/plugins/
 # graphify-out/ is meant to be committed so the team shares the map
 # exclude only local/temp files
 graphify-out/cost.json
 graphify-out/cache/
 graphify-out/2026-07-07/
-/AGENTS.md
 /.graphifyignore
