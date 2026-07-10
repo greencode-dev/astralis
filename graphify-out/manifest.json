@@ -715,8 +715,8 @@
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
-    "mtime": 1783596050.5192907,
-    "ast_hash": "f67ac4f15ea186697a5c6594b78b1c1e",
+    "mtime": 1783684520.6223342,
+    "ast_hash": "aca0e085be120d8b213fd607e4e8ffaf",
     "semantic_hash": ""
   },
   "docs/todo.md": {
@@ -750,8 +750,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1783611636.8310134,
-    "ast_hash": "2a6f9f4e7f2aa66ea8f9092bbd687093",
+    "mtime": 1783684540.1658194,
+    "ast_hash": "f015bab5c4245977ff468825fe368fb2",
     "semantic_hash": ""
   },
   "app/Policies/CategoriaPolicy.php": {
@@ -1512,6 +1512,166 @@
   "tests/Feature/Admin/AdminTestCase.php": {
     "mtime": 1783682915.0538316,
     "ast_hash": "ab0f3aee3aae3da9ee05b579dd81e2f5",
+    "semantic_hash": ""
+  },
+  ".opencode/package.json": {
+    "mtime": 1783490648.4125805,
+    "ast_hash": "c0b0f5dc9e1aa8a676ef799bc9cc8153",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/algorithmic-art/SKILL.md": {
+    "mtime": 1783672869.156008,
+    "ast_hash": "edfa3e23147ec7f049ef483146c89f16",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/astralis-blade-admin/SKILL.md": {
+    "mtime": 1783673142.8785431,
+    "ast_hash": "07b681b38f289be821125f12f2f548a8",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/astralis-laravel/SKILL.md": {
+    "mtime": 1783673132.0732186,
+    "ast_hash": "263dad42c9e75ba0076811b1bf21ad76",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/astralis-react-spa/SKILL.md": {
+    "mtime": 1783673137.215245,
+    "ast_hash": "ef15e7e9e226249323e872b424d16cbf",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/astralis-testing/SKILL.md": {
+    "mtime": 1783673148.0386376,
+    "ast_hash": "0e23c97c49aa66094e4764d508fcc432",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/brand-guidelines/SKILL.md": {
+    "mtime": 1783672869.2196553,
+    "ast_hash": "0d3f3a8d3d0f608ff8c65f1e25653459",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/canvas-design/SKILL.md": {
+    "mtime": 1783672869.2838755,
+    "ast_hash": "3e8f34200a72e363de1bb17335591e43",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/claude-api/SKILL.md": {
+    "mtime": 1783672869.3460722,
+    "ast_hash": "fc4a6b5eb37d6373ef3b721f417c3b44",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/composition-patterns/SKILL.md": {
+    "mtime": 1783672874.2030995,
+    "ast_hash": "0fc4743c76a39e613a48f6fb331c6c8c",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/deploy-to-vercel/SKILL.md": {
+    "mtime": 1783672874.2835839,
+    "ast_hash": "1ae383e5a5112e00c61ad164e14138ab",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/doc-coauthoring/SKILL.md": {
+    "mtime": 1783672869.4039314,
+    "ast_hash": "23dde1262abf78be040c6d4261b02837",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/docx/SKILL.md": {
+    "mtime": 1783672869.466475,
+    "ast_hash": "d01ef8090dc1cd8810e9b5648e7fe20c",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/frontend-design/SKILL.md": {
+    "mtime": 1783672874.8902147,
+    "ast_hash": "31c633612585bf2dd4e6d1103afc9f33",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/internal-comms/SKILL.md": {
+    "mtime": 1783672869.5411422,
+    "ast_hash": "09631900d83e037692a55df0839f311e",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/mcp-builder/SKILL.md": {
+    "mtime": 1783672869.6115806,
+    "ast_hash": "532819f3a4e5f9b4d614b650a5b52589",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/pdf/SKILL.md": {
+    "mtime": 1783672871.469154,
+    "ast_hash": "edbd1402a88246f5fa0346c24b8046a1",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/pptx/SKILL.md": {
+    "mtime": 1783672871.5509033,
+    "ast_hash": "08ec073958de68b01e131d778f483565",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/react-best-practices/SKILL.md": {
+    "mtime": 1783672874.349984,
+    "ast_hash": "c49d9be4fe5371e78d6f6df92892c187",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/react-native-skills/SKILL.md": {
+    "mtime": 1783672874.4180863,
+    "ast_hash": "19b087a4149649b8a8415f87c442be4a",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/react-view-transitions/SKILL.md": {
+    "mtime": 1783672874.4907062,
+    "ast_hash": "2bea07dd6aa7c9250e69a4f241b57396",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/skill-creator/SKILL.md": {
+    "mtime": 1783672871.629026,
+    "ast_hash": "45a083e83c8627f2d3d3057eba18218c",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/slack-gif-creator/SKILL.md": {
+    "mtime": 1783672871.7075517,
+    "ast_hash": "255a5cef8d31b9951f2664ff9ceb1cff",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/theme-factory/SKILL.md": {
+    "mtime": 1783672871.7816744,
+    "ast_hash": "1a7af545958130064b518e4a5eb8ea01",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/vercel-cli-with-tokens/SKILL.md": {
+    "mtime": 1783672874.562251,
+    "ast_hash": "0caef467ac070f2a29435fd183c1bc35",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/vercel-optimize/SKILL.md": {
+    "mtime": 1783672874.650593,
+    "ast_hash": "904c251a90f25cf5b400c8f4c1b859e3",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/web-artifacts-builder/SKILL.md": {
+    "mtime": 1783672871.8633995,
+    "ast_hash": "f4a535c27f69537e3bf87909b87a424b",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/web-design-guidelines/SKILL.md": {
+    "mtime": 1783672874.7432775,
+    "ast_hash": "98087aedd18375666dbb093c859b2949",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/webapp-testing/SKILL.md": {
+    "mtime": 1783672871.9435802,
+    "ast_hash": "9bb5638aa84704e0359145a562788c3b",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/writing-guidelines/SKILL.md": {
+    "mtime": 1783672874.8370497,
+    "ast_hash": "29f58ed0b13c290b859979bab77fa97d",
+    "semantic_hash": ""
+  },
+  ".opencode/skills/xlsx/SKILL.md": {
+    "mtime": 1783672872.0240674,
+    "ast_hash": "9fee43033926d912bfee27be3e8196f4",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1783684550.0469158,
+    "ast_hash": "44a4d519b367df831bb986259aed2002",
     "semantic_hash": ""
   }
 }

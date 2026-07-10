@@ -123,7 +123,9 @@ Skill custom Astralis in `.opencode/skills/`:
 
 ## Cross-PC sync
 
-Quando pulli la repo su un'altra macchina (o dopo tanto tempo), esegui in ordine:
+Quando pulli la repo su un'altra macchina (o dopo tanto tempo), segui la guida in [`docs/documentazione.md#guida-al-rientro-clone-su-altro-pc`](docs/documentazione.md#guida-al-rientro-clone-su-altro-pc).
+
+Procedura rapida:
 
 1. `composer install` — aggiorna dipendenze PHP
 2. `npm install` — aggiorna dipendenze JS
@@ -132,6 +134,8 @@ Quando pulli la repo su un'altra macchina (o dopo tanto tempo), esegui in ordine
 5. `php artisan astralis:gallery --fix` — ripara immagini galleria se necessario
 6. `npx graphify update .` — ricostruisce il grafo locale
 7. Verifica `git status` — working tree deve essere pulito dopo grafo
+
+Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-opencode-skills`](docs/documentazione.md#setup-opencode-skills).
 
 ## Stato avanzamento piano ottimizzazione
 

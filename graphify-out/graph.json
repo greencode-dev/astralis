@@ -4,6 +4,36 @@
   "graph": {},
   "nodes": [
     {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": ".opencode/package.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_package",
+      "community": 227,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": ".opencode/package.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "opencode_package_dependencies",
+      "community": 227,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@opencode-ai/plugin",
+      "file_type": "code",
+      "source_file": ".opencode/package.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "opencode_package_dependencies_opencode_ai_plugin",
+      "community": 227,
+      "norm_label": "@opencode-ai/plugin"
+    },
+    {
       "label": "CleanupGalleryDuplicates.php",
       "file_type": "code",
       "source_file": "app/Console/Commands/CleanupGalleryDuplicates.php",
@@ -540,7 +570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 15,
+      "community": 103,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -550,7 +580,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 15,
+      "community": 103,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -560,7 +590,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_construct",
-      "community": 15,
+      "community": 103,
       "norm_label": ".__construct()"
     },
     {
@@ -570,7 +600,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 15,
+      "community": 103,
       "norm_label": ".index()"
     },
     {
@@ -580,7 +610,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 15,
+      "community": 103,
       "norm_label": "view"
     },
     {
@@ -850,7 +880,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller",
-      "community": 2,
+      "community": 215,
       "norm_label": "nasaimportcontroller.php"
     },
     {
@@ -860,7 +890,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller",
-      "community": 2,
+      "community": 215,
       "norm_label": "nasaimportcontroller"
     },
     {
@@ -870,7 +900,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_index",
-      "community": 2,
+      "community": 215,
       "norm_label": ".index()"
     },
     {
@@ -880,7 +910,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_view",
-      "community": 2,
+      "community": 215,
       "norm_label": "view"
     },
     {
@@ -890,7 +920,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_import",
-      "community": 2,
+      "community": 215,
       "norm_label": ".import()"
     },
     {
@@ -900,7 +930,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_php_redirectresponse",
-      "community": 2,
+      "community": 215,
       "norm_label": "redirectresponse"
     },
     {
@@ -910,7 +940,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "app_http_controllers_admin_nasaimportcontroller_nasaimportcontroller_importall",
-      "community": 2,
+      "community": 215,
       "norm_label": ".importall()"
     },
     {
@@ -920,7 +950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller",
-      "community": 21,
+      "community": 6,
       "norm_label": "categoriacontroller.php"
     },
     {
@@ -930,7 +960,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller",
-      "community": 21,
+      "community": 6,
       "norm_label": "categoriacontroller"
     },
     {
@@ -940,7 +970,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_index",
-      "community": 21,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -950,7 +980,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_show",
-      "community": 21,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -1060,7 +1090,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller",
-      "community": 6,
+      "community": 245,
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -1070,7 +1100,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller",
-      "community": 6,
+      "community": 245,
       "norm_label": "dashboardcontroller"
     },
     {
@@ -1080,7 +1110,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_dashboardcontroller_stats",
-      "community": 6,
+      "community": 245,
       "norm_label": ".stats()"
     },
     {
@@ -1090,7 +1120,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller_php_jsonresponse",
-      "community": 6,
+      "community": 245,
       "norm_label": "jsonresponse"
     },
     {
@@ -2820,7 +2850,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_corpoceleste",
-      "community": 103,
+      "community": 248,
       "norm_label": "corpoceleste.php"
     },
     {
@@ -2870,7 +2900,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_categoria",
-      "community": 49,
+      "community": 248,
       "norm_label": ".categoria()"
     },
     {
@@ -2880,7 +2910,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongsto",
-      "community": 49,
+      "community": 248,
       "norm_label": "belongsto"
     },
     {
@@ -2920,7 +2950,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_missioni",
-      "community": 171,
+      "community": 250,
       "norm_label": ".missioni()"
     },
     {
@@ -2930,7 +2960,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongstomany",
-      "community": 171,
+      "community": 250,
       "norm_label": "belongstomany"
     },
     {
@@ -2980,7 +3010,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_models_curiosita_curiosita_corpoceleste",
-      "community": 103,
+      "community": 15,
       "norm_label": ".corpoceleste()"
     },
     {
@@ -2990,7 +3020,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_curiosita_php_belongsto",
-      "community": 103,
+      "community": 15,
       "norm_label": "belongsto"
     },
     {
@@ -3000,7 +3030,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_galleriacorpo",
-      "community": 103,
+      "community": 219,
       "norm_label": "galleriacorpo.php"
     },
     {
@@ -3100,7 +3130,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "app_models_missione_missione_corpicelesti",
-      "community": 103,
+      "community": 3,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -3110,7 +3140,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_missione_php_belongstomany",
-      "community": 103,
+      "community": 3,
       "norm_label": "belongstomany"
     },
     {
@@ -3170,7 +3200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver",
-      "community": 7,
+      "community": 2,
       "norm_label": "corpocelesteobserver.php"
     },
     {
@@ -3180,7 +3210,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver",
-      "community": 7,
+      "community": 2,
       "norm_label": "corpocelesteobserver"
     },
     {
@@ -3190,7 +3220,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_observers_corpocelesteobserver_corpocelesteobserver_created",
-      "community": 7,
+      "community": 2,
       "norm_label": ".created()"
     },
     {
@@ -3200,7 +3230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy",
-      "community": 103,
+      "community": 48,
       "norm_label": "categoriapolicy.php"
     },
     {
@@ -3280,7 +3310,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy",
-      "community": 48,
+      "community": 7,
       "norm_label": "corpocelestepolicy.php"
     },
     {
@@ -3290,7 +3320,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy_corpocelestepolicy",
-      "community": 48,
+      "community": 242,
       "norm_label": "corpocelestepolicy"
     },
     {
@@ -3300,7 +3330,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy_corpocelestepolicy_before",
-      "community": 48,
+      "community": 242,
       "norm_label": ".before()"
     },
     {
@@ -3310,7 +3340,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy_corpocelestepolicy_viewany",
-      "community": 48,
+      "community": 242,
       "norm_label": ".viewany()"
     },
     {
@@ -3320,7 +3350,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy_corpocelestepolicy_view",
-      "community": 48,
+      "community": 242,
       "norm_label": ".view()"
     },
     {
@@ -3330,7 +3360,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy_corpocelestepolicy_create",
-      "community": 48,
+      "community": 242,
       "norm_label": ".create()"
     },
     {
@@ -3340,7 +3370,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy_corpocelestepolicy_update",
-      "community": 48,
+      "community": 242,
       "norm_label": ".update()"
     },
     {
@@ -3350,7 +3380,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_corpocelestepolicy_corpocelestepolicy_delete",
-      "community": 48,
+      "community": 242,
       "norm_label": ".delete()"
     },
     {
@@ -3440,7 +3470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy",
-      "community": 48,
+      "community": 7,
       "norm_label": "galleriacorpopolicy.php"
     },
     {
@@ -3450,7 +3480,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy",
-      "community": 48,
+      "community": 243,
       "norm_label": "galleriacorpopolicy"
     },
     {
@@ -3460,7 +3490,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_before",
-      "community": 48,
+      "community": 243,
       "norm_label": ".before()"
     },
     {
@@ -3470,7 +3500,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_viewany",
-      "community": 48,
+      "community": 243,
       "norm_label": ".viewany()"
     },
     {
@@ -3480,7 +3510,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_view",
-      "community": 48,
+      "community": 243,
       "norm_label": ".view()"
     },
     {
@@ -3490,7 +3520,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_create",
-      "community": 48,
+      "community": 243,
       "norm_label": ".create()"
     },
     {
@@ -3500,7 +3530,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_update",
-      "community": 48,
+      "community": 243,
       "norm_label": ".update()"
     },
     {
@@ -3510,7 +3540,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy_galleriacorpopolicy_delete",
-      "community": 48,
+      "community": 243,
       "norm_label": ".delete()"
     },
     {
@@ -3520,7 +3550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_missionepolicy",
-      "community": 103,
+      "community": 7,
       "norm_label": "missionepolicy.php"
     },
     {
@@ -3530,7 +3560,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy",
-      "community": 48,
+      "community": 244,
       "norm_label": "missionepolicy"
     },
     {
@@ -3540,7 +3570,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_before",
-      "community": 48,
+      "community": 244,
       "norm_label": ".before()"
     },
     {
@@ -3550,7 +3580,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_viewany",
-      "community": 48,
+      "community": 244,
       "norm_label": ".viewany()"
     },
     {
@@ -3560,7 +3590,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_view",
-      "community": 48,
+      "community": 244,
       "norm_label": ".view()"
     },
     {
@@ -3570,7 +3600,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_create",
-      "community": 48,
+      "community": 244,
       "norm_label": ".create()"
     },
     {
@@ -3580,7 +3610,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_update",
-      "community": 48,
+      "community": 244,
       "norm_label": ".update()"
     },
     {
@@ -3590,7 +3620,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_delete",
-      "community": 48,
+      "community": 244,
       "norm_label": ".delete()"
     },
     {
@@ -3650,7 +3680,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider",
-      "community": 103,
+      "community": 7,
       "norm_label": "authserviceprovider.php"
     },
     {
@@ -3680,7 +3710,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_services_nasaimageservice",
-      "community": 15,
+      "community": 245,
       "norm_label": "nasaimageservice.php"
     },
     {
@@ -4440,7 +4470,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_cache",
-      "community": 15,
+      "community": 245,
       "norm_label": "cache.php"
     },
     {
@@ -7360,7 +7390,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_web",
-      "community": 6,
+      "community": 215,
       "norm_label": "web.php"
     },
     {
@@ -8210,7 +8240,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "refreshdatabase",
-      "community": 44,
+      "community": 213,
       "norm_label": "refreshdatabase"
     },
     {
@@ -8400,7 +8430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_corpocelestecrudtest",
-      "community": 103,
+      "community": 248,
       "norm_label": "corpocelestecrudtest.php"
     },
     {
@@ -8690,7 +8720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest",
-      "community": 103,
+      "community": 219,
       "norm_label": "galleriacrudtest.php"
     },
     {
@@ -8970,7 +9000,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest",
-      "community": 44,
+      "community": 246,
       "norm_label": "categoriaapitest.php"
     },
     {
@@ -8980,7 +9010,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest",
-      "community": 44,
+      "community": 246,
       "norm_label": "categoriaapitest"
     },
     {
@@ -8990,7 +9020,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_setup",
-      "community": 44,
+      "community": 246,
       "norm_label": ".setup()"
     },
     {
@@ -9000,7 +9030,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_index_returns_all_categorie",
-      "community": 44,
+      "community": 246,
       "norm_label": ".test_index_returns_all_categorie()"
     },
     {
@@ -9010,7 +9040,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_categoria_with_corpi_count",
-      "community": 44,
+      "community": 246,
       "norm_label": ".test_show_returns_categoria_with_corpi_count()"
     },
     {
@@ -9020,7 +9050,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_404_for_invalid_slug",
-      "community": 44,
+      "community": 246,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -9030,7 +9060,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest",
-      "community": 103,
+      "community": 248,
       "norm_label": "corpocelesteapitest.php"
     },
     {
@@ -9170,7 +9200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest",
-      "community": 103,
+      "community": 44,
       "norm_label": "curiositaapitest.php"
     },
     {
@@ -9180,7 +9210,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest",
-      "community": 103,
+      "community": 44,
       "norm_label": "curiositaapitest"
     },
     {
@@ -9190,7 +9220,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_setup",
-      "community": 103,
+      "community": 44,
       "norm_label": ".setup()"
     },
     {
@@ -9200,7 +9230,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_test_index_returns_all_curiosita",
-      "community": 103,
+      "community": 44,
       "norm_label": ".test_index_returns_all_curiosita()"
     },
     {
@@ -9250,7 +9280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest",
-      "community": 44,
+      "community": 219,
       "norm_label": "galleriaapitest.php"
     },
     {
@@ -9260,7 +9290,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest",
-      "community": 44,
+      "community": 219,
       "norm_label": "galleriaapitest"
     },
     {
@@ -9270,7 +9300,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_setup",
-      "community": 44,
+      "community": 219,
       "norm_label": ".setup()"
     },
     {
@@ -9280,7 +9310,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_teardown",
-      "community": 44,
+      "community": 219,
       "norm_label": ".teardown()"
     },
     {
@@ -9290,7 +9320,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_test_index_returns_all_galleria",
-      "community": 44,
+      "community": 219,
       "norm_label": ".test_index_returns_all_galleria()"
     },
     {
@@ -9300,7 +9330,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest",
-      "community": 44,
+      "community": 213,
       "norm_label": "missioneapitest.php"
     },
     {
@@ -9310,7 +9340,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest",
-      "community": 44,
+      "community": 213,
       "norm_label": "missioneapitest"
     },
     {
@@ -9320,7 +9350,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_index_returns_all_missioni",
-      "community": 44,
+      "community": 213,
       "norm_label": ".test_index_returns_all_missioni()"
     },
     {
@@ -9330,7 +9360,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_missione",
-      "community": 44,
+      "community": 213,
       "norm_label": ".test_show_returns_missione()"
     },
     {
@@ -9340,7 +9370,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_404_for_invalid_slug",
-      "community": 44,
+      "community": 213,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -9350,7 +9380,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest",
-      "community": 161,
+      "community": 220,
       "norm_label": "authenticationtest.php"
     },
     {
@@ -9360,7 +9390,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest",
-      "community": 161,
+      "community": 220,
       "norm_label": "authenticationtest"
     },
     {
@@ -9370,7 +9400,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_login_screen_can_be_rendered",
-      "community": 161,
+      "community": 220,
       "norm_label": ".test_login_screen_can_be_rendered()"
     },
     {
@@ -9380,7 +9410,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_authenticate_using_the_login_screen",
-      "community": 161,
+      "community": 220,
       "norm_label": ".test_users_can_authenticate_using_the_login_screen()"
     },
     {
@@ -9390,7 +9420,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_not_authenticate_with_invalid_password",
-      "community": 161,
+      "community": 220,
       "norm_label": ".test_users_can_not_authenticate_with_invalid_password()"
     },
     {
@@ -9400,7 +9430,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_logout",
-      "community": 161,
+      "community": 220,
       "norm_label": ".test_users_can_logout()"
     },
     {
@@ -9410,7 +9440,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest",
-      "community": 184,
+      "community": 161,
       "norm_label": "emailverificationtest.php"
     },
     {
@@ -9420,7 +9450,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest",
-      "community": 184,
+      "community": 161,
       "norm_label": "emailverificationtest"
     },
     {
@@ -9430,7 +9460,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_verification_screen_can_be_rendered",
-      "community": 184,
+      "community": 161,
       "norm_label": ".test_email_verification_screen_can_be_rendered()"
     },
     {
@@ -9440,7 +9470,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_can_be_verified",
-      "community": 184,
+      "community": 161,
       "norm_label": ".test_email_can_be_verified()"
     },
     {
@@ -9450,7 +9480,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_is_not_verified_with_invalid_hash",
-      "community": 184,
+      "community": 161,
       "norm_label": ".test_email_is_not_verified_with_invalid_hash()"
     },
     {
@@ -9460,7 +9490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest",
-      "community": 161,
+      "community": 249,
       "norm_label": "passwordconfirmationtest.php"
     },
     {
@@ -9470,7 +9500,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest",
-      "community": 161,
+      "community": 249,
       "norm_label": "passwordconfirmationtest"
     },
     {
@@ -9480,7 +9510,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_confirm_password_screen_can_be_rendered",
-      "community": 161,
+      "community": 249,
       "norm_label": ".test_confirm_password_screen_can_be_rendered()"
     },
     {
@@ -9490,7 +9520,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_can_be_confirmed",
-      "community": 161,
+      "community": 249,
       "norm_label": ".test_password_can_be_confirmed()"
     },
     {
@@ -9500,7 +9530,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_is_not_confirmed_with_invalid_password",
-      "community": 161,
+      "community": 249,
       "norm_label": ".test_password_is_not_confirmed_with_invalid_password()"
     },
     {
@@ -9570,7 +9600,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest",
-      "community": 44,
+      "community": 213,
       "norm_label": "passwordupdatetest.php"
     },
     {
@@ -9580,7 +9610,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest",
-      "community": 44,
+      "community": 213,
       "norm_label": "passwordupdatetest"
     },
     {
@@ -9590,7 +9620,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_password_can_be_updated",
-      "community": 44,
+      "community": 213,
       "norm_label": ".test_password_can_be_updated()"
     },
     {
@@ -9600,7 +9630,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_correct_password_must_be_provided_to_update_password",
-      "community": 44,
+      "community": 213,
       "norm_label": ".test_correct_password_must_be_provided_to_update_password()"
     },
     {
@@ -9610,7 +9640,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest",
-      "community": 44,
+      "community": 213,
       "norm_label": "registrationtest.php"
     },
     {
@@ -9620,7 +9650,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest_registrationtest",
-      "community": 44,
+      "community": 213,
       "norm_label": "registrationtest"
     },
     {
@@ -9630,7 +9660,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest_registrationtest_test_registration_screen_can_be_rendered",
-      "community": 44,
+      "community": 213,
       "norm_label": ".test_registration_screen_can_be_rendered()"
     },
     {
@@ -9640,7 +9670,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_feature_auth_registrationtest_registrationtest_test_new_users_can_register",
-      "community": 44,
+      "community": 213,
       "norm_label": ".test_new_users_can_register()"
     },
     {
@@ -9690,7 +9720,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest",
-      "community": 48,
+      "community": 247,
       "norm_label": "profiletest"
     },
     {
@@ -9700,7 +9730,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_profile_page_is_displayed",
-      "community": 48,
+      "community": 247,
       "norm_label": ".test_profile_page_is_displayed()"
     },
     {
@@ -9710,7 +9740,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_profile_information_can_be_updated",
-      "community": 48,
+      "community": 247,
       "norm_label": ".test_profile_information_can_be_updated()"
     },
     {
@@ -9720,7 +9750,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged",
-      "community": 48,
+      "community": 247,
       "norm_label": ".test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged()"
     },
     {
@@ -9730,7 +9760,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_user_can_delete_their_account",
-      "community": 48,
+      "community": 247,
       "norm_label": ".test_user_can_delete_their_account()"
     },
     {
@@ -9740,7 +9770,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "tests_feature_profiletest_profiletest_test_correct_password_must_be_provided_to_delete_account",
-      "community": 48,
+      "community": 247,
       "norm_label": ".test_correct_password_must_be_provided_to_delete_account()"
     },
     {
@@ -9810,7 +9840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest",
-      "community": 103,
+      "community": 219,
       "norm_label": "nasaimageservicetest.php"
     },
     {
@@ -9980,7 +10010,7 @@
       "source_location": "L256",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_skips_if_already_has_image_and_not_force",
-      "community": 49,
+      "community": 45,
       "norm_label": ".test_import_for_body_skips_if_already_has_image_and_not_force()"
     },
     {
@@ -9990,7 +10020,7 @@
       "source_location": "L266",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_force_overwrites_main_image",
-      "community": 45,
+      "community": 49,
       "norm_label": ".test_import_for_body_force_overwrites_main_image()"
     },
     {
@@ -10010,7 +10040,7 @@
       "source_location": "L321",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_creates_gallery_entries",
-      "community": 49,
+      "community": 45,
       "norm_label": ".test_import_for_body_creates_gallery_entries()"
     },
     {
@@ -10050,7 +10080,7 @@
       "source_location": "L449",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_returns_failure_when_search_fails",
-      "community": 49,
+      "community": 45,
       "norm_label": ".test_import_for_body_returns_failure_when_search_fails()"
     },
     {
@@ -10070,7 +10100,7 @@
       "source_location": "L490",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_for_body_logs_error_when_item_lacks_image_url",
-      "community": 45,
+      "community": 49,
       "norm_label": ".test_import_for_body_logs_error_when_item_lacks_image_url()"
     },
     {
@@ -10090,7 +10120,7 @@
       "source_location": "L545",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest_nasaimageservicetest_test_import_all_counts_partial_successes",
-      "community": 45,
+      "community": 49,
       "norm_label": ".test_import_all_counts_partial_successes()"
     },
     {
@@ -10112,6 +10142,1966 @@
       "id": "vitest_config",
       "community": 168,
       "norm_label": "vitest.config.js"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill",
+      "community": 102,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "ALGORITHMIC PHILOSOPHY CREATION",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_algorithmic_philosophy_creation",
+      "community": 102,
+      "norm_label": "algorithmic philosophy creation"
+    },
+    {
+      "label": "THE CRITICAL UNDERSTANDING",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_the_critical_understanding",
+      "community": 102,
+      "norm_label": "the critical understanding"
+    },
+    {
+      "label": "HOW TO GENERATE AN ALGORITHMIC PHILOSOPHY",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_how_to_generate_an_algorithmic_philosophy",
+      "community": 102,
+      "norm_label": "how to generate an algorithmic philosophy"
+    },
+    {
+      "label": "PHILOSOPHY EXAMPLES",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_philosophy_examples",
+      "community": 102,
+      "norm_label": "philosophy examples"
+    },
+    {
+      "label": "ESSENTIAL PRINCIPLES",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_essential_principles",
+      "community": 102,
+      "norm_label": "essential principles"
+    },
+    {
+      "label": "DEDUCING THE CONCEPTUAL SEED",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_deducing_the_conceptual_seed",
+      "community": 102,
+      "norm_label": "deducing the conceptual seed"
+    },
+    {
+      "label": "P5.JS IMPLEMENTATION",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_p5_js_implementation",
+      "community": 102,
+      "norm_label": "p5.js implementation"
+    },
+    {
+      "label": "\u26a0\ufe0f STEP 0: READ THE TEMPLATE FIRST \u26a0\ufe0f",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L105",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_step_0_read_the_template_first",
+      "community": 102,
+      "norm_label": "\u26a0\ufe0f step 0: read the template first \u26a0\ufe0f"
+    },
+    {
+      "label": "TECHNICAL REQUIREMENTS",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L133",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_technical_requirements",
+      "community": 102,
+      "norm_label": "technical requirements"
+    },
+    {
+      "label": "CRAFTSMANSHIP REQUIREMENTS",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L201",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_craftsmanship_requirements",
+      "community": 102,
+      "norm_label": "craftsmanship requirements"
+    },
+    {
+      "label": "OUTPUT FORMAT",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L211",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_output_format",
+      "community": 102,
+      "norm_label": "output format"
+    },
+    {
+      "label": "INTERACTIVE ARTIFACT CREATION",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L221",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_interactive_artifact_creation",
+      "community": 102,
+      "norm_label": "interactive artifact creation"
+    },
+    {
+      "label": "CRITICAL: WHAT'S FIXED VS VARIABLE",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L227",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_critical_what_s_fixed_vs_variable",
+      "community": 102,
+      "norm_label": "critical: what's fixed vs variable"
+    },
+    {
+      "label": "REQUIRED FEATURES",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L259",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_required_features",
+      "community": 102,
+      "norm_label": "required features"
+    },
+    {
+      "label": "USING THE ARTIFACT",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L338",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_using_the_artifact",
+      "community": 102,
+      "norm_label": "using the artifact"
+    },
+    {
+      "label": "VARIATIONS & EXPLORATION",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L347",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_variations_exploration",
+      "community": 102,
+      "norm_label": "variations & exploration"
+    },
+    {
+      "label": "THE CREATIVE PROCESS",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L359",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_the_creative_process",
+      "community": 102,
+      "norm_label": "the creative process"
+    },
+    {
+      "label": "RESOURCES",
+      "file_type": "document",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L386",
+      "_origin": "ast",
+      "id": "opencode_skills_algorithmic_art_skill_resources",
+      "community": 102,
+      "norm_label": "resources"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill",
+      "community": 197,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Astralis Blade Admin Patterns",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "community": 197,
+      "norm_label": "astralis blade admin patterns"
+    },
+    {
+      "label": "Tech Stack",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_tech_stack",
+      "community": 197,
+      "norm_label": "tech stack"
+    },
+    {
+      "label": "Master Layout (`layouts/app.blade.php`)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_master_layout_layouts_app_blade_php",
+      "community": 197,
+      "norm_label": "master layout (`layouts/app.blade.php`)"
+    },
+    {
+      "label": "Alpine.js Setup",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_alpine_js_setup",
+      "community": 197,
+      "norm_label": "alpine.js setup"
+    },
+    {
+      "label": "x-cloak",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_x_cloak",
+      "community": 197,
+      "norm_label": "x-cloak"
+    },
+    {
+      "label": "Admin Palette",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_admin_palette",
+      "community": 197,
+      "norm_label": "admin palette"
+    },
+    {
+      "label": "CRUD Pattern",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_crud_pattern",
+      "community": 197,
+      "norm_label": "crud pattern"
+    },
+    {
+      "label": "Sidebar Pattern",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_sidebar_pattern",
+      "community": 197,
+      "norm_label": "sidebar pattern"
+    },
+    {
+      "label": "Tabelle Admin",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_tabelle_admin",
+      "community": 197,
+      "norm_label": "tabelle admin"
+    },
+    {
+      "label": "Form Admin",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_blade_admin_skill_form_admin",
+      "community": 197,
+      "norm_label": "form admin"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill",
+      "community": 171,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Astralis Laravel Backend Patterns",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "community": 171,
+      "norm_label": "astralis laravel backend patterns"
+    },
+    {
+      "label": "Service Layer",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_service_layer",
+      "community": 171,
+      "norm_label": "service layer"
+    },
+    {
+      "label": "NasaImageService (`app/Services/NasaImageService.php`)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_nasaimageservice_app_services_nasaimageservice_php",
+      "community": 171,
+      "norm_label": "nasaimageservice (`app/services/nasaimageservice.php`)"
+    },
+    {
+      "label": "WordMapService (`app/Services/WordMapService.php`)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_wordmapservice_app_services_wordmapservice_php",
+      "community": 171,
+      "norm_label": "wordmapservice (`app/services/wordmapservice.php`)"
+    },
+    {
+      "label": "Observer Pattern",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_observer_pattern",
+      "community": 171,
+      "norm_label": "observer pattern"
+    },
+    {
+      "label": "CorpoCelesteObserver (`app/Observers/CorpoCelesteObserver.php`)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_corpocelesteobserver_app_observers_corpocelesteobserver_php",
+      "community": 171,
+      "norm_label": "corpocelesteobserver (`app/observers/corpocelesteobserver.php`)"
+    },
+    {
+      "label": "Authorization",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_authorization",
+      "community": 171,
+      "norm_label": "authorization"
+    },
+    {
+      "label": "Policies (`app/Policies/`)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_policies_app_policies",
+      "community": 171,
+      "norm_label": "policies (`app/policies/`)"
+    },
+    {
+      "label": "Gates",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_gates",
+      "community": 171,
+      "norm_label": "gates"
+    },
+    {
+      "label": "Artisan Commands",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_artisan_commands",
+      "community": 171,
+      "norm_label": "artisan commands"
+    },
+    {
+      "label": "`astralis:gallery` (`CleanupGalleryDuplicates.php`)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_astralis_gallery_cleanupgalleryduplicates_php",
+      "community": 171,
+      "norm_label": "`astralis:gallery` (`cleanupgalleryduplicates.php`)"
+    },
+    {
+      "label": "Upload Images (Critical)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_upload_images_critical",
+      "community": 171,
+      "norm_label": "upload images (critical)"
+    },
+    {
+      "label": "Sluggable",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_sluggable",
+      "community": 171,
+      "norm_label": "sluggable"
+    },
+    {
+      "label": "SSL (Windows local)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_ssl_windows_local",
+      "community": 171,
+      "norm_label": "ssl (windows local)"
+    },
+    {
+      "label": "API Routes (`routes/api.php`)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_api_routes_routes_api_php",
+      "community": 171,
+      "norm_label": "api routes (`routes/api.php`)"
+    },
+    {
+      "label": "Admin Controllers",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_admin_controllers",
+      "community": 171,
+      "norm_label": "admin controllers"
+    },
+    {
+      "label": "Bootstrap Cache (Windows)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_laravel_skill_bootstrap_cache_windows",
+      "community": 171,
+      "norm_label": "bootstrap cache (windows)"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill",
+      "community": 216,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Astralis React SPA Patterns",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "community": 216,
+      "norm_label": "astralis react spa patterns"
+    },
+    {
+      "label": "Tech Stack",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill_tech_stack",
+      "community": 216,
+      "norm_label": "tech stack"
+    },
+    {
+      "label": "Routes",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill_routes",
+      "community": 216,
+      "norm_label": "routes"
+    },
+    {
+      "label": "API Calls",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill_api_calls",
+      "community": 216,
+      "norm_label": "api calls"
+    },
+    {
+      "label": "Animazioni (framer-motion)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill_animazioni_framer_motion",
+      "community": 216,
+      "norm_label": "animazioni (framer-motion)"
+    },
+    {
+      "label": "Lightbox (yet-another-react-lightbox)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill_lightbox_yet_another_react_lightbox",
+      "community": 216,
+      "norm_label": "lightbox (yet-another-react-lightbox)"
+    },
+    {
+      "label": "Struttura Directory",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_react_spa_skill_struttura_directory",
+      "community": 216,
+      "norm_label": "struttura directory"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill",
+      "community": 198,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Astralis Testing Patterns",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_astralis_testing_patterns",
+      "community": 198,
+      "norm_label": "astralis testing patterns"
+    },
+    {
+      "label": "Backend Test Patterns",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_backend_test_patterns",
+      "community": 198,
+      "norm_label": "backend test patterns"
+    },
+    {
+      "label": "Factory Pattern",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_factory_pattern",
+      "community": 198,
+      "norm_label": "factory pattern"
+    },
+    {
+      "label": "Critical: Http::fake() in setUp",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_critical_http_fake_in_setup",
+      "community": 198,
+      "norm_label": "critical: http::fake() in setup"
+    },
+    {
+      "label": "Observer Skip in Testing",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_observer_skip_in_testing",
+      "community": 198,
+      "norm_label": "observer skip in testing"
+    },
+    {
+      "label": "NasaImageService Test Guard",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_nasaimageservice_test_guard",
+      "community": 198,
+      "norm_label": "nasaimageservice test guard"
+    },
+    {
+      "label": "Testing Commands",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_testing_commands",
+      "community": 198,
+      "norm_label": "testing commands"
+    },
+    {
+      "label": "Frontend Test Patterns (Vitest)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_frontend_test_patterns_vitest",
+      "community": 198,
+      "norm_label": "frontend test patterns (vitest)"
+    },
+    {
+      "label": "Database",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_database",
+      "community": 198,
+      "norm_label": "database"
+    },
+    {
+      "label": "Refresh in Test",
+      "file_type": "document",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "opencode_skills_astralis_testing_skill_refresh_in_test",
+      "community": 198,
+      "norm_label": "refresh in test"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill",
+      "community": 184,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Anthropic Brand Styling",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_anthropic_brand_styling",
+      "community": 184,
+      "norm_label": "anthropic brand styling"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_overview",
+      "community": 184,
+      "norm_label": "overview"
+    },
+    {
+      "label": "Brand Guidelines",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_brand_guidelines",
+      "community": 184,
+      "norm_label": "brand guidelines"
+    },
+    {
+      "label": "Colors",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_colors",
+      "community": 184,
+      "norm_label": "colors"
+    },
+    {
+      "label": "Typography",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_typography",
+      "community": 184,
+      "norm_label": "typography"
+    },
+    {
+      "label": "Features",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_features",
+      "community": 184,
+      "norm_label": "features"
+    },
+    {
+      "label": "Smart Font Application",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_smart_font_application",
+      "community": 184,
+      "norm_label": "smart font application"
+    },
+    {
+      "label": "Text Styling",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_text_styling",
+      "community": 184,
+      "norm_label": "text styling"
+    },
+    {
+      "label": "Shape and Accent Colors",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_shape_and_accent_colors",
+      "community": 184,
+      "norm_label": "shape and accent colors"
+    },
+    {
+      "label": "Technical Details",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_technical_details",
+      "community": 184,
+      "norm_label": "technical details"
+    },
+    {
+      "label": "Font Management",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_font_management",
+      "community": 184,
+      "norm_label": "font management"
+    },
+    {
+      "label": "Color Application",
+      "file_type": "document",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "opencode_skills_brand_guidelines_skill_color_application",
+      "community": 184,
+      "norm_label": "color application"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/canvas-design/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_canvas_design_skill",
+      "community": 229,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Canvas Design Skill",
+      "file_type": "document",
+      "source_file": ".opencode/skills/canvas-design/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_canvas_design_skill_canvas_design_skill",
+      "community": 229,
+      "norm_label": "canvas design skill"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/claude-api/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_claude_api_skill",
+      "community": 230,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Building LLM-Powered Applications with Claude",
+      "file_type": "document",
+      "source_file": ".opencode/skills/claude-api/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_claude_api_skill_building_llm_powered_applications_with_claude",
+      "community": 230,
+      "norm_label": "building llm-powered applications with claude"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill",
+      "community": 214,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "React Composition Patterns",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_react_composition_patterns",
+      "community": 214,
+      "norm_label": "react composition patterns"
+    },
+    {
+      "label": "When to Apply",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_when_to_apply",
+      "community": 214,
+      "norm_label": "when to apply"
+    },
+    {
+      "label": "Rule Categories",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_rule_categories",
+      "community": 214,
+      "norm_label": "rule categories"
+    },
+    {
+      "label": "Quick Reference",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_quick_reference",
+      "community": 214,
+      "norm_label": "quick reference"
+    },
+    {
+      "label": "1. Component Architecture (HIGH)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_1_component_architecture_high",
+      "community": 214,
+      "norm_label": "1. component architecture (high)"
+    },
+    {
+      "label": "2. State Management (MEDIUM)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_2_state_management_medium",
+      "community": 214,
+      "norm_label": "2. state management (medium)"
+    },
+    {
+      "label": "3. Implementation Patterns (MEDIUM)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_3_implementation_patterns_medium",
+      "community": 214,
+      "norm_label": "3. implementation patterns (medium)"
+    },
+    {
+      "label": "4. React 19 APIs (MEDIUM)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "opencode_skills_composition_patterns_skill_4_react_19_apis_medium",
+      "community": 214,
+      "norm_label": "4. react 19 apis (medium)"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_deploy_to_vercel_skill",
+      "community": 221,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Deploy to Vercel",
+      "file_type": "document",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "opencode_skills_deploy_to_vercel_skill_deploy_to_vercel",
+      "community": 221,
+      "norm_label": "deploy to vercel"
+    },
+    {
+      "label": "Step 1: Gather Project State",
+      "file_type": "document",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "opencode_skills_deploy_to_vercel_skill_step_1_gather_project_state",
+      "community": 221,
+      "norm_label": "step 1: gather project state"
+    },
+    {
+      "label": "Step 2: Choose a Deploy Method",
+      "file_type": "document",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "opencode_skills_deploy_to_vercel_skill_step_2_choose_a_deploy_method",
+      "community": 221,
+      "norm_label": "step 2: choose a deploy method"
+    },
+    {
+      "label": "Output",
+      "file_type": "document",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "opencode_skills_deploy_to_vercel_skill_output",
+      "community": 221,
+      "norm_label": "output"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/doc-coauthoring/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_doc_coauthoring_skill",
+      "community": 231,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Doc Co-Authoring Workflow",
+      "file_type": "document",
+      "source_file": ".opencode/skills/doc-coauthoring/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_doc_coauthoring_skill_doc_co_authoring_workflow",
+      "community": 231,
+      "norm_label": "doc co-authoring workflow"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/docx/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_docx_skill",
+      "community": 232,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "DOCX creation, editing, and analysis",
+      "file_type": "document",
+      "source_file": ".opencode/skills/docx/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_docx_skill_docx_creation_editing_and_analysis",
+      "community": 232,
+      "norm_label": "docx creation, editing, and analysis"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_frontend_design_skill",
+      "community": 217,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Frontend Design",
+      "file_type": "document",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_frontend_design_skill_frontend_design",
+      "community": 217,
+      "norm_label": "frontend design"
+    },
+    {
+      "label": "Ground it in the subject",
+      "file_type": "document",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "opencode_skills_frontend_design_skill_ground_it_in_the_subject",
+      "community": 217,
+      "norm_label": "ground it in the subject"
+    },
+    {
+      "label": "Design principles",
+      "file_type": "document",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "opencode_skills_frontend_design_skill_design_principles",
+      "community": 217,
+      "norm_label": "design principles"
+    },
+    {
+      "label": "Process: brainstorm, explore, plan, critique, build, critique again",
+      "file_type": "document",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "opencode_skills_frontend_design_skill_process_brainstorm_explore_plan_critique_build_critique_again",
+      "community": 217,
+      "norm_label": "process: brainstorm, explore, plan, critique, build, critique again"
+    },
+    {
+      "label": "Restraint and self-critique",
+      "file_type": "document",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "opencode_skills_frontend_design_skill_restraint_and_self_critique",
+      "community": 217,
+      "norm_label": "restraint and self-critique"
+    },
+    {
+      "label": "More on writing in design",
+      "file_type": "document",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "opencode_skills_frontend_design_skill_more_on_writing_in_design",
+      "community": 217,
+      "norm_label": "more on writing in design"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/internal-comms/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_internal_comms_skill",
+      "community": 225,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "When to use this skill",
+      "file_type": "document",
+      "source_file": ".opencode/skills/internal-comms/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_internal_comms_skill_when_to_use_this_skill",
+      "community": 225,
+      "norm_label": "when to use this skill"
+    },
+    {
+      "label": "How to use this skill",
+      "file_type": "document",
+      "source_file": ".opencode/skills/internal-comms/SKILL.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "opencode_skills_internal_comms_skill_how_to_use_this_skill",
+      "community": 225,
+      "norm_label": "how to use this skill"
+    },
+    {
+      "label": "Keywords",
+      "file_type": "document",
+      "source_file": ".opencode/skills/internal-comms/SKILL.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "opencode_skills_internal_comms_skill_keywords",
+      "community": 225,
+      "norm_label": "keywords"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/mcp-builder/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_mcp_builder_skill",
+      "community": 233,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "MCP Server Development Guide",
+      "file_type": "document",
+      "source_file": ".opencode/skills/mcp-builder/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_mcp_builder_skill_mcp_server_development_guide",
+      "community": 233,
+      "norm_label": "mcp server development guide"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/pdf/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_pdf_skill",
+      "community": 234,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "PDF Processing Guide",
+      "file_type": "document",
+      "source_file": ".opencode/skills/pdf/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_pdf_skill_pdf_processing_guide",
+      "community": 234,
+      "norm_label": "pdf processing guide"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/pptx/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_pptx_skill",
+      "community": 235,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "PPTX Skill",
+      "file_type": "document",
+      "source_file": ".opencode/skills/pptx/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_pptx_skill_pptx_skill",
+      "community": 235,
+      "norm_label": "pptx skill"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill",
+      "community": 195,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Vercel React Best Practices",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_vercel_react_best_practices",
+      "community": 195,
+      "norm_label": "vercel react best practices"
+    },
+    {
+      "label": "When to Apply",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_when_to_apply",
+      "community": 195,
+      "norm_label": "when to apply"
+    },
+    {
+      "label": "Rule Categories by Priority",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_rule_categories_by_priority",
+      "community": 195,
+      "norm_label": "rule categories by priority"
+    },
+    {
+      "label": "Quick Reference",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_quick_reference",
+      "community": 195,
+      "norm_label": "quick reference"
+    },
+    {
+      "label": "1. Eliminating Waterfalls (CRITICAL)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_1_eliminating_waterfalls_critical",
+      "community": 195,
+      "norm_label": "1. eliminating waterfalls (critical)"
+    },
+    {
+      "label": "2. Bundle Size Optimization (CRITICAL)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_2_bundle_size_optimization_critical",
+      "community": 195,
+      "norm_label": "2. bundle size optimization (critical)"
+    },
+    {
+      "label": "3. Server-Side Performance (HIGH)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_3_server_side_performance_high",
+      "community": 195,
+      "norm_label": "3. server-side performance (high)"
+    },
+    {
+      "label": "4. Client-Side Data Fetching (MEDIUM-HIGH)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_4_client_side_data_fetching_medium_high",
+      "community": 195,
+      "norm_label": "4. client-side data fetching (medium-high)"
+    },
+    {
+      "label": "5. Re-render Optimization (MEDIUM)",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_5_re_render_optimization_medium",
+      "community": 195,
+      "norm_label": "5. re-render optimization (medium)"
+    },
+    {
+      "label": "6-8. Additional Categories",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_6_8_additional_categories",
+      "community": 195,
+      "norm_label": "6-8. additional categories"
+    },
+    {
+      "label": "How to Use",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "opencode_skills_react_best_practices_skill_how_to_use",
+      "community": 195,
+      "norm_label": "how to use"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-native-skills/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_react_native_skills_skill",
+      "community": 226,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "React Native Skills",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-native-skills/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_react_native_skills_skill_react_native_skills",
+      "community": 226,
+      "norm_label": "react native skills"
+    },
+    {
+      "label": "When to Apply",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-native-skills/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_react_native_skills_skill_when_to_apply",
+      "community": 226,
+      "norm_label": "when to apply"
+    },
+    {
+      "label": "Categories by Priority",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-native-skills/SKILL.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "opencode_skills_react_native_skills_skill_categories_by_priority",
+      "community": 226,
+      "norm_label": "categories by priority"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_react_view_transitions_skill",
+      "community": 218,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "React View Transitions",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_react_view_transitions_skill_react_view_transitions",
+      "community": 218,
+      "norm_label": "react view transitions"
+    },
+    {
+      "label": "When to Animate",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_react_view_transitions_skill_when_to_animate",
+      "community": 218,
+      "norm_label": "when to animate"
+    },
+    {
+      "label": "Core Concepts",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "opencode_skills_react_view_transitions_skill_core_concepts",
+      "community": 218,
+      "norm_label": "core concepts"
+    },
+    {
+      "label": "Animation Triggers",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "opencode_skills_react_view_transitions_skill_animation_triggers",
+      "community": 218,
+      "norm_label": "animation triggers"
+    },
+    {
+      "label": "Critical Placement Rule",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "opencode_skills_react_view_transitions_skill_critical_placement_rule",
+      "community": 218,
+      "norm_label": "critical placement rule"
+    },
+    {
+      "label": "Transition Types",
+      "file_type": "document",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "opencode_skills_react_view_transitions_skill_transition_types",
+      "community": 218,
+      "norm_label": "transition types"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/skill-creator/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_skill_creator_skill",
+      "community": 236,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Skill Creator",
+      "file_type": "document",
+      "source_file": ".opencode/skills/skill-creator/SKILL.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "opencode_skills_skill_creator_skill_skill_creator",
+      "community": 236,
+      "norm_label": "skill creator"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/slack-gif-creator/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_slack_gif_creator_skill",
+      "community": 237,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Slack GIF Creator",
+      "file_type": "document",
+      "source_file": ".opencode/skills/slack-gif-creator/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_slack_gif_creator_skill_slack_gif_creator",
+      "community": 237,
+      "norm_label": "slack gif creator"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/theme-factory/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_theme_factory_skill",
+      "community": 238,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Theme Factory Skill",
+      "file_type": "document",
+      "source_file": ".opencode/skills/theme-factory/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_theme_factory_skill_theme_factory_skill",
+      "community": 238,
+      "norm_label": "theme factory skill"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_cli_with_tokens_skill",
+      "community": 222,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Vercel CLI with Tokens",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_cli_with_tokens_skill_vercel_cli_with_tokens",
+      "community": 222,
+      "norm_label": "vercel cli with tokens"
+    },
+    {
+      "label": "Step 1: Locate the Vercel Token",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_cli_with_tokens_skill_step_1_locate_the_vercel_token",
+      "community": 222,
+      "norm_label": "step 1: locate the vercel token"
+    },
+    {
+      "label": "Step 2: Locate Project and Team",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_cli_with_tokens_skill_step_2_locate_project_and_team",
+      "community": 222,
+      "norm_label": "step 2: locate project and team"
+    },
+    {
+      "label": "Deploying",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_cli_with_tokens_skill_deploying",
+      "community": 222,
+      "norm_label": "deploying"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-optimize/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_optimize_skill",
+      "community": 228,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Vercel Optimize",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-optimize/SKILL.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_optimize_skill_vercel_optimize",
+      "community": 228,
+      "norm_label": "vercel optimize"
+    },
+    {
+      "label": "Pipeline",
+      "file_type": "document",
+      "source_file": ".opencode/skills/vercel-optimize/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_vercel_optimize_skill_pipeline",
+      "community": 228,
+      "norm_label": "pipeline"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/web-artifacts-builder/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_web_artifacts_builder_skill",
+      "community": 239,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Web Artifacts Builder",
+      "file_type": "document",
+      "source_file": ".opencode/skills/web-artifacts-builder/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_web_artifacts_builder_skill_web_artifacts_builder",
+      "community": 239,
+      "norm_label": "web artifacts builder"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_web_design_guidelines_skill",
+      "community": 223,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Web Interface Guidelines",
+      "file_type": "document",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_web_design_guidelines_skill_web_interface_guidelines",
+      "community": 223,
+      "norm_label": "web interface guidelines"
+    },
+    {
+      "label": "How It Works",
+      "file_type": "document",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_web_design_guidelines_skill_how_it_works",
+      "community": 223,
+      "norm_label": "how it works"
+    },
+    {
+      "label": "Guidelines Source",
+      "file_type": "document",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "opencode_skills_web_design_guidelines_skill_guidelines_source",
+      "community": 223,
+      "norm_label": "guidelines source"
+    },
+    {
+      "label": "Usage",
+      "file_type": "document",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "opencode_skills_web_design_guidelines_skill_usage",
+      "community": 223,
+      "norm_label": "usage"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/webapp-testing/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_webapp_testing_skill",
+      "community": 240,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Web Application Testing",
+      "file_type": "document",
+      "source_file": ".opencode/skills/webapp-testing/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_webapp_testing_skill_web_application_testing",
+      "community": 240,
+      "norm_label": "web application testing"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_writing_guidelines_skill",
+      "community": 224,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "Writing Guidelines",
+      "file_type": "document",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_skills_writing_guidelines_skill_writing_guidelines",
+      "community": 224,
+      "norm_label": "writing guidelines"
+    },
+    {
+      "label": "How It Works",
+      "file_type": "document",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "opencode_skills_writing_guidelines_skill_how_it_works",
+      "community": 224,
+      "norm_label": "how it works"
+    },
+    {
+      "label": "Guidelines Source",
+      "file_type": "document",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "opencode_skills_writing_guidelines_skill_guidelines_source",
+      "community": 224,
+      "norm_label": "guidelines source"
+    },
+    {
+      "label": "Usage",
+      "file_type": "document",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "opencode_skills_writing_guidelines_skill_usage",
+      "community": 224,
+      "norm_label": "usage"
+    },
+    {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".opencode/skills/xlsx/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_skills_xlsx_skill",
+      "community": 241,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "XLSX creation, editing, and analysis",
+      "file_type": "document",
+      "source_file": ".opencode/skills/xlsx/SKILL.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_skills_xlsx_skill_xlsx_creation_editing_and_analysis",
+      "community": 241,
+      "norm_label": "xlsx creation, editing, and analysis"
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents",
+      "community": 183,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents_graphify",
+      "community": 183,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "Project identity",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "agents_project_identity",
+      "community": 183,
+      "norm_label": "project identity"
+    },
+    {
+      "label": "Tech stack & gotchas",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "agents_tech_stack_gotchas",
+      "community": 183,
+      "norm_label": "tech stack & gotchas"
+    },
+    {
+      "label": "Dual rendering (critical)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "agents_dual_rendering_critical",
+      "community": 183,
+      "norm_label": "dual rendering (critical)"
+    },
+    {
+      "label": "Entit\u00e0 chiave",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "agents_entit\u00e0_chiave",
+      "community": 183,
+      "norm_label": "entita chiave"
+    },
+    {
+      "label": "File map",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "agents_file_map",
+      "community": 183,
+      "norm_label": "file map"
+    },
+    {
+      "label": "Testing",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "agents_testing",
+      "community": 183,
+      "norm_label": "testing"
+    },
+    {
+      "label": "Bugs noti / Pattern da evitare",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "agents_bugs_noti_pattern_da_evitare",
+      "community": 183,
+      "norm_label": "bugs noti / pattern da evitare"
+    },
+    {
+      "label": "Admin palette",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "agents_admin_palette",
+      "community": 183,
+      "norm_label": "admin palette"
+    },
+    {
+      "label": "Documentazione workflow",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "agents_documentazione_workflow",
+      "community": 183,
+      "norm_label": "documentazione workflow"
+    },
+    {
+      "label": "Skill installate",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L96",
+      "_origin": "ast",
+      "id": "agents_skill_installate",
+      "community": 183,
+      "norm_label": "skill installate"
+    },
+    {
+      "label": "Cross-PC sync",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L124",
+      "_origin": "ast",
+      "id": "agents_cross_pc_sync",
+      "community": 183,
+      "norm_label": "cross-pc sync"
+    },
+    {
+      "label": "Stato avanzamento piano ottimizzazione",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L140",
+      "_origin": "ast",
+      "id": "agents_stato_avanzamento_piano_ottimizzazione",
+      "community": 196,
+      "norm_label": "stato avanzamento piano ottimizzazione"
+    },
+    {
+      "label": "\u2705 Completato (10/07/2026)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L142",
+      "_origin": "ast",
+      "id": "agents_completato_10_07_2026",
+      "community": 196,
+      "norm_label": "\u2705 completato (10/07/2026)"
+    },
+    {
+      "label": "\ud83d\udd04 Da fare",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "agents_da_fare",
+      "community": 196,
+      "norm_label": "\ud83d\udd04 da fare"
+    },
+    {
+      "label": "Fase 4 \u2014 Alto Backend Laravel (P1)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L169",
+      "_origin": "ast",
+      "id": "agents_fase_4_alto_backend_laravel_p1",
+      "community": 196,
+      "norm_label": "fase 4 \u2014 alto backend laravel (p1)"
+    },
+    {
+      "label": "Fase 5 \u2014 Alto Admin Blade (P1)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L180",
+      "_origin": "ast",
+      "id": "agents_fase_5_alto_admin_blade_p1",
+      "community": 196,
+      "norm_label": "fase 5 \u2014 alto admin blade (p1)"
+    },
+    {
+      "label": "Fase 6 \u2014 Medio React Frontend (P2)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L190",
+      "_origin": "ast",
+      "id": "agents_fase_6_medio_react_frontend_p2",
+      "community": 196,
+      "norm_label": "fase 6 \u2014 medio react frontend (p2)"
+    },
+    {
+      "label": "Fase 7 \u2014 Medio Backend Laravel (P2)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L202",
+      "_origin": "ast",
+      "id": "agents_fase_7_medio_backend_laravel_p2",
+      "community": 196,
+      "norm_label": "fase 7 \u2014 medio backend laravel (p2)"
+    },
+    {
+      "label": "Fase 8 \u2014 Medio Admin Blade (P2)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L212",
+      "_origin": "ast",
+      "id": "agents_fase_8_medio_admin_blade_p2",
+      "community": 196,
+      "norm_label": "fase 8 \u2014 medio admin blade (p2)"
+    },
+    {
+      "label": "Fase 9 \u2014 Test (P1-P3)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L223",
+      "_origin": "ast",
+      "id": "agents_fase_9_test_p1_p3",
+      "community": 196,
+      "norm_label": "fase 9 \u2014 test (p1-p3)"
+    },
+    {
+      "label": "Fase 10 \u2014 UI/UX & Writing Review (P4)",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L235",
+      "_origin": "ast",
+      "id": "agents_fase_10_ui_ux_writing_review_p4",
+      "community": 196,
+      "norm_label": "fase 10 \u2014 ui/ux & writing review (p4)"
+    },
+    {
+      "label": "Comando per nuova sessione",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L243",
+      "_origin": "ast",
+      "id": "agents_comando_per_nuova_sessione",
+      "community": 196,
+      "norm_label": "comando per nuova sessione"
     },
     {
       "label": "README.md",
@@ -11380,7 +13370,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "docs_documentazione_palette_colori",
-      "community": 183,
+      "community": 12,
       "norm_label": "palette colori"
     },
     {
@@ -11390,7 +13380,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "docs_documentazione_badge_categoria",
-      "community": 183,
+      "community": 12,
       "norm_label": "badge categoria"
     },
     {
@@ -11400,7 +13390,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "docs_documentazione_frontend_guest_react_spa",
-      "community": 183,
+      "community": 12,
       "norm_label": "frontend guest (react spa)"
     },
     {
@@ -11410,7 +13400,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "docs_documentazione_backoffice_admin",
-      "community": 183,
+      "community": 12,
       "norm_label": "backoffice admin"
     },
     {
@@ -11420,24 +13410,74 @@
       "source_location": "L218",
       "_origin": "ast",
       "id": "docs_documentazione_api_rest",
-      "community": 183,
+      "community": 12,
       "norm_label": "api rest"
     },
     {
-      "label": "Guida all'installazione",
+      "label": "Guida all'installazione (prima configurazione)",
       "file_type": "document",
       "source_file": "docs/documentazione.md",
       "source_location": "L272",
       "_origin": "ast",
-      "id": "docs_documentazione_guida_all_installazione",
+      "id": "docs_documentazione_guida_all_installazione_prima_configurazione",
       "community": 12,
-      "norm_label": "guida all'installazione"
+      "norm_label": "guida all'installazione (prima configurazione)"
+    },
+    {
+      "label": "Guida al rientro (clone su altro PC)",
+      "file_type": "document",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L313",
+      "_origin": "ast",
+      "id": "docs_documentazione_guida_al_rientro_clone_su_altro_pc",
+      "community": 12,
+      "norm_label": "guida al rientro (clone su altro pc)"
+    },
+    {
+      "label": "Setup OpenCode skills",
+      "file_type": "document",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L347",
+      "_origin": "ast",
+      "id": "docs_documentazione_setup_opencode_skills",
+      "community": 12,
+      "norm_label": "setup opencode skills"
+    },
+    {
+      "label": "Riepilogo skill",
+      "file_type": "document",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L373",
+      "_origin": "ast",
+      "id": "docs_documentazione_riepilogo_skill",
+      "community": 12,
+      "norm_label": "riepilogo skill"
+    },
+    {
+      "label": "Windows (Git Bash) \u2014 Gotchas",
+      "file_type": "document",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L380",
+      "_origin": "ast",
+      "id": "docs_documentazione_windows_git_bash_gotchas",
+      "community": 12,
+      "norm_label": "windows (git bash) \u2014 gotchas"
+    },
+    {
+      "label": "Avvio rapido (quando il progetto \u00e8 gi\u00e0 configurato)",
+      "file_type": "document",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L394",
+      "_origin": "ast",
+      "id": "docs_documentazione_avvio_rapido_quando_il_progetto_\u00e8_gi\u00e0_configurato",
+      "community": 12,
+      "norm_label": "avvio rapido (quando il progetto e gia configurato)"
     },
     {
       "label": "Credenziali Admin (demo)",
       "file_type": "document",
       "source_file": "docs/documentazione.md",
-      "source_location": "L313",
+      "source_location": "L405",
       "_origin": "ast",
       "id": "docs_documentazione_credenziali_admin_demo",
       "community": 12,
@@ -11477,7 +13517,7 @@
       "label": "Collegamenti rapidi",
       "file_type": "document",
       "source_file": "docs/index.md",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "docs_index_collegamenti_rapidi",
       "community": 20,
@@ -12230,7 +14270,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo",
-      "community": 102,
+      "community": 25,
       "norm_label": "todo.md"
     },
     {
@@ -12240,7 +14280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo_todo",
-      "community": 102,
+      "community": 25,
       "norm_label": "todo"
     },
     {
@@ -12250,7 +14290,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "docs_todo_post_commit_2026_07_10_fase_1_react_p0_fase_2_laravel_p0_completate",
-      "community": 102,
+      "community": 25,
       "norm_label": "post-commit 2026-07-10 \u2014 fase 1 (react p0) + fase 2 (laravel p0) completate"
     },
     {
@@ -12260,7 +14300,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "docs_todo_fatto",
-      "community": 102,
+      "community": 25,
       "norm_label": "fatto"
     },
     {
@@ -12360,11 +14400,31 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "docs_todo_note",
-      "community": 102,
+      "community": 25,
       "norm_label": "note"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "opencode_package",
+      "target": "opencode_package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "opencode_package_dependencies",
+      "target": "opencode_package_dependencies_opencode_ai_plugin",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -12799,28 +14859,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_categoriacontroller",
       "target": "app_models_categoria_categoria",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_categoriacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_categoriacontroller",
       "confidence_score": 1.0
     },
     {
@@ -14111,6 +16149,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
@@ -15279,6 +17339,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_categoriacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_categoriacontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CategoriaController.php",
@@ -15726,28 +17808,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_api_dashboardcontroller",
       "target": "app_models_missione",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_dashboardcontroller",
       "confidence_score": 1.0
     },
     {
@@ -29435,6 +31495,1666 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill",
+      "target": "opencode_skills_algorithmic_art_skill_algorithmic_philosophy_creation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill",
+      "target": "opencode_skills_algorithmic_art_skill_deducing_the_conceptual_seed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L221",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill",
+      "target": "opencode_skills_algorithmic_art_skill_interactive_artifact_creation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill",
+      "target": "opencode_skills_algorithmic_art_skill_p5_js_implementation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L386",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill",
+      "target": "opencode_skills_algorithmic_art_skill_resources",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L359",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill",
+      "target": "opencode_skills_algorithmic_art_skill_the_creative_process",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L347",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill",
+      "target": "opencode_skills_algorithmic_art_skill_variations_exploration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_algorithmic_philosophy_creation",
+      "target": "opencode_skills_algorithmic_art_skill_essential_principles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_algorithmic_philosophy_creation",
+      "target": "opencode_skills_algorithmic_art_skill_how_to_generate_an_algorithmic_philosophy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_algorithmic_philosophy_creation",
+      "target": "opencode_skills_algorithmic_art_skill_philosophy_examples",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_algorithmic_philosophy_creation",
+      "target": "opencode_skills_algorithmic_art_skill_the_critical_understanding",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_p5_js_implementation",
+      "target": "opencode_skills_algorithmic_art_skill_craftsmanship_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_p5_js_implementation",
+      "target": "opencode_skills_algorithmic_art_skill_output_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_p5_js_implementation",
+      "target": "opencode_skills_algorithmic_art_skill_step_0_read_the_template_first",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_p5_js_implementation",
+      "target": "opencode_skills_algorithmic_art_skill_technical_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L227",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_interactive_artifact_creation",
+      "target": "opencode_skills_algorithmic_art_skill_critical_what_s_fixed_vs_variable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L259",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_interactive_artifact_creation",
+      "target": "opencode_skills_algorithmic_art_skill_required_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/algorithmic-art/SKILL.md",
+      "source_location": "L338",
+      "weight": 1.0,
+      "source": "opencode_skills_algorithmic_art_skill_interactive_artifact_creation",
+      "target": "opencode_skills_algorithmic_art_skill_using_the_artifact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill",
+      "target": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "target": "opencode_skills_astralis_blade_admin_skill_admin_palette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "target": "opencode_skills_astralis_blade_admin_skill_crud_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "target": "opencode_skills_astralis_blade_admin_skill_form_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "target": "opencode_skills_astralis_blade_admin_skill_master_layout_layouts_app_blade_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "target": "opencode_skills_astralis_blade_admin_skill_sidebar_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "target": "opencode_skills_astralis_blade_admin_skill_tabelle_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_astralis_blade_admin_patterns",
+      "target": "opencode_skills_astralis_blade_admin_skill_tech_stack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_master_layout_layouts_app_blade_php",
+      "target": "opencode_skills_astralis_blade_admin_skill_alpine_js_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-blade-admin/SKILL.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_blade_admin_skill_master_layout_layouts_app_blade_php",
+      "target": "opencode_skills_astralis_blade_admin_skill_x_cloak",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill",
+      "target": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_admin_controllers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_api_routes_routes_api_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_artisan_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_authorization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_bootstrap_cache_windows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_observer_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_service_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_sluggable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_ssl_windows_local",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_astralis_laravel_backend_patterns",
+      "target": "opencode_skills_astralis_laravel_skill_upload_images_critical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_service_layer",
+      "target": "opencode_skills_astralis_laravel_skill_nasaimageservice_app_services_nasaimageservice_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_service_layer",
+      "target": "opencode_skills_astralis_laravel_skill_wordmapservice_app_services_wordmapservice_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_observer_pattern",
+      "target": "opencode_skills_astralis_laravel_skill_corpocelesteobserver_app_observers_corpocelesteobserver_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_authorization",
+      "target": "opencode_skills_astralis_laravel_skill_gates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_authorization",
+      "target": "opencode_skills_astralis_laravel_skill_policies_app_policies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-laravel/SKILL.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_laravel_skill_artisan_commands",
+      "target": "opencode_skills_astralis_laravel_skill_astralis_gallery_cleanupgalleryduplicates_php",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_react_spa_skill",
+      "target": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "target": "opencode_skills_astralis_react_spa_skill_animazioni_framer_motion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "target": "opencode_skills_astralis_react_spa_skill_api_calls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "target": "opencode_skills_astralis_react_spa_skill_lightbox_yet_another_react_lightbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "target": "opencode_skills_astralis_react_spa_skill_routes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "target": "opencode_skills_astralis_react_spa_skill_struttura_directory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-react-spa/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_react_spa_skill_astralis_react_spa_patterns",
+      "target": "opencode_skills_astralis_react_spa_skill_tech_stack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill",
+      "target": "opencode_skills_astralis_testing_skill_astralis_testing_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_astralis_testing_patterns",
+      "target": "opencode_skills_astralis_testing_skill_backend_test_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_astralis_testing_patterns",
+      "target": "opencode_skills_astralis_testing_skill_database",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_astralis_testing_patterns",
+      "target": "opencode_skills_astralis_testing_skill_frontend_test_patterns_vitest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_backend_test_patterns",
+      "target": "opencode_skills_astralis_testing_skill_critical_http_fake_in_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_backend_test_patterns",
+      "target": "opencode_skills_astralis_testing_skill_factory_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_backend_test_patterns",
+      "target": "opencode_skills_astralis_testing_skill_nasaimageservice_test_guard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_backend_test_patterns",
+      "target": "opencode_skills_astralis_testing_skill_observer_skip_in_testing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_backend_test_patterns",
+      "target": "opencode_skills_astralis_testing_skill_testing_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/astralis-testing/SKILL.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "opencode_skills_astralis_testing_skill_database",
+      "target": "opencode_skills_astralis_testing_skill_refresh_in_test",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill",
+      "target": "opencode_skills_brand_guidelines_skill_anthropic_brand_styling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_anthropic_brand_styling",
+      "target": "opencode_skills_brand_guidelines_skill_brand_guidelines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_anthropic_brand_styling",
+      "target": "opencode_skills_brand_guidelines_skill_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_anthropic_brand_styling",
+      "target": "opencode_skills_brand_guidelines_skill_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_anthropic_brand_styling",
+      "target": "opencode_skills_brand_guidelines_skill_technical_details",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_brand_guidelines",
+      "target": "opencode_skills_brand_guidelines_skill_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_brand_guidelines",
+      "target": "opencode_skills_brand_guidelines_skill_typography",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_features",
+      "target": "opencode_skills_brand_guidelines_skill_shape_and_accent_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_features",
+      "target": "opencode_skills_brand_guidelines_skill_smart_font_application",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_features",
+      "target": "opencode_skills_brand_guidelines_skill_text_styling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_technical_details",
+      "target": "opencode_skills_brand_guidelines_skill_color_application",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/brand-guidelines/SKILL.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "opencode_skills_brand_guidelines_skill_technical_details",
+      "target": "opencode_skills_brand_guidelines_skill_font_management",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/canvas-design/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_canvas_design_skill",
+      "target": "opencode_skills_canvas_design_skill_canvas_design_skill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/claude-api/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_claude_api_skill",
+      "target": "opencode_skills_claude_api_skill_building_llm_powered_applications_with_claude",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill",
+      "target": "opencode_skills_composition_patterns_skill_react_composition_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill_react_composition_patterns",
+      "target": "opencode_skills_composition_patterns_skill_quick_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill_react_composition_patterns",
+      "target": "opencode_skills_composition_patterns_skill_rule_categories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill_react_composition_patterns",
+      "target": "opencode_skills_composition_patterns_skill_when_to_apply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill_quick_reference",
+      "target": "opencode_skills_composition_patterns_skill_1_component_architecture_high",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill_quick_reference",
+      "target": "opencode_skills_composition_patterns_skill_2_state_management_medium",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill_quick_reference",
+      "target": "opencode_skills_composition_patterns_skill_3_implementation_patterns_medium",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/composition-patterns/SKILL.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "opencode_skills_composition_patterns_skill_quick_reference",
+      "target": "opencode_skills_composition_patterns_skill_4_react_19_apis_medium",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "opencode_skills_deploy_to_vercel_skill",
+      "target": "opencode_skills_deploy_to_vercel_skill_deploy_to_vercel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "opencode_skills_deploy_to_vercel_skill_deploy_to_vercel",
+      "target": "opencode_skills_deploy_to_vercel_skill_output",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "opencode_skills_deploy_to_vercel_skill_deploy_to_vercel",
+      "target": "opencode_skills_deploy_to_vercel_skill_step_1_gather_project_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/deploy-to-vercel/SKILL.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "opencode_skills_deploy_to_vercel_skill_deploy_to_vercel",
+      "target": "opencode_skills_deploy_to_vercel_skill_step_2_choose_a_deploy_method",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/doc-coauthoring/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_doc_coauthoring_skill",
+      "target": "opencode_skills_doc_coauthoring_skill_doc_co_authoring_workflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/docx/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_docx_skill",
+      "target": "opencode_skills_docx_skill_docx_creation_editing_and_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_frontend_design_skill",
+      "target": "opencode_skills_frontend_design_skill_frontend_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "opencode_skills_frontend_design_skill_frontend_design",
+      "target": "opencode_skills_frontend_design_skill_design_principles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "opencode_skills_frontend_design_skill_frontend_design",
+      "target": "opencode_skills_frontend_design_skill_ground_it_in_the_subject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "opencode_skills_frontend_design_skill_frontend_design",
+      "target": "opencode_skills_frontend_design_skill_more_on_writing_in_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "opencode_skills_frontend_design_skill_frontend_design",
+      "target": "opencode_skills_frontend_design_skill_process_brainstorm_explore_plan_critique_build_critique_again",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/frontend-design/SKILL.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "opencode_skills_frontend_design_skill_frontend_design",
+      "target": "opencode_skills_frontend_design_skill_restraint_and_self_critique",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/internal-comms/SKILL.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "opencode_skills_internal_comms_skill",
+      "target": "opencode_skills_internal_comms_skill_how_to_use_this_skill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/internal-comms/SKILL.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "opencode_skills_internal_comms_skill",
+      "target": "opencode_skills_internal_comms_skill_keywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/internal-comms/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_internal_comms_skill",
+      "target": "opencode_skills_internal_comms_skill_when_to_use_this_skill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/mcp-builder/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_mcp_builder_skill",
+      "target": "opencode_skills_mcp_builder_skill_mcp_server_development_guide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/pdf/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_pdf_skill",
+      "target": "opencode_skills_pdf_skill_pdf_processing_guide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/pptx/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_pptx_skill",
+      "target": "opencode_skills_pptx_skill_pptx_skill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill",
+      "target": "opencode_skills_react_best_practices_skill_vercel_react_best_practices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_vercel_react_best_practices",
+      "target": "opencode_skills_react_best_practices_skill_how_to_use",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_vercel_react_best_practices",
+      "target": "opencode_skills_react_best_practices_skill_quick_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_vercel_react_best_practices",
+      "target": "opencode_skills_react_best_practices_skill_rule_categories_by_priority",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_vercel_react_best_practices",
+      "target": "opencode_skills_react_best_practices_skill_when_to_apply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_quick_reference",
+      "target": "opencode_skills_react_best_practices_skill_1_eliminating_waterfalls_critical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_quick_reference",
+      "target": "opencode_skills_react_best_practices_skill_2_bundle_size_optimization_critical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_quick_reference",
+      "target": "opencode_skills_react_best_practices_skill_3_server_side_performance_high",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_quick_reference",
+      "target": "opencode_skills_react_best_practices_skill_4_client_side_data_fetching_medium_high",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_quick_reference",
+      "target": "opencode_skills_react_best_practices_skill_5_re_render_optimization_medium",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-best-practices/SKILL.md",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "opencode_skills_react_best_practices_skill_quick_reference",
+      "target": "opencode_skills_react_best_practices_skill_6_8_additional_categories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-native-skills/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_react_native_skills_skill",
+      "target": "opencode_skills_react_native_skills_skill_react_native_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-native-skills/SKILL.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "opencode_skills_react_native_skills_skill_react_native_skills",
+      "target": "opencode_skills_react_native_skills_skill_categories_by_priority",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-native-skills/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_react_native_skills_skill_react_native_skills",
+      "target": "opencode_skills_react_native_skills_skill_when_to_apply",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_react_view_transitions_skill",
+      "target": "opencode_skills_react_view_transitions_skill_react_view_transitions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "opencode_skills_react_view_transitions_skill_react_view_transitions",
+      "target": "opencode_skills_react_view_transitions_skill_core_concepts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_react_view_transitions_skill_react_view_transitions",
+      "target": "opencode_skills_react_view_transitions_skill_when_to_animate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "opencode_skills_react_view_transitions_skill_core_concepts",
+      "target": "opencode_skills_react_view_transitions_skill_animation_triggers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "opencode_skills_react_view_transitions_skill_core_concepts",
+      "target": "opencode_skills_react_view_transitions_skill_critical_placement_rule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/react-view-transitions/SKILL.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "opencode_skills_react_view_transitions_skill_core_concepts",
+      "target": "opencode_skills_react_view_transitions_skill_transition_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/skill-creator/SKILL.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "opencode_skills_skill_creator_skill",
+      "target": "opencode_skills_skill_creator_skill_skill_creator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/slack-gif-creator/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_slack_gif_creator_skill",
+      "target": "opencode_skills_slack_gif_creator_skill_slack_gif_creator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/theme-factory/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_theme_factory_skill",
+      "target": "opencode_skills_theme_factory_skill_theme_factory_skill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "opencode_skills_vercel_cli_with_tokens_skill",
+      "target": "opencode_skills_vercel_cli_with_tokens_skill_vercel_cli_with_tokens",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "opencode_skills_vercel_cli_with_tokens_skill_vercel_cli_with_tokens",
+      "target": "opencode_skills_vercel_cli_with_tokens_skill_deploying",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "opencode_skills_vercel_cli_with_tokens_skill_vercel_cli_with_tokens",
+      "target": "opencode_skills_vercel_cli_with_tokens_skill_step_1_locate_the_vercel_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/vercel-cli-with-tokens/SKILL.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "opencode_skills_vercel_cli_with_tokens_skill_vercel_cli_with_tokens",
+      "target": "opencode_skills_vercel_cli_with_tokens_skill_step_2_locate_project_and_team",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/vercel-optimize/SKILL.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "opencode_skills_vercel_optimize_skill",
+      "target": "opencode_skills_vercel_optimize_skill_vercel_optimize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/vercel-optimize/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_vercel_optimize_skill_vercel_optimize",
+      "target": "opencode_skills_vercel_optimize_skill_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/web-artifacts-builder/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_web_artifacts_builder_skill",
+      "target": "opencode_skills_web_artifacts_builder_skill_web_artifacts_builder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_web_design_guidelines_skill",
+      "target": "opencode_skills_web_design_guidelines_skill_web_interface_guidelines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "opencode_skills_web_design_guidelines_skill_web_interface_guidelines",
+      "target": "opencode_skills_web_design_guidelines_skill_guidelines_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_web_design_guidelines_skill_web_interface_guidelines",
+      "target": "opencode_skills_web_design_guidelines_skill_how_it_works",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/web-design-guidelines/SKILL.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "opencode_skills_web_design_guidelines_skill_web_interface_guidelines",
+      "target": "opencode_skills_web_design_guidelines_skill_usage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/webapp-testing/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_webapp_testing_skill",
+      "target": "opencode_skills_webapp_testing_skill_web_application_testing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_skills_writing_guidelines_skill",
+      "target": "opencode_skills_writing_guidelines_skill_writing_guidelines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "opencode_skills_writing_guidelines_skill_writing_guidelines",
+      "target": "opencode_skills_writing_guidelines_skill_guidelines_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "opencode_skills_writing_guidelines_skill_writing_guidelines",
+      "target": "opencode_skills_writing_guidelines_skill_how_it_works",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/writing-guidelines/SKILL.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "opencode_skills_writing_guidelines_skill_writing_guidelines",
+      "target": "opencode_skills_writing_guidelines_skill_usage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".opencode/skills/xlsx/SKILL.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_skills_xlsx_skill",
+      "target": "opencode_skills_xlsx_skill_xlsx_creation_editing_and_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_admin_palette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_bugs_noti_pattern_da_evitare",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_cross_pc_sync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_documentazione_workflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_dual_rendering_critical",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_entit\u00e0_chiave",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_file_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_project_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_skill_installate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_stato_avanzamento_piano_ottimizzazione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_tech_stack_gotchas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_testing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "docs_documentazione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_comando_per_nuova_sessione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_completato_10_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_da_fare",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L235",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_fase_10_ui_ux_writing_review_p4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_fase_4_alto_backend_laravel_p1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_fase_5_alto_admin_blade_p1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_fase_6_medio_react_frontend_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L202",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_fase_7_medio_backend_laravel_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_fase_8_medio_admin_blade_p2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "agents_stato_avanzamento_piano_ottimizzazione",
+      "target": "agents_fase_9_test_p1_p3",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
@@ -30638,7 +34358,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/documentazione.md",
-      "source_location": "L313",
+      "source_location": "L394",
+      "weight": 1.0,
+      "source": "docs_documentazione_astralis_documentazione_di_progetto",
+      "target": "docs_documentazione_avvio_rapido_quando_il_progetto_\u00e8_gi\u00e0_configurato",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L405",
       "weight": 1.0,
       "source": "docs_documentazione_astralis_documentazione_di_progetto",
       "target": "docs_documentazione_credenziali_admin_demo",
@@ -30658,10 +34388,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/documentazione.md",
+      "source_location": "L313",
+      "weight": 1.0,
+      "source": "docs_documentazione_astralis_documentazione_di_progetto",
+      "target": "docs_documentazione_guida_al_rientro_clone_su_altro_pc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/documentazione.md",
       "source_location": "L272",
       "weight": 1.0,
       "source": "docs_documentazione_astralis_documentazione_di_progetto",
-      "target": "docs_documentazione_guida_all_installazione",
+      "target": "docs_documentazione_guida_all_installazione_prima_configurazione",
       "confidence_score": 1.0
     },
     {
@@ -30688,10 +34428,30 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/documentazione.md",
+      "source_location": "L347",
+      "weight": 1.0,
+      "source": "docs_documentazione_astralis_documentazione_di_progetto",
+      "target": "docs_documentazione_setup_opencode_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/documentazione.md",
       "source_location": "L7",
       "weight": 1.0,
       "source": "docs_documentazione_astralis_documentazione_di_progetto",
       "target": "docs_documentazione_tech_stack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L380",
+      "weight": 1.0,
+      "source": "docs_documentazione_astralis_documentazione_di_progetto",
+      "target": "docs_documentazione_windows_git_bash_gotchas",
       "confidence_score": 1.0
     },
     {
@@ -30767,6 +34527,16 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/documentazione.md",
+      "source_location": "L373",
+      "weight": 1.0,
+      "source": "docs_documentazione_setup_opencode_skills",
+      "target": "docs_documentazione_riepilogo_skill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/index.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -30818,7 +34588,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/index.md",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "source": "docs_index_documentazione_astralis",
       "target": "docs_index_collegamenti_rapidi",
@@ -31676,5 +35446,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f5ed6ab01bca194217b7baad5a09d3723de4ecfa"
+  "built_at_commit": "064c3fb331ab76870454735350772beec0fe962d"
 }

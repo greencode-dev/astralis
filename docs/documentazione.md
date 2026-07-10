@@ -269,46 +269,138 @@ Filtri disponibili:
 
 **Auth**: Le pagine di autenticazione (login, register, password reset, email verification) sono realizzate in **Blade puro** con tema scuro (`#0A0A1A`, `#111128`, `#22D3EE`). Usano il layout `resources/views/layouts/guest.blade.php` tramite il componente `x-guest-layout`. La pagina profilo (`/profile`) usa `x-app-layout` che carica il layout admin con sidebar.
 
-## Guida all'installazione
+## Guida all'installazione (prima configurazione)
 
 ```bash
-# Clona la repo
+# 1. Clona la repo
 git clone https://github.com/tuo-username/astralis.git
 cd astralis
 
-# Installa dipendenze PHP
+# 2. Dipendenze PHP
 composer install
 
-# Installa dipendenze Node
+# 3. Dipendenze Node
 npm install
 
-# Configura ambiente
+# 4. Configura ambiente
 cp .env.example .env
+# Modifica .env: DB_DATABASE=astralis, DB_USERNAME=root, DB_PASSWORD=, DB_PORT=3307
 php artisan key:generate
 
-# Crea database MySQL e configura .env
-# DB_DATABASE=astralis
-# DB_PORT=3307
+# 5. Crea database MySQL (se non esiste)
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS astralis"
 
-# Migrazioni e seed
+# 6. Migrazioni e seed
 php artisan migrate --seed
 
-# (Opzionale) Recupera immagini da NASA per tutti i corpi celesti
-# --force per sovrascrivere esistenti, --gallery=N per numero immagini galleria
-php artisan astralis:fetch-nasa --gallery=5
-
-# (Opzionale) Sostituisce immagini seed mancanti con URL NASA
-php artisan astralis:gallery --fix
-
-# Link storage per upload
+# 7. Link storage per upload immagini
 php artisan storage:link
 
-# Avvia backend
-php artisan serve
+# 8. (Opzionale) Recupera immagini da NASA per tutti i corpi celesti
+php artisan astralis:fetch-nasa --gallery=5
 
-# Avvia frontend (in un altro terminale)
-npm run dev
+# 9. (Opzionale) Sostituisce immagini seed mancanti con URL NASA
+php artisan astralis:gallery --fix
+
+# 10. Ricostruisce il grafo della conoscenza (per il comando /graphify)
+npx graphify update .
+
+# 11. Avvia (due terminali separati)
+php artisan serve     # Terminale 1: backend
+npm run dev           # Terminale 2: frontend
 ```
+
+## Guida al rientro (clone su altro PC)
+
+Se hai già configurato il progetto su una macchina e vuoi riprendere il lavoro su un'altra:
+
+```bash
+# 1. Clona
+git clone <url-della-repo>
+cd astralis
+
+# 2. Dipendenze
+composer install
+npm install
+
+# 3. Ambiente
+cp .env.example .env
+php artisan key:generate
+# Configura DB in .env (stessa procedura)
+
+# 4. Database
+php artisan migrate --seed
+php artisan storage:link
+php artisan astralis:gallery --fix
+
+# 5. Grafo conoscenza
+npx graphify update .
+
+# 6. Verifica
+php artisan test   # 103 test PHPUnit
+npm test           # 87 test Vitest
+
+# 7. Apri l'agente e digita:
+#    "riprendi il piano da Fase 3"
+```
+
+## Setup OpenCode skills
+
+Il progetto usa skill OpenCode per guidare l'agente AI. Dopo il clone, le skill si trovano già in `.opencode/skills/` (30 file) — non serve alcun setup per le skill di progetto.
+
+Se vuoi avere le stesse skill anche a livello globale (`~/.config/opencode/skills/`), installale singolarmente:
+
+```bash
+# Skill custom Astralis (gia' in .opencode/skills/, ma per averle globali):
+opencode skill install astralis-laravel
+opencode skill install astralis-react-spa
+opencode skill install astralis-blade-admin
+opencode skill install astralis-testing
+
+# Skill globali Anthropic + Vercel (consigliate):
+opencode skill install claude-api pdf pptx docx xlsx
+opencode skill install frontend-design react-best-practices composition-patterns
+opencode skill install web-design-guidelines writing-guidelines
+opencode skill install theme-factory brand-guidelines
+opencode skill install webapp-testing web-artifacts-builder mcp-builder
+opencode skill install skill-creator slack-gif-creator
+opencode skill install deploy-to-vercel vercel-optimize vercel-cli-with-tokens
+opencode skill install react-view-transitions react-native-skills
+opencode skill install canvas-design algorithmic-art
+opencode skill install internal-comms doc-coauthoring
+```
+
+### Riepilogo skill
+
+| Skill | Dopo clone | Scopo |
+|---|---|---|
+| `.opencode/skills/` (30) | **Gia' pronte** ✅ | Custom Astralis + Anthropic + Vercel |
+| `~/.config/opencode/skills/` (26) | Da installare manualmente | Globali per tutti i progetti |
+
+## Windows (Git Bash) — Gotchas
+
+Se usi Git Bash su Windows, tieni a mente:
+
+```bash
+# bootstrap/cache va ricreata da cmd, non Git Bash
+cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'
+
+# SSL cURL error 60 su Windows: Http::withoutVerifying() e' attivo
+# solo in ambiente local/testing (configurato in NasaImageService)
+
+# Comandi npm/graphify funzionano normalmente da Git Bash
+```
+
+## Avvio rapido (quando il progetto è già configurato)
+
+Se hai già fatto tutto sopra e vuoi solo avviare:
+
+```bash
+php artisan serve      # Terminale 1
+npm run dev            # Terminale 2
+```
+
+Poi apri http://localhost:8000 (guest SPA) o http://localhost:8000/admin (admin).
 
 ## Credenziali Admin (demo)
 
