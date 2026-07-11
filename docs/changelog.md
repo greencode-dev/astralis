@@ -18,6 +18,17 @@
   - `CorpoCard.jsx:50`, `CorpoDettaglio.jsx:109` — text overflow non troncato
   - `SearchBar.jsx:11` — input senza autocomplete/name
 
+### Task 10.2 — 11/07/2026 — Writing Guidelines review
+- **Audit completo** di ~22 file (React componenti/pagine + Blade admin + Controller) contro le Writing Guidelines
+- **Ellipsis `...` → `…`**: 14 occorrenze in 13 file (placeholder, loading state, pagination)
+- **Title Case → Sentence case**: 14 heading in 8 file (HomePage, CorpiLista, Comparatore, CorpoDettaglio, dashboard, show views)
+- **Passive voice**: 10+ occorrenze in empty states ("Nessun corpo celeste trovato") e flash messages ("Impossibile eliminare: ci sono corpi celesti associati")
+- **Filler "con successo"**: 16 flash messages in 5 controller — rimuovere (il flash verde già indica successo)
+- **Mixed Italian/English**: NASA import page — "Force Import All", "Image Library" in italiano
+- **Missing NBSP in units**: 8+ occorrenze in CorpoDettaglio, Comparatore, utils.js
+- **Marketing voice**: "immagini spettacolari", "Scopri i segreti del cosmo" — riscrivere in modo concreto
+- **Em dash come punteggiatura**: Footer.jsx — usare `|` o `·` invece di `—`
+
 ## Ottimizzazione — Test Refactoring (Fase 9)
 
 ### Tasks 9.1 + 9.3 + 9.7 — 11/07/2026 — AdminTestCase refactoring + Http::fake uniform + DashboardApiTest

@@ -95,7 +95,7 @@
 
 ### Fase 10 — UI/UX & Writing Review (P4)
 - [x] 10.1 Web Design Guidelines review ✅
-- [ ] 10.2 Writing Guidelines review
+- [x] 10.2 Writing Guidelines review ✅
 - [ ] 10.3 Frontend Design review
 
 ---
