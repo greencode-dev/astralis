@@ -7,7 +7,7 @@
 ## Fatto
 
 - [x] **Task 3.4 — framer-motion→CSS + SolarSystem**: Rimossi motion.div da 4 file guest (HomePage, CorpiLista, CorpoDettaglio, Comparatore), CSS keyframes fadeUp/slideLeft/slideRight/fadeScale, useInView hook per scroll animations, stelle twinkle + sun pulse CSS, pianeti cliccabili con Link, immagini realistiche NASA con fallback colore
-- [x] **Task 3.2 — Inline styles→Tailwind**: Verificato completo (da ~68 a 15, tutti dynamic/runtime)
+- [x] **Task 3.6 — onFocus/onBlur→CSS :focus-within**: Rimosso useState focused da SearchBar, usato focus:border-admin-primary/50 Tailwind. Comparatore già fixato in 3.4
 
 - [x] **Fase 1 — React P0 critico**: AbortController + useFetch hook + ErrorBoundary globale + guard immagini rotte + axios interceptors retry
 - [x] **Fase 2 — Laravel P0 critico**: Job queue ImportNasaImage + chunk(50) + rate limiting API (throttle:60,1) + caching searchNasa()
@@ -55,7 +55,7 @@
 ### Fase 3 — Alto React Frontend (P1)
 - [x] 3.2 Inline styles → Tailwind classes (~5-6 convertibili su 15) ✅ verificato
 - [x] 3.4 framer-motion → CSS transitions + SolarSystem clickable/immagini (~4h) ✅
-- [ ] 3.6 onFocus/onBlur → CSS :focus-within
+- [x] 3.6 onFocus/onBlur → CSS :focus-within ✅
 - _3.1 React.lazy, 3.5 Dedup categoryIcons: già fatti_ ✅
 
 ### Fase 4 — Alto Backend Laravel (P1)
