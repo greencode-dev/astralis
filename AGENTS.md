@@ -139,29 +139,52 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ## Stato avanzamento piano ottimizzazione
 
-### ✅ Completato — Piano ottimizzazione (Task 0-10.3)
+### ✅ Completato — Piano ottimizzazione (Task 1-39)
 
 Tutte le task del piano sono completate. 235 test (173 PHPUnit + 62 Vitest).
 
-| Task | Categoria | Stato |
-|------|-----------|-------|
-| **0** | Setup | ✅ |
-| **1-2** | Database + CRUD Admin | ✅ |
-| **3-4** | React + API REST | ✅ |
-| **5-6** | React (Dettaglio, Lightbox, Comparatore) + fix | ✅ |
-| **7-8** | Bugfix + NASA Import | ✅ |
-| **9-10** | Auth Inertia→Blade + bug critici | ✅ |
-| **11-12** | Authorization + Quick wins | ✅ |
-| **14** | Bug critici + import cleanup | ✅ |
-| **3.2** | Inline styles → Tailwind classes | ✅ |
-| **3.4** | framer-motion → CSS transitions | ✅ |
-| **4.1** | Cache dashboard + invalidazione | ✅ |
-| **5.1-5.4** | Admin Blade: partials, forms, CSS vars | ✅ |
-| **6.1** | React.memo | ✅ |
-| **7.2-7.3** | Authorization + suggestNome caching | ✅ |
-| **9.1-9.7** | Test: AdminTestCase, auth, fixtures, factories, copertura | ✅ |
-| **10.1-10.3** | UI/UX review: Web Design, Writing, Frontend Design | ✅ |
+| Task | Descrizione | Stato |
+|------|-------------|-------|
+| **1** | Setup Laravel + Breeze + React + documentazione | ✅ |
+| **2** | Database e Modelli (6 migrations, 5 models, seeder) | ✅ |
+| **3** | CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria) | ✅ |
+| **4** | API REST (10 endpoint) | ✅ |
+| **5** | React: Homepage, Sistema solare animato, Lista | ✅ |
+| **6** | React: Dettaglio, Lightbox, Missioni, Comparatore | ✅ |
+| **7** | Bugfix Intervention Image v4, Force Import All | ✅ |
+| **8** | NASA Import multi-immagine, Service Layer, CLI fetch-nasa | ✅ |
+| **9** | Remote URLs, nome_it/nome_display, wordMap, auto-suggest admin | ✅ |
+| **10** | Bug critici: route(), nasa_id, categoria_id | ✅ |
+| **11** | Bugfix auth, NASA import dedup, galleria cleanup | ✅ |
+| **12** | Authorization Policy/Gates ai controller admin | ✅ |
+| **13** | Auth pages: Inertia → Blade puro | ✅ |
+| **14** | Rimossa dipendenza Inertia | ✅ |
+| **15** | FormRequest validazione store/update CorpoCeleste | ✅ |
+| **16** | Quick wins: per_page, relazioni, .catch, nasa_id, indexes | ✅ |
+| **17** | 10 bug critici fixati | ✅ |
+| **18** | Rimossi import morti React + dipendenze inutilizzate | ✅ |
+| **19** | Inline styles → Tailwind classes (~68 oggetti in 15 file) | ✅ |
+| **20** | framer-motion → CSS transitions + SolarSystem clickable/immagini | ✅ |
+| **21** | Cache dashboard + invalidazione su CRUD | ✅ |
+| **22** | Form partial unificato: 5 _form.blade.php, 10 create/edit | ✅ |
+| **23** | Partials Blade: back-link, search, flash, stat-card, actions | ✅ |
+| **24** | Hardcoded hex → CSS variables: 13 variabili, 52 hex sostituiti | ✅ |
+| **25** | CSS component class: .admin-input, 8 Blade views | ✅ |
+| **26** | React.memo: LightboxGalleria + Thumbnail | ✅ |
+| **27** | Authorization consistente: DashboardController fixato | ✅ |
+| **28** | suggestNome caching + debounce: Cache::remember(3600) | ✅ |
+| **29** | AdminTestCase base class: 5/5 CRUD test | ✅ |
+| **30** | AuthorizationTest: 19 test | ✅ |
+| **31** | Uniform Http::fake() pattern | ✅ |
+| **32** | Frontend fixtures.js centralizzato | ✅ |
+| **33** | Factory foreign key fix: ->for() pattern | ✅ |
+| **34** | Copertura test mancante: 21 nuovi test | ✅ |
+| **35** | DashboardApiTest complete: 4 test | ✅ |
+| **36** | Web Design Guidelines audit | ✅ |
+| **37** | Writing Guidelines audit | ✅ |
+| **38** | Frontend Design audit | ✅ |
+| **39** | (audit completati) | ✅ |
 
 ### 🔜 Prossimo step
 
-**Debug generale post-ottimizzazione** — Verificare che tutto funzioni dopo le attività di ottimizzazione. Controllare: route, pagine, form, upload, search, paginazione, animation, responsive, admin CRUD, API endpoint.
+**Task 40 — Debug generale post-ottimizzazione** — Verificare che tutto funzioni dopo le attività di ottimizzazione. Controllare: route, pagine, form, upload, search, paginazione, animation, responsive, admin CRUD, API endpoint.
