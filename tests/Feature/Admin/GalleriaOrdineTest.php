@@ -17,10 +17,7 @@ class GalleriaOrdineTest extends AdminTestCase
 
     public function test_aggiorna_ordine_su_decreases(): void
     {
-        $item = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
-            'ordine' => 5,
-        ]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create(['ordine' => 5]);
 
         $response = $this->actingAs($this->admin)
             ->post(route('admin.galleria.ordine', $item), ['direzione' => 'su']);
@@ -36,10 +33,7 @@ class GalleriaOrdineTest extends AdminTestCase
 
     public function test_aggiorna_ordine_giu_increases(): void
     {
-        $item = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
-            'ordine' => 3,
-        ]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create(['ordine' => 3]);
 
         $response = $this->actingAs($this->admin)
             ->post(route('admin.galleria.ordine', $item), ['direzione' => 'giu']);
@@ -54,10 +48,7 @@ class GalleriaOrdineTest extends AdminTestCase
 
     public function test_aggiorna_ordine_floors_at_zero(): void
     {
-        $item = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
-            'ordine' => 0,
-        ]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create(['ordine' => 0]);
 
         $response = $this->actingAs($this->admin)
             ->post(route('admin.galleria.ordine', $item), ['direzione' => 'su']);
@@ -72,9 +63,7 @@ class GalleriaOrdineTest extends AdminTestCase
 
     public function test_aggiorna_ordine_validates_direzione(): void
     {
-        $item = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
-        ]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->post(route('admin.galleria.ordine', $item), ['direzione' => 'invalid']);
@@ -84,9 +73,7 @@ class GalleriaOrdineTest extends AdminTestCase
 
     public function test_aggiorna_ordine_requires_direzione(): void
     {
-        $item = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
-        ]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->post(route('admin.galleria.ordine', $item), []);
@@ -96,9 +83,7 @@ class GalleriaOrdineTest extends AdminTestCase
 
     public function test_aggiorna_ordine_guest_cannot_access(): void
     {
-        $item = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
-        ]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create();
 
         $response = $this->post(route('admin.galleria.ordine', $item), ['direzione' => 'su']);
 

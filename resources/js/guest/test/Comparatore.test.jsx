@@ -1,6 +1,7 @@
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Comparatore from '../pages/Comparatore';
+import { pianeti, makeCorpiResponse } from './fixtures';
 
 vi.mock('../apiClient', () => ({
     fetchCorpiCelesti: vi.fn(),
@@ -17,17 +18,7 @@ function renderPage(initialEntries = ['/confronta']) {
     );
 }
 
-const pianeti = [
-    { id: 1, nome: 'Mercurio', slug: 'mercurio', categoria: { nome: 'Pianeta' }, tipo: 'roccioso', massa_kg: '3.285e23', diametro_km: '4879', distanza_km: '57900000', gravita: '3.7', temperatura: '167', periodo_orbitale: '88' },
-    { id: 2, nome: 'Venere', slug: 'venere', categoria: { nome: 'Pianeta' }, tipo: 'roccioso', massa_kg: '4.867e24', diametro_km: '12104', distanza_km: '108000000', gravita: '8.87', temperatura: '462', periodo_orbitale: '225' },
-    { id: 3, nome: 'Terra', slug: 'terra', categoria: { nome: 'Pianeta' }, tipo: 'roccioso', massa_kg: '5.972e24', diametro_km: '12742', distanza_km: '150000000', gravita: '9.81', temperatura: '15', periodo_orbitale: '365' },
-    { id: 4, nome: 'Marte', slug: 'marte', categoria: { nome: 'Pianeta' }, tipo: 'roccioso', massa_kg: '6.39e23', diametro_km: '6779', distanza_km: '228000000', gravita: '3.72', temperatura: '-65', periodo_orbitale: '687' },
-];
-
-const mockLista = {
-    data: pianeti,
-    meta: { total: pianeti.length, last_page: 1 },
-};
+const mockLista = makeCorpiResponse(pianeti);
 
 const mockDettaglio = (slug) => {
     const p = pianeti.find(p => p.slug === slug);

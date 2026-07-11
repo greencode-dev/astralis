@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import CorpoCard from '../components/CorpoCard';
+import { baseCorpo } from './fixtures';
 
 function renderCard(corpo) {
     return render(
@@ -11,17 +12,6 @@ function renderCard(corpo) {
 }
 
 describe('CorpoCard', () => {
-    const baseCorpo = {
-        slug: 'terra',
-        nome: 'Terra',
-        nome_display: 'Terra',
-        descrizione: 'Il nostro pianeta.',
-        immagine_url: null,
-        in_evidenza: false,
-        tipo: 'roccioso',
-        distanza_km: null,
-        categoria: { nome: 'Pianeta' },
-    };
 
     it('renders nome_display and descrizione', () => {
         renderCard(baseCorpo);

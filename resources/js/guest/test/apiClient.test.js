@@ -12,6 +12,7 @@ vi.mock('axios', () => ({
 }));
 
 import axios from 'axios';
+import { mockStats } from './fixtures';
 import {
     fetchCorpiCelesti,
     fetchCategorie,
@@ -133,13 +134,12 @@ describe('apiClient', () => {
 
     describe('fetchDashboardStats', () => {
         it('calls GET /dashboard/stats', async () => {
-            const stats = { totale_corpi_celesti: 150, totale_categorie: 8, totale_missioni: 25 };
-            mockGet.mockResolvedValue({ data: stats });
+            mockGet.mockResolvedValue({ data: mockStats });
 
             const result = await fetchDashboardStats();
 
             expect(mockGet).toHaveBeenCalledWith('/dashboard/stats', { signal: undefined });
-            expect(result).toEqual(stats);
+            expect(result).toEqual(mockStats);
         });
     });
 });

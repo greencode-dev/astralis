@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import CorpoDettaglio from '../pages/CorpoDettaglio';
+import { mockCorpoDettaglioDettaglio, marte, venere } from './fixtures';
 
 vi.mock('../apiClient', () => ({
     fetchCorpoCeleste: vi.fn(),
@@ -19,42 +20,8 @@ function renderPage(slug = 'terra') {
     );
 }
 
-const mockCorpo = {
-    data: {
-        id: 1,
-        nome: 'Terra',
-        nome_display: 'Terra',
-        slug: 'terra',
-        descrizione: 'Il terzo pianeta del sistema solare.',
-        immagine_url: 'https://example.com/earth.jpg',
-        tipo: 'roccioso',
-        massa_kg: '5.972e24',
-        diametro_km: '12742',
-        distanza_km: '150000000',
-        gravita: '9.81',
-        temperatura: '15',
-        periodo_orbitale: '365.25',
-        scopritore: null,
-        anno_scoperta: null,
-        in_evidenza: true,
-        categoria: { nome: 'Pianeta' },
-        galleria: [
-            { id: 1, immagine_url: 'https://example.com/gallery1.jpg', didascalia: 'Terra vista dallo spazio', crediti: 'NASA' },
-        ],
-        curiosita: [
-            { id: 1, titolo: 'Fatto interessante', descrizione: 'La Terra è l\'unico pianeta conosciuto con vita.', fonte: 'Wikipedia' },
-        ],
-        missioni: [
-            { id: 1, nome: 'Apollo 11', slug: 'apollo-11', agenzia: 'NASA', data_lancio: '1969-07-16', durata_giorni: 8, stato: 'completata', descrizione: 'Primo sbarco sulla Luna.', pivot: { tipo_partecipazione: 'destinazione' } },
-        ],
-    },
-};
-
 const mockSimili = {
-    data: [
-        { id: 2, nome: 'Marte', nome_display: 'Marte', slug: 'marte', descrizione: 'Il pianeta rosso.', immagine_url: null, tipo: 'roccioso', distanza_km: '228000000', in_evidenza: false, categoria: { nome: 'Pianeta' } },
-        { id: 3, nome: 'Venere', nome_display: 'Venere', slug: 'venere', descrizione: 'Il pianeta più caldo.', immagine_url: null, tipo: 'roccioso', distanza_km: '108000000', in_evidenza: false, categoria: { nome: 'Pianeta' } },
-    ],
+    data: [marte, venere],
 };
 
 describe('CorpoDettaglio', () => {
@@ -71,7 +38,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('loads and displays corpo detail', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -84,7 +51,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('displays "in evidenza" badge', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -94,7 +61,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('displays categoria badge', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -104,7 +71,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('displays scientific metrics', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -118,7 +85,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('displays gallery section', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -128,7 +95,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('displays curiosities section', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -140,7 +107,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('displays missions section', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -150,7 +117,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('displays compare link for planets', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -162,7 +129,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('loads and displays simili section', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -175,7 +142,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('calls fetchCorpoCeleste with the slug from URL', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue({ data: [] });
         renderPage('marte');
 
@@ -185,7 +152,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('calls fetchSimili with the id after corpo loads', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
@@ -217,7 +184,7 @@ describe('CorpoDettaglio', () => {
     it('does not show compare link for non-planets', async () => {
         const stella = {
             data: {
-                ...mockCorpo.data,
+                ...mockCorpoDettaglio.data,
                 categoria: { nome: 'Stella' },
                 missioni: [],
                 galleria: [],
@@ -236,7 +203,7 @@ describe('CorpoDettaglio', () => {
     });
 
     it('does not display scopritore/anno when absent', async () => {
-        fetchCorpoCeleste.mockResolvedValue(mockCorpo);
+        fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue({ data: [] });
         renderPage();
 
@@ -251,7 +218,7 @@ describe('CorpoDettaglio', () => {
     it('displays scopritore and anno when present', async () => {
         const corpoConScoperta = {
             data: {
-                ...mockCorpo.data,
+                ...mockCorpoDettaglio.data,
                 scopritore: 'Galileo Galilei',
                 anno_scoperta: 1610,
                 missioni: [],

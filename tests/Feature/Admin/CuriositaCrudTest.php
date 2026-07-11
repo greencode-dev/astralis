@@ -25,7 +25,7 @@ class CuriositaCrudTest extends AdminTestCase
 
     public function test_admin_can_view_index(): void
     {
-        Curiosita::factory(3)->create(['corpo_celeste_id' => $this->corpo->id]);
+        Curiosita::factory(3)->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->get(route('admin.curiosita.index'));
@@ -69,7 +69,7 @@ class CuriositaCrudTest extends AdminTestCase
 
     public function test_admin_can_view_curiosita(): void
     {
-        $curiositum = Curiosita::factory()->create(['corpo_celeste_id' => $this->corpo->id]);
+        $curiositum = Curiosita::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->get(route('admin.curiosita.show', $curiositum));
@@ -80,7 +80,7 @@ class CuriositaCrudTest extends AdminTestCase
 
     public function test_admin_can_view_edit_form(): void
     {
-        $curiositum = Curiosita::factory()->create(['corpo_celeste_id' => $this->corpo->id]);
+        $curiositum = Curiosita::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->get(route('admin.curiosita.edit', $curiositum));
@@ -91,7 +91,7 @@ class CuriositaCrudTest extends AdminTestCase
 
     public function test_admin_can_update_curiosita(): void
     {
-        $curiositum = Curiosita::factory()->create(['corpo_celeste_id' => $this->corpo->id]);
+        $curiositum = Curiosita::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->put(route('admin.curiosita.update', $curiositum), [
@@ -111,7 +111,7 @@ class CuriositaCrudTest extends AdminTestCase
 
     public function test_admin_can_delete_curiosita(): void
     {
-        $curiositum = Curiosita::factory()->create(['corpo_celeste_id' => $this->corpo->id]);
+        $curiositum = Curiosita::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->delete(route('admin.curiosita.destroy', $curiositum));

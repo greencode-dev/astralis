@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
+import { mockStats, terra, marte } from './fixtures';
 
 vi.mock('../apiClient', () => ({
     fetchCorpiCelesti: vi.fn(),
@@ -19,41 +20,11 @@ function renderPage() {
 
 const mockCorpi = (overrides = {}) => ({
     data: [
-        {
-            id: 1,
-            nome: 'Terra',
-            nome_display: 'Terra',
-            slug: 'terra',
-            descrizione: 'Il terzo pianeta.',
-            immagine_url: 'https://example.com/earth.jpg',
-            tipo: 'roccioso',
-            distanza_km: '150000000',
-            in_evidenza: true,
-            categoria: { nome: 'Pianeta' },
-            ...overrides,
-        },
-        {
-            id: 2,
-            nome: 'Marte',
-            nome_display: 'Marte',
-            slug: 'marte',
-            descrizione: 'Il pianeta rosso.',
-            immagine_url: null,
-            tipo: 'roccioso',
-            distanza_km: '228000000',
-            in_evidenza: true,
-            categoria: { nome: 'Pianeta' },
-            ...overrides,
-        },
+        { ...terra, ...overrides },
+        { ...marte, in_evidenza: true, ...overrides },
     ],
     meta: { total: 2, last_page: 1 },
 });
-
-const mockStats = {
-    totale_corpi_celesti: 150,
-    totale_categorie: 8,
-    totale_missioni: 25,
-};
 
 describe('HomePage', () => {
     beforeEach(() => {
@@ -90,7 +61,7 @@ describe('HomePage', () => {
         });
 
         expect(screen.getAllByText('Marte').length).toBeGreaterThanOrEqual(1);
-        expect(screen.getByText('Il terzo pianeta.')).toBeInTheDocument();
+        expect(screen.getByText('Il terzo pianeta del sistema solare.')).toBeInTheDocument();
         expect(screen.getByText('Il pianeta rosso.')).toBeInTheDocument();
     });
 

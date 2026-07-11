@@ -89,7 +89,7 @@ class AuthorizationTest extends AdminTestCase
     {
         $user = User::factory()->create(['is_admin' => false]);
         $corpo = CorpoCeleste::factory()->create();
-        $model = Curiosita::factory()->create(['corpo_celeste_id' => $corpo->id]);
+        $model = Curiosita::factory()->for($corpo)->create();
 
         $response = $this->actingAs($user)
             ->put(route('admin.curiosita.update', $model), [
@@ -105,7 +105,7 @@ class AuthorizationTest extends AdminTestCase
     {
         $user = User::factory()->create(['is_admin' => false]);
         $corpo = CorpoCeleste::factory()->create();
-        $model = GalleriaCorpo::factory()->create(['corpo_celeste_id' => $corpo->id]);
+        $model = GalleriaCorpo::factory()->for($corpo)->create();
 
         $response = $this->actingAs($user)
             ->put(route('admin.galleria.update', $model), [
@@ -155,7 +155,7 @@ class AuthorizationTest extends AdminTestCase
     {
         $user = User::factory()->create(['is_admin' => false]);
         $corpo = CorpoCeleste::factory()->create();
-        $model = Curiosita::factory()->create(['corpo_celeste_id' => $corpo->id]);
+        $model = Curiosita::factory()->for($corpo)->create();
 
         $response = $this->actingAs($user)
             ->delete(route('admin.curiosita.destroy', $model));
@@ -167,7 +167,7 @@ class AuthorizationTest extends AdminTestCase
     {
         $user = User::factory()->create(['is_admin' => false]);
         $corpo = CorpoCeleste::factory()->create();
-        $model = GalleriaCorpo::factory()->create(['corpo_celeste_id' => $corpo->id]);
+        $model = GalleriaCorpo::factory()->for($corpo)->create();
 
         $response = $this->actingAs($user)
             ->delete(route('admin.galleria.destroy', $model));

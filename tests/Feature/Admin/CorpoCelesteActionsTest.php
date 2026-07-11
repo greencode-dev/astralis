@@ -85,8 +85,7 @@ class CorpoCelesteActionsTest extends AdminTestCase
 
     public function test_set_image_from_gallery_updates_immagine(): void
     {
-        $galleria = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
+        $galleria = GalleriaCorpo::factory()->for($this->corpo)->create([
             'percorso' => 'new-image.jpg',
         ]);
 
@@ -106,9 +105,7 @@ class CorpoCelesteActionsTest extends AdminTestCase
     public function test_set_image_from_gallery_rejects_wrong_ownership(): void
     {
         $otherCorpo = CorpoCeleste::factory()->create();
-        $galleria = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $otherCorpo->id,
-        ]);
+        $galleria = GalleriaCorpo::factory()->for($otherCorpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->post(route('admin.corpi-celesti.set-image', [$this->corpo, $galleria]));
@@ -118,9 +115,7 @@ class CorpoCelesteActionsTest extends AdminTestCase
 
     public function test_set_image_guest_cannot_access(): void
     {
-        $galleria = GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $this->corpo->id,
-        ]);
+        $galleria = GalleriaCorpo::factory()->for($this->corpo)->create();
 
         $response = $this->post(route('admin.corpi-celesti.set-image', [$this->corpo, $galleria]));
 

@@ -1,6 +1,7 @@
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import CorpiLista from '../pages/CorpiLista';
+import { mockCategorie, terra, marte, makeCorpiResponse } from './fixtures';
 
 vi.mock('../apiClient', () => ({
     fetchCorpiCelesti: vi.fn(),
@@ -17,42 +18,7 @@ function renderPage() {
     );
 }
 
-const mockCategorie = {
-    data: [
-        { id: 1, nome: 'Pianeta', slug: 'pianeti', corpi_count: 8 },
-        { id: 2, nome: 'Stella', slug: 'stelle', corpi_count: 5 },
-    ],
-};
-
-const mockCorpi = {
-    data: [
-        {
-            id: 1,
-            nome: 'Terra',
-            nome_display: 'Terra',
-            slug: 'terra',
-            descrizione: 'Il terzo pianeta.',
-            immagine_url: 'https://example.com/earth.jpg',
-            tipo: 'roccioso',
-            distanza_km: '150000000',
-            in_evidenza: true,
-            categoria: { nome: 'Pianeta' },
-        },
-        {
-            id: 2,
-            nome: 'Marte',
-            nome_display: 'Marte',
-            slug: 'marte',
-            descrizione: 'Il pianeta rosso.',
-            immagine_url: null,
-            tipo: 'roccioso',
-            distanza_km: '228000000',
-            in_evidenza: false,
-            categoria: { nome: 'Pianeta' },
-        },
-    ],
-    meta: { total: 2, last_page: 1 },
-};
+const mockCorpi = makeCorpiResponse([terra, marte]);
 
 describe('CorpiLista', () => {
     beforeEach(() => {

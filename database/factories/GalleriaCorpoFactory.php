@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -12,7 +13,6 @@ class GalleriaCorpoFactory extends Factory
     public function definition(): array
     {
         return [
-            'corpo_celeste_id' => \App\Models\CorpoCeleste::factory(),
             'percorso' => fake()->imageUrl(),
             'didascalia' => fake()->sentence(),
             'crediti' => fake()->name(),

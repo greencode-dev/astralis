@@ -384,8 +384,7 @@ class NasaImageServiceTest extends TestCase
             'immagine_utente' => false,
         ]);
 
-        GalleriaCorpo::factory()->create([
-            'corpo_celeste_id' => $corpo->id,
+        GalleriaCorpo::factory()->for($corpo)->create([
             'percorso' => 'https://example.com/dup.jpg',
         ]);
 

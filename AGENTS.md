@@ -230,8 +230,8 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 | 9.3 | ✅ **Uniform Http::fake()** — GalleriaApiTest: rimosso unsetEventDispatcher, MissioneApiTest: aggiunto Http::fake() | Pattern uniforme in tutti i test |
 | 9.7 | ✅ **DashboardApiTest complete** — 4 test: counts + corpi_in_evidenza + ultimi_corpi + missioni_per_stato | 173 test, 439 assertion |
 | 9.2 | ✅ **Data provider authorization tests** — 19 test: store/update/delete per 5 entità + 6 guest redirect | 173 test, 439 assertion |
-| 9.4 | **Frontend test fixtures condivise** — fixtures.js centralizzato | Struttura API cambia = 1 file da aggiornare |
-| 9.5 | **Factory foreign key fix** — corpo_celeste_id in GalleriaCorpoFactory, CuriositaFactory | Test scrivono .for($corpo) invece di ricordarsi il campo |
+| 9.4 | ✅ **Frontend test fixtures condivise** — fixtures.js centralizzato | Struttura API cambia = 1 file da aggiornare |
+| 9.5 | ✅ **Factory foreign key fix** — corpo_celeste_id rimosso da GalleriaCorpoFactory, CuriositaFactory, usato ->for() | Test scrivono .for($corpo) invece di ricordarsi il campo |
 | 9.6 | ✅ **Copertura test mancante** — 3 nuovi file: CorpoCelesteActionsTest(7), GalleriaOrdineTest(6), NasaImportTest(8) | 173 test, 439 assertion |
 
 ### Fase 10 — UI/UX & Writing Review (P4)

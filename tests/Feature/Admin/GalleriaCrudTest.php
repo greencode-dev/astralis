@@ -27,7 +27,7 @@ class GalleriaCrudTest extends AdminTestCase
 
     public function test_admin_can_view_index(): void
     {
-        GalleriaCorpo::factory(3)->create(['corpo_celeste_id' => $this->corpo->id]);
+        GalleriaCorpo::factory(3)->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->get(route('admin.galleria.index'));
@@ -73,7 +73,7 @@ class GalleriaCrudTest extends AdminTestCase
 
     public function test_admin_can_view_edit_form(): void
     {
-        $item = GalleriaCorpo::factory()->create(['corpo_celeste_id' => $this->corpo->id]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->get(route('admin.galleria.edit', $item));
@@ -84,7 +84,7 @@ class GalleriaCrudTest extends AdminTestCase
 
     public function test_admin_can_update_galleria(): void
     {
-        $item = GalleriaCorpo::factory()->create(['corpo_celeste_id' => $this->corpo->id]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->put(route('admin.galleria.update', $item), [
@@ -103,7 +103,7 @@ class GalleriaCrudTest extends AdminTestCase
 
     public function test_admin_can_delete_galleria(): void
     {
-        $item = GalleriaCorpo::factory()->create(['corpo_celeste_id' => $this->corpo->id]);
+        $item = GalleriaCorpo::factory()->for($this->corpo)->create();
 
         $response = $this->actingAs($this->admin)
             ->delete(route('admin.galleria.destroy', $item));
