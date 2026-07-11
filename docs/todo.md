@@ -2,111 +2,66 @@
 
 *Ultimo aggiornamento: 2026-07-11*
 
-## Post-commit 2026-07-11 — Task 3.4 completato
+## Piano Ottimizzazione — Completato
+
+Tutte le task (1-10) del piano di ottimizzazione sono state completate. Il progetto ha 173 test PHPUnit + 62 Vitest (235 totali, tutti green). 16 commit locali ahead di origin/master.
+
+## Da Fare
+
+- [ ] `[🔴P0]` **Debug generale post-ottimizzazione** — Verificare che tutto funzioni correttamente dopo le attività di ottimizzazione svolte. Controllare: route, pagine, form, upload, search, paginazione, animation, responsive, admin CRUD, API endpoint
 
 ## Fatto
 
-- [x] **Task 3.4 — framer-motion→CSS + SolarSystem**: Rimossi motion.div da 4 file guest (HomePage, CorpiLista, CorpoDettaglio, Comparatore), CSS keyframes fadeUp/slideLeft/slideRight/fadeScale, useInView hook per scroll animations, stelle twinkle + sun pulse CSS, pianeti cliccabili con Link, immagini realistiche NASA con fallback colore
-- [x] **Task 4.1 — Cache invalidazione**: Cache::forget('admin.dashboard') + Cache::forget('api.dashboard.stats') in store/update/destroy di tutti e 5 i controller CRUD
-
-- [x] **Fase 1 — React P0 critico**: AbortController + useFetch hook + ErrorBoundary globale + guard immagini rotte + axios interceptors retry
-- [x] **Fase 2 — Laravel P0 critico**: Job queue ImportNasaImage + chunk(50) + rate limiting API (throttle:60,1) + caching searchNasa()
-
-- [x] **P2 Admin CRUD test** — 4 nuovi file: CategoriaCrudTest (14), MissioneCrudTest (13), CuriositaCrudTest (10), GalleriaCrudTest (9) — 130 test totali
-- [x] **P2 Categoria pagination** — `->paginate(20)` + `->withQueryString()` + `$categorie->links()`
-- [x] **P2 Curiosita show** — Nuovo metodo `show()` + vista `show.blade.php` + route rimossa da `except`
-- [x] **P2 Search/filter admin** — Search bar su Categoria, Missione (anche agenzia/stato), Curiosità, Galleria
-- [x] **P3 SEO meta tags React** — `document.title` in 5 pagine guest (HomePage, CorpiLista, CorpoDettaglio, Comparatore, NotFound)
-- [x] **P3 Error Boundary globale** — Class component `<ErrorBoundary>` + fallback UI dark in App.jsx
-- [x] **Test P2** — NasaImageService unit test (26 test, 63 assertion) + bugfix query stripping, immagine_utente force skip
-- [x] **Test P2** — API endpoint tests (8 file, 84 total test) — Http::fake, observer testing guard, response structure fixes
-- [x] **Test P2** — Admin CRUD tests — fixed observer interference, all green
-- [x] **Test P2** — React component tests (Vitest, 4 file, 27 test, CategoriaBadge, CorpoCard, Lightbox, SolarSystem)
-- [x] **P4 Dashboard** — Admin dashboard con 3 grafici Chart.js (corpi/categoria, corpi/tipo, missioni/stato)
-- [x] **Test P2** — API integration tests (Vitest, 5 file, 61 test, apiClient + 4 guest pages)
-- [x] **Fase 14** — 10 bug critici fixati: 3 Blade @endif mancanti/annidati, formatDistance NaN guard, 404 route React, ownership check setImageFromGallery, N+1 MissioneController, migration stato lowercase, withoutVerifying condizionale, Orbit import duplicato
-- [x] **Fase 14.1** — Rimossi import morti React (Image, Weight, Thermometer, Gauge, MapPin), dipendenze inutilizzate (laravel/sanctum, barryvdh/laravel-dompdf, @tailwindcss/vite, @headlessui/react), malposizionate (react/react-dom in devDependencies, @vitejs/plugin-react in dependencies)
-- [x] **HasFactory** — Aggiunto trait a tutti i 5 modelli + factories esistenti
-- [x] **Wave 4** — Frontend P2: stili inline → Tailwind classi admin
-- [x] **Wave 3** — Frontend P2: onMouseEnter/onMouseLeave → CSS :hover
-- [x] **Wave 2** — Frontend P3: aria-label, role="img" su pulsanti e fallback immagini
-- [x] **Wave 1** — Backend P2: WordMapService, simili ordinati
-- [x] **Fase 12.4** — Quick wins: max per_page, ordinamento relazioni, .catch, nasa_id in resource, indexes
-- [x] **Fase 12.3** — FormRequest per validazione store/update CorpoCeleste
-- [x] **Fase 12.2** — Rimossa dipendenza Inertia (middleware, JSX, composer/npm)
-- [x] **Fase 12.1** — Auth pages: Inertia→Blade puro (GuestLayout/AppLayout components)
-- [x] **Fase 12** — Authorization (Policy/Gates) ai controller admin
-- [x] **Fase 11** — Bugfix login Inertia→Blade, auth controller transizioni, NASA import dedup, galleria cleanup e ordinamento
-- [x] **Fase 10** — Bug critici: route() senza virgolette, nasa_id in fillable, categoria_id dinamico seeder
-- [x] **Fase 9** — Remote URLs, nome_it/nome_display, wordMap espansa, auto-suggest admin
-- [x] **Fase 8** — NASA Import multi-immagine, Service Layer, CLI fetch-nasa
-- [x] **Fase 7** — Bugfix Intervention Image v4, Force Import All Alpine.js
-- [x] **Fase 6** — Fix orbite, redirect route, profilo, documentazione
-- [x] **Fase 5** — React: Dettaglio, Lightbox, Missioni, Comparatore
-- [x] **Fase 4** — React: Homepage, Sistema solare animato, Lista
-- [x] **Fase 3** — API REST (10 endpoint)
-- [x] **Fase 2** — CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria)
-- [x] **Fase 1** — Database e Modelli (6 migrations, 5 models, seeder)
-- [x] **Fase 0** — Setup Laravel + Breeze + React + documentazione
-- [x] UI/UX: tema scuro auth pages, link Register, paginazione admin, badge in_evidenza
-
-## Da Fare (Piano di Ottimizzazione)
-
-### Fase 3 — Alto React Frontend (P1)
-- [x] 3.2 Inline styles → Tailwind classes (~5-6 convertibili su 15) ✅ verificato
-- [x] 3.4 framer-motion → CSS transitions + SolarSystem clickable/immagini (~4h) ✅
-- [x] 3.6 onFocus/onBlur → CSS :focus-within ✅
-- _3.1 React.lazy, 3.5 Dedup categoryIcons: già fatti_ ✅
-
-### Fase 4 — Alto Backend Laravel (P1)
-- [x] 4.1 Cache dashboard + invalidazione su create/update/delete ✅
-- _4.2-4.6: già fatti_ ✅
-
-### Fase 5 — Alto Admin Blade (P1)
-- [x] 5.1 CSS component class .admin-input per form — 8 auth/profile Blade views riscritti, 17 onfocus/onblur rimossi, admin-input-danger variante, buttons admin-btn-*, hex→Tailwind utilities ✅
-- [x] 5.2 Hardcoded hex → CSS variables — :root block in app.css con 13 variabili, 52 hex values sostituiti in 10 file Blade, onmouseover/onmouseout rimossi da verify-email ✅
-- [x] 5.3 Estrarre partials Blade (actions, stat-cards) — back-link wired 14 file, search wired 5 file, flash enhanced + wired nasa-import, stat-card creato (11 include), show-actions creato (4 include), index-actions creato (5 include), missioni button styles fix ✅
-- [x] 5.4 Form partial unificato per create/edit — 5 _form.blade.php (curiosita, categorie, missioni, galleria, corpi-celesti), 10 create/edit riscritti, ~860 righe eliminate ✅
-- _5.5 @section fix: già fatto_ ✅
-
-### Fase 6 — Medio React Frontend (P2)
-- [x] 6.1 React.memo (LightboxGalleria + Thumbnail) ✅
-- [x] 6.4 SolarSystem stabilità — già fixato con useMemo ✅
-- _6.2 Debounce, 6.3 useMemo Lightbox: già fatti_ ✅
-
-### Fase 7 — Medio Backend Laravel (P2)
-- [x] 7.2 Authorization consistente — DashboardController fixato ($this->authorize()) ✅
-- [x] 7.3 suggestNome: Cache::remember(3600) + ordine invertito (inglese prima) ✅
-- _7.1, 7.4, 7.5: già fatti_ ✅
-
-### Fase 8 — Medio Admin Blade (P2)
-- [x] 8.1 NASA suggest partial — già esiste e funzionante ✅
-- [x] 8.3 CDN fallback Alpine.js + Chart.js — già in place ✅
-- _8.2, 8.4: già fatti_ ✅
-
-### Fase 9 — Test (P1-P3)
-- [x] 9.1 AdminTestCase refactoring (5 CRUD test → estendono classe base) ✅
-- [x] 9.2 Data provider authorization tests (19 test: store/update/delete per 5 entità + 6 guest redirect) ✅
-- [x] 9.3 Uniformare Http::fake() pattern ✅
-- [x] 9.4 Frontend fixtures.js centralizzato ✅
-- [x] 9.5 Factory foreign key fix (->for()) ✅
-- [x] 9.6 Copertura test mancante (suggestNome, aggiornaOrdine, setImageFromGallery, nasa-import, edge case) ✅
-- [x] 9.7 DashboardApiTest assertions complete ✅
-
-### Fase 10 — UI/UX & Writing Review (P4)
-- [x] 10.1 Web Design Guidelines review ✅
-- [x] 10.2 Writing Guidelines review ✅
-- [x] 10.3 Frontend Design review ✅
-
----
+- [x] **Task 10.3 — Frontend Design review** — palette coerenza, 7 inconsistenze colore, SolarSystem firma, tipografia, manca prefers-reduced-motion
+- [x] **Task 10.2 — Writing Guidelines review** — 14 ellipsis, 14 heading case, 10+ passive voice, 16 filler "con successo"
+- [x] **Task 10.1 — Web Design Guidelines review** — audit 14 file React: 3 high, 6 medium, 3 low priority
+- [x] **Task 9.7 — DashboardApiTest complete** — 4 test: counts + corpi_in_evidenza + ultimi_corpi + missioni_per_stato
+- [x] **Task 9.6 — Copertura test mancante** — CorpoCelesteActionsTest(7), GalleriaOrdineTest(6), NasaImportTest(8)
+- [x] **Task 9.5 — Factory foreign key fix** — corpo_celeste_id rimosso da GalleriaCorpoFactory, CuriositaFactory, usato ->for()
+- [x] **Task 9.4 — Frontend fixtures.js centralizzato** — condiviso tra 6 test file
+- [x] **Task 9.3 — Uniform Http::fake() pattern** — GalleriaApiTest rimosso unsetEventDispatcher, MissioneApiTest aggiunto Http::fake()
+- [x] **Task 9.2 — AuthorizationTest** — 19 test: store/update/delete per 5 entità + 6 guest redirect
+- [x] **Task 9.1 — AdminTestCase base class** — 5/5 CRUD test estendono AdminTestCase
+- [x] **Task 8.3 — CDN fallback Alpine.js + Chart.js** — già in place
+- [x] **Task 8.1 — NASA suggest partial** — già esiste e funzionante
+- [x] **Task 7.3 — suggestNome caching + debounce** — Cache::remember(3600) + ordine invertito
+- [x] **Task 7.2 — Authorization consistente** — DashboardController fixato ($this->authorize())
+- [x] **Task 6.4 — SolarSystem stabilità** — già fixato con useMemo
+- [x] **Task 6.1 — React.memo** — LightboxGalleria + Thumbnail
+- [x] **Task 5.4 — Form partial unificato** — 5 _form.blade.php, 10 create/edit riscritti, ~860 righe eliminate
+- [x] **Task 5.3 — Estrarre partials Blade** — back-link, search, flash, stat-card, show-actions, index-actions
+- [x] **Task 5.2 — Hardcoded hex → CSS variables** — :root block con 13 variabili, 52 hex values sostituiti
+- [x] **Task 5.1 — CSS component class** — .admin-input per form, 8 Blade views riscritti, 17 onfocus/onblur rimossi
+- [x] **Task 4.1 — Cache dashboard + invalidazione** — Cache::forget su store/update/destroy
+- [x] **Task 3.4 — framer-motion → CSS** — fade/slide/pulse/twinkle + SolarSystem clickable/immagini realistiche
+- [x] **Task 3.2 — Inline styles → Tailwind classes** — ~68 oggetti style in 15 file
+- [x] **Task 14.1** — Rimossi import morti React, dipendenze inutilizzate, malposizionate
+- [x] **Task 14** — 10 bug critici fixati
+- [x] **Task 12.4** — Quick wins: max per_page, ordinamento relazioni, .catch, nasa_id in resource, indexes
+- [x] **Task 12.3** — FormRequest per validazione store/update CorpoCeleste
+- [x] **Task 12.2** — Rimossa dipendenza Inertia
+- [x] **Task 12.1** — Auth pages: Inertia→Blade puro
+- [x] **Task 12** — Authorization (Policy/Gates) ai controller admin
+- [x] **Task 11** — Bugfix login Inertia→Blade, auth controller transizioni, NASA import dedup, galleria cleanup
+- [x] **Task 10** — Bug critici: route(), nasa_id in fillable, categoria_id dinamico seeder
+- [x] **Task 9** — Remote URLs, nome_it/nome_display, wordMap espansa, auto-suggest admin
+- [x] **Task 8** — NASA Import multi-immagine, Service Layer, CLI fetch-nasa
+- [x] **Task 7** — Bugfix Intervention Image v4, Force Import All Alpine.js
+- [x] **Task 6** — Fix orbite, redirect route, profilo, documentazione
+- [x] **Task 5** — React: Dettaglio, Lightbox, Missioni, Comparatore
+- [x] **Task 4** — React: Homepage, Sistema solare animato, Lista
+- [x] **Task 3** — API REST (10 endpoint)
+- [x] **Task 2** — CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria)
+- [x] **Task 1** — Database e Modelli (6 migrations, 5 models, seeder)
+- [x] **Task 0** — Setup Laravel + Breeze + React + documentazione
 
 ## Note
 
-- **Stato**: Fase 1-10 completata (piano ottimizzazione terminato). 260 test (173 PHPUnit + 87 Vitest).
+- **Stato**: Piano ottimizzazione completato (Task 0-10.3). 235 test totali (173 PHPUnit + 62 Vitest). Prossimo step: debug generale post-ottimizzazione.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```
-  - [ ] `[🖥️🎨💾🧪✨📝][🔴🟠🔵🟣⚪Px]` Descrizione — `file/principale/coinvolto`
+  - [ ] `[🖥️🎨💾🧪✨📝][🔴🟠🔵🟣⚪]` Descrizione — `file/principale/coinvolto`
   ```
   **Tag (oggetti — ambito)**: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`
   **Priorità (cerchi — urgenza)**: 🔴P0 bloccante · 🟠P1 utente · 🔵P2 manutenzione · 🟣P3 accessibilità · ⚪P4 futuro
