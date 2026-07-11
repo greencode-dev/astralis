@@ -131,26 +131,29 @@ class CorpoCelesteController extends Controller
         $this->authorize('viewAny', CorpoCeleste::class);
 
         $nomeIt = $request->input('nome_it');
+        $cacheKey = 'suggest_nome_' . md5($nomeIt);
 
-        $result = $nasaService->searchNasa($nomeIt);
-        if ($result['success']) {
-            $suggested = $wordMapService->guessEnglishName($result['items'], $nomeIt);
-            if ($suggested) {
-                return response()->json(['success' => true, 'nome' => $suggested]);
+        return Cache::remember($cacheKey, 3600, function () use ($nomeIt, $nasaService, $wordMapService) {
+            $translated = $wordMapService->translate($nomeIt);
+            if ($translated !== $nomeIt) {
+                $result = $nasaService->searchNasa($translated);
+                if ($result['success']) {
+                    $suggested = $wordMapService->guessEnglishName($result['items'], $translated);
+                    if ($suggested) {
+                        return response()->json(['success' => true, 'nome' => $suggested]);
+                    }
+                }
             }
-        }
 
-        $translated = $wordMapService->translate($nomeIt);
-        if ($translated !== $nomeIt) {
-            $result = $nasaService->searchNasa($translated);
+            $result = $nasaService->searchNasa($nomeIt);
             if ($result['success']) {
-                $suggested = $wordMapService->guessEnglishName($result['items'], $translated);
+                $suggested = $wordMapService->guessEnglishName($result['items'], $nomeIt);
                 if ($suggested) {
                     return response()->json(['success' => true, 'nome' => $suggested]);
                 }
             }
-        }
 
-        return response()->json(['success' => false, 'message' => 'Nome inglese non trovato. Prova a cercare manualmente su NASA.']);
+            return response()->json(['success' => false, 'message' => 'Nome inglese non trovato. Prova a cercare manualmente su NASA.']);
+        });
     }
 }

@@ -1,9 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, memo } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { Image } from 'lucide-react';
 
-function Thumbnail({ slide, index, onOpen }) {
+const Thumbnail = memo(function Thumbnail({ slide, index, onOpen }) {
     const [error, setError] = useState(false);
 
     return (
@@ -37,9 +37,9 @@ function Thumbnail({ slide, index, onOpen }) {
             </div>
         </button>
     );
-}
+});
 
-export default function LightboxGalleria({ immagini }) {
+export default memo(function LightboxGalleria({ immagini }) {
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(0);
 

@@ -12,13 +12,9 @@ use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('can:viewAny,App\Models\CorpoCeleste');
-    }
-
     public function index(): View
     {
+        $this->authorize('viewAny', CorpoCeleste::class);
         $data = Cache::remember('admin.dashboard', 3600, function () {
             $stats = [
                 'corpi_celesti' => CorpoCeleste::count(),
