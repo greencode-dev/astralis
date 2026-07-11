@@ -2,6 +2,30 @@
 
 ## Risolti
 
+### [21] LightboxGalleria.jsx sintassi corrotta — 12/07/2026
+- **Descrizione**: Componente non si montava — parentesi mancante alla riga 58 + callback `onOpen` malformata
+- **Causa**: File corrotto probabilmente durante un merge o edit precedente
+- **Soluzione**: Riscritto completamente il componente
+- **Fixato in**: Fase ripristino 12/07/2026
+
+### [22] CorpoDettaglio.test.jsx import errato — 12/07/2026
+- **Descrizione**: Test Vitest falliva — importava `mockCorpoDettaglioDettaglio` (doppio "Dettaglio")
+- **Causa**: Typo nell'import (probabile rename errato)
+- **Soluzione**: Corretto import da `mockCorpoDettaglioDettaglio` a `mockCorpoDettaglio`
+- **Fixato in**: Fase ripristino 12/07/2026
+
+### [23] GalleriaCorpo didascalia/crediti VARCHAR(255) — 12/07/2026
+- **Descrizione**: L'observer auto-import NASA creava record con `didascalia` >255 chars, causando errori SQL
+- **Causa**: Titoli NASA possono essere lunghi >255 caratteri
+- **Soluzione**: Migrazione `2026_07_12_000000_change_galleria_didascalia_crediti_to_text.php` — `didascalia` e `crediti` da VARCHAR(255) a TEXT
+- **Fixato in**: Fase ripristino 12/07/2026
+
+### [24] bootstrap/cache non scrivibile da Git Bash — 12/07/2026
+- **Descrizione**: `php artisan serve` fallisce dopo clone su nuovo PC
+- **Causa**: Directory creata da Git Bash con permessi POSIX incompatibili
+- **Soluzione**: `cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'`
+- **Fixato in**: Fase ripristino 12/07/2026
+
 ### [01] bootstrap/cache non scrivibile — 02/07/2026 (ricorrente su Windows)
 - **Descrizione**: `php artisan serve` fallisce con `"The bootstrap/cache directory must be present and writable"`
 - **Causa**: Directory creata da **Git Bash**, che imposta permessi POSIX incompatibili con PHP su Windows

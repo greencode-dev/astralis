@@ -24,7 +24,7 @@
     </a>
     <div class="flex h-screen overflow-hidden" x-data="{ sidebarOpen: false }">
 
-        <aside class="fixed inset-y-0 left-0 z-40 flex-shrink-0 w-64 overflow-y-auto transition-transform duration-300 -translate-x-full border-r bg-admin-card border-admin-primary/10 md:relative md:translate-x-0 md:inset-auto"
+        <aside class="fixed inset-y-0 left-0 z-40 shrink-0 w-64 overflow-y-auto transition-transform duration-300 -translate-x-full bg-admin-card border-r border-admin-primary/10 md:relative md:translate-x-0 md:inset-auto"
                :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
                @click.away="sidebarOpen = false">
 

@@ -39,11 +39,11 @@ export default memo(function TimelineMissioni({ missioni }) {
                 {missioni.map((missione, index) => {
                     const colors = statoColors[missione.stato] || { bg: 'rgba(255,255,255,0.1)', text: '#B8B8D0' };
                     return (
-                        <div key={missione.id} className="flex-shrink-0 w-[280px]">
+                        <div key={missione.id} className="shrink-0 w-[280px]">
                             <div className="relative">
                                 {/* Punto sulla timeline */}
                                 <div className="flex items-center mb-4">
-                                    <div className="w-4 h-4 rounded-full flex-shrink-0" style={{ backgroundColor: colors.text }} />
+                                    <div className="w-4 h-4 rounded-full shrink-0" style={{ backgroundColor: colors.text }} />
                                     <div className="flex-1 h-0.5 ml-2 bg-admin-primary/15" />
                                 </div>
 

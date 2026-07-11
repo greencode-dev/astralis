@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --color-admin-bg: #0A0A1A;
+    --color-admin-card: #111128;
+    --color-admin-text: #F0F0FA;
+    --color-admin-dim: #B8B8D0;
+    --color-admin-muted: #7A7A9A;
+    --color-admin-primary: #22D3EE;
+    --color-admin-secondary: #A855F7;
+    --color-admin-accent: #F97316;
+    --color-admin-warning: #FACC15;
+    --color-admin-success: #22C55E;
+    --color-admin-error: #EF4444;
+    --color-admin-neutral: #6B7280;
+    --color-admin-chart-text: #9CA3AF;
+}
+
+@plugin "@tailwindcss/forms";
 
 :root {
     --admin-bg: #0A0A1A;
@@ -18,57 +36,72 @@
     --admin-chart-text: #9CA3AF;
 }
 
-@layer components {
-    .admin-input {
-        @apply w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 bg-admin-bg text-admin-text border border-admin-primary/20 focus:border-admin-primary focus:ring-2 focus:ring-admin-primary/10 focus:outline-none;
-    }
-    .admin-input-mono {
-        @apply admin-input font-mono;
-    }
-    .admin-input-danger {
-        @apply admin-input border-admin-accent/30 focus:border-admin-accent focus:ring-admin-accent/10;
-    }
-    .admin-btn-primary {
-        @apply px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90;
-    }
-    .admin-btn-cancel {
-        @apply px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 hover:text-admin-text hover:bg-white/5;
-    }
+@utility admin-input {
+    @apply w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 bg-admin-bg text-admin-text border border-admin-primary/20 focus:border-admin-primary focus:ring-2 focus:ring-admin-primary/10 focus:outline-hidden;
 }
 
-@layer utilities {
-    .animate-fade-up {
-        animation: fadeUp 0.6s ease-out both;
-    }
-    .animate-fade-in {
-        animation: fadeIn 0.6s ease-out both;
-    }
-    .animate-slide-left {
-        animation: slideLeft 0.8s ease-out both;
-    }
-    .animate-slide-right {
-        animation: slideRight 0.6s ease-out both;
-    }
-    .animate-fade-scale {
-        animation: fadeScale 1s ease-out both;
-    }
-    .animate-twinkle {
-        animation: twinkle var(--tw-duration, 3s) ease-in-out infinite;
-    }
-    .animate-pulse-sun {
-        animation: pulseSun 3s ease-in-out infinite;
-    }
-    .animate-in-view {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    .animate-in-view.is-visible {
-        animation: fadeUp 0.5s ease-out forwards;
-    }
-    .planet-hover {
-        transition: transform 0.2s ease;
-    }
-    .planet-hover:hover {
+@utility admin-input-mono {
+    @apply w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 bg-admin-bg text-admin-text border border-admin-primary/20 focus:border-admin-primary focus:ring-2 focus:ring-admin-primary/10 focus:outline-hidden font-mono;
+}
+
+@utility admin-input-danger {
+    @apply w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 bg-admin-bg text-admin-text border border-admin-primary/20 focus:border-admin-primary focus:ring-2 focus:ring-admin-primary/10 focus:outline-hidden border-admin-accent/30 focus:border-admin-accent focus:ring-admin-accent/10;
+}
+
+@utility admin-btn-primary {
+    @apply px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90;
+}
+
+@utility admin-btn-cancel {
+    @apply px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 hover:text-admin-text hover:bg-white/5;
+}
+
+@utility animate-fade-up {
+    animation: fadeUp 0.6s ease-out both;
+}
+
+@utility animate-fade-in {
+    animation: fadeIn 0.6s ease-out both;
+}
+
+@utility animate-slide-left {
+    animation: slideLeft 0.8s ease-out both;
+}
+
+@utility animate-slide-right {
+    animation: slideRight 0.6s ease-out both;
+}
+
+@utility animate-fade-scale {
+    animation: fadeScale 1s ease-out both;
+}
+
+@utility animate-twinkle {
+    animation: twinkle var(--tw-duration, 3s) ease-in-out infinite;
+}
+
+@utility animate-pulse-sun {
+    animation: pulseSun 3s ease-in-out infinite;
+}
+
+@utility animate-in-view {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@utility animate-in-view-left {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+@utility animate-in-view-scale {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+@utility planet-hover {
+    transition: transform 0.2s ease;
+    &:hover {
         transform: scale(1.5);
     }
 }

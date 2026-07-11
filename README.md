@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind v4">
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
 </p>
 
@@ -19,7 +19,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 - Autorizzazione admin con Policy e Gates (soli admin possono creare/modificare/eliminare)
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
 - Upload di immagini con Intervention Image v4
-- NASA Import: importa immagini da NASA API (singolo, massivo in coda via Job Queue, o via CLI con `php artisan astralis:fetch-nasa`)
+- NASA Import: importa immagini da NASA API (singolo, massivo, o via CLI con `php artisan astralis:fetch-nasa`)
 - Manutenzione galleria immagini (`php artisan astralis:gallery --fix`)
 - Dashboard con statistiche e grafici (Chart.js: corpi per categoria/tipo, missioni per stato)
 - Dark theme (`#0A0A1A`, `#111128`, `#22D3EE`)
@@ -45,7 +45,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ```
 ┌─────────────────────────────────────────────────────┐
 │                     Frontend React                    │
-│         (Vite + Tailwind + framer-motion)            │
+│         (Vite + Tailwind CSS v4 + framer-motion)            │
 └────────────────────┬────────────────────────────────┘
                      │ API JSON
 ┌────────────────────▼────────────────────────────────┐

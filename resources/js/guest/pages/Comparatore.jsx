@@ -90,7 +90,7 @@ export default function Comparatore() {
                                         id={selectId}
                                         value={slug}
                                         onChange={e => setSlug(pos, e.target.value)}
-                                        className="w-full px-4 py-3 rounded-xl text-sm outline-none appearance-none transition-all duration-200 bg-admin-card text-admin-text border border-admin-primary/20 focus:border-admin-primary/50"
+                                        className="w-full px-4 py-3 rounded-xl text-sm outline-hidden appearance-none transition-all duration-200 bg-admin-card text-admin-text border border-admin-primary/20 focus:border-admin-primary/50"
                                     >
                                         <option value="">Seleziona un pianeta...</option>
                                         {corpi.filter(p => {
