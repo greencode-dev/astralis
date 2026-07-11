@@ -11,8 +11,8 @@
         @foreach (['#22D3EE', '#A855F7', '#F97316', '#FACC15', '#22C55E', '#EF4444', '#F472B6', '#94A3B8', '#78716C', '#6B7280'] as $c)
             <button type="button"
                     class="w-8 h-8 rounded-full border-2 transition-all duration-150 hover:scale-110"
-                    style="background-color: {{ $c }}; border-color: {{ old('colore', $coloreValue) === $c ? '#F0F0FA' : 'transparent' }};"
-                    onclick="document.getElementById('colore').value='{{ $c }}'; document.getElementById('colore_hex').value='{{ $c }}'; this.style.borderColor='#F0F0FA';"
+                    style="background-color: {{ $c }}; border-color: {{ old('colore', $coloreValue) === $c ? 'var(--admin-text)' : 'transparent' }};"
+                    onclick="document.getElementById('colore').value='{{ $c }}'; document.getElementById('colore_hex').value='{{ $c }}'; this.style.borderColor='var(--admin-text)';"
                     aria-label="Seleziona colore {{ $c }}"></button>
         @endforeach
     </div>

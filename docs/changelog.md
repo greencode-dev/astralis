@@ -10,6 +10,13 @@
 - Convertiti hex hardcoded a Tailwind utility classes (text-admin-text, text-admin-dim, text-admin-accent)
 - -85 righe, eliminazione stili inline su form auth
 
+### Task 5.2 — 11/07/2026 — Hardcoded hex → CSS variables
+- Aggiunto `:root` block in `app.css` con 13 CSS custom properties (admin palette + success/error/neutral/chart-text)
+- Sostituiti 52 valori hex hardcoded in 10 file Blade con `var(--admin-xxx)`
+- File modificati: guest.blade.php, layouts/guest.blade.php, dashboard.blade.php, missioni/index+show, corpi-celesti/show, nasa-suggest-js, color-picker-html, galleria/index, categorie/edit, nasa-import/index, verify-email
+- Rimossi onmouseover/onmouseout da verify-email.blade.php (convertiti a classi admin-btn-*)
+- Cambio palette ora richiede modifica di un singolo blocco `:root`
+
 ## Fase 0 — Setup
 
 ### 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione

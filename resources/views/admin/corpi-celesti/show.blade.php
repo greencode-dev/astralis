@@ -178,7 +178,7 @@
                                     <td class="py-3 px-4 text-gray-400">{{ $missione->pivot->anno_arrivo ?? '—' }}</td>
                                     <td class="py-3 px-4">
                                         <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                                              style="background-color: {{ $missione->stato === 'Completata' ? 'rgba(34,197,94,0.15)' : ($missione->stato === 'In corso' ? 'rgba(34,211,238,0.15)' : 'rgba(250,204,21,0.15)') }}; color: {{ $missione->stato === 'Completata' ? '#22C55E' : ($missione->stato === 'In corso' ? '#22D3EE' : '#FACC15') }};">
+                                              style="background-color: {{ $missione->stato === 'Completata' ? 'rgba(34,197,94,0.15)' : ($missione->stato === 'In corso' ? 'rgba(34,211,238,0.15)' : 'rgba(250,204,21,0.15)') }}; color: {{ $missione->stato === 'Completata' ? 'var(--admin-success)' : ($missione->stato === 'In corso' ? 'var(--admin-primary)' : 'var(--admin-warning)') }};">
                                             {{ $missione->stato }}
                                         </span>
                                     </td>

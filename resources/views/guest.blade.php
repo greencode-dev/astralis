@@ -10,7 +10,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet" />
     @vite(['resources/js/guest/main.jsx', 'resources/css/app.css'])
 </head>
-<body class="font-sans antialiased" style="background-color: #0A0A1A; color: #F0F0FA;">
+<body class="font-sans antialiased" style="background-color: var(--admin-bg); color: var(--admin-text);">
     <div id="guest-root"></div>
 </body>
 </html>

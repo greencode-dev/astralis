@@ -71,8 +71,8 @@
                         <tr class="border-b border-admin-primary/5">
                             <td class="py-3 px-4 text-admin-text">{{ $corpo->nome }}</td>
                             <td class="py-3 px-4">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                                      style="background-color: {{ $corpo->categoria?->colore ?? '#22D3EE' }}20; color: {{ $corpo->categoria?->colore ?? '#22D3EE' }};">
+                                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                                       style="background-color: {{ $corpo->categoria?->colore ?? 'var(--admin-primary)' }}20; color: {{ $corpo->categoria?->colore ?? 'var(--admin-primary)' }};">
                                     {{ $corpo->categoria?->nome ?? '-' }}
                                 </span>
                             </td>
@@ -121,7 +121,7 @@
             onerror="this.onerror=null;var s=document.createElement('script');s.src='https://unpkg.com/chart.js@4.4.7/dist/chart.umd.min.js';document.head.appendChild(s);"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            Chart.defaults.color = '#9CA3AF';
+            Chart.defaults.color = 'var(--admin-chart-text)';
             Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.05)';
 
             var chartCategorie = document.getElementById('chart-categorie');
@@ -134,7 +134,7 @@
                             data: @json($corpiPerCategoria->pluck('count')),
                             backgroundColor: @json($corpiPerCategoria->pluck('colore')),
                             borderWidth: 2,
-                            borderColor: '#111128',
+                            borderColor: 'var(--admin-card)',
                         }]
                     },
                     options: {
@@ -155,15 +155,15 @@
                         datasets: [{
                             label: 'Corpi Celesti',
                             data: @json($corpiPerTipo->pluck('count')),
-                            backgroundColor: ['#22D3EE', '#A855F7', '#F97316'],
+                            backgroundColor: ['var(--admin-primary)', 'var(--admin-secondary)', 'var(--admin-accent)'],
                             borderRadius: 6,
                         }]
                     },
                     options: {
                         responsive: true,
                         scales: {
-                            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
-                            x: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
+                            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'var(--admin-chart-text)' } },
+                            x: { grid: { display: false }, ticks: { color: 'var(--admin-chart-text)' } }
                         },
                         plugins: { legend: { display: false } }
                     }
@@ -179,7 +179,7 @@
                         datasets: [{
                             label: 'Missioni',
                             data: @json(array_values($missioniPerStato)),
-                            backgroundColor: ['#22C55E', '#FACC15', '#9CA3AF'],
+                            backgroundColor: ['var(--admin-success)', 'var(--admin-warning)', 'var(--admin-neutral)'],
                             borderRadius: 6,
                         }]
                     },
@@ -187,8 +187,8 @@
                         indexAxis: 'y',
                         responsive: true,
                         scales: {
-                            x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
-                            y: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
+                            x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'var(--admin-chart-text)' } },
+                            y: { grid: { display: false }, ticks: { color: 'var(--admin-chart-text)' } }
                         },
                         plugins: { legend: { display: false } }
                     }

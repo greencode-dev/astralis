@@ -39,7 +39,7 @@
                     <img loading="lazy" src="{{ $item->percorso_url }}"
                          alt="{{ $item->didascalia ?? $item->corpoCeleste->nome }}"
                          class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                         onerror="this.alt='Immagine non disponibile'; this.style.display='none'; this.parentElement.innerHTML='<div role=\"img\" aria-label=\"Immagine non disponibile per {{ $item->corpoCeleste->nome }}\" style=\"display:flex;align-items:center;justify-content:center;height:100%;padding:1rem;text-align:center;color:#6B7280;font-size:0.75rem;\">Immagine non disponibile</div>';">
+                         onerror="this.alt='Immagine non disponibile'; this.style.display='none'; this.parentElement.innerHTML='<div role=\"img\" aria-label=\"Immagine non disponibile per {{ $item->corpoCeleste->nome }}\" style=\"display:flex;align-items:center;justify-content:center;height:100%;padding:1rem;text-align:center;color:var(--admin-neutral);font-size:0.75rem;\">Immagine non disponibile</div>';">
                 </div>
                 <div class="p-3">
                     <p class="text-sm font-medium truncate text-admin-text">{{ $item->didascalia ?? 'Senza didascalia' }}</p>

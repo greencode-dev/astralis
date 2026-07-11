@@ -155,7 +155,7 @@
                 <form method="POST" action="{{ route('admin.nasa-import.import-all') }}">
                     @csrf
                     <button type="submit"
-                            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[#ea580c] bg-admin-accent text-white">
+                            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:brightness-110 bg-admin-accent text-white">
                         Avvia importazione
                     </button>
                 </form>

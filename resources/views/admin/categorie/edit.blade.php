@@ -33,7 +33,7 @@
                     @enderror
                 </div>
 
-                @include('admin.partials.color-picker-html', ['coloreValue' => $categoria->colore ?? '#22D3EE'])
+                @include('admin.partials.color-picker-html', ['coloreValue' => $categoria->colore ?? 'var(--admin-primary)'])
 
                 <div class="mb-6">
                     <label for="descrizione" class="block text-sm font-medium mb-2 text-admin-text">Descrizione</label>
