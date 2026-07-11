@@ -5,7 +5,13 @@
             class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25">
         Cerca
     </button>
-    @if (request('search'))
+    @php
+        $hasFilters = request('search');
+        foreach (($extraFilters ?? []) as $f) {
+            if (request($f)) { $hasFilters = true; break; }
+        }
+    @endphp
+    @if ($hasFilters)
         <a href="{{ $action }}"
            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 border border-gray-400/20 hover:text-red-500 hover:border-red-500/30">
             Cancella filtro

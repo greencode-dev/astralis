@@ -5,10 +5,7 @@
 
 @section('content')
     <div class="max-w-5xl">
-        <a href="{{ route('admin.corpi-celesti.index') }}" class="inline-flex items-center gap-2 text-sm mb-6 transition-colors duration-150 text-gray-400 hover:text-admin-primary">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-            Torna alla lista
-        </a>
+        @include('admin.partials.back-link', ['route' => 'admin.corpi-celesti.index'])
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div class="rounded-xl p-6 flex flex-col items-center text-center bg-admin-card border border-admin-primary/10">
@@ -51,64 +48,19 @@
                 <h3 class="text-sm font-medium mb-3 uppercase tracking-wider text-gray-400">Descrizione</h3>
                 <p class="text-admin-text leading-[1.7]">{{ $corpoCeleste->descrizione ?? 'Nessuna descrizione disponibile.' }}</p>
 
-                <div class="mt-6 flex gap-3">
-                    <a href="{{ route('admin.corpi-celesti.edit', $corpoCeleste) }}"
-                       class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-accent/15 text-admin-accent hover:bg-admin-accent/30">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                        Modifica
-                    </a>
-                    <form method="POST" action="{{ route('admin.corpi-celesti.destroy', $corpoCeleste) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $corpoCeleste->nome }}?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit"
-                                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-red-500/15 text-red-500 hover:bg-red-500/30">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                            Elimina
-                        </button>
-                    </form>
-                </div>
+                @include('admin.partials.show-actions', ['editRoute' => route('admin.corpi-celesti.edit', $corpoCeleste), 'deleteRoute' => route('admin.corpi-celesti.destroy', $corpoCeleste), 'entityName' => $corpoCeleste->nome_display])
             </div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Tipo</p>
-                <p class="text-sm font-medium text-admin-text">{{ $corpoCeleste->tipo ?? '—' }}</p>
-            </div>
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Massa</p>
-                <p class="text-sm font-medium text-admin-text font-mono">{{ $corpoCeleste->massa_kg ?? '—' }} kg</p>
-            </div>
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Distanza</p>
-                <p class="text-sm font-medium text-admin-text font-mono">{{ $corpoCeleste->distanza_km ?? '—' }} km</p>
-            </div>
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Diametro</p>
-                <p class="text-sm font-medium text-admin-text font-mono">{{ $corpoCeleste->diametro_km ?? '—' }} km</p>
-            </div>
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Gravità</p>
-                <p class="text-sm font-medium text-admin-text">{{ $corpoCeleste->gravita ?? '—' }} m/s²</p>
-            </div>
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Temperatura</p>
-                <p class="text-sm font-medium text-admin-text">{{ $corpoCeleste->temperatura ?? '—' }} °C</p>
-            </div>
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Periodo orbitale</p>
-                <p class="text-sm font-medium text-admin-text">{{ $corpoCeleste->periodo_orbitale ?? '—' }} giorni</p>
-            </div>
-            <div class="rounded-xl p-4 text-center bg-admin-card border border-admin-primary/10">
-                <p class="text-xs uppercase tracking-wider mb-1 text-gray-400">Scoperta</p>
-                <p class="text-sm font-medium text-admin-text">
-                    @if ($corpoCeleste->scopritore || $corpoCeleste->anno_scoperta)
-                        {{ $corpoCeleste->scopritore ?? '—' }}{{ $corpoCeleste->scopritore && $corpoCeleste->anno_scoperta ? ', ' : '' }}{{ $corpoCeleste->anno_scoperta ?? '' }}
-                    @else
-                        —
-                    @endif
-                </p>
-            </div>
+            @include('admin.partials.stat-card', ['label' => 'Tipo', 'value' => $corpoCeleste->tipo ?? '—'])
+            @include('admin.partials.stat-card', ['label' => 'Massa', 'value' => $corpoCeleste->massa_kg ?? '—', 'suffix' => ' kg', 'mono' => true])
+            @include('admin.partials.stat-card', ['label' => 'Distanza', 'value' => $corpoCeleste->distanza_km ?? '—', 'suffix' => ' km', 'mono' => true])
+            @include('admin.partials.stat-card', ['label' => 'Diametro', 'value' => $corpoCeleste->diametro_km ?? '—', 'suffix' => ' km', 'mono' => true])
+            @include('admin.partials.stat-card', ['label' => 'Gravità', 'value' => $corpoCeleste->gravita ?? '—', 'suffix' => ' m/s²'])
+            @include('admin.partials.stat-card', ['label' => 'Temperatura', 'value' => $corpoCeleste->temperatura ?? '—', 'suffix' => ' °C'])
+            @include('admin.partials.stat-card', ['label' => 'Periodo orbitale', 'value' => $corpoCeleste->periodo_orbitale ?? '—', 'suffix' => ' giorni'])
+            @include('admin.partials.stat-card', ['label' => 'Scoperta', 'value' => ($corpoCeleste->scopritore || $corpoCeleste->anno_scoperta) ? ($corpoCeleste->scopritore ?? '—') . ($corpoCeleste->scopritore && $corpoCeleste->anno_scoperta ? ', ' : '') . ($corpoCeleste->anno_scoperta ?? '') : '—'])
         </div>
 
         @if ($corpoCeleste->galleria->count() > 0)

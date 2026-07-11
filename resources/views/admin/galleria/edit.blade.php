@@ -5,10 +5,7 @@
 
 @section('content')
     <div class="max-w-2xl">
-        <a href="{{ route('admin.galleria.index') }}" class="inline-flex items-center gap-2 text-sm mb-6 transition-colors duration-150 hover:text-admin-primary text-gray-400">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-            Torna alla lista
-        </a>
+        @include('admin.partials.back-link', ['route' => 'admin.galleria.index'])
 
         <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
             <form method="POST" action="{{ route('admin.galleria.update', $galleriaCorpo) }}" enctype="multipart/form-data">

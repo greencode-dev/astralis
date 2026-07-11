@@ -65,7 +65,7 @@
 ### Fase 5 — Alto Admin Blade (P1)
 - [x] 5.1 CSS component class .admin-input per form — 8 auth/profile Blade views riscritti, 17 onfocus/onblur rimossi, admin-input-danger variante, buttons admin-btn-*, hex→Tailwind utilities ✅
 - [x] 5.2 Hardcoded hex → CSS variables — :root block in app.css con 13 variabili, 52 hex values sostituiti in 10 file Blade, onmouseover/onmouseout rimossi da verify-email ✅
-- [ ] 5.3 Estrarre partials Blade (actions, stat-cards)
+- [x] 5.3 Estrarre partials Blade (actions, stat-cards) — back-link wired 14 file, search wired 5 file, flash enhanced + wired nasa-import, stat-card creato (11 include), show-actions creato (4 include), index-actions creato (5 include), missioni button styles fix ✅
 - [ ] 5.4 Form partial unificato per create/edit
 - _5.5 @section fix: già fatto_ ✅
 

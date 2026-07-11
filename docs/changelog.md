@@ -17,6 +17,17 @@
 - Rimossi onmouseover/onmouseout da verify-email.blade.php (convertiti a classi admin-btn-*)
 - Cambio palette ora richiede modifica di un singolo blocco `:root`
 
+### Task 5.3 — 11/07/2026 — Partials extraction completa
+- Wired `back-link` in 14 file (tutti create/edit/show) — eliminati 14 blocchi inline
+- Wired `search` in 5 index pages — eliminati 5 form inline, aggiunto param `extraFilters` per missioni
+- Enhanced `flash.blade.php` — aggiunto supporto session `warning`
+- Wired `flash` in nasa-import/index — eliminati 3 blocchi flash inline
+- Created `stat-card.blade.php` — 11 include in corpi-celesti/show (8) + missioni/show (3)
+- Created `show-actions.blade.php` — 4 include in tutti i show pages, harmonizzato stile curiosita/show
+- Created `index-actions.blade.php` — 5 include in tutti i index pages, param `size=sm` per galleria
+- Fixed missioni create/edit button styles → admin-btn-primary / admin-btn-cancel
+- ~400 righe di HTML inline eliminate
+
 ## Fase 0 — Setup
 
 ### 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione

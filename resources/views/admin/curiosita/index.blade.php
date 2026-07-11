@@ -15,22 +15,7 @@
 
     @include('admin.partials.flash')
 
-    <div class="mb-4">
-        <form method="GET" action="{{ route('admin.curiosita.index') }}" class="flex gap-2">
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cerca per titolo..."
-                   class="flex-1 admin-input">
-            <button type="submit"
-                    class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25">
-                Cerca
-            </button>
-            @if (request('search'))
-                <a href="{{ route('admin.curiosita.index') }}"
-                   class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-gray-400 border border-gray-400/20 hover:text-red-500 hover:border-red-500/30">
-                    Cancella filtro
-                </a>
-            @endif
-        </form>
-    </div>
+    @include('admin.partials.search', ['action' => route('admin.curiosita.index'), 'placeholder' => 'Cerca per nome...'])
 
     <div class="rounded-xl overflow-x-auto bg-admin-card border border-admin-primary/10">
         <table class="w-full text-sm">
@@ -61,24 +46,7 @@
                         <td class="py-3 px-4 text-gray-400 max-w-[300px]">{{ Str::limit($curiositum->descrizione, 80) }}</td>
                         <td class="py-3 px-4 text-gray-500 max-w-[150px]">{{ $curiositum->fonte ? Str::limit($curiositum->fonte, 40) : '—' }}</td>
                         <td class="py-3 px-4 text-right">
-                            <div class="flex items-center justify-end gap-2">
-                                <a href="{{ route('admin.curiosita.edit', $curiositum) }}"
-                                   class="p-2 rounded-lg transition-all duration-200 text-gray-400 hover:text-admin-accent hover:bg-admin-accent/10"
-                                   aria-label="Modifica {{ $curiositum->titolo }}"
-                                   title="Modifica">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-                                </a>
-                                <form method="POST" action="{{ route('admin.curiosita.destroy', $curiositum) }}" class="inline" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $curiositum->titolo }}?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit"
-                                            class="p-2 rounded-lg transition-all duration-200 text-gray-400 hover:text-red-500 hover:bg-red-500/10"
-                                            aria-label="Elimina {{ $curiositum->titolo }}"
-                                            title="Elimina">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-                                    </button>
-                                </form>
-                            </div>
+                            @include('admin.partials.index-actions', ['editRoute' => route('admin.curiosita.edit', $curiositum), 'deleteRoute' => route('admin.curiosita.destroy', $curiositum), 'entityName' => $curiositum->titolo])
                         </td>
                     </tr>
                 @empty
