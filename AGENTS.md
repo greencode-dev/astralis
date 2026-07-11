@@ -152,7 +152,7 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 - **Fase 3** (React P1): Tutta completata (3.1, 3.2, 3.4, 3.5, 3.6) ✅
 - **Fase 4** (Laravel P1): Tutta completata (4.1-4.6) ✅
-- **Fase 5** (Admin Blade P1): 5.1 admin-input ✅, 5.2 CSS vars ✅, 5.3 partials ✅, 5.4 form partial. Già fatto: 5.5
+- **Fase 5** (Admin Blade P1): Tutta completata (5.1-5.5) ✅
 - **Fase 6** (React P2): 6.1 memo, 6.4 SolarSystem. Già fatti: 6.2, 6.3
 - **Fase 7** (Laravel P2): 7.2 authorization, 7.3 suggestNome. Già fatti: 7.1, 7.4, 7.5
 - **Fase 8** (Admin Blade P2): 8.1 NASA suggest partial, 8.3 CDN fallback. Già fatti: 8.2, 8.4

@@ -28,6 +28,13 @@
 - Fixed missioni create/edit button styles → admin-btn-primary / admin-btn-cancel
 - ~400 righe di HTML inline eliminate
 
+### Task 5.4 — 11/07/2026 — Form partial unificato create/edit
+- Created 5 `_form.blade.php` partials: categorie (48L), corpi-celesti (146L), curiosita (62L), galleria (83L), missioni (84L)
+- Rewritten 10 create/edit files to use form partials (media 14 righe vs 70-156 prima)
+- Pattern: `$isEdit = isset($entity)` + `old('field', $entity->field ?? null)` per tutti i campi
+- Structural diffs gestite con `@if($isEdit)`: preview immagini, required attributes, help text, enctype
+- ~860 righe eliminate (55% delle 1311 originali)
+
 ## Fase 0 — Setup
 
 ### 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
