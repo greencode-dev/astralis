@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateMissioneRequest;
 use App\Models\Missione;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -48,6 +49,9 @@ class MissioneController extends Controller
 
         Missione::create($validated);
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.missioni.index')
             ->with('success', 'Missione creata con successo.');
     }
@@ -83,6 +87,9 @@ class MissioneController extends Controller
 
         $missione->update($validated);
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.missioni.index')
             ->with('success', 'Missione aggiornata con successo.');
     }
@@ -101,6 +108,9 @@ class MissioneController extends Controller
         }
 
         $missione->delete();
+
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
 
         return redirect()->route('admin.missioni.index')
             ->with('success', 'Missione eliminata con successo.');

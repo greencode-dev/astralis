@@ -9,6 +9,7 @@ use App\Models\CorpoCeleste;
 use App\Models\Curiosita;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
 class CuriositaController extends Controller
@@ -51,6 +52,9 @@ class CuriositaController extends Controller
 
         Curiosita::create($request->validated());
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità creata con successo.');
     }
@@ -70,6 +74,9 @@ class CuriositaController extends Controller
 
         $curiositum->update($request->validated());
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità aggiornata con successo.');
     }
@@ -79,6 +86,9 @@ class CuriositaController extends Controller
         $this->authorize('delete', $curiositum);
 
         $curiositum->delete();
+
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
 
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità eliminata con successo.');

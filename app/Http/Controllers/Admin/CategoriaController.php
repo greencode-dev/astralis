@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateCategoriaRequest;
 use App\Models\Categoria;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
 class CategoriaController extends Controller
@@ -38,6 +39,9 @@ class CategoriaController extends Controller
 
         Categoria::create($request->validated());
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria creata con successo.');
     }
@@ -64,6 +68,9 @@ class CategoriaController extends Controller
 
         $categoria->update($request->validated());
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria aggiornata con successo.');
     }
@@ -78,6 +85,9 @@ class CategoriaController extends Controller
         }
 
         $categoria->delete();
+
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
 
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria eliminata con successo.');

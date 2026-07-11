@@ -10,6 +10,7 @@ use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
@@ -52,6 +53,9 @@ class GalleriaController extends Controller
 
         GalleriaCorpo::create($validated);
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.galleria.index')
             ->with('success', 'Immagine aggiunta alla galleria con successo.');
     }
@@ -80,6 +84,9 @@ class GalleriaController extends Controller
 
         $galleriaCorpo->update($validated);
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.galleria.index')
             ->with('success', 'Immagine aggiornata con successo.');
     }
@@ -93,6 +100,9 @@ class GalleriaController extends Controller
         }
 
         $galleriaCorpo->delete();
+
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
 
         return redirect()->route('admin.galleria.index')
             ->with('success', 'Immagine eliminata con successo.');

@@ -13,6 +13,7 @@ use App\Services\NasaImageService;
 use App\Services\WordMapService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
 class CorpoCelesteController extends Controller
@@ -48,6 +49,9 @@ class CorpoCelesteController extends Controller
 
         CorpoCeleste::create($request->validated());
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste creato con successo.');
     }
@@ -82,6 +86,9 @@ class CorpoCelesteController extends Controller
 
         $corpoCeleste->update($validated);
 
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
+
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste aggiornato con successo.');
     }
@@ -91,6 +98,9 @@ class CorpoCelesteController extends Controller
         $this->authorize('delete', $corpoCeleste);
 
         $corpoCeleste->delete();
+
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
 
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste eliminato con successo.');
@@ -108,6 +118,9 @@ class CorpoCelesteController extends Controller
             'immagine' => $galleriaCorpo->percorso,
             'immagine_utente' => true,
         ]);
+
+        Cache::forget('admin.dashboard');
+        Cache::forget('api.dashboard.stats');
 
         return redirect()->route('admin.corpi-celesti.show', $corpoCeleste)
             ->with('success', 'Immagine principale aggiornata con successo.');
