@@ -85,13 +85,13 @@
 - _8.2, 8.4: già fatti_ ✅
 
 ### Fase 9 — Test (P1-P3)
-- [ ] 9.1 AdminTestCase refactoring (5 CRUD test → estendono classe base)
+- [x] 9.1 AdminTestCase refactoring (5 CRUD test → estendono classe base) ✅
 - [ ] 9.2 Data provider authorization tests
-- [ ] 9.3 Uniformare Http::fake() pattern
+- [x] 9.3 Uniformare Http::fake() pattern ✅
 - [ ] 9.4 Frontend fixtures.js centralizzato
 - [ ] 9.5 Factory foreign key fix (->for())
 - [ ] 9.6 Copertura test mancante (7 route admin + 2 comandi + 3 API)
-- [ ] 9.7 DashboardApiTest assertions complete
+- [x] 9.7 DashboardApiTest assertions complete ✅
 
 ### Fase 10 — UI/UX & Writing Review (P4)
 - [ ] 10.1 Web Design Guidelines review
@@ -102,7 +102,7 @@
 
 ## Note
 
-- **Stato**: Fase 1-2 (P0) + Task 3.2/3.4 (P1 React) completati. Prossime: Task 3.6, poi Fase 4-5. 190 test (103 PHPUnit + 87 Vitest).
+- **Stato**: Fase 1-8 completata, Fase 9 in corso (9.1/9.3/9.7 fatti). 220 test (133 PHPUnit + 87 Vitest).
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

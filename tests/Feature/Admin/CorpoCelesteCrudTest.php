@@ -5,22 +5,14 @@ namespace Tests\Feature\Admin;
 use App\Models\Categoria;
 use App\Models\CorpoCeleste;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Http;
-use Tests\TestCase;
 
-class CorpoCelesteCrudTest extends TestCase
+class CorpoCelesteCrudTest extends AdminTestCase
 {
-    use RefreshDatabase;
-
-    private User $admin;
     private Categoria $categoria;
 
     protected function setUp(): void
     {
         parent::setUp();
-        Http::fake();
-        $this->admin = User::factory()->create(['is_admin' => true]);
         $this->categoria = Categoria::factory()->create();
     }
 

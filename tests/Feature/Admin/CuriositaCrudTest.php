@@ -5,22 +5,14 @@ namespace Tests\Feature\Admin;
 use App\Models\CorpoCeleste;
 use App\Models\Curiosita;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Http;
-use Tests\TestCase;
 
-class CuriositaCrudTest extends TestCase
+class CuriositaCrudTest extends AdminTestCase
 {
-    use RefreshDatabase;
-
-    private User $admin;
     private CorpoCeleste $corpo;
 
     protected function setUp(): void
     {
         parent::setUp();
-        Http::fake();
-        $this->admin = User::factory()->create(['is_admin' => true]);
         $this->corpo = CorpoCeleste::factory()->create();
     }
 

@@ -4,21 +4,9 @@ namespace Tests\Feature\Admin;
 
 use App\Models\Categoria;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 
-class CategoriaCrudTest extends TestCase
+class CategoriaCrudTest extends AdminTestCase
 {
-    use RefreshDatabase;
-
-    private User $admin;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->admin = User::factory()->create(['is_admin' => true]);
-    }
-
     public function test_guest_cannot_access_admin_index(): void
     {
         $response = $this->get(route('admin.categorie.index'));

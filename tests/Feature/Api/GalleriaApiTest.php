@@ -17,13 +17,6 @@ class GalleriaApiTest extends TestCase
     {
         parent::setUp();
         Http::fake();
-        CorpoCeleste::unsetEventDispatcher();
-    }
-
-    protected function tearDown(): void
-    {
-        CorpoCeleste::setEventDispatcher(app('events'));
-        parent::tearDown();
     }
 
     public function test_index_returns_all_galleria(): void

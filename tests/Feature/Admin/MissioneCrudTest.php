@@ -4,23 +4,11 @@ namespace Tests\Feature\Admin;
 
 use App\Models\Missione;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Tests\TestCase;
 
-class MissioneCrudTest extends TestCase
+class MissioneCrudTest extends AdminTestCase
 {
-    use RefreshDatabase;
-
-    private User $admin;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->admin = User::factory()->create(['is_admin' => true]);
-    }
-
     public function test_guest_cannot_access_admin_index(): void
     {
         $response = $this->get(route('admin.missioni.index'));

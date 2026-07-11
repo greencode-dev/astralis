@@ -1,5 +1,16 @@
 # Changelog
 
+## Ottimizzazione — Test Refactoring (Fase 9)
+
+### Tasks 9.1 + 9.3 + 9.7 — 11/07/2026 — AdminTestCase refactoring + Http::fake uniform + DashboardApiTest
+- 5 CRUD test migrati ad extend `AdminTestCase` — eliminati 5 setUp duplicati, 5 `use RefreshDatabase`, 5 import TestCase
+- CategoriaCrudTest, MissioneCrudTest: setUp rimosso completamente (orphaned `$this->admin` rimosso)
+- CuriositaCrudTest, GalleriaCrudTest, CorpoCelesteCrudTest: setUp ridotto a 2-3 righe (solo factory props)
+- `unsetEventDispatcher`/`setEventDispatcher` rimosso da GalleriaApiTest — pattern obsoleto sostituito da Http::fake()
+- `Http::fake()` aggiunto a MissioneApiTest (prima mancante, per coerenza)
+- DashboardApiTest: da 1 test (3 campi) a 4 test (counts + corpi_in_evidenza + ultimi_corpi + missioni_per_stato)
+- 133 test, 364 assertion — tutti verdi
+
 ## Ottimizzazione P1
 
 ### Task 5.1 — 11/07/2026 — admin-input class per auth/profile views

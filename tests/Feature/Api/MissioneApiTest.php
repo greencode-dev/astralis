@@ -4,11 +4,18 @@ namespace Tests\Feature\Api;
 
 use App\Models\Missione;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class MissioneApiTest extends TestCase
 {
     use RefreshDatabase;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        Http::fake();
+    }
 
     public function test_index_returns_all_missioni(): void
     {
