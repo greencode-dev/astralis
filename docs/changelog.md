@@ -11,6 +11,12 @@
 - DashboardApiTest: da 1 test (3 campi) a 4 test (counts + corpi_in_evidenza + ultimi_corpi + missioni_per_stato)
 - 133 test, 364 assertion — tutti verdi
 
+### Tasks 9.6 — 11/07/2026 — Copertura test mancante
+- 3 nuovi file: CorpoCelesteActionsTest (7 test: suggestNome validazione/success/failure/guest + setImage success/ownership/guest), GalleriaOrdineTest (6 test: su/giù/zero/validation/required/guest), NasaImportTest (8 test: index/import/importAll/guest/non-admin)
+- suggestNome test: mock NasaImageService via Mockery (Http::fake + Cache::remember layered caching)
+- Bus::fake() per NasaImportTest (verifica dispatch job senza eseguire)
+- 154 test, 414 assertion — tutti verdi
+
 ## Ottimizzazione P1
 
 ### Task 5.1 — 11/07/2026 — admin-input class per auth/profile views

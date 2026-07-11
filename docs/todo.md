@@ -90,7 +90,7 @@
 - [x] 9.3 Uniformare Http::fake() pattern ✅
 - [ ] 9.4 Frontend fixtures.js centralizzato
 - [ ] 9.5 Factory foreign key fix (->for())
-- [ ] 9.6 Copertura test mancante (7 route admin + 2 comandi + 3 API)
+- [x] 9.6 Copertura test mancante (suggestNome, aggiornaOrdine, setImageFromGallery, nasa-import, edge case) ✅
 - [x] 9.7 DashboardApiTest assertions complete ✅
 
 ### Fase 10 — UI/UX & Writing Review (P4)
@@ -102,7 +102,7 @@
 
 ## Note
 
-- **Stato**: Fase 1-8 completata, Fase 9 in corso (9.1/9.3/9.7 fatti). 220 test (133 PHPUnit + 87 Vitest).
+- **Stato**: Fase 1-8 completata, Fase 9 in corso (9.1/9.3/9.6/9.7 fatti). 241 test (154 PHPUnit + 87 Vitest).
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

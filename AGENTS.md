@@ -67,7 +67,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 133 test PHPUnit, 364 assertion. `npm test` — 87 test Vitest. Totale: 220 test.
+- **Run**: `php artisan test` — 154 test PHPUnit, 414 assertion. `npm test` — 87 test Vitest. Totale: 241 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -228,13 +228,11 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 |---|------|-----------|
 | 9.1 | ✅ **AdminTestCase base class** — 5/5 CRUD test estendono AdminTestCase, -15 righe boilerplate | Zero dimenticanze setup |
 | 9.3 | ✅ **Uniform Http::fake()** — GalleriaApiTest: rimosso unsetEventDispatcher, MissioneApiTest: aggiunto Http::fake() | Pattern uniforme in tutti i test |
-| 9.7 | ✅ **DashboardApiTest complete** — 4 test: counts + corpi_in_evidenza + ultimi_corpi + missioni_per_stato | 133 test, 364 assertion |
+| 9.7 | ✅ **DashboardApiTest complete** — 4 test: counts + corpi_in_evidenza + ultimi_corpi + missioni_per_stato | 154 test, 414 assertion |
 | 9.2 | **Data provider authorization tests** — store/update/delete per entità in poche righe | Aggiungere nuovo ruolo = test automatico su tutte le operazioni |
-| 9.3 | **Uniformare Http::fake() pattern** — rimuovere unsetEventDispatcher ridondante | Pattern unico, chiarezza su come mockare HTTP |
 | 9.4 | **Frontend test fixtures condivise** — fixtures.js centralizzato | Struttura API cambia = 1 file da aggiornare |
 | 9.5 | **Factory foreign key fix** — corpo_celeste_id in GalleriaCorpoFactory, CuriositaFactory | Test scrivono .for($corpo) invece di ricordarsi il campo |
-| 9.6 | **Copertura test mancante** — suggestNome, aggiornaOrdine, setImageFromGallery, nasa-import, edge case API | Regression test per route non testate |
-| 9.7 | **DashboardApiTest assertions complete** — verifica tutti i 5+ campi restituiti | Modifica silenziosa al controller rilevata dal test |
+| 9.6 | ✅ **Copertura test mancante** — 3 nuovi file: CorpoCelesteActionsTest(7), GalleriaOrdineTest(6), NasaImportTest(8) | 154 test, 414 assertion |
 
 ### Fase 10 — UI/UX & Writing Review (P4)
 
