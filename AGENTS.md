@@ -238,7 +238,7 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 | # | Task | Beneficio |
 |---|------|-----------|
-| 10.1 | **Web Design Guidelines review** — accessibilità, contrasto, focus, responsive, semantica HTML | Allineamento WCAG standards internazionali |
+| 10.1 | ✅ **Web Design Guidelines review** — audit 14 file React: 3 high, 6 medium, 3 low priority | Allineamento WCAG standards internazionali |
 | 10.2 | **Writing Guidelines review** — labels, errori, empty state, flash messages | Coerenza tono, chiarezza, active voice in italiano |
 | 10.3 | **Frontend Design review** — palette, tipografia, layout signature, coerenza guest/admin | Identità visiva intenzionale, niente template default |
 

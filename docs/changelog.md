@@ -1,5 +1,23 @@
 # Changelog
 
+## Ottimizzazione — UI/UX Review (Fase 10)
+
+### Task 10.1 — 11/07/2026 — Web Design Guidelines review
+- **Audit completo** di 14 file React (9 componenti + 5 pagine) contro le Web Interface Guidelines
+- **High priority** (da fixare):
+  - `SolarSystem.jsx:93` — `aria-hidden="true"` su container che wrappa link interattivi → tutta la navigazione pianeti invisibile agli screen reader
+  - `SearchBar.jsx:16`, `Comparatore.jsx:81` — `outline-none` senza `focus-visible:ring-*` replacement → utenti tastiera non vedono focus
+  - Progetto-wide: nessun `@media (prefers-reduced-motion)` definito → utenti con disturbi vestibolari non possono disabilitare animazioni continue
+- **Medium priority**:
+  - 22 occorrenze `transition-all` in 11 file → animano proprietà layout inutilmente
+  - 4 icone decorative mancanti `aria-hidden="true"` (TimelineMissioni, CorpoDettaglio)
+  - `CorpiLista.jsx:144` — manca `aria-live` per risultati async
+  - `Comparatore.jsx:74/78` — `<label>` e `<select>` non associati programmaticamente
+- **Low priority**:
+  - `CorpiLista.jsx:173` — "..." ASCII invece di "…" ellipsis
+  - `CorpoCard.jsx:50`, `CorpoDettaglio.jsx:109` — text overflow non troncato
+  - `SearchBar.jsx:11` — input senza autocomplete/name
+
 ## Ottimizzazione — Test Refactoring (Fase 9)
 
 ### Tasks 9.1 + 9.3 + 9.7 — 11/07/2026 — AdminTestCase refactoring + Http::fake uniform + DashboardApiTest
