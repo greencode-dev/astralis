@@ -1,6 +1,5 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowLeft, Ruler, Weight, Thermometer, Gauge, MapPin, Calendar, User, Star, Rocket, Lightbulb, Orbit as OrbitIcon } from 'lucide-react';
 import { fetchCorpoCeleste, fetchSimili } from '../apiClient';
 import { useFetch } from '../hooks/useFetch';
@@ -84,8 +83,7 @@ export default function CorpoDettaglio() {
                 <ArrowLeft size={16} /> Torna alla lista
             </Link>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-                className="relative rounded-2xl overflow-hidden mb-8 min-h-[300px]">
+            <div className="animate-fade-up relative rounded-2xl overflow-hidden mb-8 min-h-[300px]">
                 {corpo.immagine_url && !heroImgError ? (
                     <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome_display || corpo.nome}
                         className="w-full h-64 lg:h-80 object-cover"
@@ -111,15 +109,15 @@ export default function CorpoDettaglio() {
                     <h1 className="text-3xl lg:text-5xl font-extrabold text-admin-text">{corpo.nome_display || corpo.nome}</h1>
                     {corpo.tipo && <p className="text-lg mt-1 text-admin-dim">{corpo.tipo}</p>}
                 </div>
-            </motion.div>
+            </div>
 
             <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
-                    <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+                    <section className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
                         <p className="text-base leading-relaxed text-admin-dim">{corpo.descrizione}</p>
-                    </motion.section>
+                    </section>
 
-                    <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+                    <section className="animate-fade-up" style={{ animationDelay: '0.3s' }}>
                         <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-admin-text">
                             <Ruler size={20} className="text-admin-primary" /> Dati Scientifici
                         </h2>
@@ -134,11 +132,10 @@ export default function CorpoDettaglio() {
                                 </div>
                             ))}
                         </div>
-                    </motion.section>
+                    </section>
 
                     {(corpo.scopritore || corpo.anno_scoperta) && (
-                        <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
-                            className="flex gap-6 flex-wrap">
+                        <section className="animate-fade-up flex gap-6 flex-wrap" style={{ animationDelay: '0.35s' }}>
                             {corpo.scopritore && (
                                 <div className="flex items-center gap-2 text-sm text-admin-dim">
                                     <User size={14} className="text-admin-secondary" />
@@ -151,20 +148,20 @@ export default function CorpoDettaglio() {
                                     Anno: <span className="font-medium text-admin-text">{corpo.anno_scoperta}</span>
                                 </div>
                             )}
-                        </motion.section>
+                        </section>
                     )}
 
                     {corpo.galleria && corpo.galleria.length > 0 && (
-                        <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+                        <section className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
                             <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-admin-text">
                                 <Star size={20} className="text-admin-primary" /> Galleria
                             </h2>
                             <LightboxGalleria immagini={corpo.galleria} />
-                        </motion.section>
+                        </section>
                     )}
 
                     {corpo.curiosita && corpo.curiosita.length > 0 && (
-                        <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}>
+                        <section className="animate-fade-up" style={{ animationDelay: '0.45s' }}>
                             <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-admin-text">
                                 <Lightbulb size={20} className="text-admin-warning" /> Curiosità
                             </h2>
@@ -179,34 +176,33 @@ export default function CorpoDettaglio() {
                                     </div>
                                 ))}
                             </div>
-                        </motion.section>
+                        </section>
                     )}
                 </div>
 
                 <div className="space-y-8">
                     {corpo.missioni && corpo.missioni.length > 0 && (
-                        <motion.section initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
+                        <section className="animate-slide-right" style={{ animationDelay: '0.4s' }}>
                             <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-admin-text">
                                 <Rocket size={20} className="text-admin-accent" /> Missioni
                             </h2>
                             <TimelineMissioni missioni={corpo.missioni} />
-                        </motion.section>
+                        </section>
                     )}
 
                     {corpo.categoria?.nome === 'Pianeta' && (
-                        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
+                        <div className="animate-slide-right" style={{ animationDelay: '0.5s' }}>
                             <Link to={`/confronta?primo=${corpo.slug}`}
                                 className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-[rgba(168,85,247,0.2)] hover:border-[rgba(168,85,247,0.4)] bg-admin-secondary/10 text-admin-secondary border border-admin-secondary/20">
                                 <OrbitIcon size={16} /> Confronta con un altro pianeta
                             </Link>
-                        </motion.div>
+                        </div>
                     )}
                 </div>
             </div>
 
             {simili.length > 0 && (
-                <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
-                    className="mt-12">
+                <section className="animate-fade-up mt-12" style={{ animationDelay: '0.5s' }}>
                     <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-admin-text">
                         <Star size={20} className="text-admin-primary" /> Corpi Simili
                     </h2>
@@ -215,10 +211,8 @@ export default function CorpoDettaglio() {
                             <CorpoCard key={s.id} corpo={s} />
                         ))}
                     </div>
-                </motion.section>
+                </section>
             )}
         </div>
     );
 }
-
-

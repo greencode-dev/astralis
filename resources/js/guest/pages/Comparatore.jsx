@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowLeft, Ruler, RotateCcw } from 'lucide-react';
 import { fetchCorpiCelesti, fetchCorpoCeleste } from '../apiClient';
 import { useFetch } from '../hooks/useFetch';
@@ -21,7 +20,6 @@ export default function Comparatore() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [primoSlug, setPrimoSlug] = useState(searchParams.get('primo') || '');
     const [secondoSlug, setSecondoSlug] = useState(searchParams.get('secondo') || '');
-    const [focusedSelect, setFocusedSelect] = useState('');
 
     const { data: corpiData } = useFetch(
         signal => fetchCorpiCelesti({ per_page: 100 }, signal), []
@@ -60,7 +58,7 @@ export default function Comparatore() {
                 <ArrowLeft size={16} /> Torna alla lista
             </Link>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div className="animate-fade-up">
                 <h1 className="text-3xl font-extrabold mb-2 text-admin-text">Confronta Pianeti</h1>
                 <p className="mb-8 text-admin-dim">Seleziona due pianeti per confrontare i loro dati scientifici.</p>
 
@@ -80,9 +78,7 @@ export default function Comparatore() {
                                     <select
                                         value={slug}
                                         onChange={e => setSlug(e.target.value)}
-                                        className={`w-full px-4 py-3 rounded-xl text-sm outline-none appearance-none transition-all duration-200 bg-admin-card text-admin-text border ${focusedSelect === pos ? 'border-admin-primary/50' : 'border-admin-primary/20'}`}
-                                        onFocus={() => setFocusedSelect(pos)}
-                                        onBlur={() => setFocusedSelect('')}
+                                        className="w-full px-4 py-3 rounded-xl text-sm outline-none appearance-none transition-all duration-200 bg-admin-card text-admin-text border border-admin-primary/20 focus:border-admin-primary/50"
                                     >
                                         <option value="">Seleziona un pianeta...</option>
                                         {pianeti.filter(p => {
@@ -114,8 +110,7 @@ export default function Comparatore() {
                         ))}
                     </div>
                 ) : hasBoth ? (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-                        className="rounded-2xl overflow-hidden border border-admin-primary/10">
+                    <div className="animate-fade-in rounded-2xl overflow-hidden border border-admin-primary/10" style={{ animationDelay: '0.3s' }}>
 
                         <div className="grid grid-cols-3 gap-4 p-4 bg-admin-card border-b border-admin-primary/10">
                             <div />
@@ -151,16 +146,14 @@ export default function Comparatore() {
                                 </div>
                             );
                         })}
-                    </motion.div>
+                    </div>
                 ) : (
                     <div className="text-center py-16 text-admin-muted">
                         <Ruler size={48} className="mx-auto mb-4 text-admin-muted" />
                         <p>Seleziona due pianeti per vedere il confronto</p>
                     </div>
                 )}
-            </motion.div>
+            </div>
         </div>
     );
 }
-
-

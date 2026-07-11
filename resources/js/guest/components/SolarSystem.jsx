@@ -1,19 +1,21 @@
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const planets = [
-    { name: 'Mercurio', size: 8, orbit: 50, color: '#94A3B8', speed: 1.2 },
-    { name: 'Venere', size: 12, orbit: 70, color: '#F97316', speed: 1.5 },
-    { name: 'Terra', size: 14, orbit: 90, color: '#22D3EE', speed: 1.8 },
-    { name: 'Marte', size: 10, orbit: 110, color: '#EF4444', speed: 2.5 },
-    { name: 'Giove', size: 22, orbit: 140, color: '#FACC15', speed: 3 },
-    { name: 'Saturno', size: 18, orbit: 170, color: '#D4A373', speed: 3.5 },
-    { name: 'Urano', size: 14, orbit: 200, color: '#67E8F9', speed: 4 },
-    { name: 'Nettuno', size: 14, orbit: 230, color: '#3B82F6', speed: 5 },
+    { name: 'Mercurio', slug: 'mercurio', size: 8, orbit: 50, color: '#94A3B8', speed: 1.2, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/220px-Mercury_in_true_color.jpg' },
+    { name: 'Venere', slug: 'venere', size: 12, orbit: 70, color: '#F97316', speed: 1.5, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Venus_from_Mariner_10.jpg/220px-Venus_from_Mariner_10.jpg' },
+    { name: 'Terra', slug: 'terra', size: 14, orbit: 90, color: '#22D3EE', speed: 1.8, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/220px-The_Blue_Marble_%28remastered%29.jpg' },
+    { name: 'Marte', slug: 'marte', size: 10, orbit: 110, color: '#EF4444', speed: 2.5, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/220px-OSIRIS_Mars_true_color.jpg' },
+    { name: 'Giove', slug: 'giove', size: 22, orbit: 140, color: '#FACC15', speed: 3, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Jupiter_New_Horizons.jpg/220px-Jupiter_New_Horizons.jpg' },
+    { name: 'Saturno', slug: 'saturno', size: 18, orbit: 170, color: '#D4A373', speed: 3.5, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/220px-Saturn_during_Equinox.jpg' },
+    { name: 'Urano', slug: 'urano', size: 14, orbit: 200, color: '#67E8F9', speed: 4, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Uranus_as_seen_by_NASA%27s_Voyager_2_%28remastered%29.png/220px-Uranus_as_seen_by_NASA%27s_Voyager_2_%28remastered%29.png' },
+    { name: 'Nettuno', slug: 'nettuno', size: 14, orbit: 230, color: '#3B82F6', speed: 5, img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Neptune_Voyager2_color_calibrated.png/220px-Neptune_Voyager2_color_calibrated.png' },
 ];
 
 function Planet({ planet }) {
     const angle = useMotionValue(0);
+    const [imgError, setImgError] = useState(false);
 
     useEffect(() => {
         const controls = animate(angle, 360, {
@@ -38,18 +40,34 @@ function Planet({ planet }) {
                 top: -planet.size / 2,
             }}
         >
-            <motion.div
-                className="rounded-full"
-                style={{
-                    width: planet.size,
-                    height: planet.size,
-                    backgroundColor: planet.color,
-                    boxShadow: `0 0 15px ${planet.color}40`,
-                }}
-                whileHover={{ scale: 1.5 }}
-            />
+            <Link to={`/corpi-celesti/${planet.slug}`} className="block planet-hover" aria-label={planet.name}>
+                {!imgError ? (
+                    <img
+                        src={planet.img}
+                        alt={planet.name}
+                        className="rounded-full object-cover"
+                        style={{
+                            width: planet.size,
+                            height: planet.size,
+                            boxShadow: `0 0 15px ${planet.color}40`,
+                        }}
+                        onError={() => setImgError(true)}
+                        loading="lazy"
+                    />
+                ) : (
+                    <div
+                        className="rounded-full"
+                        style={{
+                            width: planet.size,
+                            height: planet.size,
+                            backgroundColor: planet.color,
+                            boxShadow: `0 0 15px ${planet.color}40`,
+                        }}
+                    />
+                )}
+            </Link>
             <div
-                className="absolute text-xs text-admin-muted left-1/2 -translate-x-1/2 text-center"
+                className="absolute text-xs text-admin-muted left-1/2 -translate-x-1/2 text-center pointer-events-none"
                 style={{
                     top: planet.size + 4,
                     width: 50,
@@ -68,7 +86,6 @@ export default function SolarSystem() {
         height: Math.random() * 3 + 1,
         left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
-        opacity: Math.random() * 0.5 + 0.3,
         duration: Math.random() * 3 + 2,
     })), []);
 
@@ -76,37 +93,28 @@ export default function SolarSystem() {
         <div className="relative flex items-center justify-center min-h-[500px]" aria-hidden="true">
             <div className="absolute inset-0 overflow-hidden">
                 {stars.map(star => (
-                    <motion.div
+                    <div
                         key={star.id}
-                        className="absolute rounded-full"
+                        className="absolute rounded-full bg-admin-text animate-twinkle"
                         style={{
                             width: star.width,
                             height: star.height,
-                            backgroundColor: '#F0F0FA',
                             left: star.left,
                             top: star.top,
-                            opacity: star.opacity,
-                        }}
-                        animate={{ opacity: [0.3, 0.8, 0.3] }}
-                        transition={{
-                            duration: star.duration,
-                            repeat: Infinity,
-                            ease: 'easeInOut',
+                            '--tw-duration': `${star.duration}s`,
                         }}
                     />
                 ))}
             </div>
 
             <div className="absolute z-10">
-                <motion.div
-                    className="rounded-full bg-admin-accent"
+                <div
+                    className="rounded-full bg-admin-accent animate-pulse-sun"
                     style={{
                         width: 60,
                         height: 60,
                         boxShadow: '0 0 60px rgba(249, 115, 22, 0.6), 0 0 120px rgba(249, 115, 22, 0.3)',
                     }}
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 />
                 <div className="text-center mt-2 text-sm font-semibold text-admin-accent">
                     Sole

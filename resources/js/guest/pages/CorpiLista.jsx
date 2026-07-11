@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Filter } from 'lucide-react';
 import CorpoCard from '../components/CorpoCard';
 import SearchBar from '../components/SearchBar';
 import { fetchCorpiCelesti, fetchCategorie } from '../apiClient';
 import { useFetch } from '../hooks/useFetch';
+import { useInView } from '../hooks/useInView';
 
 function useDebounce(value, delay = 300) {
     const [debouncedValue, setDebouncedValue] = useState(value);
@@ -35,6 +35,8 @@ export default function CorpiLista() {
         },
         [page, categoriaSlug, tipo, debouncedSearch]
     );
+
+    const [gridRef, gridVisible] = useInView();
 
     const categorie = categorieData?.data || [];
     const corpi = corpiData?.data || [];
@@ -139,17 +141,15 @@ export default function CorpiLista() {
                 </div>
             ) : corpi.length > 0 ? (
                 <>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {corpi.map(corpo => (
-                            <motion.div
+                    <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {corpi.map((corpo, idx) => (
+                            <div
                                 key={corpo.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4 }}
-                                viewport={{ once: true }}
+                                className={`animate-in-view ${gridVisible ? 'is-visible' : ''}`}
+                                style={{ animationDelay: `${idx * 0.05}s` }}
                             >
                                 <CorpoCard corpo={corpo} />
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
 

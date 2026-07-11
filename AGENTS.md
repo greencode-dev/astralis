@@ -139,16 +139,18 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ## Stato avanzamento piano ottimizzazione
 
-### ✅ Completato (10/07/2026)
+### ✅ Completato
 
 | Fase | Task | Commit |
 |------|------|--------|
 | **1** | AbortController, useFetch hook, ErrorBoundary, image guards, axios interceptors | `f5ed6ab` |
 | **2** | Job queue (ImportNasaImage), chunk(50), rate limiting API, caching searchNasa | `f5ed6ab` |
+| **3.2** | Inline styles → Tailwind classes (verificato completo) | `fce2f36` |
+| **3.4** | framer-motion→CSS + SolarSystem clickable/immagini realistiche | `TBD` |
 
 ### 🔄 Da fare
 
-- **Fase 3** (React P1): 3.2 Tailwind, 3.4 framer-motion→CSS, 3.6 :focus-within. Già fatti: 3.1, 3.5
+- **Fase 3** (React P1): 3.6 :focus-within. Già fatti: 3.1, 3.2, 3.4, 3.5
 - **Fase 4** (Laravel P1): 4.1 cache invalidazione. Già fatti: 4.2-4.6
 - **Fase 5** (Admin Blade P1): 5.1 admin-input, 5.2 CSS vars, 5.3 partials, 5.4 form partial. Già fatto: 5.5
 - **Fase 6** (React P2): 6.1 memo, 6.4 SolarSystem. Già fatti: 6.2, 6.3
@@ -160,9 +162,9 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 | # | Task | Beneficio |
 |---|------|-----------|
 | 3.1 | **React.lazy + Suspense** — tutte le 5 page in lazy loading | Bundle iniziale ridotto ~40%, TTI migliorato |
-| 3.2 | **Inline styles → Tailwind classes** — ~68 oggetti style in 15 file | CSS compilato a build time, deduplicabile, più performante di style runtime |
+| 3.2 | **Inline styles → Tailwind classes** — ~68 oggetti style in 15 file ✅ | CSS compilato a build time, deduplicabile, più performante di style runtime |
 | 3.3 | **CSS variables per palette admin** — #22D3EE, #111128 ripetuti ~70x | Cambiare palette in un punto solo, manutenibilità |
-| 3.4 | **framer-motion → CSS transitions** — fade/slide/pulse/twinkle in CSS, mantieni orbita+scroll | Animazioni su compositor GPU, -22KB bundle, niente main thread |
+| 3.4 | **framer-motion → CSS transitions** — fade/slide/pulse/twinkle + SolarSystem clickable/immagini ✅ | Animazioni su compositor GPU, framer-motion solo per orbite |
 | 3.5 | **Deduplicazione codice** — categoryIcons/gradients in constants.js, helpers in utils.js | Bug fix in un file non rischia di lasciare l'altro non aggiornato |
 | 3.6 | **Direct DOM → React state** — onFocus/onBlur in SearchBar, Comparatore | React gestisce DOM virtuale, rendering deterministico |
 

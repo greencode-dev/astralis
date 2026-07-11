@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Sparkles, Telescope, Rocket } from 'lucide-react';
 import SolarSystem from '../components/SolarSystem';
 import CorpoCard from '../components/CorpoCard';
 import { fetchCorpiCelesti, fetchDashboardStats } from '../apiClient';
 import { useFetch } from '../hooks/useFetch';
+import { useInView } from '../hooks/useInView';
 
 export default function HomePage() {
     const { data: corpiData, loading: corpiLoading } = useFetch(
@@ -18,6 +18,9 @@ export default function HomePage() {
     const loading = corpiLoading || statsLoading;
     const corpiEvidenza = corpiData?.data || [];
 
+    const [headingRef, headingVisible] = useInView();
+    const [cardsRef, cardsVisible] = useInView();
+
     useEffect(() => {
         document.title = 'Astralis — Catalogo di Corpi Celesti';
     }, []);
@@ -28,11 +31,7 @@ export default function HomePage() {
             <section className="relative overflow-hidden bg-admin-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="animate-slide-left">
                             <div className="flex items-center gap-2 mb-4">
                                 <Sparkles size={20} className="text-admin-secondary" />
                                 <span className="text-sm font-medium text-admin-secondary">
@@ -82,16 +81,11 @@ export default function HomePage() {
                                     </div>
                                 </div>
                             )}
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1, delay: 0.3 }}
-                            className="hidden lg:block"
-                        >
+                        <div className="hidden lg:block animate-fade-scale" style={{ animationDelay: '0.3s' }}>
                             <SolarSystem />
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -99,18 +93,15 @@ export default function HomePage() {
             {/* In Evidenza */}
             <section className="bg-admin-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="flex items-center gap-3 mb-10"
+                    <div
+                        ref={headingRef}
+                        className={`flex items-center gap-3 mb-10 animate-in-view ${headingVisible ? 'is-visible' : ''}`}
                     >
                         <Rocket size={24} className="text-admin-warning" />
                         <h2 className="text-2xl lg:text-3xl font-bold text-admin-text">
                             In Evidenza
                         </h2>
-                    </motion.div>
+                    </div>
 
                     {loading ? (
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,17 +113,15 @@ export default function HomePage() {
                             ))}
                         </div>
                     ) : corpiEvidenza.length > 0 ? (
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {corpiEvidenza.map(corpo => (
-                                <motion.div
+                        <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {corpiEvidenza.map((corpo, idx) => (
+                                <div
                                     key={corpo.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                    viewport={{ once: true }}
+                                    className={`animate-in-view ${cardsVisible ? 'is-visible' : ''}`}
+                                    style={{ animationDelay: `${idx * 0.1}s` }}
                                 >
                                     <CorpoCard corpo={corpo} />
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     ) : (

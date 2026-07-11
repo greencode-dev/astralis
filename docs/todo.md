@@ -1,10 +1,13 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-10*
+*Ultimo aggiornamento: 2026-07-11*
 
-## Post-commit 2026-07-10 — Fase 1 (React P0) + Fase 2 (Laravel P0) completate
+## Post-commit 2026-07-11 — Task 3.4 completato
 
 ## Fatto
+
+- [x] **Task 3.4 — framer-motion→CSS + SolarSystem**: Rimossi motion.div da 4 file guest (HomePage, CorpiLista, CorpoDettaglio, Comparatore), CSS keyframes fadeUp/slideLeft/slideRight/fadeScale, useInView hook per scroll animations, stelle twinkle + sun pulse CSS, pianeti cliccabili con Link, immagini realistiche NASA con fallback colore
+- [x] **Task 3.2 — Inline styles→Tailwind**: Verificato completo (da ~68 a 15, tutti dynamic/runtime)
 
 - [x] **Fase 1 — React P0 critico**: AbortController + useFetch hook + ErrorBoundary globale + guard immagini rotte + axios interceptors retry
 - [x] **Fase 2 — Laravel P0 critico**: Job queue ImportNasaImage + chunk(50) + rate limiting API (throttle:60,1) + caching searchNasa()
@@ -50,8 +53,8 @@
 ## Da Fare (Piano di Ottimizzazione)
 
 ### Fase 3 — Alto React Frontend (P1)
-- [ ] 3.2 Inline styles → Tailwind classes (~5-6 convertibili su 15)
-- [ ] 3.4 framer-motion → CSS transitions (4/5 file convertibili, ~3h)
+- [x] 3.2 Inline styles → Tailwind classes (~5-6 convertibili su 15) ✅ verificato
+- [x] 3.4 framer-motion → CSS transitions + SolarSystem clickable/immagini (~4h) ✅
 - [ ] 3.6 onFocus/onBlur → CSS :focus-within
 - _3.1 React.lazy, 3.5 Dedup categoryIcons: già fatti_ ✅
 
@@ -99,7 +102,7 @@
 
 ## Note
 
-- **Stato**: Fase 1 (React P0) e Fase 2 (Laravel P0) completate. Prossime: Fase 3 (React P1). 190 test (103 PHPUnit + 87 Vitest).
+- **Stato**: Fase 1-2 (P0) + Task 3.2/3.4 (P1 React) completati. Prossime: Task 3.6, poi Fase 4-5. 190 test (103 PHPUnit + 87 Vitest).
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

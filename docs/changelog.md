@@ -444,3 +444,16 @@
 - **Rate limiting API**: `throttle:60,1` su tutti e 10 gli endpoint in `routes/api.php`
 - **Caching `searchNasa()`**: `Cache::remember(86400)` per risultati NASA API
 - **Update routes/api.php**: raggruppate 10 route sotto middleware `throttle:60,1` + `throttle:100,1` per dashboard
+
+## Piano Ottimizzazione — P1
+
+### 3.4 — 11/07/2026 — feat: framer-motion→CSS + SolarSystem clickable/immagini realistiche
+- Rimossi `motion.div` da 4 file guest (HomePage, CorpiLista, CorpoDettaglio, Comparatore)
+- CSS keyframes: `fadeUp`, `slideLeft`, `slideRight`, `fadeScale`, `fadeIn`, `twinkle`, `pulseSun`
+- Nuovo hook `useInView` per scroll-triggered animations (IntersectionObserver)
+- SolarSystem: pianeti cliccabili con `<Link>` → pagina dettaglio
+- SolarSystem: immagini reali NASA (Wikimedia) con fallback colore originale
+- SolarSystem: stelle twinkle + sun pulse convertiti a CSS
+- SolarSystem: hover scale convertito a CSS `.planet-hover`
+- framer-motion ora importato solo in SolarSystem.jsx (orbite useMotionValue/useTransform)
+- 87 test Vitest pass, build Vite OK
