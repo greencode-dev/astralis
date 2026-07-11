@@ -2,6 +2,31 @@
 
 ## Ottimizzazione — UI/UX Review (Fase 10)
 
+### Task 10.3 — 11/07/2026 — Frontend Design review
+- **Audit completo** del design system frontend React SPA (9 componenti + 5 pagine) + tailwind.config.js + app.css + 3 layout Blade
+- **Palette & Coerenza** — Il tema deep navy + cyan/purple/orange è distintivo e coerente col subject (astronomia). La scelta non è generica: i colori derivano dal mondo celeste (cyan = Terra, purple = Galassia, orange = Sole/Venere, yellow = Giove). La palette non è un template AI generico.
+- **Inconsistenze colore** (7 trovate):
+  - `#1CB8D0` su CTA HomePage — unico nel progetto, non corrisponde a nessun token (il cyan corretto è `#22D3EE`)
+  - `#1A1A2E` su badge text CorpoCard — colore non definito in nessun config/variabile
+  - 4 variabili CSS (`--admin-success`, `--admin-error`, `--admin-neutral`, `--admin-chart-text`) senza corrispondente Tailwind token → inutilizzabili come classi utility
+  - 25+ valori `rgba()` scritti a mano dove Tailwind opacità modifier (`admin-primary/8`) farebbe lo stesso lavoro
+  - `text-gray-400` (Tailwind default) usato in 8+ posti admin accanto a `text-admin-muted` e `text-admin-dim` per lo stesso ruolo → 3 grigi diversi per "testo secondario"
+- **Tipografia** — Figtree è clean e leggibile, ma è una scelta comune (usa geometric sans). Il peso 800 (extrabold) è caricato solo in `guest.blade.php` e usato in 3 posti (HomePage hero h1, CorpoDettaglio h1, Comparatore h1). I layout admin e alternativo caricano solo 400-700 → se il wrong layout viene cachato, gli 800-weight glyphs cadono a 700.
+- **Firma visiva** — Il SolarSystem è l'elemento unico: modello orbitale interattivo con framer-motion, immagini reali Wikipedia, stelle twinkle CSS, sole pulsante con glow multi-livello. Non è un template — è un componente costruito specificamente per questo progetto.
+- **Layout** — Container pattern coerente (`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`) con eccezioni deliberate: `max-w-5xl` per CorpoDettaglio/NotFound (meno card = meno width), `max-w-6xl` per Comparatore (table). Grid responsive coerente. Card pattern consistente (`rounded-xl bg-admin-card border border-admin-primary/10 p-4`).
+- **Motion** — Animazioni deliberate: orbital planets (framer-motion), twinkle stars (CSS), scroll-triggered fade-up (IntersectionObserver), sun pulse. Il 93% delle animazioni serve il subject (astronomia = movimento continuo). Manca `prefers-reduced-motion` per utenti con disturbi vestibolari.
+- **Valori hardcoded da estrarre** — 23 colori unici in JSX, di cui 8 in SolarSystem (colori pianeti — giustificati), 4 in constants.js (gradienti fallback — giustificati), 11 sparsi in inline styles → 6 potrebbero usare Tailwind tokens esistenti.
+- **Raccomandazioni** (non bloccanti, P4):
+  1. Sostituire `#1CB8D0` con `hover:bg-admin-primary` su CTA HomePage
+  2. Registrare `#1A1A2E` come CSS variable o usare `text-admin-bg` per badge
+  3. Aggiungere `admin.success`, `admin.error`, `admin.neutral`, `admin.chart-text` a tailwind.config.js
+  4. Convertire `rgba()` hardcoded in Tailwind opacity modifiers dove possibile
+  5. Allineare font-weight 800 in admin layout o rimuovere da guest (consiglia: tenere solo in guest)
+  6. Aggiungere `@media (prefers-reduced-motion: reduce)` per disabilitare animazioni continue
+  7. Unificare `text-gray-400` → `text-admin-muted` in admin
+
+
+
 ### Task 10.1 — 11/07/2026 — Web Design Guidelines review
 - **Audit completo** di 14 file React (9 componenti + 5 pagine) contro le Web Interface Guidelines
 - **High priority** (da fixare):
