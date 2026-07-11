@@ -86,7 +86,7 @@
 
 ### Fase 9 — Test (P1-P3)
 - [x] 9.1 AdminTestCase refactoring (5 CRUD test → estendono classe base) ✅
-- [ ] 9.2 Data provider authorization tests
+- [x] 9.2 Data provider authorization tests (19 test: store/update/delete per 5 entità + 6 guest redirect) ✅
 - [x] 9.3 Uniformare Http::fake() pattern ✅
 - [ ] 9.4 Frontend fixtures.js centralizzato
 - [ ] 9.5 Factory foreign key fix (->for())
@@ -102,7 +102,7 @@
 
 ## Note
 
-- **Stato**: Fase 1-8 completata, Fase 9 in corso (9.1/9.3/9.6/9.7 fatti). 241 test (154 PHPUnit + 87 Vitest).
+- **Stato**: Fase 1-8 completata, Fase 9 in corso (9.1/9.2/9.3/9.6/9.7 fatti). 260 test (173 PHPUnit + 87 Vitest).
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

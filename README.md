@@ -64,7 +64,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ## 🧪 Test
 
 ```bash
-# Suite completa (154 test PHPUnit, 414 assertion)
+# Suite completa (173 test PHPUnit, 439 assertion)
 php artisan test
 
 # Frontend (87 test Vitest)
