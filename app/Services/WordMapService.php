@@ -41,6 +41,7 @@ class WordMapService
         'Urano' => 'Uranus',
         'Nettuno' => 'Neptune',
         'Plutone' => 'Pluto',
+        'Orione' => 'Orion',
         'Terra' => 'Earth',
         'Cerere' => 'Ceres',
         'Caronte' => 'Charon',
@@ -80,15 +81,17 @@ class WordMapService
 
     public function translate(string $nomeIt): string
     {
-        $input = $nomeIt;
+        $result = $nomeIt;
 
-        foreach ($this->wordMap as $key => $value) {
-            if (str_contains($key, ' ') && str_contains(mb_strtolower($input), mb_strtolower($key))) {
-                $input = str_ireplace($key, $value, $input);
-            }
+        $phrases = collect($this->wordMap)
+            ->filter(fn($v, $k) => str_contains($k, ' '))
+            ->sortBy(fn($v, $k) => -str_word_count($k));
+
+        foreach ($phrases as $it => $en) {
+            $result = str_ireplace($it, $en, $result);
         }
 
-        return collect(explode(' ', $input))
+        return collect(explode(' ', $result))
             ->map(fn($w) => $this->wordMap[ucfirst($w)] ?? $this->wordMap[$w] ?? $w)
             ->filter()
             ->implode(' ');

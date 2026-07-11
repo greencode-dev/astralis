@@ -11,8 +11,8 @@
         @foreach (config('admin.color_presets') as $c)
             <button type="button"
                     class="w-8 h-8 rounded-full border-2 transition-all duration-150 hover:scale-110"
-                    style="background-color: {{ $c }}; border-color: {{ old('colore', $coloreValue) === $c ? 'var(--admin-text)' : 'transparent' }};"
-                    onclick="document.getElementById('colore').value='{{ $c }}'; document.getElementById('colore_hex').value='{{ $c }}'; this.style.borderColor='var(--admin-text)';"
+                    style="background-color: {{ $c }}; border-color: {{ old('colore', $coloreValue) === $c ? 'var(--color-admin-text)' : 'transparent' }};"
+                    onclick="document.getElementById('colore').value='{{ $c }}'; document.getElementById('colore_hex').value='{{ $c }}'; this.style.borderColor='var(--color-admin-text)';"
                     aria-label="Seleziona colore {{ $c }}"></button>
         @endforeach
     </div>

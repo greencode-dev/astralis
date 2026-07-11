@@ -5,12 +5,12 @@ document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
     var resultEl = document.getElementById('suggestResult');
     if (!nomeIt) {
         resultEl.textContent = 'Inserisci un nome in italiano.';
-        resultEl.style.color = 'var(--admin-error)';
+        resultEl.style.color = 'var(--color-admin-error)';
         return;
     }
 
     resultEl.textContent = 'Cerco su NASA...';
-    resultEl.style.color = 'var(--admin-neutral)';
+    resultEl.style.color = 'var(--color-admin-neutral)';
 
     fetch('{{ route("admin.corpi-celesti.suggest-nome") }}', {
         method: 'POST',
@@ -25,15 +25,15 @@ document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
         if (data.success) {
             document.getElementById('nome').value = data.nome;
             resultEl.textContent = 'Suggerito: ' + data.nome;
-            resultEl.style.color = 'var(--admin-success)';
+            resultEl.style.color = 'var(--color-admin-success)';
         } else {
             resultEl.textContent = data.message;
-            resultEl.style.color = 'var(--admin-error)';
+            resultEl.style.color = 'var(--color-admin-error)';
         }
     })
     .catch(function() {
         resultEl.textContent = 'Errore di connessione.';
-        resultEl.style.color = 'var(--admin-error)';
+        resultEl.style.color = 'var(--color-admin-error)';
     });
 });
 </script>

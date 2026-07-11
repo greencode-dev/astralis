@@ -2,6 +2,24 @@
 
 ## Risolti
 
+### [25] useInView: elementi condizionali invisibili (opacity: 0) — 12/07/2026
+- **Descrizione**: Le card "In Evidenza" sulla homepage e la griglia nella pagina Corpi Celesti non venivano mai visualizzate. Gli skeleton sparivano ma le card restavano invisibili (`opacity: 0`)
+- **Causa**: `useInView` usava `useRef` + `useEffect([])`. Su elementi renderizzati condizionalmente (dopo il loading), `ref.current` era `null` al mount → l'IntersectionObserver non veniva mai creato → `isVisible` restava `false`
+- **Soluzione**: Sostituito con callback ref pattern (`useState` come ref). Il callback viene richiamato al mount dell'elemento, garantendo la creazione dell'observer anche su elementi condizionali
+- **File**: `resources/js/guest/hooks/useInView.js`
+
+### [26] WordMapService: frasi non tradotte + Orione mancante — 12/07/2026
+- **Descrizione**: `WordMapService::translate()` non traduceva frasi multi-parola ("Via Lattea", "Nebulosa di Orione"). "Orione" non aveva mapping inglese
+- **Causa**: Il metodo splittava per spazio e mappava solo singole parole. Le chiavi frasi (es. `"Via Lattea"`) non venivano mai matchate. Manca il mapping `'Orione' => 'Orion'`
+- **Soluzione**: Prima della mappatura singole parole, il metodo ora cerca e sostituisce frasi (chiavi con spazi) ordinate per lunghezza decrescente. Aggiunto `'Orione' => 'Orion'`
+- **File**: `app/Services/WordMapService.php`
+
+### [27] NasaImageService: nomi italiani danno 0 risultati (regressione) — 12/07/2026
+- **Descrizione**: Il comando `astralis:fetch-nasa` falliva per 9 corpi su 18 (Mercurio, Giove, Urano, Nettuno, Titano, Via Lattea, Nebulosa di Orione, Cerere, Plutone). L'import salvava ancora nomi file locali inesistenti
+- **Causa**: `importForBody()` usava `$corpo->nome` (italiano) direttamente come query NASA. Il bug #08 era stato fixato nel controller con un `$nameMap` hardcoded, ma il Service non usava il WordMapService
+- **Soluzione**: Inject di `WordMapService` in `NasaImageService`. Prima della ricerca, il nome viene tradotto e aggiunto come fallback. Ricerca prima in italiano, poi in inglese. Risultato: 18/18 corpi con immagini NASA remote
+- **File**: `app/Services/NasaImageService.php`
+
 ### [21] LightboxGalleria.jsx sintassi corrotta — 12/07/2026
 - **Descrizione**: Componente non si montava — parentesi mancante alla riga 58 + callback `onOpen` malformata
 - **Causa**: File corrotto probabilmente durante un merge o edit precedente

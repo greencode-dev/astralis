@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Storage;
 
 class NasaImageService
 {
+    public function __construct(
+        private readonly WordMapService $wordMap = new WordMapService(),
+    ) {}
+
     public function searchNasa(string $query, array $extraFallbacks = []): array
     {
         $cacheKey = 'nasa_search_' . md5($query . '|' . implode(',', $extraFallbacks));
@@ -96,9 +100,8 @@ class NasaImageService
             return ['success' => true, 'message' => "{$corpo->nome}: già presente, skip."];
         }
 
-        $wordMap = new WordMapService();
         $nomeIt = $corpo->nome;
-        $nomeEn = $wordMap->translate($nomeIt);
+        $nomeEn = $this->wordMap->translate($nomeIt);
 
         $extraFallbacks = [];
         if ($nomeEn !== $nomeIt) {

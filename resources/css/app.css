@@ -20,22 +20,6 @@
 
 @plugin "@tailwindcss/forms";
 
-:root {
-    --admin-bg: #0A0A1A;
-    --admin-card: #111128;
-    --admin-text: #F0F0FA;
-    --admin-dim: #B8B8D0;
-    --admin-muted: #7A7A9A;
-    --admin-primary: #22D3EE;
-    --admin-secondary: #A855F7;
-    --admin-accent: #F97316;
-    --admin-warning: #FACC15;
-    --admin-success: #22C55E;
-    --admin-error: #EF4444;
-    --admin-neutral: #6B7280;
-    --admin-chart-text: #9CA3AF;
-}
-
 @utility admin-input {
     @apply w-full px-4 py-2.5 rounded-lg text-sm transition-all duration-200 bg-admin-bg text-admin-text border border-admin-primary/20 focus:border-admin-primary focus:ring-2 focus:ring-admin-primary/10 focus:outline-hidden;
 }
@@ -77,7 +61,7 @@
 }
 
 @utility animate-twinkle {
-    animation: twinkle var(--tw-duration, 3s) ease-in-out infinite;
+    animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
 }
 
 @utility animate-pulse-sun {
@@ -97,6 +81,18 @@
 @utility animate-in-view-scale {
     opacity: 0;
     transform: scale(0.9);
+}
+
+.animate-in-view.is-visible {
+    animation: fadeUp 0.5s ease-out forwards;
+}
+
+.animate-in-view-left.is-visible {
+    animation: slideLeft 0.8s ease-out forwards;
+}
+
+.animate-in-view-scale.is-visible {
+    animation: fadeScale 1s ease-out forwards;
 }
 
 @utility planet-hover {

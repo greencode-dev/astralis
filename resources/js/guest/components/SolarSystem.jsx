@@ -101,7 +101,7 @@ export default function SolarSystem() {
                             height: star.height,
                             left: star.left,
                             top: star.top,
-                            '--tw-duration': `${star.duration}s`,
+                            '--twinkle-duration': `${star.duration}s`,
                         }}
                     />
                 ))}

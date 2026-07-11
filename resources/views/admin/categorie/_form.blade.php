@@ -25,7 +25,7 @@
         @enderror
     </div>
 
-    @include('admin.partials.color-picker-html', ['coloreValue' => old('colore', $entity->colore ?? 'var(--admin-primary)')])
+    @include('admin.partials.color-picker-html', ['coloreValue' => old('colore', $entity->colore ?? 'var(--color-admin-primary)')])
 
     <div class="mb-6">
         <label for="descrizione" class="block text-sm font-medium mb-2 text-admin-text">Descrizione</label>
