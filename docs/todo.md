@@ -70,18 +70,18 @@
 - _5.5 @section fix: già fatto_ ✅
 
 ### Fase 6 — Medio React Frontend (P2)
-- [ ] 6.1 React.memo (LightboxGalleria)
-- [ ] 6.4 SolarSystem stabilità (stelle non saltano al mount)
+- [x] 6.1 React.memo (LightboxGalleria + Thumbnail) ✅
+- [x] 6.4 SolarSystem stabilità — già fixato con useMemo ✅
 - _6.2 Debounce, 6.3 useMemo Lightbox: già fatti_ ✅
 
 ### Fase 7 — Medio Backend Laravel (P2)
-- [ ] 7.2 DashboardController → $this->authorize() consistente
-- [ ] 7.3 suggestNome: invertire ordine chiamate (inglese prima), debounce frontend
+- [x] 7.2 Authorization consistente — DashboardController fixato ($this->authorize()) ✅
+- [x] 7.3 suggestNome: Cache::remember(3600) + ordine invertito (inglese prima) ✅
 - _7.1, 7.4, 7.5: già fatti_ ✅
 
 ### Fase 8 — Medio Admin Blade (P2)
-- [ ] 8.1 Estrarre HTML NASA suggest duplicato in create/edit
-- [ ] 8.3 CDN fallback locale Alpine.js + Chart.js
+- [x] 8.1 NASA suggest partial — già esiste e funzionante ✅
+- [x] 8.3 CDN fallback Alpine.js + Chart.js — già in place ✅
 - _8.2, 8.4: già fatti_ ✅
 
 ### Fase 9 — Test (P1-P3)
