@@ -9,6 +9,9 @@
     .admin-input-mono {
         @apply admin-input font-mono;
     }
+    .admin-input-danger {
+        @apply admin-input border-admin-accent/30 focus:border-admin-accent focus:ring-admin-accent/10;
+    }
     .admin-btn-primary {
         @apply px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90;
     }

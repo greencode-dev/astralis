@@ -63,7 +63,7 @@
 - _4.2-4.6: già fatti_ ✅
 
 ### Fase 5 — Alto Admin Blade (P1)
-- [ ] 5.1 CSS component class .admin-input per form
+- [x] 5.1 CSS component class .admin-input per form — 8 auth/profile Blade views riscritti, 17 onfocus/onblur rimossi, admin-input-danger variante, buttons admin-btn-*, hex→Tailwind utilities ✅
 - [ ] 5.2 Hardcoded hex → CSS variables
 - [ ] 5.3 Estrarre partials Blade (actions, stat-cards)
 - [ ] 5.4 Form partial unificato per create/edit

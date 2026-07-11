@@ -1,5 +1,15 @@
 # Changelog
 
+## Ottimizzazione P1
+
+### Task 5.1 — 11/07/2026 — admin-input class per auth/profile views
+- Riscritte 8 viste Blade auth/profile: login, register, forgot-password, reset-password, confirm-password, update-profile-information, update-password, delete-user
+- Rimossi 17 handler onfocus/onblur inline + attributi style
+- Aggiunta variante `.admin-input-danger` in app.css per campi eliminazione
+- Convertiti pulsanti a classi `admin-btn-primary` / `admin-btn-cancel`
+- Convertiti hex hardcoded a Tailwind utility classes (text-admin-text, text-admin-dim, text-admin-accent)
+- -85 righe, eliminazione stili inline su form auth
+
 ## Fase 0 — Setup
 
 ### 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione
