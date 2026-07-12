@@ -171,8 +171,9 @@ $image->save($path);
 
 - `searchNasa(query, extraFallbacks)` → chiama `images-api.nasa.gov`, timeout 30s, retry 2. Fallback automatico per apostrofi (`Earth's Moon` → `Earth Moon` → `Moon`)
 - `extractMetadata(item)` → estrae `nasa_id`, `title`, `photographer`, `description`, `keywords`
-- `pickImageUrl(item)` → sceglie URL: `alternate` (~medium.jpg) → `preview` (~thumb.jpg) → `canonical` (~orig.jpg, ultima spiaggia)
-- `importForBody(corpo, galleryCount, force, updateDescription)` → import completo per un corpo (1 main + N galleria). Deduplica. Salva URL remoti non file locali
+- `pickMainImageUrl(item)` → sceglie URL per immagine principale: `canonical` (~orig.jpg, full-res) → `preview` (~thumb.jpg) → `alternate` (~medium.jpg)
+- `pickGalleryImageUrl(item)` → sceglie URL per galleria: `preview` → `alternate` → `canonical` (priorità a thumbnail leggeri)
+- `importForBody(corpo, galleryCount, force, updateDescription)` → import completo per un corpo (1 main + N galleria). Deduplica per URL e nasa_id (main ≠ gallery). Salva URL remoti non file locali
 - `importAll(galleryCount, force, updateDescription)` → itera tutti i corpi. `set_time_limit(300)` per processi lunghi
 
 📌 **`php artisan make:command NomeCommand`** crea un comando Artisan. Il comando `astralis:fetch-nasa` usa `$this->option('force')`, `$this->option('gallery')`, `$this->option('update-description')`.

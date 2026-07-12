@@ -191,7 +191,7 @@ class NasaImageServiceTest extends TestCase
         $this->assertEquals('Hubble Team', $metadata['photographer']);
     }
 
-    public function test_pick_image_url_prioritizes_alternate(): void
+    public function test_pick_main_image_url_prioritizes_canonical(): void
     {
         $item = [
             'links' => [
@@ -201,46 +201,46 @@ class NasaImageServiceTest extends TestCase
             ],
         ];
 
-        $url = $this->service->pickImageUrl($item);
-
-        $this->assertEquals('https://example.com/alternate.jpg', $url);
-    }
-
-    public function test_pick_image_url_falls_back_to_preview(): void
-    {
-        $item = [
-            'links' => [
-                ['rel' => 'canonical', 'render' => 'image', 'href' => 'https://example.com/canonical.jpg'],
-                ['rel' => 'preview', 'render' => 'image', 'href' => 'https://example.com/preview.jpg'],
-            ],
-        ];
-
-        $url = $this->service->pickImageUrl($item);
-
-        $this->assertEquals('https://example.com/preview.jpg', $url);
-    }
-
-    public function test_pick_image_url_falls_back_to_canonical(): void
-    {
-        $item = [
-            'links' => [
-                ['rel' => 'canonical', 'render' => 'image', 'href' => 'https://example.com/canonical.jpg'],
-            ],
-        ];
-
-        $url = $this->service->pickImageUrl($item);
+        $url = $this->service->pickMainImageUrl($item);
 
         $this->assertEquals('https://example.com/canonical.jpg', $url);
     }
 
-    public function test_pick_image_url_returns_null_when_no_links(): void
+    public function test_pick_main_image_url_falls_back_to_preview(): void
     {
-        $url = $this->service->pickImageUrl(['links' => []]);
+        $item = [
+            'links' => [
+                ['rel' => 'alternate', 'render' => 'image', 'href' => 'https://example.com/alternate.jpg'],
+                ['rel' => 'preview', 'render' => 'image', 'href' => 'https://example.com/preview.jpg'],
+            ],
+        ];
+
+        $url = $this->service->pickMainImageUrl($item);
+
+        $this->assertEquals('https://example.com/preview.jpg', $url);
+    }
+
+    public function test_pick_main_image_url_falls_back_to_canonical(): void
+    {
+        $item = [
+            'links' => [
+                ['rel' => 'canonical', 'render' => 'image', 'href' => 'https://example.com/canonical.jpg'],
+            ],
+        ];
+
+        $url = $this->service->pickMainImageUrl($item);
+
+        $this->assertEquals('https://example.com/canonical.jpg', $url);
+    }
+
+    public function test_pick_main_image_url_returns_null_when_no_links(): void
+    {
+        $url = $this->service->pickMainImageUrl(['links' => []]);
 
         $this->assertNull($url);
     }
 
-    public function test_pick_image_url_returns_null_when_no_image_links(): void
+    public function test_pick_main_image_url_returns_null_when_no_image_links(): void
     {
         $item = [
             'links' => [
@@ -248,9 +248,37 @@ class NasaImageServiceTest extends TestCase
             ],
         ];
 
-        $url = $this->service->pickImageUrl($item);
+        $url = $this->service->pickMainImageUrl($item);
 
         $this->assertNull($url);
+    }
+
+    public function test_pick_gallery_image_url_prioritizes_preview(): void
+    {
+        $item = [
+            'links' => [
+                ['rel' => 'canonical', 'render' => 'image', 'href' => 'https://example.com/canonical.jpg'],
+                ['rel' => 'alternate', 'render' => 'image', 'href' => 'https://example.com/alternate.jpg'],
+                ['rel' => 'preview', 'render' => 'image', 'href' => 'https://example.com/preview.jpg'],
+            ],
+        ];
+
+        $url = $this->service->pickGalleryImageUrl($item);
+
+        $this->assertEquals('https://example.com/preview.jpg', $url);
+    }
+
+    public function test_pick_gallery_image_url_falls_back_to_canonical(): void
+    {
+        $item = [
+            'links' => [
+                ['rel' => 'canonical', 'render' => 'image', 'href' => 'https://example.com/canonical.jpg'],
+            ],
+        ];
+
+        $url = $this->service->pickGalleryImageUrl($item);
+
+        $this->assertEquals('https://example.com/canonical.jpg', $url);
     }
 
     public function test_import_for_body_skips_if_already_has_image_and_not_force(): void
@@ -443,6 +471,42 @@ class NasaImageServiceTest extends TestCase
         $this->service->importForBody($corpo, 3, true);
 
         $this->assertEquals('Keep this.', $corpo->fresh()->descrizione);
+    }
+
+    public function test_import_for_body_skips_gallery_item_with_same_nasa_id_as_main(): void
+    {
+        Http::fake([
+            'images-api.nasa.gov/*' => Http::response([
+                'collection' => [
+                    'items' => [
+                        [
+                            'data' => [['nasa_id' => 'PIA_SAME', 'title' => 'Main']],
+                            'links' => [['rel' => 'canonical', 'render' => 'image', 'href' => 'https://example.com/main.jpg']],
+                        ],
+                        [
+                            'data' => [['nasa_id' => 'PIA_SAME', 'title' => 'Duplicate']],
+                            'links' => [['rel' => 'preview', 'render' => 'image', 'href' => 'https://example.com/dup.jpg']],
+                        ],
+                        [
+                            'data' => [['nasa_id' => 'PIA_DIFF', 'title' => 'Gallery 1']],
+                            'links' => [['rel' => 'preview', 'render' => 'image', 'href' => 'https://example.com/g1.jpg']],
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $corpo = CorpoCeleste::factory()->create([
+            'immagine' => null,
+            'immagine_utente' => false,
+        ]);
+
+        $result = $this->service->importForBody($corpo, 5, true);
+
+        $this->assertTrue($result['success']);
+        $gallery = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)->get();
+        $this->assertCount(1, $gallery);
+        $this->assertEquals('https://example.com/g1.jpg', $gallery[0]->percorso);
     }
 
     public function test_import_for_body_returns_failure_when_search_fails(): void

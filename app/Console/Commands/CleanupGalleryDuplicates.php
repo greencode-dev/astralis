@@ -214,7 +214,7 @@ class CleanupGalleryDuplicates extends Command
         }
 
         foreach ($searchResult['items'] as $nasaItem) {
-            $imageUrl = $this->nasaService->pickImageUrl($nasaItem);
+            $imageUrl = $this->nasaService->pickMainImageUrl($nasaItem);
             if (!$imageUrl) {
                 continue;
             }

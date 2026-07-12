@@ -103,9 +103,19 @@ class NasaImageService
         ];
     }
 
-    public function pickImageUrl(array $item): ?string
+    public function pickMainImageUrl(array $item): ?string
     {
-        foreach (['alternate', 'preview', 'canonical'] as $rel) {
+        return $this->findLinkByRels($item, ['canonical', 'preview', 'alternate']);
+    }
+
+    public function pickGalleryImageUrl(array $item): ?string
+    {
+        return $this->findLinkByRels($item, ['preview', 'alternate', 'canonical']);
+    }
+
+    private function findLinkByRels(array $item, array $rels): ?string
+    {
+        foreach ($rels as $rel) {
             foreach ($item['links'] ?? [] as $link) {
                 if (($link['rel'] ?? '') === $rel && ($link['render'] ?? '') === 'image') {
                     return $link['href'];
@@ -144,6 +154,7 @@ class NasaImageService
 
         $items = $searchResult['items'];
         $mainImported = false;
+        $mainNasaId = null;
         $galleryImported = 0;
         $gallerySkipped = 0;
         $errors = [];
@@ -156,7 +167,10 @@ class NasaImageService
 
             $isMain = !$mainImported && $canOverwriteMain;
 
-            $imageUrl = $this->pickImageUrl($item);
+            $imageUrl = $isMain
+                ? $this->pickMainImageUrl($item)
+                : $this->pickGalleryImageUrl($item);
+
             if (!$imageUrl) {
                 $label = $isMain ? 'immagine principale' : "immagine galleria #{$galleryImported}";
                 $errors[] = "{$corpo->nome}: nessun URL disponibile per {$label}";
@@ -174,7 +188,12 @@ class NasaImageService
                 }
                 $corpo->update($updateData);
                 $mainImported = true;
+                $mainNasaId = $nasaId;
             } else {
+                if ($nasaId && $nasaId === $mainNasaId) {
+                    continue;
+                }
+
                 $exists = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)
                     ->where('percorso', $imageUrl)
                     ->exists();
