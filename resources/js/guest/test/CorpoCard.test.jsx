@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import CorpoCard from '../components/CorpoCard';
 import { baseCorpo } from './fixtures';
@@ -19,10 +19,12 @@ describe('CorpoCard', () => {
         expect(screen.getByText('Il nostro pianeta.')).toBeInTheDocument();
     });
 
-    it('renders image when immagine_url is present', () => {
+    it('renders image when immagine_url is present', async () => {
         renderCard({ ...baseCorpo, immagine_url: 'https://example.com/earth.jpg' });
         const img = screen.getByRole('img');
-        expect(img).toHaveAttribute('src', 'https://example.com/earth.jpg');
+        await waitFor(() => {
+            expect(img).toHaveAttribute('src', 'https://example.com/earth.jpg');
+        });
         expect(img).toHaveAttribute('alt', 'Terra');
     });
 

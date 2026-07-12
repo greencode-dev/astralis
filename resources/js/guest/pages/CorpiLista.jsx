@@ -28,6 +28,10 @@ export default function CorpiLista() {
         [page, categoriaSlug, tipo, debouncedSearch]
     );
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [page]);
+
     const [gridRef, gridVisible] = useInView();
 
     const categorie = categorieData?.data || [];
@@ -148,7 +152,7 @@ export default function CorpiLista() {
                                 className={`animate-in-view ${gridVisible ? 'is-visible' : ''}`}
                                 style={{ animationDelay: `${idx * 0.05}s` }}
                             >
-                                <CorpoCard corpo={corpo} />
+                                <CorpoCard corpo={corpo} fetchPriority={idx < 3 ? 'high' : 'low'} />
                             </div>
                         ))}
                     </div>

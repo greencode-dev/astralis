@@ -29,10 +29,10 @@ export default function App() {
                     <ErrorBoundary>
                         <Suspense fallback={<PageLoader />}>
                             <Routes>
-                                <Route path="/" element={<HomePage />} />
-                                <Route path="/corpi-celesti" element={<CorpiLista />} />
-                                <Route path="/corpi-celesti/:slug" element={<CorpoDettaglio />} />
-                                <Route path="/confronta" element={<Comparatore />} />
+                                <Route path="/" element={<ErrorBoundary><HomePage /></ErrorBoundary>} />
+                                <Route path="/corpi-celesti" element={<ErrorBoundary><CorpiLista /></ErrorBoundary>} />
+                                <Route path="/corpi-celesti/:slug" element={<ErrorBoundary><CorpoDettaglio /></ErrorBoundary>} />
+                                <Route path="/confronta" element={<ErrorBoundary><Comparatore /></ErrorBoundary>} />
                                 <Route path="*" element={<NotFound />} />
                             </Routes>
                         </Suspense>

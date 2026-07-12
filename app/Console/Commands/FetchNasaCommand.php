@@ -48,15 +48,8 @@ class FetchNasaCommand extends Command
         $failed = $result['total'] - $result['success'];
         if ($failed > 0) {
             $this->warn("{$failed} corpi con errori:");
-            foreach ($result['results'] as $r) {
-                if (!$r['success'] && !empty($r['message'])) {
-                    $this->warn("  • {$r['message']}");
-                }
-                if (!empty($r['errors'])) {
-                    foreach ($r['errors'] as $err) {
-                        $this->warn("  • {$err}");
-                    }
-                }
+            foreach ($result['errors'] as $err) {
+                $this->warn("  • {$err}");
             }
         }
 

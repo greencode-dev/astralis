@@ -4,8 +4,9 @@ import { Orbit } from 'lucide-react';
 import { categoryIcons, categoryGradients } from '../constants';
 import { formatDistance } from '../utils';
 import CategoriaBadge from './CategoriaBadge';
+import LazyImage from './LazyImage';
 
-export default memo(function CorpoCard({ corpo }) {
+export default memo(function CorpoCard({ corpo, fetchPriority }) {
     const [imgError, setImgError] = useState(false);
     const showImage = !!corpo.immagine_url && !imgError;
     const FallbackIcon = categoryIcons[corpo.categoria?.nome] || Orbit;
@@ -18,9 +19,10 @@ export default memo(function CorpoCard({ corpo }) {
         >
             {showImage ? (
                 <div className="aspect-[16/9] relative">
-                    <img loading="lazy"
+                    <LazyImage
                         src={corpo.immagine_url}
                         alt={corpo.nome_display || corpo.nome}
+                        fetchPriority={fetchPriority}
                         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         onError={() => setImgError(true)}
                     />

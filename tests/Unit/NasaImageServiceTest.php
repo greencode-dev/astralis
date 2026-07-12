@@ -538,7 +538,6 @@ class NasaImageServiceTest extends TestCase
         $this->assertEquals(3, $result['success']);
         $this->assertEquals(3, $result['total']);
         $this->assertEquals(3, $result['total_main']);
-        $this->assertCount(3, $result['results']);
     }
 
     public function test_import_all_counts_partial_successes(): void

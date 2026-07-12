@@ -24,7 +24,7 @@ const MissioneLogo = memo(function MissioneLogo({ missione }) {
     }
 
     return (
-        <img src={missione.logo_url} alt={missione.nome} className="w-10 h-10 rounded-lg object-cover" onError={() => setError(true)} />
+        <img loading="lazy" src={missione.logo_url} alt={missione.nome} className="w-10 h-10 rounded-lg object-cover" onError={() => setError(true)} />
     );
 });
 

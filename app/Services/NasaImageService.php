@@ -7,6 +7,7 @@ use App\Models\GalleriaCorpo;
 use App\Services\WordMapService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class NasaImageService
@@ -15,11 +16,11 @@ class NasaImageService
         private readonly WordMapService $wordMap = new WordMapService(),
     ) {}
 
-    public function searchNasa(string $query, array $extraFallbacks = []): array
+    public function searchNasa(string $query, array $extraFallbacks = [], bool $bypassCache = false): array
     {
         $cacheKey = 'nasa_search_' . md5($query . '|' . implode(',', $extraFallbacks));
 
-        return Cache::remember($cacheKey, 3600, function () use ($query, $extraFallbacks) {
+        $searchFn = function () use ($query, $extraFallbacks) {
             $fallbacks = $extraFallbacks;
 
             $stripped = str_replace(["'s", "'", "`", "’"], "", $query);
@@ -31,16 +32,30 @@ class NasaImageService
             $queries = array_merge([$query], $fallbacks);
 
             foreach ($queries as $q) {
-                $http = Http::timeout(30)->retry(2, 1000);
-                if (app()->environment('local', 'testing')) {
-                    $http = $http->withoutVerifying();
-                }
-                $response = $http->get('https://images-api.nasa.gov/search', [
-                        'q' => $q,
-                        'media_type' => 'image',
-                    ]);
+                try {
+                    $http = Http::timeout(30)->retry(2, 1000);
+                    if (app()->environment('local', 'testing')) {
+                        $http = $http->withoutVerifying();
+                    }
+                    $response = $http->get('https://images-api.nasa.gov/search', [
+                            'q' => $q,
+                            'media_type' => 'image',
+                        ]);
 
-                if ($response->failed()) {
+                    if ($response->failed()) {
+                        continue;
+                    }
+
+                    $items = $response->json('collection.items');
+
+                    if (!empty($items)) {
+                        return ['success' => true, 'items' => $items, 'used_query' => $q];
+                    }
+                } catch (\Exception $e) {
+                    Log::warning('NASA API connection error', [
+                        'query' => $q,
+                        'error' => $e->getMessage(),
+                    ]);
                     continue;
                 }
 
@@ -66,7 +81,13 @@ class NasaImageService
             }
 
             return ['success' => false, 'message' => "Nessuna immagine trovata per \"{$query}\"."];
-        });
+        };
+
+        if ($bypassCache) {
+            return $searchFn();
+        }
+
+        return Cache::remember($cacheKey, 86400, $searchFn);
     }
 
     public function extractMetadata(array $item): array
@@ -108,8 +129,16 @@ class NasaImageService
             $extraFallbacks[] = $nomeIt;
         }
 
-        $searchResult = $this->searchNasa($nomeEn, $extraFallbacks);
+        if (stripos($nomeIt, "comet") !== false || stripos($nomeIt, "halley") !== false) {
+            $extraFallbacks[] = "comet";
+        }
+
+        $searchResult = $this->searchNasa($nomeEn, $extraFallbacks, $force);
         if (!$searchResult['success']) {
+            Log::warning('NASA import failed for body', [
+                'corpo' => $corpo->nome,
+                'message' => $searchResult['message'],
+            ]);
             return ['success' => false, 'message' => $searchResult['message']];
         }
 
@@ -207,16 +236,16 @@ class NasaImageService
         $totalCount = 0;
         $totalMain = 0;
         $totalGallery = 0;
+        $errors = [];
 
-        CorpoCeleste::chunk(50, function ($corpi) use ($galleryCount, $force, $updateDescription, &$results, &$successCount, &$totalCount, &$totalMain, &$totalGallery) {
+        CorpoCeleste::chunk(50, function ($corpi) use ($galleryCount, $force, $updateDescription, &$successCount, &$totalCount, &$totalMain, &$totalGallery, &$errors) {
             foreach ($corpi as $corpo) {
                 $result = $this->importForBody($corpo, $galleryCount, $force, $updateDescription);
 
                 if (!empty($result['errors'])) {
-                    $result['message'] .= ' ' . implode('; ', array_slice($result['errors'], 0, 2));
+                    $errors = array_merge($errors, array_slice($result['errors'], 0, 2));
                 }
 
-                $results[] = $result;
                 $totalCount++;
                 if ($result['success']) {
                     $successCount++;
@@ -233,7 +262,7 @@ class NasaImageService
             'total' => $totalCount,
             'total_main' => $totalMain,
             'total_gallery' => $totalGallery,
-            'results' => $results,
+            'errors' => array_slice($errors, 0, 10),
         ];
     }
 }

@@ -13,7 +13,7 @@ apiClient.interceptors.response.use(
     async error => {
         if (axios.isCancel(error)) return Promise.reject(error);
 
-        const config = error.config;
+        const config = { ...error.config };
         if (!config) return Promise.reject(error);
 
         const retryCount = (config.retryCount || 0) + 1;
