@@ -21,12 +21,12 @@
 <body class="font-sans antialiased bg-admin-bg text-admin-text">
     <div class="flex h-screen overflow-hidden" x-data="{ sidebarOpen: false }">
 
-        <aside class="fixed inset-y-0 left-0 z-40 flex-shrink-0 w-64 overflow-y-auto transition-transform duration-300 -translate-x-full bg-admin-card border-r border-admin-primary/10 md:relative md:translate-x-0 md:inset-auto"
+        <aside class="fixed inset-y-0 left-0 z-40 flex-shrink-0 w-64 overflow-y-auto transition-transform duration-300 -translate-x-full border-r bg-admin-card border-admin-primary/10 md:relative md:translate-x-0 md:inset-auto"
                :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
                @click.away="sidebarOpen = false">
 
             <div class="flex items-center gap-3 px-6 py-5 border-b border-admin-primary/10">
-                <img src="/favicon.svg" alt="Astralis" class="h-10 w-10" />
+                <img src="/favicon.svg" alt="Astralis" class="w-24 h-24" />
                 <div>
                     <h1 class="text-lg font-bold font-orbitron text-admin-primary">Astralis</h1>
                     <p class="text-xs text-admin-secondary">Backoffice</p>
@@ -58,7 +58,7 @@
                        @if ($isActive)
                             class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg bg-admin-primary/15 text-admin-primary"
                         @else
-                            class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg text-gray-400 hover:bg-admin-primary/8 hover:text-admin-primary"
+                            class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary"
                         @endif>
                         <svg class="flex-shrink-0 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $item['icon'] }}"/>
@@ -70,12 +70,12 @@
 
             <div class="px-3 py-4 mt-auto space-y-1 border-t border-admin-primary/10">
                 <a href="{{ route('profile.edit') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg text-gray-400 hover:bg-admin-primary/8 hover:text-admin-primary">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                     Profilo
                 </a>
                 <a href="{{ route('home') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg text-gray-400 hover:bg-admin-primary/8 hover:text-admin-primary">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     Torna al sito
                 </a>
@@ -83,10 +83,10 @@
         </aside>
 
         <div class="flex flex-col flex-1 overflow-hidden">
-            <header class="flex items-center justify-between px-6 py-5 bg-admin-card border-b border-admin-primary/10">
+            <header class="flex items-center justify-between px-6 py-5 border-b bg-admin-card border-admin-primary/10">
                 <div class="flex items-center gap-3">
                     <button @click="sidebarOpen = !sidebarOpen"
-                            class="p-2 rounded-lg md:hidden text-gray-400 hover:text-admin-primary hover:bg-admin-primary/10"
+                            class="p-2 text-gray-400 rounded-lg md:hidden hover:text-admin-primary hover:bg-admin-primary/10"
                             aria-label="Apri menu">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                     </button>

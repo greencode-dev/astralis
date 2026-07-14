@@ -10,15 +10,15 @@
     @vite(['resources/css/app.css'])
 </head>
 <body class="font-sans antialiased bg-admin-bg text-admin-text">
-    <div class="min-h-screen flex flex-col items-center justify-center px-4">
+    <div class="flex flex-col items-center justify-center min-h-screen px-4">
         <div class="w-full max-w-md">
-            <div class="text-center mb-8">
+            <div class="mb-8 text-center">
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-2">
-                    <img src="/favicon.svg" alt="Astralis" class="h-12 w-12" />
+                    <img src="/favicon.svg" alt="Astralis" class="w-24 h-24" />
                     <span class="text-2xl font-bold font-orbitron text-admin-primary">Astralis</span>
                 </a>
             </div>
-            <div class="rounded-xl p-8 bg-admin-card border border-admin-primary/10">
+            <div class="p-8 border rounded-xl bg-admin-card border-admin-primary/10">
                 {{ $slot }}
             </div>
         </div>
