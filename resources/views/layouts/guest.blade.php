@@ -9,16 +9,16 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css'])
 </head>
-<body class="font-sans antialiased" style="background-color: var(--admin-bg); color: var(--admin-text);">
+<body class="font-sans antialiased bg-admin-bg text-admin-text">
     <div class="min-h-screen flex flex-col items-center justify-center px-4">
         <div class="w-full max-w-md">
             <div class="text-center mb-8">
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-2">
                     <span class="text-3xl">🚀</span>
-                    <span class="text-2xl font-bold" style="color: var(--admin-primary);">Astralis</span>
+                    <span class="text-2xl font-bold text-admin-primary">Astralis</span>
                 </a>
             </div>
-            <div class="rounded-xl p-8" style="background-color: var(--admin-card); border: 1px solid rgba(34, 211, 238, 0.1);">
+            <div class="rounded-xl p-8 bg-admin-card border border-admin-primary/10">
                 {{ $slot }}
             </div>
         </div>

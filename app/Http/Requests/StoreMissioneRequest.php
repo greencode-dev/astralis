@@ -19,7 +19,7 @@ class StoreMissioneRequest extends FormRequest
             'agenzia' => ['nullable', 'string', 'max:100'],
             'data_lancio' => ['nullable', 'date'],
             'durata_giorni' => ['nullable', 'integer', 'min:0'],
-            'stato' => ['nullable', 'string', 'max:50'],
+            'stato' => ['nullable', 'string', 'max:50', 'in:Completata,In corso,Pianificata,Annullata'],
             'descrizione' => ['nullable', 'string', 'max:5000'],
             'sito_web' => ['nullable', 'string', 'url', 'max:255'],
         ];

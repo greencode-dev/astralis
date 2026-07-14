@@ -1,13 +1,20 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-11*
+*Ultimo aggiornamento: 2026-07-14*
 
 ## Da Fare
 
-- [ ] `[🔴P0]` **Task 40 — Debug generale post-ottimizzazione** — Verificare che tutto funzioni dopo le attività di ottimizzazione. Controllare: route, pagine, form, upload, search, paginazione, animation, responsive, admin CRUD, API endpoint
-
 ## Fatto
 
+- [x] **Task 70** — API edge case tests: ApiEdgeCaseTest.php (17 test: percent, underscore, per_page, agenzia/stato filters, empty DB, factory, dashboard, galleria/curiosita includes)
+- [x] **Task 69** — Search & filter tests: SearchAndFilterTest.php (10 test: search per nome/nome_it/titolo/didascalia, stato filter, wildcard escaping)
+- [x] **Task 67** — Frontend tests: NotFound(4), ErrorBoundary(4), TimelineMissioni(8), Navbar(6) — 22 test Vitest
+- [x] **Task 66** — CleanupGalleryDuplicatesTest: 9 test (dedup, dry-run, orphans, check, broken/working remote URLs, different corpi same path)
+- [x] **Task 65** — WordMapServiceTest: 8 test (translate known/unknown/empty, planet names, prepositions, guessEnglishName)
+- [x] **Task 60-64** — Inline styles→Tailwind, accessibility (scope, aria-label, aria-current, role), partials, delete protection
+- [x] **Task 55-59** — CSS cleanup, config fixes, deps removal, curiosita showRoute, mission badge partial
+- [x] **Task 52-53** — ClearDashboardCache trait, ImageUploadService extraction
+- [x] **Task 40** — Debug generale post-ottimizzazione: LightboxGalleria.jsx fix `}`→`});` (memo close), CorpoDettaglio.test.jsx fix import typo. 260 test (173 PHPUnit + 87 Vitest)
 - [x] **Task 39** — Frontend Design audit: palette coerenza, 7 inconsistenze colore, SolarSystem firma, tipografia
 - [x] **Task 38** — Writing Guidelines audit: 14 ellipsis, 14 heading case, 10+ passive voice, 16 filler "con successo"
 - [x] **Task 37** — Web Design Guidelines audit: 14 file React, 3 high, 6 medium, 3 low priority
@@ -50,7 +57,7 @@
 
 ## Note
 
-- **Stato**: 40 task totali. 39 completate, 1 aperta (debug). 235 test (173 PHPUnit + 62 Vitest).
+- **Stato**: 70 task totali, tutte completate. 322 test (215 PHPUnit + 107 Vitest), 522+ assertion.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

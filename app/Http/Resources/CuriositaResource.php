@@ -15,6 +15,8 @@ class CuriositaResource extends JsonResource
             'titolo' => $this->titolo,
             'descrizione' => $this->descrizione,
             'fonte' => $this->fonte,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'corpo_celeste' => new CorpoCelesteResource($this->whenLoaded('corpoCeleste')),
         ];
     }

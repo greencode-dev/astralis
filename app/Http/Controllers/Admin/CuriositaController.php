@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\ClearDashboardCache;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCuriositaRequest;
 use App\Http\Requests\UpdateCuriositaRequest;
@@ -9,17 +10,18 @@ use App\Models\CorpoCeleste;
 use App\Models\Curiosita;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
+
 use Illuminate\View\View;
 
 class CuriositaController extends Controller
 {
+    use ClearDashboardCache;
     public function index(Request $request): View
     {
         $this->authorize('viewAny', Curiosita::class);
 
         $curiosita = Curiosita::with('corpoCeleste.categoria')
-            ->when($request->get('search'), fn($q, $v) => $q->where('titolo', 'like', "%{$v}%"))
+            ->when($request->get('search'), fn($q, $v) => $q->where('titolo', 'like', '%' . static::escapeLike($v) . '%'))
             ->when($request->get('corpo_celeste_id'), fn($q, $v) => $q->where('corpo_celeste_id', $v))
             ->orderBy('created_at', 'desc')
             ->paginate(20)
@@ -52,8 +54,7 @@ class CuriositaController extends Controller
 
         Curiosita::create($request->validated());
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità creata con successo.');
@@ -74,8 +75,7 @@ class CuriositaController extends Controller
 
         $curiositum->update($request->validated());
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità aggiornata con successo.');
@@ -87,8 +87,7 @@ class CuriositaController extends Controller
 
         $curiositum->delete();
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.curiosita.index')
             ->with('success', 'Curiosità eliminata con successo.');

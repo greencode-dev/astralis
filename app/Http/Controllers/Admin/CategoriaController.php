@@ -2,23 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\ClearDashboardCache;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
 use App\Models\Categoria;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
+
 use Illuminate\View\View;
 
 class CategoriaController extends Controller
 {
+    use ClearDashboardCache;
     public function index(Request $request): View
     {
         $this->authorize('viewAny', Categoria::class);
 
         $categorie = Categoria::withCount('corpiCelesti')
-            ->when($request->get('search'), fn($q, $v) => $q->where('nome', 'like', "%{$v}%"))
+            ->when($request->get('search'), fn($q, $v) => $q->where('nome', 'like', '%' . static::escapeLike($v) . '%'))
             ->orderBy('nome')
             ->paginate(20)
             ->withQueryString();
@@ -39,8 +41,7 @@ class CategoriaController extends Controller
 
         Categoria::create($request->validated());
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria creata con successo.');
@@ -68,8 +69,7 @@ class CategoriaController extends Controller
 
         $categoria->update($request->validated());
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria aggiornata con successo.');
@@ -86,8 +86,7 @@ class CategoriaController extends Controller
 
         $categoria->delete();
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.categorie.index')
             ->with('success', 'Categoria eliminata con successo.');

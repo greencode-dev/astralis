@@ -21,11 +21,11 @@
         <table class="w-full text-sm">
             <thead>
                 <tr class="border-b border-admin-primary/10">
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Titolo</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Corpo Celeste</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Descrizione</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Fonte</th>
-                    <th class="text-right py-3 px-4 font-medium text-gray-400">Azioni</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Titolo</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Corpo Celeste</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Descrizione</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Fonte</th>
+                    <th scope="col" class="text-right py-3 px-4 font-medium text-gray-400">Azioni</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,7 +46,7 @@
                         <td class="py-3 px-4 text-gray-400 max-w-[300px]">{{ Str::limit($curiositum->descrizione, 80) }}</td>
                         <td class="py-3 px-4 text-gray-500 max-w-[150px]">{{ $curiositum->fonte ? Str::limit($curiositum->fonte, 40) : '—' }}</td>
                         <td class="py-3 px-4 text-right">
-                            @include('admin.partials.index-actions', ['editRoute' => route('admin.curiosita.edit', $curiositum), 'deleteRoute' => route('admin.curiosita.destroy', $curiositum), 'entityName' => $curiositum->titolo])
+                            @include('admin.partials.index-actions', ['showRoute' => route('admin.curiosita.show', $curiositum), 'editRoute' => route('admin.curiosita.edit', $curiositum), 'deleteRoute' => route('admin.curiosita.destroy', $curiositum), 'entityName' => $curiositum->titolo])
                         </td>
                     </tr>
                 @empty

@@ -49,7 +49,7 @@ export default memo(function TimelineMissioni({ missioni }) {
 
                                 {/* Card missione */}
                                 <div
-                                    className="rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-[rgba(34,211,238,0.4)] bg-admin-card"
+                                    className="rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-admin-primary/40 bg-admin-card"
                                 >
                                     {/* Logo o icona */}
                                     <div className="flex items-center gap-3 mb-3">

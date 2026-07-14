@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Admin\Concerns\ClearDashboardCache;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCorpoCelesteRequest;
 use App\Http\Requests\SuggestNomeRequest;
@@ -18,6 +19,7 @@ use Illuminate\View\View;
 
 class CorpoCelesteController extends Controller
 {
+    use ClearDashboardCache;
     public function index(Request $request): View
     {
         $this->authorize('viewAny', CorpoCeleste::class);
@@ -25,8 +27,9 @@ class CorpoCelesteController extends Controller
         $query = CorpoCeleste::with('categoria');
 
         if ($search = $request->get('search')) {
-            $query->where('nome', 'like', "%{$search}%")
-                ->orWhere('nome_it', 'like', "%{$search}%");
+            $safe = static::escapeLike($search);
+            $query->where('nome', 'like', "%{$safe}%")
+                ->orWhere('nome_it', 'like', "%{$safe}%");
         }
 
         $corpi = $query->orderBy('nome')->paginate(20)->withQueryString();
@@ -49,8 +52,7 @@ class CorpoCelesteController extends Controller
 
         CorpoCeleste::create($request->validated());
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste creato con successo.');
@@ -86,8 +88,7 @@ class CorpoCelesteController extends Controller
 
         $corpoCeleste->update($validated);
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste aggiornato con successo.');
@@ -99,8 +100,7 @@ class CorpoCelesteController extends Controller
 
         $corpoCeleste->delete();
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.corpi-celesti.index')
             ->with('success', 'Corpo celeste eliminato con successo.');
@@ -110,7 +110,7 @@ class CorpoCelesteController extends Controller
     {
         $this->authorize('update', $corpoCeleste);
 
-        if ($galleriaCorpo->corpo_celeste_id !== $corpoCeleste->id) {
+        if ((int) $galleriaCorpo->corpo_celeste_id !== (int) $corpoCeleste->id) {
             abort(404);
         }
 
@@ -119,8 +119,7 @@ class CorpoCelesteController extends Controller
             'immagine_utente' => true,
         ]);
 
-        Cache::forget('admin.dashboard');
-        Cache::forget('api.dashboard.stats');
+        $this->clearDashboardCache();
 
         return redirect()->route('admin.corpi-celesti.show', $corpoCeleste)
             ->with('success', 'Immagine principale aggiornata con successo.');

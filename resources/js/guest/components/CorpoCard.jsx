@@ -14,7 +14,7 @@ export default memo(function CorpoCard({ corpo }) {
     return (
         <Link
             to={`/corpi-celesti/${corpo.slug}`}
-            className="block rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(34,211,238,0.1)] bg-admin-card border border-admin-primary/10"
+            className="block rounded-xl overflow-hidden transition-all duration-300 hover:border-admin-primary/40 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_#22D3EE1A] bg-admin-card border border-admin-primary/10"
         >
             {showImage ? (
                 <div className="aspect-[16/9] relative">

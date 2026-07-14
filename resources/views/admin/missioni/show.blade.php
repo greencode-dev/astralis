@@ -18,19 +18,7 @@
                 @endif
                 <h2 class="text-xl font-bold mb-1 text-admin-text">{{ $missione->nome }}</h2>
                 <p class="text-sm text-gray-400">{{ $missione->agenzia ?? '—' }}</p>
-                @php
-                    $stato = $missione->stato ?? 'completata';
-                    $colors = [
-                        'completata' => ['bg' => 'rgba(34,197,94,0.15)', 'text' => 'var(--admin-success)'],
-                        'in corso' => ['bg' => 'rgba(34,211,238,0.15)', 'text' => 'var(--admin-primary)'],
-                        'pianificata' => ['bg' => 'rgba(250,204,21,0.15)', 'text' => 'var(--admin-warning)'],
-                    ];
-                    $c = $colors[$stato] ?? ['bg' => 'rgba(107,114,128,0.15)', 'text' => 'var(--admin-neutral)'];
-                @endphp
-                <span class="inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full text-xs font-medium" style="background-color: {{ $c['bg'] }}; color: {{ $c['text'] }};">
-                    <span class="w-1.5 h-1.5 rounded-full" style="background-color: {{ $c['text'] }};"></span>
-                    {{ ucfirst($stato) }}
-                </span>
+                @include('admin.partials.mission-stato-badge', ['missione' => $missione, 'withDot' => true, 'class' => 'inline-flex items-center gap-1.5 mt-3 px-3 py-1 rounded-full text-xs font-medium'])
             </div>
 
             <div class="rounded-xl p-6 md:col-span-2 bg-admin-card border border-admin-primary/10">
@@ -64,10 +52,10 @@
                     <table class="w-full text-sm">
                         <thead>
                             <tr class="border-b border-admin-primary/10">
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Corpo Celeste</th>
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Categoria</th>
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Tipo esplorazione</th>
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Anno arrivo</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Corpo Celeste</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Categoria</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Tipo esplorazione</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Anno arrivo</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -114,11 +114,11 @@
                     <table class="w-full text-sm">
                         <thead>
                             <tr class="border-b border-admin-primary/10">
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Missione</th>
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Agenzia</th>
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Tipo esplorazione</th>
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Anno arrivo</th>
-                                <th class="text-left py-3 px-4 font-medium text-gray-400">Stato</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Missione</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Agenzia</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Tipo esplorazione</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Anno arrivo</th>
+                                <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Stato</th>
                             </tr>
                         </thead>
                         <tbody>

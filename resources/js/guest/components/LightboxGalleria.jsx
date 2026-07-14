@@ -9,7 +9,7 @@ const Thumbnail = memo(function Thumbnail({ slide, index, onOpen }) {
     return (
         <button
             onClick={() => onOpen(index)}
-            className="relative group rounded-xl overflow-hidden transition-all duration-300 hover:border-[rgba(34,211,238,0.4)] hover:scale-[1.02] bg-admin-card border border-admin-primary/10"
+            className="relative group rounded-xl overflow-hidden transition-all duration-300 hover:border-admin-primary/40 hover:scale-[1.02] bg-admin-card border border-admin-primary/10"
             aria-label={slide.didascalia || 'Apri immagine nella galleria'}
         >
             <div className="aspect-[4/3] overflow-hidden">
@@ -67,4 +67,4 @@ export default memo(function LightboxGalleria({ immagini }) {
             />
         </div>
     );
-}
+});

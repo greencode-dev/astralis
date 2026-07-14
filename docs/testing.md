@@ -4,7 +4,7 @@ Suite di test per backend (PHPUnit) e frontend React (Vitest).
 
 ## Esecuzione
 
-### Backend (PHPUnit) — 130 test, 335 assertion
+### Backend (PHPUnit) — 215 test, 522 assertion
 
 ```bash
 php artisan test                              # Tutti
@@ -13,7 +13,7 @@ php artisan test tests/Feature/Api/           # API
 php artisan test tests/Feature/Admin/...      # Admin CRUD
 ```
 
-### Frontend React (Vitest) — 88 test
+### Frontend React (Vitest) — 107 test
 
 ```bash
 npm test                                       # Tutti (vitest run)
@@ -39,7 +39,9 @@ npx vitest run resources/js/guest/test/CorpoCard.test.jsx   # Singolo file
 
 ## Struttura
 
-### Unit — `tests/Unit/NasaImageServiceTest.php` (26 test, 63 assertion)
+### Unit — `tests/Unit/` (3 file, 43 test)
+
+#### `NasaImageServiceTest.php` (26 test, 63 assertion)
 
 Testa `App\Services\NasaImageService` — il service che importa immagini da NASA Image API.
 
@@ -51,6 +53,26 @@ Testa `App\Services\NasaImageService` — il service che importa immagini da NAS
 | **importForBody** | 10 | Skip se immagine già presente e `$force=false`, Force overwrite immagine principale, Force non sovrascrive `immagine_utente=true`, Creazione voci galleria (didascalia, crediti, ordine), Deduplicazione galleria (stesso URL skippato), `$updateDescription=true` aggiorna `descrizione`, `$updateDescription=false` non modifica, Ricerca NASA fallisce → `success=false`, Fallback "comet" per comete/Halley, Item senza URL immagine → `errors[]` |
 | **importAll** | 2 | Conteggi corretti (success, total, total_main) con tutti riusciti, Conteggi corretti con successi parziali |
 
+#### `WordMapServiceTest.php` (8 test)
+
+Testa `App\Services\WordMapService` — traduzione italiano→inglese per NASA suggest.
+
+| Gruppo | N. test | Cosa copre |
+|---|---|---|
+| **translate** | 6 | Parola nota, più parole, preposizioni rimosse, parola sconosciuta, stringa vuota, nomi pianeti |
+| **guessEnglishName** | 2 | Match per titolo NASA, fallback al primo risultato |
+
+#### `CleanupGalleryDuplicatesTest.php` (9 test)
+
+Testa `astralis:gallery` artisan command — deduplicazione, orphans, remote URLs.
+
+| Gruppo | N. test | Cosa copre |
+|---|---|---|
+| **dedup** | 2 | Rimuove duplicati tenendo il primo, dry-run preserva duplicati |
+| **orphans** | 3 | No duplicati → warning, clean orphans, check + dry-run preserva orphans |
+| **remote** | 2 | URL rotto → KO, URL valido → OK |
+| **edge cases** | 2 | Diversi corpi stesso path non dedupati
+
 #### Pattern usati
 
 - `Http::fake()` con response fissa o callback (`function ($request) { ... }`)
@@ -59,20 +81,21 @@ Testa `App\Services\NasaImageService` — il service che importa immagini da NAS
 - `$corpo->fresh()` per ricaricare dal DB dopo update
 - `GalleriaCorpo::where(...)->get()` per verificare creazione voci galleria
 
-### Feature API — `tests/Feature/Api/` (8 file)
+### Feature API — `tests/Feature/Api/` (9 file)
 
 Testano gli endpoint JSON pubblici in `routes/api.php`.
 
-| File | Endpoint testati |
-|---|---|
-| `CorpoCelesteApiTest.php` | `GET /api/corpi-celesti` — paginazione (default 12, max 100), filtri per categoria (slug), tipo, search (nome/descrizione), in_evidenza. `GET /api/corpi-celesti/{slug}` — dettaglio con relazioni. `GET /api/corpi-celesti/{id}/simili` — max 4, exclude stesso |
-| `CategoriaApiTest.php` | `GET /api/categorie` — tutti. `GET /api/categorie/{slug}` — dettaglio. 404 |
-| `MissioneApiTest.php` | `GET /api/missioni` — tutti. `GET /api/missioni/{slug}` — dettaglio. 404 |
-| `CuriositaApiTest.php` | `GET /api/curiosita` — tutti |
-| `GalleriaApiTest.php` | `GET /api/galleria` — tutti |
-| `DashboardApiTest.php` | `GET /api/dashboard/stats` — conteggi corpi, categorie, missioni |
+| File | Test | Endpoint testati |
+|---|---|---|
+| `CorpoCelesteApiTest.php` | 10 | `GET /api/corpi-celesti` — paginazione (default 12, max 100), filtri per categoria (slug), tipo, search (nome/descrizione), in_evidenza. `GET /api/corpi-celesti/{slug}` — dettaglio con relazioni. `GET /api/corpi-celesti/{id}/simili` — max 4, exclude stesso |
+| `CategoriaApiTest.php` | 4 | `GET /api/categorie` — tutti. `GET /api/categorie/{slug}` — dettaglio. 404 |
+| `MissioneApiTest.php` | 4 | `GET /api/missioni` — tutti. `GET /api/missioni/{slug}` — dettaglio. 404 |
+| `CuriositaApiTest.php` | 2 | `GET /api/curiosita` — tutti |
+| `GalleriaApiTest.php` | 2 | `GET /api/galleria` — tutti |
+| `DashboardApiTest.php` | 4 | `GET /api/dashboard/stats` — conteggi corpi, categorie, missioni |
+| `ApiEdgeCaseTest.php` | 17 | Percent/underscore escaping, per_page zero → 1, agenzia+stato filters, empty DB, factory, dashboard empty, galleria/curiosita includes |
 
-### Feature Admin — 5 file, 59 test
+### Feature Admin — 6 file, 69 test
 
 #### `CorpoCelesteCrudTest.php` (13 test)
 
@@ -158,6 +181,20 @@ Testano gli endpoint JSON pubblici in `routes/api.php`.
 | Admin delete | `DELETE` → redirect, record rimosso |
 | Non-admin store | 403 |
 
+#### `SearchAndFilterTest.php` (10 test)
+
+| Test | Cosa verifica |
+|---|---|
+| Corpi search by nome | `GET ?search=Sat` → only "Saturno" |
+| Corpi search by nome_it | `GET ?search=Terr` → only "Terra" |
+| Categorie search | `GET ?search=Pian` → only "Pianeta" |
+| Missioni search | `GET ?search=Apollo` → only "Apollo 11" |
+| Missioni filter stato | `GET ?stato=Completata` → only "Done" |
+| Curiosita search | `GET ?search=Terra` → only "Fatto sulla Terra" |
+| Galleria search | `GET ?search=Luna` → only "Vista dalla Luna" |
+| Wildcard % escaped | `GET ?search=100%` → doesn't match all |
+| Wildcard _ escaped | `GET ?search=Test_Thing` → doesn't match all |
+
 ## API di supporto
 
 ### `Http::fake()`
@@ -195,7 +232,7 @@ if (app()->environment('testing')) {
 
 Questo previene chiamate HTTP reali durante la creazione di factory nei test.
 
-### React — `resources/js/guest/test/` (9 file, 88 test)
+### React — `resources/js/guest/test/` (13 file, 107 test)
 
 #### Componenti (4 file, 27 test)
 
@@ -210,11 +247,20 @@ Questo previene chiamate HTTP reali durante la creazione di factory nei test.
 
 | File | Pagina | Test | Cosa copre |
 |---|---|---|---|
-| `apiClient.test.js` | Layer API | 12 | 6 funzioni fetch con params, unwrap, slug diversi |
+| `apiClient.test.js` | Layer API | 8 | 6 funzioni fetch con params, unwrap, slug diversi |
 | `HomePage.test.jsx` | HomePage | 11 | hero, loading skeleton, corpi in evidenza, stats dashboard, error API |
 | `CorpiLista.test.jsx` | CorpiLista | 12 | filtri categoria/tipo, ricerca, paginazione, reset, error |
 | `CorpoDettaglio.test.jsx` | CorpoDettaglio | 16 | metriche, galleria, curiosità, missioni, simili, 404, compare link |
 | `Comparatore.test.jsx` | Comparatore | 10 | dropdown, pre-fill URL, tabella confronto, esclusione pianeta |
+
+#### Error handling + UI (4 file, 22 test)
+
+| File | Componente | Test | Cosa copre |
+|---|---|---|---|
+| `NotFound.test.jsx` | NotFound | 4 | rendering, title, home link, icon |
+| `ErrorBoundary.test.jsx` | ErrorBoundary | 4 | catches error, shows fallback, hides children, home link |
+| `TimelineMissioni.test.jsx` | TimelineMissioni | 8 | empty, renders missions, dates, status icons, links |
+| `Navbar.test.jsx` | Navbar | 6 | renders links, active state, mobile toggle, aria |
 
 ## Scrivere nuovi test
 

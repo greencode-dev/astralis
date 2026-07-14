@@ -5,11 +5,11 @@
     <div class="max-w-3xl mx-auto space-y-8">
         @include('profile.partials.update-profile-information-form')
 
-        <div style="border-top: 1px solid rgba(34, 211, 238, 0.1);"></div>
+        <div class="border-t border-admin-primary/10"></div>
 
         @include('profile.partials.update-password-form')
 
-        <div style="border-top: 1px solid rgba(34, 211, 238, 0.1);"></div>
+        <div class="border-t border-admin-primary/10"></div>
 
         @include('profile.partials.delete-user-form')
     </div>

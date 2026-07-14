@@ -7,7 +7,7 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        './resources/js/**/*.jsx',
+        './resources/js/**/*.{js,jsx}',
     ],
 
     theme: {
@@ -26,6 +26,10 @@ export default {
                     secondary: '#A855F7',
                     accent: '#F97316',
                     warning: '#FACC15',
+                    success: '#22C55E',
+                    error: '#EF4444',
+                    neutral: '#6B7280',
+                    'chart-text': '#B8B8D0',
                 },
             },
         },

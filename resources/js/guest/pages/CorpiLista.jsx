@@ -108,7 +108,7 @@ export default function CorpiLista() {
                             key={cat.id}
                             onClick={() => handleCategoria(cat.slug)}
                             aria-current={categoriaSlug === cat.slug ? 'page' : undefined}
-                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE] ${categoriaSlug === cat.slug ? 'bg-admin-primary/15 text-admin-primary border border-admin-primary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
+                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-admin-primary/8 hover:text-admin-primary ${categoriaSlug === cat.slug ? 'bg-admin-primary/15 text-admin-primary border border-admin-primary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
                         >
                             {cat.nome}
                             {cat.corpi_count !== undefined && (
@@ -125,7 +125,7 @@ export default function CorpiLista() {
                             key={t}
                             onClick={() => handleTipo(t)}
                             aria-current={tipo === t ? 'page' : undefined}
-                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-[rgba(168,85,247,0.08)] hover:text-[#A855F7] ${tipo === t ? 'bg-admin-secondary/15 text-admin-secondary border border-admin-secondary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
+                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-admin-secondary/8 hover:text-admin-secondary ${tipo === t ? 'bg-admin-secondary/15 text-admin-secondary border border-admin-secondary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
                         >
                             {t}
                         </button>
@@ -136,7 +136,7 @@ export default function CorpiLista() {
             {loading ? (
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {Array.from({ length: 8 }).map((_, i) => (
-                        <div key={i} className="rounded-xl animate-pulse bg-admin-card h-[320px]" />
+                        <div key={i} className="rounded-xl animate-pulse bg-admin-card h-[320px]" role="status" aria-label="Caricamento..." />
                     ))}
                 </div>
             ) : corpi.length > 0 ? (
@@ -159,7 +159,7 @@ export default function CorpiLista() {
                                 onClick={() => setPage(p => Math.max(1, p - 1))}
                                 disabled={page === 1}
                                 aria-label="Pagina precedente"
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)] text-admin-primary border border-admin-primary/30"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-admin-primary/10 text-admin-primary border border-admin-primary/30"
                             >
                                 ← Precedente
                             </button>
@@ -175,7 +175,7 @@ export default function CorpiLista() {
                                             <button
                                                 onClick={() => setPage(p)}
                                                 aria-current={p === page ? 'page' : undefined}
-                                                className={`w-9 h-9 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] ${p === page ? 'bg-admin-primary/15 text-admin-primary' : 'text-admin-dim'}`}
+                                                className={`w-9 h-9 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-admin-primary/8 ${p === page ? 'bg-admin-primary/15 text-admin-primary' : 'text-admin-dim'}`}
                                             >
                                                 {p}
                                             </button>
@@ -187,7 +187,7 @@ export default function CorpiLista() {
                                 onClick={() => setPage(p => Math.min(lastPage, p + 1))}
                                 disabled={page === lastPage}
                                 aria-label="Pagina successiva"
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-[rgba(34,211,238,0.1)] text-admin-primary border border-admin-primary/30"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-admin-primary/10 text-admin-primary border border-admin-primary/30"
                             >
                                 Successiva →
                             </button>

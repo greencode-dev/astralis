@@ -18,7 +18,6 @@ import {
     fetchCategorie,
     fetchCorpoCeleste,
     fetchSimili,
-    fetchMissioni,
     fetchDashboardStats,
 } from '../apiClient';
 
@@ -109,26 +108,6 @@ describe('apiClient', () => {
             await fetchSimili(42);
 
             expect(mockGet).toHaveBeenCalledWith('/corpi-celesti/42/simili', { signal: undefined });
-        });
-    });
-
-    describe('fetchMissioni', () => {
-        it('calls GET /missioni with params', async () => {
-            const missioni = { data: [{ id: 1, nome: 'Apollo 11' }] };
-            mockGet.mockResolvedValue({ data: missioni });
-
-            const result = await fetchMissioni({ stato: 'completata' });
-
-            expect(mockGet).toHaveBeenCalledWith('/missioni', { params: { stato: 'completata' }, signal: undefined });
-            expect(result).toEqual(missioni);
-        });
-
-        it('calls with default empty params', async () => {
-            mockGet.mockResolvedValue({ data: { data: [] } });
-
-            await fetchMissioni();
-
-            expect(mockGet).toHaveBeenCalledWith('/missioni', { params: {}, signal: undefined });
         });
     });
 

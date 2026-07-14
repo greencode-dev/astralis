@@ -21,12 +21,12 @@
         <table class="w-full text-sm">
             <thead>
                 <tr class="border-b border-admin-primary/10">
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Icona</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Nome</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Colore</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Descrizione</th>
-                    <th class="text-center py-3 px-4 font-medium text-gray-400">Corpi</th>
-                    <th class="text-right py-3 px-4 font-medium text-gray-400">Azioni</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Icona</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Nome</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Colore</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Descrizione</th>
+                    <th scope="col" class="text-center py-3 px-4 font-medium text-gray-400">Corpi</th>
+                    <th scope="col" class="text-right py-3 px-4 font-medium text-gray-400">Azioni</th>
                 </tr>
             </thead>
             <tbody>

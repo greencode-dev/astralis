@@ -67,7 +67,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 173 test PHPUnit, 439 assertion. `npm test` — 87 test Vitest. Totale: 260 test.
+- **Run**: `php artisan test` — 215 test PHPUnit, 522 assertion. `npm test` — 107 test Vitest. Totale: 322 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -141,7 +141,7 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 
-Tutte le task del piano sono completate. 235 test (173 PHPUnit + 62 Vitest).
+Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
 
 | Task | Descrizione | Stato |
 |------|-------------|-------|

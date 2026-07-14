@@ -136,7 +136,23 @@
 - **Soluzione**: Aggiunto `if (app()->environment('testing')) return;` in `CorpoCelesteObserver::created()`. Aggiunto `Http::fake()` nei setUp dei test feature come safety net
 - **Sintomi**: Test fallivano in assenza di connessione Internet; rallentamento suite test (~30s per timeout); galleria popolata da dati NASA reali durante i test
 - **Fixato in**: Fase 13.0
+
+### [17] Logout reindirizza a homepage invece di login — 07/07/2026
 - **Descrizione**: Dopo il logout, l'utente veniva reindirizzato a `/` (guest SPA) invece che a `/login`
 - **Causa**: AuthenticatedSessionController::destroy() usava `return redirect('/')`
 - **Soluzione**: Sostituito con `return redirect('/login')`
 - **Fixato in**: Fase 11.0
+
+### [21] LightboxGalleria: parentesi mancante memo() — 14/07/2026
+- **Descrizione**: 2 file di test Vitest fallivano con parse error `Expected ')' but found EOF` in LightboxGalleria.jsx:70
+- **Causa**: Chiusura `memo()` mancante — il file terminava con `}` invece di `});`
+- **Soluzione**: Sostituito `}` con `});` alla riga 70 di `LightboxGalleria.jsx`
+- **Sintomi**: LightboxGalleria.test.jsx (8 test) e CorpoDettaglio.test.jsx (16 test) non compilavano
+- **Fixato in**: Task 40
+
+### [22] CorpoDettaglio.test: import typo mockCorpoDettaglioDettaglio — 14/07/2026
+- **Descrizione**: 14 test in CorpoDettaglio.test.jsx fallivano con `ReferenceError: mockCorpoDettaglio is not defined`
+- **Causa**: Import da fixtures.js usava `mockCorpoDettaglioDettaglio` (doppio "Dettaglio") ma il test referenziava `mockCorpoDettaglio`
+- **Soluzione**: Corretto import in `mockCorpoDettaglio`
+- **Sintomi**: 14/17 test in CorpoDettaglio.test.jsx fallivano
+- **Fixato in**: Task 40

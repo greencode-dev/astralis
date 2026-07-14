@@ -27,9 +27,13 @@ apiClient.interceptors.response.use(
         }
 
         if (error.response) {
-            console.error(`API Error ${error.response.status}:`, error.response.data);
+            if (import.meta.env.DEV) {
+                console.error(`API Error ${error.response.status}:`, error.response.data);
+            }
         } else if (error.request) {
-            console.error('API Network Error:', error.message);
+            if (import.meta.env.DEV) {
+                console.error('API Network Error:', error.message);
+            }
         }
 
         return Promise.reject(error);
@@ -50,10 +54,6 @@ export function fetchCorpoCeleste(slug, signal) {
 
 export function fetchSimili(id, signal) {
     return apiClient.get(`/corpi-celesti/${id}/simili`, { signal }).then(res => res.data);
-}
-
-export function fetchMissioni(params = {}, signal) {
-    return apiClient.get('/missioni', { params, signal }).then(res => res.data);
 }
 
 export function fetchDashboardStats(signal) {

@@ -16,6 +16,8 @@ class CategoriaResource extends JsonResource
             'icona' => $this->icona,
             'descrizione' => $this->descrizione,
             'colore' => $this->colore,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'corpi_count' => $this->whenCounted('corpiCelesti'),
             'corpi_celesti' => CorpoCelesteResource::collection($this->whenLoaded('corpiCelesti')),
         ];

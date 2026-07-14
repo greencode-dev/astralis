@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import CorpoDettaglio from '../pages/CorpoDettaglio';
-import { mockCorpoDettaglioDettaglio, marte, venere } from './fixtures';
+import { mockCorpoDettaglio, marte, venere } from './fixtures';
 
 vi.mock('../apiClient', () => ({
     fetchCorpoCeleste: vi.fn(),

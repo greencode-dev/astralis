@@ -337,7 +337,7 @@ php artisan astralis:gallery --fix
 npx graphify update .
 
 # 6. Verifica
-php artisan test   # 103 test PHPUnit
+php artisan test   # 173 test PHPUnit
 npm test           # 87 test Vitest
 
 # 7. Apri l'agente e digita:

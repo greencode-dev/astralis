@@ -9,7 +9,7 @@ export default function Navbar() {
     const location = useLocation();
 
     return (
-        <nav className="bg-admin-card border-b border-admin-primary/10">
+        <nav className="bg-admin-card border-b border-admin-primary/10" aria-label="Navigazione principale">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <Link to="/" className="flex items-center gap-3">
@@ -24,7 +24,8 @@ export default function Navbar() {
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.08)] hover:text-[#22D3EE] ${isActive ? 'bg-admin-primary/15 text-admin-primary' : 'text-admin-dim'}`}
+                                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-admin-primary/8 hover:text-admin-primary ${isActive ? 'bg-admin-primary/15 text-admin-primary' : 'text-admin-dim'}`}
+                                    aria-current={isActive ? 'page' : undefined}
                                 >
                                     {link.label}
                                 </Link>

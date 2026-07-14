@@ -24,7 +24,7 @@ class CorpoCelesteController extends Controller
         }
 
         if ($request->filled('search')) {
-            $search = $request->search;
+            $search = static::escapeLike($request->search);
             $query->where(function ($q) use ($search) {
                 $q->where('nome', 'like', "%{$search}%")
                   ->orWhere('descrizione', 'like', "%{$search}%");

@@ -51,7 +51,7 @@ export default function HomePage() {
                             <div className="flex flex-wrap gap-4">
                                 <Link
                                     to="/corpi-celesti"
-                                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-[#1CB8D0] bg-admin-primary text-admin-bg"
+                                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:brightness-110 bg-admin-primary text-admin-bg"
                                 >
                                     <Telescope size={20} />
                                     Esplora i Corpi Celesti
@@ -109,6 +109,8 @@ export default function HomePage() {
                                 <div
                                     key={i}
                                     className="rounded-xl animate-pulse bg-admin-card h-[300px]"
+                                    role="status"
+                                    aria-label="Caricamento..."
                                 />
                             ))}
                         </div>
@@ -131,7 +133,7 @@ export default function HomePage() {
                     <div className="text-center mt-10">
                         <Link
                             to="/corpi-celesti"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-[rgba(34,211,238,0.1)] hover:border-[rgba(34,211,238,0.6)] text-admin-primary border border-admin-primary/30"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-admin-primary/10 hover:border-admin-primary/60 text-admin-primary border border-admin-primary/30"
                         >
                             Vedi tutti i corpi celesti →
                         </Link>

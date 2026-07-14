@@ -27,7 +27,7 @@ export default class ErrorBoundary extends Component {
                         <p className="mb-8 text-admin-dim">Si è verificato un errore imprevisto. Prova a riprovare o torna alla home.</p>
                         <div className="flex items-center justify-center gap-4">
                             <button onClick={this.handleRetry}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-[rgba(34,211,238,0.2)] bg-admin-primary/15 text-admin-primary">
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-admin-primary/20 bg-admin-primary/15 text-admin-primary">
                                 <RotateCcw size={16} /> Riprova
                             </button>
                             <Link to="/"

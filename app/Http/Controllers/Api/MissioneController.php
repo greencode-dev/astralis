@@ -22,7 +22,7 @@ class MissioneController extends Controller
         }
 
         $perPage = max(1, min($request->integer('per_page', 20), 100));
-        $missioni = $query->with('corpiCelesti')->orderBy('data_lancio', 'desc')->paginate($perPage);
+        $missioni = $query->with('corpiCelesti.categoria', 'corpiCelesti.galleria')->orderBy('data_lancio', 'desc')->paginate($perPage);
 
         return MissioneResource::collection($missioni);
     }

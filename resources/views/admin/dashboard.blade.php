@@ -60,10 +60,10 @@
             <table class="w-full text-sm">
                 <thead>
                     <tr class="border-b border-admin-primary/10">
-                        <th class="text-left py-3 px-4 font-medium text-gray-400">Nome</th>
-                        <th class="text-left py-3 px-4 font-medium text-gray-400">Categoria</th>
-                        <th class="text-left py-3 px-4 font-medium text-gray-400">Tipo</th>
-                        <th class="text-left py-3 px-4 font-medium text-gray-400">Distanza (km)</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Nome</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Categoria</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Tipo</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Distanza (km)</th>
                     </tr>
                 </thead>
                 <tbody>

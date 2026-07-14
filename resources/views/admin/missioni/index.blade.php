@@ -21,12 +21,12 @@
         <table class="w-full text-sm">
             <thead>
                 <tr class="border-b border-admin-primary/10">
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Logo</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Nome</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Agenzia</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Lancio</th>
-                    <th class="text-center py-3 px-4 font-medium text-gray-400">Stato</th>
-                    <th class="text-right py-3 px-4 font-medium text-gray-400">Azioni</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Logo</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Nome</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Agenzia</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Lancio</th>
+                    <th scope="col" class="text-center py-3 px-4 font-medium text-gray-400">Stato</th>
+                    <th scope="col" class="text-right py-3 px-4 font-medium text-gray-400">Azioni</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,16 +47,7 @@
                         <td class="py-3 px-4 text-gray-400">{{ $missione->agenzia ?? '—' }}</td>
                         <td class="py-3 px-4 text-gray-400">{{ $missione->data_lancio ? $missione->data_lancio->format('d/m/Y') : '—' }}</td>
                         <td class="py-3 px-4 text-center">
-                            @php
-                                $stato = $missione->stato ?? 'completata';
-                                $colors = [
-                                    'completata' => ['bg' => 'rgba(34,197,94,0.15)', 'text' => 'var(--admin-success)'],
-                                    'in corso' => ['bg' => 'rgba(34,211,238,0.15)', 'text' => 'var(--admin-primary)'],
-                                    'pianificata' => ['bg' => 'rgba(250,204,21,0.15)', 'text' => 'var(--admin-warning)'],
-                                ];
-                                $c = $colors[$stato] ?? ['bg' => 'rgba(107,114,128,0.15)', 'text' => 'var(--admin-neutral)'];
-                            @endphp
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium" style="background-color: {{ $c['bg'] }}; color: {{ $c['text'] }};">{{ ucfirst($stato) }}</span>
+                            @include('admin.partials.mission-stato-badge', ['missione' => $missione])
                         </td>
                         <td class="py-3 px-4 text-right">
                             @include('admin.partials.index-actions', ['showRoute' => route('admin.missioni.show', $missione), 'editRoute' => route('admin.missioni.edit', $missione), 'deleteRoute' => route('admin.missioni.destroy', $missione), 'entityName' => $missione->nome])

@@ -1,5 +1,39 @@
 # Changelog
 
+## Tasks 65-70 — Test Coverage Expansion (14/07/2026)
+
+- **Task 65** — WordMapServiceTest: 8 test (translate known/unknown/empty/compound, planet names, prepositions, guessEnglishName)
+- **Task 66** — CleanupGalleryDuplicatesTest: 9 test (dedup keeps first, dry-run, no-duplicates warning, orphan clean/check, broken/working remote URLs, different corpi same path)
+- **Task 67** — Frontend tests: NotFound(4), ErrorBoundary(4), TimelineMissioni(8), Navbar(6) — 22 new Vitest
+- **Task 69** — SearchAndFilterTest: 10 test (search across 5 entities, wildcard %/ _ escaping, stato filter)
+- **Task 70** — ApiEdgeCaseTest: 17 test (percent/underscore, per_page zero, agenzia+stato, empty DB, factory, dashboard, galleria/curiosita)
+- **Total**: 322 test (215 PHPUnit + 107 Vitest), 522+ assertion — tutti verdi
+
+## Tasks 60-64 — Accessibility, Tailwind, Delete Protection (14/07/2026)
+
+- **Task 60** — Inline styles → Tailwind in Blade: guest.blade.php, layouts/guest.blade.php, profile/edit.blade.php
+- **Task 61** — Inline rgba() → Tailwind admin-primary/XX in 20 JSX components
+- **Task 62** — Inline styles → Tailwind in Comparatore.jsx, HomePage.jsx (#1CB8D0 → hover:brightness-110)
+- **Task 63** — Accessibility: `scope="col"` on 43 `<th>` elements, `aria-label` on search inputs, `aria-label` on Navbar, `aria-current="page"` on active nav
+- **Task 64** — Loading skeletons: `role="status" aria-label="Caricamento..."` on all skeletons
+- **Task 59** — GalleriaController delete protection: blocks deletion if image used as main CorpoCeleste image
+- **Task 58** — Curiosita showRoute + mission-stato-badge partial extracted
+- **Task 57** — Removed `@testing-library/user-event` dep, dead `fetchMissioni` tests
+- **Task 56** — Config fixes: `locale=it`, `name=Astralis`, `APP_LOCALE=it`
+- **Task 55** — Removed unused CSS: `.animate-in-view-left`, `.animate-in-view-scale`
+
+## Tasks 52-53 — DRY Refactoring (14/07/2026)
+
+- **Task 52** — ClearDashboardCache trait: extracted to `Admin/Concerns/ClearDashboardCache.php`, applied to 5 controllers, removed 16 duplicate Cache::forget pairs
+- **Task 53** — ImageUploadService: extracted to `Services/ImageUploadService.php`, GalleriaController + MissioneController use method injection
+
+## Task 40 — Debug generale post-ottimizzazione
+
+### 14/07/2026 — fix: 2 bug Vitest (LightboxGalleria memo close + CorpoDettaglio import typo)
+- `LightboxGalleria.jsx:70`: `}` → `});` — chiusura `memo()` mancante, causava parse error in 2 file di test
+- `CorpoDettaglio.test.jsx:4`: `mockCorpoDettaglioDettaglio` → `mockCorpoDettaglio` — typo nell'import da fixtures.js
+- **260 test totali** (173 PHPUnit + 87 Vitest), tutti verdi
+
 ## Ottimizzazione — UI/UX Review (Fase 10)
 
 ### Task 10.3 — 11/07/2026 — Frontend Design review

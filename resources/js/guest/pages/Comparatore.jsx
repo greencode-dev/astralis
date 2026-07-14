@@ -131,10 +131,9 @@ export default function Comparatore() {
 
                             return (
                                 <div key={campo.key}
-                                    className="grid grid-cols-3 gap-4 p-4 items-center"
+                                    className={`grid grid-cols-3 gap-4 p-4 items-center ${idx < campi.length - 1 ? 'border-b border-admin-primary/5' : ''}`}
                                     style={{
                                         backgroundColor: idx % 2 === 0 ? '#0E0E24' : '#111128',
-                                        borderBottom: idx < campi.length - 1 ? '1px solid rgba(34, 211, 238, 0.05)' : 'none',
                                     }}>
                                     <div className="text-sm font-medium text-admin-muted">{campo.label}</div>
                                     <div className={`text-center text-sm font-semibold ${valPrimo ? 'text-admin-text' : 'text-admin-muted'}`}>

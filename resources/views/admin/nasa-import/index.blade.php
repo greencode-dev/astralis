@@ -24,10 +24,10 @@
         <table class="w-full text-sm">
             <thead>
                 <tr class="border-b border-admin-primary/10">
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Corpo Celeste</th>
-                    <th class="text-left py-3 px-4 font-medium text-gray-400">Categoria</th>
-                    <th class="text-center py-3 px-4 font-medium text-gray-400">Immagine</th>
-                    <th class="text-right py-3 px-4 font-medium text-gray-400">Azione</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Corpo Celeste</th>
+                    <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Categoria</th>
+                    <th scope="col" class="text-center py-3 px-4 font-medium text-gray-400">Immagine</th>
+                    <th scope="col" class="text-right py-3 px-4 font-medium text-gray-400">Azione</th>
                 </tr>
             </thead>
             <tbody>

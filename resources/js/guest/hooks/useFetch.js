@@ -1,11 +1,9 @@
 import { useReducer, useEffect } from 'react';
 
-const initialState = { data: null, loading: true, error: null };
-
 function fetchReducer(state, action) {
   switch (action.type) {
     case 'START':
-      return { ...state, loading: true, error: null };
+      return { data: null, loading: true, error: null };
     case 'SUCCESS':
       return { data: action.payload, loading: false, error: null };
     case 'ERROR':
