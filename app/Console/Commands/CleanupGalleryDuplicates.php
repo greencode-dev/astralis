@@ -186,10 +186,6 @@ class CleanupGalleryDuplicates extends Command
     {
         $http = Http::timeout(5)->withoutVerifying();
 
-        if (app()->environment('local', 'testing')) {
-            $http = $http->withoutVerifying();
-        }
-
         try {
             return $http->head($url)->status();
         } catch (\Exception $e) {

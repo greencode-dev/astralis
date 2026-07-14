@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CorpoCeleste;
 use App\Jobs\ImportNasaImage;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\View\View;
 
 class NasaImportController extends Controller
@@ -16,7 +17,8 @@ class NasaImportController extends Controller
 
         $corpi = CorpoCeleste::with('categoria')
             ->orderBy('nome')
-            ->get();
+            ->paginate(20)
+            ->withQueryString();
 
         return view('admin.nasa-import.index', compact('corpi'));
     }
@@ -35,14 +37,16 @@ class NasaImportController extends Controller
     {
         $this->authorize('create', CorpoCeleste::class);
 
-        $count = 0;
-        CorpoCeleste::chunk(50, function ($corpi) use (&$count) {
-            foreach ($corpi as $corpo) {
-                ImportNasaImage::dispatch($corpo, galleryCount: 5, force: true);
-                $count++;
-            }
-        });
+        $jobs = [];
+        CorpoCeleste::whereNull('immagine')
+            ->chunk(50, function ($corpi) use (&$jobs) {
+                foreach ($corpi as $corpo) {
+                    $jobs[] = ImportNasaImage::dispatch($corpo, galleryCount: 5, force: true)
+                        ->delay(now()->addSeconds(count($jobs) * 2));
+                }
+            });
 
+        $count = count($jobs);
         return redirect()->route('admin.nasa-import.index')
             ->with('success', "{$count} importazioni NASA sono state accodate per l'elaborazione.");
     }

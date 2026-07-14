@@ -13,6 +13,6 @@ class CorpoCelesteObserver
             return;
         }
 
-        ImportNasaImage::dispatch($corpo);
+        ImportNasaImage::dispatch($corpo, galleryCount: 5);
     }
 }

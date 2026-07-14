@@ -78,7 +78,15 @@ class WordMapService
 
     public function translate(string $nomeIt): string
     {
-        return collect(explode(' ', $nomeIt))
+        $input = $nomeIt;
+
+        foreach ($this->wordMap as $key => $value) {
+            if (str_contains($key, ' ') && str_contains(mb_strtolower($input), mb_strtolower($key))) {
+                $input = str_ireplace($key, $value, $input);
+            }
+        }
+
+        return collect(explode(' ', $input))
             ->map(fn($w) => $this->wordMap[ucfirst($w)] ?? $this->wordMap[$w] ?? $w)
             ->filter()
             ->implode(' ');

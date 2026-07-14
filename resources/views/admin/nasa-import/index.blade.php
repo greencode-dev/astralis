@@ -105,11 +105,15 @@
         </table>
     </div>
 
+    <div class="mt-4">
+        {{ $corpi->links() }}
+    </div>
+
     <div class="mt-6 p-4 rounded-lg bg-admin-card border border-admin-primary/10">
         <h3 class="text-sm font-semibold mb-2 text-admin-text">Note</h3>
         <ul class="text-xs space-y-1 text-gray-400">
             <li>• Le immagini vengono cercate su <a href="https://images.nasa.gov" target="_blank" class="transition-colors hover:text-admin-secondary text-admin-primary">images.nasa.gov</a> usando il nome del corpo celeste.</li>
-            <li>• Le immagini vengono ridimensionate a 800px (lato lungo) e salvate in <code class="text-yellow-400">storage/app/public/corpi-celesti/</code>.</li>
+            <li>• Le immagini vengono memorizzate come URL remoti diretti dalla NASA (nessun download locale).</li>
             <li>• Il pulsante <strong class="text-admin-primary">Importa da NASA</strong> appare solo per i corpi senza immagine.</li>
             <li>• Il pulsante <strong class="text-admin-accent">Forza import</strong> sostituisce l'immagine esistente.</li>
         </ul>

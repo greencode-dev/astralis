@@ -1,5 +1,22 @@
 # Changelog
 
+## Ottimizzazioni NASA Import — P1/P2 (14/07/2026)
+
+- **P2** — `CleanupGalleryDuplicates::headRequest()`: rimosso `withoutVerifying()` ridondante (chiamato 2 volte)
+- **P6** — `WordMapService::translate()`: ora prova prima le chiavi compound ("Via Lattea", "Buco Nero") prima del word-by-word
+- **O6** — `NasaImportController::importAll()`: dispatch con `delay(now() + 2s * index)` per evitare flooding della coda
+- **O9** — `NasaImageService::searchNasa()`: cache NASA ora memorizza solo metadati essenziali (nasa_id, title, photographer, description, keywords, links) invece della response intera
+
+## Bugfix NASA Import — B1-B6 (14/07/2026)
+
+- **B1** — `ImportNasaImage::$galleryCount`: default 3→5, uniformato con controller e command
+- **B2** — `ImportNasaImage`: aggiunti `$tries=3`, `$timeout=120`, metodo `failed()` con Log::error
+- **B3** — `NasaImageService::importAll()`: rimosso `set_time_limit(300)` (inefficace nei queue worker)
+- **B4** — `NasaImportController::index()`: `->get()` → `->paginate(20)` + links nella view
+- **B5** — `NasaImportController::importAll()`: filtra solo corpi senza immagine (`whereNull('immagine')`)
+- **B6** — Note `nasa-import/index.blade.php`: aggiornato — gli URL sono ora remoti NASA, non file locali
+- Bonus: `ImportNasaImage::handle()` ora invalida cache dashboard dopo import
+
 ## Tasks 65-70 — Test Coverage Expansion (14/07/2026)
 
 - **Task 65** — WordMapServiceTest: 8 test (translate known/unknown/empty/compound, planet names, prepositions, guessEnglishName)

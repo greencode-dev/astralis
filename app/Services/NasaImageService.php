@@ -42,7 +42,21 @@ class NasaImageService
                 $items = $response->json('collection.items');
 
                 if (!empty($items)) {
-                    return ['success' => true, 'items' => $items, 'used_query' => $q];
+                    $slimItems = array_map(function ($item) {
+                        $data = $item['data'][0] ?? [];
+                        return [
+                            'data' => [[
+                                'nasa_id' => $data['nasa_id'] ?? null,
+                                'title' => $data['title'] ?? null,
+                                'photographer' => $data['photographer'] ?? $data['secondary_creator'] ?? null,
+                                'description' => $data['description'] ?? null,
+                                'keywords' => $data['keywords'] ?? [],
+                            ]],
+                            'links' => $item['links'] ?? [],
+                        ];
+                    }, $items);
+
+                    return ['success' => true, 'items' => $slimItems, 'used_query' => $q];
                 }
             }
 
@@ -182,8 +196,6 @@ class NasaImageService
 
     public function importAll(int $galleryCount = 5, bool $force = false, bool $updateDescription = false): array
     {
-        set_time_limit(300);
-
         $results = [];
         $successCount = 0;
         $totalCount = 0;
