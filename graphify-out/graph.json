@@ -50,7 +50,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
-      "community": 279,
+      "community": 254,
       "norm_label": "cleanupgalleryduplicates"
     },
     {
@@ -70,7 +70,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_construct",
-      "community": 279,
+      "community": 254,
       "norm_label": ".__construct()"
     },
     {
@@ -80,7 +80,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handle",
-      "community": 279,
+      "community": 254,
       "norm_label": ".handle()"
     },
     {
@@ -90,7 +90,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removeduplicates",
-      "community": 279,
+      "community": 254,
       "norm_label": ".removeduplicates()"
     },
     {
@@ -100,7 +100,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_cleanorphanedfiles",
-      "community": 279,
+      "community": 254,
       "norm_label": ".cleanorphanedfiles()"
     },
     {
@@ -110,7 +110,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
-      "community": 279,
+      "community": 254,
       "norm_label": ".handlebrokenurls()"
     },
     {
@@ -120,7 +120,7 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_headrequest",
-      "community": 279,
+      "community": 254,
       "norm_label": ".headrequest()"
     },
     {
@@ -130,7 +130,7 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlesync",
-      "community": 279,
+      "community": 254,
       "norm_label": ".handlesync()"
     },
     {
@@ -140,7 +140,7 @@
       "source_location": "L244",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handledelete",
-      "community": 279,
+      "community": 254,
       "norm_label": ".handledelete()"
     },
     {
@@ -330,7 +330,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller",
-      "community": 50,
+      "community": 253,
       "norm_label": "corpocelestecontroller.php"
     },
     {
@@ -340,7 +340,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
-      "community": 50,
+      "community": 253,
       "norm_label": "corpocelestecontroller"
     },
     {
@@ -350,7 +350,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_index",
-      "community": 50,
+      "community": 253,
       "norm_label": ".index()"
     },
     {
@@ -360,7 +360,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_php_request",
-      "community": 50,
+      "community": 253,
       "norm_label": "request"
     },
     {
@@ -370,7 +370,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_php_view",
-      "community": 50,
+      "community": 253,
       "norm_label": "view"
     },
     {
@@ -380,7 +380,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_create",
-      "community": 50,
+      "community": 253,
       "norm_label": ".create()"
     },
     {
@@ -390,7 +390,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
-      "community": 277,
+      "community": 253,
       "norm_label": ".store()"
     },
     {
@@ -400,67 +400,67 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_php_redirectresponse",
-      "community": 50,
+      "community": 253,
       "norm_label": "redirectresponse"
     },
     {
       "label": ".show()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L61",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
-      "community": 50,
+      "community": 253,
       "norm_label": ".show()"
     },
     {
       "label": ".edit()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L70",
+      "source_location": "L76",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
-      "community": 50,
+      "community": 253,
       "norm_label": ".edit()"
     },
     {
       "label": ".update()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L79",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
-      "community": 50,
+      "community": 253,
       "norm_label": ".update()"
     },
     {
       "label": ".destroy()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L97",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
-      "community": 50,
+      "community": 253,
       "norm_label": ".destroy()"
     },
     {
       "label": ".setImageFromGallery()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L109",
+      "source_location": "L127",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
-      "community": 50,
+      "community": 253,
       "norm_label": ".setimagefromgallery()"
     },
     {
       "label": ".suggestNome()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L128",
+      "source_location": "L146",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
-      "community": 286,
+      "community": 253,
       "norm_label": ".suggestnome()"
     },
     {
@@ -470,7 +470,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_php_jsonresponse",
-      "community": 286,
+      "community": 253,
       "norm_label": "jsonresponse"
     },
     {
@@ -600,27 +600,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller",
-      "community": 276,
+      "community": 220,
       "norm_label": "dashboardcontroller.php"
     },
     {
       "label": "DashboardController",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L13",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
-      "community": 276,
+      "community": 220,
       "norm_label": "dashboardcontroller"
     },
     {
       "label": ".index()",
       "file_type": "code",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L15",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
-      "community": 276,
+      "community": 220,
       "norm_label": ".index()"
     },
     {
@@ -630,7 +630,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_dashboardcontroller_php_view",
-      "community": 276,
+      "community": 220,
       "norm_label": "view"
     },
     {
@@ -960,7 +960,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller",
-      "community": 6,
+      "community": 244,
       "norm_label": "categoriacontroller"
     },
     {
@@ -970,7 +970,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_index",
-      "community": 6,
+      "community": 244,
       "norm_label": ".index()"
     },
     {
@@ -980,7 +980,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_show",
-      "community": 6,
+      "community": 244,
       "norm_label": ".show()"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller",
-      "community": 3,
+      "community": 6,
       "norm_label": "missionecontroller.php"
     },
     {
@@ -1180,7 +1180,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller",
-      "community": 3,
+      "community": 6,
       "norm_label": "missionecontroller"
     },
     {
@@ -1190,7 +1190,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_index",
-      "community": 3,
+      "community": 6,
       "norm_label": ".index()"
     },
     {
@@ -1200,7 +1200,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_php_request",
-      "community": 3,
+      "community": 6,
       "norm_label": "request"
     },
     {
@@ -1210,7 +1210,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "app_http_controllers_api_missionecontroller_missionecontroller_show",
-      "community": 3,
+      "community": 6,
       "norm_label": ".show()"
     },
     {
@@ -1790,7 +1790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_controller",
-      "community": 274,
+      "community": 170,
       "norm_label": "controller.php"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_http_controllers_controller_controller",
-      "community": 274,
+      "community": 170,
       "norm_label": "controller"
     },
     {
@@ -1810,7 +1810,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "authorizesrequests",
-      "community": 274,
+      "community": 170,
       "norm_label": "authorizesrequests"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "validatesrequests",
-      "community": 274,
+      "community": 170,
       "norm_label": "validatesrequests"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_controller_controller_escapelike",
-      "community": 274,
+      "community": 170,
       "norm_label": ".escapelike()"
     },
     {
@@ -1840,7 +1840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller",
-      "community": 280,
+      "community": 11,
       "norm_label": "profilecontroller.php"
     },
     {
@@ -1850,7 +1850,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller",
-      "community": 280,
+      "community": 11,
       "norm_label": "profilecontroller"
     },
     {
@@ -1860,7 +1860,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_edit",
-      "community": 280,
+      "community": 11,
       "norm_label": ".edit()"
     },
     {
@@ -1870,7 +1870,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_request",
-      "community": 280,
+      "community": 11,
       "norm_label": "request"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_view",
-      "community": 280,
+      "community": 11,
       "norm_label": "view"
     },
     {
@@ -1890,7 +1890,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_update",
-      "community": 280,
+      "community": 11,
       "norm_label": ".update()"
     },
     {
@@ -1900,7 +1900,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_php_redirectresponse",
-      "community": 280,
+      "community": 11,
       "norm_label": "redirectresponse"
     },
     {
@@ -1910,7 +1910,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "app_http_controllers_profilecontroller_profilecontroller_destroy",
-      "community": 280,
+      "community": 11,
       "norm_label": ".destroy()"
     },
     {
@@ -1920,7 +1920,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest",
-      "community": 273,
+      "community": 11,
       "norm_label": "aggiornaordinerequest.php"
     },
     {
@@ -1930,7 +1930,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest_aggiornaordinerequest",
-      "community": 273,
+      "community": 11,
       "norm_label": "aggiornaordinerequest"
     },
     {
@@ -1940,7 +1940,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "formrequest",
-      "community": 273,
+      "community": 11,
       "norm_label": "formrequest"
     },
     {
@@ -1950,7 +1950,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest_aggiornaordinerequest_authorize",
-      "community": 273,
+      "community": 11,
       "norm_label": ".authorize()"
     },
     {
@@ -1960,7 +1960,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest_aggiornaordinerequest_rules",
-      "community": 273,
+      "community": 11,
       "norm_label": ".rules()"
     },
     {
@@ -1970,7 +1970,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest",
-      "community": 10,
+      "community": 289,
       "norm_label": "loginrequest.php"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest",
-      "community": 10,
+      "community": 49,
       "norm_label": "loginrequest"
     },
     {
@@ -1990,7 +1990,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authorize",
-      "community": 10,
+      "community": 49,
       "norm_label": ".authorize()"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_rules",
-      "community": 10,
+      "community": 49,
       "norm_label": ".rules()"
     },
     {
@@ -2010,7 +2010,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authenticate",
-      "community": 10,
+      "community": 49,
       "norm_label": ".authenticate()"
     },
     {
@@ -2020,7 +2020,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_ensureisnotratelimited",
-      "community": 10,
+      "community": 49,
       "norm_label": ".ensureisnotratelimited()"
     },
     {
@@ -2030,7 +2030,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_throttlekey",
-      "community": 10,
+      "community": 49,
       "norm_label": ".throttlekey()"
     },
     {
@@ -2040,7 +2040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest",
-      "community": 280,
+      "community": 11,
       "norm_label": "profileupdaterequest.php"
     },
     {
@@ -2050,7 +2050,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest",
-      "community": 280,
+      "community": 11,
       "norm_label": "profileupdaterequest"
     },
     {
@@ -2060,7 +2060,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_http_requests_profileupdaterequest_profileupdaterequest_rules",
-      "community": 280,
+      "community": 11,
       "norm_label": ".rules()"
     },
     {
@@ -2110,7 +2110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest",
-      "community": 277,
+      "community": 253,
       "norm_label": "storecorpocelesterequest.php"
     },
     {
@@ -2120,7 +2120,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest",
-      "community": 277,
+      "community": 253,
       "norm_label": "storecorpocelesterequest"
     },
     {
@@ -2130,7 +2130,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_authorize",
-      "community": 277,
+      "community": 253,
       "norm_label": ".authorize()"
     },
     {
@@ -2140,7 +2140,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_rules",
-      "community": 277,
+      "community": 253,
       "norm_label": ".rules()"
     },
     {
@@ -2150,7 +2150,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_passedvalidation",
-      "community": 277,
+      "community": 253,
       "norm_label": ".passedvalidation()"
     },
     {
@@ -2200,7 +2200,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_storegalleriacorporequest",
-      "community": 273,
+      "community": 11,
       "norm_label": "storegalleriacorporequest.php"
     },
     {
@@ -2210,7 +2210,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_storegalleriacorporequest_storegalleriacorporequest",
-      "community": 273,
+      "community": 11,
       "norm_label": "storegalleriacorporequest"
     },
     {
@@ -2220,7 +2220,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_storegalleriacorporequest_storegalleriacorporequest_authorize",
-      "community": 273,
+      "community": 11,
       "norm_label": ".authorize()"
     },
     {
@@ -2230,7 +2230,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_storegalleriacorporequest_storegalleriacorporequest_rules",
-      "community": 273,
+      "community": 11,
       "norm_label": ".rules()"
     },
     {
@@ -2280,7 +2280,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_suggestnomerequest",
-      "community": 286,
+      "community": 11,
       "norm_label": "suggestnomerequest.php"
     },
     {
@@ -2290,7 +2290,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_suggestnomerequest_suggestnomerequest",
-      "community": 286,
+      "community": 11,
       "norm_label": "suggestnomerequest"
     },
     {
@@ -2300,7 +2300,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_suggestnomerequest_suggestnomerequest_authorize",
-      "community": 286,
+      "community": 11,
       "norm_label": ".authorize()"
     },
     {
@@ -2310,7 +2310,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_suggestnomerequest_suggestnomerequest_rules",
-      "community": 286,
+      "community": 11,
       "norm_label": ".rules()"
     },
     {
@@ -2350,7 +2350,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest",
-      "community": 277,
+      "community": 253,
       "norm_label": "updatecorpocelesterequest.php"
     },
     {
@@ -2360,7 +2360,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest",
-      "community": 277,
+      "community": 253,
       "norm_label": "updatecorpocelesterequest"
     },
     {
@@ -2370,7 +2370,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest_rules",
-      "community": 277,
+      "community": 253,
       "norm_label": ".rules()"
     },
     {
@@ -2400,7 +2400,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest",
-      "community": 273,
+      "community": 11,
       "norm_label": "updategalleriacorporequest.php"
     },
     {
@@ -2410,7 +2410,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest_updategalleriacorporequest",
-      "community": 273,
+      "community": 11,
       "norm_label": "updategalleriacorporequest"
     },
     {
@@ -2420,7 +2420,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest_updategalleriacorporequest_authorize",
-      "community": 273,
+      "community": 11,
       "norm_label": ".authorize()"
     },
     {
@@ -2430,7 +2430,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest_updategalleriacorporequest_rules",
-      "community": 273,
+      "community": 11,
       "norm_label": ".rules()"
     },
     {
@@ -2767,7 +2767,7 @@
       "label": ".failed()",
       "file_type": "code",
       "source_file": "app/Jobs/ImportNasaImage.php",
-      "source_location": "L42",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "app_jobs_importnasaimage_importnasaimage_failed",
       "community": 2,
@@ -2800,7 +2800,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_models_categoria_categoria",
-      "community": 44,
+      "community": 250,
       "norm_label": "categoria"
     },
     {
@@ -2840,7 +2840,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "app_models_categoria_categoria_getslugoptions",
-      "community": 44,
+      "community": 103,
       "norm_label": ".getslugoptions()"
     },
     {
@@ -2850,7 +2850,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_categoria_php_slugoptions",
-      "community": 44,
+      "community": 103,
       "norm_label": "slugoptions"
     },
     {
@@ -2860,7 +2860,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "app_models_categoria_categoria_corpicelesti",
-      "community": 44,
+      "community": 103,
       "norm_label": ".corpicelesti()"
     },
     {
@@ -2870,7 +2870,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_categoria_php_hasmany",
-      "community": 44,
+      "community": 103,
       "norm_label": "hasmany"
     },
     {
@@ -2880,7 +2880,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_models_corpoceleste",
-      "community": 103,
+      "community": 25,
       "norm_label": "corpoceleste.php"
     },
     {
@@ -2890,7 +2890,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste",
-      "community": 250,
+      "community": 162,
       "norm_label": "corpoceleste"
     },
     {
@@ -2900,7 +2900,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_casts",
-      "community": 250,
+      "community": 162,
       "norm_label": ".casts()"
     },
     {
@@ -2910,7 +2910,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getslugoptions",
-      "community": 250,
+      "community": 25,
       "norm_label": ".getslugoptions()"
     },
     {
@@ -2920,7 +2920,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_slugoptions",
-      "community": 250,
+      "community": 25,
       "norm_label": "slugoptions"
     },
     {
@@ -2930,7 +2930,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_categoria",
-      "community": 250,
+      "community": 25,
       "norm_label": ".categoria()"
     },
     {
@@ -2940,7 +2940,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongsto",
-      "community": 250,
+      "community": 25,
       "norm_label": "belongsto"
     },
     {
@@ -2950,7 +2950,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_galleria",
-      "community": 250,
+      "community": 162,
       "norm_label": ".galleria()"
     },
     {
@@ -2960,7 +2960,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_hasmany",
-      "community": 250,
+      "community": 162,
       "norm_label": "hasmany"
     },
     {
@@ -2970,7 +2970,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_curiosita",
-      "community": 250,
+      "community": 162,
       "norm_label": ".curiosita()"
     },
     {
@@ -2980,7 +2980,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_missioni",
-      "community": 250,
+      "community": 25,
       "norm_label": ".missioni()"
     },
     {
@@ -2990,7 +2990,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_corpoceleste_php_belongstomany",
-      "community": 250,
+      "community": 25,
       "norm_label": "belongstomany"
     },
     {
@@ -3000,7 +3000,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getnomedisplayattribute",
-      "community": 250,
+      "community": 162,
       "norm_label": ".getnomedisplayattribute()"
     },
     {
@@ -3010,7 +3010,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "app_models_corpoceleste_corpoceleste_getimmagineurlattribute",
-      "community": 250,
+      "community": 162,
       "norm_label": ".getimmagineurlattribute()"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_models_curiosita_curiosita_corpoceleste",
-      "community": 15,
+      "community": 103,
       "norm_label": ".corpoceleste()"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_models_curiosita_php_belongsto",
-      "community": 15,
+      "community": 103,
       "norm_label": "belongsto"
     },
     {
@@ -3210,7 +3210,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "notifiable",
-      "community": 182,
+      "community": 281,
       "norm_label": "notifiable"
     },
     {
@@ -3260,7 +3260,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy",
-      "community": 7,
+      "community": 182,
       "norm_label": "categoriapolicy.php"
     },
     {
@@ -3270,7 +3270,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy_categoriapolicy",
-      "community": 7,
+      "community": 182,
       "norm_label": "categoriapolicy"
     },
     {
@@ -3280,7 +3280,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy_categoriapolicy_before",
-      "community": 7,
+      "community": 182,
       "norm_label": ".before()"
     },
     {
@@ -3290,7 +3290,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy_categoriapolicy_viewany",
-      "community": 7,
+      "community": 182,
       "norm_label": ".viewany()"
     },
     {
@@ -3300,7 +3300,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy_categoriapolicy_view",
-      "community": 7,
+      "community": 182,
       "norm_label": ".view()"
     },
     {
@@ -3310,7 +3310,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy_categoriapolicy_create",
-      "community": 7,
+      "community": 182,
       "norm_label": ".create()"
     },
     {
@@ -3320,7 +3320,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy_categoriapolicy_update",
-      "community": 7,
+      "community": 182,
       "norm_label": ".update()"
     },
     {
@@ -3330,7 +3330,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_categoriapolicy_categoriapolicy_delete",
-      "community": 7,
+      "community": 182,
       "norm_label": ".delete()"
     },
     {
@@ -3430,7 +3430,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy",
-      "community": 196,
+      "community": 182,
       "norm_label": "curiositapolicy"
     },
     {
@@ -3440,7 +3440,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_before",
-      "community": 196,
+      "community": 182,
       "norm_label": ".before()"
     },
     {
@@ -3450,7 +3450,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_viewany",
-      "community": 196,
+      "community": 182,
       "norm_label": ".viewany()"
     },
     {
@@ -3460,7 +3460,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_view",
-      "community": 196,
+      "community": 182,
       "norm_label": ".view()"
     },
     {
@@ -3470,7 +3470,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_create",
-      "community": 196,
+      "community": 182,
       "norm_label": ".create()"
     },
     {
@@ -3480,7 +3480,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_update",
-      "community": 196,
+      "community": 182,
       "norm_label": ".update()"
     },
     {
@@ -3490,7 +3490,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_curiositapolicy_curiositapolicy_delete",
-      "community": 196,
+      "community": 182,
       "norm_label": ".delete()"
     },
     {
@@ -3500,7 +3500,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_galleriacorpopolicy",
-      "community": 219,
+      "community": 196,
       "norm_label": "galleriacorpopolicy.php"
     },
     {
@@ -3580,7 +3580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_policies_missionepolicy",
-      "community": 64,
+      "community": 182,
       "norm_label": "missionepolicy.php"
     },
     {
@@ -3590,7 +3590,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy",
-      "community": 64,
+      "community": 182,
       "norm_label": "missionepolicy"
     },
     {
@@ -3600,7 +3600,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_before",
-      "community": 64,
+      "community": 182,
       "norm_label": ".before()"
     },
     {
@@ -3610,7 +3610,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_viewany",
-      "community": 64,
+      "community": 182,
       "norm_label": ".viewany()"
     },
     {
@@ -3620,7 +3620,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_view",
-      "community": 64,
+      "community": 182,
       "norm_label": ".view()"
     },
     {
@@ -3630,7 +3630,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_create",
-      "community": 64,
+      "community": 182,
       "norm_label": ".create()"
     },
     {
@@ -3640,7 +3640,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_update",
-      "community": 64,
+      "community": 182,
       "norm_label": ".update()"
     },
     {
@@ -3650,7 +3650,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_policies_missionepolicy_missionepolicy_delete",
-      "community": 64,
+      "community": 182,
       "norm_label": ".delete()"
     },
     {
@@ -3660,7 +3660,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider",
-      "community": 2,
+      "community": 196,
       "norm_label": "appserviceprovider.php"
     },
     {
@@ -3670,7 +3670,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider",
-      "community": 2,
+      "community": 196,
       "norm_label": "appserviceprovider"
     },
     {
@@ -3680,7 +3680,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "serviceprovider",
-      "community": 2,
+      "community": 196,
       "norm_label": "serviceprovider"
     },
     {
@@ -3690,7 +3690,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_register",
-      "community": 2,
+      "community": 196,
       "norm_label": ".register()"
     },
     {
@@ -3700,7 +3700,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_boot",
-      "community": 2,
+      "community": 196,
       "norm_label": ".boot()"
     },
     {
@@ -3710,7 +3710,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider",
-      "community": 103,
+      "community": 196,
       "norm_label": "authserviceprovider.php"
     },
     {
@@ -3720,7 +3720,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider",
-      "community": 2,
+      "community": 196,
       "norm_label": "authserviceprovider"
     },
     {
@@ -3730,7 +3730,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_providers_authserviceprovider_authserviceprovider_boot",
-      "community": 2,
+      "community": 196,
       "norm_label": ".boot()"
     },
     {
@@ -3780,7 +3780,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "app_services_imageuploadservice_imageuploadservice_upload",
-      "community": 247,
+      "community": 11,
       "norm_label": ".upload()"
     },
     {
@@ -3790,7 +3790,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "uploadedfile",
-      "community": 247,
+      "community": 281,
       "norm_label": "uploadedfile"
     },
     {
@@ -4020,7 +4020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bootstrap_providers",
-      "community": 2,
+      "community": 196,
       "norm_label": "providers.php"
     },
     {
@@ -4540,7 +4540,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "config_auth",
-      "community": 10,
+      "community": 281,
       "norm_label": "auth.php"
     },
     {
@@ -8130,7 +8130,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "routes_auth",
-      "community": 170,
+      "community": 289,
       "norm_label": "auth.php"
     },
     {
@@ -9100,7 +9100,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_admin_admintestcase",
-      "community": 182,
+      "community": 213,
       "norm_label": "admintestcase.php"
     },
     {
@@ -9110,7 +9110,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_feature_admin_admintestcase_admintestcase",
-      "community": 182,
+      "community": 213,
       "norm_label": "admintestcase"
     },
     {
@@ -9130,7 +9130,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_admin_admintestcase_admintestcase_setup",
-      "community": 182,
+      "community": 213,
       "norm_label": ".setup()"
     },
     {
@@ -9910,7 +9910,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest",
-      "community": 247,
+      "community": 245,
       "norm_label": "galleriacrudtest"
     },
     {
@@ -9920,7 +9920,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_setup",
-      "community": 247,
+      "community": 245,
       "norm_label": ".setup()"
     },
     {
@@ -9930,7 +9930,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_guest_cannot_access_admin_index",
-      "community": 247,
+      "community": 245,
       "norm_label": ".test_guest_cannot_access_admin_index()"
     },
     {
@@ -9940,7 +9940,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_admin_can_view_index",
-      "community": 247,
+      "community": 245,
       "norm_label": ".test_admin_can_view_index()"
     },
     {
@@ -9950,7 +9950,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_admin_can_view_create_form",
-      "community": 247,
+      "community": 245,
       "norm_label": ".test_admin_can_view_create_form()"
     },
     {
@@ -9960,7 +9960,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_admin_can_store_galleria",
-      "community": 247,
+      "community": 281,
       "norm_label": ".test_admin_can_store_galleria()"
     },
     {
@@ -9970,7 +9970,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_store_validates_required_fields",
-      "community": 247,
+      "community": 245,
       "norm_label": ".test_store_validates_required_fields()"
     },
     {
@@ -9980,7 +9980,7 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_admin_can_view_edit_form",
-      "community": 247,
+      "community": 245,
       "norm_label": ".test_admin_can_view_edit_form()"
     },
     {
@@ -9990,7 +9990,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_admin_can_update_galleria",
-      "community": 247,
+      "community": 245,
       "norm_label": ".test_admin_can_update_galleria()"
     },
     {
@@ -10000,7 +10000,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_admin_can_delete_galleria",
-      "community": 247,
+      "community": 245,
       "norm_label": ".test_admin_can_delete_galleria()"
     },
     {
@@ -10010,7 +10010,7 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "tests_feature_admin_galleriacrudtest_galleriacrudtest_test_non_admin_cannot_store_galleria",
-      "community": 247,
+      "community": 281,
       "norm_label": ".test_non_admin_cannot_store_galleria()"
     },
     {
@@ -10380,7 +10380,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest",
-      "community": 44,
+      "community": 7,
       "norm_label": "searchandfiltertest"
     },
     {
@@ -10390,7 +10390,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_corpi_search_filters_by_nome",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_corpi_search_filters_by_nome()"
     },
     {
@@ -10400,7 +10400,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_corpi_search_filters_by_nome_it",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_corpi_search_filters_by_nome_it()"
     },
     {
@@ -10410,7 +10410,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_categorie_search_filters_by_nome",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_categorie_search_filters_by_nome()"
     },
     {
@@ -10420,7 +10420,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_missioni_search_filters_by_nome",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_missioni_search_filters_by_nome()"
     },
     {
@@ -10430,7 +10430,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_missioni_filter_by_stato",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_missioni_filter_by_stato()"
     },
     {
@@ -10440,7 +10440,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_curiosita_search_filters_by_titolo",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_curiosita_search_filters_by_titolo()"
     },
     {
@@ -10450,7 +10450,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_galleria_search_filters_by_didascalia",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_galleria_search_filters_by_didascalia()"
     },
     {
@@ -10460,7 +10460,7 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_search_escapes_wildcard_percent",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_search_escapes_wildcard_percent()"
     },
     {
@@ -10470,7 +10470,7 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "tests_feature_admin_searchandfiltertest_searchandfiltertest_test_search_escapes_wildcard_underscore",
-      "community": 44,
+      "community": 7,
       "norm_label": ".test_search_escapes_wildcard_underscore()"
     },
     {
@@ -10610,7 +10610,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "tests_feature_api_apiedgecasetest_apiedgecasetest_test_categoria_index_returns_all",
-      "community": 44,
+      "community": 250,
       "norm_label": ".test_categoria_index_returns_all()"
     },
     {
@@ -10670,7 +10670,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest",
-      "community": 213,
+      "community": 50,
       "norm_label": "categoriaapitest.php"
     },
     {
@@ -10680,7 +10680,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest",
-      "community": 213,
+      "community": 50,
       "norm_label": "categoriaapitest"
     },
     {
@@ -10690,7 +10690,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_setup",
-      "community": 213,
+      "community": 50,
       "norm_label": ".setup()"
     },
     {
@@ -10700,7 +10700,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_index_returns_all_categorie",
-      "community": 213,
+      "community": 50,
       "norm_label": ".test_index_returns_all_categorie()"
     },
     {
@@ -10710,7 +10710,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_categoria_with_corpi_count",
-      "community": 213,
+      "community": 50,
       "norm_label": ".test_show_returns_categoria_with_corpi_count()"
     },
     {
@@ -10720,7 +10720,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_404_for_invalid_slug",
-      "community": 213,
+      "community": 50,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -10730,7 +10730,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest",
-      "community": 213,
+      "community": 25,
       "norm_label": "corpocelesteapitest.php"
     },
     {
@@ -10740,7 +10740,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest",
-      "community": 49,
+      "community": 162,
       "norm_label": "corpocelesteapitest"
     },
     {
@@ -10750,7 +10750,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_setup",
-      "community": 49,
+      "community": 162,
       "norm_label": ".setup()"
     },
     {
@@ -10760,7 +10760,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_index_returns_paginated_corpi",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_index_returns_paginated_corpi()"
     },
     {
@@ -10770,7 +10770,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_index_filters_by_categoria",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_index_filters_by_categoria()"
     },
     {
@@ -10780,7 +10780,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_index_filters_by_tipo",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_index_filters_by_tipo()"
     },
     {
@@ -10790,7 +10790,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_index_filters_by_in_evidenza",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_index_filters_by_in_evidenza()"
     },
     {
@@ -10800,7 +10800,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_index_searches_by_name",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_index_searches_by_name()"
     },
     {
@@ -10810,7 +10810,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_index_respects_per_page_limit",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_index_respects_per_page_limit()"
     },
     {
@@ -10820,7 +10820,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_index_caps_per_page_at_100",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_index_caps_per_page_at_100()"
     },
     {
@@ -10830,7 +10830,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_show_returns_corpo_with_relations",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_show_returns_corpo_with_relations()"
     },
     {
@@ -10840,7 +10840,7 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_show_returns_404_for_invalid_slug",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -10850,7 +10850,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_simili_returns_up_to_4_corpi_same_categoria",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_simili_returns_up_to_4_corpi_same_categoria()"
     },
     {
@@ -10860,7 +10860,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "tests_feature_api_corpocelesteapitest_corpocelesteapitest_test_simili_excludes_current_corpo",
-      "community": 49,
+      "community": 162,
       "norm_label": ".test_simili_excludes_current_corpo()"
     },
     {
@@ -10870,7 +10870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest",
-      "community": 103,
+      "community": 213,
       "norm_label": "curiositaapitest.php"
     },
     {
@@ -10900,7 +10900,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_test_index_returns_all_curiosita",
-      "community": 15,
+      "community": 213,
       "norm_label": ".test_index_returns_all_curiosita()"
     },
     {
@@ -10910,7 +10910,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_dashboardapitest",
-      "community": 103,
+      "community": 242,
       "norm_label": "dashboardapitest.php"
     },
     {
@@ -10980,7 +10980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest",
-      "community": 103,
+      "community": 213,
       "norm_label": "galleriaapitest.php"
     },
     {
@@ -11010,7 +11010,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_galleriaapitest_galleriaapitest_test_index_returns_all_galleria",
-      "community": 245,
+      "community": 213,
       "norm_label": ".test_index_returns_all_galleria()"
     },
     {
@@ -11020,7 +11020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest",
-      "community": 213,
+      "community": 64,
       "norm_label": "missioneapitest.php"
     },
     {
@@ -11030,7 +11030,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest",
-      "community": 3,
+      "community": 64,
       "norm_label": "missioneapitest"
     },
     {
@@ -11040,7 +11040,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_setup",
-      "community": 3,
+      "community": 64,
       "norm_label": ".setup()"
     },
     {
@@ -11050,7 +11050,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_index_returns_all_missioni",
-      "community": 3,
+      "community": 64,
       "norm_label": ".test_index_returns_all_missioni()"
     },
     {
@@ -11060,7 +11060,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_missione",
-      "community": 3,
+      "community": 64,
       "norm_label": ".test_show_returns_missione()"
     },
     {
@@ -11070,7 +11070,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_404_for_invalid_slug",
-      "community": 3,
+      "community": 64,
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -11080,7 +11080,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest",
-      "community": 281,
+      "community": 213,
       "norm_label": "authenticationtest.php"
     },
     {
@@ -11090,7 +11090,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest",
-      "community": 220,
+      "community": 213,
       "norm_label": "authenticationtest"
     },
     {
@@ -11100,7 +11100,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_login_screen_can_be_rendered",
-      "community": 220,
+      "community": 213,
       "norm_label": ".test_login_screen_can_be_rendered()"
     },
     {
@@ -11110,7 +11110,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_authenticate_using_the_login_screen",
-      "community": 220,
+      "community": 213,
       "norm_label": ".test_users_can_authenticate_using_the_login_screen()"
     },
     {
@@ -11120,7 +11120,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_not_authenticate_with_invalid_password",
-      "community": 220,
+      "community": 213,
       "norm_label": ".test_users_can_not_authenticate_with_invalid_password()"
     },
     {
@@ -11130,7 +11130,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "tests_feature_auth_authenticationtest_authenticationtest_test_users_can_logout",
-      "community": 220,
+      "community": 213,
       "norm_label": ".test_users_can_logout()"
     },
     {
@@ -11140,7 +11140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest",
-      "community": 281,
+      "community": 213,
       "norm_label": "emailverificationtest.php"
     },
     {
@@ -11150,7 +11150,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest",
-      "community": 244,
+      "community": 213,
       "norm_label": "emailverificationtest"
     },
     {
@@ -11160,7 +11160,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_verification_screen_can_be_rendered",
-      "community": 244,
+      "community": 213,
       "norm_label": ".test_email_verification_screen_can_be_rendered()"
     },
     {
@@ -11170,7 +11170,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_can_be_verified",
-      "community": 244,
+      "community": 213,
       "norm_label": ".test_email_can_be_verified()"
     },
     {
@@ -11180,7 +11180,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "tests_feature_auth_emailverificationtest_emailverificationtest_test_email_is_not_verified_with_invalid_hash",
-      "community": 244,
+      "community": 213,
       "norm_label": ".test_email_is_not_verified_with_invalid_hash()"
     },
     {
@@ -11190,7 +11190,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest",
-      "community": 213,
+      "community": 215,
       "norm_label": "passwordconfirmationtest.php"
     },
     {
@@ -11200,7 +11200,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest",
-      "community": 182,
+      "community": 215,
       "norm_label": "passwordconfirmationtest"
     },
     {
@@ -11210,7 +11210,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_confirm_password_screen_can_be_rendered",
-      "community": 182,
+      "community": 215,
       "norm_label": ".test_confirm_password_screen_can_be_rendered()"
     },
     {
@@ -11220,7 +11220,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_can_be_confirmed",
-      "community": 182,
+      "community": 215,
       "norm_label": ".test_password_can_be_confirmed()"
     },
     {
@@ -11230,7 +11230,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordconfirmationtest_passwordconfirmationtest_test_password_is_not_confirmed_with_invalid_password",
-      "community": 182,
+      "community": 215,
       "norm_label": ".test_password_is_not_confirmed_with_invalid_password()"
     },
     {
@@ -11240,7 +11240,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordresettest",
-      "community": 213,
+      "community": 290,
       "norm_label": "passwordresettest.php"
     },
     {
@@ -11320,7 +11320,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_password_can_be_updated",
-      "community": 182,
+      "community": 213,
       "norm_label": ".test_password_can_be_updated()"
     },
     {
@@ -11330,7 +11330,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_feature_auth_passwordupdatetest_passwordupdatetest_test_correct_password_must_be_provided_to_update_password",
-      "community": 182,
+      "community": 213,
       "norm_label": ".test_correct_password_must_be_provided_to_update_password()"
     },
     {
@@ -11410,7 +11410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_profiletest",
-      "community": 213,
+      "community": 161,
       "norm_label": "profiletest.php"
     },
     {
@@ -11650,7 +11650,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_nasaimageservicetest",
-      "community": 103,
+      "community": 254,
       "norm_label": "nasaimageservicetest.php"
     },
     {
@@ -14374,10 +14374,20 @@
       "norm_label": "changelog"
     },
     {
-      "label": "Ottimizzazioni NASA Import \u2014 P1/P2 (14/07/2026)",
+      "label": "Fix Dashboard Cache Bug (14/07/2026)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
       "source_location": "L3",
+      "_origin": "ast",
+      "id": "docs_changelog_fix_dashboard_cache_bug_14_07_2026",
+      "community": 5,
+      "norm_label": "fix dashboard cache bug (14/07/2026)"
+    },
+    {
+      "label": "Ottimizzazioni NASA Import \u2014 P1/P2 (14/07/2026)",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "docs_changelog_ottimizzazioni_nasa_import_p1_p2_14_07_2026",
       "community": 5,
@@ -14387,7 +14397,7 @@
       "label": "Bugfix NASA Import \u2014 B1-B6 (14/07/2026)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L10",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "docs_changelog_bugfix_nasa_import_b1_b6_14_07_2026",
       "community": 5,
@@ -14397,7 +14407,7 @@
       "label": "Tasks 65-70 \u2014 Test Coverage Expansion (14/07/2026)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L20",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "docs_changelog_tasks_65_70_test_coverage_expansion_14_07_2026",
       "community": 5,
@@ -14407,7 +14417,7 @@
       "label": "Tasks 60-64 \u2014 Accessibility, Tailwind, Delete Protection (14/07/2026)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L29",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "docs_changelog_tasks_60_64_accessibility_tailwind_delete_protection_14_07_2026",
       "community": 5,
@@ -14417,7 +14427,7 @@
       "label": "Tasks 52-53 \u2014 DRY Refactoring (14/07/2026)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L42",
+      "source_location": "L49",
       "_origin": "ast",
       "id": "docs_changelog_tasks_52_53_dry_refactoring_14_07_2026",
       "community": 5,
@@ -14427,7 +14437,7 @@
       "label": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L47",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "docs_changelog_task_40_debug_generale_post_ottimizzazione",
       "community": 5,
@@ -14437,7 +14447,7 @@
       "label": "14/07/2026 \u2014 fix: 2 bug Vitest (LightboxGalleria memo close + CorpoDettaglio import typo)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L49",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "docs_changelog_14_07_2026_fix_2_bug_vitest_lightboxgalleria_memo_close_corpodettaglio_import_typo",
       "community": 5,
@@ -14447,7 +14457,7 @@
       "label": "Ottimizzazione \u2014 UI/UX Review (Fase 10)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L54",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "docs_changelog_ottimizzazione_ui_ux_review_fase_10",
       "community": 246,
@@ -14457,7 +14467,7 @@
       "label": "Task 10.3 \u2014 11/07/2026 \u2014 Frontend Design review",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L56",
+      "source_location": "L63",
       "_origin": "ast",
       "id": "docs_changelog_task_10_3_11_07_2026_frontend_design_review",
       "community": 246,
@@ -14467,7 +14477,7 @@
       "label": "Task 10.1 \u2014 11/07/2026 \u2014 Web Design Guidelines review",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L81",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "docs_changelog_task_10_1_11_07_2026_web_design_guidelines_review",
       "community": 246,
@@ -14477,7 +14487,7 @@
       "label": "Task 10.2 \u2014 11/07/2026 \u2014 Writing Guidelines review",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L97",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "docs_changelog_task_10_2_11_07_2026_writing_guidelines_review",
       "community": 246,
@@ -14487,7 +14497,7 @@
       "label": "Ottimizzazione \u2014 Test Refactoring (Fase 9)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L108",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "docs_changelog_ottimizzazione_test_refactoring_fase_9",
       "community": 251,
@@ -14497,7 +14507,7 @@
       "label": "Tasks 9.1 + 9.3 + 9.7 \u2014 11/07/2026 \u2014 AdminTestCase refactoring + Http::fake uniform + DashboardApiTest",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L110",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "docs_changelog_tasks_9_1_9_3_9_7_11_07_2026_admintestcase_refactoring_http_fake_uniform_dashboardapitest",
       "community": 251,
@@ -14507,7 +14517,7 @@
       "label": "Tasks 9.6 \u2014 11/07/2026 \u2014 Copertura test mancante",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L119",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "docs_changelog_tasks_9_6_11_07_2026_copertura_test_mancante",
       "community": 251,
@@ -14517,7 +14527,7 @@
       "label": "Ottimizzazione P1",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L125",
+      "source_location": "L132",
       "_origin": "ast",
       "id": "docs_changelog_ottimizzazione_p1",
       "community": 243,
@@ -14527,7 +14537,7 @@
       "label": "Task 5.1 \u2014 11/07/2026 \u2014 admin-input class per auth/profile views",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L127",
+      "source_location": "L134",
       "_origin": "ast",
       "id": "docs_changelog_task_5_1_11_07_2026_admin_input_class_per_auth_profile_views",
       "community": 243,
@@ -14537,7 +14547,7 @@
       "label": "Task 5.2 \u2014 11/07/2026 \u2014 Hardcoded hex \u2192 CSS variables",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L135",
+      "source_location": "L142",
       "_origin": "ast",
       "id": "docs_changelog_task_5_2_11_07_2026_hardcoded_hex_css_variables",
       "community": 243,
@@ -14547,7 +14557,7 @@
       "label": "Task 5.3 \u2014 11/07/2026 \u2014 Partials extraction completa",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L142",
+      "source_location": "L149",
       "_origin": "ast",
       "id": "docs_changelog_task_5_3_11_07_2026_partials_extraction_completa",
       "community": 243,
@@ -14557,7 +14567,7 @@
       "label": "Task 5.4 \u2014 11/07/2026 \u2014 Form partial unificato create/edit",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L153",
+      "source_location": "L160",
       "_origin": "ast",
       "id": "docs_changelog_task_5_4_11_07_2026_form_partial_unificato_create_edit",
       "community": 243,
@@ -14567,7 +14577,7 @@
       "label": "Fase 0 \u2014 Setup",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L160",
+      "source_location": "L167",
       "_origin": "ast",
       "id": "docs_changelog_fase_0_setup",
       "community": 5,
@@ -14577,7 +14587,7 @@
       "label": "0.1 \u2014 02/07/2026 \u2014 `6df5099` \u2014 feat: setup iniziale Laravel + Breeze + React + documentazione",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L162",
+      "source_location": "L169",
       "_origin": "ast",
       "id": "docs_changelog_0_1_02_07_2026_6df5099_feat_setup_iniziale_laravel_breeze_react_documentazione",
       "community": 5,
@@ -14587,27 +14597,27 @@
       "label": "Fase 1 \u2014 Database e Modelli",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L168",
+      "source_location": "L175",
       "_origin": "ast",
       "id": "docs_changelog_fase_1_database_e_modelli",
-      "community": 300,
+      "community": 5,
       "norm_label": "fase 1 \u2014 database e modelli"
     },
     {
       "label": "1.0 \u2014 03/07/2026 \u2014 `0a57208` \u2014 feat: database e modelli con seeders",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L170",
+      "source_location": "L177",
       "_origin": "ast",
       "id": "docs_changelog_1_0_03_07_2026_0a57208_feat_database_e_modelli_con_seeders",
-      "community": 300,
+      "community": 5,
       "norm_label": "1.0 \u2014 03/07/2026 \u2014 `0a57208` \u2014 feat: database e modelli con seeders"
     },
     {
       "label": "Fase 2 \u2014 Backoffice Blade CRUD",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L178",
+      "source_location": "L185",
       "_origin": "ast",
       "id": "docs_changelog_fase_2_backoffice_blade_crud",
       "community": 164,
@@ -14617,7 +14627,7 @@
       "label": "2.1 \u2014 03/07/2026 \u2014 `070da55` \u2014 feat: admin backoffice layout, sidebar navigation e dashboard",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L180",
+      "source_location": "L187",
       "_origin": "ast",
       "id": "docs_changelog_2_1_03_07_2026_070da55_feat_admin_backoffice_layout_sidebar_navigation_e_dashboard",
       "community": 164,
@@ -14627,7 +14637,7 @@
       "label": "2.2 \u2014 03/07/2026 \u2014 `758be4c` \u2014 feat: CRUD categorie backoffice",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L187",
+      "source_location": "L194",
       "_origin": "ast",
       "id": "docs_changelog_2_2_03_07_2026_758be4c_feat_crud_categorie_backoffice",
       "community": 164,
@@ -14637,7 +14647,7 @@
       "label": "2.3 \u2014 03/07/2026 \u2014 `18a6b20` \u2014 feat: CRUD corpi celesti backoffice",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L194",
+      "source_location": "L201",
       "_origin": "ast",
       "id": "docs_changelog_2_3_03_07_2026_18a6b20_feat_crud_corpi_celesti_backoffice",
       "community": 164,
@@ -14647,7 +14657,7 @@
       "label": "2.4 \u2014 03/07/2026 \u2014 `6d86177` \u2014 feat: CRUD missioni backoffice",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L197",
+      "source_location": "L204",
       "_origin": "ast",
       "id": "docs_changelog_2_4_03_07_2026_6d86177_feat_crud_missioni_backoffice",
       "community": 164,
@@ -14657,7 +14667,7 @@
       "label": "2.5 \u2014 03/07/2026 \u2014 `2f8a67e` \u2014 feat: CRUD curiosit\u00e0 backoffice",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L204",
+      "source_location": "L211",
       "_origin": "ast",
       "id": "docs_changelog_2_5_03_07_2026_2f8a67e_feat_crud_curiosit\u00e0_backoffice",
       "community": 164,
@@ -14667,7 +14677,7 @@
       "label": "2.6 \u2014 03/07/2026 \u2014 `99615bb` \u2014 feat: CRUD galleria backoffice",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L210",
+      "source_location": "L217",
       "_origin": "ast",
       "id": "docs_changelog_2_6_03_07_2026_99615bb_feat_crud_galleria_backoffice",
       "community": 164,
@@ -14677,7 +14687,7 @@
       "label": "Fase 3 \u2014 API REST",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L217",
+      "source_location": "L224",
       "_origin": "ast",
       "id": "docs_changelog_fase_3_api_rest",
       "community": 5,
@@ -14687,7 +14697,7 @@
       "label": "3.0 \u2014 03/07/2026 \u2014 feat: API REST (10 endpoint JSON)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L219",
+      "source_location": "L226",
       "_origin": "ast",
       "id": "docs_changelog_3_0_03_07_2026_feat_api_rest_10_endpoint_json",
       "community": 5,
@@ -14697,7 +14707,7 @@
       "label": "Fase 4 \u2014 React Guest Frontend",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L228",
+      "source_location": "L235",
       "_origin": "ast",
       "id": "docs_changelog_fase_4_react_guest_frontend",
       "community": 5,
@@ -14707,7 +14717,7 @@
       "label": "4.0 \u2014 04/07/2026 \u2014 feat: React SPA guest (homepage + lista corpi celesti)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L230",
+      "source_location": "L237",
       "_origin": "ast",
       "id": "docs_changelog_4_0_04_07_2026_feat_react_spa_guest_homepage_lista_corpi_celesti",
       "community": 5,
@@ -14717,7 +14727,7 @@
       "label": "Fase 5 \u2014 React Guest Dettaglio, Lightbox, Missioni, Comparatore",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L239",
+      "source_location": "L246",
       "_origin": "ast",
       "id": "docs_changelog_fase_5_react_guest_dettaglio_lightbox_missioni_comparatore",
       "community": 5,
@@ -14727,7 +14737,7 @@
       "label": "5.0 \u2014 04/07/2026 \u2014 `0e18a60` \u2014 feat: dettaglio corpo celeste, lightbox, timeline missioni, comparatore pianeti",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L241",
+      "source_location": "L248",
       "_origin": "ast",
       "id": "docs_changelog_5_0_04_07_2026_0e18a60_feat_dettaglio_corpo_celeste_lightbox_timeline_missioni_comparatore_pianeti",
       "community": 5,
@@ -14737,7 +14747,7 @@
       "label": "Fase 6 \u2014 Fix sistema solare, NASA Import, Profilo, Documentazione",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L251",
+      "source_location": "L258",
       "_origin": "ast",
       "id": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "community": 163,
@@ -14747,7 +14757,7 @@
       "label": "6.0 \u2014 04/07/2026 \u2014 `45e01ad` \u2014 docs: Fase 6 completata",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L253",
+      "source_location": "L260",
       "_origin": "ast",
       "id": "docs_changelog_6_0_04_07_2026_45e01ad_docs_fase_6_completata",
       "community": 163,
@@ -14757,7 +14767,7 @@
       "label": "6.1 \u2014 04/07/2026 \u2014 `fde7aaf` \u2014 fix: orbita pianeti - transformOrigin centrato sul Sole",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L256",
+      "source_location": "L263",
       "_origin": "ast",
       "id": "docs_changelog_6_1_04_07_2026_fde7aaf_fix_orbita_pianeti_transformorigin_centrato_sul_sole",
       "community": 163,
@@ -14767,7 +14777,7 @@
       "label": "6.2 \u2014 04/07/2026 \u2014 `a6e612a` \u2014 fix: etichette pianeti solidali e contro-rotanti nell orbita",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L260",
+      "source_location": "L267",
       "_origin": "ast",
       "id": "docs_changelog_6_2_04_07_2026_a6e612a_fix_etichette_pianeti_solidali_e_contro_rotanti_nell_orbita",
       "community": 163,
@@ -14777,7 +14787,7 @@
       "label": "6.3 \u2014 04/07/2026 \u2014 `4e354ea` \u2014 fix: orbita pianeti con useMotionValue/useTransform",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L264",
+      "source_location": "L271",
       "_origin": "ast",
       "id": "docs_changelog_6_3_04_07_2026_4e354ea_fix_orbita_pianeti_con_usemotionvalue_usetransform",
       "community": 163,
@@ -14787,7 +14797,7 @@
       "label": "6.4 \u2014 04/07/2026 \u2014 `196dd15` \u2014 fix: orbite e pianeti allineati al Sole",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L269",
+      "source_location": "L276",
       "_origin": "ast",
       "id": "docs_changelog_6_4_04_07_2026_196dd15_fix_orbite_e_pianeti_allineati_al_sole",
       "community": 163,
@@ -14797,7 +14807,7 @@
       "label": "6.5 \u2014 04/07/2026 \u2014 `aed8789` \u2014 feat: NASA Import da API nel backoffice",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L273",
+      "source_location": "L280",
       "_origin": "ast",
       "id": "docs_changelog_6_5_04_07_2026_aed8789_feat_nasa_import_da_api_nel_backoffice",
       "community": 163,
@@ -14807,7 +14817,7 @@
       "label": "6.6 \u2014 04/07/2026 \u2014 `c82001d` \u2014 fix: /dashboard reindirizza a /admin, Torna al sito alla home guest",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L280",
+      "source_location": "L287",
       "_origin": "ast",
       "id": "docs_changelog_6_6_04_07_2026_c82001d_fix_dashboard_reindirizza_a_admin_torna_al_sito_alla_home_guest",
       "community": 163,
@@ -14817,7 +14827,7 @@
       "label": "6.7 \u2014 04/07/2026 \u2014 `5ade134` \u2014 feat: link Profilo nella sidebar admin",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L284",
+      "source_location": "L291",
       "_origin": "ast",
       "id": "docs_changelog_6_7_04_07_2026_5ade134_feat_link_profilo_nella_sidebar_admin",
       "community": 163,
@@ -14827,7 +14837,7 @@
       "label": "6.8 \u2014 04/07/2026 \u2014 `aa1ff42` \u2014 feat: pagine profilo adattate al tema scuro",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L288",
+      "source_location": "L295",
       "_origin": "ast",
       "id": "docs_changelog_6_8_04_07_2026_aa1ff42_feat_pagine_profilo_adattate_al_tema_scuro",
       "community": 163,
@@ -14837,7 +14847,7 @@
       "label": "Fase 7 \u2014 Bugfix Intervention Image v4, NASA Import Force All, Documentazione",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L293",
+      "source_location": "L300",
       "_origin": "ast",
       "id": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
       "community": 167,
@@ -14847,7 +14857,7 @@
       "label": "7.0 \u2014 04/07/2026 \u2014 fix: Profile navigation \u2014 Link Inertia \u2192 a tag per href esterno",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L295",
+      "source_location": "L302",
       "_origin": "ast",
       "id": "docs_changelog_7_0_04_07_2026_fix_profile_navigation_link_inertia_a_tag_per_href_esterno",
       "community": 167,
@@ -14857,7 +14867,7 @@
       "label": "7.1 \u2014 04/07/2026 \u2014 fix: NASA Import \u2014 mappatura nomi italiano\u2192inglese",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L298",
+      "source_location": "L305",
       "_origin": "ast",
       "id": "docs_changelog_7_1_04_07_2026_fix_nasa_import_mappatura_nomi_italiano_inglese",
       "community": 167,
@@ -14867,7 +14877,7 @@
       "label": "7.2 \u2014 04/07/2026 \u2014 fix: SSL cURL error 60 su Windows",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L301",
+      "source_location": "L308",
       "_origin": "ast",
       "id": "docs_changelog_7_2_04_07_2026_fix_ssl_curl_error_60_su_windows",
       "community": 167,
@@ -14877,7 +14887,7 @@
       "label": "7.3 \u2014 04/07/2026 \u2014 fix: Intervention Image v3\u2192v4 API migration",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L304",
+      "source_location": "L311",
       "_origin": "ast",
       "id": "docs_changelog_7_3_04_07_2026_fix_intervention_image_v3_v4_api_migration",
       "community": 167,
@@ -14887,7 +14897,7 @@
       "label": "7.4 \u2014 04/07/2026 \u2014 feat: Force Import All con Alpine.js modal",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L310",
+      "source_location": "L317",
       "_origin": "ast",
       "id": "docs_changelog_7_4_04_07_2026_feat_force_import_all_con_alpine_js_modal",
       "community": 167,
@@ -14897,7 +14907,7 @@
       "label": "Fase 8 \u2014 NASA Import multi-immagine, Service Layer, CLI Command",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L316",
+      "source_location": "L323",
       "_origin": "ast",
       "id": "docs_changelog_fase_8_nasa_import_multi_immagine_service_layer_cli_command",
       "community": 249,
@@ -14907,7 +14917,7 @@
       "label": "8.0 \u2014 04/07/2026 \u2014 feat: NASA Import multi-immagine in galleria + CLI fetch-nasa + metadati",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L318",
+      "source_location": "L325",
       "_origin": "ast",
       "id": "docs_changelog_8_0_04_07_2026_feat_nasa_import_multi_immagine_in_galleria_cli_fetch_nasa_metadati",
       "community": 249,
@@ -14917,7 +14927,7 @@
       "label": "8.1 \u2014 04/07/2026 \u2014 fix: memory limit per immagini NASA grandi + fallback URL per item",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L332",
+      "source_location": "L339",
       "_origin": "ast",
       "id": "docs_changelog_8_1_04_07_2026_fix_memory_limit_per_immagini_nasa_grandi_fallback_url_per_item",
       "community": 249,
@@ -14927,7 +14937,7 @@
       "label": "Fase 9 \u2014 Remote URLs, nome_it, WordMap, Apostrophe Fallback",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L337",
+      "source_location": "L344",
       "_origin": "ast",
       "id": "docs_changelog_fase_9_remote_urls_nome_it_wordmap_apostrophe_fallback",
       "community": 5,
@@ -14937,7 +14947,7 @@
       "label": "9.0 \u2014 04/07/2026 \u2014 feat: remote NASA URLs, nome_it, wordMap espansa, apostrophe fallback, auto-suggest",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L339",
+      "source_location": "L346",
       "_origin": "ast",
       "id": "docs_changelog_9_0_04_07_2026_feat_remote_nasa_urls_nome_it_wordmap_espansa_apostrophe_fallback_auto_suggest",
       "community": 5,
@@ -14947,7 +14957,7 @@
       "label": "Fase 9.1 \u2014 Bug critici (route, fillable, seeder)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L354",
+      "source_location": "L361",
       "_origin": "ast",
       "id": "docs_changelog_fase_9_1_bug_critici_route_fillable_seeder",
       "community": 301,
@@ -14957,7 +14967,7 @@
       "label": "9.1 \u2014 05/07/2026 \u2014 `3034aba` \u2014 fix: bug critici \u2014 route() senza virgolette, nasa_id in fillable, categoria_id dinamico nel seeder",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L356",
+      "source_location": "L363",
       "_origin": "ast",
       "id": "docs_changelog_9_1_05_07_2026_3034aba_fix_bug_critici_route_senza_virgolette_nasa_id_in_fillable_categoria_id_dinamico_nel_seeder",
       "community": 301,
@@ -14967,7 +14977,7 @@
       "label": "Fase 10 \u2014 UI/UX tema scuro, sistema solare, paginazione",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L361",
+      "source_location": "L368",
       "_origin": "ast",
       "id": "docs_changelog_fase_10_ui_ux_tema_scuro_sistema_solare_paginazione",
       "community": 5,
@@ -14977,7 +14987,7 @@
       "label": "10.0 \u2014 06/07/2026 \u2014 `2d736af` `be1ee9b` `14ed82f` \u2014 feat: tema scuro auth pages, link Register, ridotta velocit\u00e0 orbite",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L363",
+      "source_location": "L370",
       "_origin": "ast",
       "id": "docs_changelog_10_0_06_07_2026_2d736af_be1ee9b_14ed82f_feat_tema_scuro_auth_pages_link_register_ridotta_velocit\u00e0_orbite",
       "community": 5,
@@ -14987,7 +14997,7 @@
       "label": "Fase 11 \u2014 Bugfix Inertia\u2192Blade, NASA dedup, galleria cleanup",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L369",
+      "source_location": "L376",
       "_origin": "ast",
       "id": "docs_changelog_fase_11_bugfix_inertia_blade_nasa_dedup_galleria_cleanup",
       "community": 5,
@@ -14997,7 +15007,7 @@
       "label": "11.0 \u2014 07/07/2026 \u2014 `65ed6d4` \u2014 fix: Inertia\u2192Blade transizione, NASA import dedup, galleria cleanup e ordinamento",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L371",
+      "source_location": "L378",
       "_origin": "ast",
       "id": "docs_changelog_11_0_07_07_2026_65ed6d4_fix_inertia_blade_transizione_nasa_import_dedup_galleria_cleanup_e_ordinamento",
       "community": 5,
@@ -15007,7 +15017,7 @@
       "label": "Fase 12 \u2014 Authorization (Policy + Gates)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L382",
+      "source_location": "L389",
       "_origin": "ast",
       "id": "docs_changelog_fase_12_authorization_policy_gates",
       "community": 46,
@@ -15017,7 +15027,7 @@
       "label": "12.0 \u2014 07/07/2026 \u2014 feat: authorization admin con Policy e Gates",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L384",
+      "source_location": "L391",
       "_origin": "ast",
       "id": "docs_changelog_12_0_07_07_2026_feat_authorization_admin_con_policy_e_gates",
       "community": 46,
@@ -15027,7 +15037,7 @@
       "label": "12.5 \u2014 08/07/2026 \u2014 docs: sostituito sistema priorit\u00e0 Alta/Media/Bassa con P0-P4 + emoji nel todo",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L396",
+      "source_location": "L403",
       "_origin": "ast",
       "id": "docs_changelog_12_5_08_07_2026_docs_sostituito_sistema_priorit\u00e0_alta_media_bassa_con_p0_p4_emoji_nel_todo",
       "community": 46,
@@ -15037,7 +15047,7 @@
       "label": "12.4 \u2014 08/07/2026 \u2014 feat: quick wins \u2014 per_page, ordinamento relazioni, .catch, nasa_id, indexes",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L402",
+      "source_location": "L409",
       "_origin": "ast",
       "id": "docs_changelog_12_4_08_07_2026_feat_quick_wins_per_page_ordinamento_relazioni_catch_nasa_id_indexes",
       "community": 46,
@@ -15047,7 +15057,7 @@
       "label": "12.3 \u2014 08/07/2026 \u2014 feat: FormRequest per validazione store/update CorpoCeleste",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L411",
+      "source_location": "L418",
       "_origin": "ast",
       "id": "docs_changelog_12_3_08_07_2026_feat_formrequest_per_validazione_store_update_corpoceleste",
       "community": 46,
@@ -15057,7 +15067,7 @@
       "label": "12.2 \u2014 08/07/2026 \u2014 `f62f945` \u2014 feat: rimossa dipendenza Inertia (Fase 12.2)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L418",
+      "source_location": "L425",
       "_origin": "ast",
       "id": "docs_changelog_12_2_08_07_2026_f62f945_feat_rimossa_dipendenza_inertia_fase_12_2",
       "community": 46,
@@ -15067,7 +15077,7 @@
       "label": "12.2 \u2014 08/07/2026 \u2014 `0931d17` \u2014 feat: rimossa dipendenza Inertia",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L430",
+      "source_location": "L437",
       "_origin": "ast",
       "id": "docs_changelog_12_2_08_07_2026_0931d17_feat_rimossa_dipendenza_inertia",
       "community": 46,
@@ -15077,7 +15087,7 @@
       "label": "12.3 \u2014 08/07/2026 \u2014 `b17c0d9` \u2014 feat: FormRequest per validazione CorpoCeleste",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L439",
+      "source_location": "L446",
       "_origin": "ast",
       "id": "docs_changelog_12_3_08_07_2026_b17c0d9_feat_formrequest_per_validazione_corpoceleste",
       "community": 46,
@@ -15087,7 +15097,7 @@
       "label": "12.4 \u2014 08/07/2026 \u2014 `1869bc8` \u2014 feat: quick wins (per_page, ordinamento, .catch, nasa_id, indexes)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L444",
+      "source_location": "L451",
       "_origin": "ast",
       "id": "docs_changelog_12_4_08_07_2026_1869bc8_feat_quick_wins_per_page_ordinamento_catch_nasa_id_indexes",
       "community": 46,
@@ -15097,7 +15107,7 @@
       "label": "12.5 \u2014 08/07/2026 \u2014 docs: sistema priorit\u00e0 P0-P4 con emoji",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L451",
+      "source_location": "L458",
       "_origin": "ast",
       "id": "docs_changelog_12_5_08_07_2026_docs_sistema_priorit\u00e0_p0_p4_con_emoji",
       "community": 46,
@@ -15107,7 +15117,7 @@
       "label": "Wave 1 \u2014 08/07/2026 \u2014 feat: backend P2 (WordMapService, simili ordinati)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L455",
+      "source_location": "L462",
       "_origin": "ast",
       "id": "docs_changelog_wave_1_08_07_2026_feat_backend_p2_wordmapservice_simili_ordinati",
       "community": 46,
@@ -15117,7 +15127,7 @@
       "label": "Wave 4 \u2014 08/07/2026 \u2014 feat: frontend P2 stili inline \u2192 Tailwind classi admin",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L462",
+      "source_location": "L469",
       "_origin": "ast",
       "id": "docs_changelog_wave_4_08_07_2026_feat_frontend_p2_stili_inline_tailwind_classi_admin",
       "community": 46,
@@ -15127,7 +15137,7 @@
       "label": "Wave 3 \u2014 08/07/2026 \u2014 feat: frontend P2 onMouseEnter/onMouseLeave \u2192 CSS :hover",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L468",
+      "source_location": "L475",
       "_origin": "ast",
       "id": "docs_changelog_wave_3_08_07_2026_feat_frontend_p2_onmouseenter_onmouseleave_css_hover",
       "community": 46,
@@ -15137,7 +15147,7 @@
       "label": "Wave 2 \u2014 08/07/2026 \u2014 feat: frontend P3 accessibilit\u00e0 (aria-label, role=\"img\")",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L474",
+      "source_location": "L481",
       "_origin": "ast",
       "id": "docs_changelog_wave_2_08_07_2026_feat_frontend_p3_accessibilit\u00e0_aria_label_role_img",
       "community": 46,
@@ -15147,7 +15157,7 @@
       "label": "13.1 \u2014 08/07/2026 \u2014 feat: Vitest per componenti React \u2014 27 test (CategoriaBadge, CorpoCard, Lightbox, SolarSystem)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L485",
+      "source_location": "L492",
       "_origin": "ast",
       "id": "docs_changelog_13_1_08_07_2026_feat_vitest_per_componenti_react_27_test_categoriabadge_corpocard_lightbox_solarsystem",
       "community": 46,
@@ -15157,7 +15167,7 @@
       "label": "13.0 \u2014 08/07/2026 \u2014 feat: HasFactory su 5 modelli, 26 test NasaImageService, observer testing guard, 84 test verdi",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L492",
+      "source_location": "L499",
       "_origin": "ast",
       "id": "docs_changelog_13_0_08_07_2026_feat_hasfactory_su_5_modelli_26_test_nasaimageservice_observer_testing_guard_84_test_verdi",
       "community": 46,
@@ -15167,7 +15177,7 @@
       "label": "12.1 \u2014 07/07/2026 \u2014 feat: auth pages da Inertia a Blade puro",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L502",
+      "source_location": "L509",
       "_origin": "ast",
       "id": "docs_changelog_12_1_07_07_2026_feat_auth_pages_da_inertia_a_blade_puro",
       "community": 46,
@@ -15177,7 +15187,7 @@
       "label": "13.2 \u2014 09/07/2026 \u2014 feat: Vitest integrazione API \u2014 61 test (apiClient + 4 guest pages)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L511",
+      "source_location": "L518",
       "_origin": "ast",
       "id": "docs_changelog_13_2_09_07_2026_feat_vitest_integrazione_api_61_test_apiclient_4_guest_pages",
       "community": 46,
@@ -15187,7 +15197,7 @@
       "label": "13.3 \u2014 09/07/2026 \u2014 feat: Dashboard admin con grafici Chart.js",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L519",
+      "source_location": "L526",
       "_origin": "ast",
       "id": "docs_changelog_13_3_09_07_2026_feat_dashboard_admin_con_grafici_chart_js",
       "community": 46,
@@ -15197,7 +15207,7 @@
       "label": "Fase 14 \u2014 10 Bug critici fixati",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L521",
+      "source_location": "L528",
       "_origin": "ast",
       "id": "docs_changelog_fase_14_10_bug_critici_fixati",
       "community": 248,
@@ -15207,7 +15217,7 @@
       "label": "14.0 \u2014 09/07/2026 \u2014 fix: 10 bug critici (Blade @endif, React null guard, 404 route, N+1, senza SSL, import duplicato)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L523",
+      "source_location": "L530",
       "_origin": "ast",
       "id": "docs_changelog_14_0_09_07_2026_fix_10_bug_critici_blade_endif_react_null_guard_404_route_n_1_senza_ssl_import_duplicato",
       "community": 248,
@@ -15217,7 +15227,7 @@
       "label": "14.1 \u2014 09/07/2026 \u2014 chore: rimossi import morti React e dipendenze inutilizzate/malposizionate",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L539",
+      "source_location": "L546",
       "_origin": "ast",
       "id": "docs_changelog_14_1_09_07_2026_chore_rimossi_import_morti_react_e_dipendenze_inutilizzate_malposizionate",
       "community": 248,
@@ -15227,7 +15237,7 @@
       "label": "Fase 15 \u2014 P2/P3 manutenzione e accessibilit\u00e0",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L549",
+      "source_location": "L556",
       "_origin": "ast",
       "id": "docs_changelog_fase_15_p2_p3_manutenzione_e_accessibilit\u00e0",
       "community": 193,
@@ -15237,7 +15247,7 @@
       "label": "15.0 \u2014 09/07/2026 \u2014 feat: Categoria index pagination, Curiosita show view",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L551",
+      "source_location": "L558",
       "_origin": "ast",
       "id": "docs_changelog_15_0_09_07_2026_feat_categoria_index_pagination_curiosita_show_view",
       "community": 193,
@@ -15247,7 +15257,7 @@
       "label": "15.1 \u2014 09/07/2026 \u2014 feat: search/filter admin per Categoria, Missione, Curiosit\u00e0, Galleria",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L558",
+      "source_location": "L565",
       "_origin": "ast",
       "id": "docs_changelog_15_1_09_07_2026_feat_search_filter_admin_per_categoria_missione_curiosit\u00e0_galleria",
       "community": 193,
@@ -15257,7 +15267,7 @@
       "label": "15.2 \u2014 09/07/2026 \u2014 feat: SEO meta tags React (5 pagine guest)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L565",
+      "source_location": "L572",
       "_origin": "ast",
       "id": "docs_changelog_15_2_09_07_2026_feat_seo_meta_tags_react_5_pagine_guest",
       "community": 193,
@@ -15267,7 +15277,7 @@
       "label": "15.3 \u2014 09/07/2026 \u2014 feat: Error Boundary globale React",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L573",
+      "source_location": "L580",
       "_origin": "ast",
       "id": "docs_changelog_15_3_09_07_2026_feat_error_boundary_globale_react",
       "community": 193,
@@ -15277,7 +15287,7 @@
       "label": "15.4 \u2014 09/07/2026 \u2014 feat: Admin CRUD test (4 file)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L578",
+      "source_location": "L585",
       "_origin": "ast",
       "id": "docs_changelog_15_4_09_07_2026_feat_admin_crud_test_4_file",
       "community": 193,
@@ -15287,7 +15297,7 @@
       "label": "Fase 1 \u2014 Critico React Frontend (P0)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L585",
+      "source_location": "L592",
       "_origin": "ast",
       "id": "docs_changelog_fase_1_critico_react_frontend_p0",
       "community": 5,
@@ -15297,7 +15307,7 @@
       "label": "1.0 \u2014 10/07/2026 \u2014 `f5ed6ab` \u2014 feat: React P0 \u2014 AbortController, useFetch, ErrorBoundary, image guards, axios interceptors",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L587",
+      "source_location": "L594",
       "_origin": "ast",
       "id": "docs_changelog_1_0_10_07_2026_f5ed6ab_feat_react_p0_abortcontroller_usefetch_errorboundary_image_guards_axios_interceptors",
       "community": 5,
@@ -15307,27 +15317,27 @@
       "label": "Fase 2 \u2014 Critico Backend Laravel (P0)",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L594",
+      "source_location": "L601",
       "_origin": "ast",
       "id": "docs_changelog_fase_2_critico_backend_laravel_p0",
-      "community": 5,
+      "community": 247,
       "norm_label": "fase 2 \u2014 critico backend laravel (p0)"
     },
     {
       "label": "2.0 \u2014 10/07/2026 \u2014 `f5ed6ab` \u2014 feat: Laravel P0 \u2014 Job queue, chunk(50), rate limiting, caching NASA",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L596",
+      "source_location": "L603",
       "_origin": "ast",
       "id": "docs_changelog_2_0_10_07_2026_f5ed6ab_feat_laravel_p0_job_queue_chunk_50_rate_limiting_caching_nasa",
-      "community": 5,
+      "community": 247,
       "norm_label": "2.0 \u2014 10/07/2026 \u2014 `f5ed6ab` \u2014 feat: laravel p0 \u2014 job queue, chunk(50), rate limiting, caching nasa"
     },
     {
       "label": "Piano Ottimizzazione \u2014 P1",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L605",
+      "source_location": "L612",
       "_origin": "ast",
       "id": "docs_changelog_piano_ottimizzazione_p1",
       "community": 5,
@@ -15337,7 +15347,7 @@
       "label": "3.4 \u2014 11/07/2026 \u2014 feat: framer-motion\u2192CSS + SolarSystem clickable/immagini realistiche",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L607",
+      "source_location": "L614",
       "_origin": "ast",
       "id": "docs_changelog_3_4_11_07_2026_feat_framer_motion_css_solarsystem_clickable_immagini_realistiche",
       "community": 5,
@@ -15450,7 +15460,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "docs_documentazione_palette_colori",
-      "community": 12,
+      "community": 199,
       "norm_label": "palette colori"
     },
     {
@@ -15460,7 +15470,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "docs_documentazione_badge_categoria",
-      "community": 12,
+      "community": 199,
       "norm_label": "badge categoria"
     },
     {
@@ -15470,7 +15480,7 @@
       "source_location": "L127",
       "_origin": "ast",
       "id": "docs_documentazione_frontend_guest_react_spa",
-      "community": 12,
+      "community": 199,
       "norm_label": "frontend guest (react spa)"
     },
     {
@@ -15480,7 +15490,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "docs_documentazione_backoffice_admin",
-      "community": 12,
+      "community": 199,
       "norm_label": "backoffice admin"
     },
     {
@@ -15490,7 +15500,7 @@
       "source_location": "L218",
       "_origin": "ast",
       "id": "docs_documentazione_api_rest",
-      "community": 12,
+      "community": 199,
       "norm_label": "api rest"
     },
     {
@@ -15990,7 +16000,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "community": 199,
+      "community": 0,
       "norm_label": "parte 1: backoffice in laravel"
     },
     {
@@ -16000,7 +16010,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "docs_progetto_finale_autenticazione_e_accesso",
-      "community": 199,
+      "community": 0,
       "norm_label": "\ud83d\udd12 autenticazione e accesso"
     },
     {
@@ -16010,7 +16020,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "docs_progetto_finale_gestione_entit\u00e0_crud",
-      "community": 199,
+      "community": 0,
       "norm_label": "\ud83d\udce6 gestione entita (crud)"
     },
     {
@@ -16020,7 +16030,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "docs_progetto_finale_requisiti_minimi",
-      "community": 199,
+      "community": 0,
       "norm_label": "\u2699\ufe0f requisiti minimi"
     },
     {
@@ -16030,7 +16040,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "docs_progetto_finale_upload_media",
-      "community": 199,
+      "community": 0,
       "norm_label": "\ud83d\uddbc\ufe0f upload media"
     },
     {
@@ -16040,7 +16050,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "docs_progetto_finale_esempi_di_struttura",
-      "community": 199,
+      "community": 0,
       "norm_label": "\ud83d\udca1 esempi di struttura"
     },
     {
@@ -16050,7 +16060,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "docs_progetto_finale_note_tecniche",
-      "community": 199,
+      "community": 0,
       "norm_label": "\ud83d\udcbb note tecniche"
     },
     {
@@ -16400,7 +16410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo",
-      "community": 25,
+      "community": 20,
       "norm_label": "todo.md"
     },
     {
@@ -16410,7 +16420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo_todo",
-      "community": 25,
+      "community": 20,
       "norm_label": "todo"
     },
     {
@@ -16420,7 +16430,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "docs_todo_da_fare",
-      "community": 25,
+      "community": 20,
       "norm_label": "da fare"
     },
     {
@@ -16430,7 +16440,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "docs_todo_fatto",
-      "community": 25,
+      "community": 20,
       "norm_label": "fatto"
     },
     {
@@ -16440,7 +16450,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "docs_todo_note",
-      "community": 25,
+      "community": 20,
       "norm_label": "note"
     }
   ],
@@ -17458,6 +17468,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_admin_corpocelestecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_admin_corpocelestecontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
@@ -17471,7 +17503,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L97",
+      "source_location": "L103",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
@@ -17481,7 +17513,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L70",
+      "source_location": "L76",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
@@ -17501,7 +17533,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L109",
+      "source_location": "L127",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
@@ -17511,7 +17543,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L61",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
@@ -17531,7 +17563,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L128",
+      "source_location": "L146",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -17541,7 +17573,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L79",
+      "source_location": "L85",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -17616,7 +17648,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L70",
+      "source_location": "L76",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
@@ -17627,7 +17659,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L61",
+      "source_location": "L67",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
@@ -17692,7 +17724,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L97",
+      "source_location": "L103",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
@@ -17703,7 +17735,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L109",
+      "source_location": "L127",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
@@ -17714,7 +17746,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L79",
+      "source_location": "L85",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -17725,7 +17757,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L61",
+      "source_location": "L67",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_show",
@@ -17738,7 +17770,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L74",
+      "source_location": "L80",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
       "target": "app_models_categoria_categoria"
@@ -17747,7 +17779,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L70",
+      "source_location": "L76",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_edit",
@@ -17759,7 +17791,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L117",
+      "source_location": "L135",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
       "target": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -17769,7 +17801,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L79",
+      "source_location": "L85",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -17780,7 +17812,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L79",
+      "source_location": "L85",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_update",
@@ -17791,7 +17823,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L97",
+      "source_location": "L103",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_destroy",
@@ -17802,7 +17834,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L109",
+      "source_location": "L127",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
@@ -17813,7 +17845,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L109",
+      "source_location": "L127",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_setimagefromgallery",
@@ -17824,7 +17856,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L128",
+      "source_location": "L146",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -17835,7 +17867,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L128",
+      "source_location": "L146",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -17847,7 +17879,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L130",
+      "source_location": "L148",
       "weight": 1.0,
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
       "target": "app_models_corpoceleste_corpoceleste"
@@ -17856,7 +17888,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L128",
+      "source_location": "L146",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -17867,7 +17899,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/CorpoCelesteController.php",
-      "source_location": "L128",
+      "source_location": "L146",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
@@ -17970,28 +18002,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_curiositacontroller",
       "target": "app_models_corpoceleste",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_curiositacontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_curiositacontroller",
       "confidence_score": 1.0
     },
     {
@@ -18297,7 +18307,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller",
       "target": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
@@ -18308,7 +18318,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller",
       "target": "app_http_controllers_admin_dashboardcontroller_php_view",
@@ -18323,17 +18333,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller",
       "target": "app_http_controllers_controller_controller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "app_http_controllers_admin_dashboardcontroller",
-      "target": "config_cache",
       "confidence_score": 1.0
     },
     {
@@ -18381,32 +18380,10 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_dashboardcontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
       "target": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
@@ -18416,7 +18393,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller",
       "target": "app_http_controllers_controller_controller",
@@ -18426,7 +18403,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "context": "return_type",
       "source": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
@@ -18439,7 +18416,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
       "target": "app_models_categoria_categoria"
@@ -18450,7 +18427,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
       "target": "app_models_corpoceleste_corpoceleste"
@@ -18461,7 +18438,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
       "target": "app_models_curiosita_curiosita"
@@ -18472,7 +18449,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Controllers/Admin/DashboardController.php",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0,
       "source": "app_http_controllers_admin_dashboardcontroller_dashboardcontroller_index",
       "target": "app_models_missione_missione"
@@ -19069,28 +19046,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_admin_missionecontroller",
       "target": "app_services_imageuploadservice_imageuploadservice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_admin_missionecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_admin_missionecontroller",
       "confidence_score": 1.0
     },
     {
@@ -19779,28 +19734,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/api.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_api",
-      "target": "app_http_controllers_api_corpocelestecontroller",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/web.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_web",
-      "target": "app_http_controllers_api_corpocelestecontroller",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CorpoCelesteController.php",
@@ -19972,6 +19905,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_curiositacontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_curiositacontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/CuriositaController.php",
@@ -20098,6 +20053,28 @@
       "weight": 1.0,
       "source": "app_http_controllers_api_dashboardcontroller",
       "target": "app_models_missione",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_dashboardcontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_dashboardcontroller",
       "confidence_score": 1.0
     },
     {
@@ -20326,6 +20303,28 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/api.php",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "routes_api",
+      "target": "app_http_controllers_api_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "routes/web.php",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "routes_web",
+      "target": "app_http_controllers_api_missionecontroller",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Http/Controllers/Api/MissioneController.php",
@@ -20472,18 +20471,7 @@
       "source_location": "L9",
       "weight": 1.0,
       "source": "app_http_controllers_auth_authenticatedsessioncontroller",
-      "target": "config_auth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/auth.php",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "routes_auth",
-      "target": "app_http_controllers_auth_authenticatedsessioncontroller",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -20643,18 +20631,7 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_controllers_auth_confirmablepasswordcontroller",
-      "target": "config_auth",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/auth.php",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "routes_auth",
-      "target": "app_http_controllers_auth_confirmablepasswordcontroller",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -21359,7 +21336,7 @@
       "source_location": "L10",
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
-      "target": "config_auth",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -21371,17 +21348,6 @@
       "weight": 1.0,
       "source": "app_http_controllers_auth_registeredusercontroller",
       "target": "app_models_user",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "routes/auth.php",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "routes_auth",
-      "target": "app_http_controllers_auth_registeredusercontroller",
       "confidence_score": 1.0
     },
     {
@@ -21688,7 +21654,7 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_controllers_profilecontroller",
-      "target": "config_auth",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -22056,7 +22022,7 @@
       "source_location": "L8",
       "weight": 1.0,
       "source": "app_http_requests_auth_loginrequest",
-      "target": "config_auth",
+      "target": "routes_auth",
       "confidence_score": 1.0
     },
     {
@@ -22698,7 +22664,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "app/Http/Resources/MissioneResource.php",
-      "source_location": "L24",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "app_http_resources_missioneresource_missioneresource_toarray",
       "target": "app_http_resources_corpocelesteresource_corpocelesteresource"
@@ -23007,7 +22973,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app/Jobs/ImportNasaImage.php",
-      "source_location": "L42",
+      "source_location": "L41",
       "weight": 1.0,
       "source": "app_jobs_importnasaimage_importnasaimage",
       "target": "app_jobs_importnasaimage_importnasaimage_failed",
@@ -23121,7 +23087,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "app/Jobs/ImportNasaImage.php",
-      "source_location": "L42",
+      "source_location": "L41",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "app_jobs_importnasaimage_importnasaimage_failed",
@@ -39226,7 +39192,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L10",
+      "source_location": "L17",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_bugfix_nasa_import_b1_b6_14_07_2026",
@@ -39236,7 +39202,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L160",
+      "source_location": "L167",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_0_setup",
@@ -39246,7 +39212,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L361",
+      "source_location": "L368",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_10_ui_ux_tema_scuro_sistema_solare_paginazione",
@@ -39256,7 +39222,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L369",
+      "source_location": "L376",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_11_bugfix_inertia_blade_nasa_dedup_galleria_cleanup",
@@ -39266,7 +39232,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L382",
+      "source_location": "L389",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_12_authorization_policy_gates",
@@ -39276,7 +39242,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L521",
+      "source_location": "L528",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_14_10_bug_critici_fixati",
@@ -39286,7 +39252,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L549",
+      "source_location": "L556",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_15_p2_p3_manutenzione_e_accessibilit\u00e0",
@@ -39296,7 +39262,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L585",
+      "source_location": "L592",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_1_critico_react_frontend_p0",
@@ -39306,7 +39272,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L168",
+      "source_location": "L175",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_1_database_e_modelli",
@@ -39316,7 +39282,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L178",
+      "source_location": "L185",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_2_backoffice_blade_crud",
@@ -39326,7 +39292,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L594",
+      "source_location": "L601",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_2_critico_backend_laravel_p0",
@@ -39336,7 +39302,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L217",
+      "source_location": "L224",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_3_api_rest",
@@ -39346,7 +39312,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L228",
+      "source_location": "L235",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_4_react_guest_frontend",
@@ -39356,7 +39322,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L239",
+      "source_location": "L246",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_5_react_guest_dettaglio_lightbox_missioni_comparatore",
@@ -39366,7 +39332,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L251",
+      "source_location": "L258",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
@@ -39376,7 +39342,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L293",
+      "source_location": "L300",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
@@ -39386,7 +39352,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L316",
+      "source_location": "L323",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_8_nasa_import_multi_immagine_service_layer_cli_command",
@@ -39396,7 +39362,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L354",
+      "source_location": "L361",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_9_1_bug_critici_route_fillable_seeder",
@@ -39406,7 +39372,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L337",
+      "source_location": "L344",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_fase_9_remote_urls_nome_it_wordmap_apostrophe_fallback",
@@ -39416,7 +39382,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L125",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "docs_changelog_changelog",
+      "target": "docs_changelog_fix_dashboard_cache_bug_14_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L132",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_ottimizzazione_p1",
@@ -39426,7 +39402,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L108",
+      "source_location": "L115",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_ottimizzazione_test_refactoring_fase_9",
@@ -39436,7 +39412,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L54",
+      "source_location": "L61",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_ottimizzazione_ui_ux_review_fase_10",
@@ -39446,7 +39422,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L3",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_ottimizzazioni_nasa_import_p1_p2_14_07_2026",
@@ -39456,7 +39432,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L605",
+      "source_location": "L612",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_piano_ottimizzazione_p1",
@@ -39466,7 +39442,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L47",
+      "source_location": "L54",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_task_40_debug_generale_post_ottimizzazione",
@@ -39476,7 +39452,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L42",
+      "source_location": "L49",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_tasks_52_53_dry_refactoring_14_07_2026",
@@ -39486,7 +39462,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L29",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_tasks_60_64_accessibility_tailwind_delete_protection_14_07_2026",
@@ -39496,7 +39472,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L20",
+      "source_location": "L27",
       "weight": 1.0,
       "source": "docs_changelog_changelog",
       "target": "docs_changelog_tasks_65_70_test_coverage_expansion_14_07_2026",
@@ -39506,7 +39482,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L49",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "docs_changelog_task_40_debug_generale_post_ottimizzazione",
       "target": "docs_changelog_14_07_2026_fix_2_bug_vitest_lightboxgalleria_memo_close_corpodettaglio_import_typo",
@@ -39516,7 +39492,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L81",
+      "source_location": "L88",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_ui_ux_review_fase_10",
       "target": "docs_changelog_task_10_1_11_07_2026_web_design_guidelines_review",
@@ -39526,7 +39502,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L97",
+      "source_location": "L104",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_ui_ux_review_fase_10",
       "target": "docs_changelog_task_10_2_11_07_2026_writing_guidelines_review",
@@ -39536,7 +39512,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L56",
+      "source_location": "L63",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_ui_ux_review_fase_10",
       "target": "docs_changelog_task_10_3_11_07_2026_frontend_design_review",
@@ -39546,7 +39522,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L110",
+      "source_location": "L117",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_test_refactoring_fase_9",
       "target": "docs_changelog_tasks_9_1_9_3_9_7_11_07_2026_admintestcase_refactoring_http_fake_uniform_dashboardapitest",
@@ -39556,7 +39532,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L119",
+      "source_location": "L126",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_test_refactoring_fase_9",
       "target": "docs_changelog_tasks_9_6_11_07_2026_copertura_test_mancante",
@@ -39566,7 +39542,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L127",
+      "source_location": "L134",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_p1",
       "target": "docs_changelog_task_5_1_11_07_2026_admin_input_class_per_auth_profile_views",
@@ -39576,7 +39552,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L135",
+      "source_location": "L142",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_p1",
       "target": "docs_changelog_task_5_2_11_07_2026_hardcoded_hex_css_variables",
@@ -39586,7 +39562,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L142",
+      "source_location": "L149",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_p1",
       "target": "docs_changelog_task_5_3_11_07_2026_partials_extraction_completa",
@@ -39596,7 +39572,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L153",
+      "source_location": "L160",
       "weight": 1.0,
       "source": "docs_changelog_ottimizzazione_p1",
       "target": "docs_changelog_task_5_4_11_07_2026_form_partial_unificato_create_edit",
@@ -39606,7 +39582,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L162",
+      "source_location": "L169",
       "weight": 1.0,
       "source": "docs_changelog_fase_0_setup",
       "target": "docs_changelog_0_1_02_07_2026_6df5099_feat_setup_iniziale_laravel_breeze_react_documentazione",
@@ -39616,7 +39592,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L170",
+      "source_location": "L177",
       "weight": 1.0,
       "source": "docs_changelog_fase_1_database_e_modelli",
       "target": "docs_changelog_1_0_03_07_2026_0a57208_feat_database_e_modelli_con_seeders",
@@ -39626,7 +39602,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L180",
+      "source_location": "L187",
       "weight": 1.0,
       "source": "docs_changelog_fase_2_backoffice_blade_crud",
       "target": "docs_changelog_2_1_03_07_2026_070da55_feat_admin_backoffice_layout_sidebar_navigation_e_dashboard",
@@ -39636,7 +39612,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L187",
+      "source_location": "L194",
       "weight": 1.0,
       "source": "docs_changelog_fase_2_backoffice_blade_crud",
       "target": "docs_changelog_2_2_03_07_2026_758be4c_feat_crud_categorie_backoffice",
@@ -39646,7 +39622,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L194",
+      "source_location": "L201",
       "weight": 1.0,
       "source": "docs_changelog_fase_2_backoffice_blade_crud",
       "target": "docs_changelog_2_3_03_07_2026_18a6b20_feat_crud_corpi_celesti_backoffice",
@@ -39656,7 +39632,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L197",
+      "source_location": "L204",
       "weight": 1.0,
       "source": "docs_changelog_fase_2_backoffice_blade_crud",
       "target": "docs_changelog_2_4_03_07_2026_6d86177_feat_crud_missioni_backoffice",
@@ -39666,7 +39642,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L204",
+      "source_location": "L211",
       "weight": 1.0,
       "source": "docs_changelog_fase_2_backoffice_blade_crud",
       "target": "docs_changelog_2_5_03_07_2026_2f8a67e_feat_crud_curiosit\u00e0_backoffice",
@@ -39676,7 +39652,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L210",
+      "source_location": "L217",
       "weight": 1.0,
       "source": "docs_changelog_fase_2_backoffice_blade_crud",
       "target": "docs_changelog_2_6_03_07_2026_99615bb_feat_crud_galleria_backoffice",
@@ -39686,7 +39662,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L219",
+      "source_location": "L226",
       "weight": 1.0,
       "source": "docs_changelog_fase_3_api_rest",
       "target": "docs_changelog_3_0_03_07_2026_feat_api_rest_10_endpoint_json",
@@ -39696,7 +39672,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L230",
+      "source_location": "L237",
       "weight": 1.0,
       "source": "docs_changelog_fase_4_react_guest_frontend",
       "target": "docs_changelog_4_0_04_07_2026_feat_react_spa_guest_homepage_lista_corpi_celesti",
@@ -39706,7 +39682,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L241",
+      "source_location": "L248",
       "weight": 1.0,
       "source": "docs_changelog_fase_5_react_guest_dettaglio_lightbox_missioni_comparatore",
       "target": "docs_changelog_5_0_04_07_2026_0e18a60_feat_dettaglio_corpo_celeste_lightbox_timeline_missioni_comparatore_pianeti",
@@ -39716,7 +39692,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L253",
+      "source_location": "L260",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_0_04_07_2026_45e01ad_docs_fase_6_completata",
@@ -39726,7 +39702,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L256",
+      "source_location": "L263",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_1_04_07_2026_fde7aaf_fix_orbita_pianeti_transformorigin_centrato_sul_sole",
@@ -39736,7 +39712,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L260",
+      "source_location": "L267",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_2_04_07_2026_a6e612a_fix_etichette_pianeti_solidali_e_contro_rotanti_nell_orbita",
@@ -39746,7 +39722,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L264",
+      "source_location": "L271",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_3_04_07_2026_4e354ea_fix_orbita_pianeti_con_usemotionvalue_usetransform",
@@ -39756,7 +39732,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L269",
+      "source_location": "L276",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_4_04_07_2026_196dd15_fix_orbite_e_pianeti_allineati_al_sole",
@@ -39766,7 +39742,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L273",
+      "source_location": "L280",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_5_04_07_2026_aed8789_feat_nasa_import_da_api_nel_backoffice",
@@ -39776,7 +39752,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L280",
+      "source_location": "L287",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_6_04_07_2026_c82001d_fix_dashboard_reindirizza_a_admin_torna_al_sito_alla_home_guest",
@@ -39786,7 +39762,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L284",
+      "source_location": "L291",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_7_04_07_2026_5ade134_feat_link_profilo_nella_sidebar_admin",
@@ -39796,7 +39772,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L288",
+      "source_location": "L295",
       "weight": 1.0,
       "source": "docs_changelog_fase_6_fix_sistema_solare_nasa_import_profilo_documentazione",
       "target": "docs_changelog_6_8_04_07_2026_aa1ff42_feat_pagine_profilo_adattate_al_tema_scuro",
@@ -39806,7 +39782,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L295",
+      "source_location": "L302",
       "weight": 1.0,
       "source": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
       "target": "docs_changelog_7_0_04_07_2026_fix_profile_navigation_link_inertia_a_tag_per_href_esterno",
@@ -39816,7 +39792,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L298",
+      "source_location": "L305",
       "weight": 1.0,
       "source": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
       "target": "docs_changelog_7_1_04_07_2026_fix_nasa_import_mappatura_nomi_italiano_inglese",
@@ -39826,7 +39802,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L301",
+      "source_location": "L308",
       "weight": 1.0,
       "source": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
       "target": "docs_changelog_7_2_04_07_2026_fix_ssl_curl_error_60_su_windows",
@@ -39836,7 +39812,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L304",
+      "source_location": "L311",
       "weight": 1.0,
       "source": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
       "target": "docs_changelog_7_3_04_07_2026_fix_intervention_image_v3_v4_api_migration",
@@ -39846,7 +39822,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L310",
+      "source_location": "L317",
       "weight": 1.0,
       "source": "docs_changelog_fase_7_bugfix_intervention_image_v4_nasa_import_force_all_documentazione",
       "target": "docs_changelog_7_4_04_07_2026_feat_force_import_all_con_alpine_js_modal",
@@ -39856,7 +39832,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L318",
+      "source_location": "L325",
       "weight": 1.0,
       "source": "docs_changelog_fase_8_nasa_import_multi_immagine_service_layer_cli_command",
       "target": "docs_changelog_8_0_04_07_2026_feat_nasa_import_multi_immagine_in_galleria_cli_fetch_nasa_metadati",
@@ -39866,7 +39842,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L332",
+      "source_location": "L339",
       "weight": 1.0,
       "source": "docs_changelog_fase_8_nasa_import_multi_immagine_service_layer_cli_command",
       "target": "docs_changelog_8_1_04_07_2026_fix_memory_limit_per_immagini_nasa_grandi_fallback_url_per_item",
@@ -39876,7 +39852,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L339",
+      "source_location": "L346",
       "weight": 1.0,
       "source": "docs_changelog_fase_9_remote_urls_nome_it_wordmap_apostrophe_fallback",
       "target": "docs_changelog_9_0_04_07_2026_feat_remote_nasa_urls_nome_it_wordmap_espansa_apostrophe_fallback_auto_suggest",
@@ -39886,7 +39862,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L356",
+      "source_location": "L363",
       "weight": 1.0,
       "source": "docs_changelog_fase_9_1_bug_critici_route_fillable_seeder",
       "target": "docs_changelog_9_1_05_07_2026_3034aba_fix_bug_critici_route_senza_virgolette_nasa_id_in_fillable_categoria_id_dinamico_nel_seeder",
@@ -39896,7 +39872,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L363",
+      "source_location": "L370",
       "weight": 1.0,
       "source": "docs_changelog_fase_10_ui_ux_tema_scuro_sistema_solare_paginazione",
       "target": "docs_changelog_10_0_06_07_2026_2d736af_be1ee9b_14ed82f_feat_tema_scuro_auth_pages_link_register_ridotta_velocit\u00e0_orbite",
@@ -39906,7 +39882,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L371",
+      "source_location": "L378",
       "weight": 1.0,
       "source": "docs_changelog_fase_11_bugfix_inertia_blade_nasa_dedup_galleria_cleanup",
       "target": "docs_changelog_11_0_07_07_2026_65ed6d4_fix_inertia_blade_transizione_nasa_import_dedup_galleria_cleanup_e_ordinamento",
@@ -39916,7 +39892,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L384",
+      "source_location": "L391",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_0_07_07_2026_feat_authorization_admin_con_policy_e_gates",
@@ -39926,7 +39902,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L502",
+      "source_location": "L509",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_1_07_07_2026_feat_auth_pages_da_inertia_a_blade_puro",
@@ -39936,7 +39912,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L430",
+      "source_location": "L437",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_2_08_07_2026_0931d17_feat_rimossa_dipendenza_inertia",
@@ -39946,7 +39922,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L418",
+      "source_location": "L425",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_2_08_07_2026_f62f945_feat_rimossa_dipendenza_inertia_fase_12_2",
@@ -39956,7 +39932,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L439",
+      "source_location": "L446",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_3_08_07_2026_b17c0d9_feat_formrequest_per_validazione_corpoceleste",
@@ -39966,7 +39942,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L411",
+      "source_location": "L418",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_3_08_07_2026_feat_formrequest_per_validazione_store_update_corpoceleste",
@@ -39976,7 +39952,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L444",
+      "source_location": "L451",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_4_08_07_2026_1869bc8_feat_quick_wins_per_page_ordinamento_catch_nasa_id_indexes",
@@ -39986,7 +39962,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L402",
+      "source_location": "L409",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_4_08_07_2026_feat_quick_wins_per_page_ordinamento_relazioni_catch_nasa_id_indexes",
@@ -39996,7 +39972,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L451",
+      "source_location": "L458",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_5_08_07_2026_docs_sistema_priorit\u00e0_p0_p4_con_emoji",
@@ -40006,7 +39982,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L396",
+      "source_location": "L403",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_12_5_08_07_2026_docs_sostituito_sistema_priorit\u00e0_alta_media_bassa_con_p0_p4_emoji_nel_todo",
@@ -40016,7 +39992,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L492",
+      "source_location": "L499",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_13_0_08_07_2026_feat_hasfactory_su_5_modelli_26_test_nasaimageservice_observer_testing_guard_84_test_verdi",
@@ -40026,7 +40002,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L485",
+      "source_location": "L492",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_13_1_08_07_2026_feat_vitest_per_componenti_react_27_test_categoriabadge_corpocard_lightbox_solarsystem",
@@ -40036,7 +40012,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L511",
+      "source_location": "L518",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_13_2_09_07_2026_feat_vitest_integrazione_api_61_test_apiclient_4_guest_pages",
@@ -40046,7 +40022,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L519",
+      "source_location": "L526",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_13_3_09_07_2026_feat_dashboard_admin_con_grafici_chart_js",
@@ -40056,7 +40032,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L455",
+      "source_location": "L462",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_wave_1_08_07_2026_feat_backend_p2_wordmapservice_simili_ordinati",
@@ -40066,7 +40042,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L474",
+      "source_location": "L481",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_wave_2_08_07_2026_feat_frontend_p3_accessibilit\u00e0_aria_label_role_img",
@@ -40076,7 +40052,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L468",
+      "source_location": "L475",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_wave_3_08_07_2026_feat_frontend_p2_onmouseenter_onmouseleave_css_hover",
@@ -40086,7 +40062,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L462",
+      "source_location": "L469",
       "weight": 1.0,
       "source": "docs_changelog_fase_12_authorization_policy_gates",
       "target": "docs_changelog_wave_4_08_07_2026_feat_frontend_p2_stili_inline_tailwind_classi_admin",
@@ -40096,7 +40072,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L523",
+      "source_location": "L530",
       "weight": 1.0,
       "source": "docs_changelog_fase_14_10_bug_critici_fixati",
       "target": "docs_changelog_14_0_09_07_2026_fix_10_bug_critici_blade_endif_react_null_guard_404_route_n_1_senza_ssl_import_duplicato",
@@ -40106,7 +40082,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L539",
+      "source_location": "L546",
       "weight": 1.0,
       "source": "docs_changelog_fase_14_10_bug_critici_fixati",
       "target": "docs_changelog_14_1_09_07_2026_chore_rimossi_import_morti_react_e_dipendenze_inutilizzate_malposizionate",
@@ -40116,7 +40092,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L551",
+      "source_location": "L558",
       "weight": 1.0,
       "source": "docs_changelog_fase_15_p2_p3_manutenzione_e_accessibilit\u00e0",
       "target": "docs_changelog_15_0_09_07_2026_feat_categoria_index_pagination_curiosita_show_view",
@@ -40126,7 +40102,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L558",
+      "source_location": "L565",
       "weight": 1.0,
       "source": "docs_changelog_fase_15_p2_p3_manutenzione_e_accessibilit\u00e0",
       "target": "docs_changelog_15_1_09_07_2026_feat_search_filter_admin_per_categoria_missione_curiosit\u00e0_galleria",
@@ -40136,7 +40112,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L565",
+      "source_location": "L572",
       "weight": 1.0,
       "source": "docs_changelog_fase_15_p2_p3_manutenzione_e_accessibilit\u00e0",
       "target": "docs_changelog_15_2_09_07_2026_feat_seo_meta_tags_react_5_pagine_guest",
@@ -40146,7 +40122,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L573",
+      "source_location": "L580",
       "weight": 1.0,
       "source": "docs_changelog_fase_15_p2_p3_manutenzione_e_accessibilit\u00e0",
       "target": "docs_changelog_15_3_09_07_2026_feat_error_boundary_globale_react",
@@ -40156,7 +40132,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L578",
+      "source_location": "L585",
       "weight": 1.0,
       "source": "docs_changelog_fase_15_p2_p3_manutenzione_e_accessibilit\u00e0",
       "target": "docs_changelog_15_4_09_07_2026_feat_admin_crud_test_4_file",
@@ -40166,7 +40142,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L587",
+      "source_location": "L594",
       "weight": 1.0,
       "source": "docs_changelog_fase_1_critico_react_frontend_p0",
       "target": "docs_changelog_1_0_10_07_2026_f5ed6ab_feat_react_p0_abortcontroller_usefetch_errorboundary_image_guards_axios_interceptors",
@@ -40176,7 +40152,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L596",
+      "source_location": "L603",
       "weight": 1.0,
       "source": "docs_changelog_fase_2_critico_backend_laravel_p0",
       "target": "docs_changelog_2_0_10_07_2026_f5ed6ab_feat_laravel_p0_job_queue_chunk_50_rate_limiting_caching_nasa",
@@ -40186,7 +40162,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L607",
+      "source_location": "L614",
       "weight": 1.0,
       "source": "docs_changelog_piano_ottimizzazione_p1",
       "target": "docs_changelog_3_4_11_07_2026_feat_framer_motion_css_solarsystem_clickable_immagini_realistiche",
@@ -41284,5 +41260,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bdc202d2e0cfb15346e989f6a170022482fac710"
+  "built_at_commit": "b91570cf44e3fd5eed25eea7569cf07209ad221d"
 }

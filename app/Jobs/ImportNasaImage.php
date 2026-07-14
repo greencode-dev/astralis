@@ -35,7 +35,6 @@ class ImportNasaImage implements ShouldQueue
 
         $nasaService->importForBody($this->corpo, $this->galleryCount, $this->force);
 
-        Cache::forget('admin.dashboard');
         Cache::forget('api.dashboard.stats');
     }
 

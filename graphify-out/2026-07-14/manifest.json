@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/NasaImportController.php": {
-    "mtime": 1784021291.5089986,
-    "ast_hash": "f43b959eb43f64f7fbb8970dbdc5f3ff",
+    "mtime": 1784021743.0584507,
+    "ast_hash": "4d1f889da7ba27c5d4b4232df20e8514",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Api/CategoriaController.php": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "app/Services/NasaImageService.php": {
-    "mtime": 1784021289.187235,
-    "ast_hash": "688be54f669ef6f5611ac1307d4cdb02",
+    "mtime": 1784021767.002867,
+    "ast_hash": "82c5c27d0309c5999db92156214d6ca0",
     "semantic_hash": ""
   },
   "artisan": {
@@ -710,8 +710,8 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1784021536.9037354,
-    "ast_hash": "024c33455087fc964ff04dd0f0965f16",
+    "mtime": 1784021873.7439332,
+    "ast_hash": "247f8cec09f4f3e1bd6d4caec0e19f64",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
@@ -740,8 +740,8 @@
     "semantic_hash": ""
   },
   "app/Console/Commands/CleanupGalleryDuplicates.php": {
-    "mtime": 1783681820.2659817,
-    "ast_hash": "9aced40853d7b6073222daf27f1ad82c",
+    "mtime": 1784021685.5855548,
+    "ast_hash": "ed968dde0c965419cd9158d31f5755b1",
     "semantic_hash": ""
   },
   "database/migrations/2026_07_07_093736_add_immagine_utente_to_corpi_celesti_table.php": {
@@ -1125,8 +1125,8 @@
     "semantic_hash": ""
   },
   "app/Services/WordMapService.php": {
-    "mtime": 1783498122.687084,
-    "ast_hash": "88822a1da7259c92d313d9e54b43b58f",
+    "mtime": 1784021702.6365974,
+    "ast_hash": "ee99029ccfb41fdde8c95e0fc5005d82",
     "semantic_hash": ""
   },
   "database/migrations/2026_07_08_073349_add_indexes_to_corpi_celesti_and_galleria.php": {

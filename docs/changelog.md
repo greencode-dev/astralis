@@ -1,5 +1,12 @@
 # Changelog
 
+## Fix Dashboard Cache Bug (14/07/2026)
+
+- **Bug critico** — `DashboardController`: rimosso `Cache::remember('admin.dashboard')` che causava `Attempt to read property "nome" on string`. Causa radice: `serializable_classes: false` in `config/cache.php` impediva la deserializzazione di oggetti Eloquent dal database cache
+- `ClearDashboardCache.php`: rimosso `Cache::forget('admin.dashboard')` (non più necessario), mantenuto `Cache::forget('api.dashboard.stats')`
+- `ImportNasaImage.php`: rimosso `Cache::forget('admin.dashboard')`, mantenuto `Cache::forget('api.dashboard.stats')`
+- 5 controller admin: trait `ClearDashboardCache` mantenuto solo per invalidazione cache API
+
 ## Ottimizzazioni NASA Import — P1/P2 (14/07/2026)
 
 - **P2** — `CleanupGalleryDuplicates::headRequest()`: rimosso `withoutVerifying()` ridondante (chiamato 2 volte)
