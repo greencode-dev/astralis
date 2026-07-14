@@ -31,13 +31,13 @@ export default function CorpoDettaglio() {
     const corpo = corpoData?.data || corpoData;
 
     useEffect(() => {
-        if (!corpo?.id) return;
+        if (!corpo?.slug) return;
         const controller = new AbortController();
-        fetchSimili(corpo.id, controller.signal)
+        fetchSimili(corpo.slug, controller.signal)
             .then(res => setSimili(res?.data || []))
             .catch(() => {});
         return () => controller.abort();
-    }, [corpo?.id]);
+    }, [corpo?.slug]);
 
     useEffect(() => {
         document.title = 'Astralis — Corpo Celeste';

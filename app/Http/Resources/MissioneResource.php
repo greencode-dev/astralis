@@ -21,6 +21,10 @@ class MissioneResource extends JsonResource
             'stato' => $this->stato,
             'descrizione' => $this->descrizione,
             'sito_web' => $this->sito_web,
+            'pivot' => $this->whenPivotLoaded('corpo_celeste_missione', fn () => [
+                'tipo_esplorazione' => $this->pivot->tipo_esplorazione,
+                'anno_arrivo' => $this->pivot->anno_arrivo,
+            ]),
             'corpi_celesti' => CorpoCelesteResource::collection($this->whenLoaded('corpiCelesti')),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

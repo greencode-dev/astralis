@@ -1,5 +1,6 @@
 @php
     $isEdit = isset($entity);
+    $entity = $entity ?? null;
     $route = $isEdit ? route('admin.curiosita.update', $entity) : route('admin.curiosita.store');
 @endphp
 <form method="POST" action="{{ $route }}">

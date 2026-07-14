@@ -1,5 +1,6 @@
 @php
     $isEdit = isset($entity);
+    $entity = $entity ?? null;
     $route = $isEdit ? route('admin.missioni.update', $entity) : route('admin.missioni.store');
 @endphp
 <form method="POST" action="{{ $route }}" enctype="multipart/form-data">
@@ -25,9 +26,9 @@
             <label for="stato" class="block text-sm font-medium mb-2 text-admin-text">Stato</label>
             <select name="stato" id="stato"
                     class="admin-input">
-                <option value="completata" {{ old('stato', $entity->stato ?? null) === 'completata' ? 'selected' : '' }}>Completata</option>
-                <option value="in corso" {{ old('stato', $entity->stato ?? null) === 'in corso' ? 'selected' : '' }}>In corso</option>
-                <option value="pianificata" {{ old('stato', $entity->stato ?? null) === 'pianificata' ? 'selected' : '' }}>Pianificata</option>
+                <option value="Completata" {{ old('stato', $entity->stato ?? null) === 'Completata' ? 'selected' : '' }}>Completata</option>
+                <option value="In corso" {{ old('stato', $entity->stato ?? null) === 'In corso' ? 'selected' : '' }}>In corso</option>
+                <option value="Pianificata" {{ old('stato', $entity->stato ?? null) === 'Pianificata' ? 'selected' : '' }}>Pianificata</option>
             </select>
             @error('stato')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
         </div>

@@ -151,13 +151,13 @@ describe('CorpoDettaglio', () => {
         });
     });
 
-    it('calls fetchSimili with the id after corpo loads', async () => {
+    it('calls fetchSimili with the slug after corpo loads', async () => {
         fetchCorpoCeleste.mockResolvedValue(mockCorpoDettaglio);
         fetchSimili.mockResolvedValue(mockSimili);
         renderPage();
 
         await waitFor(() => {
-            expect(fetchSimili).toHaveBeenCalledWith(1, expect.any(AbortSignal));
+            expect(fetchSimili).toHaveBeenCalledWith('terra', expect.any(AbortSignal));
         });
     });
 

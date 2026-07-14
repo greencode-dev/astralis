@@ -1,5 +1,6 @@
 @php
     $isEdit = isset($entity);
+    $entity = $entity ?? null;
     $route = $isEdit ? route('admin.galleria.update', $entity) : route('admin.galleria.store');
 @endphp
 <form method="POST" action="{{ $route }}" enctype="multipart/form-data">

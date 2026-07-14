@@ -52,8 +52,8 @@ export function fetchCorpoCeleste(slug, signal) {
     return apiClient.get(`/corpi-celesti/${slug}`, { signal }).then(res => res.data);
 }
 
-export function fetchSimili(id, signal) {
-    return apiClient.get(`/corpi-celesti/${id}/simili`, { signal }).then(res => res.data);
+export function fetchSimili(slug, signal) {
+    return apiClient.get(`/corpi-celesti/${slug}/simili`, { signal }).then(res => res.data);
 }
 
 export function fetchDashboardStats(signal) {

@@ -50,7 +50,13 @@ class CorpoCelesteController extends Controller
     {
         $this->authorize('create', CorpoCeleste::class);
 
-        CorpoCeleste::create($request->validated());
+        $validated = $request->validated();
+
+        if ($request->filled('immagine')) {
+            $validated['immagine_utente'] = true;
+        }
+
+        CorpoCeleste::create($validated);
 
         $this->clearDashboardCache();
 
