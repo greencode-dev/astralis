@@ -14,7 +14,11 @@ class MissioneResource extends JsonResource
             'id' => $this->id,
             'nome' => $this->nome,
             'slug' => $this->slug,
-            'logo_url' => $this->logo ? Storage::url('missioni/' . $this->logo) : null,
+            'logo_url' => $this->logo
+                ? (str_starts_with($this->logo, 'http')
+                    ? $this->logo
+                    : Storage::url('missioni/' . $this->logo))
+                : null,
             'agenzia' => $this->agenzia,
             'data_lancio' => $this->data_lancio?->format('Y-m-d'),
             'durata_giorni' => $this->durata_giorni,

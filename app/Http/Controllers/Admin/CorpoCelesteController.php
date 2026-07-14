@@ -104,6 +104,18 @@ class CorpoCelesteController extends Controller
     {
         $this->authorize('delete', $corpoCeleste);
 
+        $corpoCeleste->load('galleria');
+
+        foreach ($corpoCeleste->galleria as $img) {
+            if (!str_starts_with($img->percorso, 'http')) {
+                Storage::disk('public')->delete('galleria/' . $img->percorso);
+            }
+        }
+
+        if ($corpoCeleste->immagine && !str_starts_with($corpoCeleste->immagine, 'http')) {
+            Storage::disk('public')->delete('corpi-celesti/' . $corpoCeleste->immagine);
+        }
+
         $corpoCeleste->delete();
 
         $this->clearDashboardCache();

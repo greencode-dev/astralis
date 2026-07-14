@@ -14,8 +14,8 @@ const metriche = [
     { key: 'massa_kg', label: 'Massa', icon: Weight, format: v => formatScientific(v) + ' kg' },
     { key: 'diametro_km', label: 'Diametro', icon: Ruler, format: v => formatNumber(v) + ' km' },
     { key: 'distanza_km', label: 'Distanza dal Sole', icon: MapPin, format: v => formatDistance(v) },
-    { key: 'gravita', label: 'Gravità', icon: Gauge, format: v => v + ' m/s²' },
-    { key: 'temperatura', label: 'Temperatura', icon: Thermometer, format: v => v + ' °C' },
+    { key: 'gravita', label: 'Gravità', icon: Gauge, format: v => Number(v) + ' m/s²' },
+    { key: 'temperatura', label: 'Temperatura', icon: Thermometer, format: v => Number(v) + ' °C' },
     { key: 'periodo_orbitale', label: 'Periodo Orbitale', icon: OrbitIcon, format: v => formatNumber(v) + ' giorni' },
 ];
 
