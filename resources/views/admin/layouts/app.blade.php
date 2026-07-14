@@ -12,7 +12,7 @@
     <title>@yield('title', 'Dashboard') — {{ config('app.name', 'Astralis') }} Admin</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="preconnect" href="https://images-assets.nasa.gov">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700|orbitron:400,500,600,700,800,900&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css'])
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
             onerror="this.onerror=null;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js';s.defer=true;document.head.appendChild(s);"></script>
@@ -26,9 +26,9 @@
                @click.away="sidebarOpen = false">
 
             <div class="flex items-center gap-3 px-6 py-5 border-b border-admin-primary/10">
-                <span class="text-2xl">🚀</span>
+                <img src="/favicon.svg" alt="Astralis" class="h-7 w-7" />
                 <div>
-                    <h1 class="text-lg font-bold text-admin-primary">Astralis</h1>
+                    <h1 class="text-lg font-bold font-orbitron text-admin-primary">Astralis</h1>
                     <p class="text-xs text-admin-secondary">Backoffice</p>
                 </div>
             </div>
