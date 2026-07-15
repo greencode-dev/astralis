@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
+import ScrollToTop from './components/ScrollToTop';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const CorpiLista = lazy(() => import('./pages/CorpiLista'));
@@ -21,10 +22,11 @@ function PageLoader() {
 export default function App() {
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <div className="min-h-screen flex flex-col bg-admin-bg">
-                <ErrorBoundary>
-                    <Navbar />
-                    <main className="flex-1">
+                <Navbar />
+                <main className="flex-1">
+                    <ErrorBoundary>
                         <Suspense fallback={<PageLoader />}>
                             <Routes>
                                 <Route path="/" element={<HomePage />} />
@@ -34,9 +36,9 @@ export default function App() {
                                 <Route path="*" element={<NotFound />} />
                             </Routes>
                         </Suspense>
-                    </main>
-                    <Footer />
-                </ErrorBoundary>
+                    </ErrorBoundary>
+                </main>
+                <Footer />
             </div>
         </BrowserRouter>
     );

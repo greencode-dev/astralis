@@ -51,7 +51,7 @@
                         <td class="py-3 px-4">
                             @if ($corpo->categoria)
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                                      style="background-color: {{ $corpo->categoria->colore }}20; color: {{ $corpo->categoria->colore }};">
+                                      style="background-color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }}20; color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }};">
                                     {{ $corpo->categoria->nome }}
                                 </span>
                             @else

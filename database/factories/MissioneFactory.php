@@ -16,7 +16,7 @@ class MissioneFactory extends Factory
             'agenzia' => fake()->randomElement(['NASA', 'ESA', 'CNSA']),
             'data_lancio' => fake()->date(),
             'durata_giorni' => fake()->numberBetween(1, 3650),
-            'stato' => fake()->randomElement(['completata', 'in corso', 'pianificata']),
+            'stato' => fake()->randomElement(['Completata', 'In corso', 'Pianificata']),
             'descrizione' => fake()->paragraph(),
         ];
     }

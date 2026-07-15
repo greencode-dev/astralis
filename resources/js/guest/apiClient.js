@@ -20,10 +20,12 @@ apiClient.interceptors.response.use(
         const shouldRetry = !error.response || (error.response.status >= 500 && error.response.status < 600);
 
         if (shouldRetry && retryCount <= 2) {
-            config.retryCount = retryCount;
+            if (config.signal?.aborted) return Promise.reject(error);
+            const retryConfig = { ...config, retryCount };
             const delay = Math.pow(2, retryCount) * 500;
             await new Promise(resolve => setTimeout(resolve, delay));
-            return apiClient.request(config);
+            if (config.signal?.aborted) return Promise.reject(error);
+            return apiClient.request(retryConfig);
         }
 
         if (error.response) {

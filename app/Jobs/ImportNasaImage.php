@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Models\CorpoCeleste;
 use App\Services\NasaImageService;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Bus\Queueable;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -13,19 +14,24 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Throwable;
 
-class ImportNasaImage implements ShouldQueue
+class ImportNasaImage implements ShouldQueue, ShouldBeUnique
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public int $tries = 3;
 
-    public int $timeout = 120;
+    public int $timeout = 60;
 
     public function __construct(
         public CorpoCeleste $corpo,
         public int $galleryCount = 5,
         public bool $force = true,
     ) {}
+
+    public function uniqueId(): mixed
+    {
+        return $this->corpo->id;
+    }
 
     public function handle(NasaImageService $nasaService): void
     {

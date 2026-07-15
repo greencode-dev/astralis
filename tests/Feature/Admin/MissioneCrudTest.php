@@ -3,7 +3,6 @@
 namespace Tests\Feature\Admin;
 
 use App\Models\Missione;
-use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -139,26 +138,5 @@ class MissioneCrudTest extends AdminTestCase
         $response->assertSessionHas('success');
 
         $this->assertDatabaseMissing('missioni', ['id' => $missione->id]);
-    }
-
-    public function test_non_admin_cannot_store_missione(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-
-        $response = $this->actingAs($user)
-            ->post(route('admin.missioni.store'), ['nome' => 'Hacked']);
-
-        $response->assertStatus(403);
-    }
-
-    public function test_non_admin_cannot_delete_missione(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-        $missione = Missione::factory()->create();
-
-        $response = $this->actingAs($user)
-            ->delete(route('admin.missioni.destroy', $missione));
-
-        $response->assertStatus(403);
     }
 }

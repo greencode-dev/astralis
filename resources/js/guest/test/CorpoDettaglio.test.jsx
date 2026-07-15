@@ -81,7 +81,7 @@ describe('CorpoDettaglio', () => {
 
         expect(screen.getByText(/12\.7/)).toBeInTheDocument();
         expect(screen.getByText(/150/)).toBeInTheDocument();
-        expect(screen.getByText(/9\.81/)).toBeInTheDocument();
+        expect(screen.getByText(/9[.,]81/)).toBeInTheDocument();
     });
 
     it('displays gallery section', async () => {

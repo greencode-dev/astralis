@@ -1,6 +1,7 @@
 export function formatScientific(v) {
-    if (!v) return '—';
+    if (v === null || v === undefined || v === '') return '—';
     const num = parseFloat(v);
+    if (isNaN(num)) return '—';
     if (num === 0) return '0';
     const exp = Math.floor(Math.log10(Math.abs(num)));
     const mant = num / Math.pow(10, exp);
@@ -8,8 +9,10 @@ export function formatScientific(v) {
 }
 
 export function formatNumber(v) {
-    if (!v) return '—';
+    if (v === null || v === undefined || v === '') return '—';
     const num = parseFloat(v);
+    if (isNaN(num)) return '—';
+    if (num === 0) return '0';
     if (num >= 1_000_000_000) return (num / 1_000_000_000).toFixed(1) + ' Mld';
     if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + ' Mln';
     if (num >= 1_000) return (num / 1_000).toFixed(1) + ' mila';
@@ -17,8 +20,9 @@ export function formatNumber(v) {
 }
 
 export function formatDistance(km) {
-    if (!km) return '—';
+    if (km === null || km === undefined || km === '') return '—';
     const num = parseFloat(km);
+    if (isNaN(num)) return '—';
     if (num === 0) return '0 km';
     if (num >= 1_000_000_000) return (num / 1_000_000_000).toFixed(1) + ' Mld km';
     if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + ' Mln km';

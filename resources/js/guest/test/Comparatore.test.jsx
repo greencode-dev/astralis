@@ -43,7 +43,7 @@ describe('Comparatore', () => {
         renderPage();
 
         await waitFor(() => {
-            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ per_page: 100 }, expect.any(AbortSignal));
+            expect(fetchCorpiCelesti).toHaveBeenCalledWith({ categoria: 'pianeta', per_page: 100 }, expect.any(AbortSignal));
         });
 
         const selects = screen.getAllByRole('combobox');

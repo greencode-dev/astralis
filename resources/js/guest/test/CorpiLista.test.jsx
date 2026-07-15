@@ -178,7 +178,7 @@ describe('CorpiLista', () => {
         renderPage();
 
         await waitFor(() => {
-            expect(screen.getByText('Nessun risultato trovato')).toBeInTheDocument();
+            expect(screen.getByText('Errore nel caricamento dei dati')).toBeInTheDocument();
         });
     });
 });

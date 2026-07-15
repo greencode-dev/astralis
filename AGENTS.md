@@ -67,7 +67,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 215 test PHPUnit, 522 assertion. `npm test` — 107 test Vitest. Totale: 322 test.
+- **Run**: `php artisan test` — 231 test PHPUnit, 555 assertion. `npm test` — 107 test Vitest. Totale: 338 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -184,6 +184,16 @@ Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
 | **37** | Writing Guidelines audit | ✅ |
 | **38** | Frontend Design audit | ✅ |
 | **39** | (audit completati) | ✅ |
+
+### ✅ Completato — Sicurezza e UX (Fasi 1-3)
+
+338 test (231 PHPUnit + 107 Vitest), tutti verdi.
+
+| Fase | Descrizione | Fix | Stato |
+|------|-------------|-----|-------|
+| **1 — Security** | is_admin fillable, colore regex, didascalia max, throttle, FK restrict | C1, C2, C5, H1, H2, H3 | ✅ |
+| **2 — Critical bugs** | apiClient retry, simili race condition, job unique, color picker, conferma import | C3, C4, H4, H13, H15 | ✅ |
+| **3 — UX & quality** | useFetch keep-data, Comparatore URL, Navbar mobile, gravita IT locale, flash auto-dismiss | H7, H8, H9, H11, M1, M2 | ✅ |
 
 ### 🔜 Prossimo step
 

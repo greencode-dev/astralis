@@ -8,10 +8,10 @@ import { useFetch } from '../hooks/useFetch';
 import { useInView } from '../hooks/useInView';
 
 export default function HomePage() {
-    const { data: corpiData, loading: corpiLoading } = useFetch(
+    const { data: corpiData, loading: corpiLoading, error: corpiError } = useFetch(
         signal => fetchCorpiCelesti({ in_evidenza: true, per_page: 6 }, signal), []
     );
-    const { data: stats, loading: statsLoading } = useFetch(
+    const { data: stats, loading: statsLoading, error: statsError } = useFetch(
         signal => fetchDashboardStats(signal), []
     );
 
@@ -113,6 +113,11 @@ export default function HomePage() {
                                     aria-label="Caricamento..."
                                 />
                             ))}
+                        </div>
+                    ) : corpiError ? (
+                        <div className="text-center py-12 rounded-xl bg-red-500/5 border border-red-500/20" role="alert">
+                            <p className="text-red-400 font-medium">Impossibile caricare i corpi celesti</p>
+                            <p className="text-sm mt-2 text-admin-muted">Riprova più tardi</p>
                         </div>
                     ) : corpiEvidenza.length > 0 ? (
                         <div ref={cardsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

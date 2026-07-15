@@ -1,5 +1,30 @@
 # Changelog
 
+## Sicurezza e UX — Fasi 1-3 (15/07/2026)
+
+### Fase 1 — Security fixes
+- **C1** — `User.php`: rimosso `is_admin` da `#[Fillable]` — previene privilege escalation
+- **C5** — `StoreCategoriaRequest.php`: `colore` validato con regex `^#[0-9A-Fa-f]{6}$` — previene CSS injection
+- **C2** — `StoreGalleriaCorpoRequest.php` + `UpdateGalleriaCorpoRequest.php`: `didascalia` max ridotto da 500 a 255 (allineato a DB)
+- **H1+H2** — `routes/web.php`: `throttle:120,1` su route admin, `throttle:30,1` su `suggestNome`
+- **H3** — Migration: `categoria_id` FK cambiata da `cascadeOnDelete` a `restrictOnDelete`
+
+### Fase 2 — Critical bug fixes
+- **C3** — `apiClient.js`: retry con config clonata + 2 abort signal check — fix state mutation e crash
+- **C4** — `CorpoDettaglio.jsx`: `similiSlugRef` verifica slug match prima di `setSimili()` — fix race condition
+- **H4** — `ImportNasaImage.php`: `ShouldBeUnique` + `uniqueId()` su `corpo->id`, timeout 120s→60s
+- **H13** — `color-picker-js.blade.php`: IIFE con null guard + sync su form submit
+- **H15** — `nasa-import/index.blade.php`: messaggio conferma corretto
+
+### Fase 3 — UX & quality improvements
+- **H7** — `useFetch.js`: START preserva dati esistenti (`{ ...state, loading: true }`)
+- **H8** — `Comparatore.jsx`: state derivato direttamente da `searchParams` — eliminata dipendenza circolare
+- **H9** — `Navbar.jsx`: hamburger toggle mobile responsive con Menu/X icons
+- **H11** — `CorpoDettaglio.jsx`: gravita/temperatura null-safe con `toLocaleString('it-IT')`
+- **M1+M2** — `flash.blade.php`: auto-dismiss 5s, fade-out, bottone chiudi, ARIA roles
+
+**Test**: 338 totali (231 PHPUnit + 107 Vitest), tutti verdi.
+
 ## Fix Dashboard Cache Bug (14/07/2026)
 
 - **Bug critico** — `DashboardController`: rimosso `Cache::remember('admin.dashboard')` che causava `Attempt to read property "nome" on string`. Causa radice: `serializable_classes: false` in `config/cache.php` impediva la deserializzazione di oggetti Eloquent dal database cache

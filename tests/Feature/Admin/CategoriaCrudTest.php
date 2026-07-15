@@ -3,7 +3,6 @@
 namespace Tests\Feature\Admin;
 
 use App\Models\Categoria;
-use App\Models\User;
 
 class CategoriaCrudTest extends AdminTestCase
 {
@@ -143,26 +142,5 @@ class CategoriaCrudTest extends AdminTestCase
         $response->assertRedirect(route('admin.categorie.index'));
         $response->assertSessionHas('success');
         $this->assertDatabaseMissing('categorie', ['id' => $categoria->id]);
-    }
-
-    public function test_non_admin_cannot_store_categoria(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-
-        $response = $this->actingAs($user)
-            ->post(route('admin.categorie.store'), ['nome' => 'Hacked']);
-
-        $response->assertStatus(403);
-    }
-
-    public function test_non_admin_cannot_delete_categoria(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-        $categoria = Categoria::factory()->create();
-
-        $response = $this->actingAs($user)
-            ->delete(route('admin.categorie.destroy', $categoria));
-
-        $response->assertStatus(403);
     }
 }

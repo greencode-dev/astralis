@@ -5,10 +5,10 @@
 | Cosa                 | Dettaglio                                                                                    |
 | -------------------- | -------------------------------------------------------------------------------------------- |
 | **Cos'è**            | Catalogo web di corpi celesti (pianeti, stelle, galassie, nebulose, lune, comete, asteroidi) |
-| **Stack**            | Laravel 13 + React 19 + Vite + Blade + Tailwind CSS + MySQL                                  |
+| **Stack**            | Laravel 13 + React 18 + Vite + Blade + Tailwind CSS + MySQL                                  |
 | **Frontend guest**   | React SPA standalone (no Inertia), comunicazione via API REST JSON                           |
 | **Backoffice admin** | Blade puro con Alpine.js, autenticazione Breeze, autorizzazione Policy/Gates                 |
-| **Test**             | 130 PHPUnit + 88 Vitest (218 test totali)                                                    |
+| **Test**             | 231 PHPUnit + 107 Vitest (338 test totali)                                                   |
 | **API esterne**      | NASA Image API — import automatico immagini reali                                            |
 | **Repository**       | [github.com/tuo-username/astralis](https://github.com/tuo-username/astralis)                 |
 
@@ -104,7 +104,7 @@ GET /api/dashboard/stats      ← conteggi per homepage
 
 🎯 **La traccia richiedeva**: un'app React per visitatori non autenticati che mostri la lista degli elementi, i dettagli di un singolo elemento, e le informazioni collegate (categorie, relazioni).
 
-✅ **Noi abbiamo realizzato**: SPA React 19 standalone con Vite. Entry point separato (`resources/js/guest/main.jsx`), routing lato client con react-router-dom. Cinque pagine:
+✅ **Noi abbiamo realizzato**: SPA React 18 standalone con Vite. Entry point separato (`resources/js/guest/main.jsx`), routing lato client con react-router-dom. Cinque pagine:
 
 | Pagina             | Route                  | Cosa mostra                                                            |
 | ------------------ | ---------------------- | ---------------------------------------------------------------------- |
@@ -355,7 +355,7 @@ protected function setUp(): void
 | 4   | Relazioni 1-N o N-N          | **Fase 1** — 3 tipi: BelongsTo/HasMany (1-N), BelongsToMany (N-N con pivot)                          | ✅    |
 | 5   | CRUD entità secondarie       | **Fase 2** — Categoria, Missione, Curiosità, Galleria — CRUD completo ciascuno                       | ✅    |
 | 6   | Upload media                 | **Fase 7** — Missioni (logo 300px), Galleria (1200x1200) con Intervention Image v4                   | ✅    |
-| 7   | SPA React guest              | **Fase 4-5** — React 19 standalone, 5 pagine, 9 componenti, react-router-dom                         | ✅    |
+| 7   | SPA React guest              | **Fase 4-5** — React 18 standalone, 5 pagine, 9 componenti, react-router-dom                         | ✅    |
 | 8   | Lista elementi guest         | **Fase 4-5** — CorpiLista.jsx: griglia, filtri (categoria/tipo/search), paginazione                  | ✅    |
 | 9   | Dettaglio elemento guest     | **Fase 4-5** — CorpoDettaglio.jsx: metriche, galleria, curiosità, missioni, simili                   | ✅    |
 | 10  | Info correlate               | **Fase 4-5** — Badge categoria, lightbox, timeline missioni, simili, curiosità                       | ✅    |
@@ -496,7 +496,7 @@ Questo crea: `app/Models/Commento.php`, `database/migrations/...create_commenti_
 | **Backend**        | Laravel                    | 13       | Richiesto dalla traccia. Eloquent ORM, migrazioni, artisan CLI |
 | **Database**       | MySQL                      | 8.x      | Richiesto. Porta 3307                                          |
 | **Auth**           | Laravel Breeze             | —        | Richiesto. Configurato con Blade (non Inertia)                 |
-| **Frontend guest** | React                      | 19       | Richiesto. SPA standalone con Vite                             |
+| **Frontend guest** | React                      | 18       | Richiesto. SPA standalone con Vite                             |
 | **Frontend admin** | Blade + Alpine.js          | —        | Richiesto per admin (Blade). Alpine.js per modali conferma     |
 | **CSS**            | Tailwind CSS               | 3.2      | Utility-first, tema dark custom                                |
 | **Animazioni**     | framer-motion              | 12       | Sistema solare, transizioni pagina                             |

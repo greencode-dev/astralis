@@ -90,8 +90,8 @@ export default function SolarSystem() {
     })), []);
 
     return (
-        <div className="relative flex items-center justify-center min-h-[500px]" aria-hidden="true">
-            <div className="absolute inset-0 overflow-hidden">
+        <div className="relative flex items-center justify-center min-h-[500px]" role="img" aria-label="Sistema solare interattivo — clicca un pianeta per vederne il dettaglio">
+            <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
                 {stars.map(star => (
                     <div
                         key={star.id}
@@ -121,7 +121,7 @@ export default function SolarSystem() {
                 </div>
             </div>
 
-            <div className="absolute z-5">
+            <div className="absolute z-[5]">
                 {planets.map(planet => (
                     <div
                         key={planet.name}

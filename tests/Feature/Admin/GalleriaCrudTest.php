@@ -4,7 +4,6 @@ namespace Tests\Feature\Admin;
 
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
-use App\Models\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
@@ -112,18 +111,5 @@ class GalleriaCrudTest extends AdminTestCase
         $response->assertSessionHas('success');
 
         $this->assertDatabaseMissing('galleria_corpi', ['id' => $item->id]);
-    }
-
-    public function test_non_admin_cannot_store_galleria(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-
-        $response = $this->actingAs($user)
-            ->post(route('admin.galleria.store'), [
-                'corpo_celeste_id' => $this->corpo->id,
-                'percorso' => UploadedFile::fake()->image('hacked.jpg'),
-            ]);
-
-        $response->assertStatus(403);
     }
 }

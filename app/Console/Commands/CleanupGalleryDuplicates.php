@@ -184,7 +184,10 @@ class CleanupGalleryDuplicates extends Command
 
     private function headRequest(string $url): int
     {
-        $http = Http::timeout(5)->withoutVerifying();
+        $http = Http::timeout(5);
+        if (app()->environment('local', 'testing')) {
+            $http = $http->withoutVerifying();
+        }
 
         try {
             return $http->head($url)->status();

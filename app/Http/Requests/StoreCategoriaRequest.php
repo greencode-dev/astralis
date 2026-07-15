@@ -17,7 +17,7 @@ class StoreCategoriaRequest extends FormRequest
             'nome' => ['required', 'string', 'max:255', 'unique:categorie,nome'],
             'icona' => ['nullable', 'string', 'max:50'],
             'descrizione' => ['nullable', 'string', 'max:1000'],
-            'colore' => ['nullable', 'string', 'max:20'],
+            'colore' => ['nullable', 'string', 'regex:/^#[0-9A-Fa-f]{6}$/'],
         ];
     }
 }

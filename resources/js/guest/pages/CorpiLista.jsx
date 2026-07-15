@@ -25,7 +25,7 @@ export default function CorpiLista() {
     const { data: categorieData } = useFetch(
         signal => fetchCategorie(signal), []
     );
-    const { data: corpiData, loading } = useFetch(
+    const { data: corpiData, loading, error: corpiError } = useFetch(
         signal => {
             const params = { per_page: 12, page };
             if (categoriaSlug) params.categoria = categoriaSlug;
@@ -138,6 +138,14 @@ export default function CorpiLista() {
                     {Array.from({ length: 8 }).map((_, i) => (
                         <div key={i} className="rounded-xl animate-pulse bg-admin-card h-[320px]" role="status" aria-label="Caricamento..." />
                     ))}
+                </div>
+            ) : corpiError ? (
+                <div className="text-center py-20 rounded-xl bg-red-500/5 border border-red-500/20" role="alert">
+                    <p className="text-lg font-medium text-red-400">Errore nel caricamento dei dati</p>
+                    <p className="text-sm mt-2 text-admin-muted">Verifica la connessione e riprova</p>
+                    <button onClick={() => window.location.reload()} className="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-admin-primary/10 text-admin-primary hover:bg-admin-primary/20 transition-all">
+                        Riprova
+                    </button>
                 </div>
             ) : corpi.length > 0 ? (
                 <>

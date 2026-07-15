@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Ruler, Weight, Thermometer, Gauge, MapPin, Calendar, User, Star, Rocket, Lightbulb, Orbit as OrbitIcon } from 'lucide-react';
 import { fetchCorpoCeleste, fetchSimili } from '../apiClient';
@@ -14,8 +14,8 @@ const metriche = [
     { key: 'massa_kg', label: 'Massa', icon: Weight, format: v => formatScientific(v) + ' kg' },
     { key: 'diametro_km', label: 'Diametro', icon: Ruler, format: v => formatNumber(v) + ' km' },
     { key: 'distanza_km', label: 'Distanza dal Sole', icon: MapPin, format: v => formatDistance(v) },
-    { key: 'gravita', label: 'Gravità', icon: Gauge, format: v => Number(v) + ' m/s²' },
-    { key: 'temperatura', label: 'Temperatura', icon: Thermometer, format: v => Number(v) + ' °C' },
+    { key: 'gravita', label: 'Gravità', icon: Gauge, format: v => v != null ? Number(v).toLocaleString('it-IT') + ' m/s²' : '—' },
+    { key: 'temperatura', label: 'Temperatura', icon: Thermometer, format: v => v != null ? Number(v).toLocaleString('it-IT') + ' °C' : '—' },
     { key: 'periodo_orbitale', label: 'Periodo Orbitale', icon: OrbitIcon, format: v => formatNumber(v) + ' giorni' },
 ];
 
@@ -24,6 +24,7 @@ export default function CorpoDettaglio() {
 
     const [heroImgError, setHeroImgError] = useState(false);
     const [simili, setSimili] = useState([]);
+    const similiSlugRef = useRef(null);
 
     const { data: corpoData, loading, error } = useFetch(
         signal => fetchCorpoCeleste(slug, signal), [slug]
@@ -32,22 +33,27 @@ export default function CorpoDettaglio() {
 
     useEffect(() => {
         if (!corpo?.slug) return;
+        similiSlugRef.current = corpo.slug;
         const controller = new AbortController();
         fetchSimili(corpo.slug, controller.signal)
-            .then(res => setSimili(res?.data || []))
+            .then(res => {
+                if (similiSlugRef.current === corpo.slug) {
+                    setSimili(res?.data || []);
+                }
+            })
             .catch(() => {});
         return () => controller.abort();
     }, [corpo?.slug]);
 
     useEffect(() => {
-        document.title = 'Astralis — Corpo Celeste';
+        document.title = 'Caricamento... — Astralis';
     }, []);
 
     useEffect(() => {
         if (corpo?.nome_display || corpo?.nome) {
             document.title = `${corpo.nome_display || corpo.nome} — Astralis`;
         }
-    }, [corpo]);
+    }, [corpo?.nome_display, corpo?.nome]);
 
     if (loading) {
         return (

@@ -139,7 +139,7 @@ describe('HomePage', () => {
         renderPage();
 
         await waitFor(() => {
-            expect(screen.getByText('Nessun corpo celeste in evidenza al momento.')).toBeInTheDocument();
+            expect(screen.getByText('Impossibile caricare i corpi celesti')).toBeInTheDocument();
         });
     });
 });

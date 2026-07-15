@@ -52,7 +52,7 @@
                         <td class="py-3 px-4">
                             @if ($corpo->categoria)
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                                      style="background-color: {{ $corpo->categoria->colore }}20; color: {{ $corpo->categoria->colore }};">
+                                      style="background-color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }}20; color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }};">
                                     {{ $corpo->categoria->nome }}
                                 </span>
                             @else
@@ -74,7 +74,7 @@
                         </td>
                         <td class="py-3 px-4 text-right">
                             @if ($corpo->immagine)
-                                <form method="POST" action="{{ route('admin.nasa-import.import', $corpo) }}" class="inline" onsubmit="return confirm('Sostituire l\'immagine di {{ $corpo->nome }} con una nuova da NASA?');">
+                                <form method="POST" action="{{ route('admin.nasa-import.import', $corpo) }}" class="inline" data-confirm="Sostituire l'immagine di {{ $corpo->nome }} con una nuova da NASA?">
                                     @csrf
                                     <button type="submit"
                                             class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 hover:bg-admin-accent/25 hover:border-admin-accent/40 bg-admin-accent/15 text-admin-accent border border-admin-accent/20">
@@ -131,8 +131,8 @@
              @click.stop>
             <h3 id="force-import-title" class="text-lg font-semibold mb-2 text-admin-text">Force Import All</h3>
             <p class="text-sm mb-6 text-gray-400">
-                Vuoi davvero importare le immagini dalla NASA per <strong class="text-admin-text">tutti</strong> i corpi celesti?<br>
-                Le immagini esistenti verranno sovrascritte.
+                Vuoi davvero importare le immagini dalla NASA per i corpi celesti <strong class="text-admin-text">senza immagine</strong>?<br>
+                I corpi che hanno già un'immagine verranno saltati.
             </p>
             <div class="flex justify-end gap-3">
                 <button type="button"

@@ -1,11 +1,12 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-14*
+*Ultimo aggiornamento: 2026-07-15*
 
 ## Da Fare
 
 ## Fatto
 
+- [x] **Fasi 1-3** — Sicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 338 test (231 PHPUnit + 107 Vitest)
 - [x] **Task 70** — API edge case tests: ApiEdgeCaseTest.php (17 test: percent, underscore, per_page, agenzia/stato filters, empty DB, factory, dashboard, galleria/curiosita includes)
 - [x] **Task 69** — Search & filter tests: SearchAndFilterTest.php (10 test: search per nome/nome_it/titolo/didascalia, stato filter, wildcard escaping)
 - [x] **Task 67** — Frontend tests: NotFound(4), ErrorBoundary(4), TimelineMissioni(8), Navbar(6) — 22 test Vitest
@@ -57,7 +58,7 @@
 
 ## Note
 
-- **Stato**: 70 task totali, tutte completate. 322 test (215 PHPUnit + 107 Vitest), 522+ assertion.
+- **Stato**: 70 task + 3 fasi sicurezza/UX completati. 338 test (231 PHPUnit + 107 Vitest), 555+ assertion.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

@@ -4,7 +4,6 @@ namespace Tests\Feature\Admin;
 
 use App\Models\Categoria;
 use App\Models\CorpoCeleste;
-use App\Models\User;
 
 class CorpoCelesteCrudTest extends AdminTestCase
 {
@@ -167,29 +166,5 @@ class CorpoCelesteCrudTest extends AdminTestCase
         $response->assertSessionHas('success');
 
         $this->assertDatabaseMissing('corpi_celesti', ['id' => $corpo->id]);
-    }
-
-    public function test_non_admin_cannot_store_corpo(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-
-        $response = $this->actingAs($user)
-            ->post(route('admin.corpi-celesti.store'), [
-                'nome' => 'Hacked',
-                'categoria_id' => $this->categoria->id,
-            ]);
-
-        $response->assertStatus(403);
-    }
-
-    public function test_non_admin_cannot_delete_corpo(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-        $corpo = CorpoCeleste::factory()->create(['categoria_id' => $this->categoria->id]);
-
-        $response = $this->actingAs($user)
-            ->delete(route('admin.corpi-celesti.destroy', $corpo));
-
-        $response->assertStatus(403);
     }
 }

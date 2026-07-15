@@ -14,7 +14,7 @@ class NasaImageService
     {
         $cacheKey = 'nasa_search_' . md5($query . '|' . implode(',', $extraFallbacks));
 
-        return Cache::remember($cacheKey, 86400, function () use ($query, $extraFallbacks) {
+        return Cache::remember($cacheKey, 3600, function () use ($query, $extraFallbacks) {
             $fallbacks = $extraFallbacks;
 
             $stripped = str_replace(["'s", "'", "`", "’"], "", $query);

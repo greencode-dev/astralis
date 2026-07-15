@@ -11,7 +11,7 @@ use App\Models\User;
 
 class AuthorizationTest extends AdminTestCase
 {
-    // ── Store (3 entità con dati diversi) ──────────────────────
+    // ── Store (5 entità) ──────────────────────────────────────
 
     public function test_non_admin_cannot_store_categoria(): void
     {
@@ -43,6 +43,35 @@ class AuthorizationTest extends AdminTestCase
 
         $response = $this->actingAs($user)
             ->post(route('admin.missioni.store'), ['nome' => 'Hacked']);
+
+        $response->assertStatus(403);
+    }
+
+    public function test_non_admin_cannot_store_curiosita(): void
+    {
+        $user = User::factory()->create(['is_admin' => false]);
+        $corpo = CorpoCeleste::factory()->create();
+
+        $response = $this->actingAs($user)
+            ->post(route('admin.curiosita.store'), [
+                'corpo_celeste_id' => $corpo->id,
+                'titolo' => 'Hacked',
+                'descrizione' => 'Hacked.',
+            ]);
+
+        $response->assertStatus(403);
+    }
+
+    public function test_non_admin_cannot_store_galleria(): void
+    {
+        $user = User::factory()->create(['is_admin' => false]);
+        $corpo = CorpoCeleste::factory()->create();
+
+        $response = $this->actingAs($user)
+            ->post(route('admin.galleria.store'), [
+                'corpo_celeste_id' => $corpo->id,
+                'percorso' => \Illuminate\Http\UploadedFile::fake()->image('hacked.jpg'),
+            ]);
 
         $response->assertStatus(403);
     }

@@ -1,9 +1,10 @@
 import { useReducer, useEffect } from 'react';
+import axios from 'axios';
 
 function fetchReducer(state, action) {
   switch (action.type) {
     case 'START':
-      return { data: null, loading: true, error: null };
+      return { ...state, loading: true, error: null };
     case 'SUCCESS':
       return { data: action.payload, loading: false, error: null };
     case 'ERROR':
@@ -38,7 +39,7 @@ export function useFetch(asyncFn, deps = [], skip = false) {
           dispatch({ type: 'SUCCESS', payload: result });
         }
       } catch (err) {
-        if (!cancelled && err?.name !== 'CanceledError') {
+        if (!cancelled && !axios.isCancel(err)) {
           dispatch({ type: 'ERROR', payload: err });
         }
       }

@@ -4,7 +4,6 @@ namespace Tests\Feature\Admin;
 
 use App\Models\CorpoCeleste;
 use App\Models\Curiosita;
-use App\Models\User;
 
 class CuriositaCrudTest extends AdminTestCase
 {
@@ -120,19 +119,5 @@ class CuriositaCrudTest extends AdminTestCase
         $response->assertSessionHas('success');
 
         $this->assertDatabaseMissing('curiosita', ['id' => $curiositum->id]);
-    }
-
-    public function test_non_admin_cannot_store_curiosita(): void
-    {
-        $user = User::factory()->create(['is_admin' => false]);
-
-        $response = $this->actingAs($user)
-            ->post(route('admin.curiosita.store'), [
-                'corpo_celeste_id' => $this->corpo->id,
-                'titolo' => 'Hacked',
-                'descrizione' => 'Hacked.',
-            ]);
-
-        $response->assertStatus(403);
     }
 }

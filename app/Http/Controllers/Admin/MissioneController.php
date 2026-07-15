@@ -78,7 +78,7 @@ class MissioneController extends Controller
         $validated = $request->validated();
 
         if ($request->hasFile('logo')) {
-            if ($missione->logo) {
+            if ($missione->logo && !str_starts_with($missione->logo, 'http')) {
                 Storage::disk('public')->delete('missioni/' . $missione->logo);
             }
             $validated['logo'] = $uploader->upload($request->file('logo'), 'missioni', 300, 300);
@@ -101,7 +101,7 @@ class MissioneController extends Controller
                 ->with('error', 'Impossibile eliminare: ci sono corpi celesti associati a questa missione.');
         }
 
-        if ($missione->logo) {
+        if ($missione->logo && !str_starts_with($missione->logo, 'http')) {
             Storage::disk('public')->delete('missioni/' . $missione->logo);
         }
 

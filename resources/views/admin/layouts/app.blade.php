@@ -19,6 +19,9 @@
     <style>[x-cloak] { display: none !important; }</style>
 </head>
 <body class="font-sans antialiased bg-admin-bg text-admin-text">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-admin-primary focus:text-admin-bg focus:rounded-lg focus:m-2">
+        Vai al contenuto principale
+    </a>
     <div class="flex h-screen overflow-hidden" x-data="{ sidebarOpen: false }">
 
         <aside class="fixed inset-y-0 left-0 z-40 flex-shrink-0 w-64 overflow-y-auto transition-transform duration-300 -translate-x-full border-r bg-admin-card border-admin-primary/10 md:relative md:translate-x-0 md:inset-auto"
@@ -57,6 +60,7 @@
                     <a href="{{ route($item['route']) }}"
                        @if ($isActive)
                             class="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg bg-admin-primary/15 text-admin-primary"
+                            aria-current="page"
                         @else
                             class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary"
                         @endif>
@@ -105,7 +109,7 @@
                 </div>
             </header>
 
-            <main class="flex-1 p-6 overflow-y-auto">
+            <main id="main-content" class="flex-1 p-6 overflow-y-auto">
                 @isset($slot)
                     {{ $slot }}
                 @else
@@ -114,6 +118,26 @@
             </main>
         </div>
     </div>
+    <script>
+    document.querySelectorAll('form[data-confirm]').forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+            if (!confirm(form.getAttribute('data-confirm'))) {
+                e.preventDefault();
+            }
+        });
+    });
+    window.__astralisImgFallback = function(el) {
+        var name = el.getAttribute('data-nome') || 'non disponibile';
+        el.alt = 'Immagine non disponibile';
+        el.style.display = 'none';
+        var div = document.createElement('div');
+        div.setAttribute('role', 'img');
+        div.setAttribute('aria-label', 'Immagine non disponibile per ' + name);
+        div.style.cssText = 'display:flex;align-items:center;justify-content:center;height:100%;padding:1rem;text-align:center;color:var(--admin-neutral);font-size:0.75rem;';
+        div.textContent = 'Immagine non disponibile';
+        el.parentElement.appendChild(div);
+    };
+    </script>
     @stack('scripts')
 </body>
 </html>

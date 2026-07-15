@@ -4,7 +4,7 @@ export default function Footer() {
             <div className="px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                     <div className="flex items-center gap-2">
-                        <img src="/favicon.svg" alt="" className="w-24 h-24" />
+                        <img src="/favicon.svg" alt="Astralis" className="w-24 h-24" />
                         <span className="font-bold font-orbitron text-admin-primary">
                             Astralis
                         </span>

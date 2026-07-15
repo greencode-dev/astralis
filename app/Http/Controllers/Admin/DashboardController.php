@@ -28,9 +28,10 @@ class DashboardController extends Controller
             ->get();
 
         $corpiPerCategoria = Categoria::withCount('corpiCelesti')
-            ->having('corpi_celesti_count', '>', 0)
             ->orderByDesc('corpi_celesti_count')
             ->get()
+            ->filter(fn ($c) => $c->corpi_celesti_count > 0)
+            ->values()
             ->map(fn ($c) => [
                 'nome' => $c->nome,
                 'colore' => $c->colore,

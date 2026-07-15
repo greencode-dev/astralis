@@ -179,7 +179,7 @@
                         datasets: [{
                             label: 'Missioni',
                             data: @json(array_values($missioniPerStato)),
-                            backgroundColor: ['var(--admin-success)', 'var(--admin-warning)', 'var(--admin-neutral)'],
+                            backgroundColor: ['var(--admin-success)', 'var(--admin-primary)', 'var(--admin-warning)'],
                             borderRadius: 6,
                         }]
                     },

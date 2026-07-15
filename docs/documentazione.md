@@ -11,7 +11,7 @@ Astralis è un catalogo web di corpi celesti (pianeti, stelle, galassie, nebulos
 | Backend    | Laravel 13, PHP 8.x        |
 | Auth       | Laravel Breeze             |
 | Database   | MySQL                      |
-| Frontend   | React 19, Vite             |
+| Frontend   | React 18, Vite             |
 | CSS        | Tailwind CSS               |
 | Animazioni | framer-motion              |
 | Icone      | Lucide React               |
@@ -337,8 +337,8 @@ php artisan astralis:gallery --fix
 npx graphify update .
 
 # 6. Verifica
-php artisan test   # 173 test PHPUnit
-npm test           # 87 test Vitest
+php artisan test   # 231 test PHPUnit
+npm test           # 107 test Vitest
 
 # 7. Apri l'agente e digita:
 #    "riprendi il piano da Fase 3"
@@ -390,6 +390,31 @@ cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'
 
 # Comandi npm/graphify funzionano normalmente da Git Bash
 ```
+
+## Sicurezza e UX — Fasi 1-3 (15/07/2026)
+
+### Fase 1 — Security fixes
+- **User model**: `is_admin` rimosso da `#[Fillable]` — previene privilege escalation via mass assignment
+- **Categoria validazione**: `colore` validato con `regex:/^#[0-9A-Fa-f]{6}$/` (prima: `max:20`) — previene CSS injection
+- **Galleria validazione**: `didascalia` max ridotto da 500 a 255 — allineato a `VARCHAR(255)` del DB
+- **Rate limiting**: `throttle:120,1` sulle route admin, `throttle:30,1` sull'endpoint `suggestNome`
+- **Foreign key**: `categoria_id` su `corpi_celesti` cambiata da `cascadeOnDelete` a `restrictOnDelete` — previene cancellazione a catena
+
+### Fase 2 — Critical bug fixes
+- **apiClient retry**: config clonata prima del mutate + 2 abort signal check prima di delay e retry — previene state mutation e crash
+- **CorpoDettaglio simili**: `similiSlugRef` verifica slug match prima di `setSimili()` — fix race condition su navigazione veloce
+- **ImportNasaImage**: `ShouldBeUnique` + `uniqueId()` basato su `corpo->id` — previene job duplicati in coda, timeout ridotto da 120s a 60s
+- **Color picker**: IIFE con null guard + sync su form submit (`colorEl.value = hexEl.value`) — fix malfunzionamento su pagine con più picker
+- **NasaImport conferma**: Messaggio corretto ("corpi senza immagine" invece di "tutti", "verranno saltati" invece di "sovrascritte")
+
+### Fase 3 — UX & quality improvements
+- **useFetch keep data**: `START` action ora preserva i dati esistenti (`{ ...state, loading: true }`) — niente flash a skeleton su ricaricamento
+- **Comparatore URL-based**: state sincronizzato direttamente da `searchParams` — eliminata dipendenza circolare state↔URL con 2 useEffect
+- **Navbar mobile**: hamburger toggle con Menu/X icons, menu dropdown responsive, chiusura su navigazione
+- **Gravita/temperatura**: null-safe formatting con `toLocaleString('it-IT')` — separatori italiani (`9,81` invece di `9.81`)
+- **Flash messages admin**: auto-dismiss 5s con Alpine.js, fade-out, bottone chiudi, `role="alert"` per errori/warning, `role="status" aria-live="polite"` per success
+
+**Test**: 338 totali (231 PHPUnit + 107 Vitest), tutti verdi.
 
 ## Avvio rapido (quando il progetto è già configurato)
 

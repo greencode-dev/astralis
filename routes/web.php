@@ -22,12 +22,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('admin')->middleware(['auth', 'verified'])->name('admin.')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'verified', 'throttle:120,1'])->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('categorie', CategoriaController::class)->parameters([
         'categorie' => 'categoria',
     ]);
-    Route::post('corpi-celesti/suggest-nome', [CorpoCelesteController::class, 'suggestNome'])->name('corpi-celesti.suggest-nome');
+    Route::post('corpi-celesti/suggest-nome', [CorpoCelesteController::class, 'suggestNome'])->middleware('throttle:30,1')->name('corpi-celesti.suggest-nome');
     Route::post('corpi-celesti/{corpoCeleste}/set-image/{galleriaCorpo}', [CorpoCelesteController::class, 'setImageFromGallery'])->name('corpi-celesti.set-image');
     Route::resource('corpi-celesti', CorpoCelesteController::class)->parameters([
         'corpi-celesti' => 'corpoCeleste',

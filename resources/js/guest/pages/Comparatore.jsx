@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { ArrowLeft, Ruler, RotateCcw } from 'lucide-react';
 import { fetchCorpiCelesti, fetchCorpoCeleste } from '../apiClient';
@@ -18,11 +18,23 @@ const campi = [
 
 export default function Comparatore() {
     const [searchParams, setSearchParams] = useSearchParams();
-    const [primoSlug, setPrimoSlug] = useState(searchParams.get('primo') || '');
-    const [secondoSlug, setSecondoSlug] = useState(searchParams.get('secondo') || '');
+    const primoSlug = searchParams.get('primo') || '';
+    const secondoSlug = searchParams.get('secondo') || '';
 
-    const { data: corpiData } = useFetch(
-        signal => fetchCorpiCelesti({ per_page: 100 }, signal), []
+    function setSlug(pos, value) {
+        setSearchParams(prev => {
+            const next = new URLSearchParams(prev);
+            if (value) {
+                next.set(pos, value);
+            } else {
+                next.delete(pos);
+            }
+            return next;
+        }, { replace: true });
+    }
+
+    const { data: corpiData, error: corpiError } = useFetch(
+        signal => fetchCorpiCelesti({ categoria: 'pianeta', per_page: 100 }, signal), []
     );
     const { data: primoData, loading: loadingPrimo } = useFetch(
         signal => primoSlug ? fetchCorpoCeleste(primoSlug, signal) : Promise.resolve(null),
@@ -37,20 +49,12 @@ export default function Comparatore() {
         document.title = 'Confronta Pianeti — Astralis';
     }, []);
 
-    useEffect(() => {
-        const params = {};
-        if (primoSlug) params.primo = primoSlug;
-        if (secondoSlug) params.secondo = secondoSlug;
-        setSearchParams(params, { replace: true });
-    }, [primoSlug, secondoSlug]);
-
     const loading = loadingPrimo || loadingSecondo;
     const corpi = corpiData?.data || [];
     const primo = primoData?.data || primoData || null;
     const secondo = secondoData?.data || secondoData || null;
 
     const hasBoth = primo && secondo;
-    const pianeti = corpi.filter(c => c.categoria?.nome === 'Pianeta');
 
     return (
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -62,26 +66,34 @@ export default function Comparatore() {
                 <h1 className="text-3xl font-extrabold mb-2 text-admin-text">Confronta Pianeti</h1>
                 <p className="mb-8 text-admin-dim">Seleziona due pianeti per confrontare i loro dati scientifici.</p>
 
+                {corpiError && (
+                    <div className="mb-6 p-4 rounded-xl bg-red-500/5 border border-red-500/20 text-center" role="alert">
+                        <p className="text-red-400 font-medium">Impossibile caricare la lista dei pianeti</p>
+                        <p className="text-sm mt-1 text-admin-muted">Riprova più tardi</p>
+                    </div>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                     {['primo', 'secondo'].map(pos => {
                         const isPrimo = pos === 'primo';
                         const slug = isPrimo ? primoSlug : secondoSlug;
-                        const setSlug = isPrimo ? setPrimoSlug : setSecondoSlug;
                         const corpo = isPrimo ? primo : secondo;
+                        const selectId = `select-${pos}`;
 
                         return (
                             <div key={pos}>
-                                <label className="block text-sm font-medium mb-2 text-admin-dim">
+                                <label htmlFor={selectId} className="block text-sm font-medium mb-2 text-admin-dim">
                                     {isPrimo ? 'Primo pianeta' : 'Secondo pianeta'}
                                 </label>
                                 <div className="relative">
                                     <select
+                                        id={selectId}
                                         value={slug}
-                                        onChange={e => setSlug(e.target.value)}
+                                        onChange={e => setSlug(pos, e.target.value)}
                                         className="w-full px-4 py-3 rounded-xl text-sm outline-none appearance-none transition-all duration-200 bg-admin-card text-admin-text border border-admin-primary/20 focus:border-admin-primary/50"
                                     >
                                         <option value="">Seleziona un pianeta...</option>
-                                        {pianeti.filter(p => {
+                                        {corpi.filter(p => {
                                             const altroSlug = isPrimo ? secondoSlug : primoSlug;
                                             return p.slug !== altroSlug;
                                         }).map(p => (
@@ -90,7 +102,7 @@ export default function Comparatore() {
                                     </select>
                                     {slug && (
                                         <button
-                                            onClick={() => setSlug('')}
+                                            onClick={() => setSlug(pos, '')}
                                             className="absolute right-3 top-1/2 -translate-y-1/2 transition-all hover:text-[#F97316] text-admin-muted"
                                             aria-label="Resetta selezione"
                                         >

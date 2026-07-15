@@ -16,7 +16,7 @@ class StoreGalleriaCorpoRequest extends FormRequest
         return [
             'corpo_celeste_id' => ['required', 'exists:corpi_celesti,id'],
             'percorso' => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
-            'didascalia' => ['nullable', 'string', 'max:500'],
+            'didascalia' => ['nullable', 'string', 'max:255'],
             'crediti' => ['nullable', 'string', 'max:255'],
             'ordine' => ['nullable', 'integer', 'min:0', 'max:9999'],
         ];
