@@ -195,6 +195,20 @@ Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
 | **2 — Critical bugs** | apiClient retry, simili race condition, job unique, color picker, conferma import | C3, C4, H4, H13, H15 | ✅ |
 | **3 — UX & quality** | useFetch keep-data, Comparatore URL, Navbar mobile, gravita IT locale, flash auto-dismiss | H7, H8, H9, H11, M1, M2 | ✅ |
 
-### 🔜 Prossimo step
+### 🔜 Prossimo step — Bug critici (scegli "Solo i bug critici")
 
-**Task 40 — Debug generale post-ottimizzazione** — Verificare che tutto funzioni dopo le attività di ottimizzazione. Controllare: route, pagine, form, upload, search, paginazione, animation, responsive, admin CRUD, API endpoint.
+| # | Fix | File | Effort |
+|---|-----|------|--------|
+| **1** | Comparatore null crash: gravita/temperatura format senza null guard | `Comparatore.jsx:14-15` | 2 min |
+| **6** | API search non cerca `nome_it` — SPA mostra nomi IT ma ricerca solo su EN | `Api/CorpoCelesteController.php:26-32` | 5 min |
+
+### 🔜 Altri miglioramenti identificati (non urgenti)
+
+| # | Fix | File | Effort |
+|---|-----|------|--------|
+| **2** | Admin search `orWhere` senza grouping — bomba a orologeria | `Admin/CorpoCelesteController.php:30-34` | 5 min |
+| **7** | SearchBar senza `focus-visible:ring` | `SearchBar.jsx:18` | 2 min |
+| **8** | Mobile nav senza Escape/click-outside | `Navbar.jsx` | 15 min |
+| **4** | `memory_limit=512M` senza guard ambientale | `NasaImageService.php` | 5 min |
+| **5** | Test mancanti: setImageFromGallery, suggestNome, accessor, ImportNasaImage | tests/ | 2-3 ore |
+| **3** | Rimuovere framer-motion da SolarSystem (~100-150KB) | `SolarSystem.jsx` | 2-3 ore |

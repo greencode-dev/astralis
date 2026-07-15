@@ -4,6 +4,15 @@
 
 ## Da Fare
 
+- [ ] `[🎨frontend][🔴P0]` Comparatore null crash: gravita/temperatura format senza null guard — `Comparatore.jsx:14-15`
+- [ ] `[🖥️backend][🔴P0]` API search non cerca `nome_it` — SPA mostra nomi IT ma ricerca solo su EN — `Api/CorpoCelesteController.php:26-32`
+- [ ] `[🖥️backend][🟠P1]` Admin search `orWhere` senza grouping — bomba a orologeria — `Admin/CorpoCelesteController.php:30-34`
+- [ ] `[🎨frontend][🟠P1]` SearchBar senza `focus-visible:ring` — keyboard users — `SearchBar.jsx:18`
+- [ ] `[🎨frontend][🟠P1]` Mobile nav senza Escape/click-outside — `Navbar.jsx`
+- [ ] `[🖥️backend][🟠P1]` `memory_limit=512M` senza guard ambientale — `NasaImageService.php`
+- [ ] `[🧪test][🔵P2]` Test mancanti: setImageFromGallery, suggestNome, accessor model, ImportNasaImage::handle
+- [ ] `[🎨frontend][🔵P2]` Rimuovere framer-motion da SolarSystem (~100-150KB bundle) — `SolarSystem.jsx`
+
 ## Fatto
 
 - [x] **Fasi 1-3** — Sicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 338 test (231 PHPUnit + 107 Vitest)
