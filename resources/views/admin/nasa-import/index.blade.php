@@ -9,8 +9,6 @@
             <p class="text-sm text-gray-400">Importa immagini dalla NASA Image Library per ogni corpo celeste.</p>
         </div>
 
-        @include('admin.partials.flash')
-
     <div class="mb-6 flex justify-end">
         <button type="button"
                 @click="modalOpen = true"
@@ -50,14 +48,7 @@
                             </div>
                         </td>
                         <td class="py-3 px-4">
-                            @if ($corpo->categoria)
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                                      style="background-color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }}20; color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }};">
-                                    {{ $corpo->categoria->nome }}
-                                </span>
-                            @else
-                                <span class="text-gray-500">—</span>
-                            @endif
+                            @include('admin.partials.category-badge', ['color' => $corpo->categoria->colore ?? null, 'name' => $corpo->categoria->nome ?? null])
                         </td>
                         <td class="py-3 px-4 text-center">
                             @if ($corpo->immagine)
@@ -95,11 +86,7 @@
                         </td>
                     </tr>
                 @empty
-                    <tr>
-                        <td colspan="4" class="py-12 text-center">
-                            <p class="text-lg text-gray-500">Nessun corpo celeste trovato</p>
-                        </td>
-                    </tr>
+                    @include('admin.partials.empty-table-row', ['colspan' => 4, 'message' => 'Nessun corpo celeste trovato'])
                 @endforelse
             </tbody>
         </table>

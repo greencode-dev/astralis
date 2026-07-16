@@ -4,16 +4,7 @@
 @section('page_title', 'Galleria')
 
 @section('content')
-    <div class="flex justify-between items-center mb-6">
-        <p class="text-sm text-gray-400">Gestisci le immagini della galleria dei corpi celesti</p>
-        <a href="{{ route('admin.galleria.create') }}"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            Nuova Immagine
-        </a>
-    </div>
-
-    @include('admin.partials.flash')
+    @include('admin.partials.index-header', ['description' => 'Gestisci le immagini della galleria dei corpi celesti', 'createRoute' => 'admin.galleria.create', 'createLabel' => 'Nuova Immagine'])
 
     @include('admin.partials.search', ['action' => route('admin.galleria.index'), 'placeholder' => 'Cerca per nome...'])
 

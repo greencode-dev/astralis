@@ -65,11 +65,7 @@
                                         <a href="{{ route('admin.corpi-celesti.show', $corpo) }}" class="transition-colors duration-150 text-admin-text hover:text-admin-primary">{{ $corpo->nome }}</a>
                                     </td>
                                     <td class="py-3 px-4">
-                                        @if ($corpo->categoria)
-                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium" style="background-color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }}20; color: {{ $corpo->categoria->colore ?? 'var(--admin-primary)' }};">{{ $corpo->categoria->nome }}</span>
-                                        @else
-                                            <span class="text-gray-500">—</span>
-                                        @endif
+                                        @include('admin.partials.category-badge', ['color' => $corpo->categoria->colore ?? null, 'name' => $corpo->categoria->nome ?? null])
                                     </td>
                                     <td class="py-3 px-4 text-gray-400">{{ $corpo->pivot->tipo_esplorazione ?? '—' }}</td>
                                     <td class="py-3 px-4 text-gray-400">{{ $corpo->pivot->anno_arrivo ?? '—' }}</td>

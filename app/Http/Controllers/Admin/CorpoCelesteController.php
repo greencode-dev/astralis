@@ -29,8 +29,10 @@ class CorpoCelesteController extends Controller
 
         if ($search = $request->get('search')) {
             $safe = static::escapeLike($search);
-            $query->where('nome', 'like', "%{$safe}%")
-                ->orWhere('nome_it', 'like', "%{$safe}%");
+            $query->where(function ($q) use ($safe) {
+                $q->where('nome', 'like', "%{$safe}%")
+                    ->orWhere('nome_it', 'like', "%{$safe}%");
+            });
         }
 
         $corpi = $query->orderBy('nome')->paginate(20)->withQueryString();

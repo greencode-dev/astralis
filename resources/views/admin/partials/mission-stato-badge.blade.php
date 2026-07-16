@@ -1,11 +1,7 @@
 @php
     $stato = $missione->stato ?? 'Completata';
-    $colors = [
-        'Completata' => ['bg' => 'rgba(34,197,94,0.15)', 'text' => 'var(--admin-success)'],
-        'In corso' => ['bg' => 'rgba(34,211,238,0.15)', 'text' => 'var(--admin-primary)'],
-        'Pianificata' => ['bg' => 'rgba(250,204,21,0.15)', 'text' => 'var(--admin-warning)'],
-    ];
-    $c = $colors[$stato] ?? ['bg' => 'rgba(107,114,128,0.15)', 'text' => 'var(--admin-neutral)'];
+    $stati = config('admin.mission_stati');
+    $c = $stati[$stato] ?? config('admin.mission_stato_default');
 @endphp
 <span class="inline-flex items-center{{ isset($withDot) && $withDot ? ' gap-1.5' : '' }} {{ $class ?? 'px-2.5 py-0.5 rounded-full text-xs font-medium' }}" style="background-color: {{ $c['bg'] }}; color: {{ $c['text'] }};">
     @if (isset($withDot) && $withDot)

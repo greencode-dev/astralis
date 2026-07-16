@@ -26,9 +26,9 @@
             <label for="stato" class="block text-sm font-medium mb-2 text-admin-text">Stato</label>
             <select name="stato" id="stato"
                     class="admin-input">
-                <option value="Completata" {{ old('stato', $entity->stato ?? null) === 'Completata' ? 'selected' : '' }}>Completata</option>
-                <option value="In corso" {{ old('stato', $entity->stato ?? null) === 'In corso' ? 'selected' : '' }}>In corso</option>
-                <option value="Pianificata" {{ old('stato', $entity->stato ?? null) === 'Pianificata' ? 'selected' : '' }}>Pianificata</option>
+                @foreach (array_keys(config('admin.mission_stati')) as $statoVal)
+                    <option value="{{ $statoVal }}" {{ old('stato', $entity->stato ?? null) === $statoVal ? 'selected' : '' }}>{{ $statoVal }}</option>
+                @endforeach
             </select>
             @error('stato')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
         </div>

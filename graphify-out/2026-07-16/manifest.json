@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1784217834.182529,
-    "ast_hash": "3c41616166ef76a05e68c5c1ec3be69d",
+    "mtime": 1784111338.4710252,
+    "ast_hash": "273e4497648ae1f1b80b57d996495834",
     "semantic_hash": ""
   },
   "docs/bug.md": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1784217866.4461448,
-    "ast_hash": "da99ccb200dc05ebd5c2fd4a96011b6d",
+    "mtime": 1784111310.5252748,
+    "ast_hash": "2c4108dfdf16be6de062fcceba20105e",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
@@ -710,8 +710,8 @@
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1784217770.7654526,
-    "ast_hash": "4b1d194ae2bb61e1b89f099f37c0d220",
+    "mtime": 1784115728.349154,
+    "ast_hash": "cec9640b33f166a351977bac8486abc1",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -1210,8 +1210,8 @@
     "semantic_hash": ""
   },
   "docs/testing.md": {
-    "mtime": 1784217803.3970282,
-    "ast_hash": "2dfe46a42a7a0a00539337ef1732208c",
+    "mtime": 1784019655.5952697,
+    "ast_hash": "23f2c9fc2ffe76f8a31115d4e9ec5332",
     "semantic_hash": ""
   },
   "resources/js/guest/test/CategoriaBadge.test.jsx": {
@@ -1660,8 +1660,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784217802.5738354,
-    "ast_hash": "b6649cdf85b62f06336eac9721430f7f",
+    "mtime": 1784115732.8884754,
+    "ast_hash": "5a6045d54a1b1a88c4597c7c3f0b035e",
     "semantic_hash": ""
   },
   "resources/js/guest/hooks/useInView.js": {

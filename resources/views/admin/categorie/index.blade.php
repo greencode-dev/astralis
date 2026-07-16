@@ -4,16 +4,7 @@
 @section('page_title', 'Categorie')
 
 @section('content')
-    <div class="flex justify-between items-center mb-6">
-        <p class="text-sm text-gray-400">Gestisci le categorie di corpi celesti</p>
-        <a href="{{ route('admin.categorie.create') }}"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            Nuova Categoria
-        </a>
-    </div>
-
-    @include('admin.partials.flash')
+    @include('admin.partials.index-header', ['description' => 'Gestisci le categorie di corpi celesti', 'createRoute' => 'admin.categorie.create', 'createLabel' => 'Nuova Categoria'])
 
     @include('admin.partials.search', ['action' => route('admin.categorie.index'), 'placeholder' => 'Cerca per nome...'])
 
@@ -60,12 +51,7 @@
                         </td>
                     </tr>
                 @empty
-                    <tr>
-                        <td colspan="6" class="py-12 text-center">
-                            <p class="text-lg mb-2 text-gray-500">Nessuna categoria trovata</p>
-                            <a href="{{ route('admin.categorie.create') }}" class="text-sm font-medium transition-colors duration-150 text-admin-primary hover:text-admin-secondary">Crea la prima categoria</a>
-                        </td>
-                    </tr>
+                    @include('admin.partials.empty-table-row', ['colspan' => 6, 'message' => 'Nessuna categoria trovata', 'createRoute' => 'admin.categorie.create', 'createLabel' => 'Crea la prima categoria'])
                 @endforelse
             </tbody>
         </table>

@@ -79,7 +79,7 @@ class CorpoCeleste extends Model
             ->withTimestamps();
     }
 
-        public function getNomeDisplayAttribute(): string
+    public function getNomeDisplayAttribute(): string
     {
         return $this->nome_it ?? $this->nome;
     }

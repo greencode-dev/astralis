@@ -59,6 +59,14 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `app/Http/Controllers/Api/` | Controller API (JSON) |
 | `app/Http/Controllers/Auth/` | Controller auth Breeze (Blade) |
 | `resources/views/admin/layouts/app.blade.php` | Master layout admin (sidebar + Alpine.js CDN + x-cloak) |
+| `resources/views/admin/partials/_sidebar-nav.blade.php` | Sidebar nav rendering (reads config/admin.php) |
+| `resources/views/admin/partials/category-badge.blade.php` | Reusable category badge |
+| `resources/views/admin/partials/index-header.blade.php` | Index page header with create button |
+| `resources/views/admin/partials/dashboard-stat.blade.php` | Dashboard stat card |
+| `resources/views/admin/partials/empty-table-row.blade.php` | Empty table state |
+| `resources/views/admin/partials/in-evidenza-badge.blade.php` | Featured badge |
+| `config/admin.php` | Nav items, mission stati, color presets |
+| `resources/js/guest/hooks/useDebounce.js` | Shared debounce hook |
 | `resources/js/guest/pages/NotFound.jsx` | 404 page (catch-all route) |
 | `resources/js/guest/` | React SPA guest |
 
@@ -67,7 +75,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 231 test PHPUnit, 555 assertion. `npm test` — 107 test Vitest. Totale: 338 test.
+- **Run**: `php artisan test` — 47 test PHPUnit, 138 assertion. `npm test` — 107 test Vitest. Totale: 154 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -195,19 +203,24 @@ Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
 | **2 — Critical bugs** | apiClient retry, simili race condition, job unique, color picker, conferma import | C3, C4, H4, H13, H15 | ✅ |
 | **3 — UX & quality** | useFetch keep-data, Comparatore URL, Navbar mobile, gravita IT locale, flash auto-dismiss | H7, H8, H9, H11, M1, M2 | ✅ |
 
-### 🔜 Prossimo step — Bug critici (scegli "Solo i bug critici")
+### ✅ Completato — Quick wins (16/07/2026)
+
+47 PHPUnit + 107 Vitest, tutti verdi.
+
+| Fix | File | Stato |
+|-----|------|-------|
+| **B1** | `Admin/CorpoCelesteController.php` — orWhere grouping | ✅ |
+| **B3** | `CorpoCeleste.php` — accessor indent | ✅ |
+| **F8** | `Navbar.jsx` + `Footer.jsx` — logo oversized | ✅ |
+| **F7** | `SearchBar.jsx` — focus-visible ring | ✅ |
+| **F3** | `Comparatore.jsx` — hardcoded hex → CSS vars | ✅ |
+| **B10** | `flash.blade.php` — 3 blocks → foreach loop | ✅ |
+| **F4** | `CorpiLista.jsx` + `hooks/useDebounce.js` — extract hook | ✅ |
+
+### 🔜 Prossimo step — Bug residui
 
 | # | Fix | File | Effort |
 |---|-----|------|--------|
-| **1** | Comparatore null crash: gravita/temperatura format senza null guard | `Comparatore.jsx:14-15` | 2 min |
-| **6** | API search non cerca `nome_it` — SPA mostra nomi IT ma ricerca solo su EN | `Api/CorpoCelesteController.php:26-32` | 5 min |
-
-### 🔜 Altri miglioramenti identificati (non urgenti)
-
-| # | Fix | File | Effort |
-|---|-----|------|--------|
-| **2** | Admin search `orWhere` senza grouping — bomba a orologeria | `Admin/CorpoCelesteController.php:30-34` | 5 min |
-| **7** | SearchBar senza `focus-visible:ring` | `SearchBar.jsx:18` | 2 min |
 | **8** | Mobile nav senza Escape/click-outside | `Navbar.jsx` | 15 min |
 | **4** | `memory_limit=512M` senza guard ambientale | `NasaImageService.php` | 5 min |
 | **5** | Test mancanti: setImageFromGallery, suggestNome, accessor, ImportNasaImage | tests/ | 2-3 ore |

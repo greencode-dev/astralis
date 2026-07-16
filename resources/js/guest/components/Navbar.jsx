@@ -19,7 +19,7 @@ export default function Navbar() {
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <Link to="/" className="flex items-center gap-3">
-                        <img src="/favicon.svg" alt="Astralis" className="w-24 h-24" />
+                        <img src="/favicon.svg" alt="Astralis" className="w-10 h-10" />
                         <span className="text-xl font-bold font-orbitron text-admin-primary">
                             Astralis
                         </span>

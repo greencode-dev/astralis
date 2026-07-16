@@ -5,15 +5,7 @@ import SearchBar from '../components/SearchBar';
 import { fetchCorpiCelesti, fetchCategorie } from '../apiClient';
 import { useFetch } from '../hooks/useFetch';
 import { useInView } from '../hooks/useInView';
-
-function useDebounce(value, delay = 300) {
-    const [debouncedValue, setDebouncedValue] = useState(value);
-    useEffect(() => {
-        const timer = setTimeout(() => setDebouncedValue(value), delay);
-        return () => clearTimeout(timer);
-    }, [value, delay]);
-    return debouncedValue;
-}
+import { useDebounce } from '../hooks/useDebounce';
 
 export default function CorpiLista() {
     const [search, setSearch] = useState('');

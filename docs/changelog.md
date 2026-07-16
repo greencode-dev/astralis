@@ -1,5 +1,30 @@
 # Changelog
 
+## Quick wins — 7 fix (16/07/2026)
+
+- **B1** — `Admin/CorpoCelesteController.php`: `where`/`orWhere` search wrapped in closure — SQL precedence bug fixed
+- **B3** — `CorpoCeleste.php`: fixed 8-space indent → 4-space on `getNomeDisplayAttribute`
+- **F8** — `Navbar.jsx` + `Footer.jsx`: logo `w-24 h-24` (96px) → `w-10 h-10` (40px) — was overflowing h-16 navbar
+- **F7** — `SearchBar.jsx`: added `focus-visible:ring-2 focus-visible:ring-admin-primary/50` for keyboard accessibility
+- **F3** — `Comparatore.jsx`: replaced hardcoded `[#F97316]` with `admin-accent`, inline hex `#0E0E24`/`#111128` with `bg-admin-bg`/`bg-admin-card`
+- **B10** — `flash.blade.php`: refactored 3 identical blocks (35 lines) into 1 `@foreach` loop (22 lines)
+- **F4** — `CorpiLista.jsx`: extracted inline `useDebounce` to shared `hooks/useDebounce.js`
+
+**Test**: 47 PHPUnit + 107 Vitest, tutti verdi.
+
+## Sidebar + Blade Partials Refactoring (16/07/2026)
+
+- **config/admin.php**: centralizzato nav_items (7 voci), mission_stati, mission_stato_default, color_presets
+- **_sidebar-nav.blade.php**: lettura nav da config, `Route::is()` per active state
+- **category-badge.blade.php**: badge riusabile con `$color`, `$name`, `$size`, `$withDot` — wired in 6 file
+- **index-header.blade.php**: header pagine index con titolo, descrizione, pulsante crea — wired in 5 file
+- **dashboard-stat.blade.php**: card statistiche dashboard con `$color`, `$icon`, `$value`, `$label` — wired in dashboard (4 card)
+- **empty-table-row.blade.php**: stato tabella vuota con `$colspan`, `$message` — wired in 5 file
+- **in-evidenza-badge.blade.php**: badge "in evidenza" riusabile — wired in corpi-celesti/index+show
+- **flash in layout master**: `@include('admin.partials.flash')` in `layouts/app.blade.php` — fix bug flash non mostrati su dashboard
+- **CSS vars**: `green-500`/`red-500` → `admin-success`/`admin-error` in flash + show-actions
+- **Route::is()**: sostituito fragile `str_starts_with` + `explode` per active state sidebar
+
 ## Sicurezza e UX — Fasi 1-3 (15/07/2026)
 
 ### Fase 1 — Security fixes

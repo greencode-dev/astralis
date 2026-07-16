@@ -1,13 +1,9 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-15*
+*Ultimo aggiornamento: 2026-07-16*
 
 ## Da Fare
 
-- [ ] `[🎨frontend][🔴P0]` Comparatore null crash: gravita/temperatura format senza null guard — `Comparatore.jsx:14-15`
-- [ ] `[🖥️backend][🔴P0]` API search non cerca `nome_it` — SPA mostra nomi IT ma ricerca solo su EN — `Api/CorpoCelesteController.php:26-32`
-- [ ] `[🖥️backend][🟠P1]` Admin search `orWhere` senza grouping — bomba a orologeria — `Admin/CorpoCelesteController.php:30-34`
-- [ ] `[🎨frontend][🟠P1]` SearchBar senza `focus-visible:ring` — keyboard users — `SearchBar.jsx:18`
 - [ ] `[🎨frontend][🟠P1]` Mobile nav senza Escape/click-outside — `Navbar.jsx`
 - [ ] `[🖥️backend][🟠P1]` `memory_limit=512M` senza guard ambientale — `NasaImageService.php`
 - [ ] `[🧪test][🔵P2]` Test mancanti: setImageFromGallery, suggestNome, accessor model, ImportNasaImage::handle
@@ -15,6 +11,8 @@
 
 ## Fatto
 
+- [x] **Quick wins** — 7 fix: orWhere grouping (B1), accessor indent (B3), logo oversized (F8), SearchBar focus ring (F7), Comparatore hardcoded hex (F3), flash refactor (B10), useDebounce extraction (F4). 47 PHPUnit + 107 Vitest, tutti verdi
+- [x] **Sidebar + Partials** — config/admin.php (nav_items, mission_stati, color_presets), _sidebar-nav, category-badge, index-header, dashboard-stat, empty-table-row, in-evidenza-badge, flash-in-layout, CSS vars error/success, Route::is()
 - [x] **Fasi 1-3** — Sicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 338 test (231 PHPUnit + 107 Vitest)
 - [x] **Task 70** — API edge case tests: ApiEdgeCaseTest.php (17 test: percent, underscore, per_page, agenzia/stato filters, empty DB, factory, dashboard, galleria/curiosita includes)
 - [x] **Task 69** — Search & filter tests: SearchAndFilterTest.php (10 test: search per nome/nome_it/titolo/didascalia, stato filter, wildcard escaping)
@@ -67,7 +65,7 @@
 
 ## Note
 
-- **Stato**: 70 task + 3 fasi sicurezza/UX completati. 338 test (231 PHPUnit + 107 Vitest), 555+ assertion.
+- **Stato**: Quick wins completati. 47 PHPUnit + 107 Vitest, tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

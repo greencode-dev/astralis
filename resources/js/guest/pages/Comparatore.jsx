@@ -11,8 +11,8 @@ const campi = [
     { key: 'massa_kg', label: 'Massa', format: v => formatScientific(v) + ' kg' },
     { key: 'diametro_km', label: 'Diametro', format: v => formatNumber(v) + ' km' },
     { key: 'distanza_km', label: 'Distanza dal Sole', format: v => formatDistance(v) },
-    { key: 'gravita', label: 'Gravità', format: v => v + ' m/s²' },
-    { key: 'temperatura', label: 'Temperatura', format: v => v + ' °C' },
+    { key: 'gravita', label: 'Gravità', format: v => v != null ? v + ' m/s²' : '—' },
+    { key: 'temperatura', label: 'Temperatura', format: v => v != null ? v + ' °C' : '—' },
     { key: 'periodo_orbitale', label: 'Periodo Orbitale', format: v => formatNumber(v) + ' giorni' },
 ];
 
@@ -103,7 +103,7 @@ export default function Comparatore() {
                                     {slug && (
                                         <button
                                             onClick={() => setSlug(pos, '')}
-                                            className="absolute right-3 top-1/2 -translate-y-1/2 transition-all hover:text-[#F97316] text-admin-muted"
+                                            className="absolute right-3 top-1/2 -translate-y-1/2 transition-all hover:text-admin-accent text-admin-muted"
                                             aria-label="Resetta selezione"
                                         >
                                             <RotateCcw size={16} aria-hidden="true" />
@@ -139,20 +139,17 @@ export default function Comparatore() {
                         {campi.map((campo, idx) => {
                             const valPrimo = primo[campo.key];
                             const valSecondo = secondo[campo.key];
-                            const format = campo.format || (v => v || '—');
+                            const format = campo.format || (v => v != null ? v : '—');
 
                             return (
                                 <div key={campo.key}
-                                    className={`grid grid-cols-3 gap-4 p-4 items-center ${idx < campi.length - 1 ? 'border-b border-admin-primary/5' : ''}`}
-                                    style={{
-                                        backgroundColor: idx % 2 === 0 ? '#0E0E24' : '#111128',
-                                    }}>
+                                    className={`grid grid-cols-3 gap-4 p-4 items-center ${idx % 2 === 0 ? 'bg-admin-bg' : 'bg-admin-card'} ${idx < campi.length - 1 ? 'border-b border-admin-primary/5' : ''}`}>
                                     <div className="text-sm font-medium text-admin-muted">{campo.label}</div>
-                                    <div className={`text-center text-sm font-semibold ${valPrimo ? 'text-admin-text' : 'text-admin-muted'}`}>
-                                        {valPrimo ? format(valPrimo) : '—'}
+                                    <div className={`text-center text-sm font-semibold ${valPrimo != null ? 'text-admin-text' : 'text-admin-muted'}`}>
+                                        {valPrimo != null ? format(valPrimo) : '—'}
                                     </div>
-                                    <div className={`text-center text-sm font-semibold ${valSecondo ? 'text-admin-text' : 'text-admin-muted'}`}>
-                                        {valSecondo ? format(valSecondo) : '—'}
+                                    <div className={`text-center text-sm font-semibold ${valSecondo != null ? 'text-admin-text' : 'text-admin-muted'}`}>
+                                        {valSecondo != null ? format(valSecondo) : '—'}
                                     </div>
                                 </div>
                             );

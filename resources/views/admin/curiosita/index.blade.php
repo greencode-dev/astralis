@@ -4,16 +4,7 @@
 @section('page_title', 'Curiosità')
 
 @section('content')
-    <div class="flex justify-between items-center mb-6">
-        <p class="text-sm text-gray-400">Gestisci le curiosità sui corpi celesti</p>
-        <a href="{{ route('admin.curiosita.create') }}"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            Nuova Curiosità
-        </a>
-    </div>
-
-    @include('admin.partials.flash')
+    @include('admin.partials.index-header', ['description' => 'Gestisci le curiosità sui corpi celesti', 'createRoute' => 'admin.curiosita.create', 'createLabel' => 'Nuova Curiosità'])
 
     @include('admin.partials.search', ['action' => route('admin.curiosita.index'), 'placeholder' => 'Cerca per nome...'])
 
@@ -50,12 +41,7 @@
                         </td>
                     </tr>
                 @empty
-                    <tr>
-                        <td colspan="5" class="py-12 text-center">
-                            <p class="text-lg mb-2 text-gray-500">Nessuna curiosità trovata</p>
-                            <a href="{{ route('admin.curiosita.create') }}" class="text-sm font-medium transition-colors duration-150 text-admin-primary hover:text-admin-secondary">Crea la prima curiosità</a>
-                        </td>
-                    </tr>
+                    @include('admin.partials.empty-table-row', ['colspan' => 5, 'message' => 'Nessuna curiosità trovata', 'createRoute' => 'admin.curiosita.create', 'createLabel' => 'Crea la prima curiosità'])
                 @endforelse
             </tbody>
         </table>
