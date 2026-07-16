@@ -459,7 +459,7 @@ class NasaImageServiceTest extends TestCase
         $this->assertStringContainsString('Nessuna immagine trovata', $result['message']);
     }
 
-    public function test_import_for_body_adds_comet_fallback(): void
+    public function test_import_for_body_translates_italian_name_via_wordmap(): void
     {
         $calls = 0;
         Http::fake(function ($request) use (&$calls) {
@@ -467,7 +467,7 @@ class NasaImageServiceTest extends TestCase
             $query = $request['q'] ?? '';
             return Http::response([
                 'collection' => [
-                    'items' => $query === 'comet'
+                    'items' => $query === "Halley's Comet"
                         ? [['data' => [['nasa_id' => 'COMET']], 'links' => [['rel' => 'preview', 'render' => 'image', 'href' => 'https://example.com/c.jpg']]]]
                         : [],
                 ],
@@ -475,7 +475,7 @@ class NasaImageServiceTest extends TestCase
         });
 
         $corpo = CorpoCeleste::factory()->create([
-            'nome' => 'Halley',
+            'nome' => 'Cometa di Halley',
             'immagine' => null,
             'immagine_utente' => false,
         ]);

@@ -30,7 +30,7 @@ class CorpoCelesteMissioneSeeder extends Seeder
                 $corpo = CorpoCeleste::where('slug', $corpoSlug)->first();
                 if (!$corpo) continue;
 
-                $missione->corpiCelesti()->attach($corpo->id, [
+                $missione->corpiCelesti()->syncWithoutDetaching([$corpo->id => [
                     'tipo_esplorazione' => match ($missioneSlug) {
                         'apollo-11', 'artemis-i' => 'missione con equipaggio',
                         'voyager-1', 'voyager-2', 'cassini-huygens' => 'sorvolo ravvicinato',
@@ -48,7 +48,7 @@ class CorpoCelesteMissioneSeeder extends Seeder
                         'artemis-i' => 2022,
                         default => null,
                     },
-                ]);
+                ]]);
             }
         }
     }

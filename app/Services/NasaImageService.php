@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
+use App\Services\WordMapService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -95,14 +96,16 @@ class NasaImageService
             return ['success' => true, 'message' => "{$corpo->nome}: già presente, skip."];
         }
 
-        $extraFallbacks = [];
-        $nome = $corpo->nome;
+        $wordMap = new WordMapService();
+        $nomeIt = $corpo->nome;
+        $nomeEn = $wordMap->translate($nomeIt);
 
-        if (stripos($nome, "comet") !== false || stripos($nome, "halley") !== false) {
-            $extraFallbacks[] = "comet";
+        $extraFallbacks = [];
+        if ($nomeEn !== $nomeIt) {
+            $extraFallbacks[] = $nomeIt;
         }
 
-        $searchResult = $this->searchNasa($nome, $extraFallbacks);
+        $searchResult = $this->searchNasa($nomeEn, $extraFallbacks);
         if (!$searchResult['success']) {
             return ['success' => false, 'message' => $searchResult['message']];
         }

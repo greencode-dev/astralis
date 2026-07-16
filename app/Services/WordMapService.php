@@ -5,6 +5,8 @@ namespace App\Services;
 class WordMapService
 {
     private array $wordMap = [
+        'Nebulosa di Orione' => 'Orion Nebula',
+        'Cometa di Halley' => "Halley's Comet",
         'Nebulosa' => 'Nebula',
         'Cometa' => 'Comet',
         'Galassia' => 'Galaxy',
