@@ -5,7 +5,7 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1647 nodes · 2587 edges · 213 communities (150 shown, 63 thin omitted)
+- 1647 nodes · 2587 edges · 212 communities (151 shown, 61 thin omitted)
 - Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 286 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -88,7 +88,6 @@
 - 1feba0814ee0d999cc60b850dce00bf0.php
 - 2681c8cd96b6e7598bf59e82d1640806.php
 - 2f0b2672335a9102d30315f3470c9de0.php
-- DashboardController.php
 - User.php
 - CorpoCelesteCrudTest
 - Fase 6 — Fix sistema solare, NASA Import, Profilo, Documentazione
@@ -190,7 +189,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (213 total, 63 thin omitted)
+## Communities (212 total, 61 thin omitted)
 
 ### Community 0 - "User"
 Cohesion: 0.14
@@ -217,8 +216,8 @@ Cohesion: 0.07
 Nodes (30): 0.1 — 02/07/2026 — `6df5099` — feat: setup iniziale Laravel + Breeze + React + documentazione, 10.0 — 06/07/2026 — `2d736af` `be1ee9b` `14ed82f` — feat: tema scuro auth pages, link Register, ridotta velocità orbite, 11.0 — 07/07/2026 — `65ed6d4` — fix: Inertia→Blade transizione, NASA import dedup, galleria cleanup e ordinamento, 14/07/2026 — fix: 2 bug Vitest (LightboxGalleria memo close + CorpoDettaglio import typo), 1.0 — 03/07/2026 — `0a57208` — feat: database e modelli con seeders, 1.0 — 10/07/2026 — `f5ed6ab` — feat: React P0 — AbortController, useFetch, ErrorBoundary, image guards, axios interceptors, 2.0 — 10/07/2026 — `f5ed6ab` — feat: Laravel P0 — Job queue, chunk(50), rate limiting, caching NASA, 3.0 — 03/07/2026 — feat: API REST (10 endpoint JSON) (+22 more)
 
 ### Community 6 - "JsonResource"
-Cohesion: 0.11
-Nodes (12): CorpoCelesteController, CuriositaController, GalleriaController, MissioneController, CategoriaResource, CorpoCelesteResource, CuriositaResource, GalleriaCorpoResource (+4 more)
+Cohesion: 0.10
+Nodes (13): CategoriaController, CorpoCelesteController, CuriositaController, GalleriaController, MissioneController, CategoriaResource, CorpoCelesteResource, CuriositaResource (+5 more)
 
 ### Community 8 - "devDependencies"
 Cohesion: 0.12
@@ -520,6 +519,10 @@ Nodes (13): JsonResponse, ImportNasaImage, CorpoCelesteObserver, WordMapService,
 Cohesion: 0.28
 Nodes (4): FetchNasaCommand, NasaImageService, Command, Illuminate\Console\Command
 
+### Community 275 - "Stato avanzamento piano ottimizzazione"
+Cohesion: 0.16
+Nodes (3): DashboardController, ProfileController, ProfileUpdateRequest
+
 ### Community 280 - "Sicurezza e UX — Fasi 1-3 (15/07/2026)"
 Cohesion: 0.50
 Nodes (4): Fase 1 — Security fixes, Fase 2 — Critical bug fixes, Fase 3 — UX & quality improvements, Sicurezza e UX — Fasi 1-3 (15/07/2026)
@@ -531,12 +534,12 @@ Nodes (4): ImageUploadService, Illuminate\Http\UploadedFile, Intervention\Image\
 ## Knowledge Gaps
 - **513 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+508 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **63 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **61 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `CorpoCeleste` connect `CorpoCelesteCrudTest` to `CorpoCeleste`, `JsonResource`, `LoginRequest`, `🪐 Astralis — Catalogo di Corpi Celesti`, `DashboardTest`, `DashboardController.php`, `Edit.jsx`, `CorpoCelesteActionsTest`, `MissionePolicy`, `.corpiCelesti`, `GalleriaApiTest.php`, `Missione`, `Fase 8 — NASA Import multi-immagine, Service Layer, CLI Command`, `NasaImageServiceTest`, `User`, `CorpoCeleste`, `NavLink.jsx`, `PasswordResetLinkController.php`, `cache.php`, `TextInput.jsx`, `Test — Astralis`, `0079552f2330bfb933d02f675d7fae1e.php`, `RefreshDatabase`, `DashboardController.php`, `CorpoCelestePolicy`, `DashboardController.php`, `PasswordConfirmationTest`, `.missioni`, `Task 40 — Debug generale post-ottimizzazione`, `Fase 1 — Critico React Frontend (P0)`?**
+- **Why does `CorpoCeleste` connect `CorpoCelesteCrudTest` to `CorpoCeleste`, `JsonResource`, `LoginRequest`, `🪐 Astralis — Catalogo di Corpi Celesti`, `DashboardTest`, `Stato avanzamento piano ottimizzazione`, `DashboardController.php`, `Edit.jsx`, `CorpoCelesteActionsTest`, `MissionePolicy`, `.corpiCelesti`, `GalleriaApiTest.php`, `Missione`, `Fase 8 — NASA Import multi-immagine, Service Layer, CLI Command`, `NasaImageServiceTest`, `User`, `CorpoCeleste`, `NavLink.jsx`, `PasswordResetLinkController.php`, `cache.php`, `TextInput.jsx`, `Test — Astralis`, `0079552f2330bfb933d02f675d7fae1e.php`, `RefreshDatabase`, `CorpoCelestePolicy`, `DashboardController.php`, `PasswordConfirmationTest`, `.missioni`, `Task 40 — Debug generale post-ottimizzazione`, `Fase 1 — Critico React Frontend (P0)`?**
   _High betweenness centrality (0.060) - this node is a cross-community bridge._
 - **Why does `Changelog` connect `Changelog` to `Fase 15 — P2/P3 manutenzione e accessibilità`, `Sicurezza e UX — Fasi 1-3 (15/07/2026)`, `Fase 6 — Fix sistema solare, NASA Import, Profilo, Documentazione`, `Fase 2 — Backoffice Blade CRUD`, `Fase 7 — Bugfix Intervention Image v4, NASA Import Force All, Documentazione`, `158a58073f7c339cee02d82d7f1f6a13.php`, `1b91c30f6655ad6258212beb875408ce.php`, `1cca292344e066f15fdb501df69ab831.php`, `DangerButton.jsx`, `Piano Ottimizzazione — P1`, `GalleriaCorpoPolicy`, `index.md`, `CategoriaApiTest`, `CorpoCeleste.php`, `Fase 4 — React Guest Frontend`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
