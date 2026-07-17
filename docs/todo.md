@@ -10,24 +10,20 @@
 
 ## Fatto
 
-### 17/07/2026 — sessione 2
+### 17/07/2026
 
 - [x] `[🖥️backend][🔴P0]` Fix proxy API in vite.config.js — aggiunto `server.proxy: { '/api': 'http://localhost:8000' }` — risolve white page + CORB error
-- [x] `[📝docs][🔵P2]` Installazione graphifyy + aggiornamento grafo knowledge graph (1647 nodi, 2587 edges, 213 community)
-- [x] `[📝docs][🔵P2]` Aggiornamento docs: React 19→18, test count 252/359, task numbering, changelog 17/07
-- [x] `[🎨frontend][🟠P1]` Fix Navbar mobile: Escape key + click-outside + route-change cleanup
-- [x] `[🧪test][🔵P2]` 28 nuovi test: CorpoCelesteTest (6), ImportNasaImageTest (9), CorpoCelesteActionsTest (13)
-- [x] `[✨feature][🔵P2]` Logo Astralis ad alta risoluzione caricati in public/
-
-### 17/07/2026 — sessione 1
-
-- [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside — `Navbar.jsx`
+- [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside + route-change cleanup — `Navbar.jsx`
+- [x] `[🎨frontend][🔵P2]` framer-motion mantenuto (uso legittimo in SolarSystem)
+- [x] `[🖥️backend][🟠P1]` memory_limit=512M — rimosso (codice inesistente)
 - [x] `[🧪test][🔵P2]` Test accessor nome_display + immagine_url — `CorpoCelesteTest.php` (6 test)
 - [x] `[🧪test][🔵P2]` Test setImageFromGallery: non-admin 403, remote URL, flash — `CorpoCelesteActionsTest.php`
 - [x] `[🧪test][🔵P2]` Test suggestNome: non-admin, caching, fallback raw Italian — `CorpoCelesteActionsTest.php`
 - [x] `[🧪test][🔵P2]` Test ImportNasaImage job: implements, proprietà, uniqueId, handle, failed — `ImportNasaImageTest.php` (9 test)
-- [x] `[🖥️backend][🟠P1]` memory_limit=512M — rimosso (codice inesistente)
-- [x] `[🎨frontend][🔵P2]` framer-motion mantenuto (uso legittimo in SolarSystem)
+- [x] `[🧪test][🔵P2]` 28 nuovi test: CorpoCelesteTest (6), ImportNasaImageTest (9), CorpoCelesteActionsTest (13)
+- [x] `[✨feature][🔵P2]` Logo Astralis ad alta risoluzione caricati in public/
+- [x] `[📝docs][🔵P2]` Installazione graphify + aggiornamento grafo knowledge graph (1647 nodi, 2587 edges, 213 community)
+- [x] `[📝docs][🔵P2]` Aggiornamento docs: React 19→18, test count 252/359, task numbering, changelog 17/07
 
 ### 16/07/2026
 

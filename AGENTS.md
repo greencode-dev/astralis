@@ -76,7 +76,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 252 test PHPUnit, 587 assertion. `npm test` — 107 test Vitest. Totale: 359 test.
+- **Run**: `php artisan test` — 255 test PHPUnit, 591 assertion. `npm test` — 107 test Vitest. Totale: 362 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -92,16 +92,172 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - Primario: `#22D3EE`, Secondario: `#A855F7`, Accento: `#F97316`
 - Badge OK: `#22C55E`, KO: `#9CA3AF`, attenzione: `#FACC15`
 
-## Documentazione workflow
+## Workflow
 
-Prima di eseguire `graphify update .`, assicurati che:
-1. Tutti i file in `docs/` siano aggiornati alle modifiche appena fatte
-2. `AGENTS.md` sia aggiornato (se lo snapshot del progetto è cambiato)
-3. `README.md` sia aggiornato (nuove funzionalità, comandi, requisiti)
-4. Poi aggiorna il grafo con `graphify update .`
-5. Infine commit
+### Fase 0 — Avvio sessione (`/start`)
+
+Quando l'utente scrive `/start`, eseguire automaticamente questo flusso (solo lettura):
+
+1. **Caricare le skill Astralis**: `astralis-laravel`, `astralis-react-spa`, `astralis-blade-admin`, `astralis-testing`.
+2. **Caricare le skill globali**: `frontend-design`, `react-best-practices`, `composition-patterns`, `web-design-guidelines`, `writing-guidelines`.
+3. **Stato repo**: `git fetch origin` → `git status` → `git log --oneline -5` → `git log HEAD..origin/{branch} --oneline` → `git stash list` → `git diff --stat`.
+4. **Task aperte**: leggere `docs/todo.md` → sezione "Da Fare", raggruppare per priorità.
+5. **Attività recenti**: leggere `docs/changelog.md` → prime 2-3 entry.
+6. **Snapshot progetto**: leggere `AGENTS.md` → sezione "Stato avanzamento" (test count, fasi completate).
+7. **Knowledge graph**: eseguire `graphify explain "Astralis"` per una visione d'insieme dell'architettura (se il grafo esiste).
+
+Generare un report con formato:
+
+```
+📊 Sessione ripresa — DD/MM/YYYY
+
+**Repo**: branch `master`, N commit avanti / M commit dietro rispetto a origin
+**Stash**: N stash / nessuno
+**Modifiche non committate**: [riepilogo da git diff --stat] / nessuna
+**Test**: X PHPUnit + Y Vitest = Z totali
+
+**Ultime attività** (changelog):
+- [2-3 entry recenti]
+
+**Task aperte** (todo):
+- 🔴P0: [lista]
+- 🟠P1: [lista]
+- 🔵P2: [lista]
+
+**Grafo**: [riepilogo architettura da graphify]
+
+**Suggerimento prossima task**: [task con priorità più alta non ancora iniziata]
+
+💡 **Suggerimenti audit**:
+- [front-end modificato di recente] → considera un design review
+- [docs aggiornate di recente] → considera una writing review
+- [nessuna modifica rilevante] → audit non necessario
+
+**Azioni consigliate**:
+- [eventuale pull necessario]
+- [eventuale fix test]
+- [eventuale sync mancante]
+```
+
+Non eseguire pull/push/commit/modifiche senza conferma.
+
+### Fase 1 — Sincronizzazione
+
+Prima di iniziare qualsiasi lavoro:
+
+1. `git fetch origin` per verificare lo stato remoto.
+2. Confrontare `HEAD` con `origin/{branch}`:
+   - Se il remote è avanti → informare l'utente e chiedere se pullare ora o dopo.
+   - Se il locale è avanti → ok, si può lavorare (push dopo).
+   - Se divergenti → avvisare l'utente, elencare i commit su entrambi i lati, e chiedere come procedere (rebase, merge, o tenere separato).
+3. Verificare stash (`git stash list`) e segnalarli se presenti.
+4. Verificare che il working tree sia pulito prima di iniziare.
+
+### Fase 2 — Pull e Merge
+
+Prima di eseguire un pull:
+
+1. Assicurarsi che il working tree sia pulito (niente modifiche non committate).
+2. Se ci sono stash, segnalare che potrebbero essere coinvolti dopo il merge.
+3. Scegliere la strategia:
+   - `git pull --rebase` → default preferito, lineare la storia.
+   - `git pull --no-rebase` → merge classico quando serve un merge commit esplicito.
+4. Se si verificano conflitti:
+   - Elencare i file in conflitto.
+   - Per ogni file, mostrare entrambe le versioni e chiedere all'utente come risolvere.
+   - Dopo la risoluzione, continuare con `git rebase --continue` o `git merge --continue`.
+5. Verificare con i test dopo il merge/rebase (`php artisan test` + `npm test`).
+
+### Fase 3 — Aggiornamento documentazione
 
 Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
+
+#### docs/todo.md
+
+1. **Una sola intestazione per giorno** — mai dividere in sessioni.
+2. **Ordine item**: per priorità (🔴P0 → 🟠P1 → 🔵P2 → 🟣P3 → ⚪P4), poi per categoria (backend → frontend → test → docs → feature).
+3. Aggiornare `*Ultimo aggiornamento:*` con la data odierna.
+4. Aggiornare la sezione `## Note` con conteggio corretto di task aperte e test.
+5. Spostare i task completati (`[x]`) da **Da Fare** a **Fatto**, sotto la data corrente.
+6. Non creare duplicati.
+
+#### docs/changelog.md
+
+1. **Una sola intestazione per giorno**.
+2. Formato: `### Titolo breve (DD/MM/YYYY)` + bullet list con **bold keyword** + descrizione.
+3. Ordine: entry più recenti in cima.
+4. Includere: bug fix, feature, refactor, breaking changes, test count.
+5. Non includere: commit minori, typo fix.
+6. Chiudere ogni entry con: `**Test**: N totali (X PHPUnit + Y Vitest), tutti verdi.`
+
+#### docs/testing.md
+
+1. Aggiornare sempre i conteggi nei titoli sezioni.
+2. Nuovi test file → aggiungere sezione documentativa con tabella Gruppo / N. test / Cosa copre.
+3. Test rimossi → aggiornare o rimuovere la documentazione.
+4. Non duplicare.
+
+#### docs/bug.md
+
+1. Nuovi bug → aggiungere in cima a "Risolti" con numero progressivo `[N]`, data, descrizione, causa, soluzione, file.
+2. Numerazione progressiva dall'ultimo bug documentato.
+3. Solo bug risolti (bug aperti vanno in `docs/todo.md`).
+
+#### docs/documentazione.md
+
+1. Tech Stack: aggiornare tabella se cambiano versioni.
+2. Architettura: aggiornare albero directory se cambia la struttura.
+3. Entità: aggiornare tabelle campi se cambia lo schema DB.
+4. Setup: aggiornare comandi se cambiano i prerequisiti.
+5. Workflow: aggiornare sezione sviluppo se cambiano comandi/procedure.
+
+#### README.md
+
+1. Funzionalità: aggiornare liste se cambiano feature.
+2. Tech stack badges: aggiornare se cambiano versioni.
+3. Architettura: aggiornare diagramma ASCII se cambia la struttura.
+4. Setup: aggiornare comandi di installazione.
+5. Mantenere conciso — linkare a `docs/` per dettagli.
+
+#### AGENTS.md
+
+1. Tech stack: aggiornare se cambiano framework/versioni.
+2. File map: aggiungere/rimuovere righe se cambiano file importanti.
+3. Test count: aggiornare se cambia il numero di test.
+4. Bugs noti: aggiungere pattern da evitare.
+5. Skill: aggiungere/rimuovere quando cambiano.
+6. Non duplicare — aggiornare il valore esistente.
+
+### Fase 4 — Aggiornamento grafo
+
+Dopo aver aggiornato documentazione:
+
+1. Eseguire `graphify update .` (AST-only, nessun costo API).
+2. Verificare che completi senza errori.
+3. Se il grafo ha variazioni significative, segnalarlo all'utente.
+4. I file `graphify-out/` vanno committati insieme alla documentazione.
+
+### Fase 5 — Commit
+
+Prima di eseguire qualsiasi commit:
+
+1. Eseguire `git status --short` e mostrare all'utente l'elenco dei file modificati.
+2. Se tra i file ci sono potenziali secrets (`.env`, credenziali, chiavi), **fermare tutto** e avvisare l'utente.
+3. Verificare che i file committati siano coerenti con il scope del commit (niente mix di task diversi, salvo esplicita richiesta).
+4. Proporre un messaggio di commit con formato: `tipo: descrizione concisa` (`fix:`, `feat:`, `refactor:`, `test:`, `docs:`).
+5. **Doppia conferma**: chiedere sempre conferma esplicita all'utente prima di eseguire `git commit`.
+6. Se ci sono anche modifiche non collegate, chiedere se committare tutto insieme o selezionare con `git add -p`.
+
+### Fase 6 — Push
+
+Prima di eseguire `git push`:
+
+1. **Verifica sincronizzazione**: `git fetch origin` + `git log HEAD..origin/{branch} --oneline`.
+   - Se ci sono commit remote non pullati → eseguire Fase 2 prima del push.
+   - Se il branch non esiste sul remote → primo push, ok dopo conferma.
+2. **Verifica commit recenti**: `git log --oneline -5`.
+   - Se ci sono commit con messaggi simili o che fixano lo stesso file → segnalare e proporre squash (`git rebase -i`) o lasciare così.
+3. **Doppia conferma**: chiedere sempre conferma esplicita prima di `git push`.
 
 ## Skill installate
 
