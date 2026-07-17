@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
@@ -10,6 +10,17 @@ const navLinks = [
 export default function Navbar() {
     const location = useLocation();
     const [open, setOpen] = useState(false);
+
+    const close = useCallback(() => setOpen(false), []);
+
+    useEffect(() => {
+        if (!open) return;
+        const onKeyDown = (e) => { if (e.key === 'Escape') close(); };
+        document.addEventListener('keydown', onKeyDown);
+        return () => document.removeEventListener('keydown', onKeyDown);
+    }, [open, close]);
+
+    useEffect(() => { close(); }, [location.pathname, close]);
 
     return (
         <nav
@@ -53,14 +64,18 @@ export default function Navbar() {
                 </div>
 
                 {open && (
-                    <div id="mobile-nav" className="md:hidden pb-4 space-y-1">
+                    <div className="fixed inset-0 z-40 md:hidden" onClick={close} aria-hidden="true" />
+                )}
+
+                {open && (
+                    <div id="mobile-nav" className="absolute inset-x-0 top-16 z-50 md:hidden bg-admin-card border-b border-admin-primary/10 pb-4 space-y-1">
                         {navLinks.map((link) => {
                             const isActive = location.pathname === link.path;
                             return (
                                 <Link
                                     key={link.path}
                                     to={link.path}
-                                    onClick={() => setOpen(false)}
+                                    onClick={close}
                                     className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-admin-primary/8 hover:text-admin-primary ${isActive ? "bg-admin-primary/15 text-admin-primary" : "text-admin-dim"}`}
                                     aria-current={isActive ? "page" : undefined}
                                 >
