@@ -8,7 +8,7 @@
 | **Stack**            | Laravel 13 + React 18 + Vite + Blade + Tailwind CSS + MySQL                                  |
 | **Frontend guest**   | React SPA standalone (no Inertia), comunicazione via API REST JSON                           |
 | **Backoffice admin** | Blade puro con Alpine.js, autenticazione Breeze, autorizzazione Policy/Gates                 |
-| **Test**             | 231 PHPUnit + 107 Vitest (338 test totali)                                                   |
+| **Test**             | 252 PHPUnit + 107 Vitest (359 test totali)                                                   |
 | **API esterne**      | NASA Image API — import automatico immagini reali                                            |
 | **Repository**       | [github.com/tuo-username/astralis](https://github.com/tuo-username/astralis)                 |
 
@@ -274,10 +274,10 @@ public function delete(): bool { return false; }
 
 🎯 **La traccia non richiedeva esplicitamente test. Ma un progetto professionale ne ha.**
 
-✅ **218 test totali**:
+✅ **359 test totali**:
 
-- **130 PHPUnit** (335 assertion): 26 test unitari NasaImageService + 8 file test API + 5 file test Admin CRUD + 6 file auth Breeze
-- **88 Vitest**: 27 test componenti React + 61 test integrazione API
+- **252 PHPUnit** (587 assertion): 58 test unitari (NasaImageService, WordMapService, CleanupGalleryDuplicates, CorpoCeleste, ImportNasaImage) + 9 file test API + 8 file test Admin CRUD + AuthorizationTest + 6 file auth Breeze
+- **107 Vitest**: 27 test componenti React + 61 test integrazione API + 19 test error handling/UI
 - **HasFactory** su tutti i 5 modelli del dominio
 - **Observer disabilitato in testing** (`app()->environment('testing')`)
 - **`Http::fake()`** in tutti i test che creano CorpoCeleste
@@ -375,7 +375,7 @@ protected function setUp(): void
 | 🛠️ **CLI Commands**           | `astralis:fetch-nasa` e `astralis:gallery` per manutenzione                  | Fase 8-11  |
 | 🛡️ **Error Boundary**         | Fallback UI globale per crash React                                          | Fase 15    |
 | 🔍 **SEO Meta Tags**          | `document.title` dinamico su 5 pagine                                        | Fase 15    |
-| 🧪 **218 Test Totali**        | 130 PHPUnit + 88 Vitest, Http::fake(), observer skip                         | Fase 13-15 |
+| 🧪 **359 Test Totali**        | 252 PHPUnit + 107 Vitest, Http::fake(), observer skip                         | Fase 13-17 |
 
 ---
 

@@ -337,7 +337,7 @@ php artisan astralis:gallery --fix
 npx graphify update .
 
 # 6. Verifica
-php artisan test   # 231 test PHPUnit
+php artisan test   # 252 test PHPUnit
 npm test           # 107 test Vitest
 
 # 7. Apri l'agente e digita:
@@ -414,7 +414,27 @@ cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'
 - **Gravita/temperatura**: null-safe formatting con `toLocaleString('it-IT')` — separatori italiani (`9,81` invece di `9.81`)
 - **Flash messages admin**: auto-dismiss 5s con Alpine.js, fade-out, bottone chiudi, `role="alert"` per errori/warning, `role="status" aria-live="polite"` per success
 
-**Test**: 338 totali (231 PHPUnit + 107 Vitest), tutti verdi.
+**Test**: 359 totali (252 PHPUnit + 107 Vitest), tutti verdi.
+
+## Quick wins — 7 fix (16/07/2026)
+
+- **B1** — `Admin/CorpoCelesteController.php`: `where`/`orWhere` search wrapped in closure — SQL precedence bug fixed
+- **B3** — `CorpoCeleste.php`: fixed 8-space indent → 4-space on `getNomeDisplayAttribute`
+- **F8** — `Navbar.jsx` + `Footer.jsx`: logo oversized — `w-24 h-24` → `w-10 h-10`
+- **F7** — `SearchBar.jsx`: added `focus-visible:ring-2` for keyboard accessibility
+- **F3** — `Comparatore.jsx`: replaced hardcoded hex with CSS variables
+- **B10** — `flash.blade.php`: refactored 3 identical blocks into 1 `@foreach` loop
+- **F4** — `CorpiLista.jsx`: extracted inline `useDebounce` to shared hook
+
+## Bug residui — fix (17/07/2026)
+
+- Navbar mobile: Escape key handler, click-outside overlay, close on route change
+- Test accessors: `CorpoCelesteTest.php` — 6 test per `nome_display` e `immagine_url`
+- Test actions: `CorpoCelesteActionsTest.php` — 6 nuovi test (setImage, suggestNome)
+- Test job: `ImportNasaImageTest.php` — 9 test (ShouldQueue, uniqueId, handle, failed)
+- framer-motion mantenuto in SolarSystem.jsx (uso legittimo per orbite)
+
+**Test**: 359 totali (252 PHPUnit + 107 Vitest), tutti verdi.
 
 ## Avvio rapido (quando il progetto è già configurato)
 

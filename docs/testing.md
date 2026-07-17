@@ -4,7 +4,7 @@ Suite di test per backend (PHPUnit) e frontend React (Vitest).
 
 ## Esecuzione
 
-### Backend (PHPUnit) — 47 test, 138 assertion
+### Backend (PHPUnit) — 252 test, 587 assertion
 
 ```bash
 php artisan test                              # Tutti
@@ -39,7 +39,7 @@ npx vitest run resources/js/guest/test/CorpoCard.test.jsx   # Singolo file
 
 ## Struttura
 
-### Unit — `tests/Unit/` (3 file, 43 test)
+### Unit — `tests/Unit/` (5 file, 58 test)
 
 #### `NasaImageServiceTest.php` (26 test, 63 assertion)
 
@@ -70,8 +70,28 @@ Testa `astralis:gallery` artisan command — deduplicazione, orphans, remote URL
 |---|---|---|
 | **dedup** | 2 | Rimuove duplicati tenendo il primo, dry-run preserva duplicati |
 | **orphans** | 3 | No duplicati → warning, clean orphans, check + dry-run preserva orphans |
-| **remote** | 2 | URL rotto → KO, URL valido → OK |
+| **remote** | 2 | URL rotto → OK, URL valido → OK |
 | **edge cases** | 2 | Diversi corpi stesso path non dedupati
+
+#### `CorpoCelesteTest.php` (6 test)
+
+Testa accessors del model `CorpoCeleste`.
+
+| Gruppo | N. test | Cosa copre |
+|---|---|---|
+| **nome_display** | 3 | Restituisce `nome_it` se presente, fallback a `nome`, null safety |
+| **immagine_url** | 3 | URL remoto, fallback placeholder, null safety |
+
+#### `ImportNasaImageTest.php` (9 test)
+
+Testa il job `ImportNasaImage` per la coda di importazione NASA.
+
+| Gruppo | N. test | Cosa copre |
+|---|---|---|
+| **job properties** | 5 | Implements ShouldQueue, ShouldBeUnique, tries=3, timeout=60, uniqueId |
+| **defaults** | 2 | Valori default proprietà (galleryCount=5, force=false, updateDescription=false) |
+| **testing guard** | 1 | handle() è no-op in ambiente testing |
+| **failed logging** | 1 | failed() logga errore via Log::error
 
 #### Pattern usati
 
@@ -95,7 +115,7 @@ Testano gli endpoint JSON pubblici in `routes/api.php`.
 | `DashboardApiTest.php` | 4 | `GET /api/dashboard/stats` — conteggi corpi, categorie, missioni |
 | `ApiEdgeCaseTest.php` | 17 | Percent/underscore escaping, per_page zero → 1, agenzia+stato filters, empty DB, factory, dashboard empty, galleria/curiosita includes |
 
-### Feature Admin — 6 file, 69 test
+### Feature Admin — 8 file, 93 test
 
 #### `CorpoCelesteCrudTest.php` (13 test)
 
@@ -194,6 +214,34 @@ Testano gli endpoint JSON pubblici in `routes/api.php`.
 | Galleria search | `GET ?search=Luna` → only "Vista dalla Luna" |
 | Wildcard % escaped | `GET ?search=100%` → doesn't match all |
 | Wildcard _ escaped | `GET ?search=Test_Thing` → doesn't match all |
+
+#### `CorpoCelesteActionsTest.php` (13 test)
+
+Testa azioni speciali CorpoCeleste: suggestNome e setImageFromGallery.
+
+| Test | Cosa verifica |
+|---|---|
+| suggestNome validazione | Campi vuoti → 422 |
+| suggestNome success | NASA API restituisce risultati → 200 con nome |
+| suggestNome failure | NASA API vuota → fallback |
+| suggestNome guest redirect | Non autenticato → redirect login |
+| suggestNome non-admin | Utente non-admin → 200 (accesso consentito) |
+| suggestNome caching | Seconda chiamata usa cache |
+| suggestNome raw Italian | Input non tradotto → ricerca diretta |
+| setImage success | Imposta immagine da galleria → redirect + flash |
+| setImage ownership | Immagine di altro corpo → 404 |
+| setImage remote URL | URL remoto NASA → flash message |
+| setImage non-admin | 403 |
+| setImage flash | Messaggio flash corretto |
+
+#### `AuthorizationTest.php` (19 test)
+
+Testa authorization admin con Policy e Gates per 5 entità.
+
+| Gruppo | N. test | Cosa copre |
+|---|---|---|
+| **store/update/delete** | 15 | 3 operazioni × 5 entità — non-admin riceve 403 |
+| **guest redirect** | 4 | Guest su route admin → redirect `/login` |
 
 ## API di supporto
 

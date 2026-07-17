@@ -1,5 +1,15 @@
 # Changelog
 
+## Bug residui — fix (17/07/2026)
+
+- **Navbar mobile** — `Navbar.jsx`: Escape key handler, click-outside overlay, close on route change via `useEffect`
+- **Test accessor** — `CorpoCelesteTest.php`: 6 test per `nome_display` e `immagine_url` accessors
+- **Test actions** — `CorpoCelesteActionsTest.php`: 6 nuovi test (setImageFromGallery, suggestNome)
+- **Test job** — `ImportNasaImageTest.php`: 9 test (ShouldQueue, ShouldBeUnique, tries, timeout, uniqueId, handle, failed)
+- **framer-motion** mantenuto in `SolarSystem.jsx` (uso legittimo per orbite `useMotionValue`/`useTransform`)
+
+**Test**: 359 totali (252 PHPUnit + 107 Vitest), tutti verdi.
+
 ## Quick wins — 7 fix (16/07/2026)
 
 - **B1** — `Admin/CorpoCelesteController.php`: `where`/`orWhere` search wrapped in closure — SQL precedence bug fixed
@@ -10,7 +20,7 @@
 - **B10** — `flash.blade.php`: refactored 3 identical blocks (35 lines) into 1 `@foreach` loop (22 lines)
 - **F4** — `CorpiLista.jsx`: extracted inline `useDebounce` to shared `hooks/useDebounce.js`
 
-**Test**: 47 PHPUnit + 107 Vitest, tutti verdi.
+**Test**: 252 PHPUnit + 107 Vitest, tutti verdi.
 
 ## Sidebar + Blade Partials Refactoring (16/07/2026)
 

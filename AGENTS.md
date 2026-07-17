@@ -20,7 +20,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Backend**: Laravel 13, PHP 8.x
 - **Auth**: Laravel Breeze (Blade puro login/register → Blade admin)
 - **Database**: MySQL (port 3307)
-- **Guest frontend**: React 19, Vite, framer-motion, react-router-dom, lucide-react, yet-another-react-lightbox
+- **Guest frontend**: React 18, Vite, framer-motion, react-router-dom, lucide-react, yet-another-react-lightbox
 - **Admin frontend**: Blade, Alpine.js (CDN da unpkg — no local fallback)
 - **CSS**: Tailwind CSS
 - **Upload**: Intervention Image v4 — **NO facade**. Usare `ImageManager(new Driver())->decodePath()`/`->decodeBinary()`, `scaleDown()` invece di `resize()`
@@ -75,7 +75,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 231 test PHPUnit, 555 assertion. `npm test` — 107 test Vitest. Totale: 338 test.
+- **Run**: `php artisan test` — 252 test PHPUnit, 587 assertion. `npm test` — 107 test Vitest. Totale: 359 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -195,7 +195,7 @@ Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
 
 ### ✅ Completato — Sicurezza e UX (Fasi 1-3)
 
-338 test (231 PHPUnit + 107 Vitest), tutti verdi.
+359 test (252 PHPUnit + 107 Vitest), tutti verdi.
 
 | Fase | Descrizione | Fix | Stato |
 |------|-------------|-----|-------|
@@ -205,7 +205,7 @@ Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
 
 ### ✅ Completato — Quick wins (16/07/2026)
 
-47 PHPUnit + 107 Vitest, tutti verdi.
+252 PHPUnit + 107 Vitest, tutti verdi.
 
 | Fix | File | Stato |
 |-----|------|-------|
@@ -217,11 +217,14 @@ Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
 | **B10** | `flash.blade.php` — 3 blocks → foreach loop | ✅ |
 | **F4** | `CorpiLista.jsx` + `hooks/useDebounce.js` — extract hook | ✅ |
 
-### 🔜 Prossimo step — Bug residui
+### ✅ Completato — Bug residui (17/07/2026)
 
-| # | Fix | File | Effort |
-|---|-----|------|--------|
-| **8** | Mobile nav senza Escape/click-outside | `Navbar.jsx` | 15 min |
-| **4** | `memory_limit=512M` senza guard ambientale | `NasaImageService.php` | 5 min |
-| **5** | Test mancanti: setImageFromGallery, suggestNome, accessor, ImportNasaImage | tests/ | 2-3 ore |
-| **3** | Rimuovere framer-motion da SolarSystem (~100-150KB) | `SolarSystem.jsx` | 2-3 ore |
+Tutti i bug residui risolti. 359 test (252 PHPUnit + 107 Vitest), tutti verdi.
+
+- [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside — `Navbar.jsx`
+- [x] `[🧪test][🔵P2]` Test accessor nome_display + immagine_url — `tests/Unit/CorpoCelesteTest.php` (6 test)
+- [x] `[🧪test][🔵P2]` Test setImageFromGallery: non-admin 403, remote URL, flash — `CorpoCelesteActionsTest.php`
+- [x] `[🧪test][🔵P2]` Test suggestNome: non-admin, caching, fallback raw Italian — `CorpoCelesteActionsTest.php`
+- [x] `[🧪test][🔵P2]` Test ImportNasaImage job: implements, proprietà, uniqueId, handle, failed — `tests/Unit/ImportNasaImageTest.php` (9 test)
+- [x] `[🖥️backend][🟠P1]` memory_limit=512M — rimosso (codice inesistente)
+- [x] `[🎨frontend][🔵P2]` framer-motion mantenuto (uso legittimo in SolarSystem)

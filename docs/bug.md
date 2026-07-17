@@ -114,8 +114,10 @@
 - **Fixato in**: Fase 11.0
 
 ### [17] Logout reindirizza a homepage invece di login — 07/07/2026
-
----
+- **Descrizione**: Dopo il logout, l'utente veniva reindirizzato a `/` (guest SPA) invece che a `/login`
+- **Causa**: AuthenticatedSessionController::destroy() usava `return redirect('/')`
+- **Soluzione**: Sostituito con `return redirect('/login')`
+- **Fixato in**: Fase 11.0
 
 ### [18] Query stripping NASA: apostrofo rimosso prima di 's — 08/07/2026
 - **Descrizione**: `NasaImageService::searchNasa()` produceva `"Earths Moon"` invece di `"Earth Moon"` come fallback per `"Earth's Moon"`. L'apostrofo veniva rimosso singolarmente prima della sequenza `'s`, quindi `'s` non matchava più.

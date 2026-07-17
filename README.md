@@ -16,7 +16,6 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ### 👨‍💼 Backoffice (Laravel + Blade)
 
 - Autenticazione con Laravel Breeze
-- Autenticazione con Laravel Breeze
 - Autorizzazione admin con Policy e Gates (soli admin possono creare/modificare/eliminare)
 - CRUD completo per: Categorie, Corpi Celesti, Missioni Spaziali, Galleria Immagini, Curiosità
 - Upload di immagini con Intervention Image v4
@@ -64,7 +63,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ## 🧪 Test
 
 ```bash
-# Suite completa (47 test PHPUnit, 138 assertion)
+# Suite completa (252 test PHPUnit, 587 assertion)
 php artisan test
 
 # Frontend (107 test Vitest)

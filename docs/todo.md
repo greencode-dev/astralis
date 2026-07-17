@@ -1,71 +1,117 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-16*
+*Ultimo aggiornamento: 2026-07-17*
 
 ## Da Fare
 
-- [ ] `[🎨frontend][🟠P1]` Mobile nav senza Escape/click-outside — `Navbar.jsx`
-- [ ] `[🖥️backend][🟠P1]` `memory_limit=512M` senza guard ambientale — `NasaImageService.php`
-- [ ] `[🧪test][🔵P2]` Test mancanti: setImageFromGallery, suggestNome, accessor model, ImportNasaImage::handle
-- [ ] `[🎨frontend][🔵P2]` Rimuovere framer-motion da SolarSystem (~100-150KB bundle) — `SolarSystem.jsx`
+Nessuna task aperta.
 
 ## Fatto
 
-- [x] **Quick wins** — 7 fix: orWhere grouping (B1), accessor indent (B3), logo oversized (F8), SearchBar focus ring (F7), Comparatore hardcoded hex (F3), flash refactor (B10), useDebounce extraction (F4). 47 PHPUnit + 107 Vitest, tutti verdi
-- [x] **Sidebar + Partials** — config/admin.php (nav_items, mission_stati, color_presets), _sidebar-nav, category-badge, index-header, dashboard-stat, empty-table-row, in-evidenza-badge, flash-in-layout, CSS vars error/success, Route::is()
-- [x] **Fasi 1-3** — Sicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 338 test (231 PHPUnit + 107 Vitest)
-- [x] **Task 70** — API edge case tests: ApiEdgeCaseTest.php (17 test: percent, underscore, per_page, agenzia/stato filters, empty DB, factory, dashboard, galleria/curiosita includes)
-- [x] **Task 69** — Search & filter tests: SearchAndFilterTest.php (10 test: search per nome/nome_it/titolo/didascalia, stato filter, wildcard escaping)
-- [x] **Task 67** — Frontend tests: NotFound(4), ErrorBoundary(4), TimelineMissioni(8), Navbar(6) — 22 test Vitest
-- [x] **Task 66** — CleanupGalleryDuplicatesTest: 9 test (dedup, dry-run, orphans, check, broken/working remote URLs, different corpi same path)
-- [x] **Task 65** — WordMapServiceTest: 8 test (translate known/unknown/empty, planet names, prepositions, guessEnglishName)
-- [x] **Task 60-64** — Inline styles→Tailwind, accessibility (scope, aria-label, aria-current, role), partials, delete protection
-- [x] **Task 55-59** — CSS cleanup, config fixes, deps removal, curiosita showRoute, mission badge partial
-- [x] **Task 52-53** — ClearDashboardCache trait, ImageUploadService extraction
-- [x] **Task 40** — Debug generale post-ottimizzazione: LightboxGalleria.jsx fix `}`→`});` (memo close), CorpoDettaglio.test.jsx fix import typo. 260 test (173 PHPUnit + 87 Vitest)
-- [x] **Task 39** — Frontend Design audit: palette coerenza, 7 inconsistenze colore, SolarSystem firma, tipografia
-- [x] **Task 38** — Writing Guidelines audit: 14 ellipsis, 14 heading case, 10+ passive voice, 16 filler "con successo"
-- [x] **Task 37** — Web Design Guidelines audit: 14 file React, 3 high, 6 medium, 3 low priority
-- [x] **Task 36** — DashboardApiTest complete: 4 test (counts, corpi_in_evidenza, ultimi_corpi, missioni_per_stato)
-- [x] **Task 35** — Copertura test mancante: CorpoCelesteActionsTest(7), GalleriaOrdineTest(6), NasaImportTest(8)
-- [x] **Task 34** — Factory foreign key fix: corpo_celeste_id rimosso, usato ->for()
-- [x] **Task 33** — Frontend fixtures.js centralizzato condiviso tra 6 test file
-- [x] **Task 32** — Uniform Http::fake() pattern in tutti i test
-- [x] **Task 31** — AuthorizationTest: 19 test (store/update/delete per 5 entità + 6 guest redirect)
-- [x] **Task 30** — AdminTestCase base class: 5/5 CRUD test la estendono
-- [x] **Task 29** — suggestNome caching + debounce: Cache::remember(3600)
-- [x] **Task 28** — Authorization consistente: DashboardController fixato
-- [x] **Task 27** — React.memo: LightboxGalleria + Thumbnail
-- [x] **Task 26** — CSS component class: .admin-input, 8 Blade views riscritti
-- [x] **Task 25** — Hardcoded hex → CSS variables: 13 variabili, 52 hex sostituiti
-- [x] **Task 24** — Partials Blade: back-link, search, flash, stat-card, show-actions, index-actions
-- [x] **Task 23** — Form partial unificato: 5 _form.blade.php, 10 create/edit riscritti
-- [x] **Task 22** — Cache dashboard + invalidazione su CRUD
-- [x] **Task 21** — framer-motion → CSS transitions + SolarSystem clickable/immagini
-- [x] **Task 20** — Inline styles → Tailwind classes: ~68 oggetti in 15 file
-- [x] **Task 19** — Rimossi import morti React + dipendenze inutilizzate/malposizionate
-- [x] **Task 18** — 10 bug critici fixati
-- [x] **Task 17** — Quick wins: per_page, relazioni, .catch, nasa_id, indexes
-- [x] **Task 16** — FormRequest validazione store/update CorpoCeleste
-- [x] **Task 15** — Rimossa dipendenza Inertia
-- [x] **Task 14** — Auth pages: Inertia → Blade puro
-- [x] **Task 13** — Authorization Policy/Gates ai controller admin
-- [x] **Task 12** — Bugfix auth, NASA import dedup, galleria cleanup
-- [x] **Task 11** — Bug critici: route(), nasa_id, categoria_id
-- [x] **Task 10** — Remote URLs, nome_it/nome_display, wordMap, auto-suggest admin
-- [x] **Task 9** — NASA Import multi-immagine, Service Layer, CLI fetch-nasa
-- [x] **Task 8** — Bugfix Intervention Image v4, Force Import All
-- [x] **Task 7** — Fix orbite, redirect route, profilo, documentazione
-- [x] **Task 6** — React: Dettaglio, Lightbox, Missioni, Comparatore
-- [x] **Task 5** — React: Homepage, Sistema solare animato, Lista
-- [x] **Task 4** — API REST (10 endpoint)
-- [x] **Task 3** — CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria)
-- [x] **Task 2** — Database e Modelli (6 migrations, 5 models, seeder)
-- [x] **Task 1** — Setup Laravel + Breeze + React + documentazione
+### 17/07/2026
+
+- [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside — `Navbar.jsx`
+- [x] `[🧪test][🔵P2]` Test accessor nome_display + immagine_url — `CorpoCelesteTest.php` (6 test)
+- [x] `[🧪test][🔵P2]` Test setImageFromGallery: non-admin 403, remote URL, flash — `CorpoCelesteActionsTest.php`
+- [x] `[🧪test][🔵P2]` Test suggestNome: non-admin, caching, fallback raw Italian — `CorpoCelesteActionsTest.php`
+- [x] `[🧪test][🔵P2]` Test ImportNasaImage job: implements, proprietà, uniqueId, handle, failed — `ImportNasaImageTest.php` (9 test)
+- [x] `[🖥️backend][🟠P1]` memory_limit=512M — rimosso (codice inesistente)
+- [x] `[🎨frontend][🔵P2]` framer-motion mantenuto (uso legittimo in SolarSystem)
+
+### 16/07/2026
+
+- [x] `[🖥️backend][🟠P1]` orWhere grouping — `Admin/CorpoCelesteController.php` (B1)
+- [x] `[🖥️backend][🟠P1]` accessor indent — `CorpoCeleste.php` (B3)
+- [x] `[🎨frontend][🟠P1]` logo oversized — `Navbar.jsx` + `Footer.jsx` (F8)
+- [x] `[🎨frontend][🔵P2]` focus-visible ring — `SearchBar.jsx` (F7)
+- [x] `[🎨frontend][🟠P1]` hardcoded hex → CSS vars — `Comparatore.jsx` (F3)
+- [x] `[🖥️backend][🔵P2]` flash 3 blocks → foreach loop — `flash.blade.php` (B10)
+- [x] `[🎨frontend][🔵P2]` extract useDebounce hook — `CorpiLista.jsx` + `hooks/useDebounce.js` (F4)
+
+### 15/07/2026
+
+- [x] `[🎨frontend][🟠P1]` Sidebar + Partials: config/admin.php, _sidebar-nav, category-badge, index-header, dashboard-stat, empty-table-row, in-evidenza-badge, flash-in-layout, CSS vars error/success, Route::is()
+- [x] `[🖥️backend][🧪test][🔴P0]` Fasi 1-3 — Sicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 359 test (252 PHPUnit + 107 Vitest)
+
+### 14/07/2026
+
+- [x] `[🧪test][🔵P2]` Task 70 — API edge case tests: ApiEdgeCaseTest.php (17 test: percent, underscore, per_page, agenzia/stato filters, empty DB, factory, dashboard, galleria/curiosita includes)
+- [x] `[🧪test][🔵P2]` Task 69 — Search & filter tests: SearchAndFilterTest.php (10 test: search per nome/nome_it/titolo/didascalia, stato filter, wildcard escaping)
+- [x] `[🧪test][🔵P2]` Task 67 — Frontend tests: NotFound(4), ErrorBoundary(4), TimelineMissioni(8), Navbar(6) — 22 test Vitest
+- [x] `[🧪test][🔵P2]` Task 66 — CleanupGalleryDuplicatesTest: 9 test (dedup, dry-run, orphans, check, broken/working remote URLs, different corpi same path)
+- [x] `[🧪test][🔵P2]` Task 65 — WordMapServiceTest: 8 test (translate known/unknown/empty, planet names, prepositions, guessEnglishName)
+- [x] `[🎨frontend][🟠P1]` Task 60-64 — Inline styles→Tailwind, accessibility (scope, aria-label, aria-current, role), partials, delete protection
+- [x] `[🖥️backend][🎨frontend][🔵P2]` Task 55-59 — CSS cleanup, config fixes, deps removal, curiosita showRoute, mission badge partial
+- [x] `[🖥️backend][🔵P2]` Task 52-53 — ClearDashboardCache trait, ImageUploadService extraction
+- [x] `[🧪test][🟠P1]` Task 40 — Debug generale post-ottimizzazione: LightboxGalleria.jsx fix `}`→`});` (memo close), CorpoDettaglio.test.jsx fix import typo. 260 test (173 PHPUnit + 87 Vitest)
+
+### 11/07/2026
+
+- [x] `[📝docs][🔵P2]` Task 39 — Frontend Design audit: palette coerenza, 7 inconsistenze colore, SolarSystem firma, tipografia
+- [x] `[📝docs][🔵P2]` Task 38 — Writing Guidelines audit: 14 ellipsis, 14 heading case, 10+ passive voice, 16 filler "con successo"
+- [x] `[📝docs][🔵P2]` Task 37 — Web Design Guidelines audit: 14 file React, 3 high, 6 medium, 3 low priority
+- [x] `[🧪test][🔵P2]` Task 36 — DashboardApiTest complete: 4 test (counts, corpi_in_evidenza, ultimi_corpi, missioni_per_stato)
+- [x] `[🧪test][🟠P1]` Task 35 — Copertura test mancante: CorpoCelesteActionsTest(7), GalleriaOrdineTest(6), NasaImportTest(8)
+- [x] `[🧪test][🟠P1]` Task 34 — Factory foreign key fix: corpo_celeste_id rimosso, usato ->for()
+- [x] `[🧪test][🔵P2]` Task 33 — Frontend fixtures.js centralizzato condiviso tra 6 test file
+- [x] `[🧪test][🟠P1]` Task 32 — Uniform Http::fake() pattern in tutti i test
+- [x] `[🧪test][🟠P1]` Task 31 — Uniform Http::fake() pattern in tutti i test
+- [x] `[🧪test][🟠P1]` Task 30 — AuthorizationTest: 19 test (store/update/delete per 5 entità + 6 guest redirect)
+- [x] `[🖥️backend][🟠P1]` Task 29 — AdminTestCase base class: 5/5 CRUD test la estendono
+- [x] `[🖥️backend][🟠P1]` Task 28 — suggestNome caching + debounce: Cache::remember(3600)
+- [x] `[🖥️backend][🟠P1]` Task 27 — Authorization consistente: DashboardController fixato
+- [x] `[🎨frontend][🔵P2]` Task 26 — React.memo: LightboxGalleria + Thumbnail
+- [x] `[🎨frontend][🟠P1]` Task 25 — CSS component class: .admin-input, 8 Blade views riscritti
+- [x] `[🎨frontend][🟠P1]` Task 24 — Hardcoded hex → CSS variables: 13 variabili, 52 hex sostituiti
+- [x] `[🎨frontend][🟠P1]` Task 23 — Partials Blade: back-link, search, flash, stat-card, show-actions, index-actions
+- [x] `[🎨frontend][🟠P1]` Task 22 — Form partial unificato: 5 _form.blade.php, 10 create/edit riscritti
+- [x] `[🖥️backend][🟠P1]` Task 21 — Cache dashboard + invalidazione su CRUD
+- [x] `[🎨frontend][🟠P1]` Task 20 — framer-motion → CSS transitions + SolarSystem clickable/immagini
+- [x] `[🎨frontend][🟠P1]` Task 19 — Inline styles → Tailwind classes: ~68 oggetti in 15 file
+- [x] `[🎨frontend][🟠P1]` Task 18 — Rimossi import morti React + dipendenze inutilizzate/malposizionate
+
+### 10/07/2026
+
+- [x] `[🖥️backend][🔴P0]` Task 18 — 10 bug critici fixati
+- [x] `[🖥️backend][🟠P1]` Task 17 — Quick wins: per_page, relazioni, .catch, nasa_id, indexes
+- [x] `[🖥️backend][🟠P1]` Task 16 — FormRequest validazione store/update CorpoCeleste
+- [x] `[🖥️backend][🔴P0]` Task 15 — Rimossa dipendenza Inertia
+- [x] `[🖥️backend][🔴P0]` Task 14 — Auth pages: Inertia → Blade puro
+- [x] `[🖥️backend][🔴P0]` Task 13 — Authorization Policy/Gates ai controller admin
+
+### 09/07/2026
+
+- [x] `[🖥️backend][🔴P0]` Task 12 — Bugfix auth, NASA import dedup, galleria cleanup
+- [x] `[🖥️backend][🟠P1]` Task 11 — Bug critici: route(), nasa_id, categoria_id
+- [x] `[🖥️backend][🟠P1]` Task 10 — Remote URLs, nome_it/nome_display, wordMap, auto-suggest admin
+
+### 08/07/2026
+
+- [x] `[🖥️backend][🟠P1]` Task 9 — NASA Import multi-immagine, Service Layer, CLI fetch-nasa
+- [x] `[🖥️backend][🟠P1]` Task 8 — Bugfix Intervention Image v4, Force Import All
+
+### 07/07/2026
+
+- [x] `[🖥️backend][🎨frontend][📝docs]` Task 7 — Fix orbite, redirect route, profilo, documentazione
+
+### 04/07/2026
+
+- [x] `[🎨frontend][🔴P0]` Task 6 — React: Dettaglio, Lightbox, Missioni, Comparatore
+- [x] `[🎨frontend][🔴P0]` Task 5 — React: Homepage, Sistema solare animato, Lista
+- [x] `[🖥️backend][🔴P0]` Task 4 — API REST (10 endpoint)
+
+### 03/07/2026
+
+- [x] `[🖥️backend][🎨frontend][🔴P0]` Task 3 — CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria)
+- [x] `[🖥️backend][💾database][🔴P0]` Task 2 — Database e Modelli (6 migrations, 5 models, seeder)
+
+### 02/07/2026
+
+- [x] `[🖥️backend][🎨frontend][📝docs][🔴P0]` Task 1 — Setup Laravel + Breeze + React + documentazione
 
 ## Note
 
-- **Stato**: Quick wins completati. 47 PHPUnit + 107 Vitest, tutti verdi.
+- **Stato**: 0 task aperte. 359 test (252 PHPUnit + 107 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

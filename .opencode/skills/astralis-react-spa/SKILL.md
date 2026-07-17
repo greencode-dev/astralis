@@ -9,7 +9,7 @@ Guest frontend è una React SPA standalone in `resources/js/guest/`. Entry point
 
 ## Tech Stack
 
-- React 19
+- React 18
 - Vite
 - framer-motion (animazioni)
 - react-router-dom v7 (routing)
