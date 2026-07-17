@@ -105,6 +105,7 @@ Quando l'utente scrive `/start`, eseguire automaticamente questo flusso (solo le
 5. **Attività recenti**: leggere `docs/changelog.md` → prime 2-3 entry.
 6. **Snapshot progetto**: leggere `AGENTS.md` → sezione "Stato avanzamento" (test count, fasi completate).
 7. **Knowledge graph**: eseguire `graphify explain "Astralis"` per una visione d'insieme dell'architettura (se il grafo esiste).
+8. **Ultima sessione**: leggere `### Sessione corrente` in AGENTS.md. Se presente, includere nel report: dove eravamo rimasti, task in corso, prossime azioni suggerite.
 
 Generare un report con formato:
 
@@ -125,6 +126,11 @@ Generare un report con formato:
 - 🔵P2: [lista]
 
 **Grafo**: [riepilogo architettura da graphify]
+
+**Ultima sessione** (se snapshot presente):
+- Ultimo commit: `abc1234` — messaggio
+- Task in corso: [lista]
+- Prossime azioni: [suggerimento]
 
 **Suggerimento prossima task**: [task con priorità più alta non ancora iniziata]
 
@@ -264,6 +270,41 @@ Prima di eseguire `git push`:
    - Se ci sono commit con messaggi simili o che fixano lo stesso file → segnalare e proporre squash (`git rebase -i`) o lasciare così.
 3. **Doppia conferma**: chiedere sempre conferma esplicita prima di `git push`.
 
+### Comando /commit
+
+Flusso commit automatizzato quando l'utente scrive `/commit`:
+
+1. Eseguire `git status --short` e mostrare all'utente l'elenco dei file modificati.
+2. Se tra i file ci sono potenziali secrets (`.env`, credenziali, chiavi, `.env.example` con valori reali), **fermare tutto** e avvisare l'utente.
+3. Eseguire `git diff --stat` per mostrare un riepilogo delle modifiche.
+4. Proporre un messaggio di commit seguendo il formato Fase 5: `tipo: descrizione concisa` (`fix:`, `feat:`, `docs:`, `refactor:`, `test:`, ecc.). Basare il prefisso sul contenuto effettivo delle modifiche.
+5. **Doppia conferma**: chiedere sempre conferma esplicita all'utente prima di eseguire `git add . && git commit`.
+6. Se ci sono modifiche non collegate, chiedere se committare tutto insieme o selezionare con `git add -p`.
+7. Dopo il commit, mostrare `git log --oneline -1` per confermare.
+
+### Comando /push
+
+Flusso push automatizzato quando l'utente scrive `/push`:
+
+1. `git fetch origin` per verificare lo stato remoto.
+2. `git log HEAD..origin/{branch} --oneline` — se ci sono commit remote non pullati, informare l'utente e chiedere se eseguire pull prima del push.
+3. `git log --oneline -5` — se ci sono commit con messaggi simili o che fixano lo stesso file, segnalare e proporre squash (`git rebase -i`) o lasciare così.
+4. Verificare il branch corrente e il tracking remoto.
+5. **Doppia conferma**: chiedere sempre conferma esplicita prima di `git push`.
+6. Dopo il push, mostrare `git log --oneline -1` per confermare.
+
+### Comando /save
+
+Flusso di chiusura sessione quando l'utente scrive `/save`:
+
+1. **Stato**: `git status --short` + `git diff --stat` + `git log --oneline -1`.
+2. **Aggiornare documentazione** seguendo le regole Fase 3: todo.md, changelog.md, testing.md, bug.md, documentazione.md, README.md, AGENTS.md (test count, file map, bugs noti).
+3. **Grafo**: `graphify update .`.
+4. **Snapshot sessione**: aggiornare `### Sessione corrente` in AGENTS.md (sovrascrivere la precedente).
+5. **Report chiusura**: generare un riepilogo della sessione (modifiche, task completate, test finali, prossime azioni).
+6. **Commit** (conferma esplicita): comporre il messaggio seguendo il formato Fase 5 (`tipo: descrizione concisa`) in base alle modifiche effettive. Se il commit include solo documentazione → `docs: ...`. Se include anche fix → usare il prefisso appropriato.
+7. **Push** (conferma esplicita, opzionale): dopo il commit, chiedere se eseguire push ora o lasciare per dopo.
+
 ## Skill installate
 
 Skill globali sempre disponibili in `~/.config/opencode/skills/`:
@@ -309,6 +350,20 @@ Procedura rapida:
 Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-opencode-skills`](docs/documentazione.md#setup-opencode-skills).
 
 ## Stato avanzamento piano ottimizzazione
+
+### Sessione corrente
+
+> *Ultimo aggiornamento:* 17/07/2026 — 19:00
+
+| Campo | Valore |
+|-------|--------|
+| **Branch** | `master` |
+| **Commit HEAD** | `35810e9` — docs: riscrittura changelog con formato emoji tag + fix todo test count + aggiorna regole AGENTS.md |
+| **Test** | 255 PHPUnit + 107 Vitest = 362 totali |
+| **Modifiche** | Aggiunti comandi /commit, /push, /save + snapshot sessione in AGENTS.md |
+| **Task completate** | Changelog riscritto, regole AGENTS.md aggiornate, comandi custom definiti |
+| **Task in corso** | Nessuna |
+| **Prossime azioni** | 3 task P1 aperte: logo, orbite sistema solare, UX sistema solare |
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 

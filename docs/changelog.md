@@ -12,6 +12,9 @@
 - `[🧪test][🔵P2]` 28 nuovi test — CorpoCelesteTest (6 accessor), ImportNasaImageTest (9 job), CorpoCelesteActionsTest (13 admin actions)
 - `[🎨frontend][🟠P1]` Navbar mobile — `Navbar.jsx`: Escape key handler, click-outside overlay, close on route change via `useEffect`
 - `[🎨frontend][🔵P2]` framer-motion mantenuto in `SolarSystem.jsx` (uso legittimo per orbite `useMotionValue`/`useTransform`)
+- `[📝docs][🟠P1]` Comandi custom — AGENTS.md: aggiunti `/commit`, `/push`, `/save` con workflow automatizzato (Fasi 5-6 + chiusura sessione)
+- `[📝docs][🟠P1]` Snapshot sessione — `### Sessione corrente` in AGENTS.md, sovrascritta ad ogni `/save`, letta da `/start`
+- `[📝docs][🔵P2]` Fase 0 aggiornata — `/start` include lettura snapshot ultima sessione nel report
 
 **Test**: 362 totali (255 PHPUnit + 107 Vitest), tutti verdi.
 
