@@ -2,7 +2,7 @@
 
 > [Formato e legenda →](#note)
 
-*Ultimo aggiornamento: 2026-07-07*
+*Ultimo aggiornamento: 2026-07-17*
 
 ## Da Fare
 
@@ -31,6 +31,9 @@
 - [x] `[✨feature][🔵P2]` Logo Astralis ad alta risoluzione caricati in public/
 - [x] `[📝docs][🔵P2]` Installazione graphify + aggiornamento grafo knowledge graph (1647 nodi, 2587 edges, 213 community)
 - [x] `[📝docs][🔵P2]` Aggiornamento docs: React 19→18, test count 252/359, task numbering, changelog 17/07
+- [x] `[📝docs][🟠P1]` Comandi custom — AGENTS.md: `/commit`, `/push`, `/save` con workflow automatizzato e conferme via `question` tool
+- [x] `[📝docs][🟠P1]` Snapshot sessione — `### Sessione corrente` in AGENTS.md, letta da `/start`, sovrascritta da `/save`
+- [x] `[📝docs][🟠P1]` Conferme unificate — 7 punti in AGENTS.md riscritti con tool `question` a checkbox
 
 ### 16/07/2026
 

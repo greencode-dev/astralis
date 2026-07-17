@@ -353,15 +353,15 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> *Ultimo aggiornamento:* 17/07/2026 — 19:00
+> *Ultimo aggiornamento:* 17/07/2026 — 19:40
 
 | Campo | Valore |
 |-------|--------|
 | **Branch** | `master` |
-| **Commit HEAD** | `7076303` — docs: aggiungere comandi /commit, /push, /save + snapshot sessione in AGENTS.md |
+| **Commit HEAD** | `3dd6709` — docs: conferme esplicite con question tool in 7 punti AGENTS.md |
 | **Test** | 255 PHPUnit + 107 Vitest = 362 totali |
-| **Modifiche** | Aggiunti comandi /commit, /push, /save + snapshot sessione in AGENTS.md |
-| **Task completate** | Changelog riscritto, regole AGENTS.md aggiornate, comandi custom definiti |
+| **Modifiche** | Aggiunti comandi /commit, /push, /save, snapshot sessione, conferme question tool; fix test count in testing.md |
+| **Task completate** | Comandi custom definiti, snapshot sessione, conferme unificate con question tool, changelog aggiornato, testing.md fixato |
 | **Task in corso** | Nessuna |
 | **Prossime azioni** | 3 task P1 aperte: logo, orbite sistema solare, UX sistema solare |
 
