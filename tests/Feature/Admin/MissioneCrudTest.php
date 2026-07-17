@@ -45,7 +45,7 @@ class MissioneCrudTest extends AdminTestCase
                 'agenzia' => 'NASA',
                 'data_lancio' => '2020-01-01',
                 'durata_giorni' => 365,
-                'stato' => 'completata',
+                'stato' => 'Completata',
                 'descrizione' => 'A test mission.',
                 'sito_web' => 'https://example.com',
             ]);
