@@ -1,6 +1,8 @@
 # Todo
 
-*Ultimo aggiornamento: 2026-07-17*
+> [Formato e legenda →](#note)
+
+*Ultimo aggiornamento: 2026-07-07*
 
 ## Da Fare
 
@@ -9,6 +11,11 @@
 - [ ] `[🎨frontend][🟠P1]` Sistema solare UX — nomi pianeti cliccabili + rallentamento rotazione su hover
 
 ## Fatto
+
+### 07/07/2026
+
+- [x] `[📝docs][🔵P2]` Fix nomi skill in AGENTS.md (`react-best-practices` → `vercel-react-best-practices`, `composition-patterns` → `vercel-composition-patterns`)
+- [x] `[📝docs][🔵P2]` Unificare sessioni 17/07 in changelog.md (sessione 1+2 → unica entry) + aggiornare conteggi test (359 → 362)
 
 ### 17/07/2026
 
@@ -118,7 +125,7 @@
 
 ## Note
 
-- **Stato**: 3 task aperte. 359 test (252 PHPUnit + 107 Vitest), tutti verdi.
+- **Stato**: 3 task aperte. 362 test (255 PHPUnit + 107 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

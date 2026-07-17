@@ -99,7 +99,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 Quando l'utente scrive `/start`, eseguire automaticamente questo flusso (solo lettura):
 
 1. **Caricare le skill Astralis**: `astralis-laravel`, `astralis-react-spa`, `astralis-blade-admin`, `astralis-testing`.
-2. **Caricare le skill globali**: `frontend-design`, `react-best-practices`, `composition-patterns`, `web-design-guidelines`, `writing-guidelines`.
+2. **Caricare le skill globali**: `frontend-design`, `vercel-react-best-practices`, `vercel-composition-patterns`, `web-design-guidelines`, `writing-guidelines`.
 3. **Stato repo**: `git fetch origin` → `git status` → `git log --oneline -5` → `git log HEAD..origin/{branch} --oneline` → `git stash list` → `git diff --stat`.
 4. **Task aperte**: leggere `docs/todo.md` → sezione "Da Fare", raggruppare per priorità.
 5. **Attività recenti**: leggere `docs/changelog.md` → prime 2-3 entry.
@@ -183,12 +183,17 @@ Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
 
 #### docs/changelog.md
 
-1. **Una sola intestazione per giorno**.
-2. Formato: `### Titolo breve (DD/MM/YYYY)` + bullet list con **bold keyword** + descrizione.
-3. Ordine: entry più recenti in cima.
-4. Includere: bug fix, feature, refactor, breaking changes, test count.
-5. Non includere: commit minori, typo fix.
-6. Chiudere ogni entry con: `**Test**: N totali (X PHPUnit + Y Vitest), tutti verdi.`
+1. **Una sola intestazione per giorno**: `## GG/MM/AAAA`.
+2. Formato entry: `` - `[🖥️backend][🔴P0]` Descrizione — `file/coinvolto` ``.
+3. Tag: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`.
+4. Priorità: `🔴P0` bloccante · `🟠P1` utente · `🔵P2` manutenzione · `🟣P3` accessibilità · `⚪P4` futuro.
+5. Ordine: cronologico inverso (più recente prima).
+6. Separatore `---` tra ogni blocco data.
+7. Includere: bug fix, feature, refactor, breaking changes, test count.
+8. Non includere: commit minori, typo fix.
+9. Chiudere ogni entry con: `**Test**: N totali (X PHPUnit + Y Vitest), tutti verdi.`.
+10. Aggiornare test count solo nell'ultima entry della giornata.
+11. Legenda in fondo al file + link rapido in cima.
 
 #### docs/testing.md
 
@@ -266,8 +271,8 @@ Skill globali sempre disponibili in `~/.config/opencode/skills/`:
 | Skill | Attivazione |
 |---|---|
 | `frontend-design` | Design UI/UX, componenti React, layout |
-| `react-best-practices` | Ottimizzazione React/Next.js (70 regole) |
-| `composition-patterns` | Pattern composizione React |
+| `vercel-react-best-practices` | Ottimizzazione React/Next.js (70 regole) |
+| `vercel-composition-patterns` | Pattern composizione React |
 | `webapp-testing` | Testing Playwright |
 | `web-design-guidelines` | Review UI/accessibilità |
 | `writing-guidelines` | Review scrittura documentazione |
