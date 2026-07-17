@@ -4,11 +4,22 @@
 
 ## Da Fare
 
-Nessuna task aperta.
+- [ ] `[🎨frontend][🟠P1]` Integrare 3 logo PNG nel progetto (completo, solo logo, solo testo) — Navbar, Footer, Sidebar admin, Auth layout
+- [ ] `[🎨frontend][🟠P1]` Migliorare orbite sistema solare — attualmente troppo finte (`border-admin-primary/8`), da rendere più visibili e definite
+- [ ] `[🎨frontend][🟠P1]` Sistema solare UX — nomi pianeti cliccabili + rallentamento rotazione su hover
 
 ## Fatto
 
-### 17/07/2026
+### 17/07/2026 — sessione 2
+
+- [x] `[🖥️backend][🔴P0]` Fix proxy API in vite.config.js — aggiunto `server.proxy: { '/api': 'http://localhost:8000' }` — risolve white page + CORB error
+- [x] `[📝docs][🔵P2]` Installazione graphifyy + aggiornamento grafo knowledge graph (1647 nodi, 2587 edges, 213 community)
+- [x] `[📝docs][🔵P2]` Aggiornamento docs: React 19→18, test count 252/359, task numbering, changelog 17/07
+- [x] `[🎨frontend][🟠P1]` Fix Navbar mobile: Escape key + click-outside + route-change cleanup
+- [x] `[🧪test][🔵P2]` 28 nuovi test: CorpoCelesteTest (6), ImportNasaImageTest (9), CorpoCelesteActionsTest (13)
+- [x] `[✨feature][🔵P2]` Logo Astralis ad alta risoluzione caricati in public/
+
+### 17/07/2026 — sessione 1
 
 - [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside — `Navbar.jsx`
 - [x] `[🧪test][🔵P2]` Test accessor nome_display + immagine_url — `CorpoCelesteTest.php` (6 test)
@@ -111,7 +122,7 @@ Nessuna task aperta.
 
 ## Note
 
-- **Stato**: 0 task aperte. 359 test (252 PHPUnit + 107 Vitest), tutti verdi.
+- **Stato**: 3 task aperte. 359 test (252 PHPUnit + 107 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
   ```

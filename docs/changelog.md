@@ -1,6 +1,16 @@
 # Changelog
 
-## Bug residui — fix (17/07/2026)
+## Fix proxy API + graphify setup (17/07/2026 — sessione 2)
+
+- **Bug critico** — `vite.config.js`: aggiunto `server.proxy: { '/api': 'http://localhost:8000' }` — senza proxy, le chiamate API in dev mode fallivano con CORB (Cross-Origin Read Blocking). La pagina appariva bianca perché il browser bloccava le risposte JSON cross-origin
+- **graphifyy installato** — CLI knowledge graph (`pip install graphifyy` v0.9.17). Grafo aggiornato: 1647 nodi, 2587 edges, 213 community. Snapshot salvato in `graphify-out/2026-07-17/`
+- **Docs alignment** — Fixed React 19→18 in AGENTS.md + SKILL.md, test count 252/359 in 5 file docs, task numbering in todo.md, changelog 17/07 sessione 1
+- **Logo assets** — 3 PNG ad alta risoluzione caricati in `public/`: `astralis_logo_completo.png`, `astralis_solo_logo.png`, `astralis_solo_testo.png`
+- **28 nuovi test** — CorpoCelesteTest (6 accessor), ImportNasaImageTest (9 job), CorpoCelesteActionsTest (13 admin actions)
+
+**Test**: 359 totali (252 PHPUnit + 107 Vitest), tutti verdi.
+
+## Bug residui — fix (17/07/2026 — sessione 1)
 
 - **Navbar mobile** — `Navbar.jsx`: Escape key handler, click-outside overlay, close on route change via `useEffect`
 - **Test accessor** — `CorpoCelesteTest.php`: 6 test per `nome_display` e `immagine_url` accessors

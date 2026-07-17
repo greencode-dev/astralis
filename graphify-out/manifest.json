@@ -645,8 +645,8 @@
     "semantic_hash": ""
   },
   "vite.config.js": {
-    "mtime": 1784208942.1631644,
-    "ast_hash": "140cb455c6a38808630f98c6627cf6c7",
+    "mtime": 1784287821.7157917,
+    "ast_hash": "396379ce61ea58fbe7fc4febd14164b6",
     "semantic_hash": ""
   },
   "README.md": {
@@ -660,8 +660,8 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1784281821.964537,
-    "ast_hash": "032ce98b52179dc228527499d41dd61e",
+    "mtime": 1784289838.7904067,
+    "ast_hash": "0052613d1b85574b26d97e1556cf41dd",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1784281663.858582,
-    "ast_hash": "9ba7f882936d9b401eae985235f41eba",
+    "mtime": 1784289812.2013237,
+    "ast_hash": "ddbf43fd476125f1a82ea282e69a6842",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -1250,8 +1250,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784281413.9372752,
-    "ast_hash": "bfb2e0462f0e3c202cbf6cb77d3b2150",
+    "mtime": 1784289871.0924282,
+    "ast_hash": "3f97643aff7c6053b85906619cc8be2f",
     "semantic_hash": ""
   },
   "resources/js/guest/hooks/useInView.js": {
