@@ -15,6 +15,7 @@
 - `[📝docs][🟠P1]` Comandi custom — AGENTS.md: aggiunti `/commit`, `/push`, `/save` con workflow automatizzato (Fasi 5-6 + chiusura sessione)
 - `[📝docs][🟠P1]` Snapshot sessione — `### Sessione corrente` in AGENTS.md, sovrascritta ad ogni `/save`, letta da `/start`
 - `[📝docs][🔵P2]` Fase 0 aggiornata — `/start` include lettura snapshot ultima sessione nel report
+- `[📝docs][🟠P1]` Conferme unificate — AGENTS.md: tutte le conferme esplicite usano il tool `question` con checkbox, formato standard in 7 punti (Fase 5, Fase 6, /commit, /push, /save)
 
 **Test**: 362 totali (255 PHPUnit + 107 Vitest), tutti verdi.
 
