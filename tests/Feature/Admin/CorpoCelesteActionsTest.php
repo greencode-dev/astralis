@@ -4,7 +4,9 @@ namespace Tests\Feature\Admin;
 
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
+use App\Models\User;
 use App\Services\NasaImageService;
+use App\Services\WordMapService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
@@ -120,5 +122,142 @@ class CorpoCelesteActionsTest extends AdminTestCase
         $response = $this->post(route('admin.corpi-celesti.set-image', [$this->corpo, $galleria]));
 
         $response->assertRedirect('/login');
+    }
+
+    public function test_set_image_non_admin_cannot_access(): void
+    {
+        $nonAdmin = User::factory()->create(['is_admin' => false]);
+        $galleria = GalleriaCorpo::factory()->for($this->corpo)->create();
+
+        $response = $this->actingAs($nonAdmin)
+            ->post(route('admin.corpi-celesti.set-image', [$this->corpo, $galleria]));
+
+        $response->assertForbidden();
+    }
+
+    public function test_set_image_from_gallery_with_remote_url(): void
+    {
+        $remoteUrl = 'https://example.com/nasa-image.jpg';
+        $galleria = GalleriaCorpo::factory()->for($this->corpo)->create([
+            'percorso' => $remoteUrl,
+        ]);
+
+        $response = $this->actingAs($this->admin)
+            ->post(route('admin.corpi-celesti.set-image', [$this->corpo, $galleria]));
+
+        $response->assertRedirect(route('admin.corpi-celesti.show', $this->corpo));
+
+        $this->assertDatabaseHas('corpi_celesti', [
+            'id' => $this->corpo->id,
+            'immagine' => $remoteUrl,
+            'immagine_utente' => true,
+        ]);
+    }
+
+    public function test_set_image_flash_message_content(): void
+    {
+        $galleria = GalleriaCorpo::factory()->for($this->corpo)->create([
+            'percorso' => 'updated.jpg',
+        ]);
+
+        $response = $this->actingAs($this->admin)
+            ->post(route('admin.corpi-celesti.set-image', [$this->corpo, $galleria]));
+
+        $response->assertSessionHas('success', 'Immagine principale aggiornata con successo.');
+    }
+
+    public function test_suggest_nome_non_admin_can_access(): void
+    {
+        Cache::flush();
+
+        $nonAdmin = User::factory()->create(['is_admin' => false]);
+
+        $mock = \Mockery::mock(NasaImageService::class);
+        $mock->shouldReceive('searchNasa')
+            ->once()
+            ->with('Jupiter')
+            ->andReturn([
+                'success' => true,
+                'items' => [
+                    [
+                        'data' => [
+                            [
+                                'title' => 'Jupiter',
+                                'keywords' => ['planet'],
+                            ],
+                        ],
+                    ],
+                ],
+            ]);
+        $this->app->instance(NasaImageService::class, $mock);
+
+        $response = $this->actingAs($nonAdmin)
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove']);
+
+        $response->assertOk()
+            ->assertJson(['success' => true, 'nome' => 'Jupiter']);
+    }
+
+    public function test_suggest_nome_caches_result(): void
+    {
+        Cache::flush();
+
+        $mock = \Mockery::mock(NasaImageService::class);
+        $mock->shouldReceive('searchNasa')
+            ->once()
+            ->with('Jupiter')
+            ->andReturn([
+                'success' => true,
+                'items' => [
+                    [
+                        'data' => [
+                            [
+                                'title' => 'Jupiter',
+                                'keywords' => ['planet', 'Jupiter'],
+                            ],
+                        ],
+                    ],
+                ],
+            ]);
+        $this->app->instance(NasaImageService::class, $mock);
+
+        $this->actingAs($this->admin)
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove'])
+            ->assertOk();
+
+        $this->actingAs($this->admin)
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove'])
+            ->assertOk()
+            ->assertJson(['success' => true, 'nome' => 'Jupiter']);
+    }
+
+    public function test_suggest_nome_falls_back_to_raw_italian_search(): void
+    {
+        Cache::flush();
+
+        $mock = \Mockery::mock(NasaImageService::class);
+        $mock->shouldReceive('searchNasa')
+            ->once()
+            ->with('Xnotreal')
+            ->andReturn([
+                'success' => true,
+                'items' => [
+                    [
+                        'data' => [
+                            [
+                                'title' => 'Xnotreal',
+                                'keywords' => ['test'],
+                            ],
+                        ],
+                    ],
+                ],
+            ]);
+        $this->app->instance(NasaImageService::class, $mock);
+
+        $response = $this->actingAs($this->admin)
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Xnotreal']);
+
+        $response->assertOk()
+            ->assertJson(['success' => true, 'nome' => 'Xnotreal']);
     }
 }
