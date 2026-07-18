@@ -61,7 +61,7 @@ class ImportNasaImageTest extends TestCase
         $job = new ImportNasaImage($corpo);
 
         $this->assertEquals(5, $job->galleryCount);
-        $this->assertTrue($job->force);
+        $this->assertFalse($job->force);
     }
 
     public function test_job_custom_parameters(): void

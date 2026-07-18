@@ -5,6 +5,7 @@ This project has a knowledge graph at graphify-out/ with god nodes, community st
 When the user types `/graphify`, use the installed graphify skill or instructions before doing anything else.
 
 Rules:
+
 - For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
 - Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
 - If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
@@ -44,32 +45,32 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 
 ## File map
 
-| Percorso | Ruolo |
-|---|---|
-| `routes/web.php` | Route admin + auth + catch-all SPA (`/{any}` → `guest.blade.php`) |
-| `routes/api.php` | 10 endpoint JSON pubblici |
-| `routes/auth.php` | Route Breeze (login, register, etc.) |
-| `app/Services/NasaImageService.php` | Import NASA con dedup, preserva immagine utente, timeout 30s, retry 2, testing guard |
-| `app/Observers/CorpoCelesteObserver.php` | Auto-import NASA su created (skip in testing via `app()->environment('testing')`) |
-| `app/Services/WordMapService.php` | Traduzione italiano→inglese per NASA suggest admin |
-| `app/Console/Commands/CleanupGalleryDuplicates.php` | Comando `astralis:gallery` (--check/--clean/--sync/--fix/--dry-run) |
-| `app/Policies/` | Policy autorizzazione (5 Policy, una per entità) |
-| `app/Providers/AuthServiceProvider.php` | Registrazione Policy + Gate `admin` |
-| `app/Http/Controllers/Admin/` | Controller CRUD admin (Blade) |
-| `app/Http/Controllers/Api/` | Controller API (JSON) |
-| `app/Http/Controllers/Auth/` | Controller auth Breeze (Blade) |
-| `resources/views/admin/layouts/app.blade.php` | Master layout admin (sidebar + Alpine.js CDN + x-cloak) |
-| `resources/views/admin/partials/_sidebar-nav.blade.php` | Sidebar nav rendering (reads config/admin.php) |
-| `resources/views/admin/partials/category-badge.blade.php` | Reusable category badge |
-| `resources/views/admin/partials/index-header.blade.php` | Index page header with create button |
-| `resources/views/admin/partials/dashboard-stat.blade.php` | Dashboard stat card |
-| `resources/views/admin/partials/empty-table-row.blade.php` | Empty table state |
-| `resources/views/admin/partials/in-evidenza-badge.blade.php` | Featured badge |
-| `config/admin.php` | Nav items, mission stati, color presets |
-| `resources/js/guest/hooks/useDebounce.js` | Shared debounce hook |
-| `resources/js/guest/pages/NotFound.jsx` | 404 page (catch-all route) |
-| `resources/js/guest/` | React SPA guest |
-| `vite.config.js` | Config Vite: React plugin, proxy API `/api` → `http://localhost:8000` |
+| Percorso                                                     | Ruolo                                                                                |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `routes/web.php`                                             | Route admin + auth + catch-all SPA (`/{any}` → `guest.blade.php`)                    |
+| `routes/api.php`                                             | 10 endpoint JSON pubblici                                                            |
+| `routes/auth.php`                                            | Route Breeze (login, register, etc.)                                                 |
+| `app/Services/NasaImageService.php`                          | Import NASA con dedup, preserva immagine utente, timeout 30s, retry 2, testing guard |
+| `app/Observers/CorpoCelesteObserver.php`                     | Auto-import NASA su created (skip in testing via`app()->environment('testing')`)     |
+| `app/Services/WordMapService.php`                            | Traduzione italiano→inglese per NASA suggest admin                                   |
+| `app/Console/Commands/CleanupGalleryDuplicates.php`          | Comando`astralis:gallery` (--check/--clean/--sync/--fix/--dry-run)                   |
+| `app/Policies/`                                              | Policy autorizzazione (5 Policy, una per entità)                                     |
+| `app/Providers/AuthServiceProvider.php`                      | Registrazione Policy + Gate`admin`                                                   |
+| `app/Http/Controllers/Admin/`                                | Controller CRUD admin (Blade)                                                        |
+| `app/Http/Controllers/Api/`                                  | Controller API (JSON)                                                                |
+| `app/Http/Controllers/Auth/`                                 | Controller auth Breeze (Blade)                                                       |
+| `resources/views/admin/layouts/app.blade.php`                | Master layout admin (sidebar + Alpine.js CDN + x-cloak)                              |
+| `resources/views/admin/partials/_sidebar-nav.blade.php`      | Sidebar nav rendering (reads config/admin.php)                                       |
+| `resources/views/admin/partials/category-badge.blade.php`    | Reusable category badge                                                              |
+| `resources/views/admin/partials/index-header.blade.php`      | Index page header with create button                                                 |
+| `resources/views/admin/partials/dashboard-stat.blade.php`    | Dashboard stat card                                                                  |
+| `resources/views/admin/partials/empty-table-row.blade.php`   | Empty table state                                                                    |
+| `resources/views/admin/partials/in-evidenza-badge.blade.php` | Featured badge                                                                       |
+| `config/admin.php`                                           | Nav items, mission stati, color presets                                              |
+| `resources/js/guest/hooks/useDebounce.js`                    | Shared debounce hook                                                                 |
+| `resources/js/guest/pages/NotFound.jsx`                      | 404 page (catch-all route)                                                           |
+| `resources/js/guest/`                                        | React SPA guest                                                                      |
+| `vite.config.js`                                             | Config Vite: React plugin, proxy API`/api` → `http://localhost:8000`                 |
 
 ## Testing
 
@@ -94,9 +95,9 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 
 ## Workflow
 
-### Fase 0 — Avvio sessione (`/start`)
+### Fase 0 — Avvio sessione (`\start`)
 
-Quando l'utente scrive `/start`, eseguire automaticamente questo flusso (solo lettura):
+Quando l'utente scrive `\start`, eseguire automaticamente questo flusso (solo lettura):
 
 1. **Caricare le skill Astralis**: `astralis-laravel`, `astralis-react-spa`, `astralis-blade-admin`, `astralis-testing`.
 2. **Caricare le skill globali**: `frontend-design`, `vercel-react-best-practices`, `vercel-composition-patterns`, `web-design-guidelines`, `writing-guidelines`.
@@ -153,9 +154,9 @@ Prima di iniziare qualsiasi lavoro:
 
 1. `git fetch origin` per verificare lo stato remoto.
 2. Confrontare `HEAD` con `origin/{branch}`:
-   - Se il remote è avanti → informare l'utente e chiedere se pullare ora o dopo.
-   - Se il locale è avanti → ok, si può lavorare (push dopo).
-   - Se divergenti → avvisare l'utente, elencare i commit su entrambi i lati, e chiedere come procedere (rebase, merge, o tenere separato).
+    - Se il remote è avanti → informare l'utente e chiedere se pullare ora o dopo.
+    - Se il locale è avanti → ok, si può lavorare (push dopo).
+    - Se divergenti → avvisare l'utente, elencare i commit su entrambi i lati, e chiedere come procedere (rebase, merge, o tenere separato).
 3. Verificare stash (`git stash list`) e segnalarli se presenti.
 4. Verificare che il working tree sia pulito prima di iniziare.
 
@@ -166,12 +167,12 @@ Prima di eseguire un pull:
 1. Assicurarsi che il working tree sia pulito (niente modifiche non committate).
 2. Se ci sono stash, segnalare che potrebbero essere coinvolti dopo il merge.
 3. Scegliere la strategia:
-   - `git pull --rebase` → default preferito, lineare la storia.
-   - `git pull --no-rebase` → merge classico quando serve un merge commit esplicito.
+    - `git pull --rebase` → default preferito, lineare la storia.
+    - `git pull --no-rebase` → merge classico quando serve un merge commit esplicito.
 4. Se si verificano conflitti:
-   - Elencare i file in conflitto.
-   - Per ogni file, mostrare entrambe le versioni e chiedere all'utente come risolvere.
-   - Dopo la risoluzione, continuare con `git rebase --continue` o `git merge --continue`.
+    - Elencare i file in conflitto.
+    - Per ogni file, mostrare entrambe le versioni e chiedere all'utente come risolvere.
+    - Dopo la risoluzione, continuare con `git rebase --continue` o `git merge --continue`.
 5. Verificare con i test dopo il merge/rebase (`php artisan test` + `npm test`).
 
 ### Fase 3 — Aggiornamento documentazione
@@ -190,7 +191,7 @@ Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
 #### docs/changelog.md
 
 1. **Una sola intestazione per giorno**: `## GG/MM/AAAA`.
-2. Formato entry: `` - `[🖥️backend][🔴P0]` Descrizione — `file/coinvolto` ``.
+2. Formato entry: ``- `[🖥️backend][🔴P0]` Descrizione — `file/coinvolto` ``.
 3. Tag: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`.
 4. Priorità: `🔴P0` bloccante · `🟠P1` utente · `🔵P2` manutenzione · `🟣P3` accessibilità · `⚪P4` futuro.
 5. Ordine: cronologico inverso (più recente prima).
@@ -264,15 +265,15 @@ Prima di eseguire qualsiasi commit:
 Prima di eseguire `git push`:
 
 1. **Verifica sincronizzazione**: `git fetch origin` + `git log HEAD..origin/{branch} --oneline`.
-   - Se ci sono commit remote non pullati → eseguire Fase 2 prima del push.
-   - Se il branch non esiste sul remote → primo push, usare `question` tool per conferma.
+    - Se ci sono commit remote non pullati → eseguire Fase 2 prima del push.
+    - Se il branch non esiste sul remote → primo push, usare `question` tool per conferma.
 2. **Verifica commit recenti**: `git log --oneline -5`.
-   - Se ci sono commit con messaggi simili o che fixano lo stesso file → segnalare e proporre squash (`git rebase -i`) o lasciare così.
+    - Se ci sono commit con messaggi simili o che fixano lo stesso file → segnalare e proporre squash (`git rebase -i`) o lasciare così.
 3. **Conferma**: usare il tool `question` — header: "Conferma push", opzioni: `["Si, procedi", "No, sospendi"]` — prima di `git push`.
 
-### Comando /commit
+### Comando \commit
 
-Flusso commit automatizzato quando l'utente scrive `/commit`:
+Flusso commit automatizzato quando l'utente scrive `\commit`:
 
 1. Eseguire `git status --short` e mostrare all'utente l'elenco dei file modificati.
 2. Se tra i file ci sono potenziali secrets (`.env`, credenziali, chiavi, `.env.example` con valori reali), **fermare tutto** e avvisare l'utente.
@@ -282,9 +283,9 @@ Flusso commit automatizzato quando l'utente scrive `/commit`:
 6. Se ci sono modifiche non collegate, chiedere se committare tutto insieme o selezionare con `git add -p`.
 7. Dopo il commit, mostrare `git log --oneline -1` per verificare.
 
-### Comando /push
+### Comando \push
 
-Flusso push automatizzato quando l'utente scrive `/push`:
+Flusso push automatizzato quando l'utente scrive `\push`:
 
 1. `git fetch origin` per verificare lo stato remoto.
 2. `git log HEAD..origin/{branch} --oneline` — se ci sono commit remote non pullati, informare l'utente e chiedere se eseguire pull prima del push.
@@ -293,45 +294,45 @@ Flusso push automatizzato quando l'utente scrive `/push`:
 5. **Conferma**: usare il tool `question` — header: "Conferma push", opzioni: `["Si, procedi", "No, sospendi"]` — prima di `git push`.
 6. Dopo il push, mostrare `git log --oneline -1` per verificare.
 
-### Comando /save
+### Comando \save
 
-Flusso di chiusura sessione quando l'utente scrive `/save`:
+Flusso di chiusura sessione quando l'utente scrive `\save`:
 
 1. **Stato**: `git status --short` + `git diff --stat` + `git log --oneline -1`.
 2. **Aggiornare documentazione** seguendo le regole Fase 3: todo.md, changelog.md, testing.md, bug.md, documentazione.md, README.md, AGENTS.md (test count, file map, bugs noti).
-3. **Grafo**: `graphify update .`.
-4. **Snapshot sessione**: aggiornare `### Sessione corrente` in AGENTS.md (sovrascrivere la precedente).
-5. **Report chiusura**: generare un riepilogo della sessione (modifiche, task completate, test finali, prossime azioni).
-6. **Commit**: comporre il messaggio seguendo il formato Fase 5 (`tipo: descrizione concisa`) in base alle modifiche effettive. Se il commit include solo documentazione → `docs: ...`. Se include anche fix → usare il prefisso appropriato. Usare il tool `question` — header: "Conferma commit", opzioni: `["Si, procedi", "No, sospendi"]` — prima di `git add . && git commit`.
+3. **Snapshot sessione**: aggiornare `### Sessione corrente` in AGENTS.md (sovrascrivere la precedente).
+4. **Report chiusura**: generare un riepilogo della sessione (modifiche, task completate, test finali, prossime azioni).
+5. **Grafo**: `graphify update .`.
+6. **Commit**: comporre il messaggio seguendo il formato Fase 5. Usare il tool `question` — header: "Conferma commit", opzioni: `["Si, procedi", "No, sospendi"]` — prima di `git add . && git commit`.
 7. **Push** (opzionale): dopo il commit, usare il tool `question` — header: "Eseguire push ora?", opzioni: `["Si, push ora", "No, lascia per dopo"]` — per decidere se eseguire `git push` immediatamente o posticipare.
 
 ## Skill installate
 
 Skill globali sempre disponibili in `~/.config/opencode/skills/`:
 
-| Skill | Attivazione |
-|---|---|
-| `frontend-design` | Design UI/UX, componenti React, layout |
+| Skill                         | Attivazione                              |
+| ----------------------------- | ---------------------------------------- |
+| `frontend-design`             | Design UI/UX, componenti React, layout   |
 | `vercel-react-best-practices` | Ottimizzazione React/Next.js (70 regole) |
-| `vercel-composition-patterns` | Pattern composizione React |
-| `webapp-testing` | Testing Playwright |
-| `web-design-guidelines` | Review UI/accessibilità |
-| `writing-guidelines` | Review scrittura documentazione |
-| `claude-api` | Documentazione API Claude/SDK |
-| `mcp-builder` | Creazione MCP server |
-| `theme-factory` | Tema colori/font per artefatti |
-| `web-artifacts-builder` | Artefatti React+Tailwind+shadcn |
-| `skill-creator` | Creazione/modifica skill |
-| `brand-guidelines` | Brand Identity Anthropic |
+| `vercel-composition-patterns` | Pattern composizione React               |
+| `webapp-testing`              | Testing Playwright                       |
+| `web-design-guidelines`       | Review UI/accessibilità                  |
+| `writing-guidelines`          | Review scrittura documentazione          |
+| `claude-api`                  | Documentazione API Claude/SDK            |
+| `mcp-builder`                 | Creazione MCP server                     |
+| `theme-factory`               | Tema colori/font per artefatti           |
+| `web-artifacts-builder`       | Artefatti React+Tailwind+shadcn          |
+| `skill-creator`               | Creazione/modifica skill                 |
+| `brand-guidelines`            | Brand Identity Anthropic                 |
 
 Skill custom Astralis in `.opencode/skills/`:
 
-| Skill | Scopo |
-|---|---|
-| `astralis-laravel` | Pattern backend Laravel (Observer, Policy, Service, Command) |
-| `astralis-react-spa` | Pattern frontend React SPA (routing, API, animazioni) |
-| `astralis-blade-admin` | Pattern admin Blade (Alpine.js, CRUD, palette) |
-| `astralis-testing` | Pattern test (PHPUnit + Vitest, factory, Http::fake) |
+| Skill                  | Scopo                                                        |
+| ---------------------- | ------------------------------------------------------------ |
+| `astralis-laravel`     | Pattern backend Laravel (Observer, Policy, Service, Command) |
+| `astralis-react-spa`   | Pattern frontend React SPA (routing, API, animazioni)        |
+| `astralis-blade-admin` | Pattern admin Blade (Alpine.js, CRUD, palette)               |
+| `astralis-testing`     | Pattern test (PHPUnit + Vitest, factory, Http::fake)         |
 
 ## Cross-PC sync
 
@@ -353,87 +354,87 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> *Ultimo aggiornamento:* 17/07/2026 — 19:40
+> _Ultimo aggiornamento:_ 18/07/2026 — 02:00
 
-| Campo | Valore |
-|-------|--------|
-| **Branch** | `master` |
-| **Commit HEAD** | `3dd6709` — docs: conferme esplicite con question tool in 7 punti AGENTS.md |
-| **Test** | 255 PHPUnit + 107 Vitest = 362 totali |
-| **Modifiche** | Aggiunti comandi /commit, /push, /save, snapshot sessione, conferme question tool; fix test count in testing.md |
-| **Task completate** | Comandi custom definiti, snapshot sessione, conferme unificate con question tool, changelog aggiornato, testing.md fixato |
-| **Task in corso** | Nessuna |
-| **Prossime azioni** | 3 task P1 aperte: logo, orbite sistema solare, UX sistema solare |
+| Campo               | Valore                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **Branch**          | `master`                                                                                                                  |
+| **Commit HEAD**     | `cd2037d` — docs: aggiorna snapshot sessione, fix test count testing.md, task completate todo.md                           |
+| **Test**            | 264 PHPUnit + 107 Vitest = 371 totali                                                                                     |
+| **Modifiche**       | Gallery quality fix (tutte ~orig), importForBody fix per immagine_utente, pulizia junk files                              |
+| **Task completate** | Gallery ripulita e reimportata (90 record, 100% orig), bug importForBody fixato, test aggiornati                          |
+| **Task in corso**   | Nessuna                                                                                                                   |
+| **Prossime azioni** | 4 task P1 aperte: logo, refactor dashboard, orbite sistema solare, UX sistema solare                                      |
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 
-Tutte le task del piano sono completate. 322 test (215 PHPUnit + 107 Vitest).
+Tutte le task del piano sono completate. 371 test (264 PHPUnit + 107 Vitest).
 
-| Task | Descrizione | Stato |
-|------|-------------|-------|
-| **1** | Setup Laravel + Breeze + React + documentazione | ✅ |
-| **2** | Database e Modelli (6 migrations, 5 models, seeder) | ✅ |
-| **3** | CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria) | ✅ |
-| **4** | API REST (10 endpoint) | ✅ |
-| **5** | React: Homepage, Sistema solare animato, Lista | ✅ |
-| **6** | React: Dettaglio, Lightbox, Missioni, Comparatore | ✅ |
-| **7** | Bugfix Intervention Image v4, Force Import All | ✅ |
-| **8** | NASA Import multi-immagine, Service Layer, CLI fetch-nasa | ✅ |
-| **9** | Remote URLs, nome_it/nome_display, wordMap, auto-suggest admin | ✅ |
-| **10** | Bug critici: route(), nasa_id, categoria_id | ✅ |
-| **11** | Bugfix auth, NASA import dedup, galleria cleanup | ✅ |
-| **12** | Authorization Policy/Gates ai controller admin | ✅ |
-| **13** | Auth pages: Inertia → Blade puro | ✅ |
-| **14** | Rimossa dipendenza Inertia | ✅ |
-| **15** | FormRequest validazione store/update CorpoCeleste | ✅ |
-| **16** | Quick wins: per_page, relazioni, .catch, nasa_id, indexes | ✅ |
-| **17** | 10 bug critici fixati | ✅ |
-| **18** | Rimossi import morti React + dipendenze inutilizzate | ✅ |
-| **19** | Inline styles → Tailwind classes (~68 oggetti in 15 file) | ✅ |
-| **20** | framer-motion → CSS transitions + SolarSystem clickable/immagini | ✅ |
-| **21** | Cache dashboard + invalidazione su CRUD | ✅ |
-| **22** | Form partial unificato: 5 _form.blade.php, 10 create/edit | ✅ |
-| **23** | Partials Blade: back-link, search, flash, stat-card, actions | ✅ |
-| **24** | Hardcoded hex → CSS variables: 13 variabili, 52 hex sostituiti | ✅ |
-| **25** | CSS component class: .admin-input, 8 Blade views | ✅ |
-| **26** | React.memo: LightboxGalleria + Thumbnail | ✅ |
-| **27** | Authorization consistente: DashboardController fixato | ✅ |
-| **28** | suggestNome caching + debounce: Cache::remember(3600) | ✅ |
-| **29** | AdminTestCase base class: 5/5 CRUD test | ✅ |
-| **30** | AuthorizationTest: 19 test | ✅ |
-| **31** | Uniform Http::fake() pattern | ✅ |
-| **32** | Frontend fixtures.js centralizzato | ✅ |
-| **33** | Factory foreign key fix: ->for() pattern | ✅ |
-| **34** | Copertura test mancante: 21 nuovi test | ✅ |
-| **35** | DashboardApiTest complete: 4 test | ✅ |
-| **36** | Web Design Guidelines audit | ✅ |
-| **37** | Writing Guidelines audit | ✅ |
-| **38** | Frontend Design audit | ✅ |
-| **39** | (audit completati) | ✅ |
+| Task   | Descrizione                                                          | Stato |
+| ------ | -------------------------------------------------------------------- | ----- |
+| **1**  | Setup Laravel + Breeze + React + documentazione                      | ✅    |
+| **2**  | Database e Modelli (6 migrations, 5 models, seeder)                  | ✅    |
+| **3**  | CRUD Admin (Categorie, Corpi Celesti, Missioni, Curiosità, Galleria) | ✅    |
+| **4**  | API REST (10 endpoint)                                               | ✅    |
+| **5**  | React: Homepage, Sistema solare animato, Lista                       | ✅    |
+| **6**  | React: Dettaglio, Lightbox, Missioni, Comparatore                    | ✅    |
+| **7**  | Bugfix Intervention Image v4, Force Import All                       | ✅    |
+| **8**  | NASA Import multi-immagine, Service Layer, CLI fetch-nasa            | ✅    |
+| **9**  | Remote URLs, nome_it/nome_display, wordMap, auto-suggest admin       | ✅    |
+| **10** | Bug critici: route(), nasa_id, categoria_id                          | ✅    |
+| **11** | Bugfix auth, NASA import dedup, galleria cleanup                     | ✅    |
+| **12** | Authorization Policy/Gates ai controller admin                       | ✅    |
+| **13** | Auth pages: Inertia → Blade puro                                     | ✅    |
+| **14** | Rimossa dipendenza Inertia                                           | ✅    |
+| **15** | FormRequest validazione store/update CorpoCeleste                    | ✅    |
+| **16** | Quick wins: per_page, relazioni, .catch, nasa_id, indexes            | ✅    |
+| **17** | 10 bug critici fixati                                                | ✅    |
+| **18** | Rimossi import morti React + dipendenze inutilizzate                 | ✅    |
+| **19** | Inline styles → Tailwind classes (~68 oggetti in 15 file)            | ✅    |
+| **20** | framer-motion → CSS transitions + SolarSystem clickable/immagini     | ✅    |
+| **21** | Cache dashboard + invalidazione su CRUD                              | ✅    |
+| **22** | Form partial unificato: 5 \_form.blade.php, 10 create/edit           | ✅    |
+| **23** | Partials Blade: back-link, search, flash, stat-card, actions         | ✅    |
+| **24** | Hardcoded hex → CSS variables: 13 variabili, 52 hex sostituiti       | ✅    |
+| **25** | CSS component class: .admin-input, 8 Blade views                     | ✅    |
+| **26** | React.memo: LightboxGalleria + Thumbnail                             | ✅    |
+| **27** | Authorization consistente: DashboardController fixato                | ✅    |
+| **28** | suggestNome caching + debounce: Cache::remember(3600)                | ✅    |
+| **29** | AdminTestCase base class: 5/5 CRUD test                              | ✅    |
+| **30** | AuthorizationTest: 19 test                                           | ✅    |
+| **31** | Uniform Http::fake() pattern                                         | ✅    |
+| **32** | Frontend fixtures.js centralizzato                                   | ✅    |
+| **33** | Factory foreign key fix: ->for() pattern                             | ✅    |
+| **34** | Copertura test mancante: 21 nuovi test                               | ✅    |
+| **35** | DashboardApiTest complete: 4 test                                    | ✅    |
+| **36** | Web Design Guidelines audit                                          | ✅    |
+| **37** | Writing Guidelines audit                                             | ✅    |
+| **38** | Frontend Design audit                                                | ✅    |
+| **39** | (audit completati)                                                   | ✅    |
 
 ### ✅ Completato — Sicurezza e UX (Fasi 1-3)
 
 359 test (252 PHPUnit + 107 Vitest), tutti verdi.
 
-| Fase | Descrizione | Fix | Stato |
-|------|-------------|-----|-------|
-| **1 — Security** | is_admin fillable, colore regex, didascalia max, throttle, FK restrict | C1, C2, C5, H1, H2, H3 | ✅ |
-| **2 — Critical bugs** | apiClient retry, simili race condition, job unique, color picker, conferma import | C3, C4, H4, H13, H15 | ✅ |
-| **3 — UX & quality** | useFetch keep-data, Comparatore URL, Navbar mobile, gravita IT locale, flash auto-dismiss | H7, H8, H9, H11, M1, M2 | ✅ |
+| Fase                  | Descrizione                                                                               | Fix                     | Stato |
+| --------------------- | ----------------------------------------------------------------------------------------- | ----------------------- | ----- |
+| **1 — Security**      | is_admin fillable, colore regex, didascalia max, throttle, FK restrict                    | C1, C2, C5, H1, H2, H3  | ✅    |
+| **2 — Critical bugs** | apiClient retry, simili race condition, job unique, color picker, conferma import         | C3, C4, H4, H13, H15    | ✅    |
+| **3 — UX & quality**  | useFetch keep-data, Comparatore URL, Navbar mobile, gravita IT locale, flash auto-dismiss | H7, H8, H9, H11, M1, M2 | ✅    |
 
 ### ✅ Completato — Quick wins (16/07/2026)
 
 252 PHPUnit + 107 Vitest, tutti verdi.
 
-| Fix | File | Stato |
-|-----|------|-------|
-| **B1** | `Admin/CorpoCelesteController.php` — orWhere grouping | ✅ |
-| **B3** | `CorpoCeleste.php` — accessor indent | ✅ |
-| **F8** | `Navbar.jsx` + `Footer.jsx` — logo oversized | ✅ |
-| **F7** | `SearchBar.jsx` — focus-visible ring | ✅ |
-| **F3** | `Comparatore.jsx` — hardcoded hex → CSS vars | ✅ |
-| **B10** | `flash.blade.php` — 3 blocks → foreach loop | ✅ |
-| **F4** | `CorpiLista.jsx` + `hooks/useDebounce.js` — extract hook | ✅ |
+| Fix     | File                                                     | Stato |
+| ------- | -------------------------------------------------------- | ----- |
+| **B1**  | `Admin/CorpoCelesteController.php` — orWhere grouping    | ✅    |
+| **B3**  | `CorpoCeleste.php` — accessor indent                     | ✅    |
+| **F8**  | `Navbar.jsx` + `Footer.jsx` — logo oversized             | ✅    |
+| **F7**  | `SearchBar.jsx` — focus-visible ring                     | ✅    |
+| **F3**  | `Comparatore.jsx` — hardcoded hex → CSS vars             | ✅    |
+| **B10** | `flash.blade.php` — 3 blocks → foreach loop              | ✅    |
+| **F4**  | `CorpiLista.jsx` + `hooks/useDebounce.js` — extract hook | ✅    |
 
 ### ✅ Completato — Bug residui (17/07/2026)
 

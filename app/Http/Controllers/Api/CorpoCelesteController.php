@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\CorpoCelesteResource;
 use App\Models\CorpoCeleste;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class CorpoCelesteController extends Controller
 {
     public function index(Request $request)
     {
-        $query = CorpoCeleste::with(['categoria', 'galleria']);
+        $query = CorpoCeleste::with(['categoria']);
 
         if ($request->filled('categoria')) {
             $query->whereHas('categoria', function ($q) use ($request) {
@@ -37,7 +38,10 @@ class CorpoCelesteController extends Controller
         }
 
         $perPage = max(1, min($request->integer('per_page', 12), 100));
-        $corpiCelesti = $query->orderBy('nome')->paginate($perPage);
+        $cacheKey = 'api.corpi-celesti.' . md5(serialize($request->query()));
+        $corpiCelesti = Cache::remember($cacheKey, 300, function () use ($query, $perPage) {
+            return $query->orderBy('nome')->paginate($perPage);
+        });
 
         return CorpoCelesteResource::collection($corpiCelesti);
     }
@@ -51,7 +55,7 @@ class CorpoCelesteController extends Controller
 
     public function simili(CorpoCeleste $corpoCeleste)
     {
-        $simili = CorpoCeleste::with(['categoria', 'galleria'])
+        $simili = CorpoCeleste::with(['categoria'])
             ->where('categoria_id', $corpoCeleste->categoria_id)
             ->where('id', '!=', $corpoCeleste->id)
             ->orderBy('nome')

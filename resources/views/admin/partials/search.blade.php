@@ -1,4 +1,4 @@
-<form method="GET" action="{{ $action }}" class="flex gap-2">
+<form method="GET" action="{{ $action }}" class="flex gap-2 mb-3">
     <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ $placeholder ?? 'Cerca...' }}"
            class="admin-input flex-1" aria-label="{{ $placeholder ?? 'Cerca' }}">
     <button type="submit"

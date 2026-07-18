@@ -110,7 +110,7 @@ class NasaImageService
 
     public function pickGalleryImageUrl(array $item): ?string
     {
-        return $this->findLinkByRels($item, ['preview', 'alternate', 'canonical']);
+        return $this->findLinkByRels($item, ['canonical', 'alternate', 'preview']);
     }
 
     private function findLinkByRels(array $item, array $rels): ?string
@@ -127,7 +127,7 @@ class NasaImageService
 
     public function importForBody(CorpoCeleste $corpo, int $galleryCount = 5, bool $force = false, bool $updateDescription = false): array
     {
-        if ($corpo->immagine && (!$force || $corpo->immagine_utente)) {
+        if ($corpo->immagine && !$force) {
             return ['success' => true, 'message' => "{$corpo->nome}: già presente, skip."];
         }
 
@@ -161,6 +161,15 @@ class NasaImageService
 
         $canOverwriteMain = $force && !$corpo->immagine_utente;
 
+        $existingGalleryCount = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)->count();
+        $galleryFull = !$force && $existingGalleryCount >= $galleryCount;
+
+        $existingNasaIds = GalleriaCorpo::where('corpo_celeste_id', $corpo->id)
+            ->pluck('percorso')
+            ->map(fn ($p) => strtok(basename($p), '~'))
+            ->filter()
+            ->values();
+
         foreach ($items as $index => $item) {
             $metadata = $this->extractMetadata($item);
             $nasaId = $metadata['nasa_id'] ?? uniqid();
@@ -190,7 +199,16 @@ class NasaImageService
                 $mainImported = true;
                 $mainNasaId = $nasaId;
             } else {
+                if ($galleryFull) {
+                    $gallerySkipped++;
+                    continue;
+                }
+
                 if ($nasaId && $nasaId === $mainNasaId) {
+                    continue;
+                }
+
+                if ($corpo->immagine && $imageUrl === $corpo->immagine) {
                     continue;
                 }
 
@@ -203,13 +221,20 @@ class NasaImageService
                     continue;
                 }
 
+                $baseNasaId = strtok(basename($imageUrl), '~');
+                if ($baseNasaId && $existingNasaIds->contains($baseNasaId)) {
+                    $gallerySkipped++;
+                    continue;
+                }
+
                 GalleriaCorpo::create([
                     'corpo_celeste_id' => $corpo->id,
                     'percorso' => $imageUrl,
                     'didascalia' => $metadata['title'],
                     'crediti' => $metadata['photographer'],
-                    'ordine' => $galleryImported,
+                    'ordine' => $existingGalleryCount + $galleryImported,
                 ]);
+                $existingNasaIds->push($baseNasaId);
                 $galleryImported++;
             }
 

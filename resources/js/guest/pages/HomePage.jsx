@@ -18,7 +18,6 @@ export default function HomePage() {
     const loading = corpiLoading || statsLoading;
     const corpiEvidenza = corpiData?.data || [];
 
-    const [headingRef, headingVisible] = useInView();
     const [cardsRef, cardsVisible] = useInView();
 
     useEffect(() => {
@@ -93,10 +92,7 @@ export default function HomePage() {
             {/* In Evidenza */}
             <section className="bg-admin-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <div
-                        ref={headingRef}
-                        className={`flex items-center gap-3 mb-10 animate-in-view ${headingVisible ? 'is-visible' : ''}`}
-                    >
+                    <div className="flex items-center gap-3 mb-10">
                         <Rocket size={24} className="text-admin-warning" />
                         <h2 className="text-2xl lg:text-3xl font-bold text-admin-text">
                             In Evidenza

@@ -4,7 +4,7 @@ Suite di test per backend (PHPUnit) e frontend React (Vitest).
 
 ## Esecuzione
 
-### Backend (PHPUnit) — 255 test, 591 assertion
+### Backend (PHPUnit) — 264 test, 601 assertion
 
 ```bash
 php artisan test                              # Tutti

@@ -2,23 +2,29 @@
 
 > [Formato e legenda →](#note)
 
-*Ultimo aggiornamento: 2026-07-17*
+_Ultimo aggiornamento: 18/07/2026_
 
 ## Da Fare
 
 - [ ] `[🎨frontend][🟠P1]` Integrare 3 logo PNG nel progetto (completo, solo logo, solo testo) — Navbar, Footer, Sidebar admin, Auth layout
+- [ ] `[🎨frontend][🟠P1]` Refactoring card dashboard — aggiungere link cliccabili alle index page, info aggiuntive (ultimo creato, breakdown missioni per stato), colore unico per card (4 colori distinti), valutare card Galleria — `dashboard-stat.blade.php`, `DashboardController.php`
 - [ ] `[🎨frontend][🟠P1]` Migliorare orbite sistema solare — attualmente troppo finte (`border-admin-primary/8`), da rendere più visibili e definite
 - [ ] `[🎨frontend][🟠P1]` Sistema solare UX — nomi pianeti cliccabili + rallentamento rotazione su hover
 
 ## Fatto
 
-### 07/07/2026
+### 18/07/2026
 
+- [x] `[🖥️backend][🔴P0]` Gallery quality fix — eliminati 74 record galleria, reimportati 90 (18×5) tutti `~orig.jpg` (0 thumb/small/medium). Fix `importForBody()`: rimosso early return che bloccava import galleria per corpi con `immagine_utente=true` — `NasaImageService.php`
+- [x] `[🧪test][🔵P2]` Test aggiornato — `test_import_for_body_force_does_not_overwrite_user_image` ora verifica che main non venga sovrascritta ma galleria venga importata — `NasaImageServiceTest.php`
 - [x] `[📝docs][🔵P2]` Fix nomi skill in AGENTS.md (`react-best-practices` → `vercel-react-best-practices`, `composition-patterns` → `vercel-composition-patterns`)
-- [x] `[📝docs][🔵P2]` Unificare sessioni 17/07 in changelog.md (sessione 1+2 → unica entry) + aggiornare conteggi test (359 → 362)
+- [x] `[📝docs][🔵P2]` Unificare sessioni 17/07 in changelog.md + aggiornare conteggi test
 
 ### 17/07/2026
 
+- [x] `[🖥️backend][🔴P0]` Fix galleria duplicati — riposizionare `removeDuplicates()` dopo `handleBrokenUrls()`, check duplicati in `handleSync()`, migration UNIQUE `(corpo_celeste_id, percorso)`, test aggiornati — `CleanupGalleryDuplicates.php`, `database/migrations/`
+- [x] `[🎨frontend][🔴P0]` Fix grafici dashboard — colori concreti hex, `maintainAspectRatio: false` + `h-64`, layout `lg:grid-cols-3`, grafici spostati in cima, guard `typeof Chart` — `dashboard.blade.php`
+- [x] `[🖥️backend][🔴P0]` Fix homepage performance — rimosso `galleria` eager-load da index/simili, `Cache::remember` 5min, index composto `[in_evidenza, nome]`, heading "In Evidenza" sempre visibile — `CorpoCelesteController.php`, `HomePage.jsx`, migration
 - [x] `[🖥️backend][🔴P0]` Fix proxy API in vite.config.js — aggiunto `server.proxy: { '/api': 'http://localhost:8000' }` — risolve white page + CORB error
 - [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside + route-change cleanup — `Navbar.jsx`
 - [x] `[🎨frontend][🔵P2]` framer-motion mantenuto (uso legittimo in SolarSystem)
@@ -31,8 +37,8 @@
 - [x] `[✨feature][🔵P2]` Logo Astralis ad alta risoluzione caricati in public/
 - [x] `[📝docs][🔵P2]` Installazione graphify + aggiornamento grafo knowledge graph (1647 nodi, 2587 edges, 213 community)
 - [x] `[📝docs][🔵P2]` Aggiornamento docs: React 19→18, test count 252/359, task numbering, changelog 17/07
-- [x] `[📝docs][🟠P1]` Comandi custom — AGENTS.md: `/commit`, `/push`, `/save` con workflow automatizzato e conferme via `question` tool
-- [x] `[📝docs][🟠P1]` Snapshot sessione — `### Sessione corrente` in AGENTS.md, letta da `/start`, sovrascritta da `/save`
+- [x] `[📝docs][🟠P1]` Comandi custom — AGENTS.md: `\commit`, `\push`, `\save` con workflow automatizzato e conferme via `question` tool
+- [x] `[📝docs][🟠P1]` Snapshot sessione — `### Sessione corrente` in AGENTS.md, letta da `\start`, sovrascritta da `\save`
 - [x] `[📝docs][🟠P1]` Conferme unificate — 7 punti in AGENTS.md riscritti con tool `question` a checkbox
 
 ### 16/07/2026
@@ -47,7 +53,7 @@
 
 ### 15/07/2026
 
-- [x] `[🎨frontend][🟠P1]` Sidebar + Partials: config/admin.php, _sidebar-nav, category-badge, index-header, dashboard-stat, empty-table-row, in-evidenza-badge, flash-in-layout, CSS vars error/success, Route::is()
+- [x] `[🎨frontend][🟠P1]` Sidebar + Partials: config/admin.php, \_sidebar-nav, category-badge, index-header, dashboard-stat, empty-table-row, in-evidenza-badge, flash-in-layout, CSS vars error/success, Route::is()
 - [x] `[🖥️backend][🧪test][🔴P0]` Fasi 1-3 — Sicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 359 test (252 PHPUnit + 107 Vitest)
 
 ### 14/07/2026
@@ -81,7 +87,7 @@
 - [x] `[🎨frontend][🟠P1]` Task 25 — CSS component class: .admin-input, 8 Blade views riscritti
 - [x] `[🎨frontend][🟠P1]` Task 24 — Hardcoded hex → CSS variables: 13 variabili, 52 hex sostituiti
 - [x] `[🎨frontend][🟠P1]` Task 23 — Partials Blade: back-link, search, flash, stat-card, show-actions, index-actions
-- [x] `[🎨frontend][🟠P1]` Task 22 — Form partial unificato: 5 _form.blade.php, 10 create/edit riscritti
+- [x] `[🎨frontend][🟠P1]` Task 22 — Form partial unificato: 5 \_form.blade.php, 10 create/edit riscritti
 - [x] `[🖥️backend][🟠P1]` Task 21 — Cache dashboard + invalidazione su CRUD
 - [x] `[🎨frontend][🟠P1]` Task 20 — framer-motion → CSS transitions + SolarSystem clickable/immagini
 - [x] `[🎨frontend][🟠P1]` Task 19 — Inline styles → Tailwind classes: ~68 oggetti in 15 file
@@ -128,11 +134,11 @@
 
 ## Note
 
-- **Stato**: 3 task aperte. 362 test (255 PHPUnit + 107 Vitest), tutti verdi.
+- **Stato**: 4 task aperte. 371 test (264 PHPUnit + 107 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
-  ```
-  - [ ] `[🖥️🎨💾🧪✨📝][🔴🟠🔵🟣⚪]` Descrizione — `file/principale/coinvolto`
-  ```
-  **Tag (oggetti — ambito)**: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`
-  **Priorità (cerchi — urgenza)**: 🔴P0 bloccante · 🟠P1 utente · 🔵P2 manutenzione · 🟣P3 accessibilità · ⚪P4 futuro
+    ```
+    - [ ] `[🖥️🎨💾🧪✨📝][🔴🟠🔵🟣⚪]` Descrizione — `file/principale/coinvolto`
+    ```
+    **Tag (oggetti — ambito)**: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`
+    **Priorità (cerchi — urgenza)**: 🔴P0 bloccante · 🟠P1 utente · 🔵P2 manutenzione · 🟣P3 accessibilità · ⚪P4 futuro

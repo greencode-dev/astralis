@@ -1,4 +1,4 @@
-<div class="flex justify-between items-center mb-6">
+<div class="flex justify-between items-center mb-3">
     <p class="text-sm text-gray-400">{{ $description }}</p>
     <a href="{{ route($createRoute) }}"
        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-admin-primary text-admin-bg hover:brightness-90">

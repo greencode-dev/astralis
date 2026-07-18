@@ -55,11 +55,15 @@
             @include('admin.partials.stat-card', ['label' => 'Scoperta', 'value' => ($corpoCeleste->scopritore || $corpoCeleste->anno_scoperta) ? ($corpoCeleste->scopritore ?? '—') . ($corpoCeleste->scopritore && $corpoCeleste->anno_scoperta ? ', ' : '') . ($corpoCeleste->anno_scoperta ?? '') : '—'])
         </div>
 
-        @if ($corpoCeleste->galleria->count() > 0)
+        @php
+            $gallery = $corpoCeleste->galleria->reject(fn($f) => $corpoCeleste->immagine && $f->percorso === $corpoCeleste->immagine);
+        @endphp
+
+        @if ($gallery->count() > 0)
             <div class="rounded-xl p-6 mb-8 bg-admin-card border border-admin-primary/10">
-                <h3 class="text-lg font-semibold mb-4 text-admin-text">Galleria ({{ $corpoCeleste->galleria->count() }})</h3>
+                <h3 class="text-lg font-semibold mb-4 text-admin-text">Galleria ({{ $gallery->count() }})</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    @foreach ($corpoCeleste->galleria as $foto)
+                    @foreach ($gallery as $foto)
                         <div class="rounded-lg overflow-hidden border border-admin-primary/10">
                             <div class="aspect-square bg-admin-bg">
                                 <img loading="lazy" src="{{ $foto->percorso_url }}" alt="{{ $foto->didascalia ?? '' }}" class="w-full h-full object-cover">

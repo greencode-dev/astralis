@@ -25,7 +25,7 @@ class ImportNasaImage implements ShouldQueue, ShouldBeUnique
     public function __construct(
         public CorpoCeleste $corpo,
         public int $galleryCount = 5,
-        public bool $force = true,
+        public bool $force = false,
     ) {}
 
     public function uniqueId(): mixed

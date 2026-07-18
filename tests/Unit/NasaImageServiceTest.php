@@ -253,7 +253,7 @@ class NasaImageServiceTest extends TestCase
         $this->assertNull($url);
     }
 
-    public function test_pick_gallery_image_url_prioritizes_preview(): void
+    public function test_pick_gallery_image_url_prioritizes_canonical(): void
     {
         $item = [
             'links' => [
@@ -265,7 +265,7 @@ class NasaImageServiceTest extends TestCase
 
         $url = $this->service->pickGalleryImageUrl($item);
 
-        $this->assertEquals('https://example.com/preview.jpg', $url);
+        $this->assertEquals('https://example.com/canonical.jpg', $url);
     }
 
     public function test_pick_gallery_image_url_falls_back_to_canonical(): void
@@ -342,8 +342,8 @@ class NasaImageServiceTest extends TestCase
         $result = $this->service->importForBody($corpo, 3, true);
 
         $this->assertTrue($result['success']);
-        $this->assertStringContainsString('già presente', $result['message']);
-        $this->assertEquals('user-uploaded.jpg', $corpo->fresh()->immagine);
+        $this->assertEquals('user-uploaded.jpg', $corpo->fresh()->immagine, 'Main image should not be overwritten when immagine_utente=true');
+        $this->assertStringContainsString('immagine principale importata', $result['message'], 'Should indicate main image already exists');
     }
 
     public function test_import_for_body_creates_gallery_entries(): void

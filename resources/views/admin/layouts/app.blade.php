@@ -75,7 +75,7 @@
                 </div>
             </header>
 
-            <main id="main-content" class="flex-1 p-6 overflow-y-auto">
+            <main id="main-content" class="flex-1 p-3 overflow-y-auto">
                 @isset($slot)
                     {{ $slot }}
                 @else

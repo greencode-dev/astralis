@@ -2,6 +2,15 @@
 
 > [Formato e legenda →](#formato)
 
+## 18/07/2026
+
+- `[🖥️backend][🔴P0]` Gallery quality fix — eliminati 74 record galleria, reimportati 90 (18×5) tutti `~orig.jpg` (0 thumb/small/medium). Fix `importForBody()`: rimosso early return che bloccava import galleria per corpi con `immagine_utente=true`. — `NasaImageService.php`
+- `[🧪test][🔵P2]` Test aggiornato — `test_import_for_body_force_does_not_overwrite_user_image` ora verifica che main non venga sovrascritta ma galleria venga importata. — `NasaImageServiceTest.php`
+
+**Test**: 371 totali (264 PHPUnit + 107 Vitest), tutti verdi.
+
+---
+
 ## 17/07/2026
 
 - `[📝docs][🟠P1]` Workflow unificato — AGENTS.md: 7 fasi (Fase 0-6) per session startup, git sync, documentazione, commit/push, graphify update
@@ -12,10 +21,10 @@
 - `[🧪test][🔵P2]` 28 nuovi test — CorpoCelesteTest (6 accessor), ImportNasaImageTest (9 job), CorpoCelesteActionsTest (13 admin actions)
 - `[🎨frontend][🟠P1]` Navbar mobile — `Navbar.jsx`: Escape key handler, click-outside overlay, close on route change via `useEffect`
 - `[🎨frontend][🔵P2]` framer-motion mantenuto in `SolarSystem.jsx` (uso legittimo per orbite `useMotionValue`/`useTransform`)
-- `[📝docs][🟠P1]` Comandi custom — AGENTS.md: aggiunti `/commit`, `/push`, `/save` con workflow automatizzato (Fasi 5-6 + chiusura sessione)
-- `[📝docs][🟠P1]` Snapshot sessione — `### Sessione corrente` in AGENTS.md, sovrascritta ad ogni `/save`, letta da `/start`
-- `[📝docs][🔵P2]` Fase 0 aggiornata — `/start` include lettura snapshot ultima sessione nel report
-- `[📝docs][🟠P1]` Conferme unificate — AGENTS.md: tutte le conferme esplicite usano il tool `question` con checkbox, formato standard in 7 punti (Fase 5, Fase 6, /commit, /push, /save)
+- `[📝docs][🟠P1]` Comandi custom — AGENTS.md: aggiunti `\commit`, `\push`, `\save` con workflow automatizzato (Fasi 5-6 + chiusura sessione)
+- `[📝docs][🟠P1]` Snapshot sessione — `### Sessione corrente` in AGENTS.md, sovrascritta ad ogni `\save`, letta da `\start`
+- `[📝docs][🔵P2]` Fase 0 aggiornata — `\start` include lettura snapshot ultima sessione nel report
+- `[📝docs][🟠P1]` Conferme unificate — AGENTS.md: tutte le conferme esplicite usano il tool `question` con checkbox, formato standard in 7 punti (Fase 5, Fase 6, \commit, \push, \save)
 
 **Test**: 362 totali (255 PHPUnit + 107 Vitest), tutti verdi.
 

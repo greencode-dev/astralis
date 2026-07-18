@@ -15,7 +15,8 @@ class CleanupGalleryDuplicates extends Command
         {--check : Controlla immagini non raggiungibili (solo report)}
         {--clean : Elimina i record con immagini non raggiungibili}
         {--sync : Sostituisce immagini non raggiungibili con nuove da NASA}
-        {--fix : Scorciatoia per --sync --clean}';
+        {--fix : Scorciatoia per --sync --clean}
+        {--trim= : Mantieni al massimo N immagini per corpo celeste}';
 
     protected $description = 'Rimuove duplicati, file orfani e gestisce immagini non raggiungibili (URL remoti o file locali mancanti)';
 
@@ -36,7 +37,6 @@ class CleanupGalleryDuplicates extends Command
             $this->warn('--check è di sola lettura, --dry-run non è necessario.');
         }
 
-        $this->removeDuplicates();
         $this->cleanOrphanedFiles();
 
         $hasBrokenAction = $this->option('check')
@@ -46,6 +46,23 @@ class CleanupGalleryDuplicates extends Command
 
         if ($hasBrokenAction) {
             $this->handleBrokenUrls();
+        }
+
+        $this->removeDuplicates();
+        $this->removeCrossTableDuplicates();
+
+        if ($this->option('trim')) {
+            $this->trimGalleries((int) $this->option('trim') + 2);
+        }
+
+        $this->removeNasaIdDuplicates();
+
+        if ($this->option('trim')) {
+            $this->trimGalleries((int) $this->option('trim'));
+        }
+
+        if (!$this->option('dry-run')) {
+            $this->resequenceOrdine();
         }
 
         $this->newLine();
@@ -85,6 +102,144 @@ class CleanupGalleryDuplicates extends Command
         }
 
         $this->info("Eliminati {$deleted} duplicati" . ($this->option('dry-run') ? ' (dry-run)' : '.'));
+    }
+
+    private function removeCrossTableDuplicates(): void
+    {
+        $this->info('Ricerca duplicati cross-table (galleria vs immagine principale)...');
+
+        $crossDups = GalleriaCorpo::whereHas('corpoCeleste', function ($query) {
+            $query->where('corpi_celesti.immagine', '!=', '')
+                ->whereColumn('corpi_celesti.immagine', '=', 'galleria_corpi.percorso');
+        })->get();
+
+        if ($crossDups->isEmpty()) {
+            $this->warn('Nessun duplicato cross-table trovato.');
+            return;
+        }
+
+        $this->line("Trovati {$crossDups->count()} record da eliminare.");
+
+        $deleted = 0;
+        foreach ($crossDups as $item) {
+            $this->line("  Elimino #{$item->id} (galleria duplica immagine principale di corpo: {$item->corpo_celeste_id})");
+            if (!$this->option('dry-run')) {
+                $item->delete();
+            }
+            $deleted++;
+        }
+
+        $this->info("Eliminati {$deleted} duplicati cross-table" . ($this->option('dry-run') ? ' (dry-run)' : '.'));
+    }
+
+    private function removeNasaIdDuplicates(): void
+    {
+        $this->info('Ricerca duplicati per NASA ID (stessa immagine, size diverse)...');
+
+        $bodies = GalleriaCorpo::select('corpo_celeste_id')
+            ->selectRaw('COUNT(*) as cnt')
+            ->groupBy('corpo_celeste_id')
+            ->having('cnt', '>', 1)
+            ->get();
+
+        $deleted = 0;
+        foreach ($bodies as $body) {
+            $items = GalleriaCorpo::where('corpo_celeste_id', $body->corpo_celeste_id)
+                ->orderBy('ordine')
+                ->get();
+
+            $seen = [];
+            foreach ($items as $item) {
+                $baseId = strtok(basename($item->percorso), '~');
+                if (!$baseId) {
+                    continue;
+                }
+                if (in_array($baseId, $seen, true)) {
+                    $this->line("  Elimino #{$item->id} (NASA ID {$baseId} già presente per corpo: {$body->corpo_celeste_id})");
+                    if (!$this->option('dry-run')) {
+                        $item->delete();
+                    }
+                    $deleted++;
+                    continue;
+                }
+                $seen[] = $baseId;
+            }
+        }
+
+        if ($deleted === 0) {
+            $this->warn('Nessun duplicato NASA ID trovato.');
+            return;
+        }
+
+        $this->info("Eliminati {$deleted} duplicati NASA ID" . ($this->option('dry-run') ? ' (dry-run)' : '.'));
+    }
+
+    private function resequenceOrdine(): void
+    {
+        $bodies = GalleriaCorpo::select('corpo_celeste_id')
+            ->selectRaw('COUNT(*) as cnt')
+            ->groupBy('corpo_celeste_id')
+            ->get();
+
+        foreach ($bodies as $body) {
+            $items = GalleriaCorpo::where('corpo_celeste_id', $body->corpo_celeste_id)
+                ->orderBy('id')
+                ->get();
+            foreach ($items as $i => $item) {
+                if ($item->ordine !== $i) {
+                    $item->update(['ordine' => $i]);
+                }
+            }
+        }
+    }
+
+    private function trimGalleries(int $max): void
+    {
+        $this->info("Ritaglio gallerie a massimo {$max} immagini per corpo...");
+
+        $bodies = GalleriaCorpo::select('corpo_celeste_id')
+            ->selectRaw('COUNT(*) as cnt')
+            ->groupBy('corpo_celeste_id')
+            ->having('cnt', '>', $max)
+            ->get();
+
+        if ($bodies->isEmpty()) {
+            $this->warn('Nessuna galleria supera il limite.');
+            return;
+        }
+
+        $deleted = 0;
+        foreach ($bodies as $body) {
+            $corpo = $body->corpoCeleste;
+            $keepIds = GalleriaCorpo::where('corpo_celeste_id', $body->corpo_celeste_id)
+                ->orderBy('ordine')
+                ->limit($max)
+                ->pluck('id');
+
+            $excess = GalleriaCorpo::where('corpo_celeste_id', $body->corpo_celeste_id)
+                ->whereNotIn('id', $keepIds)
+                ->get();
+
+            $this->line("  {$corpo->nome}: {$body->cnt} → {$max} (elimino " . $excess->count() . ")");
+
+            if (!$this->option('dry-run')) {
+                foreach ($excess as $item) {
+                    $item->delete();
+                }
+
+                $remaining = GalleriaCorpo::where('corpo_celeste_id', $body->corpo_celeste_id)
+                    ->orderBy('id')
+                    ->get();
+                foreach ($remaining as $i => $item) {
+                    if ($item->ordine !== $i) {
+                        $item->update(['ordine' => $i]);
+                    }
+                }
+            }
+            $deleted += $excess->count();
+        }
+
+        $this->info("Eliminati {$deleted} record in eccesso" . ($this->option('dry-run') ? ' (dry-run)' : '.'));
     }
 
     private function cleanOrphanedFiles(): void
@@ -221,6 +376,22 @@ class CleanupGalleryDuplicates extends Command
 
             if (str_starts_with($item->percorso, 'http') && $imageUrl === $item->percorso) {
                 continue;
+            }
+
+            $alreadyExists = GalleriaCorpo::where('corpo_celeste_id', $item->corpo_celeste_id)
+                ->where('percorso', $imageUrl)
+                ->where('id', '!=', $item->id)
+                ->exists();
+
+            if ($alreadyExists) {
+                $this->warn("URL già esistente per questo corpo, elimino il record rotto.");
+                if (!$dryRun) {
+                    if (!str_starts_with($item->percorso, 'http')) {
+                        Storage::disk('public')->delete('galleria/' . $item->percorso);
+                    }
+                    $item->delete();
+                }
+                return true;
             }
 
             $metadata = $this->nasaService->extractMetadata($nasaItem);

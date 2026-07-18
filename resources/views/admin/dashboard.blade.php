@@ -4,6 +4,38 @@
 @section('page_title', 'Dashboard')
 
 @section('content')
+    {{-- Grafici --}}
+    @if($corpiPerCategoria->isNotEmpty() || $corpiPerTipo->isNotEmpty() || !empty(array_filter($missioniPerStato)))
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            @if($corpiPerCategoria->isNotEmpty())
+                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
+                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Corpi per Categoria</h3>
+                    <div class="h-64">
+                        <canvas id="chart-categorie" role="img" aria-label="Grafico a ciambella: distribuzione corpi celesti per categoria"></canvas>
+                    </div>
+                </div>
+            @endif
+
+            @if($corpiPerTipo->isNotEmpty())
+                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
+                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Corpi per Tipo</h3>
+                    <div class="h-64">
+                        <canvas id="chart-tipi" role="img" aria-label="Grafico a barre: corpi celesti per tipo"></canvas>
+                    </div>
+                </div>
+            @endif
+
+            @if(!empty(array_filter($missioniPerStato)))
+                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
+                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Missioni per Stato</h3>
+                    <div class="h-64">
+                        <canvas id="chart-missioni" role="img" aria-label="Grafico a barre orizzontali: missioni per stato"></canvas>
+                    </div>
+                </div>
+            @endif
+        </div>
+    @endif
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         @include('admin.partials.dashboard-stat', ['color' => 'primary', 'icon' => 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', 'value' => $stats['corpi_celesti'], 'label' => 'Corpi Celesti'])
         @include('admin.partials.dashboard-stat', ['color' => 'secondary', 'icon' => 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z', 'value' => $stats['categorie'], 'label' => 'Categorie'])
@@ -42,40 +74,16 @@
             </table>
         </div>
     </div>
-
-    {{-- Grafici --}}
-    @if($corpiPerCategoria->isNotEmpty() || $corpiPerTipo->isNotEmpty())
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-            @if($corpiPerCategoria->isNotEmpty())
-                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
-                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Corpi per Categoria</h3>
-                    <canvas id="chart-categorie" height="250" role="img" aria-label="Grafico a ciambella: distribuzione corpi celesti per categoria"></canvas>
-                </div>
-            @endif
-
-            @if($corpiPerTipo->isNotEmpty())
-                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10">
-                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Corpi per Tipo</h3>
-                    <canvas id="chart-tipi" height="250" role="img" aria-label="Grafico a barre: corpi celesti per tipo"></canvas>
-                </div>
-            @endif
-
-            @if(!empty(array_filter($missioniPerStato)))
-                <div class="rounded-xl p-6 bg-admin-card border border-admin-primary/10 {{ $corpiPerTipo->isNotEmpty() && $corpiPerCategoria->isNotEmpty() ? 'lg:col-span-2 max-w-md mx-auto w-full' : '' }}">
-                    <h3 class="text-lg font-semibold mb-4 text-admin-text">Missioni per Stato</h3>
-                    <canvas id="chart-missioni" height="200" role="img" aria-label="Grafico a barre orizzontali: missioni per stato"></canvas>
-                </div>
-            @endif
-        </div>
-    @endif
 @endsection
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"
-            onerror="this.onerror=null;var s=document.createElement('script');s.src='https://unpkg.com/chart.js@4.4.7/dist/chart.umd.min.js';document.head.appendChild(s);"></script>
+            onerror="this.onerror=null;var s=document.createElement('script');s.src='https://unpkg.com/chart.js@4.4.7/dist/cdn.min.js';document.head.appendChild(s);"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            Chart.defaults.color = 'var(--admin-chart-text)';
+            if (typeof Chart === 'undefined') return;
+
+            Chart.defaults.color = '#9CA3AF';
             Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.05)';
 
             var chartCategorie = document.getElementById('chart-categorie');
@@ -88,11 +96,12 @@
                             data: @json($corpiPerCategoria->pluck('count')),
                             backgroundColor: @json($corpiPerCategoria->pluck('colore')),
                             borderWidth: 2,
-                            borderColor: 'var(--admin-card)',
+                            borderColor: '#111128',
                         }]
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             legend: { position: 'right', labels: { padding: 12, usePointStyle: true } }
                         }
@@ -109,15 +118,16 @@
                         datasets: [{
                             label: 'Corpi Celesti',
                             data: @json($corpiPerTipo->pluck('count')),
-                            backgroundColor: ['var(--admin-primary)', 'var(--admin-secondary)', 'var(--admin-accent)'],
+                            backgroundColor: ['#22D3EE', '#A855F7', '#F97316'],
                             borderRadius: 6,
                         }]
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
                         scales: {
-                            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'var(--admin-chart-text)' } },
-                            x: { grid: { display: false }, ticks: { color: 'var(--admin-chart-text)' } }
+                            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
+                            x: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
                         },
                         plugins: { legend: { display: false } }
                     }
@@ -133,16 +143,17 @@
                         datasets: [{
                             label: 'Missioni',
                             data: @json(array_values($missioniPerStato)),
-                            backgroundColor: ['var(--admin-success)', 'var(--admin-primary)', 'var(--admin-warning)'],
+                            backgroundColor: ['#22C55E', '#22D3EE', '#FACC15'],
                             borderRadius: 6,
                         }]
                     },
                     options: {
                         indexAxis: 'y',
                         responsive: true,
+                        maintainAspectRatio: false,
                         scales: {
-                            x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'var(--admin-chart-text)' } },
-                            y: { grid: { display: false }, ticks: { color: 'var(--admin-chart-text)' } }
+                            x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
+                            y: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
                         },
                         plugins: { legend: { display: false } }
                     }
