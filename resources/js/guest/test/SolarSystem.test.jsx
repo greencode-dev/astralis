@@ -33,4 +33,28 @@ describe('SolarSystem', () => {
         );
         expect(adminBorder).toHaveLength(8);
     });
+
+    it('renders planet names as clickable links', () => {
+        renderWithRouter(<SolarSystem />);
+        const planets = ['Mercurio', 'Venere', 'Terra', 'Marte', 'Giove', 'Saturno', 'Urano', 'Nettuno'];
+        const links = screen.getAllByRole('link');
+        planets.forEach(name => {
+            const link = links.find(el => el.textContent.trim() === name);
+            expect(link).toBeTruthy();
+            expect(link.getAttribute('href')).toBe(`/corpi-celesti/${name.toLowerCase()}`);
+        });
+    });
+
+    it('renders Sun as a clickable link', () => {
+        renderWithRouter(<SolarSystem />);
+        const sunLink = screen.getAllByRole('link').find(el => el.textContent.trim() === 'Sole');
+        expect(sunLink).toBeTruthy();
+        expect(sunLink.getAttribute('href')).toBe('/corpi-celesti/sole');
+    });
+
+    it('renders 17 links total (8 images + 8 names + 1 sun)', () => {
+        renderWithRouter(<SolarSystem />);
+        const links = screen.getAllByRole('link');
+        expect(links).toHaveLength(17);
+    });
 });

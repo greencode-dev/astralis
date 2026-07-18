@@ -354,21 +354,21 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 18/07/2026 — 02:00
+> _Ultimo aggiornamento:_ 18/07/2026 — 13:50
 
 | Campo               | Valore                                                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | **Branch**          | `master`                                                                                                                  |
-| **Commit HEAD**     | `cd2037d` — docs: aggiorna snapshot sessione, fix test count testing.md, task completate todo.md                           |
-| **Test**            | 264 PHPUnit + 107 Vitest = 371 totali                                                                                     |
-| **Modifiche**       | Gallery quality fix (tutte ~orig), importForBody fix per immagine_utente, pulizia junk files                              |
-| **Task completate** | Gallery ripulita e reimportata (90 record, 100% orig), bug importForBody fixato, test aggiornati                          |
-| **Task in corso**   | Nessuna                                                                                                                   |
-| **Prossime azioni** | 4 task P1 aperte: logo, refactor dashboard, orbite sistema solare, UX sistema solare                                      |
+| **Commit HEAD**     | `6eb5a79` — fix: gallery quality (~orig), importForBody immagine_utente, admin padding, migrations, cleanup junk          |
+| **Test**            | 267 PHPUnit + 110 Vitest = 377 totali                                                                                     |
+| **Modifiche**       | Dashboard refactoring (link, colori, meta), solar system immagini reali (9 foto NASA), Sole sostituito, CSS fix            |
+| **Task completate** | Dashboard card refactor, solar system 9 immagini reali, Sole NASA 3D rendering, CSS object-contain fix                      |
+| **Task in corso**   | Nessuna (piano SolarSystem fix salvato in `.opencode/plans/solar-system-fix.md`)                                           |
+| **Prossime azioni** | 2 task P1 aperte: logo, SolarSystem fix (boxShadow + rAF animation). Prossima sessione: leggere piano da `.opencode/plans/` |
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 
-Tutte le task del piano sono completate. 371 test (264 PHPUnit + 107 Vitest).
+Tutte le task del piano sono completate. 377 test (267 PHPUnit + 110 Vitest).
 
 | Task   | Descrizione                                                          | Stato |
 | ------ | -------------------------------------------------------------------- | ----- |
@@ -414,7 +414,7 @@ Tutte le task del piano sono completate. 371 test (264 PHPUnit + 107 Vitest).
 
 ### ✅ Completato — Sicurezza e UX (Fasi 1-3)
 
-359 test (252 PHPUnit + 107 Vitest), tutti verdi.
+377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 
 | Fase                  | Descrizione                                                                               | Fix                     | Stato |
 | --------------------- | ----------------------------------------------------------------------------------------- | ----------------------- | ----- |
@@ -424,7 +424,7 @@ Tutte le task del piano sono completate. 371 test (264 PHPUnit + 107 Vitest).
 
 ### ✅ Completato — Quick wins (16/07/2026)
 
-252 PHPUnit + 107 Vitest, tutti verdi.
+267 PHPUnit + 110 Vitest, tutti verdi.
 
 | Fix     | File                                                     | Stato |
 | ------- | -------------------------------------------------------- | ----- |
@@ -438,7 +438,7 @@ Tutte le task del piano sono completate. 371 test (264 PHPUnit + 107 Vitest).
 
 ### ✅ Completato — Bug residui (17/07/2026)
 
-Tutti i bug residui risolti. 359 test (252 PHPUnit + 107 Vitest), tutti verdi.
+Tutti i bug residui risolti. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 
 - [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside — `Navbar.jsx`
 - [x] `[🧪test][🔵P2]` Test accessor nome_display + immagine_url — `tests/Unit/CorpoCelesteTest.php` (6 test)

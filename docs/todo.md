@@ -7,9 +7,7 @@ _Ultimo aggiornamento: 18/07/2026_
 ## Da Fare
 
 - [ ] `[🎨frontend][🟠P1]` Integrare 3 logo PNG nel progetto (completo, solo logo, solo testo) — Navbar, Footer, Sidebar admin, Auth layout
-- [ ] `[🎨frontend][🟠P1]` Refactoring card dashboard — aggiungere link cliccabili alle index page, info aggiuntive (ultimo creato, breakdown missioni per stato), colore unico per card (4 colori distinti), valutare card Galleria — `dashboard-stat.blade.php`, `DashboardController.php`
-- [ ] `[🎨frontend][🟠P1]` Migliorare orbite sistema solare — attualmente troppo finte (`border-admin-primary/8`), da rendere più visibili e definite
-- [ ] `[🎨frontend][🟠P1]` Sistema solare UX — nomi pianeti cliccabili + rallentamento rotazione su hover
+- [ ] `[🎨frontend][🟠P1]` SolarSystem fix — rimuovere boxShadow (alone semitrasparente) + riscrivere animazione con `requestAnimationFrame` (rotazione non continua, pianeti saltano). Piano in `.opencode/plans/solar-system-fix.md`
 
 ## Fatto
 
@@ -19,6 +17,11 @@ _Ultimo aggiornamento: 18/07/2026_
 - [x] `[🧪test][🔵P2]` Test aggiornato — `test_import_for_body_force_does_not_overwrite_user_image` ora verifica che main non venga sovrascritta ma galleria venga importata — `NasaImageServiceTest.php`
 - [x] `[📝docs][🔵P2]` Fix nomi skill in AGENTS.md (`react-best-practices` → `vercel-react-best-practices`, `composition-patterns` → `vercel-composition-patterns`)
 - [x] `[📝docs][🔵P2]` Unificare sessioni 17/07 in changelog.md + aggiornare conteggi test
+- [x] `[🎨frontend][🟠P1]` Refactoring card dashboard — link cliccabili, 4 colori unici, meta info, table name links — `dashboard-stat.blade.php`, `DashboardController.php`, `dashboard.blade.php`
+- [x] `[🧪test][🔵P2]` Dashboard test aggiornati — clickable links, table links, meta info (3 nuovi test) — `DashboardTest.php`
+- [x] `[🎨frontend][🟠P1]` Solar system immagini — 9 foto reali NASA/croccate, tutte quadrate, dimensioni ingrandite (~1.8×) — `public/images/solar-system/`
+- [x] `[🎨frontend][🟠P1]` Solar system Sole — sostituito con NASA 3D rendering, crop 359×359 — `sole.jpg`
+- [x] `[🎨frontend][🟠P1]` Solar system CSS — `object-cover` → `object-contain`, rimosso `bg-black` da pianeti/Sole — `SolarSystem.jsx`
 
 ### 17/07/2026
 
@@ -134,7 +137,7 @@ _Ultimo aggiornamento: 18/07/2026_
 
 ## Note
 
-- **Stato**: 4 task aperte. 371 test (264 PHPUnit + 107 Vitest), tutti verdi.
+- **Stato**: 2 task aperte. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
     ```

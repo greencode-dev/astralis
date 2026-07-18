@@ -22,6 +22,13 @@ class DashboardController extends Controller
             'curiosita' => Curiosita::count(),
         ];
 
+        $statMeta = [
+            'corpi_celesti' => $this->formatLastCreated(CorpoCeleste::class),
+            'categorie' => $this->formatLastCreated(Categoria::class),
+            'missioni' => $this->formatMissionMeta(),
+            'curiosita' => $this->formatLastCreated(Curiosita::class),
+        ];
+
         $ultimiCorpi = CorpoCeleste::with('categoria')
             ->latest()
             ->take(5)
@@ -59,7 +66,39 @@ class DashboardController extends Controller
         ], $missioniPerStato);
 
         return view('admin.dashboard', compact(
-            'stats', 'ultimiCorpi', 'corpiPerCategoria', 'corpiPerTipo', 'missioniPerStato'
+            'stats', 'statMeta', 'ultimiCorpi', 'corpiPerCategoria', 'corpiPerTipo', 'missioniPerStato'
         ));
+    }
+
+    private function formatLastCreated(string $model): ?string
+    {
+        $latest = $model::latest('created_at')->value('created_at');
+
+        return $latest ? 'Ultimo: ' . $latest->format('d/m/Y') : null;
+    }
+
+    private function formatMissionMeta(): ?string
+    {
+        $counts = Missione::selectRaw('stato, count(*) as count')
+            ->whereIn('stato', ['Completata', 'In corso', 'Pianificata'])
+            ->groupBy('stato')
+            ->pluck('count', 'stato');
+
+        if ($counts->isEmpty()) {
+            return null;
+        }
+
+        $parts = [];
+        if (($counts['Completata'] ?? 0) > 0) {
+            $parts[] = $counts['Completata'] . ' completate';
+        }
+        if (($counts['In corso'] ?? 0) > 0) {
+            $parts[] = $counts['In corso'] . ' in corso';
+        }
+        if (($counts['Pianificata'] ?? 0) > 0) {
+            $parts[] = $counts['Pianificata'] . ' pianificate';
+        }
+
+        return $parts ? implode(', ', $parts) : null;
     }
 }

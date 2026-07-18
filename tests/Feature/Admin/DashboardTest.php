@@ -62,4 +62,40 @@ class DashboardTest extends AdminTestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_stat_cards_are_clickable_links(): void
+    {
+        $response = $this->actingAs($this->admin)
+            ->get(route('admin.dashboard'));
+
+        $response->assertStatus(200);
+        $response->assertSee(route('admin.corpi-celesti.index'));
+        $response->assertSee(route('admin.categorie.index'));
+        $response->assertSee(route('admin.missioni.index'));
+        $response->assertSee(route('admin.curiosita.index'));
+    }
+
+    public function test_dashboard_table_names_are_links(): void
+    {
+        $corpo = CorpoCeleste::factory()->create(['nome' => 'Test Planet']);
+
+        $response = $this->actingAs($this->admin)
+            ->get(route('admin.dashboard'));
+
+        $response->assertStatus(200);
+        $response->assertSee(route('admin.corpi-celesti.show', $corpo));
+        $response->assertSee('Test Planet');
+    }
+
+    public function test_dashboard_shows_meta_info(): void
+    {
+        CorpoCeleste::factory()->create();
+        Categoria::factory()->create();
+
+        $response = $this->actingAs($this->admin)
+            ->get(route('admin.dashboard'));
+
+        $response->assertStatus(200);
+        $response->assertSee('Ultimo:');
+    }
 }

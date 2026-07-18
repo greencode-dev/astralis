@@ -4,10 +4,14 @@
 
 ## 18/07/2026
 
+- `[🎨frontend][🟠P1]` Refactoring card dashboard — link cliccabili alle index page, 4 colori unici per card (primary/secondary/accent/warning), meta info (ultimo creato, breakdown missioni), table Nome clickable. — `dashboard-stat.blade.php`, `DashboardController.php`, `dashboard.blade.php`
+- `[🧪test][🔵P2]` Dashboard test aggiornati — 3 nuovi test: clickable links, table links, meta info. — `DashboardTest.php`
+- `[🎨frontend][🟠P1]` Solar system immagini reali — 9 foto NASA/High-quality, tutte croppate a quadrato, dimensioni pianeti ingrandite ~1.8×. Rimosso `bg-black` e `object-cover` → `object-contain`. — `public/images/solar-system/`, `SolarSystem.jsx`
+- `[🎨frontend][🟠P1]` Solar system Sole — sostituito con NASA 3D rendering (pngtree), crop 359×359. — `sole.jpg`
 - `[🖥️backend][🔴P0]` Gallery quality fix — eliminati 74 record galleria, reimportati 90 (18×5) tutti `~orig.jpg` (0 thumb/small/medium). Fix `importForBody()`: rimosso early return che bloccava import galleria per corpi con `immagine_utente=true`. — `NasaImageService.php`
 - `[🧪test][🔵P2]` Test aggiornato — `test_import_for_body_force_does_not_overwrite_user_image` ora verifica che main non venga sovrascritta ma galleria venga importata. — `NasaImageServiceTest.php`
 
-**Test**: 371 totali (264 PHPUnit + 107 Vitest), tutti verdi.
+**Test**: 377 totali (267 PHPUnit + 110 Vitest), tutti verdi.
 
 ---
 
