@@ -1,89 +1,84 @@
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const planets = [
-    { name: 'Mercurio', slug: 'mercurio', size: 20, orbit: 65, color: '#94A3B8', speed: 1.2, img: '/images/solar-system/mercurio.jpg' },
-    { name: 'Venere', slug: 'venere', size: 26, orbit: 88, color: '#F97316', speed: 1.5, img: '/images/solar-system/venere.jpg' },
-    { name: 'Terra', slug: 'terra', size: 30, orbit: 115, color: '#22D3EE', speed: 1.8, img: '/images/solar-system/terra.jpg' },
-    { name: 'Marte', slug: 'marte', size: 24, orbit: 142, color: '#EF4444', speed: 2.5, img: '/images/solar-system/marte.jpg' },
-    { name: 'Giove', slug: 'giove', size: 48, orbit: 185, color: '#FACC15', speed: 3, img: '/images/solar-system/giove.jpg' },
-    { name: 'Saturno', slug: 'saturno', size: 42, orbit: 220, color: '#D4A373', speed: 3.5, img: '/images/solar-system/saturno.jpg' },
-    { name: 'Urano', slug: 'urano', size: 34, orbit: 250, color: '#67E8F9', speed: 4, img: '/images/solar-system/urano.jpg' },
-    { name: 'Nettuno', slug: 'nettuno', size: 34, orbit: 280, color: '#3B82F6', speed: 5, img: '/images/solar-system/nettuno.jpg' },
+    { name: 'Mercurio', slug: 'mercurio', size: 30, orbit: 80, color: '#94A3B8', speed: 1.2, img: '/images/solar-system/mercurio.png' },
+    { name: 'Venere', slug: 'venere', size: 38, orbit: 105, color: '#F97316', speed: 1.5, img: '/images/solar-system/venere.png' },
+    { name: 'Terra', slug: 'terra', size: 44, orbit: 135, color: '#22D3EE', speed: 1.8, img: '/images/solar-system/terra.png' },
+    { name: 'Marte', slug: 'marte', size: 36, orbit: 160, color: '#EF4444', speed: 2.5, img: '/images/solar-system/marte.png' },
+    { name: 'Giove', slug: 'giove', size: 70, orbit: 210, color: '#FACC15', speed: 3, img: '/images/solar-system/giove.png' },
+    { name: 'Saturno', slug: 'saturno', size: 72, orbit: 245, color: '#D4A373', speed: 3.5, img: '/images/solar-system/saturno.png' },
+    { name: 'Urano', slug: 'urano', size: 50, orbit: 280, color: '#67E8F9', speed: 4, img: '/images/solar-system/urano.png' },
+    { name: 'Nettuno', slug: 'nettuno', size: 50, orbit: 310, color: '#3B82F6', speed: 5, img: '/images/solar-system/nettuno.png' },
 ];
 
 function Planet({ planet, hovered }) {
-    const angle = useMotionValue(0);
-    const angleRef = useRef(0);
+    const divRef = useRef(null);
+    const angleRef = useRef(Math.random() * 360);
+    const lastTimeRef = useRef(null);
     const [imgError, setImgError] = useState(false);
 
     useEffect(() => {
-        const unsubscribe = angle.on('change', v => { angleRef.current = v; });
-        return unsubscribe;
-    }, [angle]);
+        let rafId;
+        const degreesPerSec = 360 / (planet.speed * 4);
 
-    useEffect(() => {
-        const controls = animate(angle, 360, {
-            duration: planet.speed * 4 * (hovered ? 3 : 1),
-            repeat: Infinity,
-            ease: 'linear',
-            from: angleRef.current % 360,
-        });
-        return controls.stop;
-    }, [hovered]);
+        const tick = (time) => {
+            if (lastTimeRef.current === null) lastTimeRef.current = time;
+            const dt = (time - lastTimeRef.current) / 1000;
+            lastTimeRef.current = time;
 
-    const rad = useTransform(angle, a => (a * Math.PI) / 180);
-    const x = useTransform(rad, r => Math.sin(r) * planet.orbit);
-    const y = useTransform(rad, r => -Math.cos(r) * planet.orbit);
+            const multiplier = hovered ? 0.33 : 1;
+            angleRef.current = (angleRef.current + degreesPerSec * multiplier * dt) % 360;
+
+            const rad = (angleRef.current * Math.PI) / 180;
+            const x = Math.sin(rad) * planet.orbit;
+            const y = -Math.cos(rad) * planet.orbit;
+
+            if (divRef.current) {
+                divRef.current.style.transform = `translate(${x}px, ${y}px)`;
+            }
+
+            rafId = requestAnimationFrame(tick);
+        };
+
+        rafId = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(rafId);
+    }, [hovered, planet.speed, planet.orbit]);
 
     return (
-        <motion.div
-            className="absolute"
-            style={{
-                x,
-                y,
-                left: -planet.size / 2,
-                top: -planet.size / 2,
-            }}
+        <div
+            ref={divRef}
+            className="absolute group"
+            style={{ left: -planet.size / 2, top: -planet.size / 2 }}
         >
-            <div className="relative">
-                <Link to={`/corpi-celesti/${planet.slug}`} className="block planet-hover" aria-label={planet.name}>
-                    {!imgError ? (
-                        <img
-                            src={planet.img}
-                            alt={planet.name}
-                            className="rounded-full object-contain"
-                            style={{
-                                width: planet.size,
-                                height: planet.size,
-                                boxShadow: `0 0 15px ${planet.color}40`,
-                            }}
-                            onError={() => setImgError(true)}
-                            loading="lazy"
-                        />
-                    ) : (
-                        <div
-                            className="rounded-full"
-                            style={{
-                                width: planet.size,
-                                height: planet.size,
-                                backgroundColor: planet.color,
-                                boxShadow: `0 0 15px ${planet.color}40`,
-                            }}
-                        />
-                    )}
-                </Link>
-                <Link
-                    to={`/corpi-celesti/${planet.slug}`}
-                    className="absolute left-1/2 -translate-x-1/2 text-xs text-admin-muted hover:text-admin-primary transition-colors text-center pointer-events-auto"
-                    style={{ top: planet.size + 4, width: 50 }}
-                    aria-label={`Dettaglio ${planet.name}`}
-                >
+            <Link to={`/corpi-celesti/${planet.slug}`} className="block planet-hover text-center" aria-label={planet.name}>
+                {!imgError ? (
+                    <img
+                        src={planet.img}
+                        alt={planet.name}
+                        className="rounded-full object-contain"
+                        style={{
+                            width: planet.size,
+                            height: planet.size,
+                        }}
+                        onError={() => setImgError(true)}
+                        loading="lazy"
+                    />
+                ) : (
+                    <div
+                        className="rounded-full"
+                        style={{
+                            width: planet.size,
+                            height: planet.size,
+                            backgroundColor: planet.color,
+                        }}
+                    />
+                )}
+                <span className="block mt-1 text-xs text-admin-muted opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" style={{ width: 50, marginLeft: 'auto', marginRight: 'auto' }}>
                     {planet.name}
-                </Link>
-            </div>
-        </motion.div>
+                </span>
+            </Link>
+        </div>
     );
 }
 
@@ -100,7 +95,7 @@ export default function SolarSystem() {
 
     return (
         <div
-            className="relative flex items-center justify-center min-h-[620px]"
+            className="relative flex items-center justify-center min-h-[720px]"
             role="img"
             aria-label="Sistema solare interattivo — clicca un corpo celeste per vederne il dettaglio"
             onMouseEnter={() => setHovered(true)}
@@ -122,39 +117,40 @@ export default function SolarSystem() {
                 ))}
             </div>
 
-            <Link to="/corpi-celesti/sole" className="absolute z-10 planet-hover" aria-label="Sole">
+            <Link to="/corpi-celesti/sole" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 planet-hover group" aria-label="Sole">
                 <img
-                    src="/images/solar-system/sole.jpg"
+                    src="/images/solar-system/sole.png"
                     alt="Sole"
                     className="rounded-full object-contain animate-pulse-sun"
                     style={{
-                        width: 90,
-                        height: 90,
-                        boxShadow: '0 0 60px rgba(249, 115, 22, 0.6), 0 0 120px rgba(249, 115, 22, 0.3)',
+                        width: 120,
+                        height: 120,
                     }}
                 />
-                <div className="text-center mt-2 text-sm font-semibold text-admin-accent">
+                <div className="text-center mt-2 text-sm font-semibold text-admin-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
                     Sole
                 </div>
             </Link>
 
-            <div className="absolute z-[5]">
-                {planets.map(planet => (
-                    <div
-                        key={planet.name}
-                        className="absolute rounded-full border border-admin-primary/15"
-                        style={{
-                            width: planet.orbit * 2,
-                            height: planet.orbit * 2,
-                            left: -planet.orbit,
-                            top: -planet.orbit,
-                        }}
-                    />
-                ))}
+            <div className="absolute inset-0 z-[5] flex items-center justify-center pointer-events-none">
+                <div style={{ width: 0, height: 0 }} className="pointer-events-auto">
+                    {planets.map(planet => (
+                        <div
+                            key={planet.name}
+                            className="absolute rounded-full border border-admin-primary/15"
+                            style={{
+                                width: planet.orbit * 2,
+                                height: planet.orbit * 2,
+                                left: -planet.orbit,
+                                top: -planet.orbit,
+                            }}
+                        />
+                    ))}
 
-                {planets.map(planet => (
-                    <Planet key={planet.name} planet={planet} hovered={hovered} />
-                ))}
+                    {planets.map(planet => (
+                        <Planet key={planet.name} planet={planet} hovered={hovered} />
+                    ))}
+                </div>
             </div>
         </div>
     );

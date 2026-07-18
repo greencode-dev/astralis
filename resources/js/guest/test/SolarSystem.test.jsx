@@ -52,9 +52,9 @@ describe('SolarSystem', () => {
         expect(sunLink.getAttribute('href')).toBe('/corpi-celesti/sole');
     });
 
-    it('renders 17 links total (8 images + 8 names + 1 sun)', () => {
+    it('renders 9 links total (8 planets + 1 sun)', () => {
         renderWithRouter(<SolarSystem />);
         const links = screen.getAllByRole('link');
-        expect(links).toHaveLength(17);
+        expect(links).toHaveLength(9);
     });
 });

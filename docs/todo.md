@@ -7,7 +7,11 @@ _Ultimo aggiornamento: 18/07/2026_
 ## Da Fare
 
 - [ ] `[🎨frontend][🟠P1]` Integrare 3 logo PNG nel progetto (completo, solo logo, solo testo) — Navbar, Footer, Sidebar admin, Auth layout
-- [ ] `[🎨frontend][🟠P1]` SolarSystem fix — rimuovere boxShadow (alone semitrasparente) + riscrivere animazione con `requestAnimationFrame` (rotazione non continua, pianeti saltano). Piano in `.opencode/plans/solar-system-fix.md`
+- [ ] `[🎨frontend][🟠P1]` SolarSystem fix orbiting — centrare orbite (cambiare `absolute inset-0` → `absolute left-0 top-0 w-full h-full` nel container orbite) — `SolarSystem.jsx`
+- [ ] `[🎨frontend][🟠P1]` Landing page redesign (Opzione A) — hero full-width, SolarSystem al centro, testo + CTA + stats overlay con gradiente in basso — `HomePage.jsx`
+- [ ] `[🖥️backend][🟠P1]` Revisione import NASA — verificare `NasaImageService.php` e `CorpoCelesteObserver.php` per comportamento errato o edge case — `NasaImageService.php`, `CorpoCelesteObserver.php`
+- [ ] `[🖥️backend][🟠P1]` Loghi missioni corrotti/mancanti — `MissioneSeeder` referencia 9 logo che non esistono su disco (`public/images/missions/` non esiste). Verificare se servono, crearli o rimuovere i riferimenti — `MissioneSeeder.php`
+- [ ] `[🖥️backend][🟠P1]` Immagini Marte corrotte pagina admin — `http://127.0.0.1:8000/admin/corpi-celesti/5` mostra immagini corrotte. Verificare campo `immagine` nel DB e path su disco — `CorpoCelesteController.php`
 
 ## Fatto
 
@@ -22,6 +26,7 @@ _Ultimo aggiornamento: 18/07/2026_
 - [x] `[🎨frontend][🟠P1]` Solar system immagini — 9 foto reali NASA/croccate, tutte quadrate, dimensioni ingrandite (~1.8×) — `public/images/solar-system/`
 - [x] `[🎨frontend][🟠P1]` Solar system Sole — sostituito con NASA 3D rendering, crop 359×359 — `sole.jpg`
 - [x] `[🎨frontend][🟠P1]` Solar system CSS — `object-cover` → `object-contain`, rimosso `bg-black` da pianeti/Sole — `SolarSystem.jsx`
+- [x] `[🎨frontend][🟠P1]` SolarSystem fix — rimuovere boxShadow + riscrivere animazione con `requestAnimationFrame` (rotazione continua, DOM diretto). Rimossi .jpg, aggiunti .png, pianeti ~50% più grandi, label unite in un solo Link, Saturno 62→72px — `SolarSystem.jsx`, `public/images/solar-system/`
 
 ### 17/07/2026
 
@@ -137,7 +142,7 @@ _Ultimo aggiornamento: 18/07/2026_
 
 ## Note
 
-- **Stato**: 2 task aperte. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 6 task aperte. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
     ```
