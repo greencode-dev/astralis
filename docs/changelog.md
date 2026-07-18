@@ -2,6 +2,15 @@
 
 > [Formato e legenda →](#formato)
 
+## 19/07/2026
+
+- `[🟠][📝]` Sistema priorità semplificato — `[🔴][🖥️]` C/H/M/L formato compatto, rinumerazione todo 1-92, ripristino Task 1 — `todo.md`, `AGENTS.md`, `changelog.md` (178 tag convertiti)
+- `[🟠][🎨]` Landing page redesign (WIP) — HeroStars layer a tutta pagina (80 stelle), SolarSystem prop `showStars`, grid 2 colonne con `self-end`. Fix width collapse: `lg:block` invece di `lg:flex` (SolarSystem width da 0→584px, Sole da 28→121px). Posizionamento X/Y manuale pending — `HomePage.jsx`, `SolarSystem.jsx`
+
+**Test**: 377 totali (267 PHPUnit + 110 Vitest). Test non eseguiti in sessione (db timeout).
+
+---
+
 ## 18/07/2026
 
 - `[🟠][🎨]` Refactoring card dashboard — link cliccabili alle index page, 4 colori unici per card (primary/secondary/accent/warning), meta info (ultimo creato, breakdown missioni), table Nome clickable. — `dashboard-stat.blade.php`, `DashboardController.php`, `dashboard.blade.php`

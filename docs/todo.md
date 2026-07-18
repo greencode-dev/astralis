@@ -2,13 +2,13 @@
 
 > [Formato e legenda →](#note)
 
-_Ultimo aggiornamento: 18/07/2026_
+_Ultimo aggiornamento: 19/07/2026_
 
 ## Da Fare
 
 - [ ] [Task 92] `[🟠][🎨]` Integrare 3 logo PNG nel progetto (completo, solo logo, solo testo) — Navbar, Footer, Sidebar admin, Auth layout
 - [ ] [Task 91] `[🟠][🎨]` SolarSystem fix orbiting — centrare orbite (cambiare `absolute inset-0` → `absolute left-0 top-0 w-full h-full` nel container orbite) — `SolarSystem.jsx`
-- [ ] [Task 90] `[🟠][🎨]` Landing page redesign (Opzione A) — hero full-width, SolarSystem al centro, testo + CTA + stats overlay con gradiente in basso — `HomePage.jsx`
+- [ ] [Task 90] `[🟠][🎨]` Landing page redesign — hero stelle a tutta pagina, SolarSystem showStars prop, layout 2 colonne con SolarSystem abbassato. Posizionamento manuale X/Y pending — `HomePage.jsx`, `SolarSystem.jsx`
 - [ ] [Task 89] `[🟠][🖥️]` Revisione import NASA — verificare `NasaImageService.php` e `CorpoCelesteObserver.php` per comportamento errato o edge case — `NasaImageService.php`, `CorpoCelesteObserver.php`
 - [ ] [Task 88] `[🟠][🖥️]` Loghi missioni corrotti/mancanti — `MissioneSeeder` referencia 9 logo che non esistono su disco (`public/images/missions/` non esiste). Verificare se servono, crearli o rimuovere i riferimenti — `MissioneSeeder.php`
 - [ ] [Task 87] `[🟠][🖥️]` Immagini Marte corrotte pagina admin — `http://127.0.0.1:8000/admin/corpi-celesti/5` mostra immagini corrotte. Verificare campo `immagine` nel DB e path su disco — `CorpoCelesteController.php`
@@ -62,7 +62,7 @@ _Ultimo aggiornamento: 18/07/2026_
 ### 15/07/2026
 
 - [x] [Task 51] `[🟠][🎨]` Sidebar + Partials: config/admin.php, \_sidebar-nav, category-badge, index-header, dashboard-stat, empty-table-row, in-evidenza-badge, flash-in-layout, CSS vars error/success, Route::is()
-- [x] [Task 50] `[🔴][🖥️🧪]` Sicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 359 test (252 PHPUnit + 107 Vitest)
+- [x] [Task 50] `[🔴][🖥️🧪]`NSicurezza + Bug critici + UX: 15 fix (security, retry, race condition, unique job, color picker, flash messages, navbar mobile, useFetch keep-data, comparatore URL-based, gravita/temperatura locale IT). 359 test (252 PHPUnit + 107 Vitest)
 
 ### 14/07/2026
 
@@ -146,7 +146,7 @@ _Ultimo aggiornamento: 18/07/2026_
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
     ```
-    - [ ] [Task n] `[Priorità][Topic]` Descrizione — `file/principale/coinvolto`
+    - [ ] [Task N] `[Priorità][Topic]` Descrizione — `file/principale/coinvolto`
     ```
     **Priorità**: `[🔴]` Critic · `[🟠]` High · `[🔵]` Medium · `[🟢]` Low
     **Topic**: `[🖥️]` Backend · `[🎨]` Frontend · `[💾]` Database · `[🧪]` Test · `[✨]` Feature · `[📝]` Docs

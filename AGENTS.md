@@ -355,17 +355,17 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 18/07/2026 — 13:50
+> _Ultimo aggiornamento:_ 19/07/2026 — 00:30
 
 | Campo               | Valore                                                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | **Branch**          | `master`                                                                                                                  |
-| **Commit HEAD**     | `6eb5a79` — fix: gallery quality (~orig), importForBody immagine_utente, admin padding, migrations, cleanup junk          |
+| **Commit HEAD**     | `a7b1d55` — docs: ripristino Task 1 (Setup), rinumerazione 1-92                                                          |
 | **Test**            | 267 PHPUnit + 110 Vitest = 377 totali                                                                                     |
-| **Modifiche**       | Dashboard refactoring (link, colori, meta), solar system immagini reali (9 foto NASA), Sole sostituito, CSS fix            |
-| **Task completate** | Dashboard card refactor, solar system 9 immagini reali, Sole NASA 3D rendering, CSS object-contain fix                      |
-| **Task in corso**   | Nessuna (piano SolarSystem fix salvato in `.opencode/plans/solar-system-fix.md`)                                           |
-| **Prossime azioni** | 2 task High aperte: logo, SolarSystem fix (boxShadow + rAF animation). Prossima sessione: leggere piano da `.opencode/plans/` |
+| **Modifiche**       | Landing page redesign WIP: HeroStars layer, SolarSystem showStars prop, grid 2 colonne self-end, width collapse fix      |
+| **Task completate** | Sistema priorità semplificato, changelog 178 tag convertiti, Task 1 ripristinata, rinumerazione 1-92                       |
+| **Task in corso**   | Task 90: Landing page redesign — posizionamento X/Y manuale SolarSystem pending                                          |
+| **Prossime azioni** | 6 task High aperte: posizionamento SolarSystem (Task 90), orbit fix (91), logo (92), NASA import (89), loghi missioni (88), Marte (87) |
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 

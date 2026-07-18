@@ -82,7 +82,7 @@ function Planet({ planet, hovered }) {
     );
 }
 
-export default function SolarSystem() {
+export default function SolarSystem({ showStars = true }) {
     const [hovered, setHovered] = useState(false);
     const stars = useMemo(() => Array.from({ length: 50 }, (_, i) => ({
         id: i,
@@ -101,21 +101,23 @@ export default function SolarSystem() {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-                {stars.map(star => (
-                    <div
-                        key={star.id}
-                        className="absolute rounded-full bg-admin-text animate-twinkle"
-                        style={{
-                            width: star.width,
-                            height: star.height,
-                            left: star.left,
-                            top: star.top,
-                            '--twinkle-duration': `${star.duration}s`,
-                        }}
-                    />
-                ))}
-            </div>
+            {showStars && (
+                <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+                    {stars.map(star => (
+                        <div
+                            key={star.id}
+                            className="absolute rounded-full bg-admin-text animate-twinkle"
+                            style={{
+                                width: star.width,
+                                height: star.height,
+                                left: star.left,
+                                top: star.top,
+                                '--twinkle-duration': `${star.duration}s`,
+                            }}
+                        />
+                    ))}
+                </div>
+            )}
 
             <Link to="/corpi-celesti/sole" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 planet-hover group" aria-label="Sole">
                 <img
