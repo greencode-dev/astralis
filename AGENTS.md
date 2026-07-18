@@ -122,9 +122,10 @@ Generare un report con formato:
 - [2-3 entry recenti]
 
 **Task aperte** (todo):
-- 🔴P0: [lista]
-- 🟠P1: [lista]
-- 🔵P2: [lista]
+- 🔴 [Critic]: [lista]
+- 🟠 [High]: [lista]
+- 🔵 [Medium]: [lista]
+- 🟢 [Low]: [lista]
 
 **Grafo**: [riepilogo architettura da graphify]
 
@@ -182,7 +183,7 @@ Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
 #### docs/todo.md
 
 1. **Una sola intestazione per giorno** — mai dividere in sessioni.
-2. **Ordine item**: per priorità (🔴P0 → 🟠P1 → 🔵P2 → 🟣P3 → ⚪P4), poi per categoria (backend → frontend → test → docs → feature).
+2. **Ordine item**: per priorità (`[🔴]` Critic → `[🟠]` High → `[🔵]` Medium → `[🟢]` Low), poi per topic (backend → frontend → test → docs → feature).
 3. Aggiornare `*Ultimo aggiornamento:*` con la data odierna.
 4. Aggiornare la sezione `## Note` con conteggio corretto di task aperte e test.
 5. Spostare i task completati (`[x]`) da **Da Fare** a **Fatto**, sotto la data corrente.
@@ -191,9 +192,9 @@ Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
 #### docs/changelog.md
 
 1. **Una sola intestazione per giorno**: `## GG/MM/AAAA`.
-2. Formato entry: ``- `[🖥️backend][🔴P0]` Descrizione — `file/coinvolto` ``.
+2. Formato entry: ``- `[🔴][🖥️]` Descrizione — `file/coinvolto` ``.
 3. Tag: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`.
-4. Priorità: `🔴P0` bloccante · `🟠P1` utente · `🔵P2` manutenzione · `🟣P3` accessibilità · `⚪P4` futuro.
+4. Priorità: `[🔴]` Critic · `[🟠]` High · `[🔵]` Medium · `[🟢]` Low.
 5. Ordine: cronologico inverso (più recente prima).
 6. Separatore `---` tra ogni blocco data.
 7. Includere: bug fix, feature, refactor, breaking changes, test count.
@@ -364,7 +365,7 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 | **Modifiche**       | Dashboard refactoring (link, colori, meta), solar system immagini reali (9 foto NASA), Sole sostituito, CSS fix            |
 | **Task completate** | Dashboard card refactor, solar system 9 immagini reali, Sole NASA 3D rendering, CSS object-contain fix                      |
 | **Task in corso**   | Nessuna (piano SolarSystem fix salvato in `.opencode/plans/solar-system-fix.md`)                                           |
-| **Prossime azioni** | 2 task P1 aperte: logo, SolarSystem fix (boxShadow + rAF animation). Prossima sessione: leggere piano da `.opencode/plans/` |
+| **Prossime azioni** | 2 task High aperte: logo, SolarSystem fix (boxShadow + rAF animation). Prossima sessione: leggere piano da `.opencode/plans/` |
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 
@@ -440,10 +441,10 @@ Tutte le task del piano sono completate. 377 test (267 PHPUnit + 110 Vitest).
 
 Tutti i bug residui risolti. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 
-- [x] `[🎨frontend][🟠P1]` Mobile nav Escape + click-outside — `Navbar.jsx`
-- [x] `[🧪test][🔵P2]` Test accessor nome_display + immagine_url — `tests/Unit/CorpoCelesteTest.php` (6 test)
-- [x] `[🧪test][🔵P2]` Test setImageFromGallery: non-admin 403, remote URL, flash — `CorpoCelesteActionsTest.php`
-- [x] `[🧪test][🔵P2]` Test suggestNome: non-admin, caching, fallback raw Italian — `CorpoCelesteActionsTest.php`
-- [x] `[🧪test][🔵P2]` Test ImportNasaImage job: implements, proprietà, uniqueId, handle, failed — `tests/Unit/ImportNasaImageTest.php` (9 test)
-- [x] `[🖥️backend][🟠P1]` memory_limit=512M — rimosso (codice inesistente)
-- [x] `[🎨frontend][🔵P2]` framer-motion mantenuto (uso legittimo in SolarSystem)
+- [x] `[🟠][🎨]` Mobile nav Escape + click-outside — `Navbar.jsx`
+- [x] `[🔵][🧪]` Test accessor nome_display + immagine_url — `tests/Unit/CorpoCelesteTest.php` (6 test)
+- [x] `[🔵][🧪]` Test setImageFromGallery: non-admin 403, remote URL, flash — `CorpoCelesteActionsTest.php`
+- [x] `[🔵][🧪]` Test suggestNome: non-admin, caching, fallback raw Italian — `CorpoCelesteActionsTest.php`
+- [x] `[🔵][🧪]` Test ImportNasaImage job: implements, proprietà, uniqueId, handle, failed — `tests/Unit/ImportNasaImageTest.php` (9 test)
+- [x] `[🟠][🖥️]` memory_limit=512M — rimosso (codice inesistente)
+- [x] `[🔵][🎨]` framer-motion mantenuto (uso legittimo in SolarSystem)
