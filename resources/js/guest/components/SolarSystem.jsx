@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const CONTENT_SIZE = 670;
+
 const planets = [
     { name: 'Mercurio', slug: 'mercurio', size: 30, orbit: 80, color: '#94A3B8', speed: 1.2, img: '/images/solar-system/mercurio.png' },
     { name: 'Venere', slug: 'venere', size: 38, orbit: 105, color: '#F97316', speed: 1.5, img: '/images/solar-system/venere.png' },
@@ -83,6 +85,8 @@ function Planet({ planet, hovered }) {
 }
 
 export default function SolarSystem({ showStars = true }) {
+    const containerRef = useRef(null);
+    const [scale, setScale] = useState(1);
     const [hovered, setHovered] = useState(false);
     const stars = useMemo(() => Array.from({ length: 50 }, (_, i) => ({
         id: i,
@@ -93,9 +97,22 @@ export default function SolarSystem({ showStars = true }) {
         duration: Math.random() * 3 + 2,
     })), []);
 
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+        const ro = new ResizeObserver(entries => {
+            const w = entries[0].contentRect.width;
+            setScale(Math.min(1, w / CONTENT_SIZE));
+        });
+        ro.observe(el);
+        return () => ro.disconnect();
+    }, []);
+
     return (
         <div
-            className="relative flex items-center justify-center min-h-[720px]"
+            ref={containerRef}
+            className="relative w-full"
+            style={{ aspectRatio: '670 / 720' }}
             role="img"
             aria-label="Sistema solare interattivo — clicca un corpo celeste per vederne il dettaglio"
             onMouseEnter={() => setHovered(true)}
@@ -119,39 +136,51 @@ export default function SolarSystem({ showStars = true }) {
                 </div>
             )}
 
-            <Link to="/corpi-celesti/sole" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 planet-hover group" aria-label="Sole">
-                <img
-                    src="/images/solar-system/sole.png"
-                    alt="Sole"
-                    className="rounded-full object-contain animate-pulse-sun"
-                    style={{
-                        width: 120,
-                        height: 120,
-                    }}
-                />
-                <div className="text-center mt-2 text-sm font-semibold text-admin-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                    Sole
-                </div>
-            </Link>
+            <div
+                className="absolute"
+                style={{
+                    width: CONTENT_SIZE,
+                    height: CONTENT_SIZE,
+                    left: '50%',
+                    top: '50%',
+                    transform: `translate(-50%, -50%) scale(${scale})`,
+                    transformOrigin: 'center',
+                }}
+            >
+                <Link to="/corpi-celesti/sole" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 planet-hover group" aria-label="Sole">
+                    <img
+                        src="/images/solar-system/sole.png"
+                        alt="Sole"
+                        className="rounded-full object-contain animate-pulse-sun"
+                        style={{
+                            width: 120,
+                            height: 120,
+                        }}
+                    />
+                    <div className="text-center mt-2 text-sm font-semibold text-admin-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                        Sole
+                    </div>
+                </Link>
 
-            <div className="absolute inset-0 z-[5] flex items-center justify-center pointer-events-none">
-                <div style={{ width: 0, height: 0 }} className="pointer-events-auto">
-                    {planets.map(planet => (
-                        <div
-                            key={planet.name}
-                            className="absolute rounded-full border border-admin-primary/15"
-                            style={{
-                                width: planet.orbit * 2,
-                                height: planet.orbit * 2,
-                                left: -planet.orbit,
-                                top: -planet.orbit,
-                            }}
-                        />
-                    ))}
+                <div className="absolute inset-0 z-[5] flex items-center justify-center pointer-events-none">
+                    <div style={{ width: 0, height: 0 }} className="pointer-events-auto">
+                        {planets.map(planet => (
+                            <div
+                                key={planet.name}
+                                className="absolute rounded-full border border-admin-primary/15"
+                                style={{
+                                    width: planet.orbit * 2,
+                                    height: planet.orbit * 2,
+                                    left: -planet.orbit,
+                                    top: -planet.orbit,
+                                }}
+                            />
+                        ))}
 
-                    {planets.map(planet => (
-                        <Planet key={planet.name} planet={planet} hovered={hovered} />
-                    ))}
+                        {planets.map(planet => (
+                            <Planet key={planet.name} planet={planet} hovered={hovered} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

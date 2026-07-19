@@ -15,3 +15,12 @@ class MockIntersectionObserver {
     }
 }
 window.IntersectionObserver = MockIntersectionObserver;
+
+if (!window.ResizeObserver) {
+    window.ResizeObserver = class {
+        constructor(callback) { this.callback = callback; }
+        observe() {}
+        unobserve() {}
+        disconnect() {}
+    };
+}

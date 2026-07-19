@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CorpoCelesteResource;
 use App\Models\CorpoCeleste;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -37,13 +38,23 @@ class CorpoCelesteController extends Controller
             $query->where('in_evidenza', true);
         }
 
+        $page = $request->integer('page', 1);
         $perPage = max(1, min($request->integer('per_page', 12), 100));
         $cacheKey = 'api.corpi-celesti.' . md5(serialize($request->query()));
-        $corpiCelesti = Cache::remember($cacheKey, 300, function () use ($query, $perPage) {
-            return $query->orderBy('nome')->paginate($perPage);
+
+        $allCorpi = Cache::remember($cacheKey, 300, function () use ($query) {
+            return $query->orderBy('nome')->get();
         });
 
-        return CorpoCelesteResource::collection($corpiCelesti);
+        $paginated = new LengthAwarePaginator(
+            $allCorpi->forPage($page, $perPage),
+            $allCorpi->count(),
+            $perPage,
+            $page,
+            ['path' => $request->url(), 'query' => $request->query()]
+        );
+
+        return CorpoCelesteResource::collection($paginated);
     }
 
     public function show(CorpoCeleste $corpoCeleste)

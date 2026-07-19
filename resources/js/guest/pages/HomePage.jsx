@@ -139,14 +139,8 @@ export default function HomePage() {
                             )}
                         </div>
 
-                        {/* SolarSystem — col 2, pushed down */}
-                        <div
-                            className="hidden lg:block self-end animate-fade-scale"
-                            style={{
-                                animationDelay: "0.3s",
-                                translate: "0px 50px",
-                            }}
-                        >
+                        {/* SolarSystem — col 2 */}
+                        <div className="hidden lg:block animate-fade-scale" style={{ animationDelay: "0.3s" }}>
                             <SolarSystem showStars={false} />
                         </div>
                     </div>

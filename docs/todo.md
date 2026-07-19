@@ -6,6 +6,13 @@ _Ultimo aggiornamento: 19/07/2026_
 
 ## Da Fare
 
+- [ ] [Task 99] `[🔵][📝]` Sezione Q&A in presentazione-progetto — aggiungere domande/risposte legate alla traccia esame — `docs/presentazione-progetto.md`
+- [ ] [Task 98] `[🔵][🎨]` Font Orbitron non applicato — aggiungere `--font-orbitron` al blocco `@theme` in `app.css` (classe usata ma mai definita in CSS) — `resources/css/app.css`
+- [ ] [Task 97] `[🟠][🎨]` Integrazione loghi e favicon — sostituire `favicon.svg` con logo PNG ad alta risoluzione in Navbar, Footer, Sidebar admin. Verificare `site.webmanifest` — `Navbar.jsx`, `Footer.jsx`, `app.blade.php`, `guest.blade.php`
+- [ ] [Task 96] `[🟠][🖥️🎨]` Home loading performance — valutare combinazione endpoint o Promise.all per le 2 chiamate API parallele sulla home — `HomePage.jsx`, `apiClient.js`, `CorpoCelesteController.php`
+- [ ] [Task 95] `[🟠][🎨]` Orbite equidistanti — formula matematica per distribuire le 8 orbite con spaziatura costante invece di valori manuali — `SolarSystem.jsx`
+- [ ] [Task 94] `[🟠][🎨]` SolarSystem centratura — verificare che il Sole cada al centro esatto dell'orbita di Mercurio dopo la responsive scaling — `SolarSystem.jsx`, `HomePage.jsx`
+- [ ] [Task 93] `[🟠][🖥️]` Pubblicare config/cors.php — file non esiste, defaults framework. Personalizzare allowed_origins, supports_credentials, max_age — `config/cors.php`
 - [ ] [Task 92] `[🟠][🎨]` Integrare 3 logo PNG nel progetto (completo, solo logo, solo testo) — Navbar, Footer, Sidebar admin, Auth layout
 - [ ] [Task 91] `[🟠][🎨]` SolarSystem fix orbiting — centrare orbite (cambiare `absolute inset-0` → `absolute left-0 top-0 w-full h-full` nel container orbite) — `SolarSystem.jsx`
 - [ ] [Task 90] `[🟠][🎨]` Landing page redesign — hero stelle a tutta pagina, SolarSystem showStars prop, layout 2 colonne con SolarSystem abbassato. Posizionamento manuale X/Y pending — `HomePage.jsx`, `SolarSystem.jsx`
@@ -14,6 +21,12 @@ _Ultimo aggiornamento: 19/07/2026_
 - [ ] [Task 87] `[🟠][🖥️]` Immagini Marte corrotte pagina admin — `http://127.0.0.1:8000/admin/corpi-celesti/5` mostra immagini corrotte. Verificare campo `immagine` nel DB e path su disco — `CorpoCelesteController.php`
 
 ## Fatto
+
+### 19/07/2026
+
+- [x] [Task 102] `[🔵][🧪]` Mock ResizeObserver in test setup — aggiunto mock per jsdom in `setup.js` — `resources/js/guest/test/setup.js`
+- [x] [Task 101] `[🟠][🎨]` SolarSystem responsive scaling — `ResizeObserver` + `aspect-ratio: 670/720` + `transform: scale()` automatico. Rimosso `self-end` e `translate: "50px 50px"` da HomePage — `SolarSystem.jsx`, `HomePage.jsx`
+- [x] [Task 100] `[🔴][🖥️]` Fix API 500 — `Cache::remember` serializzava `LengthAwarePaginator` → deserializzazione falliva. Fix: cachea Collection, crea paginator dopo — `CorpoCelesteController.php`
 
 ### 18/07/2026
 
@@ -142,7 +155,7 @@ _Ultimo aggiornamento: 19/07/2026_
 
 ## Note
 
-- **Stato**: 6 task aperte. 92 task totali. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 13 task aperte. 102 task totali. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Fatto**
 - Formato per aggiungere un nuovo task:
     ```
