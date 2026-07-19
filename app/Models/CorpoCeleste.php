@@ -59,7 +59,7 @@ class CorpoCeleste extends Model
 
     public function categoria(): BelongsTo
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsTo(Categoria::class)->select('id', 'nome', 'slug', 'icona', 'descrizione', 'colore');
     }
 
     public function galleria(): HasMany

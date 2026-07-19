@@ -40,7 +40,26 @@ class CorpoCelesteController extends Controller
 
         $page = $request->integer('page', 1);
         $perPage = max(1, min($request->integer('per_page', 12), 100));
-        $cacheKey = 'api.corpi-celesti.' . md5(serialize($request->query()));
+        
+        $cacheKeyParts = [
+            'per_page' => $perPage,
+            'page' => $page,
+        ];
+        
+        if ($request->filled('categoria')) {
+            $cacheKeyParts['categoria'] = $request->categoria;
+        }
+        if ($request->filled('tipo')) {
+            $cacheKeyParts['tipo'] = $request->tipo;
+        }
+        if ($request->filled('search')) {
+            $cacheKeyParts['search'] = $request->search;
+        }
+        if ($request->boolean('in_evidenza')) {
+            $cacheKeyParts['in_evidenza'] = true;
+        }
+
+        $cacheKey = 'api.corpi-celesti.' . md5(serialize($cacheKeyParts));
 
         $cachedIds = Cache::remember($cacheKey, 300, function () use ($query) {
             return $query->orderBy('nome')->pluck('id')->toArray();
