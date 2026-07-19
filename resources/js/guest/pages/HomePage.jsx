@@ -72,7 +72,7 @@ export default function HomePage() {
                 <HeroStars />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 min-h-screen flex items-center">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+                    <div className="grid lg:grid-cols-2 gap-12 items-start w-full">
                         {/* Text — col 1 */}
                         <div className="animate-slide-left">
                             <div className="flex items-center gap-2 mb-4">
@@ -140,7 +140,7 @@ export default function HomePage() {
                         </div>
 
                         {/* SolarSystem — col 2 */}
-                        <div className="hidden lg:block animate-fade-scale" style={{ animationDelay: "0.3s" }}>
+                        <div className="hidden lg:block animate-fade-scale self-end" style={{ animationDelay: "0.3s", marginTop: "4rem" }}>
                             <SolarSystem showStars={false} />
                         </div>
                     </div>
