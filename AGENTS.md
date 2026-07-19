@@ -511,17 +511,17 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 19/07/2026 — 00:30
+> _Ultimo aggiornamento:_ 19/07/2026 — 19:25
 
-| Campo               | Valore                                                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| **Branch**          | `master`                                                                                                                  |
-| **Commit HEAD**     | `a7b1d55` — docs: ripristino Task 1 (Setup), rinumerazione 1-92                                                          |
-| **Test**            | 267 PHPUnit + 110 Vitest = 377 totali                                                                                     |
-| **Modifiche**       | Landing page redesign WIP: HeroStars layer, SolarSystem showStars prop, grid 2 colonne self-end, width collapse fix      |
-| **Task completate** | Sistema priorità semplificato, changelog 178 tag convertiti, Task 1 ripristinata, rinumerazione 1-92                       |
-| **Task in corso**   | Task 90: Landing page redesign — posizionamento X/Y manuale SolarSystem pending                                          |
-| **Prossime azioni** | 6 task High aperte: posizionamento SolarSystem (Task 90), orbit fix (91), logo (92), NASA import (89), loghi missioni (88), Marte (87) |
+| Campo               | Valore                                                                                                 |
+| ------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Branch**          | `master`                                                                                               |
+| **Commit HEAD**     | `42e47f3` — docs: Q&A presentazione 15 domande + elimina piani obsoleti                               |
+| **Test**            | 267 PHPUnit + 110 Vitest = 377 totali, tutti verdi                                                    |
+| **Modifiche**       | Nessuna (working tree pulito)                                                                          |
+| **Task completate** | Landing page redesign (100), Q&A presentazione (101), SolarSystem velocità, 99 task totali Completate  |
+| **Task in corso**   | Nessuna                                                                                                |
+| **Prossime azioni** | Nessuna task aperta — piano ottimizzazione completo, 101/101 task completate                            |
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 

@@ -4,10 +4,14 @@
 
 ## 19/07/2026
 
-- `[🟠][📝]` Sistema priorità semplificato — `[🔴][🖥️]` C/H/M/L formato compatto, rinumerazione todo 1-92, ripristino Task 1 — `todo.md`, `AGENTS.md`, `changelog.md` (178 tag convertiti)
-- `[🟠][🎨]` Landing page redesign (WIP) — HeroStars layer a tutta pagina (80 stelle), SolarSystem prop `showStars`, grid 2 colonne con `self-end`. Fix width collapse: `lg:block` invece di `lg:flex` (SolarSystem width da 0→584px, Sole da 28→121px). Posizionamento X/Y manuale pending — `HomePage.jsx`, `SolarSystem.jsx`
+- `[🟡][🎨]` Landing page redesign — items-start griglia, self-end SolarSystem, marginTop 4rem per posizionamento verticale — `HomePage.jsx`
+- `[🔵][📝]` Q&A presentazione — 15 domande/risposte legate alla traccia esame (architettura, Eloquent, sicurezza, NASA, test, animazioni, design patterns) — `docs/presentazione-progetto.md`
+- `[🟡][🎨]` SolarSystem velocità — normal 33%, hover 11% — `SolarSystem.jsx`
+- `[🟡][📝]` Sistema priorità semplificato — formato compatto, rinumerazione todo, comandi `\todo`/`\check`/`\audit` — `todo.md`, `AGENTS.md`
+- `[🟡][🎨]` Landing page redesign (WIP) — HeroStars (80 stelle), SolarSystem showStars, grid 2 colonne, fix width collapse — `HomePage.jsx`, `SolarSystem.jsx`
+- `[🟢][📝]` Eliminati piani obsoleti — `piano-10-ore.md`, `solar-system-fix.md`
 
-**Test**: 377 totali (267 PHPUnit + 110 Vitest). Test non eseguiti in sessione (db timeout).
+**Test**: 377 totali (267 PHPUnit + 110 Vitest), tutti verdi.
 
 ---
 

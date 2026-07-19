@@ -6,12 +6,7 @@ _Ultimo aggiornamento: 19/07/2026_
 
 ## Da Fare
 
-- [ ] [Task 6] `[🟡][🎨]` Verifica card "In Evidenza" home — le card non sono visibili/funzionanti, nella sessione precedente è scattato l'ErrorBoundary. Verificare causa (probabile SolarSystem nella hero) — `HomePage.jsx`, `SolarSystem.jsx`
-- [ ] [Task 5] `[🟡][🎨]` Verifica ErrorBoundary — il bottone "Riprova" non esegue il refresh visivamente (reset state funziona ma il componente non si re-mounta). Testare su tutte le pagine — `ErrorBoundary.jsx`, `App.jsx`
-- [ ] [Task 4] `[🔵][📝]` Sezione Q&A in presentazione-progetto — aggiungere domande/risposte legate alla traccia esame — `docs/presentazione-progetto.md`
-- [ ] [Task 3] `[🟡][🎨]` Integrare 3 logo PNG nel progetto (completo, solo logo, solo testo) — Navbar, Footer, Sidebar admin, Auth layout
-- [ ] [Task 2] `[🟡][🎨]` SolarSystem fix orbiting — centrare orbite (cambiare `absolute inset-0` → `absolute left-0 top-0 w-full h-full` nel container orbite) — `SolarSystem.jsx`
-- [ ] [Task 1] `[🟡][🎨]` Landing page redesign — hero stelle a tutta pagina, SolarSystem showStars prop, layout 2 colonne con SolarSystem abbassato. Posizionamento manuale X/Y pending — `HomePage.jsx`, `SolarSystem.jsx`
+> Nessuna task aperta.
 
 ## In lavorazione
 
@@ -21,6 +16,11 @@ _Ultimo aggiornamento: 19/07/2026_
 
 ### 19/07/2026
 
+- [x] [Task 101] `[🔵][📝]` Sezione Q&A in presentazione-progetto — 15 domande/risposte legate alla traccia esame (architettura, Eloquent, sicurezza, NASA, test, animazioni, design patterns) — `docs/presentazione-progetto.md`
+- [x] [Task 100] `[🟡][🎨]` Landing page redesign — items-start griglia, self-end SolarSystem, marginTop 4rem per posizionamento verticale — `HomePage.jsx`
+- [x] [Task 99] `[🟡][🎨]` Verifica card "In Evidenza" — card rendereggono correttamente, gestione errori OK, SolarSystem non causa crash. Nessuna azione necessaria — `HomePage.jsx`
+- [x] [Task 98] `[🟡][🎨]` Verifica ErrorBoundary — "Riprova" funziona (reset state), double-wrapping intenzionale. Nessun bug trovato — `ErrorBoundary.jsx`, `App.jsx`
+- [x] [Task 97] `[🟡][🎨]` Verifica logo PNG — tutti i 6 PNG esistono, usati in Navbar/Footer/Sidebar/Auth. Favicon link invariati — `Navbar.jsx`, `Footer.jsx`, `app.blade.php`, `layouts/guest.blade.php`
 - [x] [Task 96] `[🟡][🖥️]` Revisione NasaImageService — rimosso codice morto (righe 62-82: doppio parsing response + slimItems irraggiungibile). 38 test NASA verdi — `NasaImageService.php`
 - [x] [Task 95] `[🟡][🖥️]` config/cors.php — non necessaria in Laravel 13: framework gestisce CORS via middleware con defaults (`allowed_origins: *`, route `api/*`). Nessuna azione richiesta
 - [x] [Task 94] `[🟡][🖥️]` Loghi missioni — rimossi riferimenti a 9 logo inesistenti da `MissioneSeeder`, aggiornate 10 righe DB a `null`. Le viste admin già gestiscono `@if ($missione->logo)` — `MissioneSeeder.php`
@@ -187,7 +187,7 @@ _Ultimo aggiornamento: 19/07/2026_
 
 ## Note
 
-- **Stato**: 6 task aperte. 102 task totali (6 Da Fare + 96 Completate). 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 2 task aperte. 101 task totali (2 Da Fare + 99 Completate). 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Completate**
 - Formato per aggiungere un nuovo task:
     ```
