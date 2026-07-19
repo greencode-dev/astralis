@@ -12,7 +12,7 @@ class MissioneSeeder extends Seeder
         $missioni = [
             [
                 'nome' => 'Apollo 11',
-                'logo' => 'apollo-11.png',
+                'logo' => null,
                 'agenzia' => 'NASA',
                 'data_lancio' => '1969-07-16',
                 'durata_giorni' => 8,
@@ -22,7 +22,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Voyager 1',
-                'logo' => 'voyager.png',
+                'logo' => null,
                 'agenzia' => 'NASA',
                 'data_lancio' => '1977-09-05',
                 'durata_giorni' => 17876,
@@ -32,7 +32,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Voyager 2',
-                'logo' => 'voyager.png',
+                'logo' => null,
                 'agenzia' => 'NASA',
                 'data_lancio' => '1977-08-20',
                 'durata_giorni' => 17872,
@@ -42,7 +42,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Hubble Space Telescope',
-                'logo' => 'hubble.png',
+                'logo' => null,
                 'agenzia' => 'NASA / ESA',
                 'data_lancio' => '1990-04-24',
                 'durata_giorni' => 13238,
@@ -52,7 +52,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Mars Pathfinder',
-                'logo' => 'mars-pathfinder.png',
+                'logo' => null,
                 'agenzia' => 'NASA',
                 'data_lancio' => '1996-12-04',
                 'durata_giorni' => 265,
@@ -62,7 +62,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Stazione Spaziale Internazionale',
-                'logo' => 'iss.png',
+                'logo' => null,
                 'agenzia' => 'NASA / Roscosmos / ESA / JAXA / CSA',
                 'data_lancio' => '1998-11-20',
                 'durata_giorni' => 10122,
@@ -72,7 +72,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Cassini-Huygens',
-                'logo' => 'cassini.png',
+                'logo' => null,
                 'agenzia' => 'NASA / ESA / ASI',
                 'data_lancio' => '1997-10-15',
                 'durata_giorni' => 7244,
@@ -82,7 +82,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Mars Science Laboratory (Curiosity)',
-                'logo' => 'curiosity.png',
+                'logo' => null,
                 'agenzia' => 'NASA',
                 'data_lancio' => '2011-11-26',
                 'durata_giorni' => 5338,
@@ -92,7 +92,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'James Webb Space Telescope',
-                'logo' => 'jwst.png',
+                'logo' => null,
                 'agenzia' => 'NASA / ESA / CSA',
                 'data_lancio' => '2021-12-25',
                 'durata_giorni' => 1652,
@@ -102,7 +102,7 @@ class MissioneSeeder extends Seeder
             ],
             [
                 'nome' => 'Artemis I',
-                'logo' => 'artemis.png',
+                'logo' => null,
                 'agenzia' => 'NASA',
                 'data_lancio' => '2022-11-16',
                 'durata_giorni' => 25,

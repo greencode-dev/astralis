@@ -14,7 +14,7 @@
         <div class="w-full max-w-md">
             <div class="mb-8 text-center">
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-2">
-                    <img src="/favicon.svg" alt="Astralis" class="w-24 h-24" />
+                    <img src="/astralis_solo_logo_bianco.png" alt="Astralis" class="w-12 h-12" />
                     <span class="text-2xl font-bold font-orbitron text-admin-primary">Astralis</span>
                 </a>
             </div>

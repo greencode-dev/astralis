@@ -3,15 +3,19 @@ import { Link } from 'react-router-dom';
 
 const CONTENT_SIZE = 670;
 
+const ORBIT_MIN = 75;
+const ORBIT_MAX = 310;
+const ORBIT_STEP = (ORBIT_MAX - ORBIT_MIN) / 7;
+
 const planets = [
-    { name: 'Mercurio', slug: 'mercurio', size: 30, orbit: 80, color: '#94A3B8', speed: 1.2, img: '/images/solar-system/mercurio.png' },
-    { name: 'Venere', slug: 'venere', size: 38, orbit: 105, color: '#F97316', speed: 1.5, img: '/images/solar-system/venere.png' },
-    { name: 'Terra', slug: 'terra', size: 44, orbit: 135, color: '#22D3EE', speed: 1.8, img: '/images/solar-system/terra.png' },
-    { name: 'Marte', slug: 'marte', size: 36, orbit: 160, color: '#EF4444', speed: 2.5, img: '/images/solar-system/marte.png' },
-    { name: 'Giove', slug: 'giove', size: 70, orbit: 210, color: '#FACC15', speed: 3, img: '/images/solar-system/giove.png' },
-    { name: 'Saturno', slug: 'saturno', size: 72, orbit: 245, color: '#D4A373', speed: 3.5, img: '/images/solar-system/saturno.png' },
-    { name: 'Urano', slug: 'urano', size: 50, orbit: 280, color: '#67E8F9', speed: 4, img: '/images/solar-system/urano.png' },
-    { name: 'Nettuno', slug: 'nettuno', size: 50, orbit: 310, color: '#3B82F6', speed: 5, img: '/images/solar-system/nettuno.png' },
+    { name: 'Mercurio', slug: 'mercurio', size: 30, orbit: ORBIT_MIN, color: '#94A3B8', speed: 1.2, img: '/images/solar-system/mercurio.png' },
+    { name: 'Venere', slug: 'venere', size: 38, orbit: ORBIT_MIN + ORBIT_STEP, color: '#F97316', speed: 1.5, img: '/images/solar-system/venere.png' },
+    { name: 'Terra', slug: 'terra', size: 44, orbit: ORBIT_MIN + ORBIT_STEP * 2, color: '#22D3EE', speed: 1.8, img: '/images/solar-system/terra.png' },
+    { name: 'Marte', slug: 'marte', size: 36, orbit: ORBIT_MIN + ORBIT_STEP * 3, color: '#EF4444', speed: 2.5, img: '/images/solar-system/marte.png' },
+    { name: 'Giove', slug: 'giove', size: 70, orbit: ORBIT_MIN + ORBIT_STEP * 4, color: '#FACC15', speed: 3, img: '/images/solar-system/giove.png' },
+    { name: 'Saturno', slug: 'saturno', size: 72, orbit: ORBIT_MIN + ORBIT_STEP * 5, color: '#D4A373', speed: 3.5, img: '/images/solar-system/saturno.png' },
+    { name: 'Urano', slug: 'urano', size: 50, orbit: ORBIT_MIN + ORBIT_STEP * 6, color: '#67E8F9', speed: 4, img: '/images/solar-system/urano.png' },
+    { name: 'Nettuno', slug: 'nettuno', size: 50, orbit: ORBIT_MAX, color: '#3B82F6', speed: 5, img: '/images/solar-system/nettuno.png' },
 ];
 
 function Planet({ planet, hovered }) {

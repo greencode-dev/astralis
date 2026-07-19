@@ -29,7 +29,7 @@
                @click.away="sidebarOpen = false">
 
             <div class="flex items-center gap-3 px-6 py-5 border-b border-admin-primary/10">
-                <img src="/favicon.svg" alt="Astralis" class="w-24 h-24" />
+                <img src="/astralis_solo_logo_bianco.png" alt="Astralis" class="w-12 h-12" />
                 <div>
                     <h1 class="text-lg font-bold font-orbitron text-admin-primary">Astralis</h1>
                     <p class="text-xs text-admin-secondary">Backoffice</p>

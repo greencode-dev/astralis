@@ -2,6 +2,7 @@
 
 @theme {
     --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-orbitron: "Orbitron", ui-sans-serif, system-ui, sans-serif;
 
     --color-admin-bg: #0A0A1A;
     --color-admin-card: #111128;

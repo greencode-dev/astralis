@@ -123,7 +123,7 @@ Generare un report con formato:
 
 **Task aperte** (todo):
 - 🔴 [Critic]: [lista]
-- 🟠 [High]: [lista]
+- 🟡 [High]: [lista]
 - 🔵 [Medium]: [lista]
 - 🟢 [Low]: [lista]
 
@@ -182,19 +182,23 @@ Ordine: **codice → docs/ → AGENTS.md → README.md → graphify → commit**
 
 #### docs/todo.md
 
-1. **Una sola intestazione per giorno** — mai dividere in sessioni.
-2. **Ordine item**: per priorità (`[🔴]` Critic → `[🟠]` High → `[🔵]` Medium → `[🟢]` Low), poi per topic (backend → frontend → test → docs → feature).
-3. Aggiornare `*Ultimo aggiornamento:*` con la data odierna.
-4. Aggiornare la sezione `## Note` con conteggio corretto di task aperte e test.
-5. Spostare i task completati (`[x]`) da **Da Fare** a **Fatto**, sotto la data corrente.
-6. Non creare duplicati.
+1. **Numerazione**: `[Task N]` progressiva (1-N, mai riutilizzare numeri assegnati).
+2. **Una sola intestazione per giorno** — mai dividere in sessioni.
+3. **Ordine item**: task number decrescente (Task N → Task 1), poi priorità decrescente (`[🔴]` → `[🟡]` → `[🔵]` → `[🟢]`) a parità di numero.
+4. **Formato**: `- [ ] [Task N] \`[Priorità][Topic]\` Descrizione — \`file/principale\``
+5. **Priorità**: `[🔴]` Critic · `[🟡]` High · `[🔵]` Medium · `[🟢]` Low.
+6. **Topic**: `[🖥️]` Backend · `[🎨]` Frontend · `[💾]` Database · `[🧪]` Test · `[✨]` Feature · `[📝]` Docs.
+7. Aggiornare `*Ultimo aggiornamento:*` con la data odierna.
+8. Aggiornare la sezione `## Note` con conteggio corretto di task aperte e test.
+9. Spostare i task completati (`[x]`) da **Da Fare** a **Fatto**, sotto la data corrente, in ordine decrescente (più recente prima). Aggiungere `---` come separatore tra blocchi di date diverse.
+10. Non creare duplicati. Non riutilizzare numeri di task eliminati. Verificare che non ci siano vuoti numerici (es. Task 5 → Task 7 senza Task 6). Il numero della prossima task da creare è `max(tutti i numeri esistenti) + 1`.
 
 #### docs/changelog.md
 
 1. **Una sola intestazione per giorno**: `## GG/MM/AAAA`.
-2. Formato entry: ``- `[🔴][🖥️]` Descrizione — `file/coinvolto` ``.
-3. Tag: `[🖥️backend]` `[🎨frontend]` `[💾database]` `[🧪test]` `[✨feature]` `[📝docs]`.
-4. Priorità: `[🔴]` Critic · `[🟠]` High · `[🔵]` Medium · `[🟢]` Low.
+2. Formato entry: ``- `[Priorità][Topic]` Descrizione — `file/coinvolto` ``.
+3. Tag: `[🖥️]` Backend · `[🎨]` Frontend · `[💾]` Database · `[🧪]` Test · `[✨]` Feature · `[📝]` Docs.
+4. Priorità: `[🔴]` Critic · `[🟡]` High · `[🔵]` Medium · `[🟢]` Low · `[🟣]` P3 (Accessibilità) · `[⚪]` P4 (Futuro).
 5. Ordine: cronologico inverso (più recente prima).
 6. Separatore `---` tra ogni blocco data.
 7. Includere: bug fix, feature, refactor, breaking changes, test count.
@@ -306,6 +310,158 @@ Flusso di chiusura sessione quando l'utente scrive `\save`:
 5. **Grafo**: `graphify update .`.
 6. **Commit**: comporre il messaggio seguendo il formato Fase 5. Usare il tool `question` — header: "Conferma commit", opzioni: `["Si, procedi", "No, sospendi"]` — prima di `git add . && git commit`.
 7. **Push** (opzionale): dopo il commit, usare il tool `question` — header: "Eseguire push ora?", opzioni: `["Si, push ora", "No, lascia per dopo"]` — per decidere se eseguire `git push` immediatamente o posticipare.
+
+### Comando \todo
+
+Flusso di gestione task quando l'utente scrive `\todo`:
+
+**Fase A — Check iniziale**
+
+1. Leggere `docs/todo.md`.
+2. Verificare la data di `*Ultimo aggiornamento:*`.
+3. Contare le task aperte (`[ ]`) e raggrupparle per priorità.
+4. Generare report:
+
+```
+📋 Todo check — DD/MM/YYYY
+
+**Aggiornamento**: GG/MM/AAAA
+**Task aperte**: N totali
+🔴 Critic: X | 🟡 High: Y | 🔵 Medium: Z | 🔵 Low: W
+
+**Lista task**:
+- [Task N] `[P][T]` Descrizione
+- ...
+```
+
+5. **Questions**: "Cosa vuoi fare?" — opzioni: `["A) Lavora sulle task", "B) Rivedi le task"]`.
+
+---
+
+**Opzione A — Lavora sulle task**
+
+1. **Questions**: "Modalità esecuzione?" — opzioni: `["Automatica (commit silente, prosegue tutto)", "Manuale (dopo ogni task: commit + prossima?)"]`.
+2. **Multi-select**: elencare "Tutte le task" come prima opzione, poi ogni task singola.
+3. **Check plan mode**: se in plan mode, avvisare e chiedere di scrivere "vai" per procedere.
+4. **Esecuzione per ogni task selezionata**:
+    a. Generare report dettagliato: priorità, pro/contro, suggerimenti, alternative.
+    b. **Questions**: "Procedi con questa task?" — opzioni: `["Si, procedi", "No, salta"]`.
+    c. Se si → marcare come `in_progress`, eseguire il lavoro.
+    d. Se no → passare alla prossima.
+    e. Dopo completamento:
+        - **Commit**: in modalità automatica, commit silente con messaggio specifico per task (`feat/fix/refactor: descrizione`). In modalità manuale, **Questions**: "Eseguire commit?" — opzioni: `["Si, committa", "No, prosegui"]`.
+        - Spostare la task da **Da Fare** a **Fatto** con data corrente.
+        - Mini-report: task completata + task rimanenti + suggerimento prossima.
+    f. **Se task fallisce** (errore test, conflitto, ecc.):
+        - Skip della task (+ eventuali task dipendenti).
+        - Continuare con la successiva.
+        - Registrare il motivo del fallimento per il report finale.
+5. **Report finale**:
+
+```
+📊 Report esecuzione — DD/MM/YYYY
+
+**Avviate**: N | Completate: ✅ X | Fallite: ❌ Y | Saltate: ⏭️ Z
+
+### ✅ Completate
+- [Task N] Descrizione
+
+### ❌ Fallite
+- [Task N] Descrizione — Motivo: ...
+
+### ⏭️ Saltate (dipendenza da task fallita)
+- [Task N] Descrizione — Dipende da: [Task M]
+```
+
+---
+
+**Opzione B — Rivedi le task**
+
+1. **Multi-select**: `["Rivalutare task esistenti", "Aggiungere nuova task", "Modifica/Elimina task"]`.
+
+**Rivalutare**:
+1. **Multi-select**: elencare tutte le task aperte.
+2. Per ogni task selezionata, **multi-select**: `["Cambia priorità", "Cambia descrizione", "Cambia file"]`.
+3. Per ogni campo selezionato, **questions** con opzioni attuali + nuove.
+4. Report prima/dopo + **Questions**: "Confermi le modifiche?".
+
+**Aggiungere**:
+1. **Questions**: "Descrivi la nuova task".
+2. Io suggerisco priorità e topic basandomi sulla descrizione.
+3. **Questions**: "Confermi?" — opzioni: `["Si, aggiungi", "No, annulla"]`.
+4. Se si → aggiungo al todo con numerazione progressiva.
+
+**Modifica/Elimina**:
+1. **Questions**: "Indica il numero della task".
+2. **Questions**: "Modifica o elimina?" — opzioni: `["Modifica", "Elimina"]`.
+3. Se modifica → **Questions**: cosa cambiare (descrizione, priorità, file).
+4. Se elimina → **doppia conferma esplicita**:
+    - Prima: "Sei sicuro di voler eliminare la task N?"
+    - Seconda: "Conferma eliminazione definitiva della task N".
+5. Eseguo solo dopo entrambe le conferme.
+
+---
+
+### Comando \check
+
+Report rapido senza domande quando l'utente scrive `\check`:
+
+1. Eseguire la **Fase A — Check iniziale** di `\todo`.
+2. Mostrare report con data aggiornamento, conteggio per priorità e lista task.
+3. Fine (zero domande successive).
+
+### Comando \audit
+
+Flusso di audit completo quando l'utente scrive `\audit`:
+
+**Fase A — Design Review** (skill: `frontend-design`)
+
+1. Scansionare tutti i file React guest (`resources/js/guest/**/*.jsx`).
+2. Scansionare tutti i file Blade admin (`resources/views/admin/**/*.blade.php`).
+3. Per ogni file, verificare: palette, tipografia, layout, firma visiva, motion.
+4. Output: elenco finding con `file:riga`, priorità (high/medium/low), raccomandazione.
+
+**Fase B — Web Guidelines Audit** (skill: `web-design-guidelines`)
+
+1. Fetch delle linee guida fresche da:
+   `https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md`
+2. Scansionare tutti i file React (`resources/js/guest/**/*.jsx`).
+3. Verificare: accessibilità (aria, role, keyboard), responsive, reduced motion, performance.
+4. Output: elenco finding categorizzati per priorità.
+
+**Fase C — Writing Review** (skill: `writing-guidelines`)
+
+1. Fetch delle linee guida fresche da:
+   `https://raw.githubusercontent.com/vercel-labs/writing-guidelines/main/command.md`
+2. Scansionare tutti i file Markdown (`docs/**/*.md`, `README.md`, `AGENTS.md`).
+3. Verificare: ellipsis, heading case, passive voice, filler words, mixed language.
+4. Output: elenco finding con `file:riga` + tipo di problema.
+
+**Fase D — Report**
+
+1. Raggruppare tutti i finding per priorità (🔴 high → 🟡 medium → 🔵 low).
+2. Generare report con formato:
+
+```
+🔍 Audit completo — DD/MM/YYYY
+
+**File analizzati**: N React + M Blade + P Markdown = T totali
+**Finding totali**: X (🔴 Y high, 🟡 Z medium, 🔵 W low)
+
+### 🔴 High (da fixare)
+- [lista per file]
+
+### 🟡 Medium (da considerare)
+- [lista per file]
+
+### 🔵 Low (nice to have)
+- [lista per file]
+
+**Suggerimento**: trasformare i finding high in task nel todo.md?
+```
+
+3. Chiedere all'utente se vuole che i finding high vengano convertiti in task nel `docs/todo.md`.
+4. Se sì, aggiungere le task con formato `[Task N]` `[🟡][🎨/📝]` Descrizione — `file`.
 
 ## Skill installate
 
@@ -441,10 +597,10 @@ Tutte le task del piano sono completate. 377 test (267 PHPUnit + 110 Vitest).
 
 Tutti i bug residui risolti. 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 
-- [x] `[🟠][🎨]` Mobile nav Escape + click-outside — `Navbar.jsx`
+- [x] `[🟡][🎨]` Mobile nav Escape + click-outside — `Navbar.jsx`
 - [x] `[🔵][🧪]` Test accessor nome_display + immagine_url — `tests/Unit/CorpoCelesteTest.php` (6 test)
 - [x] `[🔵][🧪]` Test setImageFromGallery: non-admin 403, remote URL, flash — `CorpoCelesteActionsTest.php`
 - [x] `[🔵][🧪]` Test suggestNome: non-admin, caching, fallback raw Italian — `CorpoCelesteActionsTest.php`
 - [x] `[🔵][🧪]` Test ImportNasaImage job: implements, proprietà, uniqueId, handle, failed — `tests/Unit/ImportNasaImageTest.php` (9 test)
-- [x] `[🟠][🖥️]` memory_limit=512M — rimosso (codice inesistente)
+- [x] `[🟡][🖥️]` memory_limit=512M — rimosso (codice inesistente)
 - [x] `[🔵][🎨]` framer-motion mantenuto (uso legittimo in SolarSystem)

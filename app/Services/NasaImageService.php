@@ -58,26 +58,6 @@ class NasaImageService
                     ]);
                     continue;
                 }
-
-                $items = $response->json('collection.items');
-
-                if (!empty($items)) {
-                    $slimItems = array_map(function ($item) {
-                        $data = $item['data'][0] ?? [];
-                        return [
-                            'data' => [[
-                                'nasa_id' => $data['nasa_id'] ?? null,
-                                'title' => $data['title'] ?? null,
-                                'photographer' => $data['photographer'] ?? $data['secondary_creator'] ?? null,
-                                'description' => $data['description'] ?? null,
-                                'keywords' => $data['keywords'] ?? [],
-                            ]],
-                            'links' => $item['links'] ?? [],
-                        ];
-                    }, $items);
-
-                    return ['success' => true, 'items' => $slimItems, 'used_query' => $q];
-                }
             }
 
             return ['success' => false, 'message' => "Nessuna immagine trovata per \"{$query}\"."];
