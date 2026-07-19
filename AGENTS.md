@@ -511,17 +511,17 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 19/07/2026 — 19:25
+> _Ultimo aggiornamento:_ 19/07/2026 — 19:55
 
 | Campo               | Valore                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Branch**          | `master`                                                                                               |
-| **Commit HEAD**     | `42e47f3` — docs: Q&A presentazione 15 domande + elimina piani obsoleti                               |
+| **Commit HEAD**     | (da committare) — fix: API 500 cache serialization (pluck IDs + whereIn)                               |
 | **Test**            | 267 PHPUnit + 110 Vitest = 377 totali, tutti verdi                                                    |
-| **Modifiche**       | Nessuna (working tree pulito)                                                                          |
-| **Task completate** | Landing page redesign (100), Q&A presentazione (101), SolarSystem velocità, 99 task totali Completate  |
+| **Modifiche**       | 1 file: CorpoCelesteController.php (cache IDs + whereIn query)                                        |
+| **Task completate** | 102 task totali Completate                                                                             |
 | **Task in corso**   | Nessuna                                                                                                |
-| **Prossime azioni** | Nessuna task aperta — piano ottimizzazione completo, 101/101 task completate                            |
+| **Prossime azioni** | Nessuna task aperta — piano ottimizzazione completo                                                    |
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 

@@ -42,9 +42,14 @@ class CorpoCelesteController extends Controller
         $perPage = max(1, min($request->integer('per_page', 12), 100));
         $cacheKey = 'api.corpi-celesti.' . md5(serialize($request->query()));
 
-        $allCorpi = Cache::remember($cacheKey, 300, function () use ($query) {
-            return $query->orderBy('nome')->get();
+        $cachedIds = Cache::remember($cacheKey, 300, function () use ($query) {
+            return $query->orderBy('nome')->pluck('id')->toArray();
         });
+
+        $allCorpi = CorpoCeleste::with('categoria')
+            ->whereIn('id', $cachedIds)
+            ->orderBy('nome')
+            ->get();
 
         $paginated = new LengthAwarePaginator(
             $allCorpi->forPage($page, $perPage),

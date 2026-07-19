@@ -4,6 +4,7 @@
 
 ## 19/07/2026
 
+- `[🔴][🖥️]` Fix API 500 cache serialization — `Cache::remember` serializzava `Eloquent\Collection` → deserializzazione falliva su PHP 8.x. Fix: cachea solo gli ID (`pluck('id')`), re-query con `whereIn()` + `with('categoria')` — `CorpoCelesteController.php`
 - `[🟡][🎨]` Landing page redesign — items-start griglia, self-end SolarSystem, marginTop 4rem per posizionamento verticale — `HomePage.jsx`
 - `[🔵][📝]` Q&A presentazione — 15 domande/risposte legate alla traccia esame (architettura, Eloquent, sicurezza, NASA, test, animazioni, design patterns) — `docs/presentazione-progetto.md`
 - `[🟡][🎨]` SolarSystem velocità — normal 33%, hover 11% — `SolarSystem.jsx`

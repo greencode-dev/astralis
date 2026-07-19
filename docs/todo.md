@@ -16,6 +16,7 @@ _Ultimo aggiornamento: 19/07/2026_
 
 ### 19/07/2026
 
+- [x] [Task 102] `[🔴][🖥️]` Fix API 500 cache serialization — cachea solo gli ID (`pluck('id')`), re-query con `whereIn()` + `with('categoria')`. 267+110 test verdi — `CorpoCelesteController.php`
 - [x] [Task 101] `[🔵][📝]` Sezione Q&A in presentazione-progetto — 15 domande/risposte legate alla traccia esame (architettura, Eloquent, sicurezza, NASA, test, animazioni, design patterns) — `docs/presentazione-progetto.md`
 - [x] [Task 100] `[🟡][🎨]` Landing page redesign — items-start griglia, self-end SolarSystem, marginTop 4rem per posizionamento verticale — `HomePage.jsx`
 - [x] [Task 99] `[🟡][🎨]` Verifica card "In Evidenza" — card rendereggono correttamente, gestione errori OK, SolarSystem non causa crash. Nessuna azione necessaria — `HomePage.jsx`
