@@ -33,7 +33,7 @@ function Planet({ planet, hovered }) {
             const dt = (time - lastTimeRef.current) / 1000;
             lastTimeRef.current = time;
 
-            const multiplier = hovered ? 0.33 : 1;
+            const multiplier = hovered ? 0.11 : 0.33;
             angleRef.current = (angleRef.current + degreesPerSec * multiplier * dt) % 360;
 
             const rad = (angleRef.current * Math.PI) / 180;
