@@ -600,4 +600,96 @@ php artisan make:test NomeTest --unit
 
 ---
 
-_Documento generato il 09/07/2026 — Astralis v13.18_
+## 9. Domande Frequenti (Q&A)
+
+**Q1: Perché avete separato il frontend guest (React) dal backoffice admin (Blade)?**
+
+Per responsabilità e competenze diverse. Il guest è una SPA standalone che non richiede autenticazione e beneficia di transizioni fluide e animazioni client-side. Il backoffice è un CRUD classico dove Blade + Alpine.js è più semplice, più performante (nessun bundling JS pesante) e richiede meno competenze frontend. Inertia era stato installato inizialmente ma rimosso perché creava un livello intermedio inutile (Vedi Fase 11).
+
+---
+
+**Q2: Come funziona la comunicazione tra React SPA e backend Laravel?**
+
+La SPA non ha accesso diretto al server. Tutte le chiamate passano per `apiClient.js` (basato su axios) che invia richieste HTTP a `/api/*`. Il backend restituisce JSON tramite API Resources. Il catch-all `/{any}` in `web.php` passa qualsiasi URL non-admin a `guest.blade.php` che carica il bundle React. Il routing client è gestito da react-router-dom (Vedi Fase 3 e Fase 4-5).
+
+---
+
+**Q3: Che cos'è il problema N+1 e come lo avete risolto?**
+
+Si verifica quando in un loop si accede a una relazione Eloquent senza eager loading. Esempio: 10 missioni × 1 corpo ciascuna = 11 query invece di 2. Con `Missione::with('corpiCelesti')` si eseguono solo 2 query: una per la lista e una per tutti i corpi associati (Vedi Fase 14 e Scheda 2).
+
+---
+
+**Q4: Come avete gestito l'autorizzazione nel backoffice?**
+
+Tre livelli: (1) **Autenticazione** con Laravel Breeze, route protette dal middleware `auth`. (2) **Policy** — una per ogni entità (5 totali), con metodo `before()` che bypassa tutto per gli admin. (3) **Gate** `admin` definito in `AuthServiceProvider`, usato dai controller senza policy (Vedi Fase 12).
+
+---
+
+**Q5: Perché avete usato Intervention Image v4 con `scaleDown()` invece di `resize()`?**
+
+`resize()` forza le dimensioni e distorce l'immagine se l'aspect ratio non corrisponde. `scaleDown()` preserva l'aspect ratio e ridimensiona solo se l'immagine supera le dimensioni indicate. In v4 la facade `Image::read()` non esiste più: si usa `new ImageManager(new Driver())->decodePath()` (Vedi Fase 7).
+
+---
+
+**Q6: Come funziona l'integrazione con la NASA API?**
+
+Service layer centralizzato: `NasaImageService` gestisce ricerca, import e dedup. `searchNasa()` chiama `images-api.nasa.gov` con timeout 30s e retry 2. `importForBody()` importa 1 immagine principale + N per galleria. L'Observer `CorpoCelesteObserver` triggera l'import automatico alla creazione di ogni corpo celeste (Vedi Fase 8 e Fase 9).
+
+---
+
+**Q7: Come avete gestito i test con le dipendenze esterne (NASA API)?**
+
+Due strategie: (1) `Http::fake()` in `setUp()` di ogni test PHPUnit che crea CorpoCeleste — blocca chiamate HTTP reali. (2) L'Observer si disabilita automaticamente in testing con `app()->environment('testing')`. Totale: 377 test (267 PHPUnit + 110 Vitest) eseguibili offline (Vedi Fase 13).
+
+---
+
+**Q8: Come funziona il routing lato client con React?**
+
+`react-router-dom` definisce 5 route: `/`, `/corpi-celesti`, `/corpi-celesti/:slug`, `/confronta`, `/*` (404). Laravel cattura tutto con `Route::get('/{any}', fn() => view('guest'))->where('any', '.*')` e passa il controllo a React. La SPA gestisce internamente il routing senza full page reload.
+
+---
+
+**Q9: Che cos'è una API Resource e perché l'avete usata?**
+
+Trasforma un modello Eloquent in una struttura JSON controllata. Invece di restituire `CorpoCeleste::all()` (che esporrebbe tutti i campi), la Resource seleziona solo i campi che il frontend ha bisogno. Esempio: espone `nome_display` (accessor) ma non `nasa_id` o `immagine_utente` (Vedi Fase 3).
+
+---
+
+**Q10: Come avete implementato il Sistema Solare animato?**
+
+Soluzione finale con `requestAnimationFrame` + direct DOM manipulation. Un angolo cresce infinitamente per ogni pianeta, convertito in coordinate x/y con funzioni seno/coseno. Ogni pianeta ha velocità e raggio differenziati. Hover rallenta i pianeti al 33% della velocità normale. Zero re-render React durante animazione (Vedi Fase 6).
+
+---
+
+**Q11: Perché avete salvato URL remoti NASA invece di file locali?**
+
+Le immagini NASA in risoluzione originale possono essere enormi (MB ciascuna). Salvando l'URL remoto `~medium.jpg`: (1) risparmiamo storage, (2) evitiamo download enormi, (3) il browser carica da NASA CDN. Lo svantaggio è la dipendenza dalla rete, ma per un progetto accademico è un trade-off accettabile. Il comando `astralis:gallery --fix` sostituisce URL non raggiungibili con placeholder (Vedi Fase 9).
+
+---
+
+**Q12: Che cos'è il WordMapService e a cosa serve?**
+
+Servizio di traduzione italiano → inglese parola per parola, con ~70 termini astronomici. Quando un admin inserisce un nome italiano nel pannello NASA Import, il WordMapService traduce la query prima di cercare su NASA API. Cache con TTL di 1 ora (Vedi Fase 9).
+
+---
+
+**Q13: Come avete gestito la validazione dei dati?**
+
+Due livelli: (1) **Backend**: FormRequest dedicate (`StoreCorpoCelesteRequest`, `UpdateCorpoCelesteRequest`) con regole separate dal controller. (2) **Frontend**: React mostra messaggi di errore dall'API ma la validazione finale è sempre server-side (Vedi Fase 15).
+
+---
+
+**Q14: Perché avete rimosso Inertia.js dopo averlo installato?**
+
+Breeze di default installa Inertia per le pagine auth, ma la SPA React era già standalone. Inertia creava dipendenze inutili, middleware aggiuntivo e pagine JSX che duplicavano la logica Blade. Rimuovere Inertia ha semplificato l'architettura (Vedi Fase 11).
+
+---
+
+**Q15: Qual è il vantaggio dell'Observer Pattern rispetto a una chiamata diretta nel controller?**
+
+L'Observer viene eseguito automaticamente ogni volta che un CorpoCeleste viene creato, indipendentemente da dove: controller, seeder, test, comando Artisan. Con l'Observer, la logica NASA import è centralizzata e non duplicata. Unico svantaggio: bisogna disabilitarlo nei test (Vedi Fase 8).
+
+---
+
+_Documento generato il 19/07/2026 — Astralis v13.18_
