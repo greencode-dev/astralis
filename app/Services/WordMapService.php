@@ -4,9 +4,14 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class WordMapService
 {
+    public const CUSTOM_MAP_PATH = 'wordmap-custom.json';
+
+    private ?array $mergedMap = null;
+
     private array $wordMap = [
         'Nebulosa di Orione' => 'Orion Nebula',
         'Cometa di Halley' => "Halley's Comet",
@@ -86,7 +91,7 @@ class WordMapService
     {
         $result = $nomeIt;
 
-        $phrases = collect($this->wordMap)
+        $phrases = collect($this->map())
             ->filter(fn($v, $k) => str_contains($k, ' '))
             ->sortBy(fn($v, $k) => -str_word_count($k));
 
@@ -95,9 +100,62 @@ class WordMapService
         }
 
         return collect(explode(' ', $result))
-            ->map(fn($w) => $this->wordMap[ucfirst($w)] ?? $this->wordMap[$w] ?? $w)
+            ->map(fn($w) => $this->map()[ucfirst($w)] ?? $this->map()[$w] ?? $w)
             ->filter()
             ->implode(' ');
+    }
+
+    /**
+     * Merge the static wordMap with the persisted custom map
+     * (storage/app/wordmap-custom.json). Custom entries take precedence.
+     */
+    private function map(): array
+    {
+        if ($this->mergedMap !== null) {
+            return $this->mergedMap;
+        }
+
+        $custom = [];
+        if (Storage::disk('local')->exists(self::CUSTOM_MAP_PATH)) {
+            $custom = json_decode(
+                Storage::disk('local')->get(self::CUSTOM_MAP_PATH),
+                true
+            ) ?: [];
+        }
+
+        $this->mergedMap = array_merge($this->wordMap, $custom);
+
+        return $this->mergedMap;
+    }
+
+    /**
+     * Persist a new Italian→English mapping learned from the
+     * MyMemory fallback so the offline map stays populated.
+     */
+    public function saveCustomTranslation(string $it, string $en): void
+    {
+        $it = trim($it);
+        $en = trim($en);
+
+        if ($it === '' || $en === '' || strcasecmp($it, $en) === 0) {
+            return;
+        }
+
+        $custom = [];
+        if (Storage::disk('local')->exists(self::CUSTOM_MAP_PATH)) {
+            $custom = json_decode(
+                Storage::disk('local')->get(self::CUSTOM_MAP_PATH),
+                true
+            ) ?: [];
+        }
+
+        $custom[$it] = $en;
+        $this->mergedMap = null;
+
+        Storage::disk('local')->put(
+            self::CUSTOM_MAP_PATH,
+            json_encode($custom, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+        );
     }
 
     public function guessEnglishName(array $items, string $query): ?string
@@ -150,6 +208,8 @@ class WordMapService
             $result = $this->cleanTranslationOutput($translated, $cleaned);
 
             if ($result && $result !== $cleaned) {
+                $this->saveCustomTranslation($cleaned, $result);
+
                 return $result;
             }
 

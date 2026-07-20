@@ -112,7 +112,7 @@ class NasaImageService
         }
 
         $nomeIt = $corpo->nome;
-        $nomeEn = $this->wordMap->translate($nomeIt);
+        $nomeEn = $corpo->nome_en ?: $this->wordMap->translate($nomeIt);
 
         $extraFallbacks = [];
         if ($nomeEn !== $nomeIt) {

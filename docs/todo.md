@@ -6,9 +6,7 @@ _Ultimo aggiornamento: 20/07/2026_
 
 ## Da Fare
 
-- [ ] [Task 111] `[🟡][🖥️]` Route: endpoint translate, search-gallery, remove-gallery (gallery-add aggiunto in Task 112) — `routes/web.php`
-- [ ] [Task 107] `[🟡][🖥️]` NasaImageService: aggiorna riferimenti a nome_en per ricerche NASA — `app/Services/NasaImageService.php`
-- [ ] [Task 106] `[🟡][🖥️]` WordMapService: auto-popola wordmap custom da MyMemory fallback + salva in storage/app/wordmap-custom.json — `app/Services/WordMapService.php`
+> Nessuna task aperta.
 
 ## In lavorazione
 
@@ -22,9 +20,12 @@ _Ultimo aggiornamento: 20/07/2026_
 - [x] [Task 114] `[🟡][🎨]` React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome — `resources/js/guest/`
 - [x] [Task 113] `[🟡][🎨]` JS: auto-translate debounce, galleria inline NASA selezione multipla, copertina preview, removePhoto — `resources/views/admin/corpi-celesti/_form.blade.php`
 - [x] [Task 112] `[🟡][🎨]` Blade: _form ristrutturato (6 sezioni, in_evidenza in alto, tipo dropdown custom, upload copertina file+URL, galleria inline) — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [x] [Task 111] `[🟡][🖥️]` Route: gallery-add (POST), translate (suggest-nome), remove (galleria.destroy), search-gallery client-side NASA — `routes/web.php`
 - [x] [Task 110] `[🟡][🖥️]` Resource: API response solo nome italiano — `app/Http/Resources/CorpoCelesteResource.php`
 - [x] [Task 109] `[🟡][🖥️]` Controller: admin CRUD nome_it→nome_en, suggestNome, upload copertina, galleryAdd — `app/Http/Controllers/Admin/CorpoCelesteController.php`
 - [x] [Task 108] `[🟡][🖥️]` Validation: Store/Update/SuggestNomeRequest campi nome/nome_en + immagine_file — `app/Http/Requests/`
+- [x] [Task 107] `[🟡][🖥️]` NasaImageService: importForBody usa nome_en se presente (fallback wordMap) — `app/Services/NasaImageService.php`
+- [x] [Task 106] `[🟡][🖥️]` WordMapService: auto-popola wordmap custom da MyMemory fallback + salva in storage/app/wordmap-custom.json — `app/Services/WordMapService.php`
 - [x] [Task 105] `[🟡][💾]` Factory + Seeder: swap nomi, immagini default pianeti da public/images/solar-system/, slug italiano — `database/seeders/`
 - [x] [Task 104] `[🔴][🖥️]` Model CorpoCeleste: fillable nome_en, rimosso accessor nome_display, esteso immagine_url — `app/Models/CorpoCeleste.php`
 - [x] [Task 103] `[🔴][💾]` Migrazione DB: rename nome_it→nome, nome→nome_en + swap dati + rigenera slug — `database/migrations/`
@@ -205,7 +206,7 @@ _Ultimo aggiornamento: 20/07/2026_
 
 ## Note
 
-- **Stato**: 3 task aperte. 115 task totali (3 Da Fare + 112 Completate). 378 test (268 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 0 task aperte. 115 task totali (0 Da Fare + 115 Completate). 380 test (270 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Completate**
 - Formato per aggiungere un nuovo task:
     ```

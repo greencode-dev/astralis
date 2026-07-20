@@ -4,11 +4,14 @@
 
 ## 20/07/2026
 
+- `[🟡][🖥️]` Piano rinomina campi completato (Task 103-115) — `nome_it`→`nome` (IT primary), `nome`→`nome_en` (EN nullable), rimosso accessor `nome_display`, React API solo `nome`, slug rigenerati IT. Form admin ristrutturato (in_evidenza toggle, tipo dropdown custom, upload copertina file+URL, galleria inline NASA). WordMapService auto-popola `wordmap-custom.json` da MyMemory; NasaImageService usa `nome_en` — `CorpoCeleste.php`, `_form.blade.php`, `WordMapService.php`, `NasaImageService.php`, `routes/web.php`
+- `[🟡][🎨]` Form admin _form: in_evidenza Alpine toggle top-right, tipo select + custom option, copertina upload (Laravel Storage nativo) con preview, galleria inline (NASA search multi-select, copertina/rimuovi, add/remove) — `resources/views/admin/corpi-celesti/_form.blade.php`
+- `[🟡][🖥️]` Controller + Route: `immagine_file` in store/update (ImageUploadService), nuovo `galleryAdd` (POST gallery-add), validation `immagine_file` — `CorpoCelesteController.php`, `StoreCorpoCelesteRequest.php`, `routes/web.php`
 - `[🟡][🎨]` SolarSystem debug cleanup — rimosso tutto il codice debug (overlay blu/verde/magenta/rosso/giallo, griglia 50px, outline Sole, DebugNebuloseLine, badge BUILD_ID, TestSolar + rotta /test-solar, SolarSystem.backup.jsx, 19 script .cjs). Sole centrato al geometrico (335,335) con `transformOrigin: center` — `SolarSystem.jsx`, `HomePage.jsx`, `App.jsx`, `main.jsx`
 - `[🟡][🎨]` SolarSystem positioning — sistema solare spostato 350px a sinistra, orbite ingrandite (MIN 100, MAX 380), rimosso offset verticale +81px. Griglia `lg:grid-cols-[1.2fr_0.8fr]` — `SolarSystem.jsx`, `HomePage.jsx`
 - `[🟢][🖥️]` vite.config — dev server 127.0.0.1:5175, strictPort true — `vite.config.js`
 
-**Test**: 377 totali (267 PHPUnit + 110 Vitest), tutti verdi.
+**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
 
 ---
 

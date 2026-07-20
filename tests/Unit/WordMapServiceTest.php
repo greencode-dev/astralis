@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Services\WordMapService;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class WordMapServiceTest extends TestCase
@@ -79,5 +80,26 @@ class WordMapServiceTest extends TestCase
         $result = $this->service->guessEnglishName($items, 'Zorgon');
 
         $this->assertEquals('Mars Rover', $result);
+    }
+
+    public function test_save_custom_translation_is_persisted_and_used(): void
+    {
+        $this->service->saveCustomTranslation('Pianeta Vulcano', 'Vulcan Planet');
+
+        $fresh = new WordMapService();
+        $this->assertEquals('Vulcan Planet', $fresh->translate('Pianeta Vulcano'));
+
+        Storage::disk('local')->delete(WordMapService::CUSTOM_MAP_PATH);
+    }
+
+    public function test_save_custom_translation_skips_identical_pairs(): void
+    {
+        Storage::disk('local')->delete(WordMapService::CUSTOM_MAP_PATH);
+
+        $this->service->saveCustomTranslation('Marte', 'Marte');
+
+        $this->assertFalse(
+            Storage::disk('local')->exists(WordMapService::CUSTOM_MAP_PATH)
+        );
     }
 }

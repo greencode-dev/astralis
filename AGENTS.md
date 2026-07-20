@@ -511,15 +511,15 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 20/07/2026 — 22:45
+> _Ultimo aggiornamento:_ 20/07/2026 — 23:15
 
 | Campo               | Valore                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Branch**          | `master`                                                                                               |
-| **Test**            | 268 PHPUnit + 110 Vitest = 378 totali, tutti verdi                                                    |
-| **Task completate** | 112 task totali completate                                                                              |
-| **Task in corso**   | Piano rinomina campi + galleria inline (Task 103-115) — restano Task 106, 107, 111                    |
-| **Prossime azioni** | Task 106: WordMapService auto-popola da MyMemory; Task 107: NasaImageService usa nome_en              |
+| **Test**            | 270 PHPUnit + 110 Vitest = 380 totali, tutti verdi                                                    |
+| **Task completate** | 115 task totali completate (piano rinomina campi 103-115 chiuso)                                       |
+| **Task in corso**   | Nessuno — piano rinomina campi + galleria inline completato                                            |
+| **Prossime azioni** | Audit design/UX del nuovo form admin; eventuali future task (Cerca info NASA, SBDB/Horizons)           |
 
 ### Piano rinomina campi + galleria inline (Task 103-115)
 
@@ -530,11 +530,11 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 | **1** | Migrazione DB: rename colonne + swap dati + rigenera slug italiano           | 103    | ✅    |
 | **2** | Model: fillable, rimuovi accessor nome_display, estendi immagine_url         | 104    | ✅    |
 | **3** | Factory + Seeder: swap nomi, immagini default pianeti, slug                  | 105    | ✅    |
-| **4** | Service: WordMapService auto-popola, NasaImageService usa nome_en            | 106-107| ⬜    |
+| **4** | Service: WordMapService auto-popola, NasaImageService usa nome_en            | 106-107| ✅    |
 | **5** | Validation: Store, Update, SuggestNomeRequest                                | 108    | ✅    |
 | **6** | Controller: admin CRUD, API, translate route, upload copertina, galleryAdd  | 109    | ✅    |
 | **7** | Resource: API response solo nome (italiano)                                  | 110    | ✅    |
-| **8** | Route: nuove endpoint translate, gallery (gallery-add aggiunto)              | 111    | ⬜    |
+| **8** | Route: nuove endpoint translate, gallery (gallery-add aggiunto)              | 111    | ✅    |
 | **9** | Blade: _form ristrutturato (6 sezioni), show, dashboard                     | 112    | ✅    |
 | **10**| JS: auto-translate debounce, galleria inline, copertina preview             | 113    | ✅    |
 | **11**| React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome            | 114    | ✅    |
