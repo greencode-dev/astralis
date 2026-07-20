@@ -303,7 +303,7 @@ php artisan astralis:fetch-nasa --gallery=5
 php artisan astralis:gallery --fix
 
 # 10. Ricostruisce il grafo della conoscenza (per il comando /graphify)
-npx graphify update .
+python -m graphify update .
 
 # 11. Avvia (due terminali separati)
 php artisan serve     # Terminale 1: backend
@@ -334,7 +334,7 @@ php artisan storage:link
 php artisan astralis:gallery --fix
 
 # 5. Grafo conoscenza
-npx graphify update .
+python -m graphify update .
 
 # 6. Verifica
 php artisan test   # 252 test PHPUnit

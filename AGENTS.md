@@ -502,7 +502,7 @@ Procedura rapida:
 3. `php artisan migrate` — applica nuove migrazioni
 4. `php artisan storage:link` — ricrea il symlink storage
 5. `php artisan astralis:gallery --fix` — ripara immagini galleria se necessario
-6. `npx graphify update .` — ricostruisce il grafo locale
+6. `python -m graphify update .` — ricostruisce il grafo locale (graphify è il pacchetto Python, non l'npm)
 7. Verifica `git status` — working tree deve essere pulito dopo grafo
 
 Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-opencode-skills`](docs/documentazione.md#setup-opencode-skills).
