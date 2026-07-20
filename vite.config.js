@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
+const { gen } = require('./build-id.js');
+
+gen();
 
 export default defineConfig({
     plugins: [
@@ -14,6 +17,9 @@ export default defineConfig({
         react(),
     ],
     server: {
+        host: '127.0.0.1',
+        port: 5175,
+        strictPort: true,
         proxy: {
             '/api': 'http://localhost:8000',
         },

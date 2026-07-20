@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom';
 
 const CONTENT_SIZE = 670;
 
-const ORBIT_MIN = 75;
-const ORBIT_MAX = 310;
+const ORBIT_MIN = 100;
+const ORBIT_MAX = 380;
 const ORBIT_STEP = (ORBIT_MAX - ORBIT_MIN) / 7;
+
+// Centro del Sole in coordinate locali del contenitore 670x670.
+// Verificato manualmente: orbita Mercurio (width/height 100, left/top -50)
+// si centra col Sole a translate(335px, 335px).
+const SOLAR_CENTER = { x: 335, y: 335 };
 
 const planets = [
     { name: 'Mercurio', slug: 'mercurio', size: 30, orbit: ORBIT_MIN, color: '#94A3B8', speed: 1.2, img: '/images/solar-system/mercurio.png' },
@@ -115,8 +120,13 @@ export default function SolarSystem({ showStars = true }) {
     return (
         <div
             ref={containerRef}
-            className="relative w-full"
-            style={{ aspectRatio: '670 / 720' }}
+            className="relative w-full max-w-[440px] ml-auto mr-0"
+            style={{ 
+                aspectRatio: '670 / 720',
+                height: 'auto',
+                minHeight: '280px',
+                maxHeight: '480px'
+            }}
             role="img"
             aria-label="Sistema solare interattivo — clicca un corpo celeste per vederne il dettaglio"
             onMouseEnter={() => setHovered(true)}
@@ -147,27 +157,29 @@ export default function SolarSystem({ showStars = true }) {
                     height: CONTENT_SIZE,
                     left: '50%',
                     top: '50%',
-                    transform: `translate(-50%, -50%) scale(${scale})`,
+                    transform: `translate(calc(-50% - 350px), -50%) scale(${scale})`,
                     transformOrigin: 'center',
                 }}
             >
-                <Link to="/corpi-celesti/sole" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 planet-hover group" aria-label="Sole">
-                    <img
-                        src="/images/solar-system/sole.png"
-                        alt="Sole"
-                        className="rounded-full object-contain animate-pulse-sun"
-                        style={{
-                            width: 120,
-                            height: 120,
-                        }}
-                    />
-                    <div className="text-center mt-2 text-sm font-semibold text-admin-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                <Link to="/corpi-celesti/sole" className="absolute z-10 planet-hover group" aria-label="Sole" style={{ left: SOLAR_CENTER.x, top: SOLAR_CENTER.y, transform: 'translate(-50%, -50%)' }}>
+                    <div className="animate-pulse-sun flex items-center justify-center">
+                        <img
+                            src="/images/solar-system/sole.png"
+                            alt="Sole"
+                            className="rounded-full object-contain"
+                            style={{
+                                width: 120,
+                                height: 120,
+                            }}
+                        />
+                    </div>
+                    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 text-center text-sm font-semibold text-admin-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
                         Sole
                     </div>
                 </Link>
 
-                <div className="absolute inset-0 z-[5] flex items-center justify-center pointer-events-none">
-                    <div style={{ width: 0, height: 0 }} className="pointer-events-auto">
+                <div className="absolute inset-0 z-[5] pointer-events-none">
+                    <div className="absolute pointer-events-auto" style={{ left: SOLAR_CENTER.x, top: SOLAR_CENTER.y }}>
                         {planets.map(planet => (
                             <div
                                 key={planet.name}

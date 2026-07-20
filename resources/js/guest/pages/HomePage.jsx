@@ -72,9 +72,14 @@ export default function HomePage() {
                 <HeroStars />
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 min-h-screen flex items-center">
-                    <div className="grid lg:grid-cols-2 gap-12 items-start w-full">
-                        {/* Text — col 1 */}
-                        <div className="animate-slide-left">
+                    <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 lg:items-start items-center w-full">
+                        {/* SolarSystem — left col on desktop, top on mobile */}
+                        <div className="animate-fade-scale order-first lg:order-first pt-16 lg:pt-4">
+                            <SolarSystem showStars={false} />
+                        </div>
+
+                        {/* Text — right col on desktop, bottom on mobile */}
+                        <div className="animate-slide-left order-last lg:order-last">
                             <div className="flex items-center gap-2 mb-4">
                                 <Sparkles
                                     size={20}
@@ -85,18 +90,16 @@ export default function HomePage() {
                                 </span>
                             </div>
                             <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight mb-6 text-admin-text">
-                                Esplora{" "}
-                                <span className="text-admin-primary">
-                                    l'Universo
-                                </span>
+                                Esplora {" "}
+                                <span className="text-admin-primary">l'Universo</span>
                                 <br />
                                 con Astralis
                             </h1>
                             <p className="text-lg lg:text-xl mb-8 leading-relaxed text-admin-dim">
                                 Un catalogo interattivo di pianeti, stelle,
-                                galassie e nebulose. Scopri i segreti del cosmo
-                                attraverso dati scientifici e immagini
-                                spettacolari.
+                                 galassie e <span className="bg-yellow-400/20">nebulose</span>. Scopri i segreti del cosmo
+                                 attraverso dati scientifici e immagini
+                                 spettacolari.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <Link
@@ -137,11 +140,6 @@ export default function HomePage() {
                                     </div>
                                 </div>
                             )}
-                        </div>
-
-                        {/* SolarSystem — col 2 */}
-                        <div className="hidden lg:block animate-fade-scale self-end" style={{ animationDelay: "0.3s", marginTop: "4rem" }}>
-                            <SolarSystem showStars={false} />
                         </div>
                     </div>
                 </div>
