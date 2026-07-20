@@ -76,10 +76,10 @@
         @error('descrizione')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <button type="submit"
-                class="admin-btn-primary">{{ $isEdit ? 'Aggiorna Missione' : 'Salva Missione' }}</button>
+                class="admin-btn-primary sm:w-auto w-full">{{ $isEdit ? 'Aggiorna Missione' : 'Salva Missione' }}</button>
         <a href="{{ route('admin.missioni.index') }}"
-           class="admin-btn-cancel">Annulla</a>
+           class="admin-btn-cancel sm:w-auto w-full text-center">Annulla</a>
     </div>
 </form>

@@ -1,22 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-const CONTENT_SIZE = 670;
+const CONTENT_SIZE = 900;
 
-const ORBIT_MIN = 100;
-const ORBIT_MAX = 380;
+const ORBIT_MIN = 130;
+const ORBIT_MAX = 500;
 const ORBIT_STEP = (ORBIT_MAX - ORBIT_MIN) / 7;
 
-// Centro del Sole in coordinate locali del contenitore 670x670.
-// Verificato manualmente: orbita Mercurio (width/height 100, left/top -50)
-// si centra col Sole a translate(335px, 335px).
-const SOLAR_CENTER = { x: 335, y: 335 };
+const SOLAR_CENTER = { x: 450, y: 450 };
 
 const planets = [
     {
         name: "Mercurio",
         slug: "mercurio",
-        size: 30,
+        size: 25,
         orbit: ORBIT_MIN,
         color: "#94A3B8",
         speed: 1.2,
@@ -25,7 +22,7 @@ const planets = [
     {
         name: "Venere",
         slug: "venere",
-        size: 38,
+        size: 40,
         orbit: ORBIT_MIN + ORBIT_STEP,
         color: "#F97316",
         speed: 1.5,
@@ -34,7 +31,7 @@ const planets = [
     {
         name: "Terra",
         slug: "terra",
-        size: 44,
+        size: 45,
         orbit: ORBIT_MIN + ORBIT_STEP * 2,
         color: "#22D3EE",
         speed: 1.8,
@@ -43,7 +40,7 @@ const planets = [
     {
         name: "Marte",
         slug: "marte",
-        size: 36,
+        size: 35,
         orbit: ORBIT_MIN + ORBIT_STEP * 3,
         color: "#EF4444",
         speed: 2.5,
@@ -52,7 +49,7 @@ const planets = [
     {
         name: "Giove",
         slug: "giove",
-        size: 70,
+        size: 90,
         orbit: ORBIT_MIN + ORBIT_STEP * 4,
         color: "#FACC15",
         speed: 3,
@@ -61,7 +58,7 @@ const planets = [
     {
         name: "Saturno",
         slug: "saturno",
-        size: 72,
+        size: 85,
         orbit: ORBIT_MIN + ORBIT_STEP * 5,
         color: "#D4A373",
         speed: 3.5,
@@ -70,7 +67,7 @@ const planets = [
     {
         name: "Urano",
         slug: "urano",
-        size: 50,
+        size: 55,
         orbit: ORBIT_MIN + ORBIT_STEP * 6,
         color: "#67E8F9",
         speed: 4,
@@ -79,7 +76,7 @@ const planets = [
     {
         name: "Nettuno",
         slug: "nettuno",
-        size: 50,
+        size: 55,
         orbit: ORBIT_MAX,
         color: "#3B82F6",
         speed: 5,
@@ -200,12 +197,12 @@ export default function SolarSystem({ showStars = true }) {
     return (
         <div
             ref={containerRef}
-            className="relative w-full max-w-[440px] ml-auto mr-0"
+            className="relative w-full max-w-[600px] ml-auto mr-0"
             style={{
-                aspectRatio: "670 / 720",
+                aspectRatio: "900 / 950",
                 height: "auto",
                 minHeight: "280px",
-                maxHeight: "480px",
+                maxHeight: "600px",
             }}
             role="img"
             aria-label="Sistema solare interattivo — clicca un corpo celeste per vederne il dettaglio"
@@ -260,8 +257,8 @@ export default function SolarSystem({ showStars = true }) {
                             alt="Sole"
                             className="rounded-full object-contain"
                             style={{
-                                width: 120,
-                                height: 120,
+                                width: 150,
+                                height: 150,
                             }}
                         />
                     </div>
@@ -278,7 +275,7 @@ export default function SolarSystem({ showStars = true }) {
                         {planets.map((planet) => (
                             <div
                                 key={planet.name}
-                                className="absolute rounded-full border border-admin-primary/15"
+                                className="absolute rounded-full border border-admin-primary/25"
                                 style={{
                                     width: planet.orbit * 2,
                                     height: planet.orbit * 2,

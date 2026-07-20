@@ -20,12 +20,15 @@ class CorpoCelesteActionsTest extends AdminTestCase
         $this->corpo = CorpoCeleste::factory()->create();
     }
 
-    public function test_suggest_nome_requires_nome_it(): void
+    public function test_suggest_nome_requires_at_least_one_name(): void
     {
         $response = $this->actingAs($this->admin)
             ->postJson(route('admin.corpi-celesti.suggest-nome'), []);
 
-        $response->assertInvalid(['nome_it']);
+        $decoded = json_decode($response->content(), true);
+        $this->assertNotNull($decoded, 'Response should be valid JSON');
+        $this->assertFalse($decoded['success'] ?? true);
+        $this->assertEquals('Inserisci almeno un nome.', $decoded['message'] ?? '');
     }
 
     public function test_suggest_nome_returns_suggestion_when_nasa_matches(): void
@@ -62,20 +65,11 @@ class CorpoCelesteActionsTest extends AdminTestCase
     {
         Cache::flush();
 
-        $mock = \Mockery::mock(NasaImageService::class);
-        $mock->shouldReceive('searchNasa')
-            ->once()
-            ->andReturn([
-                'success' => false,
-                'message' => 'No results',
-            ]);
-        $this->app->instance(NasaImageService::class, $mock);
-
         $response = $this->actingAs($this->admin)
             ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Xyznotexist']);
 
         $response->assertOk()
-            ->assertJson(['success' => false]);
+            ->assertJson(['success' => false, 'needs_manual' => true]);
     }
 
     public function test_suggest_nome_guest_cannot_access(): void
@@ -198,13 +192,13 @@ class CorpoCelesteActionsTest extends AdminTestCase
             ->assertJson(['success' => true, 'nome' => 'Jupiter']);
     }
 
-    public function test_suggest_nome_caches_result(): void
+    public function test_suggest_nome_returns_consistent_results(): void
     {
         Cache::flush();
 
         $mock = \Mockery::mock(NasaImageService::class);
         $mock->shouldReceive('searchNasa')
-            ->once()
+            ->times(2)
             ->with('Jupiter')
             ->andReturn([
                 'success' => true,
@@ -231,33 +225,18 @@ class CorpoCelesteActionsTest extends AdminTestCase
             ->assertJson(['success' => true, 'nome' => 'Jupiter']);
     }
 
-    public function test_suggest_nome_falls_back_to_raw_italian_search(): void
+    public function test_suggest_nome_returns_manual_when_translation_fails(): void
     {
         Cache::flush();
-
-        $mock = \Mockery::mock(NasaImageService::class);
-        $mock->shouldReceive('searchNasa')
-            ->once()
-            ->with('Xnotreal')
-            ->andReturn([
-                'success' => true,
-                'items' => [
-                    [
-                        'data' => [
-                            [
-                                'title' => 'Xnotreal',
-                                'keywords' => ['test'],
-                            ],
-                        ],
-                    ],
-                ],
-            ]);
-        $this->app->instance(NasaImageService::class, $mock);
 
         $response = $this->actingAs($this->admin)
             ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Xnotreal']);
 
         $response->assertOk()
-            ->assertJson(['success' => true, 'nome' => 'Xnotreal']);
+            ->assertJson([
+                'success' => false,
+                'needs_manual' => true,
+                'message' => 'Impossibile tradurre automaticamente. Inserisci il nome inglese manualmente.',
+            ]);
     }
 }

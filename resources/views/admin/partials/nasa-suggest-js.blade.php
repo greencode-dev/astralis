@@ -2,9 +2,10 @@
 <script>
 document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
     var nomeIt = document.getElementById('nome_it').value.trim();
+    var nomeEn = document.getElementById('nome').value.trim();
     var resultEl = document.getElementById('suggestResult');
-    if (!nomeIt) {
-        resultEl.textContent = 'Inserisci un nome in italiano.';
+    if (!nomeIt && !nomeEn) {
+        resultEl.textContent = 'Inserisci un nome in italiano o inglese.';
         resultEl.style.color = 'var(--color-admin-error)';
         return;
     }
@@ -18,7 +19,7 @@ document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
         },
-        body: JSON.stringify({ nome_it: nomeIt })
+        body: JSON.stringify({ nome_it: nomeIt, nome: nomeEn })
     })
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -26,6 +27,36 @@ document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
             document.getElementById('nome').value = data.nome;
             resultEl.textContent = 'Suggerito: ' + data.nome;
             resultEl.style.color = 'var(--color-admin-success)';
+        } else if (data.needs_manual) {
+            resultEl.innerHTML = '';
+            resultEl.style.color = 'var(--color-admin-neutral)';
+            var wrapper = document.createElement('div');
+            wrapper.style.display = 'flex';
+            wrapper.style.alignItems = 'center';
+            wrapper.style.gap = '0.5rem';
+            wrapper.style.marginTop = '0.25rem';
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Nome inglese su NASA (es. Orion Nebula)';
+            input.className = 'admin-input';
+            input.style.flex = '1';
+            input.id = 'manualNasaInput';
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.textContent = 'Usa';
+            btn.className = 'admin-btn-primary';
+            btn.addEventListener('click', function() {
+                var val = input.value.trim();
+                if (val) {
+                    document.getElementById('nome').value = val;
+                    resultEl.textContent = 'Impostato: ' + val;
+                    resultEl.style.color = 'var(--color-admin-success)';
+                }
+            });
+            wrapper.appendChild(input);
+            wrapper.appendChild(btn);
+            resultEl.appendChild(wrapper);
+            input.focus();
         } else {
             resultEl.textContent = data.message;
             resultEl.style.color = 'var(--color-admin-error)';

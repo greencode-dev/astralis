@@ -14,7 +14,6 @@ use App\Services\NasaImageService;
 use App\Services\WordMapService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -151,9 +150,19 @@ class CorpoCelesteController extends Controller
         $this->authorize('viewAny', CorpoCeleste::class);
 
         $nomeIt = $request->input('nome_it');
-        $cacheKey = 'suggest_nome_' . md5($nomeIt);
+        $nomeEn = $request->input('nome');
 
-        return Cache::remember($cacheKey, 3600, function () use ($nomeIt, $nasaService, $wordMapService) {
+        if ($nomeEn) {
+            $result = $nasaService->searchNasa($nomeEn);
+            if ($result['success']) {
+                $suggested = $wordMapService->guessEnglishName($result['items'], $nomeEn);
+                if ($suggested) {
+                    return response()->json(['success' => true, 'nome' => $suggested]);
+                }
+            }
+        }
+
+        if ($nomeIt) {
             $translated = $wordMapService->translate($nomeIt);
             if ($translated !== $nomeIt) {
                 $result = $nasaService->searchNasa($translated);
@@ -165,15 +174,24 @@ class CorpoCelesteController extends Controller
                 }
             }
 
-            $result = $nasaService->searchNasa($nomeIt);
-            if ($result['success']) {
-                $suggested = $wordMapService->guessEnglishName($result['items'], $nomeIt);
-                if ($suggested) {
-                    return response()->json(['success' => true, 'nome' => $suggested]);
+            $apiTranslated = $wordMapService->translateWithApi($nomeIt);
+            if ($apiTranslated) {
+                $result = $nasaService->searchNasa($apiTranslated);
+                if ($result['success']) {
+                    $suggested = $wordMapService->guessEnglishName($result['items'], $apiTranslated);
+                    if ($suggested) {
+                        return response()->json(['success' => true, 'nome' => $suggested]);
+                    }
                 }
             }
 
-            return response()->json(['success' => false, 'message' => 'Nome inglese non trovato. Prova a cercare manualmente su NASA.']);
-        });
+            return response()->json([
+                'success' => false,
+                'needs_manual' => true,
+                'message' => 'Impossibile tradurre automaticamente. Inserisci il nome inglese manualmente.',
+            ]);
+        }
+
+        return response()->json(['success' => false, 'message' => 'Inserisci almeno un nome.']);
     }
 }

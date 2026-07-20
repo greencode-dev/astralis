@@ -1,9 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
-const { gen } = require('./build-id.js');
-
-gen();
 
 export default defineConfig({
     plugins: [

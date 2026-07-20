@@ -24,7 +24,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Guest frontend**: React 18, Vite, framer-motion, react-router-dom, lucide-react, yet-another-react-lightbox
 - **Admin frontend**: Blade, Alpine.js (CDN da unpkg — no local fallback)
 - **CSS**: Tailwind CSS
-- **Upload**: Intervention Image v4 — **NO facade**. Usare `ImageManager(new Driver())->decodePath()`/`->decodeBinary()`, `scaleDown()` invece di `resize()`
+- **Upload**: Laravel Storage nativo (`disk('public')`) per copertine. Intervention Image v4 solo per import NASA (`scaleDown()`, NO facade)
 - **SSL**: `Http::withoutVerifying()` solo in local/testing (Windows)
 - **Slug**: spatie/laravel-sluggable
 
@@ -38,7 +38,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 ## Entità chiave
 
 1. **Categoria** — nome, slug, icona, descrizione, colore
-2. **CorpoCeleste** — nome, nome_it, slug, categoria_id, immagine, immagine_utente (boolean), descrizione, tipo, massa_kg, distanza_km, diametro_km, gravita, temperatura, periodo_orbitale, scopritore, anno_scoperta, in_evidenza, nasa_id
+2. **CorpoCeleste** — nome (italiano, primary), nome_en (inglese), slug, categoria_id, immagine, immagine_utente (boolean), descrizione, tipo, massa_kg, distanza_km, diametro_km, gravita, temperatura, periodo_orbitale, scopritore, anno_scoperta, in_evidenza, nasa_id
 3. **Missione** — nome, slug, logo, agenzia, data_lancio, durata_giorni, stato, descrizione, sito_web
 4. **Curiosità** — corpo_celeste_id, titolo, descrizione, fonte
 5. **GalleriaCorpo** — corpo_celeste_id, percorso (URL remoto o filename locale), didascalia, crediti, ordine
@@ -511,17 +511,46 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 20/07/2026 — 03:30
+> _Ultimo aggiornamento:_ 20/07/2026 — 15:30
 
 | Campo               | Valore                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Branch**          | `master`                                                                                               |
-| **Commit HEAD**     | `0f58648` — fix: SolarSystem centrato sul Sole e allineato al testo hero                                |
 | **Test**            | 267 PHPUnit + 110 Vitest = 377 totali, tutti verdi                                                    |
-| **Modifiche**       | 3 file: SolarSystem.jsx, HomePage.jsx, vite.config.js (formatting + docs)                              |
 | **Task completate** | 102 task totali completate                                                                              |
-| **Task in corso**   | Nessuna                                                                                                |
-| **Prossime azioni** | Nessuna task aperta — piano ottimizzazione completo                                                    |
+| **Task in corso**   | Piano rinomina campi + galleria inline (Task 103-115, 13 fasi)                                        |
+| **Prossime azioni** | Fase 1: Migrazione DB rename colonne + swap dati + slug italiano                                       |
+
+### Piano rinomina campi + galleria inline (Task 103-115)
+
+**Obiettivo**: Rinominare `nome_it`→`nome` (italiano, primary), `nome`→`nome_en` (inglese). Auto-traduzione IT→EN, galleria inline nel form, upload copertina Laravel nativo.
+
+| Fase | Descrizione                                                                 | Task   | Stato |
+| ---- | --------------------------------------------------------------------------- | ------ | ----- |
+| **1** | Migrazione DB: rename colonne + swap dati + rigenera slug italiano           | 103    | ⬜    |
+| **2** | Model: fillable, rimuovi accessor nome_display, estendi immagine_url         | 104    | ⬜    |
+| **3** | Factory + Seeder: swap nomi, immagini default pianeti, slug                  | 105    | ⬜    |
+| **4** | Service: WordMapService auto-popola, NasaImageService usa nome_en            | 106-107| ⬜    |
+| **5** | Validation: Store, Update, SuggestNomeRequest                                | 108    | ⬜    |
+| **6** | Controller: admin CRUD, API, translate route                                 | 109    | ⬜    |
+| **7** | Resource: API response solo nome (italiano)                                  | 110    | ⬜    |
+| **8** | Route: nuove endpoint translate, gallery                                     | 111    | ⬜    |
+| **9** | Blade: _form ristrutturato (6 sezioni), show, dashboard                     | 112    | ⬜    |
+| **10**| JS: auto-translate debounce, galleria inline, copertina preview             | 113    | ⬜    |
+| **11**| React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome            | 114    | ⬜    |
+| **12**| Test: PHP + JS aggiornati per nuovi campi                                    | 115    | ⬜    |
+
+**Decisioni chiave**:
+- Upload file: Laravel nativo (senza Intervention Image)
+- `nome_en`: nullable (tradotto auto, non bloccante)
+- Slug: rigenerati in italiano
+- Accessor `nome_display`: rimosso
+- React API: solo `nome` (italiano)
+- WordMapService: auto-popola da MyMemory fallback
+- Galleria: URL remoti NASA, nessun download locale
+- Immagini default: PNG da `public/images/solar-system/`
+- Bottone "Cerca info NASA": future task
+- SBDB/Horizons API: future task
 
 ### ✅ Completato — Piano ottimizzazione (Task 1-39)
 

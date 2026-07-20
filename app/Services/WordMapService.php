@@ -2,6 +2,9 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+
 class WordMapService
 {
     private array $wordMap = [
@@ -99,17 +102,95 @@ class WordMapService
 
     public function guessEnglishName(array $items, string $query): ?string
     {
-        $lower = strtolower($query);
+        $words = array_filter(explode(' ', strtolower($query)));
+        $best = null;
+        $bestScore = 0;
+
         foreach ($items as $item) {
             $title = $item['data'][0]['title'] ?? '';
             $keywords = $item['data'][0]['keywords'] ?? [];
-            $all = $title . ' ' . implode(' ', $keywords);
+            $all = strtolower($title . ' ' . implode(' ', $keywords));
 
-            if (preg_match('/\b' . preg_quote($lower, '/') . '\b/i', $all)) {
-                return $title;
+            $score = 0;
+            foreach ($words as $w) {
+                if (str_contains($all, $w)) {
+                    $score++;
+                }
+            }
+
+            if ($score > $bestScore) {
+                $bestScore = $score;
+                $best = $title;
             }
         }
 
-        return $items[0]['data'][0]['title'] ?? null;
+        return $bestScore > 0 ? $best : ($items[0]['data'][0]['title'] ?? null);
+    }
+
+    public function translateWithApi(string $nomeIt): ?string
+    {
+        $cleaned = $this->cleanTranslationInput($nomeIt);
+
+        try {
+            $http = Http::timeout(10)->retry(2, 500);
+            if (app()->environment('local', 'testing')) {
+                $http = $http->withoutVerifying();
+            }
+
+            $response = $http->get('https://api.mymemory.translated.net/get', [
+                'q' => $cleaned,
+                'langpair' => 'it|en',
+            ]);
+
+            if ($response->failed()) {
+                return null;
+            }
+
+            $translated = $response->json('responseData.translatedText', '');
+            $result = $this->cleanTranslationOutput($translated, $cleaned);
+
+            if ($result && $result !== $cleaned) {
+                return $result;
+            }
+
+            $matches = $response->json('matches', []);
+            foreach ($matches as $match) {
+                $candidate = $this->cleanTranslationOutput($match['translation'] ?? '', $cleaned);
+                if ($candidate && $candidate !== $cleaned) {
+                    return $candidate;
+                }
+            }
+
+            return null;
+        } catch (\Exception $e) {
+            Log::warning('MyMemory translation failed', [
+                'input' => $nomeIt,
+                'error' => $e->getMessage(),
+            ]);
+            return null;
+        }
+    }
+
+    private function cleanTranslationInput(string $input): string
+    {
+        $input = trim($input);
+        $input = preg_replace('/\s+/', ' ', $input);
+        return $input;
+    }
+
+    private function cleanTranslationOutput(string $translated, string $original): string
+    {
+        $translated = trim($translated);
+        $translated = preg_replace('/^[aA]\s+/', '', $translated);
+        $translated = preg_replace('/^[aA]n\s+/', '', $translated);
+        $translated = preg_replace('/^[Tt]he\s+/', '', $translated);
+        $translated = rtrim($translated, '.,;:!?');
+        $translated = trim($translated);
+
+        if (strtolower($translated) === strtolower($original)) {
+            return '';
+        }
+
+        return $translated;
     }
 }

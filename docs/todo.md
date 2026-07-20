@@ -6,7 +6,19 @@ _Ultimo aggiornamento: 20/07/2026_
 
 ## Da Fare
 
-> Nessuna task aperta.
+- [ ] [Task 115] `[🟡][🧪]` Test PHP + JS aggiornati per nuovi campi — `tests/`
+- [ ] [Task 114] `[🟡][🎨]` React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome — `resources/js/guest/`
+- [ ] [Task 113] `[🟡][🎨]` JS: auto-translate debounce, galleria inline NASA selezione multipla, copertina preview — `resources/views/admin/partials/`
+- [ ] [Task 112] `[🟡][🎨]` Blade: _form ristrutturato (6 sezioni, in_evidenza in alto, tipo dropdown, upload copertina, galleria inline) — `resources/views/admin/corpi-celesti/`
+- [ ] [Task 111] `[🟡][🖥️]` Route: nuove endpoint translate, search-gallery, add-gallery, remove-gallery — `routes/web.php`
+- [ ] [Task 110] `[🟡][🖥️]` Resource: API response solo nome italiano — `app/Http/Resources/CorpoCelesteResource.php`
+- [ ] [Task 109] `[🟡][🖥️]` Controller: aggiorna admin CRUD, API, aggiungi translate route — `app/Http/Controllers/`
+- [ ] [Task 108] `[🟡][🖥️]` Validation: StoreCorpoCelesteRequest, UpdateCorpoCelesteRequest, SuggestNomeRequest aggiorna campi — `app/Http/Requests/`
+- [ ] [Task 107] `[🟡][🖥️]` NasaImageService: aggiorna riferimenti a nome_en per ricerche NASA — `app/Services/NasaImageService.php`
+- [ ] [Task 106] `[🟡][🖥️]` WordMapService: auto-popola wordmap custom da MyMemory fallback + salva in storage/app/wordmap-custom.json — `app/Services/WordMapService.php`
+- [ ] [Task 105] `[🟡][💾]` Factory + Seeder: swap nomi, immagini default pianeti da public/images/solar-system/, slug italiano — `database/factories/`, `database/seeders/`
+- [ ] [Task 104] `[🔴][🖥️]` Model CorpoCeleste: aggiorna fillable, rimuovi accessor nome_display, estendi immagine_url — `app/Models/CorpoCeleste.php`
+- [ ] [Task 103] `[🔴][💾]` Migrazione DB: rename nome_it→nome, nome→nome_en + swap dati + rigenera slug — `database/migrations/`
 
 ## In lavorazione
 
@@ -188,7 +200,7 @@ _Ultimo aggiornamento: 20/07/2026_
 
 ## Note
 
-- **Stato**: 0 task aperte. 102 task totali (0 Da Fare + 102 Completate). 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 13 task aperte. 115 task totali (13 Da Fare + 102 Completate). 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Completate**
 - Formato per aggiungere un nuovo task:
     ```

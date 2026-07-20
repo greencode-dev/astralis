@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
     { path: "/", label: "Home" },
@@ -15,12 +15,16 @@ export default function Navbar() {
 
     useEffect(() => {
         if (!open) return;
-        const onKeyDown = (e) => { if (e.key === 'Escape') close(); };
-        document.addEventListener('keydown', onKeyDown);
-        return () => document.removeEventListener('keydown', onKeyDown);
+        const onKeyDown = (e) => {
+            if (e.key === "Escape") close();
+        };
+        document.addEventListener("keydown", onKeyDown);
+        return () => document.removeEventListener("keydown", onKeyDown);
     }, [open, close]);
 
-    useEffect(() => { close(); }, [location.pathname, close]);
+    useEffect(() => {
+        close();
+    }, [location.pathname, close]);
 
     return (
         <nav
@@ -30,7 +34,11 @@ export default function Navbar() {
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <Link to="/" className="flex items-center gap-3">
-                        <img src="/astralis_solo_logo_bianco.png" alt="Astralis" className="w-10 h-10" />
+                        <img
+                            src="/astralis_solo_logo_bianco.png"
+                            alt="Astralis"
+                            className="w-15 h-10"
+                        />
                         <span className="text-xl font-bold font-orbitron text-admin-primary">
                             Astralis
                         </span>
@@ -41,7 +49,7 @@ export default function Navbar() {
                         onClick={() => setOpen(!open)}
                         aria-expanded={open}
                         aria-controls="mobile-nav"
-                        aria-label={open ? 'Chiudi menu' : 'Apri menu'}
+                        aria-label={open ? "Chiudi menu" : "Apri menu"}
                     >
                         {open ? <X size={22} /> : <Menu size={22} />}
                     </button>
@@ -64,11 +72,18 @@ export default function Navbar() {
                 </div>
 
                 {open && (
-                    <div className="fixed inset-0 z-40 md:hidden" onClick={close} aria-hidden="true" />
+                    <div
+                        className="fixed inset-0 z-40 md:hidden"
+                        onClick={close}
+                        aria-hidden="true"
+                    />
                 )}
 
                 {open && (
-                    <div id="mobile-nav" className="absolute inset-x-0 top-16 z-50 md:hidden bg-admin-card border-b border-admin-primary/10 pb-4 space-y-1">
+                    <div
+                        id="mobile-nav"
+                        className="absolute inset-x-0 top-16 z-50 md:hidden bg-admin-card border-b border-admin-primary/10 pb-4 space-y-1"
+                    >
                         {navLinks.map((link) => {
                             const isActive = location.pathname === link.path;
                             return (

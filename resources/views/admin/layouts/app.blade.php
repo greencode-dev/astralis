@@ -29,7 +29,7 @@
                @click.away="sidebarOpen = false">
 
             <div class="flex items-center gap-3 px-6 py-5 border-b border-admin-primary/10">
-                <img src="/astralis_solo_logo_bianco.png" alt="Astralis" class="w-12 h-12" />
+                <img src="/astralis_solo_logo_bianco.png" alt="Astralis" class="w-18 h-12" />
                 <div>
                     <h1 class="text-lg font-bold font-orbitron text-admin-primary">Astralis</h1>
                     <p class="text-xs text-admin-secondary">Backoffice</p>
@@ -75,7 +75,7 @@
                 </div>
             </header>
 
-            <main id="main-content" class="flex-1 p-3 overflow-y-auto">
+            <main id="main-content" class="flex-1 p-3 sm:p-4 md:p-6 lg:p-8 overflow-y-auto">
                 @isset($slot)
                     {{ $slot }}
                 @else
