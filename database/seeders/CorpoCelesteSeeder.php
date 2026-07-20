@@ -26,8 +26,9 @@ class CorpoCelesteSeeder extends Seeder
             // Stelle (categoria_id = 2)
             [
                 'nome' => 'Sole',
+                'nome_en' => 'Sun',
                 'categoria_id' => 2,
-                'immagine' => 'sole.jpg',
+                'immagine' => 'public/images/solar-system/sole.png',
                 'descrizione' => 'Il Sole è la stella madre del sistema solare, una sfera di plasma con un diametro di circa 1.4 milioni di chilometri. La sua energia è il motore di tutta la vita sulla Terra.',
                 'tipo' => 'Stella nana gialla',
                 'massa_kg' => '1.989e30',
@@ -43,8 +44,9 @@ class CorpoCelesteSeeder extends Seeder
             // Pianeti (categoria_id = 1)
             [
                 'nome' => 'Mercurio',
+                'nome_en' => 'Mercury',
                 'categoria_id' => 1,
-                'immagine' => 'mercurio.jpg',
+                'immagine' => 'public/images/solar-system/mercurio.png',
                 'descrizione' => 'Mercurio è il pianeta più piccolo e più vicino al Sole. La sua superficie è craterizzata e simile alla Luna, senza atmosfera significativa.',
                 'tipo' => 'Pianeta roccioso',
                 'massa_kg' => '3.301e23',
@@ -59,8 +61,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Venere',
+                'nome_en' => 'Venus',
                 'categoria_id' => 1,
-                'immagine' => 'venere.jpg',
+                'immagine' => 'public/images/solar-system/venere.png',
                 'descrizione' => 'Venere è il pianeta più caldo del sistema solare a causa del suo spesso strato di nubi che intrappolano il calore. Ruota in senso opposto rispetto agli altri pianeti.',
                 'tipo' => 'Pianeta roccioso',
                 'massa_kg' => '4.867e24',
@@ -75,8 +78,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Terra',
+                'nome_en' => 'Earth',
                 'categoria_id' => 1,
-                'immagine' => 'terra.jpg',
+                'immagine' => 'public/images/solar-system/terra.png',
                 'descrizione' => 'La Terra è il terzo pianeta in ordine di distanza dal Sole e l\'unico noto ad ospitare la vita. Il 71% della sua superficie è coperta da acqua.',
                 'tipo' => 'Pianeta roccioso',
                 'massa_kg' => '5.972e24',
@@ -91,8 +95,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Marte',
+                'nome_en' => 'Mars',
                 'categoria_id' => 1,
-                'immagine' => 'marte.jpg',
+                'immagine' => 'public/images/solar-system/marte.png',
                 'descrizione' => 'Marte è il quarto pianeta del sistema solare, noto come il "pianeta rosso" per il suo colore dovuto all\'ossido di ferro sulla superficie.',
                 'tipo' => 'Pianeta roccioso',
                 'massa_kg' => '6.417e23',
@@ -107,8 +112,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Giove',
+                'nome_en' => 'Jupiter',
                 'categoria_id' => 1,
-                'immagine' => 'giove.jpg',
+                'immagine' => 'public/images/solar-system/giove.png',
                 'descrizione' => 'Giove è il pianeta più grande del sistema solare, una gigante gassosa con una massa pari a 2.5 volte quella di tutti gli altri pianeti messi insieme.',
                 'tipo' => 'Gigante gassoso',
                 'massa_kg' => '1.898e27',
@@ -123,8 +129,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Saturno',
+                'nome_en' => 'Saturn',
                 'categoria_id' => 1,
-                'immagine' => 'saturno.jpg',
+                'immagine' => 'public/images/solar-system/saturno.png',
                 'descrizione' => 'Saturno è il sesto pianeta del sistema solare, famoso per il suo spettacolare sistema di anelli composti principalmente da ghiaccio e polvere.',
                 'tipo' => 'Gigante gassoso',
                 'massa_kg' => '5.683e26',
@@ -139,8 +146,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Urano',
+                'nome_en' => 'Uranus',
                 'categoria_id' => 1,
-                'immagine' => 'urano.jpg',
+                'immagine' => 'public/images/solar-system/urano.png',
                 'descrizione' => 'Urano è il settimo pianeta del sistema solare, un gigante di ghiaccio con un caratteristico colore azzurro-verde dovuto al metano nella sua atmosfera.',
                 'tipo' => 'Gigante di ghiaccio',
                 'massa_kg' => '8.681e25',
@@ -155,8 +163,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Nettuno',
+                'nome_en' => 'Neptune',
                 'categoria_id' => 1,
-                'immagine' => 'nettuno.jpg',
+                'immagine' => 'public/images/solar-system/nettuno.png',
                 'descrizione' => 'Nettuno è l\'ottavo e più lontano pianeta del sistema solare. È un mondo blu e freddo con i venti più veloci del sistema solare, che raggiungono i 2100 km/h.',
                 'tipo' => 'Gigante di ghiaccio',
                 'massa_kg' => '1.024e26',
@@ -172,8 +181,9 @@ class CorpoCelesteSeeder extends Seeder
             // Lune (categoria_id = 3)
             [
                 'nome' => 'Luna',
+                'nome_en' => 'Moon',
                 'categoria_id' => 3,
-                'immagine' => 'luna.jpg',
+                'immagine' => null,
                 'descrizione' => 'La Luna è l\'unico satellite naturale della Terra e il quinto più grande del sistema solare. È l\'unico corpo celeste oltre la Terra ad essere stato visitato dall\'uomo.',
                 'tipo' => 'Satellite naturale',
                 'massa_kg' => '7.342e22',
@@ -188,8 +198,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Europa',
+                'nome_en' => 'Europa',
                 'categoria_id' => 3,
-                'immagine' => 'europa.jpg',
+                'immagine' => null,
                 'descrizione' => 'Europa è una delle lune di Giove, coperta da una crosta di ghiaccio d\'acqua che nasconde un oceano liquido, rendendola uno dei candidati più promettenti per la vita extraterrestre.',
                 'tipo' => 'Satellite ghiacciato',
                 'massa_kg' => '4.799e22',
@@ -204,8 +215,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Titano',
+                'nome_en' => 'Titan',
                 'categoria_id' => 3,
-                'immagine' => 'titano.jpg',
+                'immagine' => null,
                 'descrizione' => 'Titano è la più grande luna di Saturno, con una spessa atmosfera ricca di azoto e laghi di metano liquido sulla superficie.',
                 'tipo' => 'Satellite atmosferico',
                 'massa_kg' => '1.345e23',
@@ -221,8 +233,9 @@ class CorpoCelesteSeeder extends Seeder
             // Galassie (categoria_id = 4)
             [
                 'nome' => 'Andromeda',
+                'nome_en' => 'Andromeda Galaxy',
                 'categoria_id' => 4,
-                'immagine' => 'andromeda.jpg',
+                'immagine' => null,
                 'descrizione' => 'La Galassia di Andromeda è la galassia a spirale più vicina alla Via Lattea. È in rotta di collisione con la nostra galassia tra circa 4.5 miliardi di anni.',
                 'tipo' => 'Galassia a spirale',
                 'massa_kg' => '2.5e42',
@@ -237,8 +250,9 @@ class CorpoCelesteSeeder extends Seeder
             ],
             [
                 'nome' => 'Via Lattea',
+                'nome_en' => 'Milky Way',
                 'categoria_id' => 4,
-                'immagine' => 'via-lattea.jpg',
+                'immagine' => null,
                 'descrizione' => 'La Via Lattea è la galassia che ospita il sistema solare. Contiene oltre 100 miliardi di stelle ed ha un diametro di circa 100.000 anni luce.',
                 'tipo' => 'Galassia a spirale barrata',
                 'massa_kg' => '3.0e42',
@@ -254,8 +268,9 @@ class CorpoCelesteSeeder extends Seeder
             // Nebulose (categoria_id = 5)
             [
                 'nome' => 'Nebulosa di Orione',
+                'nome_en' => 'Orion Nebula',
                 'categoria_id' => 5,
-                'immagine' => 'orione.jpg',
+                'immagine' => null,
                 'descrizione' => 'La Nebulosa di Orione è una delle nebulose più luminose del cielo, visibile anche a occhio nudo. È un vivaio stellare dove nascono nuove stelle.',
                 'tipo' => 'Nebulosa a emissione',
                 'massa_kg' => '2.0e30',
@@ -271,8 +286,9 @@ class CorpoCelesteSeeder extends Seeder
             // Asteroidi (categoria_id = 6)
             [
                 'nome' => 'Cerere',
+                'nome_en' => 'Ceres',
                 'categoria_id' => 6,
-                'immagine' => 'cerere.jpg',
+                'immagine' => null,
                 'descrizione' => 'Cerere è il più grande asteroide della fascia principale tra Marte e Giove. È abbastanza grande da essere considerato un pianeta nano.',
                 'tipo' => 'Asteroide',
                 'massa_kg' => '9.393e20',
@@ -288,8 +304,9 @@ class CorpoCelesteSeeder extends Seeder
             // Comete (categoria_id = 7)
             [
                 'nome' => 'Cometa di Halley',
+                'nome_en' => 'Halley\'s Comet',
                 'categoria_id' => 7,
-                'immagine' => 'halley.jpg',
+                'immagine' => null,
                 'descrizione' => 'La Cometa di Halley è la più famosa cometa periodica, visibile dalla Terra ogni 75-76 anni. Il suo nucleo è composto da ghiaccio e polvere.',
                 'tipo' => 'Cometa periodica',
                 'massa_kg' => '2.2e14',
@@ -305,8 +322,9 @@ class CorpoCelesteSeeder extends Seeder
             // Pianeti nani (categoria_id = 8)
             [
                 'nome' => 'Plutone',
+                'nome_en' => 'Pluto',
                 'categoria_id' => 8,
-                'immagine' => 'plutone.jpg',
+                'immagine' => null,
                 'descrizione' => 'Plutone è stato a lungo considerato il nono pianeta del sistema solare prima di essere riclassificato come pianeta nano nel 2006. Ha un cuore di ghiaccio sulla superficie.',
                 'tipo' => 'Pianeta nano',
                 'massa_kg' => '1.309e22',

@@ -27,15 +27,15 @@
                             <div class="flex items-center gap-3">
                                 @if ($corpo->immagine)
                                     <img loading="lazy" src="{{ $corpo->immagine_url }}"
-                                         alt="{{ $corpo->nome_display }}"
+                                         alt="{{ $corpo->nome }}"
                                           class="w-8 h-8 rounded-full object-cover border border-admin-primary/20">
                                 @else
-                                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm bg-admin-primary/10 text-admin-primary" role="img" aria-label="{{ $corpo->nome_display }}">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm bg-admin-primary/10 text-admin-primary" role="img" aria-label="{{ $corpo->nome }}">
                                         ★
                                     </div>
                                 @endif
                                 <a href="{{ route('admin.corpi-celesti.show', $corpo) }}" class="font-medium transition-colors duration-150 text-admin-text hover:text-admin-primary">
-                                    {{ $corpo->nome_display }}
+                                    {{ $corpo->nome }}
                                 </a>
                             </div>
                         </td>
@@ -51,7 +51,7 @@
                             @endif
                         </td>
                         <td class="py-3 px-4 text-right">
-                            @include('admin.partials.index-actions', ['showRoute' => route('admin.corpi-celesti.show', $corpo), 'editRoute' => route('admin.corpi-celesti.edit', $corpo), 'deleteRoute' => route('admin.corpi-celesti.destroy', $corpo), 'entityName' => $corpo->nome_display])
+                            @include('admin.partials.index-actions', ['showRoute' => route('admin.corpi-celesti.show', $corpo), 'editRoute' => route('admin.corpi-celesti.edit', $corpo), 'deleteRoute' => route('admin.corpi-celesti.destroy', $corpo), 'entityName' => $corpo->nome])
                         </td>
                     </tr>
                 @empty

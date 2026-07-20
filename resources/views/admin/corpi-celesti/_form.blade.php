@@ -11,16 +11,16 @@
     <h3 class="text-xs font-semibold uppercase tracking-wider text-admin-muted mb-3">Identificazione</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
         <div>
-            <label for="nome" class="block text-sm font-medium mb-2 text-admin-text">Nome (inglese) <span class="text-red-500">*</span></label>
+            <label for="nome" class="block text-sm font-medium mb-2 text-admin-text">Nome (italiano) <span class="text-red-500">*</span></label>
             <input type="text" name="nome" id="nome" value="{{ old('nome', $entity->nome ?? null) }}" required
                    class="admin-input">
             @error('nome')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
         </div>
 
         <div>
-            <label for="nome_it" class="block text-sm font-medium mb-2 text-admin-text">Nome (italiano)</label>
+            <label for="nome_en" class="block text-sm font-medium mb-2 text-admin-text">Nome (inglese)</label>
             <div class="flex flex-col sm:flex-row gap-2">
-                <input type="text" name="nome_it" id="nome_it" value="{{ old('nome_it', $entity->nome_it ?? null) }}"
+                <input type="text" name="nome_en" id="nome_en" value="{{ old('nome_en', $entity->nome_en ?? null) }}"
                        class="admin-input flex-1">
                 <button type="button" id="cercaNasaBtn"
                         class="px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25 hover:border-admin-primary/40 sm:w-auto w-full">
@@ -28,7 +28,7 @@
                 </button>
             </div>
             <p id="suggestResult" class="mt-1 text-xs text-gray-500"></p>
-            @error('nome_it')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
+            @error('nome_en')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
         </div>
     </div>
 

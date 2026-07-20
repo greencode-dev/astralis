@@ -50,10 +50,10 @@ export default function CorpoDettaglio() {
     }, []);
 
     useEffect(() => {
-        if (corpo?.nome_display || corpo?.nome) {
-            document.title = `${corpo.nome_display || corpo.nome} — Astralis`;
+        if (corpo?.nome) {
+            document.title = `${corpo.nome} — Astralis`;
         }
-    }, [corpo?.nome_display, corpo?.nome]);
+    }, [corpo?.nome]);
 
     if (loading) {
         return (
@@ -91,14 +91,14 @@ export default function CorpoDettaglio() {
 
             <div className="animate-fade-up relative rounded-2xl overflow-hidden mb-8 min-h-[300px]">
                 {corpo.immagine_url && !heroImgError ? (
-                    <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome_display || corpo.nome}
+                    <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome}
                         className="w-full h-64 lg:h-80 object-cover"
                         onError={() => setHeroImgError(true)} />
                 ) : (
                     <div className="w-full h-64 lg:h-80 flex items-center justify-center"
                         style={{ background: gradient }}
                         role="img"
-                        aria-label={corpo.nome_display || corpo.nome}>
+                        aria-label={corpo.nome}>
                         <FallbackIcon size={96} className="text-white/40" aria-hidden="true" />
                     </div>
                 )}
@@ -112,7 +112,7 @@ export default function CorpoDettaglio() {
                             </span>
                         )}
                     </div>
-                    <h1 className="text-3xl lg:text-5xl font-extrabold text-admin-text">{corpo.nome_display || corpo.nome}</h1>
+                    <h1 className="text-3xl lg:text-5xl font-extrabold text-admin-text">{corpo.nome}</h1>
                     {corpo.tipo && <p className="text-lg mt-1 text-admin-dim">{corpo.tipo}</p>}
                 </div>
             </div>

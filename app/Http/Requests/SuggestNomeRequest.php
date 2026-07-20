@@ -14,8 +14,8 @@ class SuggestNomeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome_it' => ['nullable', 'string', 'max:255'],
             'nome' => ['nullable', 'string', 'max:255'],
+            'nome_en' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

@@ -122,7 +122,6 @@ describe('CorpiLista', () => {
             data: Array.from({ length: 12 }, (_, i) => ({
                 id: i + 1,
                 nome: `Corpo ${i + 1}`,
-                nome_display: `Corpo ${i + 1}`,
                 slug: `corpo-${i + 1}`,
                 descrizione: '...',
                 immagine_url: null,

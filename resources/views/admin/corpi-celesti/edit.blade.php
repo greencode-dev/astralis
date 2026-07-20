@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Modifica Corpo Celeste')
-@section('page_title', 'Modifica ' . $corpoCeleste->nome_display)
+@section('page_title', 'Modifica ' . $corpoCeleste->nome)
 
 @section('content')
     <div>

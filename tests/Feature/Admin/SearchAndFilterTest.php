@@ -23,10 +23,10 @@ class SearchAndFilterTest extends AdminTestCase
         $response->assertDontSee('Marte');
     }
 
-    public function test_corpi_search_filters_by_nome_it(): void
+    public function test_corpi_search_filters_by_nome_en(): void
     {
-        CorpoCeleste::factory()->create(['nome' => 'Earth', 'nome_it' => 'Terra', 'categoria_id' => Categoria::factory()->create()->id]);
-        CorpoCeleste::factory()->create(['nome' => 'Mars', 'nome_it' => 'Marte', 'categoria_id' => Categoria::factory()->create()->id]);
+        CorpoCeleste::factory()->create(['nome' => 'Terra', 'nome_en' => 'Earth', 'categoria_id' => Categoria::factory()->create()->id]);
+        CorpoCeleste::factory()->create(['nome' => 'Marte', 'nome_en' => 'Mars', 'categoria_id' => Categoria::factory()->create()->id]);
 
         $response = $this->actingAs($this->admin)
             ->get(route('admin.corpi-celesti.index', ['search' => 'Terr']));

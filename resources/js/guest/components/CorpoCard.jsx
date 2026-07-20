@@ -21,7 +21,7 @@ export default memo(function CorpoCard({ corpo, fetchPriority }) {
                 <div className="aspect-[16/9] relative">
                     <LazyImage
                         src={corpo.immagine_url}
-                        alt={corpo.nome_display || corpo.nome}
+                        alt={corpo.nome}
                         fetchPriority={fetchPriority}
                         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         onError={() => setImgError(true)}
@@ -37,7 +37,7 @@ export default memo(function CorpoCard({ corpo, fetchPriority }) {
                     className="aspect-[16/9] flex items-center justify-center transition-transform duration-300 relative hover:scale-105"
                     style={{ background: gradient }}
                     role="img"
-                    aria-label={corpo.categoria?.nome + ' — ' + (corpo.nome_display || corpo.nome)}
+                    aria-label={corpo.categoria?.nome + ' — ' + (corpo.nome)}
                 >
                     <FallbackIcon size={56} className="text-white/60" aria-hidden="true" />
                     {corpo.in_evidenza && (
@@ -50,7 +50,7 @@ export default memo(function CorpoCard({ corpo, fetchPriority }) {
 
             <div className="p-4">
                 <h3 className="text-lg font-semibold mb-2 text-admin-text">
-                    {corpo.nome_display || corpo.nome}
+                    {corpo.nome}
                 </h3>
 
                 <div className="mb-3">

@@ -13,7 +13,7 @@ function renderCard(corpo) {
 
 describe('CorpoCard', () => {
 
-    it('renders nome_display and descrizione', () => {
+    it('renders nome and descrizione', () => {
         renderCard(baseCorpo);
         expect(screen.getByText('Terra')).toBeInTheDocument();
         expect(screen.getByText('Il nostro pianeta.')).toBeInTheDocument();
@@ -66,8 +66,8 @@ describe('CorpoCard', () => {
         expect(screen.getByText('778.5 Mln km')).toBeInTheDocument();
     });
 
-    it('uses nome as fallback when nome_display is null', () => {
-        renderCard({ ...baseCorpo, nome_display: null, nome: 'Marte', immagine_url: 'https://example.com/marte.jpg' });
+    it('uses nome for alt text', () => {
+        renderCard({ ...baseCorpo, nome: 'Marte', immagine_url: 'https://example.com/marte.jpg' });
         const img = screen.getByRole('img');
         expect(img).toHaveAttribute('alt', 'Marte');
     });

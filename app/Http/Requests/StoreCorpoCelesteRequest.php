@@ -15,7 +15,7 @@ class StoreCorpoCelesteRequest extends FormRequest
     {
         return [
             'nome' => ['required', 'string', 'max:255', 'unique:corpi_celesti,nome'],
-            'nome_it' => ['nullable', 'string', 'max:255'],
+            'nome_en' => ['nullable', 'string', 'max:255'],
             'categoria_id' => ['required', 'exists:categorie,id'],
             'immagine' => ['nullable', 'string', 'max:2047'],
             'descrizione' => ['nullable', 'string', 'max:5000'],

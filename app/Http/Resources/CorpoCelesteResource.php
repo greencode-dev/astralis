@@ -15,7 +15,6 @@ class CorpoCelesteResource extends JsonResource
         $data = [
             'id' => $this->id,
             'nome' => $this->nome,
-            'nome_display' => $this->nome_display,
             'slug' => $this->slug,
             'categoria' => new CategoriaResource($this->whenLoaded('categoria')),
             'immagine_url' => $this->immagine_url,

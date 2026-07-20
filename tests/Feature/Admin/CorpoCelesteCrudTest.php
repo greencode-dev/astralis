@@ -45,8 +45,8 @@ class CorpoCelesteCrudTest extends AdminTestCase
     public function test_admin_can_store_corpo(): void
     {
         $data = [
-            'nome' => 'Test Planet',
-            'nome_it' => 'Pianeta di Prova',
+            'nome' => 'Test Planet Italiano',
+            'nome_en' => 'Test Planet',
             'categoria_id' => $this->categoria->id,
             'tipo' => 'gassoso',
             'descrizione' => 'A test planet description.',
@@ -68,7 +68,7 @@ class CorpoCelesteCrudTest extends AdminTestCase
         $response->assertSessionHas('success');
 
         $this->assertDatabaseHas('corpi_celesti', [
-            'nome' => 'Test Planet',
+            'nome' => 'Test Planet Italiano',
             'in_evidenza' => true,
         ]);
     }
@@ -105,7 +105,7 @@ class CorpoCelesteCrudTest extends AdminTestCase
             ->get(route('admin.corpi-celesti.show', $corpo));
 
         $response->assertStatus(200);
-        $response->assertSee($corpo->nome_display);
+        $response->assertSee($corpo->nome);
     }
 
     public function test_admin_can_view_edit_form(): void

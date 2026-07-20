@@ -30,7 +30,7 @@ class CorpoCelesteController extends Controller
             $safe = static::escapeLike($search);
             $query->where(function ($q) use ($safe) {
                 $q->where('nome', 'like', "%{$safe}%")
-                    ->orWhere('nome_it', 'like', "%{$safe}%");
+                    ->orWhere('nome_en', 'like', "%{$safe}%");
             });
         }
 
@@ -149,15 +149,15 @@ class CorpoCelesteController extends Controller
     {
         $this->authorize('viewAny', CorpoCeleste::class);
 
-        $nomeIt = $request->input('nome_it');
-        $nomeEn = $request->input('nome');
+        $nomeIt = $request->input('nome');
+        $nomeEn = $request->input('nome_en');
 
         if ($nomeEn) {
             $result = $nasaService->searchNasa($nomeEn);
             if ($result['success']) {
                 $suggested = $wordMapService->guessEnglishName($result['items'], $nomeEn);
                 if ($suggested) {
-                    return response()->json(['success' => true, 'nome' => $suggested]);
+                    return response()->json(['success' => true, 'nome_en' => $suggested]);
                 }
             }
         }
@@ -169,7 +169,7 @@ class CorpoCelesteController extends Controller
                 if ($result['success']) {
                     $suggested = $wordMapService->guessEnglishName($result['items'], $translated);
                     if ($suggested) {
-                        return response()->json(['success' => true, 'nome' => $suggested]);
+                        return response()->json(['success' => true, 'nome_en' => $suggested]);
                     }
                 }
             }
@@ -180,7 +180,7 @@ class CorpoCelesteController extends Controller
                 if ($result['success']) {
                     $suggested = $wordMapService->guessEnglishName($result['items'], $apiTranslated);
                     if ($suggested) {
-                        return response()->json(['success' => true, 'nome' => $suggested]);
+                        return response()->json(['success' => true, 'nome_en' => $suggested]);
                     }
                 }
             }

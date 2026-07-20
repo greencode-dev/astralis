@@ -1,8 +1,8 @@
 @push('scripts')
 <script>
 document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
-    var nomeIt = document.getElementById('nome_it').value.trim();
-    var nomeEn = document.getElementById('nome').value.trim();
+    var nomeIt = document.getElementById('nome').value.trim();
+    var nomeEn = document.getElementById('nome_en').value.trim();
     var resultEl = document.getElementById('suggestResult');
     if (!nomeIt && !nomeEn) {
         resultEl.textContent = 'Inserisci un nome in italiano o inglese.';
@@ -19,13 +19,13 @@ document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
         },
-        body: JSON.stringify({ nome_it: nomeIt, nome: nomeEn })
+        body: JSON.stringify({ nome: nomeIt, nome_en: nomeEn })
     })
     .then(function(r) { return r.json(); })
     .then(function(data) {
         if (data.success) {
-            document.getElementById('nome').value = data.nome;
-            resultEl.textContent = 'Suggerito: ' + data.nome;
+            document.getElementById('nome_en').value = data.nome_en;
+            resultEl.textContent = 'Suggerito: ' + data.nome_en;
             resultEl.style.color = 'var(--color-admin-success)';
         } else if (data.needs_manual) {
             resultEl.innerHTML = '';
@@ -48,7 +48,7 @@ document.getElementById('cercaNasaBtn')?.addEventListener('click', function() {
             btn.addEventListener('click', function() {
                 var val = input.value.trim();
                 if (val) {
-                    document.getElementById('nome').value = val;
+                    document.getElementById('nome_en').value = val;
                     resultEl.textContent = 'Impostato: ' + val;
                     resultEl.style.color = 'var(--color-admin-success)';
                 }

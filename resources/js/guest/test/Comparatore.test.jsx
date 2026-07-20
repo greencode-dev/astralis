@@ -22,7 +22,7 @@ const mockLista = makeCorpiResponse(pianeti);
 
 const mockDettaglio = (slug) => {
     const p = pianeti.find(p => p.slug === slug);
-    return { data: { ...p, nome_display: p.nome, descrizione: `Dettaglio di ${p.nome}` } };
+    return { data: { ...p, descrizione: `Dettaglio di ${p.nome}` } };
 };
 
 describe('Comparatore', () => {

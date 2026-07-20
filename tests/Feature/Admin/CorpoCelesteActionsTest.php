@@ -55,10 +55,10 @@ class CorpoCelesteActionsTest extends AdminTestCase
         $this->app->instance(NasaImageService::class, $mock);
 
         $response = $this->actingAs($this->admin)
-            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove']);
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome' => 'Giove']);
 
         $response->assertOk()
-            ->assertJson(['success' => true, 'nome' => 'Jupiter']);
+            ->assertJson(['success' => true, 'nome_en' => 'Jupiter']);
     }
 
     public function test_suggest_nome_returns_failure_when_no_results(): void
@@ -66,7 +66,7 @@ class CorpoCelesteActionsTest extends AdminTestCase
         Cache::flush();
 
         $response = $this->actingAs($this->admin)
-            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Xyznotexist']);
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome' => 'Xyznotexist']);
 
         $response->assertOk()
             ->assertJson(['success' => false, 'needs_manual' => true]);
@@ -74,7 +74,7 @@ class CorpoCelesteActionsTest extends AdminTestCase
 
     public function test_suggest_nome_guest_cannot_access(): void
     {
-        $response = $this->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove']);
+        $response = $this->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome' => 'Giove']);
 
         $response->assertRedirect();
     }
@@ -186,10 +186,10 @@ class CorpoCelesteActionsTest extends AdminTestCase
         $this->app->instance(NasaImageService::class, $mock);
 
         $response = $this->actingAs($nonAdmin)
-            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove']);
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome' => 'Giove']);
 
         $response->assertOk()
-            ->assertJson(['success' => true, 'nome' => 'Jupiter']);
+            ->assertJson(['success' => true, 'nome_en' => 'Jupiter']);
     }
 
     public function test_suggest_nome_returns_consistent_results(): void
@@ -216,13 +216,13 @@ class CorpoCelesteActionsTest extends AdminTestCase
         $this->app->instance(NasaImageService::class, $mock);
 
         $this->actingAs($this->admin)
-            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove'])
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome' => 'Giove'])
             ->assertOk();
 
         $this->actingAs($this->admin)
-            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Giove'])
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome' => 'Giove'])
             ->assertOk()
-            ->assertJson(['success' => true, 'nome' => 'Jupiter']);
+            ->assertJson(['success' => true, 'nome_en' => 'Jupiter']);
     }
 
     public function test_suggest_nome_returns_manual_when_translation_fails(): void
@@ -230,7 +230,7 @@ class CorpoCelesteActionsTest extends AdminTestCase
         Cache::flush();
 
         $response = $this->actingAs($this->admin)
-            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome_it' => 'Xnotreal']);
+            ->postJson(route('admin.corpi-celesti.suggest-nome'), ['nome' => 'Xnotreal']);
 
         $response->assertOk()
             ->assertJson([

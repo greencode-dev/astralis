@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
-@section('title', $corpoCeleste->nome_display)
-@section('page_title', $corpoCeleste->nome_display)
+@section('title', $corpoCeleste->nome)
+@section('page_title', $corpoCeleste->nome)
 
 @section('content')
     <div class="max-w-5xl">
@@ -26,9 +26,9 @@
                         </button>
                     </form>
                 @endif
-                <h2 class="text-xl font-bold mb-2 text-admin-text">{{ $corpoCeleste->nome_display }}</h2>
-                @if ($corpoCeleste->nome_it && $corpoCeleste->nome !== $corpoCeleste->nome_it)
-                    <p class="text-xs text-gray-500">(EN: {{ $corpoCeleste->nome }})</p>
+                <h2 class="text-xl font-bold mb-2 text-admin-text">{{ $corpoCeleste->nome }}</h2>
+                @if ($corpoCeleste->nome_en && $corpoCeleste->nome_en !== $corpoCeleste->nome)
+                    <p class="text-xs text-gray-500">(EN: {{ $corpoCeleste->nome_en }})</p>
                 @endif
                 @if ($corpoCeleste->categoria)
                     @include('admin.partials.category-badge', ['color' => $corpoCeleste->categoria->colore ?? null, 'name' => trim(($corpoCeleste->categoria->icona ?? '') . ' ' . $corpoCeleste->categoria->nome), 'size' => 'lg'])
@@ -40,7 +40,7 @@
                 <h3 class="text-sm font-medium mb-3 uppercase tracking-wider text-gray-400">Descrizione</h3>
                 <p class="text-admin-text leading-[1.7]">{{ $corpoCeleste->descrizione ?? 'Nessuna descrizione disponibile.' }}</p>
 
-                @include('admin.partials.show-actions', ['editRoute' => route('admin.corpi-celesti.edit', $corpoCeleste), 'deleteRoute' => route('admin.corpi-celesti.destroy', $corpoCeleste), 'entityName' => $corpoCeleste->nome_display])
+                @include('admin.partials.show-actions', ['editRoute' => route('admin.corpi-celesti.edit', $corpoCeleste), 'deleteRoute' => route('admin.corpi-celesti.destroy', $corpoCeleste), 'entityName' => $corpoCeleste->nome])
             </div>
         </div>
 

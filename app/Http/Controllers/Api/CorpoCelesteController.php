@@ -29,7 +29,7 @@ class CorpoCelesteController extends Controller
             $search = static::escapeLike($request->search);
             $query->where(function ($q) use ($search) {
                 $q->where('nome', 'like', "%{$search}%")
-                  ->orWhere('nome_it', 'like', "%{$search}%")
+                  ->orWhere('nome_en', 'like', "%{$search}%")
                   ->orWhere('descrizione', 'like', "%{$search}%");
             });
         }

@@ -19,7 +19,7 @@ class CorpoCeleste extends Model
 
     protected $fillable = [
         'nome',
-        'nome_it',
+        'nome_en',
         'slug',
         'categoria_id',
         'immagine',
@@ -79,18 +79,17 @@ class CorpoCeleste extends Model
             ->withTimestamps();
     }
 
-    public function getNomeDisplayAttribute(): string
-    {
-        return $this->nome_it ?? $this->nome;
-    }
-
     public function getImmagineUrlAttribute(): ?string
     {
         if (!$this->immagine) {
             return null;
         }
-        return str_starts_with($this->immagine, 'http')
-            ? $this->immagine
-            : Storage::url('corpi-celesti/' . $this->immagine);
+        if (str_starts_with($this->immagine, 'http')) {
+            return $this->immagine;
+        }
+        if (str_starts_with($this->immagine, 'public/')) {
+            return '/' . $this->immagine;
+        }
+        return Storage::url('corpi-celesti/' . $this->immagine);
     }
 }

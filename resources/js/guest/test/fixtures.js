@@ -14,7 +14,6 @@ export const mockStats = {
 export const terra = {
     id: 1,
     nome: 'Terra',
-    nome_display: 'Terra',
     slug: 'terra',
     descrizione: 'Il terzo pianeta del sistema solare.',
     immagine_url: 'https://example.com/earth.jpg',
@@ -34,7 +33,6 @@ export const terra = {
 export const marte = {
     id: 2,
     nome: 'Marte',
-    nome_display: 'Marte',
     slug: 'marte',
     descrizione: 'Il pianeta rosso.',
     immagine_url: null,
@@ -54,7 +52,6 @@ export const marte = {
 export const venere = {
     id: 3,
     nome: 'Venere',
-    nome_display: 'Venere',
     slug: 'venere',
     descrizione: 'Il pianeta più caldo.',
     immagine_url: null,
@@ -74,7 +71,6 @@ export const venere = {
 export const mercurio = {
     id: 4,
     nome: 'Mercurio',
-    nome_display: 'Mercurio',
     slug: 'mercurio',
     descrizione: 'Il pianeta più piccolo.',
     immagine_url: null,
@@ -96,7 +92,6 @@ export const mercurio = {
 export const baseCorpo = {
     slug: 'terra',
     nome: 'Terra',
-    nome_display: 'Terra',
     descrizione: 'Il nostro pianeta.',
     immagine_url: null,
     in_evidenza: false,
