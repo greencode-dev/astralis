@@ -2,6 +2,16 @@
 
 > [Formato e legenda →](#formato)
 
+## 20/07/2026
+
+- `[🟡][🎨]` SolarSystem debug cleanup — rimosso tutto il codice debug (overlay blu/verde/magenta/rosso/giallo, griglia 50px, outline Sole, DebugNebuloseLine, badge BUILD_ID, TestSolar + rotta /test-solar, SolarSystem.backup.jsx, 19 script .cjs). Sole centrato al geometrico (335,335) con `transformOrigin: center` — `SolarSystem.jsx`, `HomePage.jsx`, `App.jsx`, `main.jsx`
+- `[🟡][🎨]` SolarSystem positioning — sistema solare spostato 350px a sinistra, orbite ingrandite (MIN 100, MAX 380), rimosso offset verticale +81px. Griglia `lg:grid-cols-[1.2fr_0.8fr]` — `SolarSystem.jsx`, `HomePage.jsx`
+- `[🟢][🖥️]` vite.config — dev server 127.0.0.1:5175, strictPort true — `vite.config.js`
+
+**Test**: 377 totali (267 PHPUnit + 110 Vitest), tutti verdi.
+
+---
+
 ## 19/07/2026
 
 - `[🔴][🖥️]` Fix API 500 cache serialization — `Cache::remember` serializzava `Eloquent\Collection` → deserializzazione falliva su PHP 8.x. Fix: cachea solo gli ID (`pluck('id')`), re-query con `whereIn()` + `with('categoria')` — `CorpoCelesteController.php`

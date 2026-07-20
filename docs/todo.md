@@ -2,7 +2,7 @@
 
 > [Formato e legenda →](#note)
 
-_Ultimo aggiornamento: 19/07/2026_
+_Ultimo aggiornamento: 20/07/2026_
 
 ## Da Fare
 
@@ -188,7 +188,7 @@ _Ultimo aggiornamento: 19/07/2026_
 
 ## Note
 
-- **Stato**: 2 task aperte. 101 task totali (2 Da Fare + 99 Completate). 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 0 task aperte. 102 task totali (0 Da Fare + 102 Completate). 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Completate**
 - Formato per aggiungere un nuovo task:
     ```

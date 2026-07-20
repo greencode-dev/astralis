@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CONTENT_SIZE = 670;
 
@@ -13,14 +13,78 @@ const ORBIT_STEP = (ORBIT_MAX - ORBIT_MIN) / 7;
 const SOLAR_CENTER = { x: 335, y: 335 };
 
 const planets = [
-    { name: 'Mercurio', slug: 'mercurio', size: 30, orbit: ORBIT_MIN, color: '#94A3B8', speed: 1.2, img: '/images/solar-system/mercurio.png' },
-    { name: 'Venere', slug: 'venere', size: 38, orbit: ORBIT_MIN + ORBIT_STEP, color: '#F97316', speed: 1.5, img: '/images/solar-system/venere.png' },
-    { name: 'Terra', slug: 'terra', size: 44, orbit: ORBIT_MIN + ORBIT_STEP * 2, color: '#22D3EE', speed: 1.8, img: '/images/solar-system/terra.png' },
-    { name: 'Marte', slug: 'marte', size: 36, orbit: ORBIT_MIN + ORBIT_STEP * 3, color: '#EF4444', speed: 2.5, img: '/images/solar-system/marte.png' },
-    { name: 'Giove', slug: 'giove', size: 70, orbit: ORBIT_MIN + ORBIT_STEP * 4, color: '#FACC15', speed: 3, img: '/images/solar-system/giove.png' },
-    { name: 'Saturno', slug: 'saturno', size: 72, orbit: ORBIT_MIN + ORBIT_STEP * 5, color: '#D4A373', speed: 3.5, img: '/images/solar-system/saturno.png' },
-    { name: 'Urano', slug: 'urano', size: 50, orbit: ORBIT_MIN + ORBIT_STEP * 6, color: '#67E8F9', speed: 4, img: '/images/solar-system/urano.png' },
-    { name: 'Nettuno', slug: 'nettuno', size: 50, orbit: ORBIT_MAX, color: '#3B82F6', speed: 5, img: '/images/solar-system/nettuno.png' },
+    {
+        name: "Mercurio",
+        slug: "mercurio",
+        size: 30,
+        orbit: ORBIT_MIN,
+        color: "#94A3B8",
+        speed: 1.2,
+        img: "/images/solar-system/mercurio.png",
+    },
+    {
+        name: "Venere",
+        slug: "venere",
+        size: 38,
+        orbit: ORBIT_MIN + ORBIT_STEP,
+        color: "#F97316",
+        speed: 1.5,
+        img: "/images/solar-system/venere.png",
+    },
+    {
+        name: "Terra",
+        slug: "terra",
+        size: 44,
+        orbit: ORBIT_MIN + ORBIT_STEP * 2,
+        color: "#22D3EE",
+        speed: 1.8,
+        img: "/images/solar-system/terra.png",
+    },
+    {
+        name: "Marte",
+        slug: "marte",
+        size: 36,
+        orbit: ORBIT_MIN + ORBIT_STEP * 3,
+        color: "#EF4444",
+        speed: 2.5,
+        img: "/images/solar-system/marte.png",
+    },
+    {
+        name: "Giove",
+        slug: "giove",
+        size: 70,
+        orbit: ORBIT_MIN + ORBIT_STEP * 4,
+        color: "#FACC15",
+        speed: 3,
+        img: "/images/solar-system/giove.png",
+    },
+    {
+        name: "Saturno",
+        slug: "saturno",
+        size: 72,
+        orbit: ORBIT_MIN + ORBIT_STEP * 5,
+        color: "#D4A373",
+        speed: 3.5,
+        img: "/images/solar-system/saturno.png",
+    },
+    {
+        name: "Urano",
+        slug: "urano",
+        size: 50,
+        orbit: ORBIT_MIN + ORBIT_STEP * 6,
+        color: "#67E8F9",
+        speed: 4,
+        img: "/images/solar-system/urano.png",
+    },
+    {
+        name: "Nettuno",
+        slug: "nettuno",
+        size: 50,
+        orbit: ORBIT_MAX,
+        color: "#3B82F6",
+        speed: 5,
+        img: "/images/solar-system/nettuno.png",
+    },
 ];
 
 function Planet({ planet, hovered }) {
@@ -39,7 +103,8 @@ function Planet({ planet, hovered }) {
             lastTimeRef.current = time;
 
             const multiplier = hovered ? 0.11 : 0.33;
-            angleRef.current = (angleRef.current + degreesPerSec * multiplier * dt) % 360;
+            angleRef.current =
+                (angleRef.current + degreesPerSec * multiplier * dt) % 360;
 
             const rad = (angleRef.current * Math.PI) / 180;
             const x = Math.sin(rad) * planet.orbit;
@@ -62,7 +127,11 @@ function Planet({ planet, hovered }) {
             className="absolute group"
             style={{ left: -planet.size / 2, top: -planet.size / 2 }}
         >
-            <Link to={`/corpi-celesti/${planet.slug}`} className="block planet-hover text-center" aria-label={planet.name}>
+            <Link
+                to={`/corpi-celesti/${planet.slug}`}
+                className="block planet-hover text-center"
+                aria-label={planet.name}
+            >
                 {!imgError ? (
                     <img
                         src={planet.img}
@@ -85,7 +154,14 @@ function Planet({ planet, hovered }) {
                         }}
                     />
                 )}
-                <span className="block mt-1 text-xs text-admin-muted opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none" style={{ width: 50, marginLeft: 'auto', marginRight: 'auto' }}>
+                <span
+                    className="block mt-1 text-xs text-admin-muted opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
+                    style={{
+                        width: 50,
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                    }}
+                >
                     {planet.name}
                 </span>
             </Link>
@@ -97,19 +173,23 @@ export default function SolarSystem({ showStars = true }) {
     const containerRef = useRef(null);
     const [scale, setScale] = useState(1);
     const [hovered, setHovered] = useState(false);
-    const stars = useMemo(() => Array.from({ length: 50 }, (_, i) => ({
-        id: i,
-        width: Math.random() * 3 + 1,
-        height: Math.random() * 3 + 1,
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        duration: Math.random() * 3 + 2,
-    })), []);
+    const stars = useMemo(
+        () =>
+            Array.from({ length: 50 }, (_, i) => ({
+                id: i,
+                width: Math.random() * 3 + 1,
+                height: Math.random() * 3 + 1,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                duration: Math.random() * 3 + 2,
+            })),
+        [],
+    );
 
     useEffect(() => {
         const el = containerRef.current;
         if (!el) return;
-        const ro = new ResizeObserver(entries => {
+        const ro = new ResizeObserver((entries) => {
             const w = entries[0].contentRect.width;
             setScale(Math.min(1, w / CONTENT_SIZE));
         });
@@ -121,11 +201,11 @@ export default function SolarSystem({ showStars = true }) {
         <div
             ref={containerRef}
             className="relative w-full max-w-[440px] ml-auto mr-0"
-            style={{ 
-                aspectRatio: '670 / 720',
-                height: 'auto',
-                minHeight: '280px',
-                maxHeight: '480px'
+            style={{
+                aspectRatio: "670 / 720",
+                height: "auto",
+                minHeight: "280px",
+                maxHeight: "480px",
             }}
             role="img"
             aria-label="Sistema solare interattivo — clicca un corpo celeste per vederne il dettaglio"
@@ -133,8 +213,11 @@ export default function SolarSystem({ showStars = true }) {
             onMouseLeave={() => setHovered(false)}
         >
             {showStars && (
-                <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-                    {stars.map(star => (
+                <div
+                    className="absolute inset-0 overflow-hidden"
+                    aria-hidden="true"
+                >
+                    {stars.map((star) => (
                         <div
                             key={star.id}
                             className="absolute rounded-full bg-admin-text animate-twinkle"
@@ -143,7 +226,7 @@ export default function SolarSystem({ showStars = true }) {
                                 height: star.height,
                                 left: star.left,
                                 top: star.top,
-                                '--twinkle-duration': `${star.duration}s`,
+                                "--twinkle-duration": `${star.duration}s`,
                             }}
                         />
                     ))}
@@ -155,13 +238,22 @@ export default function SolarSystem({ showStars = true }) {
                 style={{
                     width: CONTENT_SIZE,
                     height: CONTENT_SIZE,
-                    left: '50%',
-                    top: '50%',
-                    transform: `translate(calc(-50% - 350px), -50%) scale(${scale})`,
-                    transformOrigin: 'center',
+                    left: "50%",
+                    top: "50%",
+                    transform: `translate(calc(-50% - 200px), -50%) scale(${scale})`,
+                    transformOrigin: "center",
                 }}
             >
-                <Link to="/corpi-celesti/sole" className="absolute z-10 planet-hover group" aria-label="Sole" style={{ left: SOLAR_CENTER.x, top: SOLAR_CENTER.y, transform: 'translate(-50%, -50%)' }}>
+                <Link
+                    to="/corpi-celesti/sole"
+                    className="absolute z-10 planet-hover group"
+                    aria-label="Sole"
+                    style={{
+                        left: SOLAR_CENTER.x,
+                        top: SOLAR_CENTER.y,
+                        transform: "translate(-50%, -50%)",
+                    }}
+                >
                     <div className="animate-pulse-sun flex items-center justify-center">
                         <img
                             src="/images/solar-system/sole.png"
@@ -179,8 +271,11 @@ export default function SolarSystem({ showStars = true }) {
                 </Link>
 
                 <div className="absolute inset-0 z-[5] pointer-events-none">
-                    <div className="absolute pointer-events-auto" style={{ left: SOLAR_CENTER.x, top: SOLAR_CENTER.y }}>
-                        {planets.map(planet => (
+                    <div
+                        className="absolute pointer-events-auto"
+                        style={{ left: SOLAR_CENTER.x, top: SOLAR_CENTER.y }}
+                    >
+                        {planets.map((planet) => (
                             <div
                                 key={planet.name}
                                 className="absolute rounded-full border border-admin-primary/15"
@@ -193,8 +288,12 @@ export default function SolarSystem({ showStars = true }) {
                             />
                         ))}
 
-                        {planets.map(planet => (
-                            <Planet key={planet.name} planet={planet} hovered={hovered} />
+                        {planets.map((planet) => (
+                            <Planet
+                                key={planet.name}
+                                planet={planet}
+                                hovered={hovered}
+                            />
                         ))}
                     </div>
                 </div>

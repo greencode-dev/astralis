@@ -90,16 +90,18 @@ export default function HomePage() {
                                 </span>
                             </div>
                             <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight mb-6 text-admin-text">
-                                Esplora {" "}
-                                <span className="text-admin-primary">l'Universo</span>
+                                Esplora{" "}
+                                <span className="text-admin-primary">
+                                    l'Universo
+                                </span>
                                 <br />
                                 con Astralis
                             </h1>
                             <p className="text-lg lg:text-xl mb-8 leading-relaxed text-admin-dim">
                                 Un catalogo interattivo di pianeti, stelle,
-                                 galassie e <span className="bg-yellow-400/20">nebulose</span>. Scopri i segreti del cosmo
-                                 attraverso dati scientifici e immagini
-                                 spettacolari.
+                                galassie e nebulose. Scopri i segreti del cosmo
+                                attraverso dati scientifici e immagini
+                                spettacolari.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <Link
