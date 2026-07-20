@@ -28,6 +28,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'throttle:120,1'])->name
         'categorie' => 'categoria',
     ]);
     Route::post('corpi-celesti/suggest-nome', [CorpoCelesteController::class, 'suggestNome'])->middleware('throttle:30,1')->name('corpi-celesti.suggest-nome');
+    Route::post('corpi-celesti/{corpoCeleste}/gallery-add', [CorpoCelesteController::class, 'galleryAdd'])->name('corpi-celesti.gallery-add');
     Route::post('corpi-celesti/{corpoCeleste}/set-image/{galleriaCorpo}', [CorpoCelesteController::class, 'setImageFromGallery'])->name('corpi-celesti.set-image');
     Route::resource('corpi-celesti', CorpoCelesteController::class)->parameters([
         'corpi-celesti' => 'corpoCeleste',

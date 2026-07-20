@@ -6,25 +6,30 @@ _Ultimo aggiornamento: 20/07/2026_
 
 ## Da Fare
 
-- [ ] [Task 115] `[🟡][🧪]` Test PHP + JS aggiornati per nuovi campi — `tests/`
-- [ ] [Task 114] `[🟡][🎨]` React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome — `resources/js/guest/`
-- [ ] [Task 113] `[🟡][🎨]` JS: auto-translate debounce, galleria inline NASA selezione multipla, copertina preview — `resources/views/admin/partials/`
-- [ ] [Task 112] `[🟡][🎨]` Blade: _form ristrutturato (6 sezioni, in_evidenza in alto, tipo dropdown, upload copertina, galleria inline) — `resources/views/admin/corpi-celesti/`
-- [ ] [Task 111] `[🟡][🖥️]` Route: nuove endpoint translate, search-gallery, add-gallery, remove-gallery — `routes/web.php`
-- [ ] [Task 110] `[🟡][🖥️]` Resource: API response solo nome italiano — `app/Http/Resources/CorpoCelesteResource.php`
-- [ ] [Task 109] `[🟡][🖥️]` Controller: aggiorna admin CRUD, API, aggiungi translate route — `app/Http/Controllers/`
-- [ ] [Task 108] `[🟡][🖥️]` Validation: StoreCorpoCelesteRequest, UpdateCorpoCelesteRequest, SuggestNomeRequest aggiorna campi — `app/Http/Requests/`
+- [ ] [Task 111] `[🟡][🖥️]` Route: endpoint translate, search-gallery, remove-gallery (gallery-add aggiunto in Task 112) — `routes/web.php`
 - [ ] [Task 107] `[🟡][🖥️]` NasaImageService: aggiorna riferimenti a nome_en per ricerche NASA — `app/Services/NasaImageService.php`
 - [ ] [Task 106] `[🟡][🖥️]` WordMapService: auto-popola wordmap custom da MyMemory fallback + salva in storage/app/wordmap-custom.json — `app/Services/WordMapService.php`
-- [ ] [Task 105] `[🟡][💾]` Factory + Seeder: swap nomi, immagini default pianeti da public/images/solar-system/, slug italiano — `database/factories/`, `database/seeders/`
-- [ ] [Task 104] `[🔴][🖥️]` Model CorpoCeleste: aggiorna fillable, rimuovi accessor nome_display, estendi immagine_url — `app/Models/CorpoCeleste.php`
-- [ ] [Task 103] `[🔴][💾]` Migrazione DB: rename nome_it→nome, nome→nome_en + swap dati + rigenera slug — `database/migrations/`
 
 ## In lavorazione
 
 > Nessuna task in lavorazione.
 
 ## Completate
+
+### 20/07/2026
+
+- [x] [Task 115] `[🟡][🧪]` Test PHP + JS aggiornati per nuovi campi — `tests/`
+- [x] [Task 114] `[🟡][🎨]` React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome — `resources/js/guest/`
+- [x] [Task 113] `[🟡][🎨]` JS: auto-translate debounce, galleria inline NASA selezione multipla, copertina preview, removePhoto — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [x] [Task 112] `[🟡][🎨]` Blade: _form ristrutturato (6 sezioni, in_evidenza in alto, tipo dropdown custom, upload copertina file+URL, galleria inline) — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [x] [Task 110] `[🟡][🖥️]` Resource: API response solo nome italiano — `app/Http/Resources/CorpoCelesteResource.php`
+- [x] [Task 109] `[🟡][🖥️]` Controller: admin CRUD nome_it→nome_en, suggestNome, upload copertina, galleryAdd — `app/Http/Controllers/Admin/CorpoCelesteController.php`
+- [x] [Task 108] `[🟡][🖥️]` Validation: Store/Update/SuggestNomeRequest campi nome/nome_en + immagine_file — `app/Http/Requests/`
+- [x] [Task 105] `[🟡][💾]` Factory + Seeder: swap nomi, immagini default pianeti da public/images/solar-system/, slug italiano — `database/seeders/`
+- [x] [Task 104] `[🔴][🖥️]` Model CorpoCeleste: fillable nome_en, rimosso accessor nome_display, esteso immagine_url — `app/Models/CorpoCeleste.php`
+- [x] [Task 103] `[🔴][💾]` Migrazione DB: rename nome_it→nome, nome→nome_en + swap dati + rigenera slug — `database/migrations/`
+
+---
 
 ### 19/07/2026
 
@@ -200,7 +205,7 @@ _Ultimo aggiornamento: 20/07/2026_
 
 ## Note
 
-- **Stato**: 13 task aperte. 115 task totali (13 Da Fare + 102 Completate). 377 test (267 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 3 task aperte. 115 task totali (3 Da Fare + 112 Completate). 378 test (268 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Completate**
 - Formato per aggiungere un nuovo task:
     ```

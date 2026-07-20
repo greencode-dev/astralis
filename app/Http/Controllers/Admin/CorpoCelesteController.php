@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateCorpoCelesteRequest;
 use App\Models\Categoria;
 use App\Models\CorpoCeleste;
 use App\Models\GalleriaCorpo;
+use App\Services\ImageUploadService;
 use App\Services\NasaImageService;
 use App\Services\WordMapService;
 use Illuminate\Http\RedirectResponse;
@@ -48,15 +49,20 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.create', compact('categorie'));
     }
 
-    public function store(StoreCorpoCelesteRequest $request): RedirectResponse
+    public function store(StoreCorpoCelesteRequest $request, ImageUploadService $uploader): RedirectResponse
     {
         $this->authorize('create', CorpoCeleste::class);
 
         $validated = $request->validated();
 
-        if ($request->filled('immagine')) {
+        if ($request->hasFile('immagine_file')) {
+            $validated['immagine'] = $uploader->upload($request->file('immagine_file'), 'corpi-celesti');
+            $validated['immagine_utente'] = true;
+        } elseif ($request->filled('immagine')) {
             $validated['immagine_utente'] = true;
         }
+
+        unset($validated['immagine_file']);
 
         CorpoCeleste::create($validated);
 
@@ -84,15 +90,23 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.edit', compact('corpoCeleste', 'categorie'));
     }
 
-    public function update(UpdateCorpoCelesteRequest $request, CorpoCeleste $corpoCeleste): RedirectResponse
+    public function update(UpdateCorpoCelesteRequest $request, CorpoCeleste $corpoCeleste, ImageUploadService $uploader): RedirectResponse
     {
         $this->authorize('update', $corpoCeleste);
 
         $validated = $request->validated();
 
-        if ($request->filled('immagine')) {
+        if ($request->hasFile('immagine_file')) {
+            if ($corpoCeleste->immagine && !str_starts_with($corpoCeleste->immagine, 'http')) {
+                Storage::disk('public')->delete('corpi-celesti/' . $corpoCeleste->immagine);
+            }
+            $validated['immagine'] = $uploader->upload($request->file('immagine_file'), 'corpi-celesti');
+            $validated['immagine_utente'] = true;
+        } elseif ($request->filled('immagine')) {
             $validated['immagine_utente'] = true;
         }
+
+        unset($validated['immagine_file']);
 
         $corpoCeleste->update($validated);
 
@@ -143,6 +157,24 @@ class CorpoCelesteController extends Controller
 
         return redirect()->route('admin.corpi-celesti.show', $corpoCeleste)
             ->with('success', 'Immagine principale aggiornata con successo.');
+    }
+
+    public function galleryAdd(Request $request, CorpoCeleste $corpoCeleste): \Illuminate\Http\JsonResponse
+    {
+        $this->authorize('update', $corpoCeleste);
+
+        $validated = $request->validate([
+            'percorso' => ['required', 'string', 'max:2047'],
+            'didascalia' => ['nullable', 'string', 'max:255'],
+            'crediti' => ['nullable', 'string', 'max:255'],
+        ]);
+
+        $validated['corpo_celeste_id'] = $corpoCeleste->id;
+        $validated['ordine'] = $corpoCeleste->galleria()->max('ordine') + 1;
+
+        GalleriaCorpo::create($validated);
+
+        return response()->json(['success' => true]);
     }
 
     public function suggestNome(SuggestNomeRequest $request, NasaImageService $nasaService, WordMapService $wordMapService): \Illuminate\Http\JsonResponse

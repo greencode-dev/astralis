@@ -18,6 +18,7 @@ class StoreCorpoCelesteRequest extends FormRequest
             'nome_en' => ['nullable', 'string', 'max:255'],
             'categoria_id' => ['required', 'exists:categorie,id'],
             'immagine' => ['nullable', 'string', 'max:2047'],
+            'immagine_file' => ['nullable', 'file', 'image', 'max:2048'],
             'descrizione' => ['nullable', 'string', 'max:5000'],
             'tipo' => ['nullable', 'string', 'max:50'],
             'massa_kg' => ['nullable', 'string', 'max:50'],

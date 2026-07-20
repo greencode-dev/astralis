@@ -511,15 +511,15 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 20/07/2026 — 15:30
+> _Ultimo aggiornamento:_ 20/07/2026 — 22:45
 
 | Campo               | Valore                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Branch**          | `master`                                                                                               |
-| **Test**            | 267 PHPUnit + 110 Vitest = 377 totali, tutti verdi                                                    |
-| **Task completate** | 102 task totali completate                                                                              |
-| **Task in corso**   | Piano rinomina campi + galleria inline (Task 103-115, 13 fasi)                                        |
-| **Prossime azioni** | Fase 1: Migrazione DB rename colonne + swap dati + slug italiano                                       |
+| **Test**            | 268 PHPUnit + 110 Vitest = 378 totali, tutti verdi                                                    |
+| **Task completate** | 112 task totali completate                                                                              |
+| **Task in corso**   | Piano rinomina campi + galleria inline (Task 103-115) — restano Task 106, 107, 111                    |
+| **Prossime azioni** | Task 106: WordMapService auto-popola da MyMemory; Task 107: NasaImageService usa nome_en              |
 
 ### Piano rinomina campi + galleria inline (Task 103-115)
 
@@ -527,18 +527,18 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 | Fase | Descrizione                                                                 | Task   | Stato |
 | ---- | --------------------------------------------------------------------------- | ------ | ----- |
-| **1** | Migrazione DB: rename colonne + swap dati + rigenera slug italiano           | 103    | ⬜    |
-| **2** | Model: fillable, rimuovi accessor nome_display, estendi immagine_url         | 104    | ⬜    |
-| **3** | Factory + Seeder: swap nomi, immagini default pianeti, slug                  | 105    | ⬜    |
+| **1** | Migrazione DB: rename colonne + swap dati + rigenera slug italiano           | 103    | ✅    |
+| **2** | Model: fillable, rimuovi accessor nome_display, estendi immagine_url         | 104    | ✅    |
+| **3** | Factory + Seeder: swap nomi, immagini default pianeti, slug                  | 105    | ✅    |
 | **4** | Service: WordMapService auto-popola, NasaImageService usa nome_en            | 106-107| ⬜    |
-| **5** | Validation: Store, Update, SuggestNomeRequest                                | 108    | ⬜    |
-| **6** | Controller: admin CRUD, API, translate route                                 | 109    | ⬜    |
-| **7** | Resource: API response solo nome (italiano)                                  | 110    | ⬜    |
-| **8** | Route: nuove endpoint translate, gallery                                     | 111    | ⬜    |
-| **9** | Blade: _form ristrutturato (6 sezioni), show, dashboard                     | 112    | ⬜    |
-| **10**| JS: auto-translate debounce, galleria inline, copertina preview             | 113    | ⬜    |
-| **11**| React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome            | 114    | ⬜    |
-| **12**| Test: PHP + JS aggiornati per nuovi campi                                    | 115    | ⬜    |
+| **5** | Validation: Store, Update, SuggestNomeRequest                                | 108    | ✅    |
+| **6** | Controller: admin CRUD, API, translate route, upload copertina, galleryAdd  | 109    | ✅    |
+| **7** | Resource: API response solo nome (italiano)                                  | 110    | ✅    |
+| **8** | Route: nuove endpoint translate, gallery (gallery-add aggiunto)              | 111    | ⬜    |
+| **9** | Blade: _form ristrutturato (6 sezioni), show, dashboard                     | 112    | ✅    |
+| **10**| JS: auto-translate debounce, galleria inline, copertina preview             | 113    | ✅    |
+| **11**| React SPA: aggiorna fixture, rimuovi nome_display, usa solo nome            | 114    | ✅    |
+| **12**| Test: PHP + JS aggiornati per nuovi campi                                    | 115    | ✅    |
 
 **Decisioni chiave**:
 - Upload file: Laravel nativo (senza Intervention Image)
