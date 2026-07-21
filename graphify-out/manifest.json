@@ -370,8 +370,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784353004.9104676,
-    "ast_hash": "be063d3227bb27496641503850d68d57",
+    "mtime": 1784639475.5385752,
+    "ast_hash": "bdbecb9b9eb041c8c01b6320ed58194a",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -520,8 +520,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/dashboard.blade.php": {
-    "mtime": 1784354714.2316263,
-    "ast_hash": "c213bac290f6d854e58099f849f3e256",
+    "mtime": 1784639497.372223,
+    "ast_hash": "a11cae7394c5cd121998001f30c44e87",
     "semantic_hash": ""
   },
   "resources/views/admin/galleria/create.blade.php": {
@@ -540,8 +540,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/layouts/app.blade.php": {
-    "mtime": 1784616638.808951,
-    "ast_hash": "3c802d40a5250aab4879e34d0549ad32",
+    "mtime": 1784638730.3195446,
+    "ast_hash": "c2944d0a01d01a41210556ad75f0d963",
     "semantic_hash": ""
   },
   "resources/views/admin/missioni/create.blade.php": {
@@ -590,8 +590,8 @@
     "semantic_hash": ""
   },
   "routes/web.php": {
-    "mtime": 1784616638.8119524,
-    "ast_hash": "c4557e2cbe8dfd56cca8b668d3a84584",
+    "mtime": 1784620810.0247655,
+    "ast_hash": "e77e36faa915c7ba8ff9305ff78a0da4",
     "semantic_hash": ""
   },
   "tests/Feature/Auth/AuthenticationTest.php": {
@@ -635,13 +635,13 @@
     "semantic_hash": ""
   },
   "vite.config.js": {
-    "mtime": 1784616638.8159463,
-    "ast_hash": "962b04f9470f18529d34e9a08fd2438d",
+    "mtime": 1784639496.2192135,
+    "ast_hash": "617fc8bbe02efb4b42088df0762e80bd",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1784353004.9074445,
-    "ast_hash": "61f1e71791643e438ae4081a6480454c",
+    "mtime": 1784631071.7181602,
+    "ast_hash": "46d4a217e926e5e202ce7ba5f938f253",
     "semantic_hash": ""
   },
   "docs/bug.md": {
@@ -650,18 +650,18 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1784620545.0126822,
-    "ast_hash": "0dcb87397a47be226dc6158166cc504d",
+    "mtime": 1784650887.0868707,
+    "ast_hash": "7950ee894c5890a8f30136df7a8c0fd4",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
-    "mtime": 1784616638.7435658,
-    "ast_hash": "c28594336305b7e579f387d61a72f144",
+    "mtime": 1784639544.8412745,
+    "ast_hash": "b87d2840afefb2e4d902b68b9d1398ad",
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1784620538.8355255,
-    "ast_hash": "6de24d737546607d88f265b2959b6a34",
+    "mtime": 1784626911.3211203,
+    "ast_hash": "faedfb90e9a7799a2cadbe00a1b8a359",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -685,8 +685,8 @@
     "semantic_hash": ""
   },
   "docs/index.md": {
-    "mtime": 1784208942.071118,
-    "ast_hash": "f015bab5c4245977ff468825fe368fb2",
+    "mtime": 1784630329.505546,
+    "ast_hash": "c68fa037e964c1c40326d7355339a6f1",
     "semantic_hash": ""
   },
   "app/Policies/CategoriaPolicy.php": {
@@ -800,8 +800,8 @@
     "semantic_hash": ""
   },
   "app/Services/WordMapService.php": {
-    "mtime": 1784616638.7395673,
-    "ast_hash": "59a5295ca7164cffcb832c3cdb107380",
+    "mtime": 1784650057.6228352,
+    "ast_hash": "7895b0a89532a8607f62a8f9ca270d32",
     "semantic_hash": ""
   },
   "database/migrations/2026_07_08_073349_add_indexes_to_corpi_celesti_and_galleria.php": {
@@ -880,8 +880,8 @@
     "semantic_hash": ""
   },
   "docs/testing.md": {
-    "mtime": 1784353004.9104676,
-    "ast_hash": "295569e02650348f674ef1eaaeaa61f8",
+    "mtime": 1784630177.7673965,
+    "ast_hash": "e91e01fc05ae073900339fb841b96011",
     "semantic_hash": ""
   },
   "resources/js/guest/test/CategoriaBadge.test.jsx": {
@@ -972,11 +972,6 @@
   "tests/Feature/Admin/MissioneCrudTest.php": {
     "mtime": 1784218198.8770413,
     "ast_hash": "07c8c46451b8329842772f2ba086e7a5",
-    "semantic_hash": ""
-  },
-  "docs/presentazione-progetto.md": {
-    "mtime": 1784616638.744566,
-    "ast_hash": "f35bbbb6631e2a71c025d19639cb57b6",
     "semantic_hash": ""
   },
   "app/Http/Requests/AggiornaOrdineRequest.php": {
@@ -1090,8 +1085,8 @@
     "semantic_hash": ""
   },
   ".opencode/skills/astralis-blade-admin/SKILL.md": {
-    "mtime": 1784208942.0043912,
-    "ast_hash": "07b681b38f289be821125f12f2f548a8",
+    "mtime": 1784639542.844761,
+    "ast_hash": "3700318ba4db7793fbc3b908e60d7914",
     "semantic_hash": ""
   },
   ".opencode/skills/astralis-laravel/SKILL.md": {
@@ -1235,8 +1230,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784620549.8192725,
-    "ast_hash": "ce3d29f7fb464cb7f0e3ff87aa9594e7",
+    "mtime": 1784650874.4451356,
+    "ast_hash": "61361a8b779b200566c3019796ce6353",
     "semantic_hash": ""
   },
   "resources/js/guest/hooks/useInView.js": {
@@ -1584,9 +1579,34 @@
     "ast_hash": "09494a0692028a55399518b4bcf852ff",
     "semantic_hash": ""
   },
-  "docs/traccia-vs-realizzato.md": {
-    "mtime": 1784616638.7455685,
-    "ast_hash": "46ba1b055658d84b771034081ff4113f",
+  "app/Http/Controllers/Admin/ExamController.php": {
+    "mtime": 1784620751.1160417,
+    "ast_hash": "edb802c963e54b888883703cd8933ad9",
+    "semantic_hash": ""
+  },
+  "docs/astralis.postman_collection.json": {
+    "mtime": 1784620970.0413303,
+    "ast_hash": "9558b10774fbf43cd7a0ecbf7ea0d9dc",
+    "semantic_hash": ""
+  },
+  "resources/js/admin-charts.js": {
+    "mtime": 1784639495.290305,
+    "ast_hash": "8130b20ee323c22f6509a933e674e82e",
+    "semantic_hash": ""
+  },
+  "resources/js/admin.js": {
+    "mtime": 1784638727.1884875,
+    "ast_hash": "e61683b717d176d046a2899c92472625",
+    "semantic_hash": ""
+  },
+  "resources/views/admin/exam/index.blade.php": {
+    "mtime": 1784640990.449504,
+    "ast_hash": "80d92e95c6ca2094ca962a8d3189158d",
+    "semantic_hash": ""
+  },
+  "docs/preparazione-esame.md": {
+    "mtime": 1784650733.852004,
+    "ast_hash": "c71c205cb6e50d28da2464ccee0b153f",
     "semantic_hash": ""
   }
 }

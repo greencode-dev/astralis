@@ -10,8 +10,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates",
-      "community": 118,
-      "community_name": "CleanupGalleryDuplicates.php",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": "cleanupgalleryduplicates.php"
     },
     {
@@ -21,8 +21,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": "cleanupgalleryduplicates"
     },
     {
@@ -32,8 +32,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "command",
-      "community": 118,
-      "community_name": "CleanupGalleryDuplicates.php",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": "command"
     },
     {
@@ -43,8 +43,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_construct",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".__construct()"
     },
     {
@@ -54,8 +54,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handle",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".handle()"
     },
     {
@@ -65,8 +65,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removeduplicates",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".removeduplicates()"
     },
     {
@@ -76,8 +76,8 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removecrosstableduplicates",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".removecrosstableduplicates()"
     },
     {
@@ -87,8 +87,8 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_removenasaidduplicates",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".removenasaidduplicates()"
     },
     {
@@ -98,8 +98,8 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_resequenceordine",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".resequenceordine()"
     },
     {
@@ -109,8 +109,8 @@
       "source_location": "L196",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_trimgalleries",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".trimgalleries()"
     },
     {
@@ -120,8 +120,8 @@
       "source_location": "L245",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_cleanorphanedfiles",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".cleanorphanedfiles()"
     },
     {
@@ -131,8 +131,8 @@
       "source_location": "L271",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlebrokenurls",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".handlebrokenurls()"
     },
     {
@@ -142,8 +142,8 @@
       "source_location": "L340",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_headrequest",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".headrequest()"
     },
     {
@@ -153,8 +153,8 @@
       "source_location": "L354",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handlesync",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".handlesync()"
     },
     {
@@ -164,8 +164,8 @@
       "source_location": "L418",
       "_origin": "ast",
       "id": "app_console_commands_cleanupgalleryduplicates_cleanupgalleryduplicates_handledelete",
-      "community": 44,
-      "community_name": "DeleteProtectionTest",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".handledelete()"
     },
     {
@@ -175,8 +175,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand",
-      "community": 118,
-      "community_name": "CleanupGalleryDuplicates.php",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": "fetchnasacommand.php"
     },
     {
@@ -186,8 +186,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand",
-      "community": 118,
-      "community_name": "CleanupGalleryDuplicates.php",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": "fetchnasacommand"
     },
     {
@@ -197,8 +197,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "app_console_commands_fetchnasacommand_fetchnasacommand_handle",
-      "community": 118,
-      "community_name": "CleanupGalleryDuplicates.php",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".handle()"
     },
     {
@@ -373,8 +373,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_store",
-      "community": 113,
-      "community_name": "CorpoCelesteController",
+      "community": 27,
+      "community_name": "Dropdown.jsx",
       "norm_label": ".store()"
     },
     {
@@ -439,8 +439,8 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_galleryadd",
-      "community": 162,
-      "community_name": "CorpoCelesteCrudTest",
+      "community": 113,
+      "community_name": "CorpoCelesteController",
       "norm_label": ".galleryadd()"
     },
     {
@@ -450,8 +450,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_php_jsonresponse",
-      "community": 162,
-      "community_name": "CorpoCelesteCrudTest",
+      "community": 113,
+      "community_name": "CorpoCelesteController",
       "norm_label": "jsonresponse"
     },
     {
@@ -461,8 +461,8 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "app_http_controllers_admin_corpocelestecontroller_corpocelestecontroller_suggestnome",
-      "community": 162,
-      "community_name": "CorpoCelesteCrudTest",
+      "community": 113,
+      "community_name": "CorpoCelesteController",
       "norm_label": ".suggestnome()"
     },
     {
@@ -472,8 +472,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller",
-      "community": 10,
-      "community_name": "Curiosita",
+      "community": 15,
+      "community_name": "\ud83e\ude90 Astralis \u2014 Catalogo di Corpi Celesti",
       "norm_label": "curiositacontroller.php"
     },
     {
@@ -494,8 +494,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_admin_curiositacontroller_curiositacontroller_index",
-      "community": 21,
-      "community_name": "Edit.jsx",
+      "community": 15,
+      "community_name": "\ud83e\ude90 Astralis \u2014 Catalogo di Corpi Celesti",
       "norm_label": ".index()"
     },
     {
@@ -769,8 +769,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "app_http_controllers_admin_missionecontroller_missionecontroller_store",
-      "community": 21,
-      "community_name": "Edit.jsx",
+      "community": 118,
+      "community_name": "CleanupGalleryDuplicates.php",
       "norm_label": ".store()"
     },
     {
@@ -802,8 +802,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "app_http_controllers_admin_missionecontroller_missionecontroller_update",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 112,
+      "community_name": "DashboardController.php",
       "norm_label": ".update()"
     },
     {
@@ -912,8 +912,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_http_controllers_api_categoriacontroller_categoriacontroller_show",
-      "community": 112,
-      "community_name": "DashboardController.php",
+      "community": 250,
+      "community_name": ".missioni",
       "norm_label": ".show()"
     },
     {
@@ -1011,8 +1011,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_api_dashboardcontroller",
-      "community": 106,
-      "community_name": "158a58073f7c339cee02d82d7f1f6a13.php",
+      "community": 103,
+      "community_name": "RefreshDatabase",
       "norm_label": "dashboardcontroller.php"
     },
     {
@@ -1253,8 +1253,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller",
-      "community": 10,
-      "community_name": "Curiosita",
+      "community": 21,
+      "community_name": "Edit.jsx",
       "norm_label": "emailverificationpromptcontroller.php"
     },
     {
@@ -1264,8 +1264,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller",
-      "community": 10,
-      "community_name": "Curiosita",
+      "community": 21,
+      "community_name": "Edit.jsx",
       "norm_label": "emailverificationpromptcontroller"
     },
     {
@@ -1275,8 +1275,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_http_controllers_auth_emailverificationpromptcontroller_emailverificationpromptcontroller_invoke",
-      "community": 10,
-      "community_name": "Curiosita",
+      "community": 21,
+      "community_name": "Edit.jsx",
       "norm_label": ".__invoke()"
     },
     {
@@ -1286,8 +1286,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_controllers_auth_newpasswordcontroller",
-      "community": 10,
-      "community_name": "Curiosita",
+      "community": 6,
+      "community_name": "JsonResource",
       "norm_label": "newpasswordcontroller.php"
     },
     {
@@ -1572,8 +1572,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 120,
+      "community_name": "MissioneApiTest",
       "norm_label": "aggiornaordinerequest.php"
     },
     {
@@ -1583,8 +1583,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest_aggiornaordinerequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 120,
+      "community_name": "MissioneApiTest",
       "norm_label": "aggiornaordinerequest"
     },
     {
@@ -1594,8 +1594,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest_aggiornaordinerequest_authorize",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 120,
+      "community_name": "MissioneApiTest",
       "norm_label": ".authorize()"
     },
     {
@@ -1605,8 +1605,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_aggiornaordinerequest_aggiornaordinerequest_rules",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 120,
+      "community_name": "MissioneApiTest",
       "norm_label": ".rules()"
     },
     {
@@ -1616,8 +1616,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 44,
+      "community_name": "DeleteProtectionTest",
       "norm_label": "loginrequest.php"
     },
     {
@@ -1627,8 +1627,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 44,
+      "community_name": "DeleteProtectionTest",
       "norm_label": "loginrequest"
     },
     {
@@ -1638,8 +1638,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authorize",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 44,
+      "community_name": "DeleteProtectionTest",
       "norm_label": ".authorize()"
     },
     {
@@ -1649,8 +1649,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_rules",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 44,
+      "community_name": "DeleteProtectionTest",
       "norm_label": ".rules()"
     },
     {
@@ -1660,8 +1660,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_authenticate",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 44,
+      "community_name": "DeleteProtectionTest",
       "norm_label": ".authenticate()"
     },
     {
@@ -1671,8 +1671,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_ensureisnotratelimited",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 44,
+      "community_name": "DeleteProtectionTest",
       "norm_label": ".ensureisnotratelimited()"
     },
     {
@@ -1682,8 +1682,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "app_http_requests_auth_loginrequest_loginrequest_throttlekey",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 44,
+      "community_name": "DeleteProtectionTest",
       "norm_label": ".throttlekey()"
     },
     {
@@ -1770,8 +1770,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": "storecorpocelesterequest.php"
     },
     {
@@ -1781,8 +1781,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": "storecorpocelesterequest"
     },
     {
@@ -1792,8 +1792,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_authorize",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": ".authorize()"
     },
     {
@@ -1803,8 +1803,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_rules",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": ".rules()"
     },
     {
@@ -1814,8 +1814,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_http_requests_storecorpocelesterequest_storecorpocelesterequest_passedvalidation",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": ".passedvalidation()"
     },
     {
@@ -1825,8 +1825,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_storecuriositarequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 122,
+      "community_name": "concurrently",
       "norm_label": "storecuriositarequest.php"
     },
     {
@@ -1836,8 +1836,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_storecuriositarequest_storecuriositarequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 122,
+      "community_name": "concurrently",
       "norm_label": "storecuriositarequest"
     },
     {
@@ -1847,8 +1847,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_storecuriositarequest_storecuriositarequest_authorize",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 122,
+      "community_name": "concurrently",
       "norm_label": ".authorize()"
     },
     {
@@ -1858,8 +1858,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_storecuriositarequest_storecuriositarequest_rules",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 122,
+      "community_name": "concurrently",
       "norm_label": ".rules()"
     },
     {
@@ -1913,8 +1913,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_storemissionerequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 118,
+      "community_name": "CleanupGalleryDuplicates.php",
       "norm_label": "storemissionerequest.php"
     },
     {
@@ -1924,8 +1924,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_storemissionerequest_storemissionerequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 118,
+      "community_name": "CleanupGalleryDuplicates.php",
       "norm_label": "storemissionerequest"
     },
     {
@@ -1935,8 +1935,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_storemissionerequest_storemissionerequest_authorize",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 118,
+      "community_name": "CleanupGalleryDuplicates.php",
       "norm_label": ".authorize()"
     },
     {
@@ -1946,8 +1946,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_storemissionerequest_storemissionerequest_rules",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 118,
+      "community_name": "CleanupGalleryDuplicates.php",
       "norm_label": ".rules()"
     },
     {
@@ -2034,8 +2034,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest",
-      "community": 113,
-      "community_name": "CorpoCelesteController",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": "updatecorpocelesterequest.php"
     },
     {
@@ -2045,8 +2045,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest",
-      "community": 113,
-      "community_name": "CorpoCelesteController",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": "updatecorpocelesterequest"
     },
     {
@@ -2056,8 +2056,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_updatecorpocelesterequest_updatecorpocelesterequest_rules",
-      "community": 113,
-      "community_name": "CorpoCelesteController",
+      "community": 24,
+      "community_name": "compilerOptions",
       "norm_label": ".rules()"
     },
     {
@@ -2089,8 +2089,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 123,
+      "community_name": "laravel-vite-plugin",
       "norm_label": "updategalleriacorporequest.php"
     },
     {
@@ -2100,8 +2100,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest_updategalleriacorporequest",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 123,
+      "community_name": "laravel-vite-plugin",
       "norm_label": "updategalleriacorporequest"
     },
     {
@@ -2111,8 +2111,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest_updategalleriacorporequest_authorize",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 123,
+      "community_name": "laravel-vite-plugin",
       "norm_label": ".authorize()"
     },
     {
@@ -2122,8 +2122,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "app_http_requests_updategalleriacorporequest_updategalleriacorporequest_rules",
-      "community": 11,
-      "community_name": "GalleriaCorpo",
+      "community": 123,
+      "community_name": "laravel-vite-plugin",
       "norm_label": ".rules()"
     },
     {
@@ -2133,8 +2133,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_http_requests_updatemissionerequest",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 112,
+      "community_name": "DashboardController.php",
       "norm_label": "updatemissionerequest.php"
     },
     {
@@ -2144,8 +2144,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "app_http_requests_updatemissionerequest_updatemissionerequest",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 112,
+      "community_name": "DashboardController.php",
       "norm_label": "updatemissionerequest"
     },
     {
@@ -2155,8 +2155,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "app_http_requests_updatemissionerequest_updatemissionerequest_rules",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 112,
+      "community_name": "DashboardController.php",
       "norm_label": ".rules()"
     },
     {
@@ -2375,8 +2375,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "app_jobs_importnasaimage_importnasaimage_handle",
-      "community": 253,
-      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".handle()"
     },
     {
@@ -2419,8 +2419,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "app_models_categoria_categoria",
-      "community": 7,
-      "community_name": "LoginRequest",
+      "community": 250,
+      "community_name": ".missioni",
       "norm_label": "categoria"
     },
     {
@@ -3222,8 +3222,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": "appserviceprovider.php"
     },
     {
@@ -3233,8 +3233,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": "appserviceprovider"
     },
     {
@@ -3244,8 +3244,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_register",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": ".register()"
     },
     {
@@ -3255,8 +3255,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "app_providers_appserviceprovider_appserviceprovider_boot",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": ".boot()"
     },
     {
@@ -3354,8 +3354,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": "nasaimageservice"
     },
     {
@@ -3376,8 +3376,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_searchnasa",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".searchnasa()"
     },
     {
@@ -3387,8 +3387,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_extractmetadata",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".extractmetadata()"
     },
     {
@@ -3398,8 +3398,8 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_pickmainimageurl",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".pickmainimageurl()"
     },
     {
@@ -3409,8 +3409,8 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_pickgalleryimageurl",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".pickgalleryimageurl()"
     },
     {
@@ -3420,8 +3420,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_findlinkbyrels",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".findlinkbyrels()"
     },
     {
@@ -3431,8 +3431,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importforbody",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".importforbody()"
     },
     {
@@ -3442,8 +3442,8 @@
       "source_location": "L256",
       "_origin": "ast",
       "id": "app_services_nasaimageservice_nasaimageservice_importall",
-      "community": 117,
-      "community_name": "NasaImageService",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": ".importall()"
     },
     {
@@ -3640,8 +3640,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "bootstrap_providers",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": "providers.php"
     },
     {
@@ -5708,8 +5708,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "package",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "package.json"
     },
     {
@@ -5719,8 +5719,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "package_schema",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "$schema"
     },
     {
@@ -5730,8 +5730,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "package_private",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "private"
     },
     {
@@ -5741,8 +5741,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "package_type",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "type"
     },
     {
@@ -5752,8 +5752,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "scripts"
     },
     {
@@ -5763,8 +5763,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "build"
     },
     {
@@ -5774,8 +5774,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "dev"
     },
     {
@@ -5785,8 +5785,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_test",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "test"
     },
     {
@@ -5796,8 +5796,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_test_watch",
-      "community": 114,
-      "community_name": "package.json",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "test:watch"
     },
     {
@@ -5818,8 +5818,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss_forms",
-      "community": 124,
-      "community_name": "@tailwindcss/forms",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "@tailwindcss/forms"
     },
     {
@@ -5829,8 +5829,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tailwindcss_forms",
-      "community": 124,
-      "community_name": "@tailwindcss/forms",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "@tailwindcss/forms"
     },
     {
@@ -5840,8 +5840,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss_postcss",
-      "community": 125,
-      "community_name": "@tailwindcss/postcss",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "@tailwindcss/postcss"
     },
     {
@@ -5851,8 +5851,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tailwindcss_postcss",
-      "community": 125,
-      "community_name": "@tailwindcss/postcss",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "@tailwindcss/postcss"
     },
     {
@@ -5928,8 +5928,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "package_devdependencies_concurrently",
-      "community": 122,
-      "community_name": "concurrently",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "concurrently"
     },
     {
@@ -5939,8 +5939,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "concurrently",
-      "community": 122,
-      "community_name": "concurrently",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "concurrently"
     },
     {
@@ -5972,8 +5972,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "package_devdependencies_laravel_vite_plugin",
-      "community": 123,
-      "community_name": "laravel-vite-plugin",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "laravel-vite-plugin"
     },
     {
@@ -5983,8 +5983,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "laravel_vite_plugin",
-      "community": 123,
-      "community_name": "laravel-vite-plugin",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "laravel-vite-plugin"
     },
     {
@@ -6060,8 +6060,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "package_devdependencies_vite",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": "vite"
     },
     {
@@ -6071,8 +6071,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "vite",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": "vite"
     },
     {
@@ -6104,8 +6104,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "package_dependencies",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "dependencies"
     },
     {
@@ -6115,8 +6115,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "package_dependencies_axios",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "axios"
     },
     {
@@ -6126,8 +6126,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "axios",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "axios"
     },
     {
@@ -6137,8 +6137,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "package_dependencies_framer_motion",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "framer-motion"
     },
     {
@@ -6148,8 +6148,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "framer_motion",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "framer-motion"
     },
     {
@@ -6159,8 +6159,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "package_dependencies_lucide_react",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "lucide-react"
     },
     {
@@ -6170,8 +6170,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "lucide_react",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "lucide-react"
     },
     {
@@ -6181,8 +6181,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "react"
     },
     {
@@ -6192,8 +6192,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "react",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "react"
     },
     {
@@ -6203,8 +6203,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "package_dependencies_react_dom",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "react-dom"
     },
     {
@@ -6214,8 +6214,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "react_dom",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "react-dom"
     },
     {
@@ -6225,8 +6225,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "package_dependencies_react_router_dom",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "react-router-dom"
     },
     {
@@ -6236,8 +6236,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "react_router_dom",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "react-router-dom"
     },
     {
@@ -6247,8 +6247,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "package_dependencies_yet_another_react_lightbox",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "yet-another-react-lightbox"
     },
     {
@@ -6258,8 +6258,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "yet_another_react_lightbox",
-      "community": 24,
-      "community_name": "compilerOptions",
+      "community": 8,
+      "community_name": "devDependencies",
       "norm_label": "yet-another-react-lightbox"
     },
     {
@@ -7946,17 +7946,6 @@
       "norm_label": "admin.corpi-celesti._form"
     },
     {
-      "label": "admin.partials.nasa-suggest-js",
-      "file_type": "code",
-      "source_file": "resources/views/admin/corpi-celesti/create.blade.php",
-      "source_location": null,
-      "_origin": "ast",
-      "id": "resources_views_admin_corpi_celesti_create_blade_php_admin_partials_nasa_suggest_js",
-      "community": 80,
-      "community_name": "create.blade.php",
-      "norm_label": "admin.partials.nasa-suggest-js"
-    },
-    {
       "label": "edit.blade.php",
       "file_type": "code",
       "source_file": "resources/views/admin/corpi-celesti/edit.blade.php",
@@ -7988,17 +7977,6 @@
       "community": 81,
       "community_name": "edit.blade.php",
       "norm_label": "admin.corpi-celesti._form"
-    },
-    {
-      "label": "admin.partials.nasa-suggest-js",
-      "file_type": "code",
-      "source_file": "resources/views/admin/corpi-celesti/edit.blade.php",
-      "source_location": null,
-      "_origin": "ast",
-      "id": "resources_views_admin_corpi_celesti_edit_blade_php_admin_partials_nasa_suggest_js",
-      "community": 81,
-      "community_name": "edit.blade.php",
-      "norm_label": "admin.partials.nasa-suggest-js"
     },
     {
       "label": "index.blade.php",
@@ -8879,17 +8857,6 @@
       "community": 297,
       "community_name": "mission-stato-badge.blade.php",
       "norm_label": "mission-stato-badge.blade.php"
-    },
-    {
-      "label": "nasa-suggest-js.blade.php",
-      "file_type": "code",
-      "source_file": "resources/views/admin/partials/nasa-suggest-js.blade.php",
-      "source_location": null,
-      "_origin": "ast",
-      "id": "resources_views_admin_partials_nasa_suggest_js_blade",
-      "community": 185,
-      "community_name": "nasa-suggest-js.blade.php",
-      "norm_label": "nasa-suggest-js.blade.php"
     },
     {
       "label": "search.blade.php",
@@ -10196,8 +10163,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "tests_feature_admin_deleteprotectiontest_deleteprotectiontest_test_galleria_destroy_succeeds_when_not_used_as_main_image",
-      "community": 162,
-      "community_name": "CorpoCelesteCrudTest",
+      "community": 245,
+      "community_name": "DashboardController.php",
       "norm_label": ".test_galleria_destroy_succeeds_when_not_used_as_main_image()"
     },
     {
@@ -10229,8 +10196,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "tests_feature_admin_deleteprotectiontest_deleteprotectiontest_test_guest_cannot_delete_galleria",
-      "community": 162,
-      "community_name": "CorpoCelesteCrudTest",
+      "community": 245,
+      "community_name": "DashboardController.php",
       "norm_label": ".test_guest_cannot_delete_galleria()"
     },
     {
@@ -10482,8 +10449,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_feature_admin_imageuploadservicetest_imageuploadservicetest",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 116,
+      "community_name": "AppServiceProvider.php",
       "norm_label": "imageuploadservicetest"
     },
     {
@@ -10493,8 +10460,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_feature_admin_imageuploadservicetest_imageuploadservicetest_setup",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 116,
+      "community_name": "AppServiceProvider.php",
       "norm_label": ".setup()"
     },
     {
@@ -10504,8 +10471,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_feature_admin_imageuploadservicetest_imageuploadservicetest_test_upload_stores_file_on_disk",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 116,
+      "community_name": "AppServiceProvider.php",
       "norm_label": ".test_upload_stores_file_on_disk()"
     },
     {
@@ -10515,8 +10482,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_feature_admin_imageuploadservicetest_imageuploadservicetest_test_upload_resizes_large_image",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 116,
+      "community_name": "AppServiceProvider.php",
       "norm_label": ".test_upload_resizes_large_image()"
     },
     {
@@ -10526,8 +10493,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "tests_feature_admin_imageuploadservicetest_imageuploadservicetest_test_upload_uses_custom_directory",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 116,
+      "community_name": "AppServiceProvider.php",
       "norm_label": ".test_upload_uses_custom_directory()"
     },
     {
@@ -10537,8 +10504,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "tests_feature_admin_imageuploadservicetest_imageuploadservicetest_test_upload_preserves_extension",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 116,
+      "community_name": "AppServiceProvider.php",
       "norm_label": ".test_upload_preserves_extension()"
     },
     {
@@ -10548,8 +10515,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "tests_feature_admin_imageuploadservicetest_imageuploadservicetest_test_upload_generates_unique_filenames",
-      "community": 27,
-      "community_name": "Dropdown.jsx",
+      "community": 116,
+      "community_name": "AppServiceProvider.php",
       "norm_label": ".test_upload_generates_unique_filenames()"
     },
     {
@@ -11032,8 +10999,8 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "tests_feature_api_apiedgecasetest_apiedgecasetest_test_missione_index_filters_by_agenzia_and_stato",
-      "community": 3,
-      "community_name": "CorpoCeleste",
+      "community": 7,
+      "community_name": "LoginRequest",
       "norm_label": ".test_missione_index_filters_by_agenzia_and_stato()"
     },
     {
@@ -11043,8 +11010,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "tests_feature_api_apiedgecasetest_apiedgecasetest_test_missione_index_filters_by_agenzia",
-      "community": 3,
-      "community_name": "CorpoCeleste",
+      "community": 7,
+      "community_name": "LoginRequest",
       "norm_label": ".test_missione_index_filters_by_agenzia()"
     },
     {
@@ -11054,8 +11021,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "tests_feature_api_apiedgecasetest_apiedgecasetest_test_missione_index_filters_by_stato",
-      "community": 3,
-      "community_name": "CorpoCeleste",
+      "community": 7,
+      "community_name": "LoginRequest",
       "norm_label": ".test_missione_index_filters_by_stato()"
     },
     {
@@ -11153,8 +11120,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest",
-      "community": 213,
-      "community_name": "Test \u2014 Astralis",
+      "community": 117,
+      "community_name": "NasaImageService",
       "norm_label": "categoriaapitest.php"
     },
     {
@@ -11164,8 +11131,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest",
-      "community": 213,
-      "community_name": "Test \u2014 Astralis",
+      "community": 117,
+      "community_name": "NasaImageService",
       "norm_label": "categoriaapitest"
     },
     {
@@ -11175,8 +11142,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_setup",
-      "community": 213,
-      "community_name": "Test \u2014 Astralis",
+      "community": 117,
+      "community_name": "NasaImageService",
       "norm_label": ".setup()"
     },
     {
@@ -11186,8 +11153,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_index_returns_all_categorie",
-      "community": 213,
-      "community_name": "Test \u2014 Astralis",
+      "community": 117,
+      "community_name": "NasaImageService",
       "norm_label": ".test_index_returns_all_categorie()"
     },
     {
@@ -11197,8 +11164,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_categoria_with_corpi_count",
-      "community": 213,
-      "community_name": "Test \u2014 Astralis",
+      "community": 117,
+      "community_name": "NasaImageService",
       "norm_label": ".test_show_returns_categoria_with_corpi_count()"
     },
     {
@@ -11208,8 +11175,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_feature_api_categoriaapitest_categoriaapitest_test_show_returns_404_for_invalid_slug",
-      "community": 213,
-      "community_name": "Test \u2014 Astralis",
+      "community": 117,
+      "community_name": "NasaImageService",
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -11406,8 +11373,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_feature_api_curiositaapitest_curiositaapitest_test_index_returns_all_curiosita",
-      "community": 15,
-      "community_name": "\ud83e\ude90 Astralis \u2014 Catalogo di Corpi Celesti",
+      "community": 250,
+      "community_name": ".missioni",
       "norm_label": ".test_index_returns_all_curiosita()"
     },
     {
@@ -11549,8 +11516,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest",
-      "community": 120,
-      "community_name": "MissioneApiTest",
+      "community": 213,
+      "community_name": "Test \u2014 Astralis",
       "norm_label": "missioneapitest"
     },
     {
@@ -11560,8 +11527,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_setup",
-      "community": 120,
-      "community_name": "MissioneApiTest",
+      "community": 213,
+      "community_name": "Test \u2014 Astralis",
       "norm_label": ".setup()"
     },
     {
@@ -11571,8 +11538,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_index_returns_all_missioni",
-      "community": 120,
-      "community_name": "MissioneApiTest",
+      "community": 213,
+      "community_name": "Test \u2014 Astralis",
       "norm_label": ".test_index_returns_all_missioni()"
     },
     {
@@ -11582,8 +11549,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_missione",
-      "community": 120,
-      "community_name": "MissioneApiTest",
+      "community": 213,
+      "community_name": "Test \u2014 Astralis",
       "norm_label": ".test_show_returns_missione()"
     },
     {
@@ -11593,8 +11560,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "tests_feature_api_missioneapitest_missioneapitest_test_show_returns_404_for_invalid_slug",
-      "community": 120,
-      "community_name": "MissioneApiTest",
+      "community": 213,
+      "community_name": "Test \u2014 Astralis",
       "norm_label": ".test_show_returns_404_for_invalid_slug()"
     },
     {
@@ -15987,10 +15954,21 @@
       "norm_label": "changelog"
     },
     {
-      "label": "20/07/2026",
+      "label": "21/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
       "source_location": "L5",
+      "_origin": "ast",
+      "id": "docs_changelog_21_07_2026",
+      "community": 5,
+      "community_name": "Changelog",
+      "norm_label": "21/07/2026"
+    },
+    {
+      "label": "20/07/2026",
+      "file_type": "document",
+      "source_file": "docs/changelog.md",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "docs_changelog_20_07_2026",
       "community": 5,
@@ -16001,7 +15979,7 @@
       "label": "19/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L18",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "docs_changelog_19_07_2026",
       "community": 5,
@@ -16012,7 +15990,7 @@
       "label": "18/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L32",
+      "source_location": "L52",
       "_origin": "ast",
       "id": "docs_changelog_18_07_2026",
       "community": 5,
@@ -16023,7 +16001,7 @@
       "label": "17/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L45",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "docs_changelog_17_07_2026",
       "community": 5,
@@ -16034,7 +16012,7 @@
       "label": "16/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L64",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "docs_changelog_16_07_2026",
       "community": 5,
@@ -16045,7 +16023,7 @@
       "label": "15/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L88",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "docs_changelog_15_07_2026",
       "community": 5,
@@ -16056,7 +16034,7 @@
       "label": "14/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L110",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "docs_changelog_14_07_2026",
       "community": 5,
@@ -16067,7 +16045,7 @@
       "label": "11/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L150",
+      "source_location": "L170",
       "_origin": "ast",
       "id": "docs_changelog_11_07_2026",
       "community": 5,
@@ -16078,7 +16056,7 @@
       "label": "10/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L167",
+      "source_location": "L187",
       "_origin": "ast",
       "id": "docs_changelog_10_07_2026",
       "community": 5,
@@ -16089,7 +16067,7 @@
       "label": "09/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L183",
+      "source_location": "L203",
       "_origin": "ast",
       "id": "docs_changelog_09_07_2026",
       "community": 5,
@@ -16100,7 +16078,7 @@
       "label": "08/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L208",
+      "source_location": "L228",
       "_origin": "ast",
       "id": "docs_changelog_08_07_2026",
       "community": 5,
@@ -16111,7 +16089,7 @@
       "label": "07/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L224",
+      "source_location": "L244",
       "_origin": "ast",
       "id": "docs_changelog_07_07_2026",
       "community": 5,
@@ -16122,7 +16100,7 @@
       "label": "06/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L235",
+      "source_location": "L255",
       "_origin": "ast",
       "id": "docs_changelog_06_07_2026",
       "community": 5,
@@ -16133,7 +16111,7 @@
       "label": "05/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L244",
+      "source_location": "L264",
       "_origin": "ast",
       "id": "docs_changelog_05_07_2026",
       "community": 5,
@@ -16144,7 +16122,7 @@
       "label": "04/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L252",
+      "source_location": "L272",
       "_origin": "ast",
       "id": "docs_changelog_04_07_2026",
       "community": 5,
@@ -16155,7 +16133,7 @@
       "label": "03/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L278",
+      "source_location": "L298",
       "_origin": "ast",
       "id": "docs_changelog_03_07_2026",
       "community": 5,
@@ -16166,7 +16144,7 @@
       "label": "02/07/2026",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L291",
+      "source_location": "L311",
       "_origin": "ast",
       "id": "docs_changelog_02_07_2026",
       "community": 5,
@@ -16177,7 +16155,7 @@
       "label": "Formato",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L297",
+      "source_location": "L317",
       "_origin": "ast",
       "id": "docs_changelog_formato",
       "community": 5,
@@ -16188,7 +16166,7 @@
       "label": "Note",
       "file_type": "document",
       "source_file": "docs/changelog.md",
-      "source_location": "L328",
+      "source_location": "L348",
       "_origin": "ast",
       "id": "docs_changelog_note",
       "community": 5,
@@ -16983,8 +16961,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "docs_progetto_finale_parte_1_backoffice_in_laravel",
-      "community": 0,
-      "community_name": "User",
+      "community": 114,
+      "community_name": "package.json",
       "norm_label": "parte 1: backoffice in laravel"
     },
     {
@@ -16994,8 +16972,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "docs_progetto_finale_autenticazione_e_accesso",
-      "community": 0,
-      "community_name": "User",
+      "community": 114,
+      "community_name": "package.json",
       "norm_label": "\ud83d\udd12 autenticazione e accesso"
     },
     {
@@ -17005,8 +16983,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "docs_progetto_finale_gestione_entit\u00e0_crud",
-      "community": 0,
-      "community_name": "User",
+      "community": 114,
+      "community_name": "package.json",
       "norm_label": "\ud83d\udce6 gestione entita (crud)"
     },
     {
@@ -17016,8 +16994,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "docs_progetto_finale_requisiti_minimi",
-      "community": 0,
-      "community_name": "User",
+      "community": 114,
+      "community_name": "package.json",
       "norm_label": "\u2699\ufe0f requisiti minimi"
     },
     {
@@ -17027,8 +17005,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "docs_progetto_finale_upload_media",
-      "community": 0,
-      "community_name": "User",
+      "community": 114,
+      "community_name": "package.json",
       "norm_label": "\ud83d\uddbc\ufe0f upload media"
     },
     {
@@ -17038,8 +17016,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "docs_progetto_finale_esempi_di_struttura",
-      "community": 0,
-      "community_name": "User",
+      "community": 114,
+      "community_name": "package.json",
       "norm_label": "\ud83d\udca1 esempi di struttura"
     },
     {
@@ -17049,8 +17027,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "docs_progetto_finale_note_tecniche",
-      "community": 0,
-      "community_name": "User",
+      "community": 114,
+      "community_name": "package.json",
       "norm_label": "\ud83d\udcbb note tecniche"
     },
     {
@@ -17478,8 +17456,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo",
-      "community": 20,
-      "community_name": "index.md",
+      "community": 25,
+      "community_name": "CorpoCeleste.php",
       "norm_label": "todo.md"
     },
     {
@@ -17489,8 +17467,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_todo_todo",
-      "community": 20,
-      "community_name": "index.md",
+      "community": 25,
+      "community_name": "CorpoCeleste.php",
       "norm_label": "todo"
     },
     {
@@ -17500,8 +17478,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "docs_todo_da_fare",
-      "community": 20,
-      "community_name": "index.md",
+      "community": 25,
+      "community_name": "CorpoCeleste.php",
       "norm_label": "da fare"
     },
     {
@@ -17511,8 +17489,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "docs_todo_in_lavorazione",
-      "community": 20,
-      "community_name": "index.md",
+      "community": 25,
+      "community_name": "CorpoCeleste.php",
       "norm_label": "in lavorazione"
     },
     {
@@ -17527,10 +17505,21 @@
       "norm_label": "completate"
     },
     {
-      "label": "20/07/2026",
+      "label": "21/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
       "source_location": "L17",
+      "_origin": "ast",
+      "id": "docs_todo_21_07_2026",
+      "community": 25,
+      "community_name": "CorpoCeleste.php",
+      "norm_label": "21/07/2026"
+    },
+    {
+      "label": "20/07/2026",
+      "file_type": "document",
+      "source_file": "docs/todo.md",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "docs_todo_20_07_2026",
       "community": 25,
@@ -17541,7 +17530,7 @@
       "label": "19/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L35",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "docs_todo_19_07_2026",
       "community": 25,
@@ -17552,7 +17541,7 @@
       "label": "18/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L57",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "docs_todo_18_07_2026",
       "community": 25,
@@ -17563,7 +17552,7 @@
       "label": "17/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L71",
+      "source_location": "L87",
       "_origin": "ast",
       "id": "docs_todo_17_07_2026",
       "community": 25,
@@ -17574,7 +17563,7 @@
       "label": "16/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L94",
+      "source_location": "L110",
       "_origin": "ast",
       "id": "docs_todo_16_07_2026",
       "community": 25,
@@ -17585,7 +17574,7 @@
       "label": "15/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L106",
+      "source_location": "L122",
       "_origin": "ast",
       "id": "docs_todo_15_07_2026",
       "community": 25,
@@ -17596,7 +17585,7 @@
       "label": "14/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L113",
+      "source_location": "L129",
       "_origin": "ast",
       "id": "docs_todo_14_07_2026",
       "community": 25,
@@ -17607,7 +17596,7 @@
       "label": "11/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L127",
+      "source_location": "L143",
       "_origin": "ast",
       "id": "docs_todo_11_07_2026",
       "community": 25,
@@ -17618,7 +17607,7 @@
       "label": "10/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L155",
+      "source_location": "L171",
       "_origin": "ast",
       "id": "docs_todo_10_07_2026",
       "community": 25,
@@ -17629,7 +17618,7 @@
       "label": "09/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L166",
+      "source_location": "L182",
       "_origin": "ast",
       "id": "docs_todo_09_07_2026",
       "community": 25,
@@ -17640,7 +17629,7 @@
       "label": "08/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L174",
+      "source_location": "L190",
       "_origin": "ast",
       "id": "docs_todo_08_07_2026",
       "community": 25,
@@ -17651,7 +17640,7 @@
       "label": "07/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L181",
+      "source_location": "L197",
       "_origin": "ast",
       "id": "docs_todo_07_07_2026",
       "community": 25,
@@ -17662,7 +17651,7 @@
       "label": "04/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L187",
+      "source_location": "L203",
       "_origin": "ast",
       "id": "docs_todo_04_07_2026",
       "community": 25,
@@ -17673,7 +17662,7 @@
       "label": "03/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L195",
+      "source_location": "L211",
       "_origin": "ast",
       "id": "docs_todo_03_07_2026",
       "community": 25,
@@ -17684,7 +17673,7 @@
       "label": "02/07/2026",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L201",
+      "source_location": "L217",
       "_origin": "ast",
       "id": "docs_todo_02_07_2026",
       "community": 25,
@@ -17695,11 +17684,11 @@
       "label": "Note",
       "file_type": "document",
       "source_file": "docs/todo.md",
-      "source_location": "L207",
+      "source_location": "L223",
       "_origin": "ast",
       "id": "docs_todo_note",
-      "community": 20,
-      "community_name": "index.md",
+      "community": 25,
+      "community_name": "CorpoCeleste.php",
       "norm_label": "note"
     },
     {
@@ -17885,8 +17874,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_console_command",
-      "community": 118,
-      "community_name": "CleanupGalleryDuplicates.php",
+      "community": 254,
+      "community_name": "Fase 1 \u2014 Critico React Frontend (P0)",
       "norm_label": "illuminate\\console\\command"
     },
     {
@@ -18171,8 +18160,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "illuminate_support_serviceprovider",
-      "community": 116,
-      "community_name": "AppServiceProvider.php",
+      "community": 253,
+      "community_name": "Task 40 \u2014 Debug generale post-ottimizzazione",
       "norm_label": "illuminate\\support\\serviceprovider"
     },
     {
@@ -38858,17 +38847,6 @@
       "relation": "includes",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "resources/views/admin/corpi-celesti/create.blade.php",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "resources_views_admin_corpi_celesti_create_blade",
-      "target": "resources_views_admin_corpi_celesti_create_blade_php_admin_partials_nasa_suggest_js"
-    },
-    {
-      "relation": "includes",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "resources/views/admin/corpi-celesti/edit.blade.php",
       "source_location": null,
       "weight": 1.0,
@@ -38886,17 +38864,6 @@
       "_origin": "ast",
       "source": "resources_views_admin_corpi_celesti_edit_blade",
       "target": "resources_views_admin_corpi_celesti_edit_blade_php_admin_partials_back_link"
-    },
-    {
-      "relation": "includes",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "resources/views/admin/corpi-celesti/edit.blade.php",
-      "source_location": null,
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "resources_views_admin_corpi_celesti_edit_blade",
-      "target": "resources_views_admin_corpi_celesti_edit_blade_php_admin_partials_nasa_suggest_js"
     },
     {
       "relation": "includes",
@@ -46726,7 +46693,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L291",
+      "source_location": "L311",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46737,7 +46704,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L278",
+      "source_location": "L298",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46748,7 +46715,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L252",
+      "source_location": "L272",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46759,7 +46726,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L244",
+      "source_location": "L264",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46770,7 +46737,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L235",
+      "source_location": "L255",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46781,7 +46748,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L224",
+      "source_location": "L244",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46792,7 +46759,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L208",
+      "source_location": "L228",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46803,7 +46770,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L183",
+      "source_location": "L203",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46814,7 +46781,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L167",
+      "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46825,7 +46792,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L150",
+      "source_location": "L170",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46836,7 +46803,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L110",
+      "source_location": "L130",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46847,7 +46814,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L88",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46858,7 +46825,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L64",
+      "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46869,7 +46836,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L45",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46880,7 +46847,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L32",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46891,7 +46858,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L18",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46902,7 +46869,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L5",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46913,7 +46880,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L297",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_changelog_changelog",
+      "target": "docs_changelog_21_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/changelog.md",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -46924,7 +46902,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/changelog.md",
-      "source_location": "L328",
+      "source_location": "L348",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_changelog_changelog",
@@ -48255,7 +48233,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L207",
+      "source_location": "L223",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_todo",
@@ -48266,7 +48244,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L201",
+      "source_location": "L217",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48277,7 +48255,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L195",
+      "source_location": "L211",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48288,7 +48266,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L187",
+      "source_location": "L203",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48299,7 +48277,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L181",
+      "source_location": "L197",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48310,7 +48288,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L174",
+      "source_location": "L190",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48321,7 +48299,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L166",
+      "source_location": "L182",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48332,7 +48310,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L155",
+      "source_location": "L171",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48343,7 +48321,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L127",
+      "source_location": "L143",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48354,7 +48332,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L113",
+      "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48365,7 +48343,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L106",
+      "source_location": "L122",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48376,7 +48354,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L94",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48387,7 +48365,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L71",
+      "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48398,7 +48376,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L57",
+      "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48409,7 +48387,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L35",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
@@ -48420,11 +48398,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/todo.md",
-      "source_location": "L17",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_todo_completate",
       "target": "docs_todo_20_07_2026",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/todo.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_todo_completate",
+      "target": "docs_todo_21_07_2026",
       "confidence_score": 1.0
     },
     {
@@ -48594,5 +48583,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4d3064f9d23b617aa91adb7646ea75db04c5cdbf"
+  "built_at_commit": "536b09ffb1cf8686697f5528c12cddf980a7c739"
 }
