@@ -13,6 +13,7 @@ class WordMapService
     private ?array $mergedMap = null;
 
     private array $wordMap = [
+        'Sistema Solare'=> 'Solar System',
         'Nebulosa di Orione' => 'Orion Nebula',
         'Cometa di Halley' => "Halley's Comet",
         'Nebulosa' => 'Nebula',

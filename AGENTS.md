@@ -518,7 +518,7 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 21/07/2026 — 10:00
+> _Ultimo aggiornamento:_ 21/07/2026 — 14:00
 
 | Campo               | Valore                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
