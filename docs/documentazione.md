@@ -18,7 +18,7 @@ Astralis è un catalogo web di corpi celesti (pianeti, stelle, galassie, nebulos
 | Lightbox   | yet-another-react-lightbox |
 | Upload     | ImageUploadService + Intervention Image v4 (Missioni/Galleria) |
 | Slug       | spatie/laravel-sluggable   |
-| Modal      | Alpine.js (CDN)            |
+| Modal      | Alpine.js (npm, bundled via Vite)            |
 | Grafici    | Chart.js (CDN)             |
 | Test       | PHPUnit, Vitest, Testing Library, jsdom |
 

@@ -29,7 +29,7 @@ Ordine consigliato per dimostrare il progetto:
 | 3 | Relazioni 1-N o N-N | ✅ | 5 entità, 3 tipi: BelongsTo/HasMany (1-N), BelongsToMany (N-N con pivot `corpo_celeste_missione`) |
 | 4 | CRUD entità secondarie | ✅ | Categoria, Missione, Curiosità, Galleria — CRUD completo ciascuna |
 | 5 | Upload media | ✅ | Missioni (logo 300px), Galleria (1200px) con ImageUploadService + Intervention Image v4 `scaleDown()` |
-| 6 | Template Blade | ✅ | Layout master `app.blade.php` con sidebar navigazione, Alpine.js CDN |
+| 6 | Template Blade | ✅ | Layout master `app.blade.php` con sidebar navigazione, Alpine.js (npm) |
 
 ### Parte 2 — Guest React
 
@@ -172,7 +172,7 @@ Restituisce max 4 corpi della stessa categoria.
 | **Database** | MySQL | 8.x | Richiesto. Porta 3307 |
 | **Auth** | Laravel Breeze | — | Richiesto. Configurato con Blade (non Inertia) |
 | **Frontend guest** | React | 18.2 | Richiesto. SPA standalone con Vite |
-| **Frontend admin** | Blade + Alpine.js | — | Richiesto per admin. Alpine.js CDN per modali |
+| **Frontend admin** | Blade + Alpine.js | 3.15 | Richiesto per admin. Alpine.js bundled via Vite per interattività |
 | **CSS** | Tailwind CSS | 4.3 | Utility-first, tema dark custom |
 | **Icone** | lucide-react | 1.23 | Icone categoria, navigazione, azioni |
 | **Lightbox** | yet-another-react-lightbox | — | Galleria immagini a schermo intero |

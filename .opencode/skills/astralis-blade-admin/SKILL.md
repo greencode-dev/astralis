@@ -10,20 +10,19 @@ Admin pages in Blade puro (`resources/views/admin/`). Master layout: `layouts/ap
 ## Tech Stack
 
 - **Blade** (Laravel templating)
-- **Alpine.js** via CDN unpkg — nessun fallback locale
+- **Alpine.js** via npm, bundled da Vite (`resources/js/admin.js`)
 - **Tailwind CSS**
 - **Chart.js** via CDN per grafici
 
 ## Master Layout (`layouts/app.blade.php`)
 
 ### Alpine.js Setup
-```html
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<style>[x-cloak] { display: none !important; }</style>
-```
+Alpine.js è installato come dipendenza npm e bundled da Vite.
+Entry point: `resources/js/admin.js` → import + `Alpine.start()`.
+Caricato nel layout con: `@vite(['resources/css/app.css', 'resources/js/admin.js'])`
 
 ### x-cloak
-Style presente nel `<head>` per prevenire FOUC. Essenziale dato Alpine.js via CDN.
+Style in `resources/css/app.css` per prevenire FOUC. Essenziale dato Alpine.js viene inizializzato da Vite.
 
 ## Admin Palette
 

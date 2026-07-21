@@ -13,10 +13,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="preconnect" href="https://images-assets.nasa.gov">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700|orbitron:400,500,600,700,800,900&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css'])
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-            onerror="this.onerror=null;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js';s.defer=true;document.head.appendChild(s);"></script>
-    <style>[x-cloak] { display: none !important; }</style>
+    @vite(['resources/css/app.css', 'resources/js/admin.js'])
 </head>
 <body class="font-sans antialiased bg-admin-bg text-admin-text">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-admin-primary focus:text-admin-bg focus:rounded-lg focus:m-2">

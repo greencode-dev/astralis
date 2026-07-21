@@ -22,7 +22,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Auth**: Laravel Breeze (Blade puro login/register → Blade admin)
 - **Database**: MySQL (port 3307)
 - **Guest frontend**: React 18, Vite, react-router-dom, lucide-react, yet-another-react-lightbox
-- **Admin frontend**: Blade, Alpine.js (CDN da unpkg — no local fallback)
+- **Admin frontend**: Blade, Alpine.js (npm, bundled via Vite)
 - **CSS**: Tailwind CSS
 - **Upload**: Laravel Storage nativo (`disk('public')`) per copertine. Intervention Image v4 solo per import NASA (`scaleDown()`, NO facade)
 - **SSL**: `Http::withoutVerifying()` solo in local/testing (Windows)
@@ -64,7 +64,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `app/Http/Controllers/Admin/`                                | Controller CRUD admin (Blade)                                                        |
 | `app/Http/Controllers/Api/`                                  | Controller API (JSON)                                                                |
 | `app/Http/Controllers/Auth/`                                 | Controller auth Breeze (Blade)                                                       |
-| `resources/views/admin/layouts/app.blade.php`                | Master layout admin (sidebar + Alpine.js CDN + x-cloak)                              |
+| `resources/views/admin/layouts/app.blade.php`                | Master layout admin (sidebar + Alpine.js + x-cloak)                                |
 | `resources/views/admin/partials/_sidebar-nav.blade.php`      | Sidebar nav rendering (reads config/admin.php)                                       |
 | `resources/views/admin/partials/category-badge.blade.php`    | Reusable category badge                                                              |
 | `resources/views/admin/partials/index-header.blade.php`      | Index page header with create button                                                 |
@@ -75,7 +75,8 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `resources/js/guest/hooks/useDebounce.js`                    | Shared debounce hook                                                                 |
 | `resources/js/guest/pages/NotFound.jsx`                      | 404 page (catch-all route)                                                           |
 | `resources/js/guest/`                                        | React SPA guest                                                                      |
-| `vite.config.js`                                             | Config Vite: React plugin, proxy API`/api` → `http://localhost:8000`                 |
+| `resources/js/admin.js`                                      | Admin Alpine.js entry point (npm, bundled via Vite)                                  |
+| `vite.config.js`                                             | Config Vite: React plugin, Alpine.js, proxy API`/api` → `http://localhost:8000`     |
 
 ## Testing
 
@@ -86,9 +87,9 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 
 ## Bugs noti / Pattern da evitare
 
-- **CDN (Alpine.js + Chart.js)**: dipendono da connettività esterna. Nessun fallback locale.
+- **CDN (Chart.js)**: dipende da connettività esterna. Nessun fallback locale.
 - **bootstrap/cache**: su Windows, se creata da Git Bash, va ricreata con `cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'`
-- **`[x-cloak]`**: style presente nel `<head>` di `app.blade.php` per prevenire FOUC con Alpine.js
+- **`[x-cloak]`**: style in `resources/css/app.css` per prevenire FOUC con Alpine.js
 - **Dual slash in cmd**: da Git Bash usare `cmd //c` (doppio slash), non `cmd /c`
 - **Vite proxy API**: `vite.config.js` ha `server.proxy: { '/api': 'http://localhost:8000' }` — senza proxy, le chiamate API da `http://localhost:5175/` falliscono con CORB/white page. Il proxy inoltra le richieste `/api` al backend Laravel
 
