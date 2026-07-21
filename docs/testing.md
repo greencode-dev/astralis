@@ -4,7 +4,7 @@ Suite di test per backend (PHPUnit) e frontend React (Vitest).
 
 ## Esecuzione
 
-### Backend (PHPUnit) — 264 test, 601 assertion
+### Backend (PHPUnit) — 270 test, 613 assertion
 
 ```bash
 php artisan test                              # Tutti
@@ -13,7 +13,7 @@ php artisan test tests/Feature/Api/           # API
 php artisan test tests/Feature/Admin/...      # Admin CRUD
 ```
 
-### Frontend React (Vitest) — 107 test
+### Frontend React (Vitest) — 110 test
 
 ```bash
 npm test                                       # Tutti (vitest run)
@@ -79,7 +79,7 @@ Testa accessors del model `CorpoCeleste`.
 
 | Gruppo | N. test | Cosa copre |
 |---|---|---|
-| **nome_display** | 3 | Restituisce `nome_it` se presente, fallback a `nome`, null safety |
+| **nome_display** | 3 | Restituisce `nome` (italiano) se presente, fallback a `nome_en`, null safety |
 | **immagine_url** | 3 | URL remoto, fallback placeholder, null safety |
 
 #### `ImportNasaImageTest.php` (9 test)
@@ -115,7 +115,7 @@ Testano gli endpoint JSON pubblici in `routes/api.php`.
 | `DashboardApiTest.php` | 4 | `GET /api/dashboard/stats` — conteggi corpi, categorie, missioni |
 | `ApiEdgeCaseTest.php` | 17 | Percent/underscore escaping, per_page zero → 1, agenzia+stato filters, empty DB, factory, dashboard empty, galleria/curiosita includes |
 
-### Feature Admin — 8 file, 93 test
+### Feature Admin — 13 file
 
 #### `CorpoCelesteCrudTest.php` (13 test)
 
@@ -201,12 +201,36 @@ Testano gli endpoint JSON pubblici in `routes/api.php`.
 | Admin delete | `DELETE` → redirect, record rimosso |
 | Non-admin store | 403 |
 
+#### `DashboardTest.php`
+
+Testa la dashboard admin: accesso admin, stats corretti, grafici renderizzati.
+
+#### `DeleteProtectionTest.php`
+
+Testa la protezione eliminazione: Categoria con corpi associati → errore, Missione con corpi associati → errore.
+
+#### `GalleriaOrdineTest.php`
+
+Testa l'ordinamento galleria: sposta su/giù, primo/ultimo elemento, ordine corretto.
+
+#### `ImageUploadServiceTest.php`
+
+Testa `ImageUploadService`: upload con resize, file non immagine → eccezione, file troppo grande.
+
+#### `NasaImportTest.php`
+
+Testa `NasaImportController`: import singolo, importAll, force import, redirect non-admin.
+
+#### `RateLimitingTest.php`
+
+Testa rate limiting: throttle sugli endpoint API e admin.
+
 #### `SearchAndFilterTest.php` (10 test)
 
 | Test | Cosa verifica |
 |---|---|
 | Corpi search by nome | `GET ?search=Sat` → only "Saturno" |
-| Corpi search by nome_it | `GET ?search=Terr` → only "Terra" |
+| Corpi search by nome | `GET ?search=Terr` → only "Terra" |
 | Categorie search | `GET ?search=Pian` → only "Pianeta" |
 | Missioni search | `GET ?search=Apollo` → only "Apollo 11" |
 | Missioni filter stato | `GET ?stato=Completata` → only "Done" |
@@ -280,7 +304,7 @@ if (app()->environment('testing')) {
 
 Questo previene chiamate HTTP reali durante la creazione di factory nei test.
 
-### React — `resources/js/guest/test/` (13 file, 107 test)
+### React — `resources/js/guest/test/` (13 file, 110 test)
 
 #### Componenti (4 file, 27 test)
 

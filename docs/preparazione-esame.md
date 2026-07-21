@@ -1,6 +1,6 @@
-# Cheat Sheet Esame Astralis
+# Preparazione Esame — Astralis
 
-> Riferimento rapido per l'esame finale. Combinazione di traccia, definizioni, architettura e live coding.
+> Riferimento completo per l'esame finale. Script apertura, traccia vs realizzato, Q&A, definizioni, live coding.
 
 ---
 
@@ -10,7 +10,7 @@ Ordine consigliato per dimostrare il progetto:
 
 1. **Login** → `admin@astralis.it` / `password` → tema dark Breeze
 2. **Dashboard** → grafici Chart.js (donut categorie, barre tipi, barre missioni)
-3. **Corpi Celesti** → lista con filtri, ricerca, paginazione → apri "Terra" → 6 metriche, galleria lightbox, curiosità, timeline missioni, corpi simili
+3. **Corpi Celesti** → lista con filtri, ricerca, paginazione → apri "Terra" → metriche, galleria lightbox, curiosità, timeline missioni, corpi simili
 4. **Categorie** → badge colorati, conteggio corpi associati
 5. **Missioni** → timeline orizzontale, badge stato (Completata/In corso/Pianificata)
 6. **NASA Import** → bottone "Importa da NASA" → immagini reali
@@ -18,47 +18,175 @@ Ordine consigliato per dimostrare il progetto:
 
 ---
 
-## 2. Traccia → Come l'ho Implementato
-
-Basato su `docs/progetto-finale.md`.
+## 2. Traccia → Realizzato
 
 ### Parte 1 — Backoffice Laravel
 
-| # | Requisito traccia | Realizzato |
-|---|---|---|
-| 1 | Backoffice con autenticazione Breeze | Breeze Blade puro (Inertia rimosso). Route protette da middleware `auth`. Login, register, profilo, reset password — tema dark `#0A0A1A` |
-| 2 | CRUD entità principale | CorpoCeleste: 7 metodi controller (index, create, store, show, edit, update, destroy). Form 6 sezioni |
-| 3 | Relazioni 1-N o N-N | 5 entità, 3 tipi: BelongsTo/HasMany (1-N), BelongsToMany (N-N con pivot `corpo_celeste_missione`) |
-| 4 | CRUD entità secondarie | Categoria, Missione, Curiosità, Galleria — CRUD completo ciascuna |
-| 5 | Upload media | Missioni (logo 300px), Galleria (1200px) con Intervention Image v4 `scaleDown()` |
-| 6 | Template Blade | Layout master `app.blade.php` con sidebar navigazione, Alpine.js CDN |
+| # | Requisito traccia | Realizzato | Dettagli |
+|---|---|---|---|
+| 1 | Backoffice con autenticazione Breeze | ✅ | Breeze Blade puro (Inertia rimosso). Route protette da middleware `auth`. Login, register, profilo, reset password — tema dark `#0A0A1A` |
+| 2 | CRUD entità principale | ✅ | CorpoCeleste: 7 metodi controller, form 6 sezioni, 18 campi |
+| 3 | Relazioni 1-N o N-N | ✅ | 5 entità, 3 tipi: BelongsTo/HasMany (1-N), BelongsToMany (N-N con pivot `corpo_celeste_missione`) |
+| 4 | CRUD entità secondarie | ✅ | Categoria, Missione, Curiosità, Galleria — CRUD completo ciascuna |
+| 5 | Upload media | ✅ | Missioni (logo 300px), Galleria (1200px) con ImageUploadService + Intervention Image v4 `scaleDown()` |
+| 6 | Template Blade | ✅ | Layout master `app.blade.php` con sidebar navigazione, Alpine.js CDN |
 
 ### Parte 2 — Guest React
 
-| # | Requisito traccia | Realizzato |
-|---|---|---|
-| 7 | SPA React guest | React 18 standalone, Vite, 5 pagine (Home, Lista, Dettaglio, Comparatore, 404) |
-| 8 | Lista elementi | `CorpiLista.jsx`: griglia card, filtri (categoria, tipo, ricerca), paginazione "Carica altri" |
-| 9 | Dettaglio elemento | `CorpoDettaglio.jsx`: 6 metriche, galleria lightbox, curiosità, timeline missioni, simili |
-| 10 | Info correlate | Badge categoria, lightbox immagini NASA, timeline missioni, corpi simili |
-| 11 | API REST | 10 endpoint JSON pubblici in `routes/api.php`. API Resources, eager loading, filtri query |
-| 12 | Test Postman | Endpoint pubblici, JSON response, filtri via query params |
+| # | Requisito traccia | Realizzato | Dettagli |
+|---|---|---|---|
+| 7 | SPA React guest | ✅ | React 18 standalone, Vite, 5 pagine (Home, Lista, Dettaglio, Comparatore, 404) |
+| 8 | Lista elementi | ✅ | `CorpiLista.jsx`: griglia card, filtri (categoria, tipo, ricerca), paginazione "Carica altri" |
+| 9 | Dettaglio elemento | ✅ | `CorpoDettaglio.jsx`: metriche, galleria lightbox, curiosità, timeline missioni, simili |
+| 10 | Info correlate | ✅ | Badge categoria, lightbox immagini NASA, timeline missioni, corpi simili |
+| 11 | API REST | ✅ | 10 endpoint JSON pubblici in `routes/api.php`. API Resources, eager loading, filtri query |
+| 12 | Test Postman | ✅ | Endpoint pubblici, JSON response, filtri via query params |
 
 ### Extra Wow Factor
 
-- Sistema solare animato (CSS keyframes, 8 pianeti orbitanti)
-- NASA API integration (import automatico immagini reali)
-- Comparatore pianeti (7 metriche)
-- Dashboard Chart.js (3 grafici)
-- CLI commands (`astralis:fetch-nasa`, `astralis:gallery`)
-- Error Boundary React
-- SEO (`document.title` dinamico)
-- 380 test (270 PHPUnit + 110 Vitest)
-- WordMapService (IT→EN translation)
+| Extra | Descrizione | Dove |
+|---|---|---|
+| **NASA API Integration** | Import automatico immagini reali, fallback apostrofi, auto-import su created via Observer→Job | Fase 8-9 |
+| **Sistema Solare Animato** | 8 pianeti orbitanti con `requestAnimationFrame`, velocità differenziate | Fase 6 |
+| **Lightbox Galleria** | Schermo intero con swipe mobile, slideshow | Fase 5 |
+| **Comparatore Pianeti** | Confronto 2 corpi su 7 metriche, pre-fill via URL params | Fase 5 |
+| **Timeline Missioni** | Scrolling orizzontale con badge stato colorato | Fase 5 |
+| **Dashboard Chart.js** | 3 grafici donut/barre con tema dark | Fase 14 |
+| **CLI Commands** | `astralis:fetch-nasa` e `astralis:gallery` per manutenzione | Fase 8-11 |
+| **Error Boundary** | Fallback UI globale per crash React | Fase 15 |
+| **SEO** | `document.title` dinamico su 5 pagine React | Fase 15 |
+| **380 Test** | 270 PHPUnit + 110 Vitest, Http::fake(), observer skip | Fase 13+ |
+| **WordMapService** | Traduzione italiano → inglese per ricerca NASA (~70 termini) | Fase 9 |
+| **Responsive** | Navbar mobile, SolarSystem responsive scaling, griglia adattiva | Ongoing |
 
 ---
 
-## 3. Mappa Navigazione
+## 3. Postman — Esempi Pratici
+
+Tutti gli endpoint sono **pubblici** (nessuna autenticazione). Puntare a `http://localhost:8000`.
+
+### Esempio 1 — Homepage (stats + in evidenza)
+
+**Step 1: Statistiche generali**
+
+```
+GET http://localhost:8000/api/dashboard/stats
+```
+
+Response 200:
+
+```json
+{
+    "totale_corpi_celesti": 18,
+    "totale_categorie": 8,
+    "totale_missioni": 10,
+    "corpi_in_evidenza": 9,
+    "ultimi_corpi": [...],
+    "missioni_per_stato": {
+        "total": 10,
+        "completate": 4,
+        "in_corso": 4,
+        "pianificate": 2
+    }
+}
+```
+
+**Step 2: Corpi in evidenza**
+
+```
+GET http://localhost:8000/api/corpi-celesti?in_evidenza=1&per_page=6
+```
+
+### Esempio 2 — Dettaglio Terra
+
+```
+GET http://localhost:8000/api/corpi-celesti/terra
+```
+
+Response 200 (estratto):
+
+```json
+{
+    "data": {
+        "id": 3,
+        "nome": "Terra",
+        "slug": "terra",
+        "categoria": {
+            "id": 1,
+            "nome": "Pianeta",
+            "slug": "pianeta",
+            "colore": "#22D3EE"
+        },
+        "immagine_url": "https://images-assets.nasa.gov/image/PIA18033/PIA18033~medium.jpg",
+        "tipo": "Pianeta roccioso",
+        "massa_kg": "5.972e24",
+        "diametro_km": "12756",
+        "gravita": "9.81",
+        "temperatura": "15",
+        "galleria": [...],
+        "curiosita": [...],
+        "missioni": [
+            {
+                "nome": "Apollo 11",
+                "pivot": {
+                    "tipo_esplorazione": "missione con equipaggio",
+                    "anno_arrivo": 1969
+                }
+            }
+        ]
+    }
+}
+```
+
+**Nota**: `nome` contiene il nome italiano. `nome_en` (opzionale) contiene l'inglese.
+
+### Esempio 3 — Filtri multipli
+
+```
+GET http://localhost:8000/api/missioni?agenzia=NASA&stato=in corso
+```
+
+### Esempio 4 — Corpi simili
+
+```
+GET http://localhost:8000/api/corpi-celesti/terra/simili
+```
+
+Restituisce max 4 corpi della stessa categoria.
+
+### Come testare su Postman
+
+1. Avvia il backend: `php artisan serve` (porta 8000)
+2. Crea una request GET in Postman
+3. Inserisci l'URL: `http://localhost:8000/api/corpi-celesti`
+4. Nessun token o autenticazione necessaria
+5. Parametri query opzionali: `?categoria=pianeta&search=terra&in_evidenza=1&per_page=5`
+
+---
+
+## 4. Stack Tecnologico
+
+| Livello | Tecnologia | Versione | Perché |
+|---|---|---|---|
+| **Backend** | Laravel | 13.8 | Richiesto dalla traccia. Eloquent ORM, migrazioni, artisan CLI |
+| **Database** | MySQL | 8.x | Richiesto. Porta 3307 |
+| **Auth** | Laravel Breeze | — | Richiesto. Configurato con Blade (non Inertia) |
+| **Frontend guest** | React | 18.2 | Richiesto. SPA standalone con Vite |
+| **Frontend admin** | Blade + Alpine.js | — | Richiesto per admin. Alpine.js CDN per modali |
+| **CSS** | Tailwind CSS | 4.3 | Utility-first, tema dark custom |
+| **Animazioni** | framer-motion | 12.4 | SolarSystem (requestAnimationFrame) |
+| **Icone** | lucide-react | 1.23 | Icone categoria, navigazione, azioni |
+| **Lightbox** | yet-another-react-lightbox | — | Galleria immagini a schermo intero |
+| **Immagini** | Intervention Image | 4 | Upload con scaleDown via ImageUploadService |
+| **Slug** | spatie/laravel-sluggable | — | Slug automatici su 3 modelli |
+| **Grafici** | Chart.js (CDN) | 4.4 | Dashboard admin (donut, barre) |
+| **API esterne** | NASA Image API | — | Import immagini reali, auto-suggest |
+| **Test PHP** | PHPUnit | 12.5 | 270 test, 613 assertion |
+| **Test JS** | Vitest + Testing Library | 4.1 | 110 test, environment jsdom |
+
+---
+
+## 5. Architettura & Mappa File
 
 ### Backend (Laravel)
 
@@ -69,13 +197,14 @@ Basato su `docs/progetto-finale.md`.
 | Route auth | `routes/auth.php` → Breeze |
 | Controllers admin | `app/Http/Controllers/Admin/` (8 file) |
 | Controllers API | `app/Http/Controllers/Api/` (6 file) |
-| Models | `app/Models/` (5 file) |
+| Models | `app/Models/` (6 file: 5 entità + User) |
 | Migrations | `database/migrations/` (21 file) |
 | Services | `app/Services/` (NasaImageService, WordMapService, ImageUploadService) |
 | Policies | `app/Policies/` (5 file) |
 | Gate admin | `app/Providers/AuthServiceProvider.php` |
 | Observer | `app/Observers/CorpoCelesteObserver.php` |
-| FormRequest | `app/Http/Requests/` (13 FormRequest: Store/Update per ogni entità + SuggestNome, AggiornaOrdine, ProfileUpdate) |
+| Job | `app/Jobs/ImportNasaImage.php` |
+| FormRequest | `app/Http/Requests/` (13 file) |
 | Config admin | `config/admin.php` |
 | Layout admin | `resources/views/admin/layouts/app.blade.php` |
 | Sidebar | `resources/views/admin/partials/_sidebar-nav.blade.php` |
@@ -94,7 +223,7 @@ Basato su `docs/progetto-finale.md`.
 
 ---
 
-## 4. Risposte alle Domande (20+)
+## 6. Q&A — Risposte alle Domande (20+)
 
 ### Architettura
 
@@ -109,6 +238,9 @@ Basato su `docs/progetto-finale.md`.
 
 **Q: Qual è la differenza tra admin e guest?**
 → Admin: Blade + Alpine.js, autenticazione Breeze, CRUD. Guest: React SPA standalone, API REST, animazioni. Comunicano solo via API.
+
+**Q: Perché avete separato frontend guest e backoffice admin?**
+→ Per responsabilità e competenze diverse. Il guest è una SPA standalone che non richiede autenticazione e beneficia di transizioni fluide. Il backoffice è un CRUD classico dove Blade + Alpine.js è più semplice e performante. Inertia era stato installato inizialmente ma rimosso perché creava un livello intermedio inutile.
 
 ### Auth & Authorization
 
@@ -130,53 +262,59 @@ Basato su `docs/progetto-finale.md`.
 → 3 tipi: BelongsTo/HasMany (1-N): Categoria→CorpoCeleste, CorpoCeleste→Galleria, CorpoCeleste→Curiosità. BelongsToMany (N-N): CorpoCeleste↔Missione con pivot `corpo_celeste_missione` (tipo_esplorazione, anno_arrivo).
 
 **Q: Come gestisci gli slug?**
-→ `spatie/laravel-sluggable`. Trait `Sluggable` nel modello + metodo `getSlugOptions()`. Genera slug dal nome italiano. 3 modelli: Categoria, CorpoCeleste, Missione.
+→ `spatie/laravel-sluggable`. Trait `Sluggable` nel modello + metodo `getSlugOptions()`. Genera slug dal nome italiano (`nome`). 3 modelli: Categoria, CorpoCeleste, Missione.
 
 **Q: Cos'è il problema N+1?**
 → Quando in un loop accedi a una relazione senza eager loading. Esempio: 10 missioni × 1 corpo = 11 query. Soluzione: `with(['categoria', 'galleria'])` → 2 query.
 
 **Q: Come fai il seeding?**
-→ `database/seeders/`. Fattorie per ogni modello. Seeder con dati reali: 8 categorie, 18 corpi, 10 missioni, 16 immagini, 18 curiosità. `php artisan migrate:fresh --seed`.
+→ `database/seeders/`. Seeder con dati reali: 8 categorie, 18 corpi celesti, 10 missioni, 16 immagini galleria, 18 curiosità, 17 relazioni pivot. `php artisan migrate:fresh --seed`.
 
 ### Backend
 
 **Q: Cos'è un FormRequest?**
-→ Classe dedicata alla validazione, separata dal controller. `StoreCorpoCelesteRequest` e `UpdateCorpoCelesteRequest`. Regole in `rules()`. Il controller chiama `$this->validate()` o inietta il FormRequest.
+→ Classe dedicata alla validazione, separata dal controller. 13 FormRequest nel progetto (Store/Update per ogni entità + SuggestNome, AggiornaOrdine, ProfileUpdate). Regole in `rules()`.
 
 **Q: Cos'è un Observer?**
-→ Pattern che ascolta eventi Eloquent (created, updated, deleted). `CorpoCelesteObserver::created()` chiama NASA API automaticamente quando un corpo viene creato. Disabilitato in testing con `app()->environment('testing')`.
+→ Pattern che ascolta eventi Eloquent (created, updated, deleted). `CorpoCelesteObserver::created()` dispatcha il job `ImportNasaImage` quando un corpo viene creato. Disabilitato in testing con `app()->environment('testing')`.
 
 **Q: Cos'è un Service Layer?**
-→ Classe che gestisce logica di business, separata dal controller. `NasaImageService` gestisce ricerca/import/dedup NASA. `WordMapService` traduce IT→EN. Riusabile da controller, CLI, o observer.
+→ Classe che gestisce logica di business, separata dal controller. 3 service: `NasaImageService` (ricerca/import/dedup NASA), `WordMapService` (traduzione IT→EN), `ImageUploadService` (upload + resize con Intervention Image v4). Riusabili da controller, CLI, o observer.
 
 **Q: Come funziona l'upload?**
-→ Intervention Image v4: `new ImageManager(new Driver())->read($path)`. `scaleDown(1200, 1200)` preserva aspect ratio. Salvato su `storage/app/public/` con `Storage::disk('public')`. `php artisan storage:link` per il symlink.
+→ `ImageUploadService` centralizza la logica. Intervention Image v4: `new ImageManager(new Driver())->decodePath($path)`. `scaleDown(1200, 1200)` preserva aspect ratio. Salvato su `storage/app/public/` con `Storage::disk('public')`. `php artisan storage:link` per il symlink.
 
 **Q: CORS come lo gestisci?**
 → Laravel 13 gestisce automaticamente (middleware `HandleCors`). In dev, Vite proxy inoltra `/api` a `localhost:8000`. Nessun `config/cors.php` necessario.
 
 **Q: Cos'è un API Resource?**
-→ Trasforma un modello Eloquent in JSON controllato. Espone solo i campi che il frontend serve. Esempio: `CorpoCelesteResource` espone `nome` ma non `nasa_id`.
+→ Trasforma un modello Eloquent in JSON controllato. `CorpoCelesteResource` espone `nome` (italiano) ma non campi interni come `immagine_utente`. `php artisan make:resource`.
+
+**Q: Come funziona il routing lato client con React?**
+→ `react-router-dom` definisce 5 route: `/`, `/corpi-celesti`, `/corpi-celesti/:slug`, `/confronta`, `/*` (404). Laravel cattura tutto con `Route::get('/{any}', fn() => view('guest'))->where('any', '.*')` e passa il controllo a React.
 
 ### Frontend
 
 **Q: Come comunica React con Laravel?**
 → `apiClient.js` (axios) invia richieste a `/api/*`. Vite proxy inoltra a `localhost:8000`. API REST restituiscono JSON. Nessun Inertia (rimosso).
 
-**Q: Come funziona il routing React?**
-→ `react-router-dom` con 5 route: `/`, `/corpi-celesti`, `/corpi-celesti/:slug`, `/confronta`, `/*` (404). Laravel catch-all passa tutto a React.
-
 **Q: Cos'è un Error Boundary?**
 → Class component React che cattura errori nei figli. Mostra fallback UI se un componente crasha. In `App.jsx` avvolge `<Routes>`.
 
-**Q: Cos'è React.lazy + Suspense?**
-→ Code splitting: il componente viene caricato solo quando serve. `const HomePage = lazy(() => import('./pages/HomePage'))`. `Suspense` mostra un fallback durante il caricamento.
+**Q: Cos'è React.memo()?**
+→ Ottimizzazione: il componente non re-renderizza se le props non cambiano. Usato su `LightboxGalleria` e `Thumbnail`.
 
 **Q: Come gestisci il fetch dei dati?**
 → Custom hook `useFetch` con `useReducer` + `AbortController`. Gestisce loading, error, e cleanup. `apiClient.js` ha retry logic (2 tentativi).
 
-**Q: Cos'è memo()?**
-→ Ottimizzazione: il componente non viene re-renderizzato se le props non cambiano. Usato su `LightboxGalleria` e `Thumbnail` per evitare re-render costosi.
+**Q: Come avete implementato il Sistema Solare animato?**
+→ Soluzione finale con `requestAnimationFrame` + direct DOM manipulation. Un angolo cresce infinitamente per ogni pianeta, convertito in coordinate x/y con funzioni seno/coseno. Ogni pianeta ha velocità e raggio differenziati. Hover rallenta i pianeti al 33%. Zero re-render React durante animazione.
+
+**Q: Perché avete salvato URL remoti NASA invece di file locali?**
+→ Le immagini NASA in risoluzione originale possono essere enormi. Salvando l'URL remoto `~medium.jpg`: (1) risparmio storage, (2) no download enormi, (3) browser carica da NASA CDN. Il comando `astralis:gallery --fix` sostituisce URL non raggiungibili con placeholder.
+
+**Q: Che cos'è il WordMapService e a cosa serve?**
+→ Servizio di traduzione italiano → inglese parola per parola, con ~70 termini astronomici. Quando un admin inserisce un nome italiano, il WordMapService traduce la query prima di cercare su NASA API. Cache con TTL di 1 ora.
 
 ### Testing
 
@@ -184,14 +322,17 @@ Basato su `docs/progetto-finale.md`.
 → PHPUnit + Http::fake(). Ogni test crea dati con factory, chiama l'endpoint, verifica status e JSON response. `Http::fake()` blocca chiamate HTTP reali.
 
 **Q: Perché Http::fake() è essenziale?**
-→ L'Observer chiama NASA API ogni volta che un CorpoCeleste viene creato. Senza `Http::fake()`, i test farebbero chiamate reali.
+→ L'Observer dispatcha il job NASA ogni volta che un CorpoCeleste viene creato. Senza `Http::fake()`, i test farebbero chiamate reali.
 
 **Q: Come testi React?**
 → Vitest + Testing Library. 110 test: componenti, integrazione API, error handling. `jsdom` environment.
 
+**Q: Quali sono i pattern obbligatorio per i test?**
+→ `Http::fake()` in `setUp()`, `RefreshDatabase` per DB pulito, `factory()->create()` invece di inserimenti manuali, Observer disabilitato in testing.
+
 ---
 
-## 5. Definizioni PHP (10+)
+## 7. Definizioni PHP (10+)
 
 ### Classe e Oggetto
 ```php
@@ -275,7 +416,7 @@ php artisan db:seed
 
 ---
 
-## 6. Definizioni Laravel (15+)
+## 8. Definizioni Laravel (15+)
 
 ### Eloquent ORM
 L'ORM di Laravel. Ogni tabella ha un Model. Relazioni definite come metodi. Query builder con catene di metodi.
@@ -299,7 +440,7 @@ Classe dedicata alla validazione. `rules()` restituisce array di regole. `messag
 Livello intermedio che filtra richieste. `auth` = verifica login. `verified` = email verificata. `throttle:120,1` = max 120 richieste/minuto. Definito in `bootstrap/app.php`.
 
 ### Service Layer
-Classe che gestisce logica di business complessa. Separata dal controller (HTTP) e dal modello (DB). Riusabile da controller, CLI, observer. Esempio: `NasaImageService`.
+Classe che gestisce logica di business complessa. Separata dal controller (HTTP) e dal modello (DB). Riusabile da controller, CLI, observer. Esempio: `NasaImageService`, `WordMapService`, `ImageUploadService`.
 
 ### Resource Controller
 Controller con 7 metodi standard. `Route::resource('categorie', CategoriaController::class)` genera tutte le route CRUD.
@@ -330,7 +471,7 @@ Trasforma un modello in JSON. `CorpoCelesteResource` seleziona campi da esporre.
 
 ---
 
-## 7. Definizioni React (12+)
+## 9. Definizioni React (12+)
 
 ### Componente
 Unità base di React. Function component: `function Card({ title }) { return <h1>{title}</h1> }`. Ogni componente è un pezzo di UI riutilizzabile.
@@ -348,7 +489,7 @@ Hook per state locale. `const [count, setCount] = useState(0)`. Ogni `setState` 
 Hook per side effects. `useEffect(() => { fetchData(); return () => controller.abort(); }, [deps])`. Dipendenze: quando cambiano, riesegue. Return: cleanup.
 
 ### Props
-Dati passati da padre a figlio. ` <Card title="Terra" />` → il figlio riceve `{ title: "Terra" }`. Read-only.
+Dati passati da padre a figlio. `<Card title="Terra" />` → il figlio riceve `{ title: "Terra" }`. Read-only.
 
 ### Virtual DOM
 Copia leggera del DOM reale. React calcola la differenza (diffing) e aggiorna solo le parti cambiate del DOM reale. Più performante che manipolare il DOM direttamente.
@@ -359,18 +500,18 @@ Funzione che inizia con `use` e usa altri hook. `useFetch(url)` usa `useState` +
 ### Error Boundary
 Class component con `componentDidCatch()`. Cattura errori nei figli. Non cattura errori in event handlers o codice async. In Astralis: in `App.jsx` avvolge `<Routes>`.
 
-### React.lazy + Suspense
-Code splitting. `const Home = lazy(() => import('./pages/HomePage'))`. Il file JS viene caricato solo quando serve. `Suspense` mostra fallback durante il caricamento.
-
-### memo()
+### React.memo()
 `React.memo(Component)` → il componente non re-renderizza se le props non cambiano. Ottimizzazione per componenti costosi. Differenza: `useMemo()` memoizza un valore, `useCallback()` memoizza una funzione.
 
 ### AbortController
 Cancella fetch in corso. `const controller = new AbortController()` → `fetch(url, { signal: controller.signal })` → `controller.abort()` nel cleanup di `useEffect`. Evita memory leak.
 
+### requestAnimationFrame
+API del browser per animazioni fluenti. `callback` viene chiamato prima del repaint del browser. In Astralis: orbite del sistema solare. Più performante di `setInterval` perché si sincronizza con il refresh rate del display.
+
 ---
 
-## 8. CORS e Sicurezza
+## 10. CORS & Sicurezza
 
 ### CORS (Cross-Origin Resource Sharing)
 Il browser blocca richieste da un dominio a un altro. In Astralis: React (`localhost:5173`) chiama Laravel (`localhost:8000`).
@@ -381,13 +522,13 @@ server: {
     proxy: { '/api': 'http://localhost:8000' }
 }
 ```
-In produzione: Laravel 13 gestisce automaticamente con middleware `HandleCors`. Nessun `config/cors.php` necessario.
+In produzione: Laravel 13 gestisce automaticamente con middleware `HandleCors`.
 
 ### CSRF (Cross-Site Request Forgery)
 Laravel genera un token CSRF per ogni sessione. Le form Blade lo incluono con `@csrf`. Le API REST non lo usano (stateless).
 
 ### Throttle
-Rate limiting: `throttle:120,1` = max 120 richieste/minuto. Middleware sulle route admin. Previene abusi.
+Rate limiting: `throttle:120,1` = max 120 richieste/minuto sulle route admin. `throttle:60,1` sulle API. `throttle:30,1` su suggestNome.
 
 ### Auth
 Laravel Breeze gestisce sessioni. Middleware `auth` protegge le route. `verified` richiede email verificata.
@@ -397,7 +538,23 @@ Policy + Gate. Admin bypassa tutto con `before()` returning `true`. Non-admin: `
 
 ---
 
-## 9. Live Coding — 3 Esercizi con Soluzione
+## 11. Errori Comuni da NON Fare
+
+| Errore | Perché è sbagliato | Cosa fare invece |
+|---|---|---|
+| `Image::read()` in Intervention v4 | La facade è stata rimossa in v4 | `new ImageManager(new Driver())->decodePath($path)` |
+| `resize()` invece di `scaleDown()` | `resize()` forza le dimensioni e distorce | `scaleDown(width, height)` preserva aspect ratio |
+| Dimenticare `Http::fake()` nei test | L'observer dispatcha job NASA → test falliti | `Http::fake()` in setUp() |
+| Dimenticare eager loading nelle show | **N+1 problem**: N query extra | `::with(['relazione'])->firstOrFail()` |
+| Usare `->get()` invece di `->paginate()` | Carica tutto in memoria | `->paginate(20)` con `->withQueryString()` |
+| `@if` senza `@endif` in Blade | Errore 500 silenzioso | Controllare chiusura if/foreach |
+| Dimenticare `->constrained()` FK | FK non reale | `$table->foreignId('x_id')->constrained()` |
+| Mantenere Inertia quando non serve | Dipendenze inutili, conflitti routing | Rimuovere se SPA standalone |
+| `$fillable` senza tutti i campi | Mass assignment exception | Aggiungere TUTTI i campi modificabili |
+
+---
+
+## 12. Live Coding — 3 Esercizi con Soluzione
 
 ### Esercizio 1: Route + Controller + View
 
@@ -463,7 +620,7 @@ $prodotti = [
 ];
 
 // Filter → solo prezzo > 10
-$filtrati = array_filter($prodotti, fn($p) => $p['prezzo'] > 10);
+ filtrati = array_filter($prodotti, fn($p) => $p['prezzo'] > 10);
 
 // Map → solo nomi
 $nomi = array_map(fn($p) => $p['nome'], $filtrati);
@@ -510,7 +667,7 @@ $somma = collect($transazioni)->sum('valore');
 
 ---
 
-## 10. Comandi Rapidi
+## 13. Comandi Rapidi
 
 ```bash
 # Avvio
@@ -534,4 +691,13 @@ php artisan astralis:gallery --fix # Ripara galleria
 
 ---
 
-_Generato il 21/07/2026 — Astralis v13_
+## 14. Credenziali
+
+| Ruolo | Email | Password |
+|---|---|---|
+| **Admin** | admin@astralis.it | password |
+| **Utente normale** | (registrazione libera su /register) | — |
+
+---
+
+_Generato il 21/07/2026 — Astralis v13.18_

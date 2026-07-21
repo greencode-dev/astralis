@@ -74,7 +74,7 @@
                     ['key' => 'Admin', 'val' => 'Blade + Alpine.js'],
                     ['key' => 'Guest', 'val' => 'React 18 + Vite'],
                     ['key' => 'CSS', 'val' => 'Tailwind CSS'],
-                    ['key' => 'Animazioni', 'val' => 'framer-motion'],
+                    ['key' => 'Animazioni', 'val' => 'CSS transitions + keyframes'],
                     ['key' => 'Lightbox', 'val' => 'yet-another-react-lightbox'],
                     ['key' => 'Upload', 'val' => 'Intervention Image v4'],
                     ['key' => 'Slug', 'val' => 'spatie/laravel-sluggable'],

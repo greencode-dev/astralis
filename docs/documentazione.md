@@ -13,10 +13,10 @@ Astralis è un catalogo web di corpi celesti (pianeti, stelle, galassie, nebulos
 | Database   | MySQL                      |
 | Frontend   | React 18, Vite             |
 | CSS        | Tailwind CSS               |
-| Animazioni | framer-motion              |
+| Animazioni | CSS transitions + keyframes (SolarSystem) |
 | Icone      | Lucide React               |
 | Lightbox   | yet-another-react-lightbox |
-| Upload     | Intervention Image (solo Missioni/Galleria) |
+| Upload     | ImageUploadService + Intervention Image v4 (Missioni/Galleria) |
 | Slug       | spatie/laravel-sluggable   |
 | Modal      | Alpine.js (CDN)            |
 | Grafici    | Chart.js (CDN)             |
@@ -30,13 +30,13 @@ astralis/
 │   ├── Http/Controllers/
 │   │   ├── Admin/       ← Controller CRUD per backoffice (Blade)
 │   │   └── Api/         ← Controller API REST (JSON)
-│   ├── Models/          ← Eloquent Models (5 entità)
+│   ├── Models/          ← Eloquent Models (6: 5 entità + User)
 │   ├── Policies/        ← Policy di autorizzazione (5 Policy)
 │   ├── Providers/       ← AuthServiceProvider (Gate + Policy registration)
-│   ├── Services/        ← Logica di business (NasaImageService)
+│   ├── Services/        ← Logica di business (NasaImageService, WordMapService, ImageUploadService)
 │   └── ...
 ├── database/
-│   └── migrations/      ← 9 file di migrazione
+│   └── migrations/      ← 21 file di migrazione
 ├── resources/
 │   ├── views/           ← Blade templates (backoffice admin)
 │   └── js/              ← React (components, pages, API)
@@ -65,7 +65,7 @@ CATEGORIA ──1:N── CORPO_CELESTE ──1:N── GALLERIA_CORPO
 | Entità            | Campi principali                                                                                                                                                          | CRUD | Relazioni                                                |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | -------------------------------------------------------- |
 | **Categoria**     | nome, slug, icona, descrizione, colore                                                                                                                                    | ✅   | 1-N con CorpoCeleste                                     |
-| **CorpoCeleste**  | nome, nome_it, slug, categoria_id, immagine, immagine_utente, descrizione, tipo, massa_kg, distanza_km, diametro_km, gravita, temperatura, periodo_orbitale, scopritore, anno_scoperta, in_evidenza, nasa_id | ✅   | N-1 Categoria, 1-N Galleria, 1-N Curiosità, N-N Missioni |
+| **CorpoCeleste**  | nome (italiano, primary), nome_en (inglese), slug, categoria_id, immagine, immagine_utente, descrizione, tipo, massa_kg, distanza_km, diametro_km, gravita, temperatura, periodo_orbitale, scopritore, anno_scoperta, in_evidenza, nasa_id | ✅   | N-1 Categoria, 1-N Galleria, 1-N Curiosità, N-N Missioni |
 | **GalleriaCorpo** | corpo_celeste_id, percorso, didascalia, crediti, ordine                                                                                                                   | ✅   | N-1 CorpoCeleste                                         |
 | **Missione**      | nome, slug, logo, agenzia, data_lancio, durata_giorni, stato, descrizione, sito_web                                                                                       | ✅   | N-N CorpiCelesti                                         |
 | **Curiosità**     | corpo_celeste_id, titolo, descrizione, fonte                                                                                                                              | ✅   | N-1 CorpoCeleste                                         |
@@ -79,7 +79,7 @@ GET    /api/categorie                  — Lista categorie con conteggio
 GET    /api/categorie/{slug}           — Singola categoria con corpi celesti
 GET    /api/missioni                   — Lista missioni (filtri: agenzia, stato)
 GET    /api/missioni/{slug}            — Dettaglio missione
-GET    /api/corpi-celesti/{id}/simili  — Suggerimenti (stessa categoria, max 4)
+GET    /api/corpi-celesti/{slug}/simili  — Suggerimenti (stessa categoria, max 4)
 GET    /api/curiosita                  — Lista curiosità
 GET    /api/galleria                   — Lista galleria (ordinata)
 GET    /api/dashboard/stats            — Stats per homepage
@@ -87,7 +87,7 @@ GET    /api/dashboard/stats            — Stats per homepage
 
 ## Wow Factor
 
-1. **Sistema solare animato** (Homepage React) — pianeti che orbitano intorno al Sole con framer-motion, orbite matematiche con seno/coseno
+1. **Sistema solare animato** (Homepage React) — pianeti che orbitano intorno al Sole con requestAnimationFrame, orbite matematiche con seno/coseno
 2. **Lightbox gallery** — immagini NASA a schermo intero con swipe mobile
 3. **Comparatore pianeti** — confronto affiancato di 2 corpi celesti (massa, diametro, temperatura, gravità)
 4. **Timeline missioni** — linea del tempo orizzontale delle missioni spaziali con badge stato
@@ -138,7 +138,7 @@ resources/js/guest/
 ├── components/
 │   ├── Navbar.jsx              ← Navigazione guest (logo + links)
 │   ├── Footer.jsx              ← Footer tema spazio
-│   ├── SolarSystem.jsx         ← Sistema solare animato (framer-motion, orbite matematiche)
+│   ├── SolarSystem.jsx         ← Sistema solare animato (requestAnimationFrame, orbite matematiche)
 │   ├── CorpoCard.jsx           ← Card con fallback gradiente+icona
 │   ├── CategoriaBadge.jsx      ← Badge colorato per categoria
 │   ├── SearchBar.jsx           ← Barra ricerca
@@ -221,7 +221,7 @@ Le API sono pubbliche (nessuna autenticazione richiesta). Utilizzano Eloquent AP
 
 **Controller API:** `app/Http/Controllers/Api/` — 6 controller per 10 endpoint.
 
-**API Resources:** `app/Http/Resources/` — 5 classi: CorpoCelesteResource, CategoriaResource, MissioneResource, CuriositaResource, GalleriaCorpoResource. Ogni risorsa espone `nome_display` (dal modello CorpoCeleste: `nome_it ?? nome`) per garantire nomi italiani nel frontend guest pur mantenendo nomi inglesi nel DB.
+**API Resources:** `app/Http/Resources/` — 5 classi: CorpoCelesteResource, CategoriaResource, MissioneResource, CuriositaResource, GalleriaCorpoResource. CorpoCelesteResource espone `nome` (italiano, campo primary) e `nome_en` (inglese, opzionale) per il frontend guest.
 
 Filtri disponibili:
 
@@ -233,7 +233,7 @@ Filtri disponibili:
 
 **CRUD Categorie** — 7 route resource (`GET|POST /admin/categorie`, `GET|PUT /admin/categorie/{id}`, `DELETE /admin/categorie/{id}`). Protezione cancellazione: se la categoria ha corpi celesti associati, viene mostrato errore. Form con color picker + palette rapida 10 colori predefiniti. Index con paginazione (20 per pagina) e filtro per nome.
 
-**CRUD Corpi Celesti** — 7 route resource (`/admin/corpi-celesti`). Immagine tramite URL remoto (nessun upload locale — campo testo per URL, validazione URL). Form con 14 campi (incluso `nome_it`), select categoria, checkbox evidenza. Pulsante "Cerca su NASA" nei form create/edit che via AJAX posta a `POST /admin/corpi-celesti/suggest-nome` per auto-suggest. Vista show completa con 8 card metriche scientifiche + sezioni galleria, curiosità, missioni.
+**CRUD Corpi Celesti** — 7 route resource (`/admin/corpi-celesti`). Upload immagine tramite `ImageUploadService` (Intervention Image v4, `scaleDown()`, storage `public/corpi-celesti/`). Form in 6 sezioni con 18 campi (nome, nome_en, slug, categoria, ecc.). Pulsante "Cerca su NASA" nei form create/edit che via AJAX posta a `POST /admin/corpi-celesti/suggest-nome` per auto-suggest. Vista show completa con 8 card metriche scientifiche + sezioni galleria, curiosità, missioni.
 
 **CRUD Missioni** — 7 route resource (`/admin/missioni`). Upload logo con Intervention Image (resize 300px, supporto SVG). Stato con badge colorato (Completata/In corso/Pianificata). Vista show con tabella corpi celesti esplorati (dati pivot: tipo esplorazione, anno arrivo). Index con filtri per nome, agenzia e stato.
 
@@ -248,7 +248,7 @@ Filtri disponibili:
     - **Architettura**: la logica è centralizzata in `app/Services/NasaImageService.php`. Il controller e il comando Artisan delegano entrambi al service. Utilizza `Http::withoutVerifying()` solo in ambiente `local`/`testing` (Windows). **Nessun download/processing locale**: le immagini NASA sono salvate come URL remoti (`~medium.jpg`). Priorità URL: `rel=alternate` (medium) → `preview` (thumb) → `canonical` (orig fallback).
   - **Deduplicazione**: importForBody() controlla se un'immagine con stesso `percorso` e `corpo_celeste_id` esiste già in galleria prima di creare un nuovo record. Force Import non genera duplicati.
   - **Protezione immagine utente**: Se l'utente ha impostato manualmente l'immagine principale (colonna `immagine_utente = true`), Force Import non la sovrascrive.
-  - **WordMap**: il controller `CorpoCelesteController` contiene un array `$wordMap` (~50 termini) per tradurre nomi italiano→inglese parola per parola (es. "Buco Nero" → "Black Hole", "Ammasso" → "Cluster", "Nana" → "Dwarf"). Usato nel metodo `suggestNome()` per l'auto-suggest admin.
+  - **WordMap**: `app/Services/WordMapService.php` contiene un array `wordMap` (~70 termini) per tradurre nomi italiano→inglese parola per parola (es. "Buco Nero" → "Black Hole", "Ammasso" → "Cluster", "Nana" → "Dwarf"). Usato nel controller per l'auto-suggest admin. Supporta custom map da file JSON (`wordmap-custom.json`).
   - **Apostrophe fallback**: `searchNasa()` prova automaticamente query senza apostrofi (`str_replace` su `'`, `` ` ``, `'`, `'s`) e aggiunge fallback extra per comete (es. "comet" per nomi contenenti "halley"/"comet").
   - **Metadati salvati**: `nasa_id` sulla tabella `corpi_celesti`, `didascalia` (title NASA) e `crediti` (photographer) su `galleria_corpi`.
   - **Intervention Image**: usato solo per upload locali in Missioni (logo resize 300px) e Galleria (resize 1200px). Non usato per Corpi Celesti (URL remoti).
@@ -337,8 +337,8 @@ php artisan astralis:gallery --fix
 python -m graphify update .
 
 # 6. Verifica
-php artisan test   # 252 test PHPUnit
-npm test           # 107 test Vitest
+php artisan test   # 270 test PHPUnit
+npm test           # 110 test Vitest
 
 # 7. Apri l'agente e digita:
 #    "riprendi il piano da Fase 3"
@@ -414,7 +414,7 @@ cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'
 - **Gravita/temperatura**: null-safe formatting con `toLocaleString('it-IT')` — separatori italiani (`9,81` invece di `9.81`)
 - **Flash messages admin**: auto-dismiss 5s con Alpine.js, fade-out, bottone chiudi, `role="alert"` per errori/warning, `role="status" aria-live="polite"` per success
 
-**Test**: 359 totali (252 PHPUnit + 107 Vitest), tutti verdi.
+**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
 
 ## Quick wins — 7 fix (16/07/2026)
 
@@ -429,12 +429,12 @@ cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'
 ## Bug residui — fix (17/07/2026)
 
 - Navbar mobile: Escape key handler, click-outside overlay, close on route change
-- Test accessors: `CorpoCelesteTest.php` — 6 test per `nome_display` e `immagine_url`
+- Test accessors: `CorpoCelesteTest.php` — 6 test per accessor `immagine_url` e null safety
 - Test actions: `CorpoCelesteActionsTest.php` — 6 nuovi test (setImage, suggestNome)
 - Test job: `ImportNasaImageTest.php` — 9 test (ShouldQueue, uniqueId, handle, failed)
 - framer-motion mantenuto in SolarSystem.jsx (uso legittimo per orbite)
 
-**Test**: 359 totali (252 PHPUnit + 107 Vitest), tutti verdi.
+**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
 
 ## Avvio rapido (quando il progetto è già configurato)
 

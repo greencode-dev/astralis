@@ -21,7 +21,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Backend**: Laravel 13, PHP 8.x
 - **Auth**: Laravel Breeze (Blade puro login/register → Blade admin)
 - **Database**: MySQL (port 3307)
-- **Guest frontend**: React 18, Vite, framer-motion, react-router-dom, lucide-react, yet-another-react-lightbox
+- **Guest frontend**: React 18, Vite, react-router-dom, lucide-react, yet-another-react-lightbox
 - **Admin frontend**: Blade, Alpine.js (CDN da unpkg — no local fallback)
 - **CSS**: Tailwind CSS
 - **Upload**: Laravel Storage nativo (`disk('public')`) per copertine. Intervention Image v4 solo per import NASA (`scaleDown()`, NO facade)
@@ -523,8 +523,8 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 | **Branch**          | `master`                                                                                               |
 | **Test**            | 270 PHPUnit + 110 Vitest = 380 totali, tutti verdi                                                    |
 | **Task completate** | 128 task totali completate (audit admin 116-128 chiuso)                                                |
-| **Task in corso**   | Preparazione esame: ExamController, dashboard exam, cheat sheet, Postman collection, start-exam.bat    |
-| **Prossime azioni** | Commit files esame, eventuali future task (Cerca info NASA, SBDB/Horizons API)                        |
+| **Task aperte**     | 10 task audit frontend (129-138): 6 🟡 High + 3 🔵 Medium + 1 🟢 Low                                 |
+| **Prossime azioni** | Eseguire task audit frontend 129-137 (hex→CSS vars, CLS fix, focus-visible, ellipsis)                  |
 
 ### Piano rinomina campi + galleria inline (Task 103-115)
 

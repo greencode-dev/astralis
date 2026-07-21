@@ -29,7 +29,7 @@
 | Entità | CRUD | Relazione | Campi chiave |
 |---|---|---|---|
 | **Categoria** | ✅ | 1-N → CorpoCeleste | nome, slug, icona, descrizione, colore |
-| **CorpoCeleste** | ✅ | N-1 Categoria, 1-N Galleria, 1-N Curiosità, N-N Missioni | nome, nome_it, slug, immagine, descrizione, tipo, massa, diametro, gravità, temperatura, periodo orbitale, scopritore, anno scoperta, in evidenza, nasa_id |
+| **CorpoCeleste** | ✅ | N-1 Categoria, 1-N Galleria, 1-N Curiosità, N-N Missioni | nome (italiano, primary), nome_en (inglese), slug, immagine, descrizione, tipo, massa, diametro, gravità, temperatura, periodo orbitale, scopritore, anno scoperta, in evidenza, nasa_id |
 | **Missione** | ✅ | N-N → CorpiCelesti (pivot: tipo_esplorazione, anno_arrivo) | nome, slug, logo, agenzia, data_lancio, durata_giorni, stato, descrizione, sito_web |
 | **Curiosità** | ✅ | N-1 → CorpoCeleste | corpo_celeste_id, titolo, descrizione, fonte |
 | **GalleriaCorpo** | ✅ | N-1 → CorpoCeleste | corpo_celeste_id, percorso, didascalia, crediti, ordine |
@@ -167,7 +167,6 @@ Response 200 (estratto):
         {
             "id": 1,
             "nome": "Terra",
-            "nome_display": "Terra",
             "slug": "terra",
             "categoria": {
                 "id": 1,
@@ -205,8 +204,7 @@ Response 200 (estratto):
 {
     "data": {
         "id": 3,
-        "nome": "Earth",
-        "nome_display": "Terra",
+        "nome": "Terra",
         "slug": "terra",
         "categoria": {
             "id": 1,
@@ -261,7 +259,7 @@ Response 200 (estratto):
 }
 ```
 
-**Nota**: il campo `nome` contiene il nome inglese ("Earth"), `nome_display` contiene l'italiano ("Terra"). Il frontend usa sempre `nome_display`.
+**Nota**: il campo `nome` contiene il nome italiano ("Terra"), il campo `nome_en` (opzionale) contiene l'inglese ("Earth"). Il frontend usa `nome`.
 
 ---
 
@@ -287,7 +285,7 @@ Response 200 (estratto):
 | **CLI Commands** | `astralis:fetch-nasa` e `astralis:gallery` per manutenzione | Automazione |
 | **Error Boundary** | Fallback UI globale per crash React con icona AlertTriangle | Robustezza |
 | **SEO** | `document.title` dinamico su 5 pagine React | Discoverabilità |
-| **377 Test** | 267 PHPUnit + 110 Vitest, Http::fake(), observer skip | Qualità codice |
+| **380 Test** | 270 PHPUnit + 110 Vitest, Http::fake(), observer skip | Qualità codice |
 | **WordMapService** | Traduzione italiano → inglese per ricerca NASA (~70 termini) | UX admin |
 | **Responsive** | Navbar mobile, SolarSystem responsive scaling, griglia adattiva | Accessibilità |
 

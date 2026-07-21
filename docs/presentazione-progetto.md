@@ -8,7 +8,7 @@
 | **Stack**            | Laravel 13 + React 18 + Vite + Blade + Tailwind CSS + MySQL                                  |
 | **Frontend guest**   | React SPA standalone (no Inertia), comunicazione via API REST JSON                           |
 | **Backoffice admin** | Blade puro con Alpine.js, autenticazione Breeze, autorizzazione Policy/Gates                 |
-| **Test**             | 252 PHPUnit + 107 Vitest (359 test totali)                                                   |
+| **Test**             | 270 PHPUnit + 110 Vitest (380 test totali)                                                   |
 | **API esterne**      | NASA Image API — import automatico immagini reali                                            |
 | **Repository**       | [github.com/tuo-username/astralis](https://github.com/tuo-username/astralis)                 |
 
@@ -90,7 +90,7 @@ GET /api/galleria             ← tutte ordinate
 GET /api/dashboard/stats      ← conteggi per homepage
 ```
 
-📌 **`php artisan make:resource NomeResource`** crea una classe che trasforma il modello in JSON. Es. `CorpoCelesteResource` espone `nome_display` (accessor che restituisce `nome_it ?? nome`).
+📌 **php artisan make:resource NomeResource** crea una classe che trasforma il modello in JSON. Es. `CorpoCelesteResource` espone `nome` (italiano, campo primary) per il frontend guest.
 
 📌 **Route model binding con slug**: `Route::get('/api/corpi-celesti/{corpoCeleste:slug}')` — Laravel cerca per colonna `slug` invece che per `id`.
 
@@ -114,7 +114,7 @@ GET /api/dashboard/stats      ← conteggi per homepage
 | **Comparatore**    | `/confronta`           | Due dropdown, tabella confronto 7 campi                                |
 | **NotFound**       | `/*`                   | 404 con icona Telescope + link home                                    |
 
-**Componenti riutilizzabili**: Navbar, Footer, SolarSystem (framer-motion), CorpoCard (gradiente + fallback icona), CategoriaBadge (8 colori), SearchBar, LightboxGalleria, TimelineMissioni, ErrorBoundary.
+**Componenti riutilizzabili**: Navbar, Footer, SolarSystem (CSS keyframes), CorpoCard (gradiente + fallback icona), CategoriaBadge (8 colori), SearchBar, LightboxGalleria, TimelineMissioni, ErrorBoundary.
 
 **Flusso dati**: Pagina → `apiClient.js` (axios) → API Laravel → JSON response → stato React (useState/useEffect).
 
@@ -130,11 +130,11 @@ GET /api/dashboard/stats      ← conteggi per homepage
 
 🎯 **La traccia non lo richiedeva**. È un **extra Wow Factor**.
 
-✅ **Sistema solare**: tre tentativi per le orbite. Primo: `transformOrigin` CSS (etichette ruotavano coi pianeti). Secondo: contro-rotazione (parziale). Terzo: orbite matematiche con `useMotionValue` + `useTransform` di framer-motion — coordinate x/y calcolate con seno/coseno, testo sempre dritto, velocità differenziate per pianeta.
+✅ **Sistema solare**: tre tentativi per le orbite. Primo: `transformOrigin` CSS (etichette ruotavano coi pianeti). Secondo: contro-rotazione (parziale). Terzo (soluzione finale): orbite matematiche con `requestAnimationFrame` — coordinate x/y calcolate con seno/coseno, testo sempre dritto, velocità differenziate per pianeta. Zero re-render React durante animazione.
 
 ✅ **NASA Import backoffice**: tabella nel pannello admin che elenca tutti i corpi celesti con badge "Presente"/"Assente". Bottone "Importa da NASA" per singolo corpo, "Force Import All" per tutti (con modale Alpine.js di conferma).
 
-📌 **framer-motion**: `useMotionValue` crea un valore animato che React traccia. `useTransform` lo trasforma (es. da angolo a coordinate x,y). Il sistema solare usa `animate` per incrementare l'angolo nel tempo.
+📌 **framer-motion**: libreria per animazioni React. In Astralis usata in SolarSystem con `requestAnimationFrame` per le orbite dei pianeti.
 
 ---
 
@@ -186,9 +186,9 @@ $image->save($path);
 
 🎯 **La traccia non lo richiedeva**. Extra — miglioramento della qualità dei dati.
 
-✅ Invece di scaricare immagini NASA, salviamo URL remoti `~medium.jpg` (risparmio storage, evitiamo download di file enormi). Aggiunto campo `nome_it` su `corpi_celesti` per nomi italiani (accessor `nome_display` che fa `nome_it ?? nome`). WordMapService con ~70 termini per tradurre italiano→inglese parola per parola e cercare su NASA.
+✅ Invece di scaricare immagini NASA, salviamo URL remoti `~medium.jpg` (risparmio storage, evitiamo download di file enormi). Dopo il rename campi, il campo `nome` contiene il nome italiano (primary) e `nome_en` quello inglese (opzionale). WordMapService con ~70 termini per tradurre italiano→inglese parola per parola e cercare su NASA.
 
-📌 **Accessor Eloquent**: `public function getNomeDisplayAttribute(): string { return $this->nome_it ?? $this->nome; }`. Si usa come `$corpo->nome_display`. Esposto nelle API via Resource.
+📌 **Accessor Eloquent**: dopo il rename campi, `nome` contiene l'italiano (primary) e `nome_en` l'inglese (opzionale). L'API Resource espone direttamente `nome` (italiano) al frontend guest.
 
 📌 **WordMap**: array associativo `'Nebulosa' => 'Nebula', 'Stella' => 'Star', 'Nana' => 'Dwarf'`... Permette all'admin di scrivere "Buco Nero" e tradurlo in "Black Hole" per la ricerca NASA.
 
@@ -275,10 +275,10 @@ public function delete(): bool { return false; }
 
 🎯 **La traccia non richiedeva esplicitamente test. Ma un progetto professionale ne ha.**
 
-✅ **359 test totali**:
+✅ **380 test totali**:
 
-- **252 PHPUnit** (587 assertion): 58 test unitari (NasaImageService, WordMapService, CleanupGalleryDuplicates, CorpoCeleste, ImportNasaImage) + 9 file test API + 8 file test Admin CRUD + AuthorizationTest + 6 file auth Breeze
-- **107 Vitest**: 27 test componenti React + 61 test integrazione API + 19 test error handling/UI
+- **270 PHPUnit** (613 assertion): 58 test unitari (NasaImageService, WordMapService, CleanupGalleryDuplicates, CorpoCeleste, ImportNasaImage) + 9 file test API + 13 file test Admin CRUD + AuthorizationTest + 6 file auth Breeze
+- **110 Vitest**: 27 test componenti React + 61 test integrazione API + 22 test error handling/UI
 - **HasFactory** su tutti i 5 modelli del dominio
 - **Observer disabilitato in testing** (`app()->environment('testing')`)
 - **`Http::fake()`** in tutti i test che creano CorpoCeleste
@@ -330,7 +330,7 @@ protected function setUp(): void
 
 🎯 **La traccia non richiedeva test specifici per admin. Extra — copertura completa.**
 
-✅ **4 nuovi file di test CRUD admin**: CategoriaCrudTest (14 test), MissioneCrudTest (13 test), CuriositaCrudTest (10 test), GalleriaCrudTest (9 test) = 46 test aggiunti. Totale: 130 PHPUnit.
+✅ **4 nuovi file di test CRUD admin**: CategoriaCrudTest (14 test), MissioneCrudTest (13 test), CuriositaCrudTest (10 test), GalleriaCrudTest (9 test) = 46 test aggiunti.
 
 ✅ **Categoria pagination**: `->paginate(20)` + `->withQueryString()` nella index.
 
@@ -368,7 +368,7 @@ protected function setUp(): void
 | Extra                         | Descrizione                                                                  | Dove       |
 | ----------------------------- | ---------------------------------------------------------------------------- | ---------- |
 | 🚀 **NASA API Integration**   | Import automatico immagini reali, fallback apostrofi, auto-import su created | Fase 8-9   |
-| 🪐 **Sistema Solare Animato** | 8 pianeti orbitanti con velocità differenziate, framer-motion                | Fase 6     |
+| 🪐 **Sistema Solare Animato** | 8 pianeti orbitanti con velocità differenziate, CSS keyframes               | Fase 6     |
 | 🖼️ **Lightbox Galleria**      | Schermo intero con swipe mobile, slideshow                                   | Fase 5     |
 | ⚖️ **Comparatore Pianeti**    | Confronto 2 corpi su 7 metriche, pre-fill via URL params                     | Fase 5     |
 | 📅 **Timeline Missioni**      | Scrolling orizzontale con badge stato colorato                               | Fase 5     |
@@ -376,7 +376,7 @@ protected function setUp(): void
 | 🛠️ **CLI Commands**           | `astralis:fetch-nasa` e `astralis:gallery` per manutenzione                  | Fase 8-11  |
 | 🛡️ **Error Boundary**         | Fallback UI globale per crash React                                          | Fase 15    |
 | 🔍 **SEO Meta Tags**          | `document.title` dinamico su 5 pagine                                        | Fase 15    |
-| 🧪 **359 Test Totali**        | 252 PHPUnit + 107 Vitest, Http::fake(), observer skip                         | Fase 13-17 |
+| 🧪 **380 Test Totali**        | 270 PHPUnit + 110 Vitest, Http::fake(), observer skip                         | Fase 13-17 |
 
 ---
 
@@ -499,16 +499,16 @@ Questo crea: `app/Models/Commento.php`, `database/migrations/...create_commenti_
 | **Auth**           | Laravel Breeze             | —        | Richiesto. Configurato con Blade (non Inertia)                 |
 | **Frontend guest** | React                      | 18       | Richiesto. SPA standalone con Vite                             |
 | **Frontend admin** | Blade + Alpine.js          | —        | Richiesto per admin (Blade). Alpine.js per modali conferma     |
-| **CSS**            | Tailwind CSS               | 3.2      | Utility-first, tema dark custom                                |
-| **Animazioni**     | framer-motion              | 12       | Sistema solare, transizioni pagina                             |
+| **CSS**            | Tailwind CSS               | 4.3      | Utility-first, tema dark custom                                |
+| **Animazioni**     | CSS transitions + keyframes | —        | Sistema solare animato (requestAnimationFrame + CSS)           |
 | **Icone**          | lucide-react               | 1        | Icone categorìa, navigazione, azioni                           |
 | **Lightbox**       | yet-another-react-lightbox | 3        | Galleria immagini a schermo intero                             |
 | **Immagini**       | Intervention Image         | 4        | Upload con scaleDown (NO facade)                               |
 | **Slug**           | spatie/laravel-sluggable   | —        | Slug automatici su 3 modelli                                   |
 | **Grafici**        | Chart.js (CDN)             | 4.4      | Dashboard admin (donut, barre)                                 |
 | **API esterne**    | NASA Image API             | —        | Import immagini reali, auto-suggest                            |
-| **Test PHP**       | PHPUnit                    | —        | 130 test, 335 assertion                                        |
-| **Test JS**        | Vitest + Testing Library   | 4        | 88 test, environment jsdom                                     |
+| **Test PHP**       | PHPUnit                    | —        | 270 test, 613 assertion                                        |
+| **Test JS**        | Vitest + Testing Library   | 4        | 110 test, environment jsdom                                    |
 
 ---
 
@@ -520,8 +520,8 @@ php artisan serve            # Backend → http://localhost:8000
 npm run dev                  # Frontend → http://localhost:5173
 
 # Test
-php artisan test             # Backend (130 test, 335 assertion)
-npm test                     # Frontend (88 test Vitest)
+php artisan test             # Backend (270 test, 613 assertion)
+npm test                     # Frontend (110 test Vitest)
 
 # Database
 php artisan migrate                        # Applica migrazioni
@@ -640,7 +640,7 @@ Service layer centralizzato: `NasaImageService` gestisce ricerca, import e dedup
 
 **Q7: Come avete gestito i test con le dipendenze esterne (NASA API)?**
 
-Due strategie: (1) `Http::fake()` in `setUp()` di ogni test PHPUnit che crea CorpoCeleste — blocca chiamate HTTP reali. (2) L'Observer si disabilita automaticamente in testing con `app()->environment('testing')`. Totale: 377 test (267 PHPUnit + 110 Vitest) eseguibili offline (Vedi Fase 13).
+Due strategie: (1) `Http::fake()` in `setUp()` di ogni test PHPUnit che crea CorpoCeleste — blocca chiamate HTTP reali. (2) L'Observer si disabilita automaticamente in testing con `app()->environment('testing')`. Totale: 380 test (270 PHPUnit + 110 Vitest) eseguibili offline (Vedi Fase 13).
 
 ---
 

@@ -4,6 +4,8 @@
 
 ## 21/07/2026
 
+- `[🔵][🎨]` Rimosso framer-motion da package.json (zero import nel codice, SolarSystem usa CSS keyframes) — aggiornati exam view, cheat sheet, documentazione, presentazione, AGENTS.md — `package.json`, `exam/index.blade.php`, `exam-cheat-sheet.md`, `documentazione.md`, `presentazione-progetto.md`, `AGENTS.md`
+- `[🔵][📝]` Audit frontend completato — 41 finding (8 high, 18 medium, 15 low) convertiti in 10 task (129-138): hardcoded hex→CSS vars, CLS img dims, focus-visible, ellipsis, reduced motion (future) — `docs/todo.md`
 - `[🟡][✨]` Preparazione esame — ExamController + view dashboard exam (`/admin/exam`), cheat sheet completa (PHP/Laravel/React definizioni, traccia mapping, live coding), Postman collection, script avvio `start-exam.bat` — `ExamController.php`, `exam/index.blade.php`, `exam-cheat-sheet.md`, `astralis.postman_collection.json`, `start-exam.bat`, `routes/web.php`
 - `[🟡][🎨]` Fix nasa-suggest-js duplicato — rimosso include duplicato da create/edit, portato needs_manual input prompt in Alpine `corpoForm()` — `create.blade.php`, `edit.blade.php`, `_form.blade.php`
 - `[🟡][🎨]` Dashboard stat card — rimosse classi Tailwind dinamiche (`border-admin-{{ $color }}`), mappatura statica con CSS variables + inline styles — `dashboard-stat.blade.php`
