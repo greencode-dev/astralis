@@ -2,11 +2,23 @@
 
 > [Formato e legenda →](#note)
 
-_Ultimo aggiornamento: 20/07/2026_
+_Ultimo aggiornamento: 21/07/2026_
 
 ## Da Fare
 
-> Nessuna task aperta.
+- [ ] [Task 128] `[🟢][🎨]` search.blade.php: "Cancella filtro" hardcoded red → theme color — `resources/views/admin/partials/search.blade.php`
+- [ ] [Task 127] `[🟢][🎨]` Form submit: aggiungere loading state al bottone — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 126] `[🟢][🎨]` Dead CSS: rimuovere animate-in-view-left/scale inutilizzati — `resources/css/app.css`
+- [ ] [Task 125] `[🔵][🎨]` Auto-translate: aggiungere loading spinner dots — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 124] `[🔵][🎨]` Form spacing: uniformare mb tra sezioni — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 123] `[🔵][🎨]` index-actions: unificare delete confirmation (data-confirm vs onsubmit) — `resources/views/admin/partials/index-actions.blade.php`
+- [ ] [Task 122] `[🔵][🎨]` Gallery NASA search: aggiungere titolo sotto thumbnail — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 121] `[🔵][🎨]` File upload preview: inline JS → Alpine.js — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 120] `[🔵][🎨]` In evidenza toggle: spostare in sezione Classificazione — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 119] `[🔵][🎨]` Tipo custom select: "← Select" → "Torna al menu" — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 118] `[🟡][🎨]` Gallery overlay buttons: hover-only → sempre visibili o toggle mobile — `resources/views/admin/corpi-celesti/_form.blade.php`
+- [ ] [Task 117] `[🟡][🎨]` Dashboard stat card: classi Tailwind dinamiche → CSS variables o mappatura statica — `resources/views/admin/partials/dashboard-stat.blade.php`
+- [ ] [Task 116] `[🟡][🎨]` Fix nasa-suggest-js duplicato — rimuovere include da create + edit — `resources/views/admin/corpi-celesti/create.blade.php`, `edit.blade.php`
 
 ## In lavorazione
 
@@ -206,7 +218,7 @@ _Ultimo aggiornamento: 20/07/2026_
 
 ## Note
 
-- **Stato**: 0 task aperte. 115 task totali (0 Da Fare + 115 Completate). 380 test (270 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 13 task aperte. 128 task totali (13 Da Fare + 115 Completate). 380 test (270 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Completate**
 - Formato per aggiungere un nuovo task:
     ```
