@@ -74,26 +74,8 @@
     transform: translateY(20px);
 }
 
-@utility animate-in-view-left {
-    opacity: 0;
-    transform: translateX(-30px);
-}
-
-@utility animate-in-view-scale {
-    opacity: 0;
-    transform: scale(0.9);
-}
-
 .animate-in-view.is-visible {
     animation: fadeUp 0.5s ease-out forwards;
-}
-
-.animate-in-view-left.is-visible {
-    animation: slideLeft 0.8s ease-out forwards;
-}
-
-.animate-in-view-scale.is-visible {
-    animation: fadeScale 1s ease-out forwards;
 }
 
 @utility planet-hover {
@@ -136,4 +118,15 @@
 @keyframes pulseSun {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
+}
+
+@keyframes loadingDots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+.loading-dots::after {
+    content: '...';
+    animation: loadingDots 1.4s steps(1) infinite;
 }

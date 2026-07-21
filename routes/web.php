@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CuriositaController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleriaController;
 use App\Http\Controllers\Admin\MissioneController;
+use App\Http\Controllers\Admin\ExamController;
 use App\Http\Controllers\Admin\NasaImportController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'throttle:120,1'])->name
         'galleria' => 'galleriaCorpo',
     ]);
     Route::post('galleria/{galleriaCorpo}/ordine', [GalleriaController::class, 'aggiornaOrdine'])->name('galleria.ordine');
+    Route::get('exam', [ExamController::class, 'index'])->name('exam');
     Route::get('nasa-import', [NasaImportController::class, 'index'])->name('nasa-import.index');
     Route::post('nasa-import/import-all', [NasaImportController::class, 'importAll'])->name('nasa-import.import-all');
     Route::post('nasa-import/{corpoCeleste}', [NasaImportController::class, 'import'])->name('nasa-import.import');

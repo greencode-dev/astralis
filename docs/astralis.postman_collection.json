@@ -1,0 +1,136 @@
+{
+  "info": {
+    "name": "Astralis API",
+    "description": "10 endpoint API REST del progetto Astralis. Endpoint pubblici, nessuna autenticazione richiesta.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Corpi Celesti — Lista",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/corpi-celesti?categoria=pianeta&per_page=5",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "corpi-celesti"],
+          "query": [
+            { "key": "categoria", "value": "pianeta", "description": "Filtra per categoria (slug)" },
+            { "key": "tipo", "value": "", "description": "Filtra per tipo" },
+            { "key": "search", "value": "", "description": "Ricerca per nome" },
+            { "key": "in_evidenza", "value": "", "description": "Solo in evidenza (1)" },
+            { "key": "per_page", "value": "5", "description": "Risultati per pagina (max 100)" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Corpi Celesti — Dettaglio",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/corpi-celesti/terra",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "corpi-celesti", "terra"]
+        }
+      }
+    },
+    {
+      "name": "Corpi Celesti — Simili",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/corpi-celesti/terra/simili",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "corpi-celesti", "terra", "simili"]
+        }
+      }
+    },
+    {
+      "name": "Categorie — Lista",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/categorie",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "categorie"]
+        }
+      }
+    },
+    {
+      "name": "Categorie — Dettaglio",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/categorie/pianeta",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "categorie", "pianeta"]
+        }
+      }
+    },
+    {
+      "name": "Missioni — Lista",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/missioni?agenzia=NASA&stato=Completata",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "missioni"],
+          "query": [
+            { "key": "agenzia", "value": "NASA", "description": "Filtra per agenzia" },
+            { "key": "stato", "value": "Completata", "description": "Filtra per stato" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Missioni — Dettaglio",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/missioni/apollo-11",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "missioni", "apollo-11"]
+        }
+      }
+    },
+    {
+      "name": "Curiosità — Lista",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/curiosita",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "curiosita"]
+        }
+      }
+    },
+    {
+      "name": "Galleria — Lista",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/galleria",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "galleria"]
+        }
+      }
+    },
+    {
+      "name": "Dashboard — Stats",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/dashboard/stats",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "dashboard", "stats"]
+        }
+      }
+    }
+  ]
+}

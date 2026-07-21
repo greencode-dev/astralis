@@ -3,25 +3,9 @@
     $entity = $entity ?? null;
     $route = $isEdit ? route('admin.corpi-celesti.update', $entity) : route('admin.corpi-celesti.store');
 @endphp
-<form method="POST" action="{{ $route }}" enctype="multipart/form-data" x-data="corpoForm()" x-cloak>
+<form method="POST" action="{{ $route }}" enctype="multipart/form-data" x-data="corpoForm()" x-cloak @submit="isSubmitting = true">
     @csrf
     @if($isEdit) @method('PUT') @endif
-
-    {{-- In evidenza toggle — top right --}}
-    <div class="flex items-center justify-between mb-6">
-        <div></div>
-        <label class="flex items-center gap-2.5 cursor-pointer select-none">
-            <span class="text-sm text-gray-400">In evidenza</span>
-            <button type="button" role="switch" aria-checked="false"
-                    @click="inEvidenza = !inEvidenza; $refs.inEvidenzaInput.value = inEvidenza ? '1' : '0'"
-                    :class="inEvidenza ? 'bg-admin-primary' : 'bg-gray-600'"
-                    class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-admin-primary/50">
-                <span :class="inEvidenza ? 'translate-x-5' : 'translate-x-1'"
-                      class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200" />
-            </button>
-            <input type="hidden" name="in_evidenza" :value="inEvidenza ? '1' : '0'" x-ref="inEvidenzaInput">
-        </label>
-    </div>
 
     {{-- 1. Identificazione --}}
     <h3 class="text-xs font-semibold uppercase tracking-wider text-admin-muted mb-3">Identificazione</h3>
@@ -46,8 +30,15 @@
                 </button>
             </div>
             <p id="suggestResult" class="mt-1 text-xs"
-               :class="suggestColor"
-               x-text="suggestMsg"></p>
+               :class="suggestColor">
+                <span x-text="suggestMsg"></span><span x-show="nasaLoading" class="loading-dots"></span>
+            </p>
+            <div x-show="manualMode" x-cloak class="flex gap-2 mt-2">
+                <input type="text" x-model="manualNomeEn" placeholder="Nome inglese su NASA (es. Orion Nebula)"
+                       class="admin-input flex-1 text-sm">
+                <button type="button" @click="if(manualNomeEn.trim()) { nomeEn = manualNomeEn.trim(); manualMode = false; suggestMsg = 'Impostato: ' + manualNomeEn.trim(); suggestColor = 'text-green-400'; }"
+                        class="px-3 py-2 rounded-lg text-xs font-medium bg-admin-primary/15 text-admin-primary border border-admin-primary/20 hover:bg-admin-primary/25">Usa</button>
+            </div>
             @error('nome_en')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
         </div>
     </div>
@@ -88,16 +79,27 @@
                     <input type="text" name="tipo" id="tipo_custom" value="{{ $currentTipo }}"
                            placeholder="Es. Pianeta roccioso" class="admin-input flex-1">
                     <button type="button" @click="customTipo = 'false'; $el.closest('[x-data]').querySelector('select[name=tipo]').value = ''"
-                            class="px-3 py-2 text-xs text-gray-400 hover:text-admin-text">← Select</button>
+                            class="px-3 py-2 text-xs text-gray-400 hover:text-admin-text">Torna al menu</button>
                 </div>
             </div>
             @error('tipo')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
         </div>
     </div>
+    <div class="flex items-center gap-2.5 mb-6 cursor-pointer select-none">
+        <span class="text-sm text-gray-400">In evidenza</span>
+        <button type="button" role="switch" aria-checked="false"
+                @click="inEvidenza = !inEvidenza; $refs.inEvidenzaInput.value = inEvidenza ? '1' : '0'"
+                :class="inEvidenza ? 'bg-admin-primary' : 'bg-gray-600'"
+                class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-admin-primary/50">
+            <span :class="inEvidenza ? 'translate-x-5' : 'translate-x-1'"
+                  class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200" />
+        </button>
+        <input type="hidden" name="in_evidenza" :value="inEvidenza ? '1' : '0'" x-ref="inEvidenzaInput">
+    </div>
 
     {{-- 3. Immagine --}}
     <h3 class="text-xs font-semibold uppercase tracking-wider text-admin-muted mb-3">Immagine</h3>
-    <div class="mb-6" x-data="{ previewUrl: '{{ $isEdit && $entity->immagine ? $entity->immagine_url : '' }}' }">
+    <div class="mb-6" x-data="{ previewUrl: '{{ $isEdit && $entity->immagine ? $entity->immagine_url : '' }}', showPreview: {{ $isEdit && $entity->immagine ? 'true' : 'false' }}, handleFile(e) { if (e.target.files && e.target.files[0]) { const r = new FileReader(); r.onload = ev => { this.previewUrl = ev.target.result; this.showPreview = true; }; r.readAsDataURL(e.target.files[0]); } } }">
         @if($isEdit && $entity->immagine)
             <div class="flex items-center gap-3 mb-2">
                 <img loading="lazy" :src="previewUrl || '{{ $entity->immagine_url }}'" alt="{{ $entity->nome }}" class="w-10 h-10 rounded-lg object-cover border border-admin-primary/20">
@@ -109,7 +111,7 @@
                 <label for="immagine_file" class="block text-sm font-medium mb-2 text-admin-text">Carica file</label>
                 <input type="file" name="immagine_file" id="immagine_file" accept="image/jpeg,image/png,image/webp"
                        class="admin-input file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:text-xs file:font-medium file:border-0"
-                       onchange="if(this.files && this.files[0]) { const r = new FileReader(); r.onload = e => { document.getElementById('coverPreview').src = e.target.result; document.getElementById('coverPreviewWrap').style.display = 'block'; }; r.readAsDataURL(this.files[0]); }">
+                       @change="handleFile($event)">
                 <p class="mt-1 text-xs text-gray-500">JPG, PNG, WebP. Max 2MB.</p>
             </div>
             <div>
@@ -119,8 +121,8 @@
                 <p class="mt-1 text-xs text-gray-500">{{ $isEdit ? 'Lascia vuoto per mantenere l\'immagine attuale.' : 'Lascia vuoto per importare da NASA.' }}</p>
             </div>
         </div>
-        <div id="coverPreviewWrap" style="display: none;" class="mt-3">
-            <img id="coverPreview" class="w-20 h-20 rounded-lg object-cover border border-admin-primary/20" alt="Preview">
+        <div x-show="showPreview" x-cloak class="mt-3">
+            <img :src="previewUrl" class="w-20 h-20 rounded-lg object-cover border border-admin-primary/20" alt="Preview">
         </div>
         @error('immagine')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
         @error('immagine_file')<p class="mt-1 text-sm text-red-500">{{ $message }}</p>@enderror
@@ -192,7 +194,7 @@
 
     {{-- 6. Dettagli --}}
     <h3 class="text-xs font-semibold uppercase tracking-wider text-admin-muted mb-3">Dettagli</h3>
-    <div class="mb-5">
+    <div class="mb-6">
         <label for="descrizione" class="block text-sm font-medium mb-2 text-admin-text">Descrizione</label>
         <textarea name="descrizione" id="descrizione" rows="5"
                   class="admin-input">{{ old('descrizione', $entity->descrizione ?? null) }}</textarea>
@@ -207,13 +209,11 @@
         @if($entity->galleria && $entity->galleria->count() > 0)
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-4">
             @foreach($entity->galleria as $foto)
-            <div class="relative group rounded-lg overflow-hidden border border-admin-primary/10 bg-admin-bg"
-                 x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+            <div class="relative group rounded-lg overflow-hidden border border-admin-primary/10 bg-admin-bg">
                 <div class="aspect-square">
                     <img loading="lazy" src="{{ $foto->percorso_url }}" alt="{{ $foto->didascalia ?? '' }}" class="w-full h-full object-cover">
                 </div>
-                {{-- overlay buttons --}}
-                <div x-show="hover" x-cloak class="absolute inset-0 bg-black/50 flex items-center justify-center gap-2 transition-opacity">
+                <div class="absolute bottom-0 left-0 right-0 p-1 flex items-center justify-center gap-1 bg-gradient-to-t from-black/70 to-transparent">
                     <form method="POST" action="{{ route('admin.corpi-celesti.set-image', [$entity, $foto]) }}">
                         @csrf
                         <button type="submit" class="px-2 py-1 text-[10px] font-medium rounded bg-admin-primary/80 text-white hover:bg-admin-primary">Copertina</button>
@@ -254,6 +254,7 @@
                         <div class="aspect-square bg-admin-bg">
                             <img :src="item.thumbnail" :alt="item.title" class="w-full h-full object-cover" loading="lazy">
                         </div>
+                        <p x-text="item.title" class="text-[9px] text-gray-400 truncate p-1"></p>
                         <div x-show="item.selected" x-cloak class="absolute top-1 right-1 w-5 h-5 rounded-full bg-admin-primary flex items-center justify-center">
                             <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                         </div>
@@ -281,8 +282,10 @@
     {{-- Submit --}}
     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-6">
         <button type="submit"
-                class="admin-btn-primary sm:w-auto w-full">
-            {{ $isEdit ? 'Aggiorna Corpo Celeste' : 'Salva Corpo Celeste' }}
+                class="admin-btn-primary sm:w-auto w-full"
+                :disabled="isSubmitting">
+            <span x-show="!isSubmitting">{{ $isEdit ? 'Aggiorna Corpo Celeste' : 'Salva Corpo Celeste' }}</span>
+            <span x-show="isSubmitting" x-cloak>Salvataggio...</span>
         </button>
         <a href="{{ route('admin.corpi-celesti.index') }}"
            class="admin-btn-cancel sm:w-auto w-full text-center">
@@ -302,8 +305,11 @@ function corpoForm() {
         inEvidenza: {{ $jsInEvidenza }},
         nomeEn: '{{ $jsNomeEn }}',
         nasaLoading: false,
+        isSubmitting: false,
         suggestMsg: '',
         suggestColor: 'text-gray-500',
+        manualMode: false,
+        manualNomeEn: '',
 
         autoTranslate() {
             const nome = document.getElementById('nome').value.trim();
@@ -343,6 +349,7 @@ function corpoForm() {
             this.nasaLoading = true;
             this.suggestMsg = 'Cerco su NASA...';
             this.suggestColor = 'text-gray-500';
+            this.manualMode = false;
 
             fetch('{{ route("admin.corpi-celesti.suggest-nome") }}', {
                 method: 'POST',
@@ -362,6 +369,7 @@ function corpoForm() {
                 } else if (data.needs_manual) {
                     this.suggestMsg = data.message;
                     this.suggestColor = 'text-yellow-400';
+                    this.manualMode = true;
                 } else {
                     this.suggestMsg = data.message || 'Nessun risultato.';
                     this.suggestColor = 'text-red-400';

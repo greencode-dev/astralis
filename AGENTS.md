@@ -56,6 +56,11 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `app/Console/Commands/CleanupGalleryDuplicates.php`          | Comando`astralis:gallery` (--check/--clean/--sync/--fix/--dry-run)                   |
 | `app/Policies/`                                              | Policy autorizzazione (5 Policy, una per entità)                                     |
 | `app/Providers/AuthServiceProvider.php`                      | Registrazione Policy + Gate`admin`                                                   |
+| `app/Http/Controllers/Admin/ExamController.php`              | Dashboard esame: stats, architettura, endpoint, tech stack                          |
+| `resources/views/admin/exam/index.blade.php`                 | Vista dashboard exam (quick reference)                                               |
+| `docs/exam-cheat-sheet.md`                                   | Cheat sheet esame: traccia, definizioni PHP/Laravel/React, live coding               |
+| `start-exam.bat`                                             | Script avvio unificato (migrate:fresh + artisan serve + npm run dev)                 |
+| `docs/astralis.postman_collection.json`                      | Postman collection per demo API                                                      |
 | `app/Http/Controllers/Admin/`                                | Controller CRUD admin (Blade)                                                        |
 | `app/Http/Controllers/Api/`                                  | Controller API (JSON)                                                                |
 | `app/Http/Controllers/Auth/`                                 | Controller auth Breeze (Blade)                                                       |
@@ -77,7 +82,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 255 test PHPUnit, 591 assertion. `npm test` — 107 test Vitest. Totale: 362 test.
+- **Run**: `php artisan test` — 270 test PHPUnit, 613 assertion. `npm test` — 110 test Vitest. Totale: 380 test.
 
 ## Bugs noti / Pattern da evitare
 
@@ -511,15 +516,15 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 20/07/2026 — 23:15
+> _Ultimo aggiornamento:_ 21/07/2026 — 10:00
 
 | Campo               | Valore                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Branch**          | `master`                                                                                               |
 | **Test**            | 270 PHPUnit + 110 Vitest = 380 totali, tutti verdi                                                    |
-| **Task completate** | 115 task totali completate (piano rinomina campi 103-115 chiuso)                                       |
-| **Task in corso**   | Nessuno — piano rinomina campi + galleria inline completato                                            |
-| **Prossime azioni** | Audit design/UX del nuovo form admin; eventuali future task (Cerca info NASA, SBDB/Horizons)           |
+| **Task completate** | 128 task totali completate (audit admin 116-128 chiuso)                                                |
+| **Task in corso**   | Preparazione esame: ExamController, dashboard exam, cheat sheet, Postman collection, start-exam.bat    |
+| **Prossime azioni** | Commit files esame, eventuali future task (Cerca info NASA, SBDB/Horizons API)                        |
 
 ### Piano rinomina campi + galleria inline (Task 103-115)
 

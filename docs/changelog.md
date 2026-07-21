@@ -2,6 +2,27 @@
 
 > [Formato e legenda →](#formato)
 
+## 21/07/2026
+
+- `[🟡][✨]` Preparazione esame — ExamController + view dashboard exam (`/admin/exam`), cheat sheet completa (PHP/Laravel/React definizioni, traccia mapping, live coding), Postman collection, script avvio `start-exam.bat` — `ExamController.php`, `exam/index.blade.php`, `exam-cheat-sheet.md`, `astralis.postman_collection.json`, `start-exam.bat`, `routes/web.php`
+- `[🟡][🎨]` Fix nasa-suggest-js duplicato — rimosso include duplicato da create/edit, portato needs_manual input prompt in Alpine `corpoForm()` — `create.blade.php`, `edit.blade.php`, `_form.blade.php`
+- `[🟡][🎨]` Dashboard stat card — rimosse classi Tailwind dinamiche (`border-admin-{{ $color }}`), mappatura statica con CSS variables + inline styles — `dashboard-stat.blade.php`
+- `[🟡][🎨]` Gallery overlay buttons — rimossi hover-only/x-show, bottoni sempre visibili con gradient bottom overlay — `_form.blade.php`
+- `[🔵][🎨]` Tipo custom select — "← Select" → "Torna al menu" — `_form.blade.php`
+- `[🔵][🎨]` In evidenza toggle — spostato dalla testa form alla sezione Classificazione — `_form.blade.php`
+- `[🔵][🎨]` File upload preview — inline JS `onchange` → Alpine.js `@change` con `handleFile()` — `_form.blade.php`
+- `[🔵][🎨]` Gallery NASA search — aggiunto titolo sotto thumbnail nei risultati NASA — `_form.blade.php`
+- `[🔵][🎨]` index-actions — unificata conferma delete: `onsubmit` → `data-confirm` — `index-actions.blade.php`
+- `[🔵][🎨]` Form spacing — uniformato `mb-5` → `mb-6` in sezione Dettagli — `_form.blade.php`
+- `[🔵][🎨]` Auto-translate — aggiunto loading spinner dots animato con CSS `@keyframes` — `_form.blade.php`, `app.css`
+- `[🟢][🎨]` Dead CSS — rimossi `animate-in-view-left` e `animate-in-view-scale` inutilizzati — `app.css`
+- `[🟢][🎨]` Form submit — aggiunto loading state "Salvataggio..." al bottone submit — `_form.blade.php`
+- `[🟢][🎨]` search.blade.php — "Cancella filtro" `hover:text-red-500` → `hover:text-admin-error` — `search.blade.php`
+
+**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
+
+---
+
 ## 20/07/2026
 
 - `[🟡][🖥️]` Piano rinomina campi completato (Task 103-115) — `nome_it`→`nome` (IT primary), `nome`→`nome_en` (EN nullable), rimosso accessor `nome_display`, React API solo `nome`, slug rigenerati IT. Form admin ristrutturato (in_evidenza toggle, tipo dropdown custom, upload copertina file+URL, galleria inline NASA). WordMapService auto-popola `wordmap-custom.json` da MyMemory; NasaImageService usa `nome_en` — `CorpoCeleste.php`, `_form.blade.php`, `WordMapService.php`, `NasaImageService.php`, `routes/web.php`

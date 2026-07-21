@@ -13,4 +13,4 @@
     </div>
 @endsection
 
-@include('admin.partials.nasa-suggest-js')
+
