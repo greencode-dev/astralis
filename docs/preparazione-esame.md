@@ -576,6 +576,236 @@ Carica le relazioni in anticipo per evitare N+1 query. `CorpoCeleste::with(['cat
 ### API Resource
 Trasforma un modello in JSON. `CorpoCelesteResource` seleziona campi da esporre. Espone `nome` (italiano) per il frontend guest. Protegge dati interni. `php artisan make:resource`.
 
+### API e REST — Definizioni e Implementazione
+
+#### Cos'è un'API
+
+**API** = Application Programming Interface. È un contratto che definisce come due software comunicano tra loro.
+
+**Analogia**: un cameriere in ristorante.
+- Il **cliente** (React frontend) fa un ordine: "Voglio la lista dei pianeti"
+- Il **cameriere** (API) porta la richiesta alla cucina (Laravel backend)
+- La **cucina** prepara il piatto (query al database)
+- Il cameriere **restituisce** il piatto (risposta JSON)
+
+```javascript
+// React (cliente) chiama l'API
+const response = await fetch('/api/corpi-celesti');
+const data = await response.json();  // JSON con 18 corpi celesti
+```
+
+```php
+// Laravel (cucina) restituisce i dati
+public function index(): JsonResponse
+{
+    return CorpoCelesteResource::collection(CorpoCeleste::all());
+}
+```
+
+In Astralis: l'API è il **ponte** tra il React guest (SPA standalone) e il database MySQL.
+
+---
+
+#### API vs Route — Qual è la differenza?
+
+| | **Route web** (Blade) | **API** (JSON) |
+|---|---|---|
+| **Cosa restituisce** | HTML (pagina intera) | JSON (solo dati) |
+| **Chi la usa** | Browser umano | JavaScript (React, fetch, axios) |
+| **Autenticazione** | Session + cookie (Breeze) | API pubbliche (o token) |
+| **Dove in Laravel** | `routes/web.php` | `routes/api.php` |
+| **Template** | Blade (`@extends`, `@section`) | Nessuno (JSON puro) |
+| **Esempio Astralis** | `/admin/corpi-celesti` → vista Blade | `/api/corpi-celesti` → JSON |
+
+```php
+// Route web → restituisce HTML (Blade)
+Route::get('/admin/corpi-celesti', [CorpoCelesteController::class, 'index'])
+    ->name('admin.corpi-celesti.index');
+
+// Route API → restituisce JSON
+Route::get('/corpi-celesti', [CorpoCelesteController::class, 'index']);
+```
+
+**Regola pratica**: se il consumatore è un browser umano → route web. Se il consumatore è del codice JavaScript → API.
+
+---
+
+#### Cos'è lo standard REST?
+
+**REST** = REpresentational State Transfer. Non è un protocollo, è un **stile architetturale** per progettare API web. Definito da Roy Fielding nel 2000.
+
+**6 vincoli** (in parole semplici):
+
+| # | Vincolo | Cosa significa | In Astralis |
+|---|---|---|---|
+| 1 | **Client-Server** | Frontend e backend sono separati | React (client) ↔ Laravel (server) |
+| 2 | **Stateless** | Ogni richiesta è indipendente | API senza sessione; ogni GET è autoconsistent |
+| 3 | **Cacheable** | Le risposte possono essere cachate | Cache su stats (1h) e corpi-celesti (5min) |
+| 4 | **Layered System** | Il client non sa cosa c'è tra lui e il server | Vite proxy inoltra `/api` a `localhost:8000` |
+| 5 | **Uniform Interface** | URL = risorse, HTTP methods = azioni | `/api/corpi-celesti` è sempre una risorsa |
+| 6 | **Code on Demand** (opzionale) | Il server può inviare codice eseguibile | Non usato in Astralis |
+
+**In pratica**: REST dice che le URL devono rappresentare **risorse** (nomi, non verbi) e gli HTTP methods devono rappresentare **azioni**.
+
+```
+✅ REST: GET /api/corpi-celesti          (leggi tutte le risorse)
+✅ REST: GET /api/corpi-celesti/terra    (leggi una risorsa specifica)
+❌ Non REST: GET /api/getCorpiCelesti    (URL contiene un verbo)
+❌ Non REST: POST /api/deleteCorpo/5     (DELETE non dovrebbe essere POST)
+```
+
+---
+
+#### Metodi HTTP
+
+| Metodo | Cosa fa | Astralis | Status codes |
+|---|---|---|---|
+| **GET** | Legge una risorsa | ✅ 10 endpoint API pubblici | 200 (ok), 404 (non trovato) |
+| **POST** | Crea una risorsa | ✅ Solo admin (autenticato) | 201 (creato), 422 (validazione fallita) |
+| **PUT/PATCH** | Aggiorna una risorsa | ✅ Solo admin (autenticato) | 200 (aggiornato), 422 (validazione fallita) |
+| **DELETE** | Elimina una risorsa | ✅ Solo admin (autenticato) | 204 (eliminato), 404 (non trovato) |
+
+**Status codes più importanti**:
+
+| Code | Significato | Quando in Astralis |
+|---|---|---|
+| **200** OK | Richiesta riuscita | Tutte le GET che restituiscono dati |
+| **201** Created | Risorsa creata | `store()` admin — crea un corpo celeste |
+| **204** No Content | Eliminata con successo | `destroy()` admin — elimina una curiosità |
+| **404** Not Found | Risorsa inesistente | Slug non trovato (Route Model Binding) |
+| **422** Unprocessable Entity | Dati di validazione errati | FormRequest fallita (campi obbligatori mancanti) |
+| **429** Too Many Requests | Throttle exceeded | >60 req/min API, >120 req/min admin |
+| **500** Server Error | Errore interno | Bug, cache rotta, DB down |
+
+---
+
+#### Cosa sono gli API Resource?
+
+Un **API Resource** è una classe che trasforma un modello Eloquent in JSON controllato. Decide **quali campi** esporre e **quali nascondere**.
+
+**Perché serve**: il modello Eloquent ha tutti i campi (inclusi dati interni). L'API Resource seleziona solo ciò che il frontend ha bisogno.
+
+```php
+// Senza Resource → esponi TUTTO (inclusi dati interni)
+return response()->json(CorpoCeleste::find(1));
+
+// Con Resource → controlli cosa esporre
+return new CorpoCrelesteResource(CorpoCeleste::find(1));
+```
+
+**Esempio concreto**: `CorpoCelesteResource` espone `nome` (italiano) ma **nasconde** `immagine_utente` (boolean, interno al sistema).
+
+##### Creare un API Resource
+
+```bash
+php artisan make:resource CorpoCelesteResource
+```
+
+Crea il file `app/Http/Resources/CorpoCelesteResource.php`:
+
+```php
+class CorpoCelesteResource extends JsonResource
+{
+    public function toArray(Request $request): array
+    {
+        return [
+            'id' => $this->id,
+            'nome' => $this->nome,           // Esposto: il frontend lo usa
+            'slug' => $this->slug,
+            'categoria' => new CategoriaResource($this->whenLoaded('categoria')),
+            'immagine_url' => $this->immagine_url,
+            // 'immagine_utente' => ...      // NON esposto: è un dato interno
+        ];
+    }
+}
+```
+
+**Nel controller**:
+```php
+public function show(CorpoCeleste $corpoCeleste): CorpoCelesteResource
+{
+    $corpoCeleste->load(['categoria', 'galleria', 'curiosita', 'missioni']);
+    return new CorpoCelesteResource($corpoCeleste);
+}
+```
+
+**5 API Resource in Astralis**:
+
+| Resource | Modello | Note |
+|---|---|---|
+| `CorpoCelesteResource` | CorpoCeleste | Adaptive: cambia output in base a `?detail=true` |
+| `CategoriaResource` | Categoria | Include `corpi_count` quando caricato |
+| `MissioneResource` | Missione | Smart URL: risolve remote vs locale + conditional pivot |
+| `CuriositaResource` | Curiosita | Include corpo celeste padre |
+| `GalleriaCorpoResource` | GalleriaCorpo | Accessor `percorso_url` per URL remote/locali |
+
+---
+
+#### Come Astralis implementa REST
+
+**10 endpoint API**, tutti GET, tutti pubblici:
+
+| # | Route | Metodo | Cosa restituisce | Filtri |
+|---|---|---|---|---|
+| 1 | `/api/corpi-celesti` | GET | Lista corpi (paginata) | `?categoria`, `?tipo`, `?search`, `?in_evidenza`, `?per_page` |
+| 2 | `/api/corpi-celesti/{slug}` | GET | Dettaglio corpo | Eager load: categoria, galleria, curiosità, missioni |
+| 3 | `/api/corpi-celesti/{slug}/simili` | GET | Max 4 corpi simili | Stessa categoria, esclude quello corrente |
+| 4 | `/api/categorie` | GET | Tutte le categorie | Nessun filtro |
+| 5 | `/api/categorie/{slug}` | GET | Dettaglio categoria + corpi | Eager load: corpiCelesti con galleria |
+| 6 | `/api/missioni` | GET | Lista missioni (paginata) | `?agenzia`, `?stato` |
+| 7 | `/api/missioni/{slug}` | GET | Dettaglio missione + corpi | Eager load: corpiCelesti con categoria e galleria |
+| 8 | `/api/curiosita` | GET | Lista curiosità (paginata) | Nessun filtro |
+| 9 | `/api/galleria` | GET | Lista galleria (paginata) | Ordinamento per `ordine` + `created_at` |
+| 10 | `/api/dashboard/stats` | GET | Statistiche generali | Cache 1 ora, raw SQL aggregation |
+
+**Pattern avanzati implementati**:
+
+| Pattern | Come funziona | Perché |
+|---|---|---|
+| **Route Model Binding (slug)** | `{corpoCeleste:slug}` invece di `{id}` | URL leggibili, SEO-friendly |
+| **Adaptive Resource** | `CorpoCelesteResource` cambia output (list vs detail) | Stessa route, meno dati in lista, tutto in dettaglio |
+| **Cache ID-based** | Cachea solo gli ID (`pluck('id')`), re-query con `whereIn()` | Evita serializzazione rotta di Collection |
+| **Throttle** | `throttle:60,1` su API, `throttle:120,1` su admin | Protezione da abuso |
+| **Eager Loading** | `with(['categoria', 'galleria'])` | Previene problema N+1 |
+| **per_page bounds** | `max(1, min($request->integer('per_page', 12), 100))` | Default 12 (corpi) o 20 (altri), max 100 |
+
+---
+
+#### REST puro vs Astralis — dove si discosta e perché
+
+| REST puro | Astralis | Perché la deviazione |
+|---|---|---|
+| CRUD con GET/POST/PUT/DELETE su API | Solo GET pubbliche, POST/PUT/DELETE in admin Blade | Il guest non deve creare/modificare/eliminare |
+| Auth su tutte le API | API completamente pubbliche | Il visitatore deve poter esplorare senza login |
+| OAuth/JWT per auth API | Session + Breeze solo per admin | Breeze è sufficiente per un progetto esame |
+| Cache su tutte le GET | Cache solo su 2 endpoint (stats + corpi) | Gli altri endpoint hanno poco traffico |
+| HATEOAS (link ipertestuali) | No | Complessità non necessaria per l'esame |
+| Versioning (`/api/v1/`) | No | Un solo versione, non serve |
+
+**Nota per l'esame**: queste deviazioni sono **scelte progettuali deliberate**, non errori. Spiegarle dimostra comprensione dello standard REST e capacità di adattarlo al contesto reale.
+
+---
+
+#### Domande esame tipiche
+
+**Q: Cos'è un'API?**
+→ Application Programming Interface. È un contratto che definisce come due software comunicano. In Astralis: React (client) chiama Laravel (server) tramite endpoint JSON.
+
+**Q: Qual è la differenza tra route web e API?**
+→ Route web restituisce HTML (pagine Blade) per browser umani. API restituisce JSON per codice JavaScript. Route web: `routes/web.php`. API: `routes/api.php`.
+
+**Q: Cos'è REST?**
+→ REpresentational State Transfer. Stile architetturale con 6 vincoli: client-server, stateless, cacheable, layered system, uniform interface, code on demand. In pratica: URL = risorse, methods = azioni, JSON = formato.
+
+**Q: Perché solo GET nelle API pubbliche?**
+→ Il guest non deve creare, modificare o eliminare dati. Le operazioni CRUD sono solo nell'admin autenticato. Le API pubbliche servono solo a leggere i dati per il frontend React.
+
+**Q: Come gestisci la paginazione?**
+→ `LengthAwarePaginator` manuale (corpi-celesti) o `->paginate()` (altri). Default 12-20, max 100. Parametri: `?page=N&per_page=N`.
+
+**Q: Perché lo slug invece dell'ID nelle URL?**
+→ URL leggibili e SEO-friendly: `/api/corpi-celesti/terra` invece di `/api/corpi-celesti/3`. Laravel risolve automaticamente con Route Model Binding: `{corpoCeleste:slug}`.
+
 ---
 
 ## 9. Definizioni React (12+)
