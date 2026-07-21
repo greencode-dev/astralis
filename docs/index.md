@@ -9,7 +9,7 @@
 | [`bug.md`](bug.md)                         | Bug tracker — problemi riscontrati e soluzioni |     |
 | [`testing.md`](testing.md)                 | Istruzioni e spiegazione della suite di test   |     |
 | [`documentazione.md`](documentazione.md)   | Documentazione architetturale completa         |     |
-| [`presentazione-progetto.md`](presentazione-progetto.md) | Presentazione sintetica del progetto per l'esame |     |
+| [`preparazione-esame.md`](preparazione-esame.md) | Preparazione esame: traccia, Q&A, definizioni, live coding |     |
 | [`progetto-finale.md`](progetto-finale.md) | Consegna originale del progetto scolastico     |
 | Il setup completo e' nella sezione **Guida all'installazione** di [`documentazione.md`](documentazione.md#guida-allinstallazione-prima-configurazione) |
 
@@ -24,5 +24,5 @@
 - [Bug tracker](bug.md)
 - [Test](testing.md)
 - [Documentazione completa](documentazione.md)
-- [Presentazione progetto](presentazione-progetto.md)
+- [Preparazione esame](preparazione-esame.md)
 - [Consegna progetto](progetto-finale.md)

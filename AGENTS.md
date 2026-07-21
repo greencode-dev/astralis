@@ -58,7 +58,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `app/Providers/AuthServiceProvider.php`                      | Registrazione Policy + Gate`admin`                                                   |
 | `app/Http/Controllers/Admin/ExamController.php`              | Dashboard esame: stats, architettura, endpoint, tech stack                          |
 | `resources/views/admin/exam/index.blade.php`                 | Vista dashboard exam (quick reference)                                               |
-| `docs/exam-cheat-sheet.md`                                   | Cheat sheet esame: traccia, definizioni PHP/Laravel/React, live coding               |
+| `docs/preparazione-esame.md`                                          | Preparazione esame: traccia, Q&A, definizioni PHP/Laravel/React, live coding  |
 | `start-exam.bat`                                             | Script avvio unificato (migrate:fresh + artisan serve + npm run dev)                 |
 | `docs/astralis.postman_collection.json`                      | Postman collection per demo API                                                      |
 | `app/Http/Controllers/Admin/`                                | Controller CRUD admin (Blade)                                                        |
