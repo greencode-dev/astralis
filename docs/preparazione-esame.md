@@ -425,15 +425,24 @@ File PHP che definisce/modify tabelle. `php artisan make:migration`. `up()` appl
 
 ### Observer
 Classe che ascolta eventi Eloquent: `created`, `updated`, `deleted`, `saving`, ecc. Registrato in `EventServiceProvider` o `boot()` del provider. Pattern: logica business separata dal controller.
+```bash
+php artisan make:observer CorpoCelesteObserver --model=CorpoCeleste
+```
 
 ### Policy
 Gruppo di permessi per un modello. Metodi: `viewAny`, `view`, `create`, `update`, `delete`. `before()` per logica generale (es. admin bypassa tutto).
+```bash
+php artisan make:policy CorpoCelestePolicy --model=CorpoCeleste
+```
 
 ### Gate
 Singola azione di autorizzazione. Definito in `AuthServiceProvider`. `Gate::define('admin', fn(User $user) => $user->is_admin)`. Usato con `Gate::authorize('admin')`.
 
 ### FormRequest
 Classe dedicata alla validazione. `rules()` restituisce array di regole. `messages()` per messaggi custom. Il controller la inietta come parametro.
+```bash
+php artisan make:request StoreCorpoCelesteRequest
+```
 
 ### Middleware
 Livello intermedio che filtra richieste. `auth` = verifica login. `verified` = email verificata. `throttle:120,1` = max 120 richieste/minuto. Definito in `bootstrap/app.php`.
@@ -449,6 +458,9 @@ File che popola il database. `DatabaseSeeder.php` chiama i seeder specifici. `ph
 
 ### Factory
 Classe che genera dati fake per test. `CorpoCeleste::factory()->create()`. Definita in `database/factories/`.
+```bash
+php artisan make:factory CorpoCelesteFactory
+```
 
 ### Storage
 Filesystem astratto. `Storage::disk('public')->put($path, $content)`. `storage/app/public/` per file accessibili web. `php artisan storage:link` per symlink.
@@ -458,6 +470,128 @@ Memorizzazione risultati costosi. `Cache::remember('key', 3600, fn() => $data)`.
 
 ### Blade
 Template engine di Laravel. `{{ $variabile }}` stampa escaped. `@if`, `@foreach`, `@extends`, `@section`, `@include`. Componenti con `<x-nome />`.
+
+### Autenticazione Breeze
+
+**Cos'è**: Laravel Breeze è il package ufficiale di autenticazione. Fornisce login, register, profilo, reset password, verifica email — tutto pronto.
+
+**Installazione**:
+```bash
+composer require laravel/breeze --dev
+php artisan breeze:install blade
+npm install && npm run build
+```
+
+**Route generate** (`routes/auth.php`):
+| Route | Metodo | Cosa fa |
+|---|---|---|
+| `/login` | GET/POST | Form + login |
+| `/register` | GET/POST | Form + registrazione |
+| `/logout` | POST | Logout |
+| `/forgot-password` | GET/POST | Reset password via email |
+| `/reset-password/{token}` | GET/POST | Form reset con token |
+| `/email/verify` | GET | Verifica email |
+| `/profile` | GET/PUT | Modifica profilo |
+
+**Middleware**:
+- `auth` → verifica login, redirect a `/login` se non loggato
+- `guest` → solo utenti non loggati (es. pagina login)
+- `verified` → richiede email verificata
+
+**Astralis**: Breeze Blade puro (non Inertia, rimosso). Route admin protette da middleware `auth`. Tema dark `#0A0A1A`. Admin demo: `admin@astralis.it` / `password`.
+
+### CRUD — Resource Controller
+
+**Cos'è**: Resource Controller è un controller con **7 metodi standard** che gestisce tutte le operazioni CRUD su un'entità.
+
+**I 7 metodi**:
+| # | Metodo | HTTP | Cosa fa |
+|---|---|---|---|
+| 1 | `index()` | GET | Lista tutti gli elementi |
+| 2 | `create()` | GET | Mostra form di creazione |
+| 3 | `store()` | POST | Salva il nuovo elemento |
+| 4 | `show($id)` | GET | Mostra dettaglio elemento |
+| 5 | `edit($id)` | GET | Mostra form di modifica |
+| 6 | `update($id)` | PUT/PATCH | Aggiorna l'elemento |
+| 7 | `destroy($id)` | DELETE | Elimina l'elemento |
+
+**Comandi**:
+```bash
+# Crea Resource Controller
+php artisan make:controller Admin/CategoriaController --resource
+
+# Route resource (genera tutte le route CRUD)
+Route::resource('categorie', CategoriaController::class);
+```
+
+**Route generate** (12 totali):
+| Nome route | HTTP | URI | Metodo |
+|---|---|---|---|
+| `categorie.index` | GET | `/categorie` | index |
+| `categorie.create` | GET | `/categorie/create` | create |
+| `categorie.store` | POST | `/categorie` | store |
+| `categorie.show` | GET | `/categorie/{id}` | show |
+| `categorie.edit` | GET | `/categorie/{id}/edit` | edit |
+| `categorie.update` | PUT/PATCH | `/categorie/{id}` | update |
+| `categorie.destroy` | DELETE | `/categorie/{id}` | destroy |
+
+**Esempio ridotto** (senza create/edit, come in Astralis):
+```bash
+Route::resource('categorie', CategoriaController::class)->except(['create', 'edit']);
+```
+
+**Astralis**: 8 controller admin, 13 FormRequest (Store/Update per ogni entità). Autorizzazione con Policy `before()` — admin bypassa tutto. Form con Alpine.js per interattività.
+
+### Upload Media
+
+**Cos'è**: Meccanica per caricare file (immagini, copertine, logo) dal form al server.
+
+**Installazione**:
+```bash
+composer require intervention/image
+```
+
+**Configurazione storage**:
+```bash
+php artisan storage:link  # Crea symlink: public/storage → storage/app/public
+```
+
+**Nel controller**:
+```php
+// Salva il file nel disco 'public' nella cartella 'corpi'
+$path = $request->file('immagine')->store('corpi', 'public');
+// Risultato: "corpi/abc123.jpg"
+// Percorso fisico: storage/app/public/corpi/abc123.jpg
+// URL web: /storage/corpi/abc123.jpg
+```
+
+**Resize con Intervention Image v4**:
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+$manager = new ImageManager(new Driver());
+$image = $manager->decodePath($request->file('immagine'));
+$image->scaleDown(1200, 1200);  // Preserva aspect ratio
+$image->save(storage_path('app/public/' . $path));
+```
+
+> ⚠️ **Attenzione**: In Intervention Image v4, `Image::read()` è stato rinominato in `decodePath()`/`decodeBinary()`. La facade è stata rimossa.
+
+**ImageUploadService (Astralis)**:
+Service Layer che centralizza upload + resize + validazione. Riusabile da controller admin, observer, CLI.
+```php
+// Nel controller
+$this->uploadService->upload($request->file('immagine'), 'corpi');
+```
+
+**Astralis — tipi di upload**:
+| Entità | Cartella | Dimensione | Strumento |
+|---|---|---|---|
+| Missioni | `missioni/` | Logo 300px | ImageUploadService |
+| Galleria | `galleria/` | 1200px | ImageUploadService |
+| CorpiCelesti | `corpi/` | Copertina | ImageUploadService |
+| Galleria NASA | — | URL remoto | Niente download locale |
 
 ### Relazioni Eloquent
 
@@ -1067,7 +1201,7 @@ Policy + Gate. Admin bypassa tutto con `before()` returning `true`. Non-admin: `
 
 ---
 
-## 12. Live Coding — 3 Esercizi con Soluzione
+## 12. Live Coding — 4 Esercizi con Soluzione
 
 ### Esercizio 1: Route + Controller + View
 
@@ -1176,6 +1310,74 @@ $somma = array_sum(array_column($transazioni, 'valore'));
 
 // Con collect (Laravel)
 $somma = collect($transazioni)->sum('valore');
+```
+
+---
+
+### Esercizio 4: Somma + Filter + Map (combinato)
+
+**Traccia**: L'esaminatore ti fornisce un array di oggetti. Devi:
+1. Calcolare la somma totale di un campo numerico
+2. Filtrare gli elementi che superano una soglia
+3. Creare un nuovo array con solo i campi richiesti
+
+**Dati dell'esaminatore**:
+```php
+$prodotti = [
+    ['nome' => 'Penna', 'prezzo' => 5, 'categoria' => 'cancelleria'],
+    ['nome' => 'Quaderno', 'prezzo' => 12, 'categoria' => 'cancelleria'],
+    ['nome' => 'Matita', 'prezzo' => 3, 'categoria' => 'cancelleria'],
+    ['nome' => 'Libro', 'prezzo' => 25, 'categoria' => 'libri'],
+    ['nome' => 'Zaino', 'prezzo' => 40, 'categoria' => 'accessori'],
+    ['nome' => 'Astuccio', 'prezzo' => 8, 'categoria' => 'accessori'],
+];
+```
+
+**Step 1 — Somma totale**:
+```php
+$sommaTotale = collect($prodotti)->sum('prezzo'); // 93
+```
+
+**Step 2 — Filtra per prezzo > 10**:
+```php
+$filtrati = collect($prodotti)
+    ->filter(fn($p) => $p['prezzo'] > 10)
+    ->values()
+    ->toArray();
+```
+
+**Step 3 — Mappa: solo nomi dei filtrati**:
+```php
+$nomi = array_map(fn($p) => $p['nome'], $filtrati);
+// ['Quaderno', 'Libro', 'Zaino']
+```
+
+**Step 4 — Somma solo dei filtrati**:
+```php
+$sommaFiltrati = collect($filtrati)->sum('prezzo'); // 77
+```
+
+**Soluzione PHP base** (senza collect):
+```php
+$sommaTotale = 0;
+$filtrati = [];
+foreach ($prodotti as $p) {
+    $sommaTotale += $p['prezzo'];
+    if ($p['prezzo'] > 10) {
+        $filtrati[] = $p;
+    }
+}
+$nomi = array_map(fn($p) => $p['nome'], $filtrati);
+```
+
+**Variante esame**: "Calcola la media dei prezzi, poi restituisci solo gli articoli sopra la media."
+```php
+$media = collect($prodotti)->avg('prezzo'); // 15.5
+$sopraMedia = collect($prodotti)
+    ->filter(fn($p) => $p['prezzo'] > $media)
+    ->values()
+    ->toArray();
+// [{nome: 'Libro', prezzo: 25}, {nome: 'Zaino', prezzo: 40}]
 ```
 
 ---
