@@ -45,7 +45,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 ```
 ┌─────────────────────────────────────────────────────┐
 │                     Frontend React                    │
-│         (Vite + Tailwind CSS v4 + framer-motion)            │
+│              (Vite + Tailwind CSS v4)                        │
 └────────────────────┬────────────────────────────────┘
                      │ API JSON
 ┌────────────────────▼────────────────────────────────┐
@@ -66,7 +66,7 @@ Un progetto sviluppato per l'esame finale del corso **Full-Stack Web Developer**
 # Suite completa (270 test PHPUnit, 613 assertion)
 php artisan test
 
-# Frontend (107 test Vitest)
+# Frontend (110 test Vitest)
 npm test
 
 # Test specifici PHP
@@ -152,7 +152,12 @@ npm run dev
 
 ## 📚 Documentazione
 
-La documentazione completa del progetto è disponibile in [`docs/index.md`](docs/index.md).
+| Documento | Contenuto |
+|---|---|
+| [documentazione.md](docs/documentazione.md) | Architettura completa, API, authorization, installazione, entità |
+| [preparazione-esame.md](docs/preparazione-esame.md) | Traccia vs realizzato, Q&A 20+, definizioni PHP/Laravel/React, live coding |
+| [testing.md](docs/testing.md) | Suite test (380 totali), pattern, come scrivere nuovi test |
+| [index.md](docs/index.md) | Indice navigazione tutti i documenti |
 
 ## 🔮 Sviluppi Futuri
 
