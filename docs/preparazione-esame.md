@@ -14,7 +14,7 @@ Ordine consigliato per dimostrare il progetto:
 4. **Categorie** → badge colorati, conteggio corpi associati
 5. **Missioni** → timeline orizzontale, badge stato (Completata/In corso/Pianificata)
 6. **NASA Import** → bottone "Importa da NASA" → immagini reali
-7. **Guest React** → `localhost:5173` → sistema solare animato → griglia corpi → dettaglio con lightbox → comparatore
+7. **Guest React** → `localhost:5175` → sistema solare animato → griglia corpi → dettaglio con lightbox → comparatore
 
 ---
 
@@ -1000,7 +1000,7 @@ Un **API Resource** è una classe che trasforma un modello Eloquent in JSON cont
 return response()->json(CorpoCeleste::find(1));
 
 // Con Resource → controlli cosa esporre
-return new CorpoCrelesteResource(CorpoCeleste::find(1));
+return new CorpoCelesteResource(CorpoCeleste::find(1));
 ```
 
 **Esempio concreto**: `CorpoCelesteResource` espone `nome` (italiano) ma **nasconde** `immagine_utente` (boolean, interno al sistema).
@@ -1161,7 +1161,7 @@ API del browser per animazioni fluenti. `callback` viene chiamato prima del repa
 ## 10. CORS & Sicurezza
 
 ### CORS (Cross-Origin Resource Sharing)
-Il browser blocca richieste da un dominio a un altro. In Astralis: React (`localhost:5173`) chiama Laravel (`localhost:8000`).
+Il browser blocca richieste da un dominio a un altro. In Astralis: React (`localhost:5175`) chiama Laravel (`localhost:8000`).
 
 **Soluzione**: Vite proxy in `vite.config.js`:
 ```js
@@ -1267,7 +1267,7 @@ $prodotti = [
 ];
 
 // Filter → solo prezzo > 10
- filtrati = array_filter($prodotti, fn($p) => $p['prezzo'] > 10);
+$filtrati = array_filter($prodotti, fn($p) => $p['prezzo'] > 10);
 
 // Map → solo nomi
 $nomi = array_map(fn($p) => $p['nome'], $filtrati);
@@ -1387,7 +1387,7 @@ $sopraMedia = collect($prodotti)
 ```bash
 # Avvio
 php artisan serve              # Backend → localhost:8000
-npm run dev                    # Frontend → localhost:5173
+npm run dev                    # Frontend → localhost:5175
 
 # Database
 php artisan migrate:fresh --seed   # Reset completo

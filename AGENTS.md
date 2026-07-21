@@ -90,7 +90,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **bootstrap/cache**: su Windows, se creata da Git Bash, va ricreata con `cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'`
 - **`[x-cloak]`**: style presente nel `<head>` di `app.blade.php` per prevenire FOUC con Alpine.js
 - **Dual slash in cmd**: da Git Bash usare `cmd //c` (doppio slash), non `cmd /c`
-- **Vite proxy API**: `vite.config.js` ha `server.proxy: { '/api': 'http://localhost:8000' }` — senza proxy, le chiamate API da `http://localhost:5173/` falliscono con CORB/white page. Il proxy inoltra le richieste `/api` al backend Laravel
+- **Vite proxy API**: `vite.config.js` ha `server.proxy: { '/api': 'http://localhost:8000' }` — senza proxy, le chiamate API da `http://localhost:5175/` falliscono con CORB/white page. Il proxy inoltra le richieste `/api` al backend Laravel
 
 ## Admin palette
 
