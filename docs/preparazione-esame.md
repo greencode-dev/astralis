@@ -463,6 +463,8 @@ Template engine di Laravel. `{{ $variabile }}` stampa escaped. `@if`, `@foreach`
 
 Le relazioni definiscono come i modelli Eloquent si collegano tra loro nel database. Laravel le dichiara come metodi nel modello e le risolve automaticamente nelle query.
 
+**Tabella riassuntiva**:
+
 | Tipo | Direzione | Metodo Eloquent | Tabella pivot | Esempio generico |
 |---|---|---|---|---|
 | **HasOne** | 1 → 1 | `hasOne()` | No | User → Profile |
@@ -470,6 +472,28 @@ Le relazioni definiscono come i modelli Eloquent si collegano tra loro nel datab
 | **HasMany** | 1 → N | `hasMany()` | No | User → Post |
 | **BelongsToMany** | N → N | `belongsToMany()` | **Sì** | Post ↔ Tag |
 | **HasManyThrough** | 1 → N → N | `hasManyThrough()` | No | Country → Posts (through Users) |
+
+#### Cos'è una Foreign Key (FK)
+
+Una **Foreign Key** è una colonna che collega una tabella a un'altra. "Ricorda" l'ID di un'altra tabella.
+
+**Analogia**: un'etichetta sullo scrigno che dice "questo scrigno appartiene alla categoria X".
+
+```php
+// Nella migration della tabella figlia (corpi_celesti)
+$table->foreignId('categoria_id')->constrained('categorie')->cascadeOnDelete();
+```
+
+| Pezzo | Cosa fa |
+|---|---|
+| `foreignId('categoria_id')` | Crea la colonna `categoria_id` (unsigned big integer) |
+| `->constrained('categorie')` | Vincola: il valore DEVE esistere nella tabella `categorie` |
+| `->cascadeOnDelete()` | Se elimini la categoria → elimina anche tutti i corpi celesti figli |
+
+**Senza FK**: puoi inserire `categoria_id = 999` anche se la categoria 999 non esiste → dati orfani.
+**Con FK**: il database blocca l'inserimento se la categoria 999 non esiste → integrità referenziale.
+
+---
 
 #### HasOne (1 → 1)
 Una riga collegata esiste per ogni riga del modello. Esempio: ogni User ha un Profile.
@@ -485,8 +509,10 @@ public function profile(): HasOne
 
 Non usato in Astralis: nessuna relazione 1→1 necessaria tra le entità.
 
+---
+
 #### BelongsTo (N → 1)
-Ogni riga del modello appartiene a una riga di un altro modello. È il lato "figlio" della relazione 1-N.
+Ogni riga del modello appartiene a una riga di un altro modello. È il lato **"figlio"** della relazione 1-N.
 
 ```php
 // Nel modello CorpoCeleste
@@ -499,8 +525,10 @@ public function categoria(): BelongsTo
 
 Usato in Astralis per: CorpoCeleste→Categoria, GalleriaCorpo→CorpoCeleste, Curiosità→CorpoCeleste.
 
+---
+
 #### HasMany (1 → N)
-Una riga del modello è collegata a più righe di un altro modello. È il lato "padre" della relazione 1-N.
+Una riga del modello è collegata a più righe di un altro modello. È il lato **"padre"** della relazione 1-N.
 
 ```php
 // Nel modello Categoria
@@ -513,8 +541,12 @@ public function corpiCelesti(): HasMany
 
 Usato in Astralis per: Categoria→CorpiCeleste, CorpoCeleste→Galleria, CorpoCeleste→Curiosità.
 
+**Regola**: se `CorpoCeleste` ha `belongsTo(Categoria)`, allora `Categoria` ha `hasMany(CorpoCeleste)`. Sono le **due facce della stessa medaglia**.
+
+---
+
 #### BelongsToMany (N → N)
-Molti modelli sono collegati a molti altri. Richiede una **tabella pivot** (tabella intermedia) che memorizza solo le foreign key (senza modello proprio). La pivot può avere colonne aggiuntive.
+Molti modelli sono collegati a molti altri. Richiede una **tabella pivot** (tabella intermedia) che memorizza le foreign key di entrambi. La pivot può avere colonne aggiuntive.
 
 ```php
 // Nel modello CorpoCeleste
@@ -527,15 +559,22 @@ public function missioni(): BelongsToMany
 // $corpo->missioni->first()->pivot->tipo_esplorazione
 ```
 
-Tabella pivot `corpo_celeste_missione`:
-| colonna | tipo |
-|---|---|
-| `corpo_celeste_id` | FK → corpi_celesti |
-| `missione_id` | FK → missioni |
-| `tipo_esplorazione` | string (dati aggiuntivi) |
-| `anno_arrivo` | integer (dati aggiuntivi) |
+**Tabella pivot** `corpo_celeste_missione`:
+
+| colonna | tipo | Note |
+|---|---|---|
+| `id` | bigIncrements | PK auto-incrementale |
+| `corpo_celeste_id` | FK → corpi_celesti | cascadeOnDelete |
+| `missione_id` | FK → missioni | cascadeOnDelete |
+| `tipo_esplorazione` | string(50), nullable | dati aggiuntivi |
+| `anno_arrivo` | year, nullable | dati aggiuntivi |
+| `unique` | `[corpo_celeste_id, missione_id]` | no duplicati |
+
+**Cos'è `->withPivot()`?** Le colonne aggiuntive della pivot NON vengono caricate di default. `withPivot('colonna')` le include nella relazione.
 
 Usato in Astralis per: CorpoCeleste↔Missione. Scelta giustificata: un corpo celeste può essere oggetto di più missioni (es. Voyager ha visitato più pianeti), e una missione può esplorare più corpi.
+
+---
 
 #### HasManyThrough (1 → N → N)
 Una relazione indiretta: il modello A è collegato a molteplici modello C attraverso il modello B (che ha relazione 1-N con C).
@@ -551,6 +590,124 @@ public function posts(): HasManyThrough
 
 Non usato in Astralis: le relazioni sono sufficientemente dirette senza bisogno di attraversamento.
 
+---
+
+#### Come creare una relazione — Comandi Artisan
+
+##### Workflow relazione 1-N (es. Categoria → CorpoCeleste)
+
+```bash
+# 1. Crea il modello PADRE + migration
+php artisan make:model Categoria -m
+
+# 2. Crea il modello FIGLIO + migration
+php artisan make:model CorpoCeleste -m
+```
+
+Nella **migration del figlio** (corpi_celesti), aggiungi la FK:
+```php
+$table->foreignId('categoria_id')
+      ->constrained('categorie')
+      ->cascadeOnDelete();
+```
+
+Nei **modelli**, definisci entrambe le facce:
+```php
+// PADRE (Categoria) — lato "ha molti"
+public function corpiCelesti(): HasMany
+{
+    return $this->hasMany(CorpoCeleste::class);
+}
+
+// FIGLIO (CorpoCeleste) — lato "appartiene a"
+public function categoria(): BelongsTo
+{
+    return $this->belongsTo(Categoria::class);
+}
+```
+
+##### Workflow relazione N-N (es. CorpoCeleste ↔ Missione)
+
+```bash
+# 1. Crea i due modelli
+php artisan make:model CorpoCeleste -m
+php artisan make:model Missione -m
+
+# 2. Crea la migration PIVOT (tabella intermedia)
+php artisan make:migration create_corpo_celeste_missione_table
+```
+
+Nella **migration pivot**:
+```php
+Schema::create('corpo_celeste_missione', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('corpo_celeste_id')->constrained('corpi_celesti')->cascadeOnDelete();
+    $table->foreignId('missione_id')->constrained('missioni')->cascadeOnDelete();
+    $table->string('tipo_esplorazione', 50)->nullable();  // dati aggiuntivi
+    $table->year('anno_arrivo')->nullable();                // dati aggiuntivi
+    $table->unique(['corpo_celeste_id', 'missione_id']);   // no duplicati
+    $table->timestamps();
+});
+```
+
+Nei **modelli** (entrambi):
+```php
+// CorpoCeleste
+public function missioni(): BelongsToMany
+{
+    return $this->belongsToMany(Missione::class, 'corpo_celeste_missione')
+        ->withPivot('tipo_esplorazione', 'anno_arrivo');
+}
+
+// Missione
+public function corpiCelesti(): BelongsToMany
+{
+    return $this->belongsToMany(CorpoCeleste::class, 'corpo_celeste_missione')
+        ->withPivot('tipo_esplorazione', 'anno_arrivo');
+}
+```
+
+**Nota**: il nome della tabella pivot segue la convenzione: `nomeplurale_modello1_nomeplurale_modello2` in ordine alfabetico (`corpo_celeste_missione`, non `missione_corpo_celeste`).
+
+---
+
+#### Come usare le relazioni nelle query
+
+```php
+// Eager loading (evita problema N+1)
+$corpi = CorpoCeleste::with('categoria')->get();  // 2 query, non 1+N
+
+// Accesso diretto
+$nomeCategoria = $corpo->categoria->nome;  // "Pianeta"
+
+// Filtraggio per relazione
+$corpi = CorpoCeleste::whereHas('categoria', fn($q) => $q->where('nome', 'Pianeta'))->get();
+
+// Conteggio relazioni
+$categorie = Categoria::withCount('corpiCelesti')->get();
+// Ogni categoria avrà: $categoria->corpi_celesti_count
+
+// Eager loading multipli
+$corpo = CorpoCeleste::with(['categoria', 'galleria', 'curiosita', 'missioni'])->first();
+```
+
+**Problema N+1**: quando in un loop accedi a una relazione senza eager loading.
+```php
+// ❌ SBAGLIATO: 10 corpi × 1 categoria = 11 query
+$corpi = CorpoCeleste::all();
+foreach ($corpi as $corpo) {
+    echo $corpo->categoria->nome;  // Query separata ogni volta!
+}
+
+// ✅ CORRETTO: 2 query totali
+$corpi = CorpoCeleste::with('categoria')->get();
+foreach ($corpi as $corpo) {
+    echo $corpo->categoria->nome;  // Già caricato, zero query extra
+}
+```
+
+---
+
 #### Perché queste relazioni — riferimento alla traccia
 
 La traccia richiede:
@@ -564,8 +721,27 @@ La traccia richiede:
 | "o N-N" | 1 relazione N-N: CorpoCeleste↔Missione (con pivot `corpo_celeste_missione`) |
 | "CRUD per seconda entità" | 4 CRUD secondari: Categoria, Missione, Curiosità, Galleria — tutte con CRUD completo |
 
-**Domanda esame tipica**: "Perché N-N per missioni e non 1-N?"
-→ Perché una missione spaziale può esplorare più corpi celesti (es. Voyager 1 ha visitato Giove, Saturno, Urano, Nettuno) E un corpo celeste può essere stato esplorato da più missioni (es. Marte ha visto Curiosity, Perseverance, InSight...). La tabella pivot memorizza anche dati extra: `tipo_esplorazione` e `anno_arrivo`.
+---
+
+#### Domande esame tipiche
+
+**Q: Cos'è una Foreign Key?**
+→ È una colonna che collega una tabella a un'altra. Esempio: `categoria_id` nella tabella `corpi_celesti` punta all'ID della tabella `categorie`. Il database verifica che il valore esista. Senza FK puoi inserire ID inesistenti.
+
+**Q: Qual è la differenza tra HasMany e BelongsTo?**
+→ Sono le due facce della stessa relazione 1-N. `HasMany` è sul lato padre ( Categoria → ha molti corpi). `BelongsTo` è sul lato figlio (CorpoCeleste → appartiene a una categoria). Ogni relazione 1-N richiede entrambi.
+
+**Q: Cos'è una tabella pivot?**
+→ Tabella intermedia che risolve una relazione N-N. Contiene solo le FK dei due modelli + eventuali colonne aggiuntive. Esempio: `corpo_celeste_missione` collega CorpoCeleste e Missione con `tipo_esplorazione` e `anno_arrivo`.
+
+**Q: Quando usare cascadeOnDelete?**
+→ Quando elimina il padre deve eliminare anche i figli. In Astralis: `categoria_id->constrained()->cascadeOnDelete()` → elimino "Pianeta" → elimino anche tutti i corpi celesti di quella categoria. Utile per pulizia automatica.
+
+**Q: Cos'è il problema N+1 e come lo risolvi?**
+→ Quando in un loop accedi a una relazione senza eager loading: N query extra. Soluzione: `CorpoCeleste::with('categoria')` carica tutto in anticipo con 2 query invece di 1+N.
+
+**Q: Perché N-N per missioni e non 1-N?**
+→ Perché una missione spaziale può esplorare più corpi celesti (Voyager 1 ha visitato Giove, Saturno, Urano, Nettuno) E un corpo celeste può essere stato esplorato da più missioni (Marte: Curiosity, Perseverance, InSight...). La tabella pivot memorizza anche dati extra: `tipo_esplorazione` e `anno_arrivo`.
 
 ### Route Model Binding
 Laravel cerca automaticamente il modello dalla route. `Route::get('/api/corpi-celesti/{corpoCeleste:slug}')` cerca per `slug` invece di `id`.
