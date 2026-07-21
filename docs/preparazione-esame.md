@@ -174,7 +174,6 @@ Restituisce max 4 corpi della stessa categoria.
 | **Frontend guest** | React | 18.2 | Richiesto. SPA standalone con Vite |
 | **Frontend admin** | Blade + Alpine.js | — | Richiesto per admin. Alpine.js CDN per modali |
 | **CSS** | Tailwind CSS | 4.3 | Utility-first, tema dark custom |
-| **Animazioni** | framer-motion | 12.4 | SolarSystem (requestAnimationFrame) |
 | **Icone** | lucide-react | 1.23 | Icone categoria, navigazione, azioni |
 | **Lightbox** | yet-another-react-lightbox | — | Galleria immagini a schermo intero |
 | **Immagini** | Intervention Image | 4 | Upload con scaleDown via ImageUploadService |
@@ -459,6 +458,114 @@ Memorizzazione risultati costosi. `Cache::remember('key', 3600, fn() => $data)`.
 
 ### Blade
 Template engine di Laravel. `{{ $variabile }}` stampa escaped. `@if`, `@foreach`, `@extends`, `@section`, `@include`. Componenti con `<x-nome />`.
+
+### Relazioni Eloquent
+
+Le relazioni definiscono come i modelli Eloquent si collegano tra loro nel database. Laravel le dichiara come metodi nel modello e le risolve automaticamente nelle query.
+
+| Tipo | Direzione | Metodo Eloquent | Tabella pivot | Esempio generico |
+|---|---|---|---|---|
+| **HasOne** | 1 → 1 | `hasOne()` | No | User → Profile |
+| **BelongsTo** | N → 1 | `belongsTo()` | No | Post → User |
+| **HasMany** | 1 → N | `hasMany()` | No | User → Post |
+| **BelongsToMany** | N → N | `belongsToMany()` | **Sì** | Post ↔ Tag |
+| **HasManyThrough** | 1 → N → N | `hasManyThrough()` | No | Country → Posts (through Users) |
+
+#### HasOne (1 → 1)
+Una riga collegata esiste per ogni riga del modello. Esempio: ogni User ha un Profile.
+
+```php
+// Nel modello User
+public function profile(): HasOne
+{
+    return $this->hasOne(Profile::class);
+}
+// $user->profile → singolo oggetto Profile
+```
+
+Non usato in Astralis: nessuna relazione 1→1 necessaria tra le entità.
+
+#### BelongsTo (N → 1)
+Ogni riga del modello appartiene a una riga di un altro modello. È il lato "figlio" della relazione 1-N.
+
+```php
+// Nel modello CorpoCeleste
+public function categoria(): BelongsTo
+{
+    return $this->belongsTo(Categoria::class);
+}
+// $corpo->categoria → singola Categoria
+```
+
+Usato in Astralis per: CorpoCeleste→Categoria, GalleriaCorpo→CorpoCeleste, Curiosità→CorpoCeleste.
+
+#### HasMany (1 → N)
+Una riga del modello è collegata a più righe di un altro modello. È il lato "padre" della relazione 1-N.
+
+```php
+// Nel modello Categoria
+public function corpiCelesti(): HasMany
+{
+    return $this->hasMany(CorpoCeleste::class);
+}
+// $categoria->corpiCelesti → Collection di CorpoCeleste
+```
+
+Usato in Astralis per: Categoria→CorpiCeleste, CorpoCeleste→Galleria, CorpoCeleste→Curiosità.
+
+#### BelongsToMany (N → N)
+Molti modelli sono collegati a molti altri. Richiede una **tabella pivot** (tabella intermedia) che memorizza solo le foreign key (senza modello proprio). La pivot può avere colonne aggiuntive.
+
+```php
+// Nel modello CorpoCeleste
+public function missioni(): BelongsToMany
+{
+    return $this->belongsToMany(Missione::class, 'corpo_celeste_missione')
+        ->withPivot('tipo_esplorazione', 'anno_arrivo');
+}
+// $corpo->missioni → Collection di Missione
+// $corpo->missioni->first()->pivot->tipo_esplorazione
+```
+
+Tabella pivot `corpo_celeste_missione`:
+| colonna | tipo |
+|---|---|
+| `corpo_celeste_id` | FK → corpi_celesti |
+| `missione_id` | FK → missioni |
+| `tipo_esplorazione` | string (dati aggiuntivi) |
+| `anno_arrivo` | integer (dati aggiuntivi) |
+
+Usato in Astralis per: CorpoCeleste↔Missione. Scelta giustificata: un corpo celeste può essere oggetto di più missioni (es. Voyager ha visitato più pianeti), e una missione può esplorare più corpi.
+
+#### HasManyThrough (1 → N → N)
+Una relazione indiretta: il modello A è collegato a molteplici modello C attraverso il modello B (che ha relazione 1-N con C).
+
+```php
+// Nel modello Country
+public function posts(): HasManyThrough
+{
+    return $this->hasManyThrough(Post::class, User::class);
+}
+// $country->posts → Collection di Post (attraverso User)
+```
+
+Non usato in Astralis: le relazioni sono sufficientemente dirette senza bisogno di attraversamento.
+
+#### Perché queste relazioni — riferimento alla traccia
+
+La traccia richiede:
+> "Deve esserci almeno una seconda entità collegata alla prima con relazione 1-N o N-N." (progetto-finale.md:30)
+
+> "Più relazioni implementate, più completo sarà il vostro gestionale!" (progetto-finale.md:43)
+
+| Requisito traccia | Realizzato in Astralis |
+|---|---|
+| "almeno una 1-N" | 3 relazioni 1-N: Categoria→CorpiCeleste, CorpoCeleste→Galleria, CorpoCeleste→Curiosità |
+| "o N-N" | 1 relazione N-N: CorpoCeleste↔Missione (con pivot `corpo_celeste_missione`) |
+| "CRUD per seconda entità" | 4 CRUD secondari: Categoria, Missione, Curiosità, Galleria — tutte con CRUD completo |
+
+**Domanda esame tipica**: "Perché N-N per missioni e non 1-N?"
+→ Perché una missione spaziale può esplorare più corpi celesti (es. Voyager 1 ha visitato Giove, Saturno, Urano, Nettuno) E un corpo celeste può essere stato esplorato da più missioni (es. Marte ha visto Curiosity, Perseverance, InSight...). La tabella pivot memorizza anche dati extra: `tipo_esplorazione` e `anno_arrivo`.
 
 ### Route Model Binding
 Laravel cerca automaticamente il modello dalla route. `Route::get('/api/corpi-celesti/{corpoCeleste:slug}')` cerca per `slug` invece di `id`.
