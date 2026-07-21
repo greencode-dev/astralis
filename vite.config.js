@@ -8,6 +8,7 @@ export default defineConfig({
             input: [
                 'resources/js/guest/main.jsx',
                 'resources/js/admin.js',
+                'resources/js/admin-charts.js',
                 'resources/css/app.css',
             ],
             refresh: true,

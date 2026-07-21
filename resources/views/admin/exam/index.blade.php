@@ -78,7 +78,7 @@
                     ['key' => 'Lightbox', 'val' => 'yet-another-react-lightbox'],
                     ['key' => 'Upload', 'val' => 'Intervention Image v4'],
                     ['key' => 'Slug', 'val' => 'spatie/laravel-sluggable'],
-                    ['key' => 'Grafici', 'val' => 'Chart.js (CDN)'],
+                    ['key' => 'Grafici', 'val' => 'Chart.js (npm, bundled via Vite)'],
                     ['key' => 'API esterne', 'val' => 'NASA Image API'],
                 ] as $t)
                     <div>

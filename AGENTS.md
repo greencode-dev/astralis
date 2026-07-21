@@ -76,6 +76,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 | `resources/js/guest/pages/NotFound.jsx`                      | 404 page (catch-all route)                                                           |
 | `resources/js/guest/`                                        | React SPA guest                                                                      |
 | `resources/js/admin.js`                                      | Admin Alpine.js entry point (npm, bundled via Vite)                                  |
+| `resources/js/admin-charts.js`                               | Admin Chart.js entry point (npm, bundled via Vite)                                  |
 | `vite.config.js`                                             | Config Vite: React plugin, Alpine.js, proxy API`/api` → `http://localhost:8000`     |
 
 ## Testing
@@ -87,7 +88,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 
 ## Bugs noti / Pattern da evitare
 
-- **CDN (Chart.js)**: dipende da connettività esterna. Nessun fallback locale.
+- **Nessuna dipendenza CDN rimanente** — Alpine.js e Chart.js bundled via Vite. Solo fonts (fonts.bunny.net) restano esterne.
 - **bootstrap/cache**: su Windows, se creata da Git Bash, va ricreata con `cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'`
 - **`[x-cloak]`**: style in `resources/css/app.css` per prevenire FOUC con Alpine.js
 - **Dual slash in cmd**: da Git Bash usare `cmd //c` (doppio slash), non `cmd /c`

@@ -178,7 +178,7 @@ Restituisce max 4 corpi della stessa categoria.
 | **Lightbox** | yet-another-react-lightbox | — | Galleria immagini a schermo intero |
 | **Immagini** | Intervention Image | 4 | Upload con scaleDown via ImageUploadService |
 | **Slug** | spatie/laravel-sluggable | — | Slug automatici su 3 modelli |
-| **Grafici** | Chart.js (CDN) | 4.4 | Dashboard admin (donut, barre) |
+| **Grafici** | Chart.js | 4.4 | Dashboard admin (donut, barre), bundled via Vite |
 | **API esterne** | NASA Image API | — | Import immagini reali, auto-suggest |
 | **Test PHP** | PHPUnit | 12.5 | 270 test, 613 assertion |
 | **Test JS** | Vitest + Testing Library | 4.1 | 110 test, environment jsdom |

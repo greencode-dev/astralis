@@ -12,7 +12,7 @@ Admin pages in Blade puro (`resources/views/admin/`). Master layout: `layouts/ap
 - **Blade** (Laravel templating)
 - **Alpine.js** via npm, bundled da Vite (`resources/js/admin.js`)
 - **Tailwind CSS**
-- **Chart.js** via CDN per grafici
+- **Chart.js** via npm, bundled da Vite (`resources/js/admin-charts.js`)
 
 ## Master Layout (`layouts/app.blade.php`)
 
