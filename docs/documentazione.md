@@ -337,7 +337,7 @@ php artisan astralis:gallery --fix
 python -m graphify update .
 
 # 6. Verifica
-php artisan test   # 270 test PHPUnit
+php artisan test   # 271 test PHPUnit
 npm test           # 110 test Vitest
 
 # 7. Apri l'agente e digita:
@@ -414,7 +414,7 @@ cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'
 - **Gravita/temperatura**: null-safe formatting con `toLocaleString('it-IT')` — separatori italiani (`9,81` invece di `9.81`)
 - **Flash messages admin**: auto-dismiss 5s con Alpine.js, fade-out, bottone chiudi, `role="alert"` per errori/warning, `role="status" aria-live="polite"` per success
 
-**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
+**Test**: 381 totali (271 PHPUnit + 110 Vitest), tutti verdi.
 
 ## Quick wins — 7 fix (16/07/2026)
 
@@ -434,7 +434,7 @@ cmd //c 'rmdir /s /q bootstrap\cache' && cmd //c 'mkdir bootstrap\cache'
 - Test job: `ImportNasaImageTest.php` — 9 test (ShouldQueue, uniqueId, handle, failed)
 - framer-motion mantenuto in SolarSystem.jsx (uso legittimo per orbite)
 
-**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
+**Test**: 381 totali (271 PHPUnit + 110 Vitest), tutti verdi.
 
 ## Avvio rapido (quando il progetto è già configurato)
 

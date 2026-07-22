@@ -4,6 +4,7 @@
 
 ## 22/07/2026
 
+- `[🟡][🎨]` SolarSystem fix orbita — div Planet con width/height espliciti (= planet.size), centratura perfetta sull'orbita per tutti i8 pianeti. Fix hover area: rimosso offset `-200px` dal transform interno, hover area coincide col contenuto visibile. Posizionamento: `ml-[-50px] mt-[-60px]` — `SolarSystem.jsx`
 - `[🟡][📝]` Audit completo preparazione-esame.md — 6 agenti paralleli: copertura PHP/Laravel/React definitions, Q&A gaps, live coding esercizi, errori fattuali, verifiche codice reale — `docs/preparazione-esame.md`
 - `[🔴][📝]` Fix errori fattuali — PHP 7.6→7.4 (spread operator), Enum `StatoMissione` fabbricato riscritto con esempio generico, Observer `EventServiceProvider`→`AppServiceProvider::boot()`, useRef riferimento `useDebounce`→`SolarSystem/useInView/LazyImage`, apiClient.js timeout 15s→30s in `config/admin.php` — `docs/preparazione-esame.md`, `config/admin.php`, `AGENTS.md`
 - `[🟡][📝]` +7 definizioni PHP — Named Arguments, Match Expression, Constructor Property Promotion, Union Types (espanso Type Hints), Abstract Classes, Interfaces, Readonly Properties — `docs/preparazione-esame.md`
@@ -39,7 +40,7 @@
 - `[🟢][🎨]` Form submit — aggiunto loading state "Salvataggio..." al bottone submit — `_form.blade.php`
 - `[🟢][🎨]` search.blade.php — "Cancella filtro" `hover:text-red-500` → `hover:text-admin-error` — `search.blade.php`
 
-**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
+**Test**: 381 totali (271 PHPUnit + 110 Vitest), tutti verdi.
 
 ---
 
@@ -52,7 +53,7 @@
 - `[🟡][🎨]` SolarSystem positioning — sistema solare spostato 350px a sinistra, orbite ingrandite (MIN 100, MAX 380), rimosso offset verticale +81px. Griglia `lg:grid-cols-[1.2fr_0.8fr]` — `SolarSystem.jsx`, `HomePage.jsx`
 - `[🟢][🖥️]` vite.config — dev server 127.0.0.1:5175, strictPort true — `vite.config.js`
 
-**Test**: 380 totali (270 PHPUnit + 110 Vitest), tutti verdi.
+**Test**: 381 totali (271 PHPUnit + 110 Vitest), tutti verdi.
 
 ---
 

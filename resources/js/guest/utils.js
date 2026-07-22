@@ -13,9 +13,11 @@ export function formatNumber(v) {
     const num = parseFloat(v);
     if (isNaN(num)) return '—';
     if (num === 0) return '0';
-    if (num >= 1_000_000_000) return (num / 1_000_000_000).toFixed(1) + ' Mld';
-    if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + ' Mln';
-    if (num >= 1_000) return (num / 1_000).toFixed(1) + ' mila';
+    if (num >= 1e15) return (num / 1e15).toFixed(1) + ' Bil mln km';
+    if (num >= 1e12) return (num / 1e12).toFixed(1) + ' Bln km';
+    if (num >= 1e9) return (num / 1e9).toFixed(1) + ' Mld km';
+    if (num >= 1e6) return (num / 1e6).toFixed(1) + ' Mln km';
+    if (num >= 1e3) return (num / 1e3).toFixed(1) + ' mila km';
     return num.toLocaleString('it-IT');
 }
 

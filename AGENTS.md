@@ -84,7 +84,7 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Factories**: Tutti i 5 modelli hanno `HasFactory` trait. Le factory sono in `database/factories/`. `CorpoCelesteFactory` crea automaticamente una `Categoria` associata.
 - **Observer in test**: `CorpoCelesteObserver::created()` auto-importa da NASA quando un `CorpoCeleste` viene creato. In test si disabilita automaticamente (`app()->environment('testing')`).
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
-- **Run**: `php artisan test` — 270 test PHPUnit, 613 assertion. `npm test` — 110 test Vitest. Totale: 380 test.
+- **Run**: `php artisan test` — 271 test PHPUnit, 615 assertion. `npm test` — 110 test Vitest. Totale: 381 test.
 
 ## File Header Comments
 

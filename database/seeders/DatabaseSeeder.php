@@ -27,6 +27,11 @@ class DatabaseSeeder extends Seeder
             CorpoCelesteMissioneSeeder::class,
         ]);
 
-        $this->command->call('astralis:fetch-nasa', ['--force' => true]);
+        // fetch-nasa --force: opzionale, solo se raggiungibile (skip in demo/offline)
+        try {
+            $this->command->call('astralis:fetch-nasa', ['--force' => true]);
+        } catch (\Throwable $e) {
+            $this->command->warn('fetch-nasa saltato: ' . $e->getMessage());
+        }
     }
 }

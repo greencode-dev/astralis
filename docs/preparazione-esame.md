@@ -55,7 +55,7 @@ Ordine consigliato per dimostrare il progetto:
 | **CLI Commands**           | `astralis:fetch-nasa` e `astralis:gallery` per manutenzione                                   | Fase 8-11 |
 | **Error Boundary**         | Fallback UI globale per crash React                                                           | Fase 15   |
 | **SEO**                    | `document.title` dinamico su 5 pagine React                                                   | Fase 15   |
-| **380 Test**               | 270 PHPUnit + 110 Vitest, Http::fake(), observer skip                                         | Fase 13+  |
+| **381 Test**               | 271 PHPUnit + 110 Vitest, Http::fake(), observer skip                                         | Fase 13+  |
 | **WordMapService**         | Traduzione italiano → inglese per ricerca NASA (~70 termini)                                  | Fase 9    |
 | **Responsive**             | Navbar mobile, SolarSystem responsive scaling, griglia adattiva                               | Ongoing   |
 
@@ -180,7 +180,7 @@ Restituisce max 4 corpi della stessa categoria.
 | **Slug**           | spatie/laravel-sluggable   | —        | Slug automatici su 3 modelli                                      |
 | **Grafici**        | Chart.js                   | 4.4      | Dashboard admin (donut, barre), bundled via Vite                  |
 | **API esterne**    | NASA Image API             | —        | Import immagini reali, auto-suggest                               |
-| **Test PHP**       | PHPUnit                    | 12.5     | 270 test, 613 assertion                                           |
+| **Test PHP**       | PHPUnit                    | 12.5     | 271 test, 615 assertion                                           |
 | **Test JS**        | Vitest + Testing Library   | 4.1      | 110 test, environment jsdom                                       |
 
 ---
@@ -401,21 +401,25 @@ Route Model Binding con `{corpoCeleste:slug}` usa lo slug invece dell'ID. Il pre
 > **Flusso errore end-to-end in Astralis** — cosa succede quando un'API fallisce:
 >
 > **Caso 1: 404 Not Found** (slug inesistente)
+>
 > - Axios riceve risposta `404` → interceptor la passa al componente
 > - `useFetch` dispatcha `ERROR` → il componente mostra fallback UI
 > - In Astralis: `CorpoDettaglio` mostra "Corpo celeste non trovato" con icona Rocket + link "Torna alla lista"
 >
 > **Caso 2: 403 Forbidden** (non-admin tenta CRUD)
+>
 > - Policy `before()` restituisce `false` → Laravel restituisce 403
 > - Axios riceve 403 → interceptor non fa retry (4xx non retryabile)
 > - `useFetch` dispatcha `ERROR` → redirect a login o messaggio "Accesso negato"
 >
 > **Caso 3: 500 Server Error** (bug, cache rotta, DB down)
+>
 > - Axios riceve 500 → interceptor **riprova automaticamente** (backoff esponenziale, max 2x)
 > - Se dopo 2 retry fallisce ancora → `useFetch` dispatcha `ERROR`
 > - Il componente mostra messaggio generico "Qualcosa è andato storto"
 >
 > **Caso 4: Timeout di rete** (server non risponde)
+>
 > - Axios timeout (30s) → errore senza `error.response`
 > - Interceptor lo tratta come retryabile (stessa logica del 500)
 >
@@ -978,9 +982,9 @@ File PHP che definisce/modify tabelle. `php artisan make:migration`. `up()` appl
 
 ##### Primary Key vs Foreign Key
 
-| Concetto | Cosa fa | Esempio in Astralis |
-|----------|---------|---------------------|
-| **Primary Key** | Identifica ogni riga in modo univoco | `id` in ogni tabella (`bigIncrements`) |
+| Concetto        | Cosa fa                                             | Esempio in Astralis                                        |
+| --------------- | --------------------------------------------------- | ---------------------------------------------------------- |
+| **Primary Key** | Identifica ogni riga in modo univoco                | `id` in ogni tabella (`bigIncrements`)                     |
 | **Foreign Key** | Collega una tabella a un'altra, vincola l'integrità | `categoria_id` in `corpi_celesti` → punta a `categorie.id` |
 
 ```php
@@ -2054,15 +2058,19 @@ const [state, dispatch] = useReducer(reducer, initialState);
 
 function reducer(state, action) {
     switch (action.type) {
-        case 'SET_DATA':    return { ...state, data: action.payload, loading: false };
-        case 'SET_ERROR':   return { ...state, error: action.payload, loading: false };
-        case 'SET_LOADING': return { ...state, loading: true };
-        default:            return state;
+        case "SET_DATA":
+            return { ...state, data: action.payload, loading: false };
+        case "SET_ERROR":
+            return { ...state, error: action.payload, loading: false };
+        case "SET_LOADING":
+            return { ...state, loading: true };
+        default:
+            return state;
     }
 }
 
 // Uso
-dispatch({ type: 'SET_DATA', payload: corpiCelesti });
+dispatch({ type: "SET_DATA", payload: corpiCelesti });
 ```
 
 Differenza da `useState`: la logica di transizione è centralizzata nel `reducer` (funzione pura: state + action → new state). Più testabile, più prevedibile per state complessi. In Astralis: `useFetch.js` usa `useReducer` per gestire loading/error/data con dispatch `SET_LOADING`, `SET_DATA`, `SET_ERROR`.
@@ -2109,10 +2117,13 @@ Hook che memorizza il **risultato di un calcolo** tra i render. Solo ricalcola q
 
 ```jsx
 // Senza useMemo — ricalcola OGNI render (anche se i dati non cambiano)
-const slides = galleria.map(img => ({ src: img.percorso }));
+const slides = galleria.map((img) => ({ src: img.percorso }));
 
 // Con useMemo — ricalcola SOLO quando galleria cambia
-const slides = useMemo(() => galleria.map(img => ({ src: img.percorso })), [galleria]);
+const slides = useMemo(
+    () => galleria.map((img) => ({ src: img.percorso })),
+    [galleria],
+);
 ```
 
 Quando usarlo: calcoli costosi, transformazioni di array grandi, valori che passi a child memoizzati. In Astralis: `SolarSystem.jsx` memoizza la posizione delle stelle, `LightboxGalleria.jsx` memoizza gli slides, `HomePage.jsx` memoizza lo sfondo stellare.
@@ -2123,7 +2134,9 @@ Hook che memorizza una **funzione** tra i render. Evita che la funzione venga ri
 
 ```jsx
 // Senza useCallback — nuova funzione OGNI render → il child re-renderizza
-const handleClick = (id) => { setSelected(id); };
+const handleClick = (id) => {
+    setSelected(id);
+};
 
 // Con useCallback — stessa funzione finché deps non cambiano
 const handleClick = useCallback((id) => {
@@ -2160,9 +2173,9 @@ In React non puoi usare `if/else` direttamente nel JSX (solo espressioni). Il te
 Componente che mostra un **fallback** (caricamento) mentre i figli sono in attesa di dati lenti (lazy loading, data fetching).
 
 ```jsx
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy } from "react";
 
-const HomePage = lazy(() => import('./pages/HomePage'));
+const HomePage = lazy(() => import("./pages/HomePage"));
 
 function App() {
     return (
@@ -2183,12 +2196,12 @@ Caricare componenti **solo quando servono** invece di tutto in un file JS enorme
 
 ```jsx
 // Senza lazy — tutto caricato subito (bundle grande)
-import HomePage from './pages/HomePage';
-import CorpiLista from './pages/CorpiLista';
+import HomePage from "./pages/HomePage";
+import CorpiLista from "./pages/CorpiLista";
 
 // Con lazy — caricato al bisogno (bundle diviso)
-const HomePage = lazy(() => import('./pages/HomePage'));
-const CorpiLista = lazy(() => import('./pages/CorpiLista'));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const CorpiLista = lazy(() => import("./pages/CorpiLista"));
 ```
 
 `lazy()` accetta una funzione che restituisce un `import()` dinamico. Vite crea un file JS separato per ogni lazy component. Quando l'utente naviga a `/corpi-celesti`, il browser scarica solo il JS di CorpiLista. In Astralis: tutte le 5 pagine sono lazy-loaded in `App.jsx`. Il code splitting riduce il bundle iniziale da ~200KB a ~50KB.
@@ -2207,22 +2220,22 @@ Libreria HTTP per JavaScript. Semplifica le chiamate API rispetto a `fetch()` na
 
 ```javascript
 // fetch() nativo — verbose, errori gestiti manualmente
-const res = await fetch('/api/corpi-celesti');
+const res = await fetch("/api/corpi-celesti");
 if (!res.ok) throw new Error(res.status); // bisogna controllare sempre
 const data = await res.json(); // parsing manuale
 
 // axios — conciso, errori gestiti dall'interceptor
-const { data } = await apiClient.get('/corpi-celesti');
+const { data } = await apiClient.get("/corpi-celesti");
 // errori HTTP (4xx, 5xx) vengono gestiti dall'interceptor in apiClient.js
 ```
 
-| Caratteristica | `fetch()` nativo | `axios` |
-|----------------|------------------|---------|
-| Parsing JSON | Manuale (`res.json()`) | Automatico (`response.data`) |
-| Errori HTTP | Solo network error (deve controllare `res.ok`) | Tutti gli errori (4xx, 5xx) |
-| Timeout | Bisogna implementare con `AbortController` | Opzione nativa (`timeout: 30000`) |
-| Interceptor | Nessuno | Sì (gestione centralizzata errori) |
-| Retry | Bisogna implementare | Sì (nell'interceptor) |
+| Caratteristica | `fetch()` nativo                               | `axios`                            |
+| -------------- | ---------------------------------------------- | ---------------------------------- |
+| Parsing JSON   | Manuale (`res.json()`)                         | Automatico (`response.data`)       |
+| Errori HTTP    | Solo network error (deve controllare `res.ok`) | Tutti gli errori (4xx, 5xx)        |
+| Timeout        | Bisogna implementare con `AbortController`     | Opzione nativa (`timeout: 30000`)  |
+| Interceptor    | Nessuno                                        | Sì (gestione centralizzata errori) |
+| Retry          | Bisogna implementare                           | Sì (nell'interceptor)              |
 
 ### useRef
 
@@ -2281,8 +2294,8 @@ Componenti chiave: `BrowserRouter` (wrappa l'app), `Routes` (contenitore route),
 ```jsx
 // Controlled — valore nello state di React
 function SearchBar() {
-    const [query, setQuery] = useState('');
-    return <input value={query} onChange={e => setQuery(e.target.value)} />;
+    const [query, setQuery] = useState("");
+    return <input value={query} onChange={(e) => setQuery(e.target.value)} />;
 }
 // Vantaggio: puoi validare, formattare, submit programmaticamente
 
@@ -2303,12 +2316,12 @@ Entry point moderno di React 18. Sostituisce il vecchio `ReactDOM.render()`.
 
 ```jsx
 // React 17 (obsoleto)
-import ReactDOM from 'react-dom';
-ReactDOM.render(<App />, document.getElementById('root'));
+import ReactDOM from "react-dom";
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // React 18 (moderno)
-import { createRoot } from 'react-dom/client';
-const root = createRoot(document.getElementById('root'));
+import { createRoot } from "react-dom/client";
+const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
@@ -2337,10 +2350,12 @@ Queste domande vengono fatte **mentre mostri il progetto**. Preparati a risponde
 >
 > ```js
 > // Codice chiave dell'interceptor
-> const shouldRetry = !error.response || (error.response.status >= 500 && error.response.status < 600);
+> const shouldRetry =
+>     !error.response ||
+>     (error.response.status >= 500 && error.response.status < 600);
 > if (shouldRetry && retryCount <= 2) {
 >     const delay = Math.pow(2, retryCount) * 500; // 1s, 2s
->     await new Promise(resolve => setTimeout(resolve, delay));
+>     await new Promise((resolve) => setTimeout(resolve, delay));
 >     return apiClient.request(retryConfig);
 > }
 > ```
@@ -2415,7 +2430,7 @@ Policy + Gate. Admin bypassa tutto con `before()` returning `true`. Non-admin: `
 
 ---
 
-## 12. Live Coding — 11 Esercizi con Soluzione
+## 12. Live Coding — 12 Esercizi con Soluzione
 
 ### Esercizio 1: Route + Controller + View
 
@@ -2710,6 +2725,7 @@ $raggruppate = array_reduce($transazioni, function ($carry, $item) {
 ```
 
 **Variante con Collection Laravel**:
+
 ```php
 $somma = collect($transazioni)->sum('valore');
 $raggruppate = collect($transazioni)->groupBy(fn($t) => $t['valore'] >= 0 ? 'positive' : 'negative');
@@ -2752,15 +2768,15 @@ $corpi = CorpoCeleste::whereHas('categoria', fn($q) => $q->where('slug', 'pianet
 
 **Pattern comuni Eloquent**:
 
-| Operazione | Codice | Risultato |
-|------------|--------|-----------|
-| Filtra | `->where('campo', $val)` | WHERE campo = val |
-| Ordina | `->orderBy('nome')` | ORDER BY nome ASC |
-| Primo | `->first()` | Primo record |
-| Conta | `->count()` | Numero record |
-| Esiste | `->exists()` | bool (più veloce di count) |
-| Trova per ID | `->find($id)` | Record o null |
-| Trova o errore | `->findOrFail($id)` | Record o 404 |
+| Operazione     | Codice                   | Risultato                  |
+| -------------- | ------------------------ | -------------------------- |
+| Filtra         | `->where('campo', $val)` | WHERE campo = val          |
+| Ordina         | `->orderBy('nome')`      | ORDER BY nome ASC          |
+| Primo          | `->first()`              | Primo record               |
+| Conta          | `->count()`              | Numero record              |
+| Esiste         | `->exists()`             | bool (più veloce di count) |
+| Trova per ID   | `->find($id)`            | Record o null              |
+| Trova o errore | `->findOrFail($id)`      | Record o 404               |
 
 **In Astralis**: l'API `/api/corpi-celesti?categoria=pianeta` usa esattamente questo pattern: filtra per slug categoria, ordina per nome, pagina con `paginate(12)`.
 
@@ -2799,6 +2815,7 @@ return new class extends Migration
 ```
 
 **Note chiave**:
+
 - `foreignId('corpo_celeste_id')->constrained()` crea la FK automaticamente (colonna `unsignedBigInteger` + vincolo)
 - `restrictOnDelete()` = blocca cancellazione del padre se figli esistono
 - `cascadeOnDelete()` = elimina i figli quando cancelli il padre
@@ -2990,11 +3007,138 @@ public function store(Request $request): RedirectResponse
 ```
 
 **Pattern chiave**:
+
 - `$request->validate()` lancia `ValidationException` automaticamente (redirect back con errori)
 - `hasFile()` verifica che il file esista prima di processarlo
 - `ImageUploadService::upload()` gestisce validazione, ridimensionamento, e salvataggio
 - `with('success', ...)` imposta un flash message disponibile nella view con `@session('success')`
 - Il metodo restituisce `RedirectResponse` (non `view`)
+
+---
+
+### Esercizio 12: Route + View + Array (ciclo for + media)
+
+> **Pattern d'esame reale**: l'esaminatore chiede di creare una nuova route e view, poi fare PHP live coding inside (ciclo for su array + calcolo media). Il collega ha avuto esattamente questa traccia.
+
+**Traccia**: Crea una route `/esercizio` che passa un array di voti a una view. Nella view, usa un ciclo `for` per calcolare la media e stampa il risultato.
+
+**Soluzione — Step 1: Route** (`routes/web.php`, PRIMA del catch-all):
+
+```php
+Route::get('/esercizio', function () {
+    $voti = [7, 8, 6, 9, 10, 5, 8];
+    return view('esercizio', compact('voti'));
+})->name('esercizio');
+```
+
+**Soluzione — Step 2: View** (`resources/views/esercizio.blade.php`):
+
+```php
+@extends('admin.layouts.app')
+@section('title', 'Esercizio Voti')
+@section('content')
+    <h1 class="text-2xl font-bold mb-4">Calcolo Media Voti</h1>
+
+    @php
+        $somma = 0;
+        $n = count($voti);
+        for ($i = 0; $i < $n; $i++) {
+            $somma += $voti[$i];
+        }
+        $media = $somma / $n;
+    @endphp
+
+    <p>Voti: {{ implode(', ', $voti) }}</p>
+    <p>Somma: {{ $somma }}</p>
+    <p>N. voti: {{ $n }}</p>
+    <p class="text-xl font-bold">Media: {{ $media }}</p>
+@endsection
+```
+
+**Output**: `Voti: 7, 8, 6, 9, 10, 5, 8` → `Somma: 53` → `N. voti: 7` → `Media: 7.571428...`
+
+**Varianti (le più chieste dall'esaminatore)**:
+
+**Variante A — Voto massimo e minimo**:
+
+```php
+@php
+    $max = $voti[0];
+    $min = $voti[0];
+    for ($i = 1; $i < count($voti); $i++) {
+        if ($voti[$i] > $max) $max = $voti[$i];
+        if ($voti[$i] < $min) $min = $voti[$i];
+    }
+@endphp
+<p>Massimo: {{ $max }} — Minimo: {{ $min }}</p>
+```
+
+**Variante B — Contare quanti superano una soglia**:
+
+```php
+@php
+    $soglia = 6;
+    $conta = 0;
+    for ($i = 0; $i < count($voti); $i++) {
+        if ($voti[$i] >= $soglia) {
+            $conta++;
+        }
+    }
+@endphp
+<p>Voti >= {{ $soglia }}: {{ $conta }} su {{ count($voti) }}</p>
+```
+
+**Variante C — Ordinare l'array**:
+
+```php
+@php
+    $ordinati = $voti;
+    sort($ordinati);  // Ascendente: sort() — Discendente: rsort()
+@endphp
+<p>Ordinati: {{ implode(', ', $ordinati) }}</p>
+```
+
+**Variante D — Somma + media senza for** (Laravel/PHP conciso):
+
+```php
+@php
+    $somma = array_sum($voti);
+    $n = count($voti);
+    $media = $somma / $n;
+@endphp
+```
+
+**Variante E — Array associativo (oggetti)**:
+
+```php
+@php
+    $studenti = [
+        ['nome' => 'Marco', 'voto' => 7],
+        ['nome' => 'Lucia', 'voto' => 9],
+        ['nome' => 'Paolo', 'voto' => 6],
+    ];
+    $somma = 0;
+    for ($i = 0; $i < count($studenti); $i++) {
+        $somma += $studenti[$i]['voto'];
+    }
+    $media = $somma / count($studenti);
+@endphp
+
+<ul>
+    @for ($i = 0; $i < count($studenti); $i++)
+        <li>{{ $studenti[$i]['nome'] }}: {{ $studenti[$i]['voto'] }}</li>
+    @endfor
+</ul>
+<p>Media: {{ $media }}</p>
+```
+
+**Consigli live coding**:
+
+1. Parti dalla route — è sempre il primo passo (`Route::get('/nome', function() { ... })`)
+2. Passa i dati con `compact('var')` o `['var' => $valore]`
+3. Nella view usa `@php ... @endphp` per la logica PHP
+4. Usa `@for`/`@endfor` se l'esaminatore vuole il ciclo nella view, oppure `@php for(...){ } @endphp`
+5. Se ti blocca: parti dalla soluzione PHP base (`for` + variabili), poi mostra la versione Laravel (`collect()->avg()`)
 
 ---
 
@@ -3009,7 +3153,7 @@ npm run dev                    # Frontend → localhost:5175
 php artisan migrate:fresh --seed   # Reset completo
 
 # Test
-php artisan test               # 270 PHPUnit
+php artisan test               # 271 PHPUnit
 npm test                       # 110 Vitest
 
 # NASA
@@ -3058,49 +3202,50 @@ astralis/
 ├── resources/
 │   ├── views/admin/        # Blade admin
 │   └── js/guest/           # React SPA
-└── tests/                  # 270 test PHP
+└── tests/                  # 271 test PHP
 ```
 
 ### Tabella Rapida — "Dove Cerchi?"
 
-| Domanda dell'esaminatore | File da aprire | Cosa trovare |
-|--------------------------|----------------|--------------|
-| **"Dove sono le route API?"** | `routes/api.php` | 10 endpoint GET, tutti pubblici |
-| **"Dove sono le CRUD admin?"** | `routes/web.php` | `Route::resource(...)` nel gruppo `admin` |
-| **"Dove sono le route auth?"** | `routes/auth.php` | Login, register, profilo — Breeze |
-| **"Dove i controller delle CRUD?"** | `app/Http/Controllers/Admin/` | 8 file: CorpoCelesteController, CategoriaController, ecc. |
-| **"Dove i controller API?"** | `app/Http/Controllers/Api/` | 6 file: CorpoCelesteController, ecc. |
-| **"Dove il model CorpoCeleste?"** | `app/Models/CorpoCeleste.php` | Fillable, casts, relazioni (belongsTo, hasMany, belongsToMany) |
-| **"Dove le migrations?"** | `database/migrations/` | 21 file con timestamp. Cerca `create_corpi_celesti_table` |
-| **"Dove le factory?"** | `database/factories/` | 5 file: CorpoCelesteFactory, CategoriaFactory, ecc. |
-| **"Dove i seeder?"** | `database/seeders/` | DatabaseSeeder + 7 seeder specifici |
-| **"Dove i Service?"** | `app/Services/` | NasaImageService, WordMapService, ImageUploadService |
-| **"Dove le Policy?"** | `app/Policies/` | 5 file: CorpoCelestePolicy, CategoriaPolicy, ecc. |
-| **"Dove l'Observer?"** | `app/Observers/CorpoCelesteObserver.php` | `created()` dispatcha job NASA |
-| **"Dove il Job NASA?"** | `app/Jobs/ImportNasaImage.php` | ShouldBeUnique, handle(), failed() |
-| **"Dove le FormRequest?"** | `app/Http/Requests/` | 13 file: Store/Update per ogni entità |
-| **"Dove le API Resource?"** | `app/Http/Resources/` | 5 file: CorpoCelesteResource, ecc. |
-| **"Dove il layout admin?"** | `resources/views/admin/layouts/app.blade.php` | Master layout con sidebar + Alpine.js |
-| **"Dove il form CorpoCeleste?"** | `resources/views/admin/corpi-celesti/_form.blade.php` | 6 sezioni, 18 campi |
-| **"Dove la sidebar?"** | `resources/views/admin/partials/_sidebar-nav.blade.php` | Lettura da `config/admin.php` |
-| **"Dove la config admin?"** | `config/admin.php` | nav_items, color_presets, mission_stati |
-| **"Dove il gate admin?"** | `app/Providers/AuthServiceProvider.php` | `Gate::define('admin', ...)` |
-| **"Dove la dashboard?"** | `resources/views/admin/dashboard.blade.php` | 4 stat card + 3 grafici Chart.js |
-| **"Dove l'entry React?"** | `resources/js/guest/main.jsx` | `ReactDOM.createRoot` + BrowserRouter |
-| **"Dove il routing React?"** | `resources/js/guest/App.jsx` | 5 route: /, /corpi-celesti, /:slug, /confronta, /* |
-| **"Dove la homepage React?"** | `resources/js/guest/pages/HomePage.jsx` | Hero + SolarSystem + In Evidenza |
-| **"Dove la lista corpi?"** | `resources/js/guest/pages/CorpiLista.jsx` | Griglia card, filtri, paginazione |
-| **"Dove il dettaglio?"** | `resources/js/guest/pages/CorpoDettaglio.jsx` | Metriche, lightbox, curiosità, timeline, simili |
-| **"Dove il comparatore?"** | `resources/js/guest/pages/Comparatore.jsx` | Tabella confronto 2 corpi su 7 metriche |
-| **"Dove il sistema solare?"** | `resources/js/guest/components/SolarSystem.jsx` | 8 pianeti con requestAnimationFrame |
-| **"Dove i componenti React?"** | `resources/js/guest/components/` | CorpoCard, LightboxGalleria, TimelineMissioni, ecc. |
-| **"Dove gli hook React?"** | `resources/js/guest/hooks/` | useFetch (useReducer + AbortController), useDebounce |
-| **"Dove apiClient?"** | `resources/js/guest/apiClient.js` | axios + retry + timeout 30s |
-| **"Dove la config Vite?"** | `vite.config.js` | React plugin + proxy `/api` → `localhost:8000` |
-| **"Dove i test PHP?"** | `tests/` | 270 test: Feature/, Unit/, TestCase base |
-| **"Dove i test React?"** | `resources/js/guest/` + `*.test.jsx` | 110 test Vitest: componenti + integrazione |
-| **"Dove i CSS?"** | `resources/css/app.css` | CSS variables admin, Tailwind, x-cloak |
-| **"Dove il CSS del guest?"** | In Tailwind via classi inline +少量 CSS in app.css | Nessun file separato |
+| Domanda dell'esaminatore              | File da aprire                                                                                                                                            | Cosa trovare                                                   |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **"Dove sono le route API?"**         | `routes/api.php`                                                                                                                                          | 10 endpoint GET, tutti pubblici                                |
+| **"Dove sono le CRUD admin?"**        | `routes/web.php`                                                                                                                                          | `Route::resource(...)` nel gruppo `admin`                      |
+| **"Dove sono le route auth?"**        | `routes/auth.php`                                                                                                                                         | Login, register, profilo — Breeze                              |
+| **"Dove i controller delle CRUD?"**   | `app/Http/Controllers/Admin/`                                                                                                                             | 8 file: CorpoCelesteController, CategoriaController, ecc.      |
+| **"Dove i controller API?"**          | `app/Http/Controllers/Api/`                                                                                                                               | 6 file: CorpoCelesteController, ecc.                           |
+| **"Dove il model CorpoCeleste?"**     | `app/Models/CorpoCeleste.php`                                                                                                                             | Fillable, casts, relazioni (belongsTo, hasMany, belongsToMany) |
+| **"Dove le migrations?"**             | `database/migrations/`                                                                                                                                    | 21 file con timestamp. Cerca `create_corpi_celesti_table`      |
+| **"Dove le factory?"**                | `database/factories/`                                                                                                                                     | 5 file: CorpoCelesteFactory, CategoriaFactory, ecc.            |
+| **"Dove i seeder?"**                  | `database/seeders/`                                                                                                                                       | DatabaseSeeder + 7 seeder specifici                            |
+| **"Dove i Service?"**                 | `app/Services/`                                                                                                                                           | NasaImageService, WordMapService, ImageUploadService           |
+| **"Dove le Policy?"**                 | `app/Policies/`                                                                                                                                           | 5 file: CorpoCelestePolicy, CategoriaPolicy, ecc.              |
+| **"Dove l'Observer?"**                | `app/Observers/CorpoCelesteObserver.php`                                                                                                                  | `created()` dispatcha job NASA                                 |
+| **"Dove il Job NASA?"**               | `app/Jobs/ImportNasaImage.php`                                                                                                                            | ShouldBeUnique, handle(), failed()                             |
+| **"Dove le FormRequest?"**            | `app/Http/Requests/`                                                                                                                                      | 13 file: Store/Update per ogni entità                          |
+| **"Dove le API Resource?"**           | `app/Http/Resources/`                                                                                                                                     | 5 file: CorpoCelesteResource, ecc.                             |
+| **"Dove il layout admin?"**           | `resources/views/admin/layouts/app.blade.php`                                                                                                             | Master layout con sidebar + Alpine.js                          |
+| **"Dove il form CorpoCeleste?"**      | `resources/views/admin/corpi-celesti/_form.blade.php`                                                                                                     | 6 sezioni, 18 campi                                            |
+| **"Dove la sidebar?"**                | `resources/views/admin/partials/_sidebar-nav.blade.php`                                                                                                   | Lettura da `config/admin.php`                                  |
+| **"Dove la config admin?"**           | `config/admin.php`                                                                                                                                        | nav_items, color_presets, mission_stati                        |
+| **"Dove il gate admin?"**             | `app/Providers/AuthServiceProvider.php`                                                                                                                   | `Gate::define('admin', ...)`                                   |
+| **"Dove la dashboard?"**              | `resources/views/admin/dashboard.blade.php`                                                                                                               | 4 stat card + 3 grafici Chart.js                               |
+| **"Dove l'entry React?"**             | `resources/js/guest/main.jsx`                                                                                                                             | `ReactDOM.createRoot` + BrowserRouter                          |
+| **"Dove il routing React?"**          | `resources/js/guest/App.jsx`                                                                                                                              | 5 route: /, /corpi-celesti, /:slug, /confronta, /\*            |
+| **"Dove la homepage React?"**         | `resources/js/guest/pages/HomePage.jsx`                                                                                                                   | Hero + SolarSystem + In Evidenza                               |
+| **"Dove la lista corpi?"**            | `resources/js/guest/pages/CorpiLista.jsx`                                                                                                                 | Griglia card, filtri, paginazione                              |
+| **"Dove il dettaglio?"**              | `resources/js/guest/pages/CorpoDettaglio.jsx`                                                                                                             | Metriche, lightbox, curiosità, timeline, simili                |
+| **"Dove il comparatore?"**            | `resources/js/guest/pages/Comparatore.jsx`                                                                                                                | Tabella confronto 2 corpi su 7 metriche                        |
+| **"Dove il sistema solare?"**         | `resources/js/guest/components/SolarSystem.jsx`                                                                                                           | 8 pianeti con requestAnimationFrame                            |
+| **"Dove i componenti React?"**        | `resources/js/guest/components/`                                                                                                                          | CorpoCard, LightboxGalleria, TimelineMissioni, ecc.            |
+| **"Dove gli hook React?"**            | `resources/js/guest/hooks/`                                                                                                                               | useFetch (useReducer + AbortController), useDebounce           |
+| **"Dove apiClient?"**                 | `resources/js/guest/apiClient.js`                                                                                                                         | axios + retry + timeout 30s                                    |
+| **"Dove la config Vite?"**            | `vite.config.js`                                                                                                                                          | React plugin + proxy `/api` → `localhost:8000`                 |
+| **"Dove i test PHP?"**                | `tests/`                                                                                                                                                  | 271 test: Feature/, Unit/, TestCase base                       |
+| **"Dove i test React?"**              | `resources/js/guest/` + `*.test.jsx`                                                                                                                      | 110 test Vitest: componenti + integrazione                     |
+| **"Dove i CSS?"**                     | `resources/css/app.css`                                                                                                                                   | CSS variables admin, Tailwind, x-cloak                         |
+| **"Dove il CSS del guest?"**          | In Tailwind via classi inline +少量 CSS in app.css                                                                                                        | Nessun file separato                                           |
+| **Live coding: route + view + array** | `routes/web.php` → `Route::get('/esercizio', fn() => view('esercizio', compact('voti')))` + `resources/views/esercizio.blade.php` con `@for`/`@php for()` | Media, max, min, conta soglia                                  |
 
 ### Comandi Rapidi per VS Code
 
@@ -3129,21 +3274,21 @@ Ctrl+`                        # Toggle terminale
 
 ### Sequenza domande (simula il ritmo reale)
 
-| # | Domanda | Risposta attesa | Tempo |
-|---|---------|-----------------|-------|
-| 1 | **"Spiega il progetto"** | Script apertura: login → dashboard → CRUD → React guest | 2 min |
-| 2 | **"Dove sono le route API?"** | Apri `routes/api.php`, mostra i 10 endpoint | 30 sec |
-| 3 | **"Dove i controller CRUD?"** | Apri `app/Http/Controllers/Admin/`, mostra struttura | 30 sec |
-| 4 | **"Cos'è una migration?"** | Definizione + mostra file in `database/migrations/` | 1 min |
-| 5 | **"Cos'è una classe in PHP?"** | Definizione + esempio `CorpoCeleste extends Model` | 1 min |
-| 6 | **"Differenza == e ===?"** | Loose vs strict, consiglio: usa sempre === | 30 sec |
-| 7 | **Live coding: crea route che restituisce JSON** | `Route::get('/test', fn() => response()->json([...]))` | 3 min |
-| 8 | **Live coding: somma un campo in un array di oggetti** | `collect($arr)->sum('campo')` o `array_sum(array_column(...))` | 3 min |
-| 9 | **"Perché React per il guest?"** | SPA, transizioni fluide, reattività senza reload | 1 min |
-| 10 | **"Come funziona il routing React?"** | react-router-dom + catch-all in Laravel | 1 min |
-| 11 | **"Cos'è un Observer?"** | CorpoCelesteObserver → dispatcha job NASA su created | 1 min |
-| 12 | **"Cos'è una Foreign Key?"** | Colonna che collega tabelle, `constrained()`, integrità referenziale | 30 sec |
-| 13 | **"Come testi il progetto?"** | PHPUnit + Http::fake() + Factory, Vitest per React | 1 min |
+| #   | Domanda                                                         | Risposta attesa                                                                                  | Tempo  |
+| --- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------ |
+| 1   | **"Spiega il progetto"**                                        | Script apertura: login → dashboard → CRUD → React guest                                          | 2 min  |
+| 2   | **"Dove sono le route API?"**                                   | Apri `routes/api.php`, mostra i 10 endpoint                                                      | 30 sec |
+| 3   | **"Dove i controller CRUD?"**                                   | Apri `app/Http/Controllers/Admin/`, mostra struttura                                             | 30 sec |
+| 4   | **"Cos'è una migration?"**                                      | Definizione + mostra file in `database/migrations/`                                              | 1 min  |
+| 5   | **"Cos'è una classe in PHP?"**                                  | Definizione + esempio `CorpoCeleste extends Model`                                               | 1 min  |
+| 6   | **"Differenza == e ===?"**                                      | Loose vs strict, consiglio: usa sempre ===                                                       | 30 sec |
+| 7   | **Live coding: crea route + view, calcola media array con for** | `Route::get('/esercizio', fn() => view('esercizio', compact('voti')))` + ciclo `@for` nella view | 5 min  |
+| 8   | **Live coding: trova il voto massimo con un ciclo for**         | Inizializza `$max = $arr[0]`, confronta nel ciclo, stampa il risultato                           | 3 min  |
+| 9   | **"Perché React per il guest?"**                                | SPA, transizioni fluide, reattività senza reload                                                 | 1 min  |
+| 10  | **"Come funziona il routing React?"**                           | react-router-dom + catch-all in Laravel                                                          | 1 min  |
+| 11  | **"Cos'è un Observer?"**                                        | CorpoCelesteObserver → dispatcha job NASA su created                                             | 1 min  |
+| 12  | **"Cos'è una Foreign Key?"**                                    | Colonna che collega tabelle, `constrained()`, integrità referenziale                             | 30 sec |
+| 13  | **"Come testi il progetto?"**                                   | PHPUnit + Http::fake() + Factory, Vitest per React                                               | 1 min  |
 
 **Tempo totale**: ~15 minuti. L'esame reale dura ~1 ora, quindi ci sono molte altre domande. Questa simulazione copre i punti chiave.
 
@@ -3158,13 +3303,13 @@ Ctrl+`                        # Toggle terminale
 
 ### Errori Comuni da Evitare
 
-| Errore | Perché è grave | Cosa dire invece |
-|--------|----------------|------------------|
-| Confondere route web e API | Mostra che non capisci il dual rendering | "web.php restituisce HTML, api.php restituisce JSON" |
-| Dire "non usiamo le migrations" | Le migrations sono fondamentali in Laravel | Mostra il file e spiega up()/down() |
-| Dimenticare `Http::fake()` nei test | L'observer fa chiamate HTTP reali | Spiega il testing guard nell'observer |
-| Confondere HasMany e BelongsTo | Sono le due facce della stessa relazione | "Categoria ha molti corpi (hasMany), il corpo appartiene a una categoria (belongsTo)" |
-| Non sapere dove si trova un file | Dimostra mancanza di familiarità col progetto | Usa Ctrl+P e cerca rapidamente |
+| Errore                              | Perché è grave                                | Cosa dire invece                                                                      |
+| ----------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Confondere route web e API          | Mostra che non capisci il dual rendering      | "web.php restituisce HTML, api.php restituisce JSON"                                  |
+| Dire "non usiamo le migrations"     | Le migrations sono fondamentali in Laravel    | Mostra il file e spiega up()/down()                                                   |
+| Dimenticare `Http::fake()` nei test | L'observer fa chiamate HTTP reali             | Spiega il testing guard nell'observer                                                 |
+| Confondere HasMany e BelongsTo      | Sono le due facce della stessa relazione      | "Categoria ha molti corpi (hasMany), il corpo appartiene a una categoria (belongsTo)" |
+| Non sapere dove si trova un file    | Dimostra mancanza di familiarità col progetto | Usa Ctrl+P e cerca rapidamente                                                        |
 
 ---
 

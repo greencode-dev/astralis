@@ -5,8 +5,8 @@ description: Pattern test per Astralis — PHPUnit + Vitest, factory, Http::fake
 
 # Astralis Testing Patterns
 
-- **Backend**: PHPUnit — 130 test, 335 assertion
-- **Frontend**: Vitest — 88 test
+- **Backend**: PHPUnit — 271 test, 615 assertion
+- **Frontend**: Vitest — 110 test
 - Esecuzione: `php artisan test`
 
 ## Backend Test Patterns
