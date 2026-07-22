@@ -86,6 +86,55 @@ Astralis is a web catalog of celestial bodies (planets, stars, galaxies, nebulae
 - **Http::fake()**: Tutti i test che creano `CorpoCeleste` via factory includono `Http::fake()` in setUp per prevenire chiamate HTTP reali.
 - **Run**: `php artisan test` — 270 test PHPUnit, 613 assertion. `npm test` — 110 test Vitest. Totale: 380 test.
 
+## File Header Comments
+
+Ogni file principale del progetto deve avere un **commento esplicativo sintetico** in cima (riga 1-2). Il commento descrive in italiano cosa fa il file e quali pattern contiene.
+
+### Regole
+
+1. **Tutti i 27 file** elencati in `config/admin.php` → `file_headers` devono avere il commento
+2. Quando modifichi un file e il commento diventa obsoleto → aggiorna **sia il file che `config/admin.php`**
+3. Il **pre-commit hook** verifica automaticamente che i commenti siano aggiornati prima di ogni commit
+4. Check manuale: `php artisan astralis:check-headers`
+
+### File protetti
+
+| File | Formato commento |
+|------|------------------|
+| `routes/api.php` | `// API REST pubbliche — [descrizione]` |
+| `routes/web.php` | `// Route admin (Blade+auth) + catch-all SPA React. [dettagli]` |
+| `Admin/CorpoCelesteController.php` | `// CRUD CorpoCeleste: [metodi]` |
+| `CorpoCeleste.php` | `// Model: [campi], [relazioni]. [note]` |
+| `NasaImageService.php` | `// Service Layer: [funzionalità]. [metodi]. [note]` |
+| `CorpoCelesteObserver.php` | `// Observer: [azione]. [note testing]` |
+| `ImportNasaImage.php` | `// Job queue: [descrizione]. [pattern]. [dispatch]` |
+| `CorpoCelestePolicy.php` | `// Policy: [logica before()]. [note admin/non-admin]` |
+| `AuthServiceProvider.php` | `// Registra [N] Policy + Gate [nome]. [scopo]` |
+| `Api/CorpoCelesteController.php` | `// Controller API: [N] endpoint [metodi]. [pattern]` |
+| `main.jsx` | `// Entry point React SPA: [descrizione]. [scopo]` |
+| `App.jsx` | `// Routing React: [N] route ([elenco]). [dettagli]` |
+| `apiClient.js` | `// Client API: [libreria]. [config]. [note proxy]` |
+| `useFetch.js` | `// Custom hook: [pattern]. [funzionalità]. [note]` |
+| `Categoria.php` | `// Model: [campi]. [relazioni]. [note]` |
+| `Missione.php` | `// Model: [campi]. [relazioni]. [note]` |
+| `Curiosita.php` | `// Model: [campi]. [relazioni]. [note]` |
+| `GalleriaCorpo.php` | `// Model: [campi]. [relazioni]. [note]` |
+| `DashboardController.php` | `// Dashboard: [stat card]. [grafici]. [cache]` |
+| `NasaImportController.php` | `// NASA Import: [metodi]. [dispatch]` |
+| `WordMapService.php` | `// Service Layer: [traduzione]. [termini]. [cache]` |
+| `ImageUploadService.php` | `// Service Layer: [upload]. [resize]. [disk]` |
+| `CategoriaPolicy.php` | `// Policy: [logica]. [esempio relazione]` |
+| `SolarSystem.jsx` | `// Componente: [animazione]. [pattern]. [interazioni]` |
+| `CorpoCard.jsx` | `// Componente: [contenuto]. [ottimizzazione]` |
+| `CorpoDettaglio.jsx` | `// Pagina: [sezioni]. [funzionalità]` |
+| `Comparatore.jsx` | `// Pagina: [metriche]. [state]. [interazione]` |
+
+### Aggiornare un commento
+
+1. Modifica il commento nel file sorgente
+2. Aggiorna la stessa stringa in `config/admin.php` → `file_headers`
+3. Il pre-commit hook verificherà la corrispondenza al prossimo commit
+
 ## Bugs noti / Pattern da evitare
 
 - **Nessuna dipendenza CDN rimanente** — Alpine.js e Chart.js bundled via Vite. Solo fonts (fonts.bunny.net) restano esterne.
@@ -518,15 +567,15 @@ Per il setup completo delle skill OpenCode: [`docs/documentazione.md#setup-openc
 
 ### Sessione corrente
 
-> _Ultimo aggiornamento:_ 21/07/2026 — 14:00
+> _Ultimo aggiornamento:_ 22/07/2026 — 23:30
 
 | Campo               | Valore                                                                                                 |
 | ------------------- | ------------------------------------------------------------------------------------------------------ |
 | **Branch**          | `master`                                                                                               |
-| **Test**            | 270 PHPUnit + 110 Vitest = 380 totali, tutti verdi                                                    |
-| **Task completate** | 128 task totali completate (audit admin 116-128 chiuso)                                                |
-| **Task aperte**     | 10 task audit frontend (129-138): 6 🟡 High + 3 🔵 Medium + 1 🟢 Low                                 |
-| **Prossime azioni** | Eseguire task audit frontend 129-137 (hex→CSS vars, CLS fix, focus-visible, ellipsis)                  |
+| **Test**            | 271 PHPUnit + 110 Vitest = 381 totali, tutti verdi                                                    |
+| **Task completate** | 138 task totali completate (audit frontend 129-138 chiuso)                                             |
+| **Task aperte**     | 0 — piano ottimizzazione completato                                                                    |
+| **Prossime azioni** | Piano completato. Possibili miglioramenti futuri: SBDB/Horizons API, bottone "Cerca info NASA"         |
 
 ### Piano rinomina campi + galleria inline (Task 103-115)
 

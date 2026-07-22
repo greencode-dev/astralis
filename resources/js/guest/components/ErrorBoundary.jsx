@@ -31,7 +31,7 @@ export default class ErrorBoundary extends Component {
                                 <RotateCcw size={16} /> Riprova
                             </button>
                             <Link to="/"
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-[rgba(168,85,247,0.2)] bg-admin-secondary/10 text-admin-secondary">
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all hover:bg-admin-secondary/20 bg-admin-secondary/10 text-admin-secondary">
                                 <ArrowLeft size={16} /> Torna alla home
                             </Link>
                         </div>

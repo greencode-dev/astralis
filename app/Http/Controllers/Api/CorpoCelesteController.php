@@ -1,4 +1,5 @@
 <?php
+// Controller API: 4 endpoint GET pubblici (index, show, simili, stats). Eager loading, cache, API Resources
 
 namespace App\Http\Controllers\Api;
 
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Cache;
 
 class CorpoCelesteController extends Controller
 {
+    // Index: 4 filtri (categoria, tipo, search, in_evidenza) + paginazione
     public function index(Request $request)
     {
         $query = CorpoCeleste::with(['categoria']);
@@ -26,6 +28,7 @@ class CorpoCelesteController extends Controller
         }
 
         if ($request->filled('search')) {
+            // Filtri: whereHas su categoria.slug, where tipo, like search (nome+nome_en+descrizione)
             $search = static::escapeLike($request->search);
             $query->where(function ($q) use ($search) {
                 $q->where('nome', 'like', "%{$search}%")
@@ -59,8 +62,10 @@ class CorpoCelesteController extends Controller
             $cacheKeyParts['in_evidenza'] = true;
         }
 
+        // Cache: serializza parametri → md5 key → Cache::remember 5min, salva solo ID
         $cacheKey = 'api.corpi-celesti.' . md5(serialize($cacheKeyParts));
 
+        // Cache: serializza parametri → md5 key → Cache::remember 5min, salva solo ID
         $cachedIds = Cache::remember($cacheKey, 300, function () use ($query) {
             return $query->orderBy('nome')->pluck('id')->toArray();
         });
@@ -81,6 +86,7 @@ class CorpoCelesteController extends Controller
         return CorpoCelesteResource::collection($paginated);
     }
 
+    // Show: eager loading 4 relazioni → singolo Resource
     public function show(CorpoCeleste $corpoCeleste)
     {
         $corpoCeleste->load(['categoria', 'galleria', 'curiosita', 'missioni']);
@@ -88,6 +94,7 @@ class CorpoCelesteController extends Controller
         return new CorpoCelesteResource($corpoCeleste);
     }
 
+    // Simili: stessa categoria, escluso sé stesso, max 4 risultati
     public function simili(CorpoCeleste $corpoCeleste)
     {
         $simili = CorpoCeleste::with(['categoria'])

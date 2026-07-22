@@ -2,26 +2,32 @@
 
 > [Formato e legenda →](#note)
 
-_Ultimo aggiornamento: 21/07/2026_
+_Ultimo aggiornamento: 22/07/2026_
 
 ## Da Fare
 
-- [ ] [Task 138] `[🟢][🎨]` Reduced motion — `prefers-reduced-motion` CSS + SolarSystem rAF skip — `resources/css/app.css`, `resources/js/guest/components/SolarSystem.jsx`
-- [ ] [Task 137] `[🔵][🎨]` Ellipsis `...` → `…` + formattazione (gravita locale) — `resources/js/guest/pages/CorpiLista.jsx`, `resources/views/admin/corpi-celesti/_form.blade.php`, `resources/js/guest/pages/Comparatore.jsx`
-- [ ] [Task 136] `[🔵][🎨]` Focus-visible rings — filter pills, select, back link, CTA — `resources/js/guest/pages/CorpiLista.jsx`, `resources/js/guest/pages/Comparatore.jsx`, `resources/js/guest/pages/HomePage.jsx`
-- [ ] [Task 135] `[🟡][🎨]` CLS fix — img width/height mancanti — `resources/js/guest/components/CorpoCard.jsx`, `resources/js/guest/components/SolarSystem.jsx`, `resources/js/guest/components/LightboxGalleria.jsx`
-- [ ] [Task 134] `[🟡][🎨]` Dashboard chart colors hardcoded → CSS variables — `resources/views/admin/dashboard.blade.php`
-- [ ] [Task 133] `[🔵][🎨]` gray-400 → admin tokens — layout & sidebar — `resources/views/admin/layouts/app.blade.php`, `resources/views/admin/partials/_sidebar-nav.blade.php`
-- [ ] [Task 132] `[🟡][🎨]` Inconsistent error colors → admin-error — Blade admin — `resources/views/admin/partials/index-actions.blade.php`, `resources/views/admin/partials/in-evidenza-badge.blade.php`
-- [ ] [Task 131] `[🟡][🎨]` Hardcoded rgba → Tailwind — CorpiLista reset filtri — `resources/js/guest/pages/CorpiLista.jsx`
-- [ ] [Task 130] `[🟡][🎨]` Hardcoded hex → palette constants — TimelineMissioni statoColors — `resources/js/guest/components/TimelineMissioni.jsx`
-- [ ] [Task 129] `[🟡][🎨]` Hardcoded hex → CSS variables — React components — `resources/js/guest/components/CorpoCard.jsx`, `resources/js/guest/pages/CorpoDettaglio.jsx`, `resources/js/guest/components/ErrorBoundary.jsx`
+> Nessuna task aperta.
 
 ## In lavorazione
 
 > Nessuna task in lavorazione.
 
 ## Completate
+
+### 22/07/2026
+
+- [x] [Task 138] `[🟢][🎨]` Reduced motion — `prefers-reduced-motion` CSS + SolarSystem rAF skip — `resources/css/app.css`, `resources/js/guest/components/SolarSystem.jsx`
+- [x] [Task 137] `[🔵][🎨]` Ellipsis `...` → `…` + formattazione (gravita locale) — `resources/js/guest/pages/CorpiLista.jsx`, `resources/views/admin/corpi-celesti/_form.blade.php`, `resources/js/guest/pages/Comparatore.jsx`
+- [x] [Task 136] `[🔵][🎨]` Focus-visible rings — filter pills, select, back link, CTA — `resources/js/guest/pages/CorpiLista.jsx`, `resources/js/guest/pages/Comparatore.jsx`, `resources/js/guest/pages/HomePage.jsx`
+- [x] [Task 135] `[🟡][🎨]` CLS fix — img width/height mancanti — `resources/js/guest/components/CorpoCard.jsx`, `resources/js/guest/components/SolarSystem.jsx`, `resources/js/guest/components/LightboxGalleria.jsx`
+- [x] [Task 134] `[🟡][🎨]` Dashboard chart colors hardcoded → CSS variables — `resources/views/admin/dashboard.blade.php`
+- [x] [Task 133] `[🔵][🎨]` gray-400 → admin tokens — layout & sidebar — `resources/views/admin/layouts/app.blade.php`, `resources/views/admin/partials/_sidebar-nav.blade.php`
+- [x] [Task 132] `[🟡][🎨]` Inconsistent error colors → admin-error — Blade admin — `resources/views/admin/partials/index-actions.blade.php`, `resources/views/admin/partials/in-evidenza-badge.blade.php`
+- [x] [Task 131] `[🟡][🎨]` Hardcoded rgba → Tailwind — CorpiLista reset filtri — `resources/js/guest/pages/CorpiLista.jsx`
+- [x] [Task 130] `[🟡][🎨]` Hardcoded hex → palette constants — TimelineMissioni statoColors — `resources/js/guest/components/TimelineMissioni.jsx`
+- [x] [Task 129] `[🟡][🎨]` Hardcoded hex → CSS variables — React components (CorpoCard, CorpoDettaglio, ErrorBoundary) + new tokens (text-on-warning, shadow-primary) — `resources/js/guest/components/CorpoCard.jsx`, `resources/js/guest/pages/CorpoDettaglio.jsx`, `resources/js/guest/components/ErrorBoundary.jsx`, `resources/css/app.css`
+
+---
 
 ### 21/07/2026
 
@@ -231,7 +237,7 @@ _Ultimo aggiornamento: 21/07/2026_
 
 ## Note
 
-- **Stato**: 10 task aperte (6 🟡 High + 3 🔵 Medium + 1 🟢 Low). 138 task totali (10 Da Fare + 128 Completate). 380 test (270 PHPUnit + 110 Vitest), tutti verdi.
+- **Stato**: 0 task aperte. 138 task totali (138 Completate). 381 test (271 PHPUnit + 110 Vitest), tutti verdi.
 - Tasks spuntati (`[x]`) vengono spostati nella sezione **Completate**
 - Formato per aggiungere un nuovo task:
     ```

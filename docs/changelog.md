@@ -2,6 +2,21 @@
 
 > [Formato e legenda →](#formato)
 
+## 22/07/2026
+
+- `[🟡][📝]` Audit completo preparazione-esame.md — 6 agenti paralleli: copertura PHP/Laravel/React definitions, Q&A gaps, live coding esercizi, errori fattuali, verifiche codice reale — `docs/preparazione-esame.md`
+- `[🔴][📝]` Fix errori fattuali — PHP 7.6→7.4 (spread operator), Enum `StatoMissione` fabbricato riscritto con esempio generico, Observer `EventServiceProvider`→`AppServiceProvider::boot()`, useRef riferimento `useDebounce`→`SolarSystem/useInView/LazyImage`, apiClient.js timeout 15s→30s in `config/admin.php` — `docs/preparazione-esame.md`, `config/admin.php`, `AGENTS.md`
+- `[🟡][📝]` +7 definizioni PHP — Named Arguments, Match Expression, Constructor Property Promotion, Union Types (espanso Type Hints), Abstract Classes, Interfaces, Readonly Properties — `docs/preparazione-esame.md`
+- `[🟡][📝]` +5 definizioni Laravel — Service Container (IoC), Soft Deletes, Accessors & Mutators, Custom Artisan Commands, Events & Listeners — `docs/preparazione-esame.md`
+- `[🟡][📝]` +8 definizioni React — useReducer, useMemo, useCallback, Suspense, React.lazy/Code Splitting, React Router, Controlled vs Uncontrolled, createRoot — `docs/preparazione-esame.md`
+- `[🟡][📝]` +8 Q&A — Auth end-to-end flow, Auth vs AuthZ, Upload flow, Soft delete vs hard delete, NASA integration end-to-end, Job vs Queue, Deployment, Design patterns — `docs/preparazione-esame.md`
+- `[🔵][📝]` +4 esercizi live coding (7→11) — Migration, Policy, Observer, Controller store() — `docs/preparazione-esame.md`
+- `[🔵][📝]` Fix stale counts — titoli sezioni "(26)"→rimosso, "(15)"→rimosso, "4 Esercizi"→"11", AGENTS.md "14 file"→"27" — `docs/preparazione-esame.md`, `AGENTS.md`
+
+**Test**: 381 totali (271 PHPUnit + 110 Vitest), tutti verdi.
+
+---
+
 ## 21/07/2026
 
 - `[🔵][📝]` Preparazione esame: riordinamento §8 Laravel in ordine logico (Model→Eloquent→Migration→Observer→ServiceLayer→Policy→Gate→FormRequest→Validation→Middleware→Controller→ArtisanCommands→Storage→Cache→Collection→Blade→RouteModelBinding→APIRoute→Job), rimossi duplicati §7↔§8, aggiunte 9 definizioni (§7: String Functions, Array Functions, Null Coalescing, Type Casting, Date&Carbon / §8: Route Groups, Service Providers, Eloquent Scopes / §9: useRef), espansa Q&A §6 con breakdown web.php (58 righe, 4 sezioni) e api.php (10 endpoint) — `docs/preparazione-esame.md`

@@ -1,4 +1,5 @@
 <?php
+// Model: nome, slug, colore, icona, descrizione. HasMany(CorpoCeleste). Rappresenta le 8 categorie astronomiche
 
 namespace App\Models;
 
@@ -10,10 +11,13 @@ use Spatie\Sluggable\SlugOptions;
 
 class Categoria extends Model
 {
+    // Traits: HasFactory + HasSlug
     use HasFactory, HasSlug;
 
+    // Table: categorie
     protected $table = 'categorie';
 
+    // Fillable: nome, slug, icona, descrizione, colore
     protected $fillable = [
         'nome',
         'slug',
@@ -22,6 +26,7 @@ class Categoria extends Model
         'colore',
     ];
 
+    // Slug: genera da 'nome'
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
@@ -29,6 +34,7 @@ class Categoria extends Model
             ->saveSlugsTo('slug');
     }
 
+    // Relazione: HasMany CorpoCeleste
     public function corpiCelesti(): HasMany
     {
         return $this->hasMany(CorpoCeleste::class);

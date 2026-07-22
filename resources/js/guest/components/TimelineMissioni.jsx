@@ -2,9 +2,9 @@ import { useState, memo } from 'react';
 import { Rocket, Calendar, Building2, Globe } from 'lucide-react';
 
 const statoColors = {
-    'Completata': { bg: 'rgba(34, 197, 94, 0.15)', text: '#22C55E' },
-    'In corso': { bg: 'rgba(34, 211, 238, 0.15)', text: '#22D3EE' },
-    'Pianificata': { bg: 'rgba(250, 204, 21, 0.15)', text: '#FACC15' },
+    'Completata': { bg: 'color-mix(in srgb, var(--color-admin-success) 15%, transparent)', text: 'var(--color-admin-success)' },
+    'In corso': { bg: 'color-mix(in srgb, var(--color-admin-primary) 15%, transparent)', text: 'var(--color-admin-primary)' },
+    'Pianificata': { bg: 'color-mix(in srgb, var(--color-admin-warning) 15%, transparent)', text: 'var(--color-admin-warning)' },
 };
 
 const LogoFallback = memo(function LogoFallback({ nome }) {
@@ -35,9 +35,9 @@ export default memo(function TimelineMissioni({ missioni }) {
         <div className="relative">
             {/* Linea temporale orizzontale */}
             <div className="flex gap-6 overflow-x-auto pb-4"
-                style={{ scrollbarWidth: 'thin', scrollbarColor: '#22D3EE transparent' }}>
+                style={{ scrollbarWidth: 'thin', scrollbarColor: 'var(--color-admin-primary) transparent' }}>
                 {missioni.map((missione, index) => {
-                    const colors = statoColors[missione.stato] || { bg: 'rgba(255,255,255,0.1)', text: '#B8B8D0' };
+                    const colors = statoColors[missione.stato] || { bg: 'rgba(255,255,255,0.1)', text: 'var(--color-admin-dim)' };
                     return (
                         <div key={missione.id} className="shrink-0 w-[280px]">
                             <div className="relative">

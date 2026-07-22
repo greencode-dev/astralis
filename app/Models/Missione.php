@@ -1,4 +1,5 @@
 <?php
+// Model: nome, slug, logo, agenzia, data_lancio, stato. BelongsToMany(CorpoCeleste) con pivot. 10 missioni reali
 
 namespace App\Models;
 
@@ -10,10 +11,13 @@ use Spatie\Sluggable\SlugOptions;
 
 class Missione extends Model
 {
+    // Traits: HasFactory + HasSlug
     use HasFactory, HasSlug;
 
+    // Table: missioni
     protected $table = 'missioni';
 
+    // Fillable: nome, slug, logo, agenzia, data_lancio, durata, stato, descrizione, sito_web
     protected $fillable = [
         'nome',
         'slug',
@@ -26,6 +30,7 @@ class Missione extends Model
         'sito_web',
     ];
 
+    // Casts: data_lancio → Carbon, durata_giorni → integer
     protected function casts(): array
     {
         return [
@@ -34,6 +39,7 @@ class Missione extends Model
         ];
     }
 
+    // Slug: genera da 'nome'
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
@@ -41,6 +47,7 @@ class Missione extends Model
             ->saveSlugsTo('slug');
     }
 
+    // Relazione: BelongsToMany CorpoCeleste via pivot, con pivot fields + timestamps
     public function corpiCelesti(): BelongsToMany
     {
         return $this->belongsToMany(CorpoCeleste::class, 'corpo_celeste_missione')

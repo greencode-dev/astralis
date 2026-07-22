@@ -1,4 +1,5 @@
 <?php
+// Registra 5 Policy + Gate 'admin' (is_admin). Bootstrap autorizzazione
 
 namespace App\Providers;
 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
+    // Policies: 5 mapping model → policy (Categoria, CorpoCeleste, Missione, Curiosita, GalleriaCorpo)
     protected $policies = [
         Categoria::class => CategoriaPolicy::class,
         CorpoCeleste::class => CorpoCelestePolicy::class,
@@ -28,6 +30,7 @@ class AuthServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Gate 'admin': restituisce $user->is_admin (boolean)
         Gate::define('admin', fn (User $user) => $user->is_admin);
     }
 }

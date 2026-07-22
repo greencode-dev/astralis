@@ -1,3 +1,4 @@
+// Pagina: dettaglio corpo celeste. Metriche, galleria lightbox, curiosità, timeline missioni, corpi simili
 import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Ruler, Weight, Thermometer, Gauge, MapPin, Calendar, User, Star, Rocket, Lightbulb, Orbit as OrbitIcon } from 'lucide-react';
@@ -10,6 +11,7 @@ import LightboxGalleria from '../components/LightboxGalleria';
 import TimelineMissioni from '../components/TimelineMissioni';
 import CorpoCard from '../components/CorpoCard';
 
+// Metriche: definizione 6 campi con key, label, icon, format function
 const metriche = [
     { key: 'massa_kg', label: 'Massa', icon: Weight, format: v => formatScientific(v) + ' kg' },
     { key: 'diametro_km', label: 'Diametro', icon: Ruler, format: v => formatNumber(v) + ' km' },
@@ -20,18 +22,21 @@ const metriche = [
 ];
 
 export default function CorpoDettaglio() {
-    const { slug } = useParams();
+  // State: slug da URL params, heroImgError, simili, similiSlugRef (stale closure guard)
+  const { slug } = useParams();
 
     const [heroImgError, setHeroImgError] = useState(false);
     const [simili, setSimili] = useState([]);
     const similiSlugRef = useRef(null);
 
-    const { data: corpoData, loading, error } = useFetch(
+    // Fetch principale: useFetch con fetchCorpoCeleste, re-fetch su cambio slug
+  const { data: corpoData, loading, error } = useFetch(
         signal => fetchCorpoCeleste(slug, signal), [slug]
     );
     const corpo = corpoData?.data || corpoData;
 
-    useEffect(() => {
+  // Fetch simili: useEffect con AbortController, cleanup su cambio slug
+  useEffect(() => {
         if (!corpo?.slug) return;
         similiSlugRef.current = corpo.slug;
         const controller = new AbortController();
@@ -45,17 +50,15 @@ export default function CorpoDettaglio() {
         return () => controller.abort();
     }, [corpo?.slug]);
 
-    useEffect(() => {
-        document.title = 'Caricamento... — Astralis';
-    }, []);
-
-    useEffect(() => {
+  // Document title: default "Caricamento..." → aggiorna con nome corpo
+  useEffect(() => {
         if (corpo?.nome) {
             document.title = `${corpo.nome} — Astralis`;
         }
     }, [corpo?.nome]);
 
-    if (loading) {
+    // Loading: skeleton animato (pulse, 3 blocchi)
+  if (loading) {
         return (
             <div className="max-w-5xl mx-auto px-4 py-10">
                 <div className="animate-pulse space-y-6">
@@ -67,7 +70,8 @@ export default function CorpoDettaglio() {
         );
     }
 
-    if (error || !corpo) {
+    // Error: pagina 404 personalizzata con icona + link torna alla lista
+  if (error || !corpo) {
         return (
             <div className="max-w-5xl mx-auto px-4 py-20 text-center">
                 <Rocket size={64} className="mx-auto mb-4 text-admin-accent" />
@@ -80,16 +84,18 @@ export default function CorpoDettaglio() {
         );
     }
 
-    const FallbackIcon = categoryIcons[corpo.categoria?.nome] || OrbitIcon;
-    const gradient = categoryGradients[corpo.categoria?.nome] || 'linear-gradient(135deg, #4B5563, #6B7280)';
+    // Fallback: icona + gradient da constants per categoria
+  const FallbackIcon = categoryIcons[corpo.categoria?.nome] || OrbitIcon;
+    const gradient = categoryGradients[corpo.categoria?.nome] || 'linear-gradient(135deg, var(--color-admin-bg), var(--color-admin-neutral))';
 
-    return (
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <Link to="/corpi-celesti" className="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-all hover:opacity-70 text-admin-primary">
-                <ArrowLeft size={16} /> Torna alla lista
-            </Link>
+  return (
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <Link to="/corpi-celesti" className="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-all hover:opacity-70 text-admin-primary">
+        <ArrowLeft size={16} /> Torna alla lista
+      </Link>
 
-            <div className="animate-fade-up relative rounded-2xl overflow-hidden mb-8 min-h-[300px]">
+      {/* Hero: immagine full-width con overlay gradiente, nome + badge + in_evidenza */}
+      <div className="animate-fade-up relative rounded-2xl overflow-hidden mb-8 min-h-[300px]">
                 {corpo.immagine_url && !heroImgError ? (
                     <img loading="lazy" src={corpo.immagine_url} alt={corpo.nome}
                         className="w-full h-64 lg:h-80 object-cover"
@@ -102,7 +108,7 @@ export default function CorpoDettaglio() {
                         <FallbackIcon size={96} className="text-white/40" aria-hidden="true" />
                     </div>
                 )}
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(transparent 40%, #0A0A1A)' }} />
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(transparent 40%, var(--color-admin-bg))' }} />
                 <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
                     <div className="flex items-center gap-3 mb-2">
                         <CategoriaBadge categoria={corpo.categoria} />
@@ -117,12 +123,14 @@ export default function CorpoDettaglio() {
                 </div>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2 space-y-8">
-                    <section className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+      {/* Layout 2 colonne: contenuto (descrizione, dati, scopritore, galleria, curiosità) */}
+      <div className="grid lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-8">
+          <section className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
                         <p className="text-base leading-relaxed text-admin-dim">{corpo.descrizione}</p>
                     </section>
 
+                    {/* Dati scientifici: griglia 3 colonne, solo campi non null */}
                     <section className="animate-fade-up" style={{ animationDelay: '0.3s' }}>
                         <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-admin-text">
                             <Ruler size={20} className="text-admin-primary" /> Dati Scientifici
@@ -140,6 +148,7 @@ export default function CorpoDettaglio() {
                         </div>
                     </section>
 
+                    {/* Scopritore + anno: condizionale, solo se presenti */}
                     {(corpo.scopritore || corpo.anno_scoperta) && (
                         <section className="animate-fade-up flex gap-6 flex-wrap" style={{ animationDelay: '0.35s' }}>
                             {corpo.scopritore && (
@@ -157,6 +166,7 @@ export default function CorpoDettaglio() {
                         </section>
                     )}
 
+                    {/* Galleria: LightboxGalleria con immagini, solo se presenti */}
                     {corpo.galleria && corpo.galleria.length > 0 && (
                         <section className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
                             <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-admin-text">
@@ -166,6 +176,7 @@ export default function CorpoDettaglio() {
                         </section>
                     )}
 
+                    {/* Curiosità: lista card con titolo, descrizione, fonte */}
                     {corpo.curiosita && corpo.curiosita.length > 0 && (
                         <section className="animate-fade-up" style={{ animationDelay: '0.45s' }}>
                             <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-admin-text">
@@ -186,6 +197,7 @@ export default function CorpoDettaglio() {
                     )}
                 </div>
 
+                {/* Sidebar: missioni timeline + link confronta (solo per pianeti) */}
                 <div className="space-y-8">
                     {corpo.missioni && corpo.missioni.length > 0 && (
                         <section className="animate-slide-right" style={{ animationDelay: '0.4s' }}>
@@ -199,7 +211,7 @@ export default function CorpoDettaglio() {
                     {corpo.categoria?.nome === 'Pianeta' && (
                         <div className="animate-slide-right" style={{ animationDelay: '0.5s' }}>
                             <Link to={`/confronta?primo=${corpo.slug}`}
-                                className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-[rgba(168,85,247,0.2)] hover:border-[rgba(168,85,247,0.4)] bg-admin-secondary/10 text-admin-secondary border border-admin-secondary/20">
+                                className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-admin-secondary/20 hover:border-admin-secondary/40 bg-admin-secondary/10 text-admin-secondary border border-admin-secondary/20">
                                 <OrbitIcon size={16} /> Confronta con un altro pianeta
                             </Link>
                         </div>
@@ -207,7 +219,8 @@ export default function CorpoDettaglio() {
                 </div>
             </div>
 
-            {simili.length > 0 && (
+            {/* Corpi simili: griglia 4 colonne con CorpoCard */}
+      {simili.length > 0 && (
                 <section className="animate-fade-up mt-12" style={{ animationDelay: '0.5s' }}>
                     <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-admin-text">
                         <Star size={20} className="text-admin-primary" /> Corpi Simili

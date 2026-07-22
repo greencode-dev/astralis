@@ -49,10 +49,10 @@
             <table class="w-full text-sm">
                 <thead>
                     <tr class="border-b border-admin-primary/10">
-                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Nome</th>
-                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Categoria</th>
-                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Tipo</th>
-                        <th scope="col" class="text-left py-3 px-4 font-medium text-gray-400">Distanza (km)</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-admin-dim">Nome</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-admin-dim">Categoria</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-admin-dim">Tipo</th>
+                        <th scope="col" class="text-left py-3 px-4 font-medium text-admin-dim">Distanza (km)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,12 +66,12 @@
                             <td class="py-3 px-4">
                                   @include('admin.partials.category-badge', ['color' => $corpo->categoria?->colore, 'name' => $corpo->categoria?->nome ?? '-'])
                             </td>
-                            <td class="py-3 px-4 text-gray-400">{{ $corpo->tipo }}</td>
-                            <td class="py-3 px-4 text-gray-400">{{ $corpo->distanza_km ?? '-' }}</td>
+                            <td class="py-3 px-4 text-admin-dim">{{ $corpo->tipo }}</td>
+                            <td class="py-3 px-4 text-admin-dim">{{ $corpo->distanza_km ?? '-' }}</td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="py-8 text-center text-gray-400">Nessun corpo celeste trovato.</td>
+                            <td colspan="4" class="py-8 text-center text-admin-dim">Nessun corpo celeste trovato.</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -85,8 +85,18 @@
         document.addEventListener('DOMContentLoaded', function () {
             if (typeof Chart === 'undefined') return;
 
-            Chart.defaults.color = '#9CA3AF';
-            Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.05)';
+            var rootStyle = getComputedStyle(document.documentElement);
+            var chartText = rootStyle.getPropertyValue('--color-admin-chart-text').trim() || '#9CA3AF';
+            var gridColor = 'rgba(255, 255, 255, 0.05)';
+            var cardColor = rootStyle.getPropertyValue('--color-admin-card').trim() || '#111128';
+            var primary = rootStyle.getPropertyValue('--color-admin-primary').trim() || '#22D3EE';
+            var secondary = rootStyle.getPropertyValue('--color-admin-secondary').trim() || '#A855F7';
+            var accent = rootStyle.getPropertyValue('--color-admin-accent').trim() || '#F97316';
+            var success = rootStyle.getPropertyValue('--color-admin-success').trim() || '#22C55E';
+            var warning = rootStyle.getPropertyValue('--color-admin-warning').trim() || '#FACC15';
+
+            Chart.defaults.color = chartText;
+            Chart.defaults.borderColor = gridColor;
 
             var chartCategorie = document.getElementById('chart-categorie');
             if (chartCategorie) {
@@ -98,7 +108,7 @@
                             data: @json($corpiPerCategoria->pluck('count')),
                             backgroundColor: @json($corpiPerCategoria->pluck('colore')),
                             borderWidth: 2,
-                            borderColor: '#111128',
+                            borderColor: cardColor,
                         }]
                     },
                     options: {
@@ -120,7 +130,7 @@
                         datasets: [{
                             label: 'Corpi Celesti',
                             data: @json($corpiPerTipo->pluck('count')),
-                            backgroundColor: ['#22D3EE', '#A855F7', '#F97316'],
+                            backgroundColor: [primary, secondary, accent],
                             borderRadius: 6,
                         }]
                     },
@@ -128,8 +138,8 @@
                         responsive: true,
                         maintainAspectRatio: false,
                         scales: {
-                            y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
-                            x: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
+                            y: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: chartText } },
+                            x: { grid: { display: false }, ticks: { color: chartText } }
                         },
                         plugins: { legend: { display: false } }
                     }
@@ -145,7 +155,7 @@
                         datasets: [{
                             label: 'Missioni',
                             data: @json(array_values($missioniPerStato)),
-                            backgroundColor: ['#22C55E', '#22D3EE', '#FACC15'],
+                            backgroundColor: [success, primary, warning],
                             borderRadius: 6,
                         }]
                     },
@@ -154,8 +164,8 @@
                         responsive: true,
                         maintainAspectRatio: false,
                         scales: {
-                            x: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#9CA3AF' } },
-                            y: { grid: { display: false }, ticks: { color: '#9CA3AF' } }
+                            x: { beginAtZero: true, grid: { color: gridColor }, ticks: { color: chartText } },
+                            y: { grid: { display: false }, ticks: { color: chartText } }
                         },
                         plugins: { legend: { display: false } }
                     }

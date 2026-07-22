@@ -17,6 +17,8 @@ const Thumbnail = memo(function Thumbnail({ slide, index, onOpen }) {
                     <img loading="lazy"
                         src={slide.src}
                         alt={slide.alt}
+                        width={4}
+                        height={3}
                         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         onError={() => setError(true)}
                     />

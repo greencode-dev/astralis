@@ -37,12 +37,12 @@
 
             <div class="px-3 py-4 mt-auto space-y-1 border-t border-admin-primary/10">
                 <a href="{{ route('profile.edit') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-admin-dim transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                     Profilo
                 </a>
                 <a href="{{ route('home') }}"
-                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary">
+                   class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-admin-dim transition-all duration-200 rounded-lg hover:bg-admin-primary/8 hover:text-admin-primary">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
                     Torna al sito
                 </a>
@@ -53,14 +53,14 @@
             <header class="flex items-center justify-between px-6 py-5 border-b bg-admin-card border-admin-primary/10">
                 <div class="flex items-center gap-3">
                     <button @click="sidebarOpen = !sidebarOpen"
-                            class="p-2 text-gray-400 rounded-lg md:hidden hover:text-admin-primary hover:bg-admin-primary/10"
+                            class="p-2 text-admin-dim rounded-lg md:hidden hover:text-admin-primary hover:bg-admin-primary/10"
                             aria-label="Apri menu">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                     </button>
                     <h2 class="text-lg font-semibold">@yield('page_title', 'Dashboard')</h2>
                 </div>
                 <div class="flex items-center gap-4">
-                    <span class="text-sm text-gray-400">{{ Auth::user()->name }}</span>
+                    <span class="text-sm text-admin-dim">{{ Auth::user()->name }}</span>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit"

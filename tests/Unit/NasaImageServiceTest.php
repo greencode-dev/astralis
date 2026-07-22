@@ -291,7 +291,7 @@ class NasaImageServiceTest extends TestCase
         $this->assertStringContainsString('già presente', $result['message']);
     }
 
-    public function test_import_for_body_force_overwrites_main_image(): void
+    public function test_import_for_body_force_overwrites_nasa_url(): void
     {
         Http::fake([
             'images-api.nasa.gov/*' => Http::response([
@@ -307,7 +307,7 @@ class NasaImageServiceTest extends TestCase
         ]);
 
         $corpo = CorpoCeleste::factory()->create([
-            'immagine' => 'old.jpg',
+            'immagine' => 'https://old-nasa.gov/broken.tif',
             'immagine_utente' => false,
         ]);
 
@@ -317,6 +317,32 @@ class NasaImageServiceTest extends TestCase
         $this->assertStringContainsString('immagine principale importata', $result['message']);
         $this->assertEquals('https://example.com/fresh.jpg', $corpo->fresh()->immagine);
         $this->assertEquals('PIA999', $corpo->fresh()->nasa_id);
+    }
+
+    public function test_import_for_body_force_preserves_local_image(): void
+    {
+        Http::fake([
+            'images-api.nasa.gov/*' => Http::response([
+                'collection' => [
+                    'items' => [
+                        [
+                            'data' => [['nasa_id' => 'PIA999', 'title' => 'Fresh']],
+                            'links' => [['rel' => 'preview', 'render' => 'image', 'href' => 'https://example.com/fresh.jpg']],
+                        ],
+                    ],
+                ],
+            ]),
+        ]);
+
+        $corpo = CorpoCeleste::factory()->create([
+            'immagine' => 'public/images/solar-system/marte.png',
+            'immagine_utente' => false,
+        ]);
+
+        $result = $this->service->importForBody($corpo, 3, true);
+
+        $this->assertTrue($result['success']);
+        $this->assertEquals('public/images/solar-system/marte.png', $corpo->fresh()->immagine);
     }
 
     public function test_import_for_body_force_does_not_overwrite_user_image(): void

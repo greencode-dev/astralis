@@ -76,6 +76,6 @@ class CorpoCelesteTest extends TestCase
             'immagine' => 'public/images/solar-system/terra.png',
         ]);
 
-        $this->assertEquals('/public/images/solar-system/terra.png', $corpo->immagine_url);
+        $this->assertEquals('/images/solar-system/terra.png', $corpo->immagine_url);
     }
 }

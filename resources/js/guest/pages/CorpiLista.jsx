@@ -90,7 +90,7 @@ export default function CorpiLista() {
                     {hasFilters && (
                         <button
                             onClick={resetFilters}
-                            className="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[rgba(249,115,22,0.1)] text-admin-accent border border-admin-accent/30"
+                            className="px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-admin-accent/10 text-admin-accent border border-admin-accent/30"
                         >
                             Reset filtri
                         </button>
@@ -104,7 +104,7 @@ export default function CorpiLista() {
                             key={cat.id}
                             onClick={() => handleCategoria(cat.slug)}
                             aria-current={categoriaSlug === cat.slug ? 'page' : undefined}
-                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-admin-primary/8 hover:text-admin-primary ${categoriaSlug === cat.slug ? 'bg-admin-primary/15 text-admin-primary border border-admin-primary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
+                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-admin-primary/8 hover:text-admin-primary focus-visible:ring-2 focus-visible:ring-admin-primary focus-visible:outline-none ${categoriaSlug === cat.slug ? 'bg-admin-primary/15 text-admin-primary border border-admin-primary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
                         >
                             {cat.nome}
                             {cat.corpi_count !== undefined && (
@@ -121,7 +121,7 @@ export default function CorpiLista() {
                             key={t}
                             onClick={() => handleTipo(t)}
                             aria-current={tipo === t ? 'page' : undefined}
-                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-admin-secondary/8 hover:text-admin-secondary ${tipo === t ? 'bg-admin-secondary/15 text-admin-secondary border border-admin-secondary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
+                            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:bg-admin-secondary/8 hover:text-admin-secondary focus-visible:ring-2 focus-visible:ring-admin-secondary focus-visible:outline-none ${tipo === t ? 'bg-admin-secondary/15 text-admin-secondary border border-admin-secondary/40' : 'bg-white/5 text-admin-dim border border-transparent'}`}
                         >
                             {t}
                         </button>
@@ -163,7 +163,7 @@ export default function CorpiLista() {
                                 onClick={() => setPage(p => Math.max(1, p - 1))}
                                 disabled={page === 1}
                                 aria-label="Pagina precedente"
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-admin-primary/10 text-admin-primary border border-admin-primary/30"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-admin-primary/10 text-admin-primary border border-admin-primary/30 focus-visible:ring-2 focus-visible:ring-admin-primary focus-visible:outline-none"
                             >
                                 ← Precedente
                             </button>
@@ -174,7 +174,7 @@ export default function CorpiLista() {
                                     .map((p, idx, arr) => (
                                         <span key={p} className="flex items-center">
                                             {idx > 0 && arr[idx - 1] !== p - 1 && (
-                                                <span className="px-1 text-admin-muted">...</span>
+                                                <span className="px-1 text-admin-muted">…</span>
                                             )}
                                             <button
                                                 onClick={() => setPage(p)}
@@ -191,7 +191,7 @@ export default function CorpiLista() {
                                 onClick={() => setPage(p => Math.min(lastPage, p + 1))}
                                 disabled={page === lastPage}
                                 aria-label="Pagina successiva"
-                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-admin-primary/10 text-admin-primary border border-admin-primary/30"
+                                className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-30 hover:bg-admin-primary/10 text-admin-primary border border-admin-primary/30 focus-visible:ring-2 focus-visible:ring-admin-primary focus-visible:outline-none"
                             >
                                 Successiva →
                             </button>

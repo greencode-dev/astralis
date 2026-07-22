@@ -18,6 +18,8 @@
     --color-admin-success: #22C55E;
     --color-admin-error: #EF4444;
     --color-admin-neutral: #6B7280;
+    --color-admin-text-on-warning: #1A1A2E;
+    --color-admin-shadow-primary: #22D3EE1A;
     --color-admin-chart-text: #9CA3AF;
 }
 
@@ -131,4 +133,13 @@
 .loading-dots::after {
     content: '...';
     animation: loadingDots 1.4s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

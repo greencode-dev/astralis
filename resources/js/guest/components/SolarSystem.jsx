@@ -1,6 +1,8 @@
+// Componente: sistema solare animato. 8 pianeti con requestAnimationFrame, velocità differenziate, hover slow
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+// Config: dimensione contenitore, orbite min/max/step, centro sistema
 const CONTENT_SIZE = 900;
 
 const ORBIT_MIN = 130;
@@ -9,6 +11,7 @@ const ORBIT_STEP = (ORBIT_MAX - ORBIT_MIN) / 7;
 
 const SOLAR_CENTER = { x: 450, y: 450 };
 
+// Planets data: 8 pianeti con nome, slug, size, orbit (px), color, speed, img path
 const planets = [
     {
         name: "Mercurio",
@@ -84,26 +87,34 @@ const planets = [
     },
 ];
 
+// Componente Planet: singolo pianeta animato con orbita
 function Planet({ planet, hovered }) {
-    const divRef = useRef(null);
+  // Refs: divRef (DOM), angleRef (angolo corrente), lastTimeRef (timestamp)
+  const divRef = useRef(null);
     const angleRef = useRef(Math.random() * 360);
     const lastTimeRef = useRef(null);
     const [imgError, setImgError] = useState(false);
 
-    useEffect(() => {
-        let rafId;
-        const degreesPerSec = 360 / (planet.speed * 4);
+  useEffect(() => {
+    const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
 
-        const tick = (time) => {
+    let rafId;
+    const degreesPerSec = 360 / (planet.speed * 4);
+
+    // requestAnimationFrame loop: calcola dt, aggiorna angolo, posiziona con sin/cos
+    const tick = (time) => {
             if (lastTimeRef.current === null) lastTimeRef.current = time;
             const dt = (time - lastTimeRef.current) / 1000;
             lastTimeRef.current = time;
 
-            const multiplier = hovered ? 0.11 : 0.33;
+            // Hover: se hovered, rallenta a 0.11x (altrimenti 0.33x)
+        const multiplier = hovered ? 0.11 : 0.33;
             angleRef.current =
                 (angleRef.current + degreesPerSec * multiplier * dt) % 360;
 
-            const rad = (angleRef.current * Math.PI) / 180;
+            // Posizionamento: x = sin(rad)*orbit, y = -cos(rad)*orbit, trasforma via style
+        const rad = (angleRef.current * Math.PI) / 180;
             const x = Math.sin(rad) * planet.orbit;
             const y = -Math.cos(rad) * planet.orbit;
 
@@ -129,10 +140,13 @@ function Planet({ planet, hovered }) {
                 className="block planet-hover text-center"
                 aria-label={planet.name}
             >
-                {!imgError ? (
+                {/* Immagine: fallback a cerchio colorato se imgError */}
+            {!imgError ? (
                     <img
                         src={planet.img}
                         alt={planet.name}
+                        width={planet.size}
+                        height={planet.size}
                         className="rounded-full object-contain"
                         style={{
                             width: planet.size,
@@ -166,11 +180,14 @@ function Planet({ planet, hovered }) {
     );
 }
 
+// Componente SolarSystem: contenitore responsive + ResizeObserver
 export default function SolarSystem({ showStars = true }) {
-    const containerRef = useRef(null);
-    const [scale, setScale] = useState(1);
-    const [hovered, setHovered] = useState(false);
-    const stars = useMemo(
+  const containerRef = useRef(null);
+  const [scale, setScale] = useState(1);
+  const [hovered, setHovered] = useState(false);
+
+  // Stars: 50 punti animati, generati una volta (useMemo), dimensioni casuali
+  const stars = useMemo(
         () =>
             Array.from({ length: 50 }, (_, i) => ({
                 id: i,
@@ -183,10 +200,11 @@ export default function SolarSystem({ showStars = true }) {
         [],
     );
 
-    useEffect(() => {
-        const el = containerRef.current;
-        if (!el) return;
-        const ro = new ResizeObserver((entries) => {
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    // Responsive: ResizeObserver scala il contenitore in base alla finestra
+    const ro = new ResizeObserver((entries) => {
             const w = entries[0].contentRect.width;
             setScale(Math.min(1, w / CONTENT_SIZE));
         });
@@ -230,6 +248,7 @@ export default function SolarSystem({ showStars = true }) {
                 </div>
             )}
 
+            {/* Contenitore: positioning assoluto, scala responsive */}
             <div
                 className="absolute"
                 style={{
@@ -241,6 +260,7 @@ export default function SolarSystem({ showStars = true }) {
                     transformOrigin: "center",
                 }}
             >
+                {/* Sole: Link al dettaglio, immagine 150px, pulse animato */}
                 <Link
                     to="/corpi-celesti/sole"
                     className="absolute z-10 planet-hover group"
@@ -255,6 +275,8 @@ export default function SolarSystem({ showStars = true }) {
                         <img
                             src="/images/solar-system/sole.png"
                             alt="Sole"
+                            width={150}
+                            height={150}
                             className="rounded-full object-contain"
                             style={{
                                 width: 150,
@@ -267,6 +289,7 @@ export default function SolarSystem({ showStars = true }) {
                     </div>
                 </Link>
 
+                {/* Orbite + pianeti: render cerchi orbitali + componenti Planet */}
                 <div className="absolute inset-0 z-[5] pointer-events-none">
                     <div
                         className="absolute pointer-events-auto"

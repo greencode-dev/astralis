@@ -47,7 +47,7 @@ describe('CorpoDettaglio', () => {
         });
 
         expect(screen.getByText('Il terzo pianeta del sistema solare.')).toBeInTheDocument();
-        expect(screen.getByText('roccioso')).toBeInTheDocument();
+        expect(screen.getAllByText('roccioso').length).toBeGreaterThanOrEqual(1);
     });
 
     it('displays "in evidenza" badge', async () => {

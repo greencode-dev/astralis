@@ -1,4 +1,5 @@
 <?php
+// CRUD CorpoCeleste: 7 metodi + suggestNome + galleryAdd + setImageFromGallery
 
 namespace App\Http\Controllers\Admin;
 
@@ -20,13 +21,17 @@ use Illuminate\View\View;
 
 class CorpoCelesteController extends Controller
 {
+    // Invalida cache dashboard dopo ogni CRUD
     use ClearDashboardCache;
+
+    // Index: elenco corpi con ricerca full-text su nome + nome_en, paginazione 20
     public function index(Request $request): View
     {
         $this->authorize('viewAny', CorpoCeleste::class);
 
         $query = CorpoCeleste::with('categoria');
 
+        // Query search: escape LIKE + whereGroup su nome (IT) e nome_en (EN)
         if ($search = $request->get('search')) {
             $safe = static::escapeLike($search);
             $query->where(function ($q) use ($safe) {
@@ -40,6 +45,7 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.index', compact('corpi'));
     }
 
+    // Create: form vuoto con lista categorie
     public function create(): View
     {
         $this->authorize('create', CorpoCeleste::class);
@@ -49,12 +55,14 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.create', compact('categorie'));
     }
 
+    // Store: validazione FormRequest + upload file opzionale + crea record
     public function store(StoreCorpoCelesteRequest $request, ImageUploadService $uploader): RedirectResponse
     {
         $this->authorize('create', CorpoCeleste::class);
 
         $validated = $request->validated();
 
+        // Upload: file → ImageUploadService, URL → flag immagine_utente
         if ($request->hasFile('immagine_file')) {
             $validated['immagine'] = $uploader->upload($request->file('immagine_file'), 'corpi-celesti');
             $validated['immagine_utente'] = true;
@@ -72,6 +80,7 @@ class CorpoCelesteController extends Controller
             ->with('success', 'Corpo celeste creato con successo.');
     }
 
+    // Show: eager loading di 4 relazioni (categoria, galleria, curiosità, missioni)
     public function show(CorpoCeleste $corpoCeleste): View
     {
         $this->authorize('view', $corpoCeleste);
@@ -81,6 +90,7 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.show', compact('corpoCeleste'));
     }
 
+    // Edit: form pre-compilato con lista categorie
     public function edit(CorpoCeleste $corpoCeleste): View
     {
         $this->authorize('update', $corpoCeleste);
@@ -90,12 +100,14 @@ class CorpoCelesteController extends Controller
         return view('admin.corpi-celesti.edit', compact('corpoCeleste', 'categorie'));
     }
 
+    // Update: validazione + cancella vecchia immagine locale se sostituita
     public function update(UpdateCorpoCelesteRequest $request, CorpoCeleste $corpoCeleste, ImageUploadService $uploader): RedirectResponse
     {
         $this->authorize('update', $corpoCeleste);
 
         $validated = $request->validated();
 
+        // Swap immagine: se nuovo file, delete vecchia (solo se locale), upload nuova
         if ($request->hasFile('immagine_file')) {
             if ($corpoCeleste->immagine && !str_starts_with($corpoCeleste->immagine, 'http')) {
                 Storage::disk('public')->delete('corpi-celesti/' . $corpoCeleste->immagine);
@@ -116,12 +128,14 @@ class CorpoCelesteController extends Controller
             ->with('success', 'Corpo celeste aggiornato con successo.');
     }
 
+    // Destroy: cancella immagini galleria + copertina dallo Storage, poi delete record
     public function destroy(CorpoCeleste $corpoCeleste): RedirectResponse
     {
         $this->authorize('delete', $corpoCeleste);
 
         $corpoCeleste->load('galleria');
 
+        // Cleanup: elimina file galleria + copertina da disk public (solo se locali)
         foreach ($corpoCeleste->galleria as $img) {
             if (!str_starts_with($img->percorso, 'http')) {
                 Storage::disk('public')->delete('galleria/' . $img->percorso);
@@ -140,6 +154,7 @@ class CorpoCelesteController extends Controller
             ->with('success', 'Corpo celeste eliminato con successo.');
     }
 
+    // setImageFromGallery: valida ownership, imposta percorso galleria come copertina
     public function setImageFromGallery(CorpoCeleste $corpoCeleste, GalleriaCorpo $galleriaCorpo): RedirectResponse
     {
         $this->authorize('update', $corpoCeleste);
@@ -159,6 +174,7 @@ class CorpoCelesteController extends Controller
             ->with('success', 'Immagine principale aggiornata con successo.');
     }
 
+    // galleryAdd: AJAX JSON, aggiunge immagine alla galleria con ordine incrementale
     public function galleryAdd(Request $request, CorpoCeleste $corpoCeleste): \Illuminate\Http\JsonResponse
     {
         $this->authorize('update', $corpoCeleste);
@@ -177,6 +193,7 @@ class CorpoCelesteController extends Controller
         return response()->json(['success' => true]);
     }
 
+    // suggestNome: 3 tentativi — 1) search con nome_en 2) translate IT→EN + search 3) MyMemory API fallback
     public function suggestNome(SuggestNomeRequest $request, NasaImageService $nasaService, WordMapService $wordMapService): \Illuminate\Http\JsonResponse
     {
         $this->authorize('viewAny', CorpoCeleste::class);

@@ -1,3 +1,4 @@
+// Pagina: confronto 2 corpi su 7 metriche. State da URL params, selezione dinamica
 import { useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { ArrowLeft, Ruler, RotateCcw } from 'lucide-react';
@@ -6,6 +7,7 @@ import { useFetch } from '../hooks/useFetch';
 import { formatScientific, formatNumber, formatDistance } from '../utils';
 import CategoriaBadge from '../components/CategoriaBadge';
 
+// Campi confronto: 7 metriche con key, label, format function
 const campi = [
     { key: 'tipo', label: 'Tipo' },
     { key: 'massa_kg', label: 'Massa', format: v => formatScientific(v) + ' kg' },
@@ -17,7 +19,8 @@ const campi = [
 ];
 
 export default function Comparatore() {
-    const [searchParams, setSearchParams] = useSearchParams();
+  // URL state: searchParams per primo/secondo slug, setSlug aggiorna URL
+  const [searchParams, setSearchParams] = useSearchParams();
     const primoSlug = searchParams.get('primo') || '';
     const secondoSlug = searchParams.get('secondo') || '';
 
@@ -33,7 +36,8 @@ export default function Comparatore() {
         }, { replace: true });
     }
 
-    const { data: corpiData, error: corpiError } = useFetch(
+    // Fetch: lista pianeti (per select) + fetch primo/secondo (condizionale)
+  const { data: corpiData, error: corpiError } = useFetch(
         signal => fetchCorpiCelesti({ categoria: 'pianeta', per_page: 100 }, signal), []
     );
     const { data: primoData, loading: loadingPrimo } = useFetch(
@@ -45,11 +49,13 @@ export default function Comparatore() {
         [secondoSlug]
     );
 
-    useEffect(() => {
-        document.title = 'Confronta Pianeti — Astralis';
-    }, []);
+  // Document title: "Confronta Pianeti — Astralis"
+  useEffect(() => {
+    document.title = 'Confronta Pianeti — Astralis';
+  }, []);
 
-    const loading = loadingPrimo || loadingSecondo;
+    // Derived state: loading, corpi, primo, secondo, hasBoth
+  const loading = loadingPrimo || loadingSecondo;
     const corpi = corpiData?.data || [];
     const primo = primoData?.data || primoData || null;
     const secondo = secondoData?.data || secondoData || null;
@@ -73,6 +79,7 @@ export default function Comparatore() {
                     </div>
                 )}
 
+                {/* Render select: mappa primo/secondo, filtro per evitare duplicati, reset button */}
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                     {['primo', 'secondo'].map(pos => {
                         const isPrimo = pos === 'primo';
@@ -90,7 +97,7 @@ export default function Comparatore() {
                                         id={selectId}
                                         value={slug}
                                         onChange={e => setSlug(pos, e.target.value)}
-                                        className="w-full px-4 py-3 rounded-xl text-sm outline-hidden appearance-none transition-all duration-200 bg-admin-card text-admin-text border border-admin-primary/20 focus:border-admin-primary/50"
+                                        className="w-full px-4 py-3 rounded-xl text-sm outline-hidden appearance-none transition-all duration-200 bg-admin-card text-admin-text border border-admin-primary/20 focus:border-admin-primary/50 focus-visible:ring-2 focus-visible:ring-admin-primary/30"
                                     >
                                         <option value="">Seleziona un pianeta...</option>
                                         {corpi.filter(p => {
@@ -115,6 +122,7 @@ export default function Comparatore() {
                     })}
                 </div>
 
+                {/* Tabella confronto: header nomi + 7 righe con alternating bg */}
                 {loading ? (
                     <div className="animate-pulse space-y-4">
                         {Array.from({ length: 7 }).map((_, i) => (
@@ -124,6 +132,7 @@ export default function Comparatore() {
                 ) : hasBoth ? (
                     <div className="animate-fade-in rounded-2xl overflow-hidden border border-admin-primary/10" style={{ animationDelay: '0.3s' }}>
 
+                        {/* Header: nome primo + nome secondo */}
                         <div className="grid grid-cols-3 gap-4 p-4 bg-admin-card border-b border-admin-primary/10">
                             <div />
                             <div className="text-center">
@@ -136,6 +145,7 @@ export default function Comparatore() {
                             </div>
                         </div>
 
+                        {/* Riga: campo, valore primo, valore secondo, formattazione personalizzata */}
                         {campi.map((campo, idx) => {
                             const valPrimo = primo[campo.key];
                             const valSecondo = secondo[campo.key];

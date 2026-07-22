@@ -106,7 +106,7 @@ export default function HomePage() {
                             <div className="flex flex-wrap gap-4">
                                 <Link
                                     to="/corpi-celesti"
-                                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:brightness-110 bg-admin-primary text-admin-bg"
+                                    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:brightness-110 bg-admin-primary text-admin-bg focus-visible:ring-2 focus-visible:ring-admin-primary focus-visible:outline-none"
                                 >
                                     <Telescope size={20} />
                                     Esplora i Corpi Celesti
@@ -204,7 +204,7 @@ export default function HomePage() {
                     <div className="text-center mt-10">
                         <Link
                             to="/corpi-celesti"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-admin-primary/10 hover:border-admin-primary/60 text-admin-primary border border-admin-primary/30"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-admin-primary/10 hover:border-admin-primary/60 text-admin-primary border border-admin-primary/30 focus-visible:ring-2 focus-visible:ring-admin-primary focus-visible:outline-none"
                         >
                             Vedi tutti i corpi celesti →
                         </Link>

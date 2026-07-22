@@ -1,6 +1,6 @@
 @if ($show)
     <span @class([
-        'inline-flex items-center gap-1 rounded-full text-xs font-medium bg-yellow-400/15 text-yellow-400',
+        'inline-flex items-center gap-1 rounded-full text-xs font-medium bg-admin-warning/15 text-admin-warning',
         'px-2 py-0.5' => ($size ?? 'sm') === 'sm',
         'px-3 py-1 mt-3' => ($size ?? 'sm') === 'lg',
     ])>

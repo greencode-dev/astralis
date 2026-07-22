@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CorpoCelesteController.php": {
-    "mtime": 1784707889.6431532,
-    "ast_hash": "f29f93c348b1768f4f0a22c4b84de79d",
+    "mtime": 1784616638.7328994,
+    "ast_hash": "dd7b981a7d049d637bc534739e3e081c",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/CuriositaController.php": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/DashboardController.php": {
-    "mtime": 1784707861.8760211,
-    "ast_hash": "b1d9778efb41c08175a4749f438243e8",
+    "mtime": 1784354654.1283536,
+    "ast_hash": "6c8d35a49ea115eebfe5bfda55cc74ef",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/GalleriaController.php": {
@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Admin/NasaImportController.php": {
-    "mtime": 1784707873.106889,
-    "ast_hash": "ff9db7d4d82d895c4dfbb8d002c411f6",
+    "mtime": 1784208942.0322115,
+    "ast_hash": "4d1f889da7ba27c5d4b4232df20e8514",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Api/CategoriaController.php": {
@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "app/Http/Controllers/Api/CorpoCelesteController.php": {
-    "mtime": 1784707917.590007,
-    "ast_hash": "316c35e746dbe1edae6345d13f22dccd",
+    "mtime": 1784616638.7338972,
+    "ast_hash": "1cf6731afe8da77ab75eb9319ef09ff4",
     "semantic_hash": ""
   },
   "app/Http/Controllers/Api/CuriositaController.php": {
@@ -160,28 +160,28 @@
     "semantic_hash": ""
   },
   "app/Models/Categoria.php": {
-    "mtime": 1784707787.6266465,
-    "ast_hash": "d0c26fa21ed2aacd67800e454a5f0fc3",
+    "mtime": 1784208942.045708,
+    "ast_hash": "4b22092509fb2de152e9681cd1825312",
     "semantic_hash": ""
   },
   "app/Models/CorpoCeleste.php": {
-    "mtime": 1784707828.8932493,
-    "ast_hash": "d51cc2050401ecc557633f14741fbc88",
+    "mtime": 1784616638.7385657,
+    "ast_hash": "ca078e692c709455c3c81c5ba92fb47d",
     "semantic_hash": ""
   },
   "app/Models/Curiosita.php": {
-    "mtime": 1784707778.4351819,
-    "ast_hash": "f29c6f85b7ce2f0b2873971b2db50c78",
+    "mtime": 1784208942.045708,
+    "ast_hash": "9c0753de3715f862886c6b2f4ef46a1b",
     "semantic_hash": ""
   },
   "app/Models/GalleriaCorpo.php": {
-    "mtime": 1784707796.2593222,
-    "ast_hash": "03fce27755bf3e1fab6069968690851e",
+    "mtime": 1784208942.045708,
+    "ast_hash": "27c92d9c9c07c4d7278d01830928e9c9",
     "semantic_hash": ""
   },
   "app/Models/Missione.php": {
-    "mtime": 1784707793.1819203,
-    "ast_hash": "8bbd7187b3f995e7bc44039cbb4dc751",
+    "mtime": 1784208942.045708,
+    "ast_hash": "44f8e3be37412d8162fd858cbca915a8",
     "semantic_hash": ""
   },
   "app/Models/User.php": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "app/Services/NasaImageService.php": {
-    "mtime": 1784709057.957506,
-    "ast_hash": "e22c61e633d907e02b07910eb9d8f4ad",
+    "mtime": 1784616638.7385657,
+    "ast_hash": "90586fe58d3eba8b0d202f1289832505",
     "semantic_hash": ""
   },
   "artisan": {
@@ -360,8 +360,8 @@
     "semantic_hash": ""
   },
   "database/seeders/GalleriaCorpoSeeder.php": {
-    "mtime": 1784707262.584491,
-    "ast_hash": "5a1b7934013f15f03a5b4fe53a5652ec",
+    "mtime": 1784208942.0692294,
+    "ast_hash": "29acfa2bceb67af3c25900f1d07c2c90",
     "semantic_hash": ""
   },
   "database/seeders/MissioneSeeder.php": {
@@ -390,13 +390,13 @@
     "semantic_hash": ""
   },
   "resources/js/guest/App.jsx": {
-    "mtime": 1784708062.795674,
-    "ast_hash": "5ea12c3a5a19ce676acc8dacc81458d4",
+    "mtime": 1784353004.9189262,
+    "ast_hash": "fd744717f2cffed30d197b199b24b96c",
     "semantic_hash": ""
   },
   "resources/js/guest/apiClient.js": {
-    "mtime": 1784709107.4193656,
-    "ast_hash": "37219dea31a02e709f8debf7fdada314",
+    "mtime": 1784353004.9189262,
+    "ast_hash": "26b8a3aeb46aae7551d49bb8aa89290b",
     "semantic_hash": ""
   },
   "resources/js/guest/components/CategoriaBadge.jsx": {
@@ -405,8 +405,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/components/CorpoCard.jsx": {
-    "mtime": 1784709652.9282339,
-    "ast_hash": "4fa7dcc00f66f1ae796ef87d3c23b7b3",
+    "mtime": 1784702074.54488,
+    "ast_hash": "86b30c7ca3356afdf89f3bd10828384d",
     "semantic_hash": ""
   },
   "resources/js/guest/components/Footer.jsx": {
@@ -415,8 +415,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/components/LightboxGalleria.jsx": {
-    "mtime": 1784709654.9649572,
-    "ast_hash": "5fda729d7a01f3313efdc7e58fb2da33",
+    "mtime": 1784208942.1062236,
+    "ast_hash": "73c7a4001a7e4dc9b67de16bb0bf8c06",
     "semantic_hash": ""
   },
   "resources/js/guest/components/Navbar.jsx": {
@@ -430,38 +430,38 @@
     "semantic_hash": ""
   },
   "resources/js/guest/components/SolarSystem.jsx": {
-    "mtime": 1784709774.9834342,
-    "ast_hash": "f9b0b2b5c74d61640934d5e2a6ecffcf",
+    "mtime": 1784616638.7900312,
+    "ast_hash": "b8b5fde6ebf9a9087e31bcdf2ecb5264",
     "semantic_hash": ""
   },
   "resources/js/guest/components/TimelineMissioni.jsx": {
-    "mtime": 1784709296.1287096,
-    "ast_hash": "a4b5ecfcbb74a5530f8f1fa79eca7f42",
+    "mtime": 1784353004.9199326,
+    "ast_hash": "f8e9d0ab3f7778089e150a1332b3258b",
     "semantic_hash": ""
   },
   "resources/js/guest/main.jsx": {
-    "mtime": 1784708054.5138364,
-    "ast_hash": "927e157a393a163c0f8d09f5ea636511",
+    "mtime": 1784208942.1191347,
+    "ast_hash": "eb70d255aac7067c22de3b8f55d254ea",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/Comparatore.jsx": {
-    "mtime": 1784709679.7408445,
-    "ast_hash": "e9c2a4936f04dfee3e77cea047a8394b",
+    "mtime": 1784353004.9199326,
+    "ast_hash": "89a85bce13a3630a8fcaa2013b2ec4a0",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/CorpiLista.jsx": {
-    "mtime": 1784709692.4973314,
-    "ast_hash": "02161e136bc180a36ea27a2799cd6794",
+    "mtime": 1784353004.9199326,
+    "ast_hash": "dc723622cfa9686103cceb50197042cc",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/CorpoDettaglio.jsx": {
-    "mtime": 1784709382.759029,
-    "ast_hash": "747bc23201923b8457f20d1459dfa263",
+    "mtime": 1784702037.079071,
+    "ast_hash": "e014aabfa9049e5691b74a82b437809e",
     "semantic_hash": ""
   },
   "resources/js/guest/pages/HomePage.jsx": {
-    "mtime": 1784709683.074316,
-    "ast_hash": "15b56a46aefa9f88ca4788549fdcaca6",
+    "mtime": 1784616638.7900312,
+    "ast_hash": "fb8674b3f429b8c9d2aad1fa5ebf6c24",
     "semantic_hash": ""
   },
   "resources/views/admin/categorie/create.blade.php": {
@@ -520,8 +520,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/dashboard.blade.php": {
-    "mtime": 1784709594.111454,
-    "ast_hash": "e58f1a105e21858e34f9cb0b3e50d2e0",
+    "mtime": 1784639497.372223,
+    "ast_hash": "a11cae7394c5cd121998001f30c44e87",
     "semantic_hash": ""
   },
   "resources/views/admin/galleria/create.blade.php": {
@@ -540,8 +540,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/layouts/app.blade.php": {
-    "mtime": 1784709557.2990222,
-    "ast_hash": "09ed4f9f72226c85b8f2073a37b5fee2",
+    "mtime": 1784638730.3195446,
+    "ast_hash": "c2944d0a01d01a41210556ad75f0d963",
     "semantic_hash": ""
   },
   "resources/views/admin/missioni/create.blade.php": {
@@ -575,8 +575,8 @@
     "semantic_hash": ""
   },
   "routes/api.php": {
-    "mtime": 1784707764.6545143,
-    "ast_hash": "54a27d96093dfad344d65772265a99a4",
+    "mtime": 1784208942.1468492,
+    "ast_hash": "9267f65eda1d3490742c908ad6aea886",
     "semantic_hash": ""
   },
   "routes/auth.php": {
@@ -590,8 +590,8 @@
     "semantic_hash": ""
   },
   "routes/web.php": {
-    "mtime": 1784707757.951999,
-    "ast_hash": "c3eabebe755da0972a23537846406261",
+    "mtime": 1784620810.0247655,
+    "ast_hash": "e77e36faa915c7ba8ff9305ff78a0da4",
     "semantic_hash": ""
   },
   "tests/Feature/Auth/AuthenticationTest.php": {
@@ -650,8 +650,8 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1784710811.1563258,
-    "ast_hash": "7641d3aeba08002e7337cfa50ef07ee6",
+    "mtime": 1784702402.265526,
+    "ast_hash": "69c9f7b1ceaa668162f25e906036713a",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
@@ -660,8 +660,8 @@
     "semantic_hash": ""
   },
   "docs/todo.md": {
-    "mtime": 1784709892.2565148,
-    "ast_hash": "2e7d8fc828848ce07e6f4afaff2d3d10",
+    "mtime": 1784702354.330924,
+    "ast_hash": "a379461722d47c8a8f67cf8b73233490",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "app/Observers/CorpoCelesteObserver.php": {
-    "mtime": 1784707830.190762,
-    "ast_hash": "04d5387b3d08b8e949222b5d6d5e0967",
+    "mtime": 1784218198.8314233,
+    "ast_hash": "e7e6709c047cbee92b4cea6b626331c3",
     "semantic_hash": ""
   },
   "app/Console/Commands/CleanupGalleryDuplicates.php": {
@@ -690,13 +690,13 @@
     "semantic_hash": ""
   },
   "app/Policies/CategoriaPolicy.php": {
-    "mtime": 1784707774.3436036,
-    "ast_hash": "6d54e71e85e6507e7f5a5ada7d7e368a",
+    "mtime": 1784208942.045708,
+    "ast_hash": "183c781c237d27cbaef60978d2b1de0d",
     "semantic_hash": ""
   },
   "app/Policies/CorpoCelestePolicy.php": {
-    "mtime": 1784707770.936085,
-    "ast_hash": "abfd4b094cb4ab58df50b63ec7b81781",
+    "mtime": 1784208942.045708,
+    "ast_hash": "56dfb72ddc12ff145d6ab41ae6de5f45",
     "semantic_hash": ""
   },
   "app/Policies/CuriositaPolicy.php": {
@@ -715,8 +715,8 @@
     "semantic_hash": ""
   },
   "app/Providers/AuthServiceProvider.php": {
-    "mtime": 1784707766.9873657,
-    "ast_hash": "a53e715d3631ec5c3e3fddd26da1fa0a",
+    "mtime": 1784208942.045708,
+    "ast_hash": "41dcf4fbd1ada4a15bf95d4ec917834e",
     "semantic_hash": ""
   },
   "database/migrations/2026_07_07_114500_add_is_admin_to_users_table.php": {
@@ -800,8 +800,8 @@
     "semantic_hash": ""
   },
   "app/Services/WordMapService.php": {
-    "mtime": 1784708025.0331795,
-    "ast_hash": "05a860033d295c9c778f2f2732c6b521",
+    "mtime": 1784650057.6228352,
+    "ast_hash": "7895b0a89532a8607f62a8f9ca270d32",
     "semantic_hash": ""
   },
   "database/migrations/2026_07_08_073349_add_indexes_to_corpi_celesti_and_galleria.php": {
@@ -870,8 +870,8 @@
     "semantic_hash": ""
   },
   "tests/Unit/NasaImageServiceTest.php": {
-    "mtime": 1784705973.7641008,
-    "ast_hash": "815a2800b092fb314db04e312194c696",
+    "mtime": 1784353004.9199326,
+    "ast_hash": "afd91ef83898517812331825893d45b1",
     "semantic_hash": ""
   },
   "docs/progetto-finale.md": {
@@ -1025,8 +1025,8 @@
     "semantic_hash": ""
   },
   "app/Jobs/ImportNasaImage.php": {
-    "mtime": 1784707834.360036,
-    "ast_hash": "a26b3fc138e559473edab110dd28136c",
+    "mtime": 1784353004.9104676,
+    "ast_hash": "5a8135923fc1ef161802b5733d709ba3",
     "semantic_hash": ""
   },
   "resources/js/guest/constants.js": {
@@ -1035,8 +1035,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/hooks/useFetch.js": {
-    "mtime": 1784708125.7688756,
-    "ast_hash": "8573970c658d47b7b3a055377e7c3ac9",
+    "mtime": 1784218198.8544197,
+    "ast_hash": "3375f7617d2fd671f8e7a38d6e4b2d2e",
     "semantic_hash": ""
   },
   "resources/js/guest/utils.js": {
@@ -1230,8 +1230,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784710815.7625751,
-    "ast_hash": "9792017129f70fc74c91050f2cd248a0",
+    "mtime": 1784650874.4451356,
+    "ast_hash": "61361a8b779b200566c3019796ce6353",
     "semantic_hash": ""
   },
   "resources/js/guest/hooks/useInView.js": {
@@ -1270,8 +1270,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/partials/index-actions.blade.php": {
-    "mtime": 1784709556.0157416,
-    "ast_hash": "9e0a4ff7c26ff3aed657f7b6bfd7727d",
+    "mtime": 1784620438.7044606,
+    "ast_hash": "56dcecde75322133e12bd2903b2e3f7d",
     "semantic_hash": ""
   },
   "resources/views/admin/partials/show-actions.blade.php": {
@@ -1310,8 +1310,8 @@
     "semantic_hash": ""
   },
   "app/Services/ImageUploadService.php": {
-    "mtime": 1784707853.1716979,
-    "ast_hash": "3b5a23c81cdf2a14ee3ccd5589b23dd3",
+    "mtime": 1784208942.045708,
+    "ast_hash": "b9eb2f72207366098b68b791b4c43603",
     "semantic_hash": ""
   },
   "resources/js/guest/test/ErrorBoundary.test.jsx": {
@@ -1360,8 +1360,8 @@
     "semantic_hash": ""
   },
   "config/admin.php": {
-    "mtime": 1784710657.3082316,
-    "ast_hash": "bd8103459609066a580d370b0fa01d4e",
+    "mtime": 1784218198.8314233,
+    "ast_hash": "edd0b01bba0852342ad0d732f540b632",
     "semantic_hash": ""
   },
   "database/migrations/2026_07_15_090412_alter_corpi_celesti_categoria_foreign_to_restrict.php": {
@@ -1380,8 +1380,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/partials/_sidebar-nav.blade.php": {
-    "mtime": 1784709557.9882162,
-    "ast_hash": "43d04b044aa099e92195e17434bfeed7",
+    "mtime": 1784218198.8664181,
+    "ast_hash": "d5340f60ffdb7d0eb7b5a17780dadd41",
     "semantic_hash": ""
   },
   "resources/views/admin/partials/category-badge.blade.php": {
@@ -1400,8 +1400,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/partials/in-evidenza-badge.blade.php": {
-    "mtime": 1784709556.5434759,
-    "ast_hash": "f48b71150bab199e7a389a8f3426ed0b",
+    "mtime": 1784218198.8694196,
+    "ast_hash": "1f525623fb56c258942142c681d99fbb",
     "semantic_hash": ""
   },
   "resources/views/admin/partials/index-header.blade.php": {
@@ -1460,8 +1460,8 @@
     "semantic_hash": ""
   },
   "tests/Unit/CorpoCelesteTest.php": {
-    "mtime": 1784707326.4432564,
-    "ast_hash": "da38e9cd80d1b7bc44f1d72ca2d4438e",
+    "mtime": 1784616638.8149476,
+    "ast_hash": "5c413bb31d4360b8a5ea243e48a9789a",
     "semantic_hash": ""
   },
   "tests/Unit/ImportNasaImageTest.php": {
@@ -1605,13 +1605,8 @@
     "semantic_hash": ""
   },
   "docs/preparazione-esame.md": {
-    "mtime": 1784710576.3009312,
-    "ast_hash": "be56f0b39db3ad98828b87867ac4f4ef",
-    "semantic_hash": ""
-  },
-  "app/Console/Commands/CheckFileHeaders.php": {
-    "mtime": 1784705887.3379698,
-    "ast_hash": "875c5e1c12e9584afed62327cc3a5130",
+    "mtime": 1784650733.852004,
+    "ast_hash": "c71c205cb6e50d28da2464ccee0b153f",
     "semantic_hash": ""
   }
 }

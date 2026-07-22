@@ -1,4 +1,5 @@
 <?php
+// NASA Import: index (lista corpi), importSingle (1 corpo), importAll (tutti). Dispatcha ImportNasaImage job
 
 namespace App\Http\Controllers\Admin;
 
@@ -11,6 +12,7 @@ use Illuminate\View\View;
 
 class NasaImportController extends Controller
 {
+    // Index: elenco corpi per importazione, paginazione 20
     public function index(): View
     {
         $this->authorize('viewAny', CorpoCeleste::class);
@@ -23,6 +25,7 @@ class NasaImportController extends Controller
         return view('admin.nasa-import.index', compact('corpi'));
     }
 
+    // Import single: dispatcha job ImportNasaImage per 1 corpo
     public function import(CorpoCeleste $corpoCeleste): RedirectResponse
     {
         $this->authorize('update', $corpoCeleste);
@@ -33,11 +36,13 @@ class NasaImportController extends Controller
             ->with('success', "Importazione NASA per {$corpoCeleste->nome} accodata.");
     }
 
+    // Import all: dispatcha job per tutti i corpi senza immagine, delay 2s tra uno
     public function importAll(): RedirectResponse
     {
         $this->authorize('create', CorpoCeleste::class);
 
         $jobs = [];
+        // Chunk: elabora 50 corpi alla volta, coda con delay incrementale
         CorpoCeleste::whereNull('immagine')
             ->chunk(50, function ($corpi) use (&$jobs) {
                 foreach ($corpi as $corpo) {

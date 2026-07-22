@@ -1,4 +1,5 @@
 <?php
+// Job queue: importa immagini NASA. ShouldBeUnique, timeout 60s, 3 retry. Dispatchato da Observer
 
 namespace App\Jobs;
 
@@ -18,21 +19,25 @@ class ImportNasaImage implements ShouldQueue, ShouldBeUnique
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    // Config: 3 tentativi, timeout 60s
     public int $tries = 3;
 
     public int $timeout = 60;
 
+    // Constructor: corpo (serializzato), galleryCount, force flag
     public function __construct(
         public CorpoCeleste $corpo,
         public int $galleryCount = 5,
         public bool $force = false,
     ) {}
 
+    // uniqueId: ID del corpo → previene job duplicati nella coda
     public function uniqueId(): mixed
     {
         return $this->corpo->id;
     }
 
+    // handle: chiama NasaImageService→importForBody + invalida cache dashboard
     public function handle(NasaImageService $nasaService): void
     {
         if (app()->environment('testing')) {
@@ -44,6 +49,7 @@ class ImportNasaImage implements ShouldQueue, ShouldBeUnique
         Cache::forget('api.dashboard.stats');
     }
 
+    // failed: log errore con nome corpo
     public function failed(Throwable $e): void
     {
         Log::error("NASA import fallito per {$this->corpo->nome}: {$e->getMessage()}");

@@ -1,4 +1,5 @@
 <?php
+// Model: 18 campi, BelongsTo(Categoria), HasMany(Galleria,Curiosità), BelongsToMany(Missione). Slug da nome italiano
 
 namespace App\Models;
 
@@ -13,10 +14,13 @@ use Spatie\Sluggable\SlugOptions;
 
 class CorpoCeleste extends Model
 {
+    // Traits: HasFactory (factory), HasSlug (spatie sluggable)
     use HasFactory, HasSlug;
 
+    // Table name esplicito: corpi_celesti
     protected $table = 'corpi_celesti';
 
+    // Fillable: 18 campi, include nome (IT) e nome_en (EN)
     protected $fillable = [
         'nome',
         'nome_en',
@@ -38,6 +42,7 @@ class CorpoCeleste extends Model
         'immagine_utente',
     ];
 
+    // Casts: decimal per precisione numerica, integer per anno, boolean per flag
     protected function casts(): array
     {
         return [
@@ -50,6 +55,7 @@ class CorpoCeleste extends Model
         ];
     }
 
+    // Slug: genera da campo 'nome' (italiano), salva in 'slug'
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
@@ -57,21 +63,25 @@ class CorpoCeleste extends Model
             ->saveSlugsTo('slug');
     }
 
+    // Relazione: BelongsTo Categoria con select ottimizzato
     public function categoria(): BelongsTo
     {
         return $this->belongsTo(Categoria::class)->select('id', 'nome', 'slug', 'icona', 'descrizione', 'colore');
     }
 
+    // Relazione: HasMany GalleriaCorpo, ordinata per 'ordine'
     public function galleria(): HasMany
     {
         return $this->hasMany(GalleriaCorpo::class)->orderBy('ordine');
     }
 
+    // Relazione: HasMany Curiosita, ordine decrescente per data
     public function curiosita(): HasMany
     {
         return $this->hasMany(Curiosita::class)->orderByDesc('created_at');
     }
 
+    // Relazione: BelongsToMany Missione, pivot con tipo_esplorazione + anno_arrivo + timestamps
     public function missioni(): BelongsToMany
     {
         return $this->belongsToMany(Missione::class, 'corpo_celeste_missione')
@@ -79,6 +89,7 @@ class CorpoCeleste extends Model
             ->withTimestamps();
     }
 
+    // Accessor: immagine_url — gestisce 3 casi: URL http, path public/, filename locale
     public function getImmagineUrlAttribute(): ?string
     {
         if (!$this->immagine) {
@@ -88,7 +99,7 @@ class CorpoCeleste extends Model
             return $this->immagine;
         }
         if (str_starts_with($this->immagine, 'public/')) {
-            return '/' . $this->immagine;
+            return '/' . substr($this->immagine, strlen('public/'));
         }
         return Storage::url('corpi-celesti/' . $this->immagine);
     }
