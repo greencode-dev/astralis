@@ -355,18 +355,18 @@
     "semantic_hash": ""
   },
   "database/seeders/DatabaseSeeder.php": {
-    "mtime": 1784208942.068222,
-    "ast_hash": "4c2043c0cbfbbd75897d39ec21ed6d88",
+    "mtime": 1784716005.4431908,
+    "ast_hash": "84d30d45f21f4e997798926941912423",
     "semantic_hash": ""
   },
   "database/seeders/GalleriaCorpoSeeder.php": {
-    "mtime": 1784707262.584491,
-    "ast_hash": "5a1b7934013f15f03a5b4fe53a5652ec",
+    "mtime": 1784716201.0351312,
+    "ast_hash": "fa9ef1dbcbacf163d474f8c0c63a0aca",
     "semantic_hash": ""
   },
   "database/seeders/MissioneSeeder.php": {
-    "mtime": 1784616638.7415695,
-    "ast_hash": "7f305436111905e073614c305b093238",
+    "mtime": 1784715986.3830836,
+    "ast_hash": "a3dc68c8bb56ce4892c143605a47a225",
     "semantic_hash": ""
   },
   "package.json": {
@@ -430,8 +430,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/components/SolarSystem.jsx": {
-    "mtime": 1784709774.9834342,
-    "ast_hash": "f9b0b2b5c74d61640934d5e2a6ecffcf",
+    "mtime": 1784720985.8095233,
+    "ast_hash": "2e71e872b4b555c5abb73e0f60e0be9e",
     "semantic_hash": ""
   },
   "resources/js/guest/components/TimelineMissioni.jsx": {
@@ -540,8 +540,8 @@
     "semantic_hash": ""
   },
   "resources/views/admin/layouts/app.blade.php": {
-    "mtime": 1784709557.2990222,
-    "ast_hash": "09ed4f9f72226c85b8f2073a37b5fee2",
+    "mtime": 1784715930.211466,
+    "ast_hash": "bad451cbf5799dd58b3739075b852b17",
     "semantic_hash": ""
   },
   "resources/views/admin/missioni/create.blade.php": {
@@ -640,8 +640,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1784631071.7181602,
-    "ast_hash": "46d4a217e926e5e202ce7ba5f938f253",
+    "mtime": 1784716291.0774386,
+    "ast_hash": "ed693dbdeef669866df6ad3accfd06a9",
     "semantic_hash": ""
   },
   "docs/bug.md": {
@@ -650,13 +650,13 @@
     "semantic_hash": ""
   },
   "docs/changelog.md": {
-    "mtime": 1784710811.1563258,
-    "ast_hash": "7641d3aeba08002e7337cfa50ef07ee6",
+    "mtime": 1784721367.6959374,
+    "ast_hash": "a4d39decf55eaafa3e477ddc5579a842",
     "semantic_hash": ""
   },
   "docs/documentazione.md": {
-    "mtime": 1784639544.8412745,
-    "ast_hash": "b87d2840afefb2e4d902b68b9d1398ad",
+    "mtime": 1784716145.6208346,
+    "ast_hash": "f08b97a3f3b6138fc11af66ddbe8cb92",
     "semantic_hash": ""
   },
   "docs/todo.md": {
@@ -880,8 +880,8 @@
     "semantic_hash": ""
   },
   "docs/testing.md": {
-    "mtime": 1784630177.7673965,
-    "ast_hash": "e91e01fc05ae073900339fb841b96011",
+    "mtime": 1784716142.0014112,
+    "ast_hash": "a4a96d04ee61e1783b13547a154fc90e",
     "semantic_hash": ""
   },
   "resources/js/guest/test/CategoriaBadge.test.jsx": {
@@ -1040,8 +1040,8 @@
     "semantic_hash": ""
   },
   "resources/js/guest/utils.js": {
-    "mtime": 1784218198.8604178,
-    "ast_hash": "a029bcb1967bcf198a00b7bfce6fd55d",
+    "mtime": 1784716010.9478662,
+    "ast_hash": "90101aa672d43760fa4877bf430452b9",
     "semantic_hash": ""
   },
   "resources/views/admin/partials/back-link.blade.php": {
@@ -1100,8 +1100,8 @@
     "semantic_hash": ""
   },
   ".opencode/skills/astralis-testing/SKILL.md": {
-    "mtime": 1784208942.0043912,
-    "ast_hash": "0e23c97c49aa66094e4764d508fcc432",
+    "mtime": 1784716161.0271726,
+    "ast_hash": "b443949ac692b82eb8749af46fd1c262",
     "semantic_hash": ""
   },
   ".opencode/skills/brand-guidelines/SKILL.md": {
@@ -1230,8 +1230,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1784710815.7625751,
-    "ast_hash": "9792017129f70fc74c91050f2cd248a0",
+    "mtime": 1784716127.56896,
+    "ast_hash": "5787741cd1f1b26bfe0ad3b1eccb158a",
     "semantic_hash": ""
   },
   "resources/js/guest/hooks/useInView.js": {
@@ -1605,13 +1605,18 @@
     "semantic_hash": ""
   },
   "docs/preparazione-esame.md": {
-    "mtime": 1784710576.3009312,
-    "ast_hash": "be56f0b39db3ad98828b87867ac4f4ef",
+    "mtime": 1784721103.8184035,
+    "ast_hash": "2f6f8b3db873d9f5649ff4f8a1cf666a",
     "semantic_hash": ""
   },
   "app/Console/Commands/CheckFileHeaders.php": {
     "mtime": 1784705887.3379698,
     "ast_hash": "875c5e1c12e9584afed62327cc3a5130",
+    "semantic_hash": ""
+  },
+  "docs/preparazione-esame.pdf": {
+    "mtime": 1784721242.5107586,
+    "ast_hash": "612aa5216b63f8ef94bdb97f4f9018b0",
     "semantic_hash": ""
   }
 }

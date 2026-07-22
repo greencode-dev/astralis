@@ -1,16 +1,16 @@
 # Graph Report - astralis  (2026-07-22)
 
 ## Corpus Check
-- 302 files · ~353,150 words
+- 302 files · ~353,976 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1813 nodes · 2820 edges · 216 communities (158 shown, 58 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 315 edges (avg confidence: 0.8)
+- 1814 nodes · 2823 edges · 218 communities (155 shown, 63 thin omitted)
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 317 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a45cb8cf`
+- Built from commit: `6dd7ffd2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -106,6 +106,11 @@
 - Illuminate\Database\Eloquent\Relations\BelongsTo
 - .stats
 - keywords
+- EmailVerificationTest
+- PasswordConfirmationTest
+- Illuminate\Database\Eloquent\Relations\BelongsToMany
+- AuthServiceProvider
+- autoload-dev
 - User.php
 - CorpoCelesteCrudTest
 - .suggestNome
@@ -147,10 +152,7 @@
 - SKILL.md
 - SKILL.md
 - SKILL.md
-- CorpoCelestePolicy
 - MissionePolicy
-- DashboardController.php
-- .missioni
 - admin.partials.color-picker-html
 - Task 40 — Debug generale post-ottimizzazione
 - Fase 1 — Critico React Frontend (P0)
@@ -161,9 +163,9 @@
 - .corpiCelesti
 
 ## God Nodes (most connected - your core abstractions)
-1. `CorpoCeleste` - 174 edges
+1. `CorpoCeleste` - 175 edges
 2. `User` - 84 edges
-3. `GalleriaCorpo` - 79 edges
+3. `GalleriaCorpo` - 80 edges
 4. `Categoria` - 72 edges
 5. `Controller` - 51 edges
 6. `Missione` - 51 edges
@@ -187,11 +189,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (216 total, 58 thin omitted)
+## Communities (218 total, 63 thin omitted)
 
 ### Community 0 - "User"
-Cohesion: 0.29
-Nodes (6): 💡 Consigli, Descrizione, 🎯 Obiettivo, Parte 2: Sito guest in React, Parte 3: Live Coding, Progetto Finale
+Cohesion: 0.14
+Nodes (13): 🔒 Autenticazione e Accesso, 💡 Consigli, Descrizione, 💡 Esempi di Struttura, 📦 Gestione Entità (CRUD), 💻 Note Tecniche, 🎯 Obiettivo, Parte 1: Backoffice in Laravel (+5 more)
 
 ### Community 1 - "db1cb51494627765ac48414e99948e15.php"
 Cohesion: 0.16
@@ -206,20 +208,20 @@ Cohesion: 0.11
 Nodes (4): DashboardController, Missione, DeleteProtectionTest, MissioneCrudTest
 
 ### Community 4 - "Missione"
-Cohesion: 0.07
-Nodes (16): NasaImportController, AuthenticatedSessionController, ConfirmablePasswordController, EmailVerificationNotificationController, EmailVerificationPromptController, NewPasswordController, PasswordController, PasswordResetLinkController (+8 more)
+Cohesion: 0.08
+Nodes (14): NasaImportController, AuthenticatedSessionController, ConfirmablePasswordController, EmailVerificationNotificationController, PasswordController, PasswordResetLinkController, RegisteredUserController, VerifyEmailController (+6 more)
 
 ### Community 5 - "Changelog"
 Cohesion: 0.09
 Nodes (22): 02/07/2026, 03/07/2026, 04/07/2026, 05/07/2026, 06/07/2026, 07/07/2026, 08/07/2026, 09/07/2026 (+14 more)
 
 ### Community 6 - "JsonResource"
-Cohesion: 0.13
-Nodes (11): CorpoCelesteController, CuriositaController, GalleriaController, MissioneController, CorpoCelesteResource, CuriositaResource, GalleriaCorpoResource, MissioneResource (+3 more)
+Cohesion: 0.12
+Nodes (12): CorpoCelesteController, CuriositaController, GalleriaController, MissioneController, NewPasswordController, CategoriaResource, CorpoCelesteResource, CuriositaResource (+4 more)
 
 ### Community 7 - "LoginRequest"
-Cohesion: 0.08
-Nodes (4): Categoria, CategoriaCrudTest, SearchAndFilterTest, ApiEdgeCaseTest
+Cohesion: 0.06
+Nodes (5): Categoria, CategoriaCrudTest, SearchAndFilterTest, ApiEdgeCaseTest, DashboardApiTest
 
 ### Community 8 - "devDependencies"
 Cohesion: 0.13
@@ -235,15 +237,15 @@ Nodes (27): API REST, API REST (Endpoint), Architettura, Astralis — Documentaz
 
 ### Community 13 - "Risolti"
 Cohesion: 0.06
-Nodes (32): [01] bootstrap/cache non scrivibile — 02/07/2026 (ricorrente su Windows), [02] bootstrap.js mancante — 03/07/2026, [03] GalleriaCorpoSeeder percorso con prefisso — 03/07/2026, [04] Vite config missing CSS input — 03/07/2026, [05] CorpoCeleste show view URL galleria sbagliato — 03/07/2026, [06] Sluggable config mancante — 03/07/2026, [07] Profile: Link Inertia intercetta navigazione Blade — 04/07/2026, [08] NASA Import: nomi italiani danno 0 risultati — 04/07/2026 (+24 more)
+Nodes (31): [01] bootstrap/cache non scrivibile — 02/07/2026 (ricorrente su Windows), [02] bootstrap.js mancante — 03/07/2026, [03] GalleriaCorpoSeeder percorso con prefisso — 03/07/2026, [04] Vite config missing CSS input — 03/07/2026, [05] CorpoCeleste show view URL galleria sbagliato — 03/07/2026, [06] Sluggable config mancante — 03/07/2026, [07] Profile: Link Inertia intercetta navigazione Blade — 04/07/2026, [08] NASA Import: nomi italiani danno 0 risultati — 04/07/2026 (+23 more)
 
 ### Community 14 - "Parte 1: Backoffice in Laravel"
 Cohesion: 0.13
 Nodes (8): CategoriaSeeder, CorpoCelesteMissioneSeeder, CorpoCelesteSeeder, CuriositaSeeder, DatabaseSeeder, GalleriaCorpoSeeder, MissioneSeeder, Illuminate\Database\Seeder
 
 ### Community 15 - "🪐 Astralis — Catalogo di Corpi Celesti"
-Cohesion: 0.10
-Nodes (9): CuriositaController, ExamController, UpdateCuriositaRequest, Curiosita, AppLayout, GuestLayout, Illuminate\View\Component, Illuminate\View\View (+1 more)
+Cohesion: 0.13
+Nodes (4): CuriositaController, UpdateCuriositaRequest, Curiosita, CuriositaCrudTest
 
 ### Community 16 - "require"
 Cohesion: 0.29
@@ -251,7 +253,7 @@ Nodes (7): require, intervention/image, laravel/breeze, laravel/framework, larav
 
 ### Community 17 - "composer.json"
 Cohesion: 0.14
-Nodes (13): autoload-dev, psr-4, description, keywords, license, minimum-stability, name, prefer-stable (+5 more)
+Nodes (13): description, extra, laravel, keywords, dont-discover, license, minimum-stability, name (+5 more)
 
 ### Community 18 - "scripts"
 Cohesion: 0.14
@@ -262,8 +264,8 @@ Cohesion: 0.29
 Nodes (7): require-dev, fakerphp/faker, laravel/pail, laravel/pint, mockery/mockery, nunomaduro/collision, phpunit/phpunit
 
 ### Community 20 - "index.md"
-Cohesion: 0.31
-Nodes (3): Collegamenti rapidi, Documentazione Astralis, Indice
+Cohesion: 0.24
+Nodes (4): Bug Tracker, Collegamenti rapidi, Documentazione Astralis, Indice
 
 ### Community 23 - "config"
 Cohesion: 0.29
@@ -274,8 +276,8 @@ Cohesion: 0.06
 Nodes (30): 7. Definizioni PHP, Abstract Classes, Array Associativo, Array Functions, ::class, Classe e Oggetto, Closure e Arrow Function, Constructor Property Promotion (PHP 8.0) (+22 more)
 
 ### Community 25 - "CorpoCeleste.php"
-Cohesion: 0.11
-Nodes (18): 02/07/2026, 03/07/2026, 04/07/2026, 07/07/2026, 08/07/2026, 09/07/2026, 10/07/2026, 11/07/2026 (+10 more)
+Cohesion: 0.09
+Nodes (22): 02/07/2026, 03/07/2026, 04/07/2026, 07/07/2026, 08/07/2026, 09/07/2026, 10/07/2026, 11/07/2026 (+14 more)
 
 ### Community 26 - "UserFactory"
 Cohesion: 0.13
@@ -289,6 +291,10 @@ Nodes (3): ImageUploadService, Illuminate\Http\UploadedFile, Intervention\Image\
 Cohesion: 0.40
 Nodes (5): autoload, psr-4, App\\, Database\\Factories\\, Database\\Seeders\\
 
+### Community 29 - "autoload-dev"
+Cohesion: 0.15
+Nodes (7): MissioneController, EmailVerificationPromptController, AppLayout, GuestLayout, Illuminate\View\Component, Illuminate\View\View, static
+
 ### Community 44 - "DeleteProtectionTest"
 Cohesion: 0.12
 Nodes (17): alpinejs, axios, chart.js, lucide-react, dependencies, alpinejs, axios, chart.js (+9 more)
@@ -297,17 +303,9 @@ Nodes (17): alpinejs, axios, chart.js, lucide-react, dependencies, alpinejs, axi
 Cohesion: 0.50
 Nodes (3): profile.partials.delete-user-form, profile.partials.update-password-form, profile.partials.update-profile-information-form
 
-### Community 48 - "User"
-Cohesion: 0.08
-Nodes (5): User, CategoriaPolicy, CorpoCelestePolicy, Illuminate\Foundation\Auth\User, AuthorizationTest
-
 ### Community 61 - "Dashboard.jsx"
 Cohesion: 0.25
 Nodes (8): post-root-package-install, setup, composer install, npm install --ignore-scripts, npm run build, @php artisan key:generate, @php artisan migrate --force, @php -r \"file_exists('.env') || copy('.env.example', '.env');\
-
-### Community 62 - "EmailVerificationTest"
-Cohesion: 0.14
-Nodes (3): Illuminate\Notifications\Notifiable, EmailVerificationTest, PasswordResetTest
 
 ### Community 75 - "TextInput.jsx"
 Cohesion: 0.08
@@ -370,24 +368,16 @@ Cohesion: 0.11
 Nodes (18): ALGORITHMIC PHILOSOPHY CREATION, CRAFTSMANSHIP REQUIREMENTS, CRITICAL: WHAT'S FIXED VS VARIABLE, DEDUCING THE CONCEPTUAL SEED, ESSENTIAL PRINCIPLES, HOW TO GENERATE AN ALGORITHMIC PHILOSOPHY, INTERACTIVE ARTIFACT CREATION, OUTPUT FORMAT (+10 more)
 
 ### Community 103 - "RefreshDatabase"
-Cohesion: 0.12
-Nodes (7): SlugOptions, SlugOptions, SlugOptions, Illuminate\Database\Eloquent\Relations\BelongsTo, Illuminate\Database\Eloquent\Relations\BelongsToMany, Spatie\Sluggable\HasSlug, Spatie\Sluggable\SlugOptions
+Cohesion: 0.24
+Nodes (7): SlugOptions, SlugOptions, SlugOptions, Illuminate\Database\Eloquent\Factories\HasFactory, Illuminate\Database\Eloquent\Model, Spatie\Sluggable\HasSlug, Spatie\Sluggable\SlugOptions
 
 ### Community 106 - "158a58073f7c339cee02d82d7f1f6a13.php"
 Cohesion: 0.15
 Nodes (13): BelongsTo (N → 1), BelongsToMany (N → N), Come creare una relazione — Comandi Artisan, Come usare le relazioni nelle query, Cos'è una Foreign Key (FK), Domande esame tipiche, HasMany (1 → N), HasManyThrough (1 → N → N) (+5 more)
 
-### Community 107 - "1b91c30f6655ad6258212beb875408ce.php"
-Cohesion: 0.14
-Nodes (3): CuriositaPolicy, AuthServiceProvider, Illuminate\Foundation\Support\Providers\AuthServiceProvider
-
 ### Community 108 - "extra"
 Cohesion: 0.20
 Nodes (10): API e REST — Definizioni e Implementazione, API vs Route — Qual è la differenza?, Come Astralis implementa REST, Cos'è lo standard REST?, Cos'è un'API, Cosa sono gli API Resource?, Creare un API Resource, Domande esame tipiche (+2 more)
-
-### Community 112 - "DashboardController.php"
-Cohesion: 0.29
-Nodes (7): 🔒 Autenticazione e Accesso, 💡 Esempi di Struttura, 📦 Gestione Entità (CRUD), 💻 Note Tecniche, Parte 1: Backoffice in Laravel, ⚙️ Requisiti Minimi, 🖼️ Upload Media
 
 ### Community 114 - "package.json"
 Cohesion: 0.22
@@ -418,28 +408,24 @@ Cohesion: 0.33
 Nodes (6): 3. Postman — Esempi Pratici, Come testare su Postman, Esempio 1 — Homepage (stats + in evidenza), Esempio 2 — Dettaglio Terra, Esempio 3 — Filtri multipli, Esempio 4 — Corpi simili
 
 ### Community 123 - "laravel-vite-plugin"
-Cohesion: 0.17
-Nodes (12): 12. Live Coding — 11 Esercizi con Soluzione, Esercizio 10: Observer — Eventi Eloquent, Esercizio 11: Controller store() — Validazione + Salvataggio, Esercizio 1: Route + Controller + View, Esercizio 2: Array filter/map, Esercizio 3: Somma array di oggetti, Esercizio 4: Somma + Filter + Map (combinato), Esercizio 5: Route POST + Form + Validazione (+4 more)
+Cohesion: 0.15
+Nodes (13): 12. Live Coding — 12 Esercizi con Soluzione, Esercizio 10: Observer — Eventi Eloquent, Esercizio 11: Controller store() — Validazione + Salvataggio, Esercizio 12: Route + View + Array (ciclo for + media), Esercizio 1: Route + Controller + View, Esercizio 2: Array filter/map, Esercizio 3: Somma array di oggetti, Esercizio 4: Somma + Filter + Map (combinato) (+5 more)
 
 ### Community 124 - "2. Traccia → Realizzato"
 Cohesion: 0.50
 Nodes (4): 2. Traccia → Realizzato, Extra Wow Factor, Parte 1 — Backoffice Laravel, Parte 2 — Guest React
 
-### Community 125 - "autoload-dev"
-Cohesion: 0.40
-Nodes (4): Da Fare, In lavorazione, Note, Todo
-
 ### Community 136 - ".stats"
 Cohesion: 0.50
 Nodes (4): 16. Mini Simulazione Esame — 15 Minuti, Consigli per la Performance, Errori Comuni da Evitare, Sequenza domande (simula il ritmo reale)
 
-### Community 137 - "keywords"
+### Community 142 - "autoload-dev"
 Cohesion: 0.67
-Nodes (3): extra, laravel, dont-discover
+Nodes (3): autoload-dev, psr-4, Tests\\
 
 ### Community 162 - "CorpoCelesteCrudTest"
-Cohesion: 0.07
-Nodes (6): CorpoCeleste, Illuminate\Database\Eloquent\Factories\HasFactory, Illuminate\Database\Eloquent\Model, CorpoCelesteApiTest, CorpoCelesteTest, ImportNasaImageTest
+Cohesion: 0.06
+Nodes (5): CorpoCeleste, CorpoCelesteApiTest, CleanupGalleryDuplicatesTest, CorpoCelesteTest, ImportNasaImageTest
 
 ### Community 169 - "apiClient.js"
 Cohesion: 0.05
@@ -453,6 +439,10 @@ Nodes (17): Admin Controllers, API Routes (`routes/api.php`), Artisan Commands, 
 Cohesion: 0.10
 Nodes (12): App(), Comparatore, CorpiLista, CorpoDettaglio, HomePage, NotFound, ErrorBoundary, Footer() (+4 more)
 
+### Community 182 - "PasswordResetLinkController.php"
+Cohesion: 0.14
+Nodes (5): User, CorpoCelestePolicy, GalleriaCorpoPolicy, Illuminate\Foundation\Auth\User, Illuminate\Notifications\Notifiable
+
 ### Community 183 - "ProfileController.php"
 Cohesion: 0.05
 Nodes (42): Admin palette, Aggiornare un commento, Bugs noti / Pattern da evitare, Comando \audit, Comando \check, Comando \commit, Comando \push, Comando \save (+34 more)
@@ -463,7 +453,7 @@ Nodes (12): Anthropic Brand Styling, Brand Guidelines, Color Application, Colors
 
 ### Community 191 - "✨ Funzionalità"
 Cohesion: 0.05
-Nodes (39): API di supporto, `AuthorizationTest.php` (19 test), Backend (PHPUnit) — 270 test, 613 assertion, `CategoriaCrudTest.php` (14 test), `CleanupGalleryDuplicatesTest.php` (9 test), Componenti (4 file, 27 test), Configurazione, `CorpoCelesteActionsTest.php` (13 test) (+31 more)
+Nodes (39): API di supporto, `AuthorizationTest.php` (19 test), Backend (PHPUnit) — 271 test, 615 assertion, `CategoriaCrudTest.php` (14 test), `CleanupGalleryDuplicatesTest.php` (9 test), Componenti (4 file, 27 test), Configurazione, `CorpoCelesteActionsTest.php` (13 test) (+31 more)
 
 ### Community 195 - "Quick Reference"
 Cohesion: 0.17
@@ -478,8 +468,8 @@ Cohesion: 0.18
 Nodes (10): Astralis Testing Patterns, Backend Test Patterns, Critical: Http::fake() in setUp, Database, Factory Pattern, Frontend Test Patterns (Vitest), NasaImageService Test Guard, Observer Skip in Testing (+2 more)
 
 ### Community 213 - "Test — Astralis"
-Cohesion: 0.07
-Nodes (11): Illuminate\Foundation\Testing\RefreshDatabase, Illuminate\Foundation\Testing\TestCase, CategoriaApiTest, CuriositaApiTest, GalleriaApiTest, MissioneApiTest, RateLimitingTest, PasswordConfirmationTest (+3 more)
+Cohesion: 0.12
+Nodes (8): Illuminate\Foundation\Testing\RefreshDatabase, Illuminate\Foundation\Testing\TestCase, CuriositaApiTest, GalleriaApiTest, MissioneApiTest, PasswordUpdateTest, RegistrationTest, TestCase
 
 ### Community 214 - "Quick Reference"
 Cohesion: 0.22
@@ -521,10 +511,6 @@ Nodes (3): How to use this skill, Keywords, When to use this skill
 Cohesion: 0.50
 Nodes (3): Categories by Priority, React Native Skills, When to Apply
 
-### Community 245 - "DashboardController.php"
-Cohesion: 0.13
-Nodes (3): GalleriaController, GalleriaCorpo, CleanupGalleryDuplicatesTest
-
 ### Community 253 - "Task 40 — Debug generale post-ottimizzazione"
 Cohesion: 0.12
 Nodes (14): ImportNasaImage, CorpoCelesteObserver, AppServiceProvider, Illuminate\Bus\Queueable, Illuminate\Contracts\Events\ShouldDispatchAfterCommit, Illuminate\Contracts\Queue\ShouldBeUnique, Illuminate\Contracts\Queue\ShouldQueue, Illuminate\Foundation\Bus\Dispatchable (+6 more)
@@ -533,25 +519,29 @@ Nodes (14): ImportNasaImage, CorpoCelesteObserver, AppServiceProvider, Illuminat
 Cohesion: 0.06
 Nodes (8): CheckFileHeaders, CleanupGalleryDuplicates, FetchNasaCommand, NasaImageService, WordMapService, Command, Illuminate\Console\Command, WordMapServiceTest
 
+### Community 278 - "CorpoCelesteActionsTest"
+Cohesion: 0.05
+Nodes (6): ExamController, GalleriaController, GalleriaCorpo, CorpoCelesteActionsTest, GalleriaCrudTest, GalleriaOrdineTest
+
 ## Knowledge Gaps
-- **619 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+614 more)
+- **620 isolated node(s):** `$schema`, `name`, `type`, `description`, `laravel` (+615 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **58 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **63 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `CorpoCeleste` connect `CorpoCelesteCrudTest` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `Parte 1: Backoffice in Laravel`, `🪐 Astralis — Catalogo di Corpi Celesti`, `DashboardTest`, `DashboardController.php`, `Edit.jsx`, `CorpoCelesteActionsTest`, `Dropdown.jsx`, `autoload-dev`, `.corpiCelesti`, `Fase 8 — NASA Import multi-immagine, Service Layer, CLI Command`, `NasaImageServiceTest`, `User`, `CorpoCeleste`, `EmailVerificationTest`, `cache.php`, `Test — Astralis`, `RefreshDatabase`, `1b91c30f6655ad6258212beb875408ce.php`, `CorpoCelesteController`, `CorpoCelestePolicy`, `DashboardController.php`, `Task 40 — Debug generale post-ottimizzazione`, `Fase 1 — Critico React Frontend (P0)`?**
+- **Why does `CorpoCeleste` connect `CorpoCelesteCrudTest` to `CorpoCeleste`, `Missione`, `JsonResource`, `LoginRequest`, `keywords`, `Illuminate\Database\Eloquent\Relations\BelongsToMany`, `Parte 1: Backoffice in Laravel`, `🪐 Astralis — Catalogo di Corpi Celesti`, `DashboardTest`, `DashboardController.php`, `Edit.jsx`, `CorpoCelesteActionsTest`, `Dropdown.jsx`, `autoload-dev`, `.corpiCelesti`, `Fase 8 — NASA Import multi-immagine, Service Layer, CLI Command`, `NasaImageServiceTest`, `User`, `CorpoCeleste`, `PasswordResetLinkController.php`, `RefreshDatabase`, `CorpoCelesteController`, `autoload-dev`, `Task 40 — Debug generale post-ottimizzazione`, `Fase 1 — Critico React Frontend (P0)`?**
   _High betweenness centrality (0.074) - this node is a cross-community bridge._
 - **Why does `Preparazione Esame — Astralis` connect `package.json` to `CorpoDettaglio.jsx`, `.stats`, `TextInput.jsx`, `SearchAndFilterTest`, `index.md`, `CleanupGalleryDuplicates.php`, `MissioneApiTest`, `compilerOptions`, `concurrently`, `laravel-vite-plugin`, `2. Traccia → Realizzato`?**
   _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `playwright`, `@tailwindcss/postcss`, `@testing-library/jest-dom`, `vitest`, `AppServiceProvider.php`, `Task 40 — Debug generale post-ottimizzazione`, `jsdom`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Are the 115 inferred relationships involving `CorpoCeleste` (e.g. with `.create()` and `.edit()`) actually correct?**
-  _`CorpoCeleste` has 115 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 116 inferred relationships involving `CorpoCeleste` (e.g. with `.create()` and `.edit()`) actually correct?**
+  _`CorpoCeleste` has 116 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 41 inferred relationships involving `User` (e.g. with `.store()` and `.run()`) actually correct?**
   _`User` has 41 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 49 inferred relationships involving `GalleriaCorpo` (e.g. with `.index()` and `.index()`) actually correct?**
-  _`GalleriaCorpo` has 49 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 50 inferred relationships involving `GalleriaCorpo` (e.g. with `.index()` and `.index()`) actually correct?**
+  _`GalleriaCorpo` has 50 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 44 inferred relationships involving `Categoria` (e.g. with `.create()` and `.edit()`) actually correct?**
   _`Categoria` has 44 INFERRED edges - model-reasoned connections that need verification._
